@@ -1,0 +1,108 @@
+#include <Network.hxx>
+#include <NetworkList.hxx>
+
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/VpnConnection>
+
+#include <QIcon>
+#include <QMouseEvent>
+#include <QDebug>
+
+#include <KLocalizedString>
+#include <KIconLoader>
+
+//--------------------------------------------------------------------------------
+
+Network::Network(QWidget *parent)
+  : SysTrayItem(parent)
+{
+  checkState();
+
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &Network::checkState);
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &Network::checkState);
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionRemoved, this, &Network::checkState);
+}
+
+//--------------------------------------------------------------------------------
+
+void Network::checkState()
+{
+  if ( (NetworkManager::connectivity() != NetworkManager::Full) ||
+       !NetworkManager::primaryConnection() || !NetworkManager::primaryConnection()->connection() )
+  {
+    setPixmap(QIcon::fromTheme("network-disconnect").pixmap(size()));
+    setToolTip(i18n("No Network Connection"));
+    return;
+  }
+
+  NetworkManager::ActiveConnection::Ptr conn(NetworkManager::primaryConnection());
+  //connect(conn.data(), &NetworkManager::ActiveConnection::vpnChanged, this, &Network::checkState);
+
+  QString tip = i18n("Full Network Connectivity (%1)").arg(conn->connection()->name());
+
+  NetworkManager::Device::Ptr device;
+ 
+  if ( conn->devices().count() )
+  {
+    device = NetworkManager::findNetworkInterface(conn->devices()[0]);
+
+    if ( device && device->ipV4Config().addresses().count() )
+      tip += "\n" + i18n("IPv4 Address: %1").arg(device->ipV4Config().addresses()[0].ip().toString());
+  }
+
+  QPixmap pixmap;
+
+  if ( conn->type() == NetworkManager::ConnectionSettings::Wireless )
+  {
+    NetworkManager::WirelessDevice::Ptr dev = qobject_cast<NetworkManager::WirelessDevice::Ptr>(device);
+
+    if ( dev )
+    {
+      NetworkManager::AccessPoint::Ptr accessPoint = dev->activeAccessPoint();
+      int signalStrength = accessPoint.isNull() ? 0 : accessPoint->signalStrength();
+      int x = std::round(signalStrength / 25.0) * 25;
+      pixmap = QIcon::fromTheme(QString("network-wireless-connected-%1").arg(x)).pixmap(size());
+
+      tip += "\n" + i18n("SSID: %1").arg(accessPoint->ssid());
+      tip += "\n" + i18n("Signal Strength: %1").arg(signalStrength);
+    }
+  }
+  else
+  {
+    pixmap = QIcon::fromTheme("network-connect").pixmap(size());
+  }
+
+  //qDebug() << conn << "type" << conn->type() << "vpn" << conn->vpn();
+
+  bool vpnActive = false;
+  for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
+  {
+    if ( ac->vpn() )
+    {
+      vpnActive = true;
+      break;
+    }
+  }
+
+  if ( vpnActive )
+  {
+    pixmap = QIcon::fromTheme("security-high").pixmap(size());
+    tip += "\n" + i18n("VPN active");
+  }
+
+  setPixmap(pixmap);
+  setToolTip(tip);
+}
+
+//--------------------------------------------------------------------------------
+
+QWidget *Network::getDetailsList()
+{
+  NetworkList *networkList = new NetworkList(this);
+  networkList->setAttribute(Qt::WA_DeleteOnClose);
+  networkList->adjustSize();
+  return networkList;
+}
+
+//--------------------------------------------------------------------------------

@@ -1,0 +1,45 @@
+ClockWidget QLabel
+{
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+ClockWidget QLabel#time
+{
+  font-size: 26px;
+  font-weight: bold;
+}
+
+AppMenu QMenu
+{
+  font-size: 22px;
+}
+
+SysTray
+{
+  padding-left: 5px;
+  padding-right: 5px;
+  /* background: darkgrey; */
+}
+
+StartMenu
+{
+  padding: -2px;
+  /* qproperty-themeIcon: "start-here-kde" */
+}
+
+StartMenu::menu-indicator
+{
+  image: url()
+}
+
+AppMenu
+{
+  padding: -2px;
+}
+
+AppMenu::menu-indicator
+{
+  image: url()
+}
+
