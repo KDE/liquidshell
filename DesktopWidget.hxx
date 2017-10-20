@@ -17,6 +17,7 @@ class DesktopWidget : public QWidget
     virtual void paintEvent(QPaintEvent *event);
 
   private slots:
+    void loadSettings();
     void placePanel();
     void desktopChanged();
 

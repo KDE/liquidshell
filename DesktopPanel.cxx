@@ -1,5 +1,6 @@
 #include <DesktopPanel.hxx>
 #include <StartMenu.hxx>
+#include <QuickLaunch.hxx>
 #include <AppMenu.hxx>
 #include <Pager.hxx>
 #include <TaskBar.hxx>
@@ -12,7 +13,6 @@
 #include <kwindowsystem.h>
 
 #include <QHBoxLayout>
-#include <QStandardPaths>
 #include <QResizeEvent>
 #include <QDebug>
 
@@ -35,7 +35,8 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   hboxLayout->setSpacing(2);
 
   hboxLayout->addWidget(new StartMenu(this));
-  hboxLayout->addWidget(new AppMenu(this, QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)));
+  hboxLayout->addWidget(new QuickLaunch(this));
+  hboxLayout->addWidget(new AppMenu(this));
   hboxLayout->addWidget(new Pager(this));
   hboxLayout->addWidget(new WindowList(this));
   hboxLayout->addWidget(new TaskBar(this));

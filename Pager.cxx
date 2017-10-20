@@ -6,9 +6,12 @@
 #include <QPushButton>
 #include <QX11Info>
 #include <QDBusConnection>
+#include <QAction>
 #include <QDebug>
 
-#include <kwindowsystem.h>
+#include <KLocalizedString>
+#include <KCMultiDialog>
+#include <KWindowSystem>
 #include <netwm.h>
 
 //--------------------------------------------------------------------------------
@@ -39,6 +42,23 @@ Pager::Pager(QWidget *parent)
   dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(fill()));
 
   fill();
+
+  QAction *action = new QAction(this);
+  action->setIcon(QIcon::fromTheme("configure"));
+  action->setText(i18n("Configure Virtual Desktops..."));
+  addAction(action);
+  connect(action, &QAction::triggered,
+          [this]()
+          {
+            auto dialog = new KCMultiDialog(parentWidget());
+            dialog->setAttribute(Qt::WA_DeleteOnClose);
+            dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
+            dialog->addModule("desktop");
+            dialog->adjustSize();
+            dialog->show();
+          }
+         );
+  setContextMenuPolicy(Qt::ActionsContextMenu);
 }
 
 //--------------------------------------------------------------------------------
@@ -51,7 +71,7 @@ void Pager::fill()
   NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
 
   int row = 0, col = 0;
-  const int MAX_COLUMNS = ri.desktopLayoutColumnsRows().width();
+  const int MAX_COLUMNS = std::max(1, ri.desktopLayoutColumnsRows().width());
 
   for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
   {

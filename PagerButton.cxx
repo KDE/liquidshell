@@ -11,8 +11,6 @@
 #include <QDebug>
 
 #include <KWindowSystem>
-#include <KLocalizedString>
-#include <KCMultiDialog>
 
 //--------------------------------------------------------------------------------
 
@@ -42,22 +40,6 @@ PagerButton::PagerButton(int num)
 
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
-
-  QAction *action = new QAction(this);
-  action->setIcon(QIcon::fromTheme("configure"));
-  action->setText(i18n("Configure..."));
-  addAction(action);
-  connect(action, &QAction::triggered,
-          [this]()
-          {
-            auto dialog = new KCMultiDialog(parentWidget());
-            dialog->setAttribute(Qt::WA_DeleteOnClose);
-            dialog->addModule("desktop");
-            dialog->adjustSize();
-            dialog->show();
-          }
-         );
-  setContextMenuPolicy(Qt::ActionsContextMenu);
 }
 
 //--------------------------------------------------------------------------------
@@ -86,7 +68,7 @@ void PagerButton::createPixmap()
   firstPixmap = QPixmap();
   QList<WId> windows = KWindowSystem::windows();
 
-  foreach (WId wid, windows)
+  for (WId wid : windows)
   {
     KWindowInfo win(wid, NET::WMDesktop | NET::WMWindowType | NET::WMState | NET::WMIcon);
 

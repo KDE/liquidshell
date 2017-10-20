@@ -18,6 +18,9 @@ class StartMenu : public QPushButton
     QString getThemeIcon() const { return themeIcon; }
     void setThemeIcon(const QString &icon);
 
+  protected:
+    void contextMenuEvent(QContextMenuEvent *event) override;
+
   private slots:
     void fill();
 

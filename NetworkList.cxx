@@ -1,6 +1,5 @@
 #include <NetworkList.hxx>
 
-#include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QCheckBox>
 #include <QToolButton>
@@ -9,7 +8,6 @@
 #include <KLocalizedString>
 #include <KRun>
 
-#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
@@ -17,12 +15,73 @@
 
 //--------------------------------------------------------------------------------
 
-NetworkButton::NetworkButton()
+NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::Device::Ptr dev)
+  : connection(c), device(dev)
 {
   setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   setAutoRaise(true);
   setCheckable(true);
   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
+  if ( connection )
+  {
+    for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
+    {
+      if ( ac->uuid() == c->uuid() )
+      {
+        setChecked(true);
+        break;
+      }
+    }
+
+    connect(this, &NetworkButton::toggled, this, &NetworkButton::toggleNetworkStatus);
+  }
+  else
+    setEnabled(false);
+}
+
+//--------------------------------------------------------------------------------
+
+void NetworkButton::toggleNetworkStatus(bool on)
+{
+  if ( on )
+  {
+    switch ( connection->settings()->connectionType() )
+    {
+      case NetworkManager::ConnectionSettings::Wired:
+      {
+        NetworkManager::activateConnection(connection->path(), connection->settings()->interfaceName(), QString());
+        break;
+      }
+
+      case NetworkManager::ConnectionSettings::Wireless:
+      {
+        NetworkManager::activateConnection(connection->path(), device->uni(), QString());
+        break;
+      }
+
+      case NetworkManager::ConnectionSettings::Vpn:
+      {
+        NetworkManager::ActiveConnection::Ptr conn(NetworkManager::primaryConnection());
+        if ( conn && !conn->devices().isEmpty() )
+          NetworkManager::activateConnection(connection->path(), conn->devices()[0], QString());
+        break;
+      }
+
+      default: ; // TODO
+    }
+  }
+  else
+  {
+    for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
+    {
+      if ( ac->uuid() == connection->uuid() )
+      {
+        NetworkManager::deactivateConnection(ac->path());
+        break;
+      }
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -63,6 +122,35 @@ NetworkList::NetworkList(QWidget *parent)
   hbox->addWidget(configure);
 
   // show connections
+  connectionsVbox = new QVBoxLayout;
+  connectionsVbox->setContentsMargins(QMargins());
+  vbox->addLayout(connectionsVbox);
+  fillConnections();
+
+  QTimer *checkConnectionsTimer = new QTimer(this);
+  checkConnectionsTimer->setInterval(1000);
+  connect(checkConnectionsTimer, &QTimer::timeout, this, &NetworkList::fillConnections);
+  checkConnectionsTimer->start();
+}
+
+//--------------------------------------------------------------------------------
+
+void NetworkList::statusUpdate()
+{
+  network->setChecked(NetworkManager::isNetworkingEnabled());
+  wireless->setChecked(NetworkManager::isWirelessEnabled());
+}
+
+//--------------------------------------------------------------------------------
+
+void NetworkList::fillConnections()
+{
+  QLayoutItem *child;
+  while ( (child = connectionsVbox->takeAt(0)) )
+  {
+    delete child->widget();
+    delete child;
+  }
 
   NetworkManager::Connection::List allConnections = NetworkManager::listConnections();
 
@@ -74,79 +162,17 @@ NetworkList::NetworkList(QWidget *parent)
     if ( (c->settings()->connectionType() == NetworkManager::ConnectionSettings::Wired) &&
          !c->uuid().isEmpty() )
     {
-      QToolButton *net = new NetworkButton;
+      QToolButton *net = new NetworkButton(c);
       net->setText(c->name());
       net->setIcon(QIcon::fromTheme("network-wired"));
-      vbox->addWidget(net);
-
-      for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-      {
-        if ( ac->uuid() == c->uuid() )
-        {
-          net->setChecked(true);
-          break;
-        }
-      }
-
-      connect(net, &QToolButton::toggled,
-              [c](bool on)
-              {
-                if ( on )
-                {
-                  NetworkManager::activateConnection(c->path(), c->settings()->interfaceName(), QString());
-                }
-                else
-                {
-                  for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-                  {
-                    if ( ac->uuid() == c->uuid() )
-                    {
-                      NetworkManager::deactivateConnection(ac->path());
-                      break;
-                    }
-                  }
-                }
-              }
-             );
+      connectionsVbox->addWidget(net);
     }
     else if ( c->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn )
     {
-      QToolButton *vpn = new NetworkButton;
+      QToolButton *vpn = new NetworkButton(c);
       vpn->setText(c->name());
       vpn->setIcon(QIcon::fromTheme("security-high"));
-      vbox->addWidget(vpn);
-
-      for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-      {
-        if ( ac->uuid() == c->uuid() )
-        {
-          vpn->setChecked(true);
-          break;
-        }
-      }
-
-      connect(vpn, &QToolButton::toggled,
-              [c](bool on)
-              {
-                if ( on )
-                {
-                  NetworkManager::ActiveConnection::Ptr conn(NetworkManager::primaryConnection());
-                  if ( conn && !conn->devices().isEmpty() )
-                    NetworkManager::activateConnection(c->path(), conn->devices()[0], QString());
-                }
-                else
-                {
-                  for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-                  {
-                    if ( ac->uuid() == c->uuid() )
-                    {
-                      NetworkManager::deactivateConnection(ac->path());
-                      break;
-                    }
-                  }
-                }
-              }
-             );
+      connectionsVbox->addWidget(vpn);
     }
   }
 
@@ -188,40 +214,10 @@ NetworkList::NetworkList(QWidget *parent)
 
         if ( haveConnection )
         {
-          QToolButton *net = new NetworkButton;
+          QToolButton *net = new NetworkButton(conn, device);
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
-          vbox->addWidget(net);
-
-          for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-          {
-            if ( ac->uuid() == conn->uuid() )
-            {
-              net->setChecked(true);
-              break;
-            }
-          }
-
-          connect(net, &QToolButton::toggled,
-                  [conn, device](bool on)
-                  {
-                    if ( on )
-                    {
-                      NetworkManager::activateConnection(conn->path(), device->uni(), QString());
-                    }
-                    else
-                    {
-                      for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
-                      {
-                        if ( ac->uuid() == conn->uuid() )
-                        {
-                          NetworkManager::deactivateConnection(ac->path());
-                          break;
-                        }
-                      }
-                    }
-                  }
-                 );
+          connectionsVbox->addWidget(net);
         }
         else
         {
@@ -229,7 +225,7 @@ NetworkList::NetworkList(QWidget *parent)
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
           net->setEnabled(false);  // TODO: allow to add a new connection. See NetworkManager::addAndActivateConnection
-          vbox->addWidget(net);
+          connectionsVbox->addWidget(net);
         }
 
         /*
@@ -247,15 +243,9 @@ NetworkList::NetworkList(QWidget *parent)
     }
   }
 
-  vbox->addStretch();
-}
-
-//--------------------------------------------------------------------------------
-
-void NetworkList::statusUpdate()
-{
-  network->setChecked(NetworkManager::isNetworkingEnabled());
-  wireless->setChecked(NetworkManager::isWirelessEnabled());
+  connectionsVbox->addStretch();
+  adjustSize();
+  emit changed();
 }
 
 //--------------------------------------------------------------------------------

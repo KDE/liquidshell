@@ -1,5 +1,4 @@
 #include <Network.hxx>
-#include <NetworkList.hxx>
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/WirelessDevice>
@@ -17,6 +16,9 @@
 Network::Network(QWidget *parent)
   : SysTrayItem(parent)
 {
+  blinkTimer.setInterval(500);
+  connect(&blinkTimer, &QTimer::timeout, [this]() { blinkState = !blinkState; setPixmap(blinkState ? origPixmap : QPixmap()); });
+
   checkState();
 
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &Network::checkState);
@@ -28,10 +30,15 @@ Network::Network(QWidget *parent)
 
 void Network::checkState()
 {
+  if ( NetworkManager::status() == NetworkManager::Connecting )
+    blinkTimer.start();
+  else
+    blinkTimer.stop();
+
   if ( (NetworkManager::connectivity() != NetworkManager::Full) ||
        !NetworkManager::primaryConnection() || !NetworkManager::primaryConnection()->connection() )
   {
-    setPixmap(QIcon::fromTheme("network-disconnect").pixmap(size()));
+    setPixmap(origPixmap = QIcon::fromTheme("network-disconnect").pixmap(size()));
     setToolTip(i18n("No Network Connection"));
     return;
   }
@@ -91,7 +98,7 @@ void Network::checkState()
     tip += "\n" + i18n("VPN active");
   }
 
-  setPixmap(pixmap);
+  setPixmap(origPixmap = pixmap);
   setToolTip(tip);
 }
 
@@ -99,10 +106,13 @@ void Network::checkState()
 
 QWidget *Network::getDetailsList()
 {
-  NetworkList *networkList = new NetworkList(this);
-  networkList->setAttribute(Qt::WA_DeleteOnClose);
-  networkList->adjustSize();
-  return networkList;
+  if ( !networkList )
+  {
+    networkList = new NetworkList(this);
+    networkList->setAttribute(Qt::WA_DeleteOnClose);
+    connect(networkList.data(), &NetworkList::changed, this, &Network::showDetailsList);  // reposition
+  }
+  return networkList.data();
 }
 
 //--------------------------------------------------------------------------------

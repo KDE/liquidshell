@@ -4,6 +4,9 @@
 // network management (status display, activate, switch, ...)
 
 #include <SysTrayItem.hxx>
+#include <NetworkList.hxx>
+#include <QTimer>
+#include <QPixmap>
 
 class Network : public SysTrayItem
 {
@@ -17,6 +20,12 @@ class Network : public SysTrayItem
 
   private slots:
     void checkState();
+
+  private:
+    QTimer blinkTimer;
+    bool blinkState = false;
+    QPixmap origPixmap;
+    QPointer<NetworkList> networkList;
 };
 
 #endif

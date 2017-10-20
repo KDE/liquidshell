@@ -16,7 +16,7 @@ find_package(Qt5 CONFIG REQUIRED COMPONENTS
 
 find_package(KF5 REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes
-             Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils
+             Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash
 )
 
 set(SOURCES
@@ -24,6 +24,8 @@ set(SOURCES
     DesktopWidget.cxx
     DesktopPanel.cxx
     StartMenu.cxx
+    Launcher.cxx
+    QuickLaunch.cxx
     AppMenu.cxx
     Pager.cxx
     PagerButton.cxx
@@ -77,4 +79,5 @@ target_link_libraries(desktop
                       KF5::Solid
                       KF5::BluezQt
                       KF5::KCMUtils
+                      KF5::Crash
 )

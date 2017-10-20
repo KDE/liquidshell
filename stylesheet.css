@@ -10,11 +10,6 @@ ClockWidget QLabel#time
   font-weight: bold;
 }
 
-AppMenu QMenu
-{
-  font-size: 22px;
-}
-
 SysTray
 {
   padding-left: 5px;
@@ -33,12 +28,12 @@ StartMenu::menu-indicator
   image: url()
 }
 
-AppMenu
+AppMenu QPushButton
 {
   padding: -2px;
 }
 
-AppMenu::menu-indicator
+AppMenu QPushButton::menu-indicator
 {
   image: url()
 }

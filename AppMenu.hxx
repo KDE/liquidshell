@@ -1,9 +1,10 @@
 #ifndef _AppMenu_H_
 #define _AppMenu_H_
 
+#include <Launcher.hxx>
+
 #include <QPushButton>
 #include <QFrame>
-#include <QFileSystemWatcher>
 #include <QEventLoop>
 
 //--------------------------------------------------------------------------------
@@ -25,22 +26,19 @@ class Menu : public QFrame
 
 //--------------------------------------------------------------------------------
 
-class AppMenu : public QPushButton
+class AppMenu : public Launcher
 {
   Q_OBJECT
 
   public:
-    AppMenu(QWidget *parent, const QString &dirPath);
-
-    void setDir(const QString &dirPath);
+    AppMenu(QWidget *parent);
 
   private slots:
-    void fill();
+    void fill() override;
     void showMenu();
 
   private:
-    QString dirPath;
-    QFileSystemWatcher dirWatcher;
+    QPushButton *button;
     Menu *popup;
 };
 

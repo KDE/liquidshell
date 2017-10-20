@@ -28,8 +28,18 @@ DesktopWidget::DesktopWidget()
   connect(panel, &DesktopPanel::resized, this, &DesktopWidget::placePanel);
   placePanel();
 
+  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &DesktopWidget::desktopChanged);
+  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopWidget::loadSettings);
+
+  loadSettings();
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::loadSettings()
+{
   KConfig config;
-  for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
+  for (int i = wallpapers.count() + 1; i <= KWindowSystem::numberOfDesktops(); i++)
   {
     KConfigGroup group = config.group(QString("Desktop_%1").arg(i));
 
@@ -42,7 +52,8 @@ DesktopWidget::DesktopWidget()
     wallpapers.append(wallpaper);
   }
 
-  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &DesktopWidget::desktopChanged);
+  wallpapers.resize(KWindowSystem::numberOfDesktops());  // if we had more before, reduce size
+  wallpapers.squeeze();
 
   desktopChanged();
 }
@@ -60,12 +71,13 @@ void DesktopWidget::placePanel()
 
 void DesktopWidget::desktopChanged()
 {
-  if ( currentDesktop != -1 )
-    wallpapers[currentDesktop].pixmap = QPixmap();  // free memory
+  // free memory in previous shown desktop
+  if ( (currentDesktop >= 0) && (currentDesktop < wallpapers.count()) )
+    wallpapers[currentDesktop].pixmap = QPixmap();
 
-  currentDesktop = KWindowSystem::currentDesktop() - 1;
+  currentDesktop = KWindowSystem::currentDesktop() - 1;  // num to index
 
-  if ( currentDesktop >= wallpapers.count() )  // paranoia
+  if ( currentDesktop >= wallpapers.count() )
     return;
 
   Wallpaper &wallpaper = wallpapers[currentDesktop];

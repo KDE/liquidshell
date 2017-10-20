@@ -9,7 +9,11 @@
 #include <KRun>
 #include <KLocalizedString>
 
-const int INTERVAL = 800; // TODO sometimes creates > 100% CPU. check what is defined for /proc/stat
+#include <NetworkManagerQt/Manager>
+
+//--------------------------------------------------------------------------------
+
+const int INTERVAL_MS = 800;
 
 //--------------------------------------------------------------------------------
 
@@ -18,9 +22,12 @@ SysLoad::SysLoad(QWidget *parent)
 {
   setFrameShape(QFrame::StyledPanel);
 
-  timeoutTimer.setInterval(INTERVAL);
+  timeoutTimer.setInterval(INTERVAL_MS);
   timeoutTimer.start();
   connect(&timeoutTimer, &QTimer::timeout, this, &SysLoad::fetch);
+
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged,
+          [this]() { maxBytes = 100; });  // reset since we're changing network (which might be slower)
 
   setFixedWidth(60);
 }
@@ -43,6 +50,7 @@ void SysLoad::fetch()
 
     if ( line.startsWith("cpu") && !line.startsWith("cpu ") )
     {
+      // time is in 1/100s units https://www.kernel.org/doc/Documentation/filesystems/proc.txt
       CpuData data;
       sscanf(line.constData(), "%*s %d %d %d", &data.userCPU, &data.niceCPU, &data.systemCPU);
 
@@ -50,9 +58,9 @@ void SysLoad::fetch()
         cpus.append(data);
       else
       {
-        cpus[num].userPercent = (data.userCPU - cpus[num].userCPU) / (INTERVAL / 1000.0);
-        cpus[num].nicePercent = (data.niceCPU - cpus[num].niceCPU) / (INTERVAL / 1000.0);
-        cpus[num].systemPercent = (data.systemCPU - cpus[num].systemCPU) / (INTERVAL / 1000.0);
+        cpus[num].userPercent = (data.userCPU - cpus[num].userCPU) * 1000.0 / INTERVAL_MS;
+        cpus[num].nicePercent = (data.niceCPU - cpus[num].niceCPU) * 1000.0 / INTERVAL_MS;
+        cpus[num].systemPercent = (data.systemCPU - cpus[num].systemCPU) * 1000.0 / INTERVAL_MS;
         cpus[num].userCPU = data.userCPU;
         cpus[num].niceCPU = data.niceCPU;
         cpus[num].systemCPU = data.systemCPU;
@@ -153,30 +161,39 @@ void SysLoad::fetch()
   QString tip;
   for (int i = 0; i < cpus.count(); i++)
   {
-    if ( i ) tip += '\n';
+    if ( i ) tip += "<br>";
     tip += QString("CPU %1: %2% (%3 MHz)")
                    .arg(i)
-                   .arg(cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent)
-                   .arg(cpus[i].MHz, 0, 'f', 2);
+                   .arg(std::min(100.0, cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent))
+                   .arg(static_cast<int>(cpus[i].MHz));
   }
-  tip += '\n';
+  tip += "<hr>";
   memFree += cached;  // show also the cached memory as free (for user applications)
   size_t memUsed = memTotal - memFree;
   size_t swapUsed = swapTotal - swapFree;
-  tip += i18n("Memory Total: %1 MB (%2 GB)\n").arg(memTotal  / 1024).arg(memTotal  / 1024.0 / 1024.0, 0, 'f', 2);
-  tip += i18n("Memory Used: %1 MB (%2 GB)\n" ).arg(memUsed   / 1024).arg(memUsed   / 1024.0 / 1024.0, 0, 'f', 2);
-  tip += i18n("Memory Free: %1 MB (%2 GB)\n" ).arg(memFree   / 1024).arg(memFree   / 1024.0 / 1024.0, 0, 'f', 2);
-  tip += i18n("Swap Total: %1 MB (%2 GB)\n"  ).arg(swapTotal / 1024).arg(swapTotal / 1024.0 / 1024.0, 0, 'f', 2);
-  tip += i18n("Swap Used: %1 MB (%2 GB)\n"   ).arg(swapUsed  / 1024).arg(swapUsed  / 1024.0 / 1024.0, 0, 'f', 2);
-  tip += i18n("Swap Free: %1 MB (%2 GB)"     ).arg(swapFree  / 1024).arg(swapFree  / 1024.0 / 1024.0, 0, 'f', 2);
+  int memUsedPercent = memUsed * 100 / memTotal;
+  int swapUsedPercent = swapUsed * 100 / swapTotal;
+  tip += i18n("Memory Total: %1 MB (%2 GB)"   ).arg(memTotal  / 1024).arg(memTotal  / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += "<br>";
+  tip += i18n("Memory Used: %1 MB (%2 GB) %3%").arg(memUsed   / 1024).arg(memUsed   / 1024.0 / 1024.0, 0, 'f', 2).arg(memUsedPercent);
+  tip += "<br>";
+  tip += i18n("Memory Free: %1 MB (%2 GB)"    ).arg(memFree   / 1024).arg(memFree   / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += "<hr>";
+  tip += i18n("Swap Total: %1 MB (%2 GB)"     ).arg(swapTotal / 1024).arg(swapTotal / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += "<br>";
+  tip += i18n("Swap Used: %1 MB (%2 GB) %3%"  ).arg(swapUsed  / 1024).arg(swapUsed  / 1024.0 / 1024.0, 0, 'f', 2).arg(swapUsedPercent);
+  tip += "<br>";
+  tip += i18n("Swap Free: %1 MB (%2 GB)"        ).arg(swapFree  / 1024).arg(swapFree  / 1024.0 / 1024.0, 0, 'f', 2);
 
-  tip += '\n';
+  tip += "<hr>";
   tip += i18n("Net send/receive: %1/%2 KB/sec")
-              .arg((sumSent / 1024.0) / (INTERVAL / 1000.0), 0, 'f', 2)
-              .arg((sumReceived / 1024.0) / (INTERVAL / 1000.0), 0, 'f', 2);
+              .arg((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 0, 'f', 2)
+              .arg((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 0, 'f', 2);
+  tip += "<br>";
+  tip += i18n("Net max used: %1 KB/sec").arg((maxBytes / 1024) / (INTERVAL_MS / 1000.0));
 
   if ( underMouse() )
-    QToolTip::showText(QCursor::pos(), tip, this, rect());
+    QToolTip::showText(QCursor::pos(), QLatin1String("<html>") + tip + QLatin1String("</html>"), this, rect());
 }
 
 //--------------------------------------------------------------------------------
@@ -189,7 +206,7 @@ void SysLoad::paintEvent(QPaintEvent *event)
   int x = contentsRect().x(), y = contentsRect().y() + contentsRect().height();
 
   QPainter painter(this);
-  foreach (const CpuData &data, cpus)
+  for (const CpuData &data : cpus)
   {
     int h = (contentsRect().height() * (data.userPercent / 100.0));
     painter.fillRect(x, y - h, barWidth, h, Qt::blue);

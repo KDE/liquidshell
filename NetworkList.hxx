@@ -3,6 +3,7 @@
 
 #include <QFrame>
 #include <QToolButton>
+#include <QVBoxLayout>
 
 class NetworkList : public QFrame
 {
@@ -11,21 +12,35 @@ class NetworkList : public QFrame
   public:
     NetworkList(QWidget *parent);
 
+  signals:
+    void changed();
+
   private slots:
     void statusUpdate();
+    void fillConnections();
 
   private:
     QToolButton *network, *wireless;
+    QVBoxLayout *connectionsVbox;
 };
 
 //--------------------------------------------------------------------------------
+
+#include <NetworkManagerQt/Manager>
 
 class NetworkButton : public QToolButton
 {
   Q_OBJECT
 
   public:
-    NetworkButton();
+    NetworkButton(NetworkManager::Connection::Ptr c = nullptr, NetworkManager::Device::Ptr dev = nullptr);
+
+  private slots:
+    void toggleNetworkStatus(bool on);
+
+  private:
+    NetworkManager::Connection::Ptr connection;
+    NetworkManager::Device::Ptr device;
 };
 
 #endif

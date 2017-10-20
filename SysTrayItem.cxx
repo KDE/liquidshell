@@ -4,6 +4,8 @@
 #include <QApplication>
 #include <QDesktopWidget>
 
+#include <KWindowSystem>
+
 //--------------------------------------------------------------------------------
 
 SysTrayItem::SysTrayItem(QWidget *parent)
@@ -37,7 +39,7 @@ void SysTrayItem::showDetailsList()
   point.setY(screen.bottom() - detailsList->size().height());
   detailsList->move(point);
   detailsList->show();
-  detailsList->raise();
+  KWindowSystem::raiseWindow(detailsList->winId());
 }
 
 //--------------------------------------------------------------------------------

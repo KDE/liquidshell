@@ -2,6 +2,7 @@
 
 #include <QVBoxLayout>
 #include <QToolButton>
+#include <QStandardPaths>
 #include <QDir>
 #include <QMimeDatabase>
 #include <QDebug>
@@ -43,27 +44,18 @@ void Menu::exec()
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-AppMenu::AppMenu(QWidget *parent, const QString &dirPath)
-  : QPushButton(parent)
+AppMenu::AppMenu(QWidget *parent)
+  : Launcher(parent, "AppMenu")
 {
-  setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-  setIconSize(QSize(48, 48));
+  button = new QPushButton;
+  button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+  button->setIconSize(QSize(48, 48));
 
-  popup = new Menu(this);
-  connect(this, &QPushButton::pressed, this, &AppMenu::showMenu);
+  popup = new Menu(button);
+  connect(button, &QPushButton::pressed, this, &AppMenu::showMenu);
 
-  setDir(dirPath);
-}
-
-//--------------------------------------------------------------------------------
-
-void AppMenu::setDir(const QString &theDirPath)
-{
-  dirPath = theDirPath;
-  fill();
-
-  dirWatcher.addPath(dirPath);
-  connect(&dirWatcher, &QFileSystemWatcher::directoryChanged, [this]() { fill(); });
+  layout()->addWidget(button);
+  loadConfig(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
 }
 
 //--------------------------------------------------------------------------------
@@ -73,20 +65,23 @@ void AppMenu::fill()
   KDesktopFile desktopFile(dirPath + "/.directory");
 
   if ( !desktopFile.readIcon().isEmpty() )
-    setIcon(QIcon::fromTheme(desktopFile.readIcon()));
+    button->setIcon(QIcon::fromTheme(desktopFile.readIcon()));
   else if ( dirPath == QStandardPaths::writableLocation(QStandardPaths::DesktopLocation) )
-    setIcon(QIcon::fromTheme("user-desktop"));
+    button->setIcon(QIcon::fromTheme("user-desktop"));
   else // fallback
-    setIcon(QIcon::fromTheme("start-here"));
+    button->setIcon(QIcon::fromTheme("start-here"));
 
   QLayoutItem *child;
   while ( (child = popup->layout()->takeAt(0)) )
+  {
+    delete child->widget();
     delete child;
+  }
 
   QDir dir(dirPath);
   QFileInfoList entries = dir.entryInfoList();
 
-  foreach (const QFileInfo &info, entries)
+  for (const QFileInfo &info : entries)
   {
     QUrl url(QUrl::fromLocalFile(info.absoluteFilePath()));
     QString name;
@@ -104,7 +99,8 @@ void AppMenu::fill()
       if ( name.isEmpty() )
         name = desktopFile.readGenericName();
 
-      icon = QIcon::fromTheme(desktopFile.readIcon());
+      QString iconName = desktopFile.readIcon();
+      icon = QIcon::fromTheme(iconName.isEmpty() ? name : iconName);
     }
     else if ( info.isDir() )
     {
@@ -113,8 +109,10 @@ void AppMenu::fill()
       else if ( info.fileName() == "." )
       {
         name = info.dir().dirName();
-        icon = this->icon();
+        icon = button->icon();
       }
+      else
+        icon = QIcon::fromTheme("folder");
     }
     else
     {
@@ -125,15 +123,15 @@ void AppMenu::fill()
     if ( name.isEmpty() )
       name = info.fileName();
 
-    QToolButton *button = new QToolButton;
-    button->setAutoRaise(true);
-    button->setIcon(icon);
-    button->setText(name);
-    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    button->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    button->setIconSize(QSize(32, 32));
-    connect(button, &QToolButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
-    popup->layout()->addWidget(button);
+    QToolButton *entryButton = new QToolButton(this);
+    entryButton->setAutoRaise(true);
+    entryButton->setIcon(icon);
+    entryButton->setText(name);
+    entryButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    entryButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    entryButton->setIconSize(QSize(32, 32));
+    connect(entryButton, &QToolButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
+    popup->layout()->addWidget(entryButton);
   }
 }
 
@@ -142,7 +140,7 @@ void AppMenu::fill()
 void AppMenu::showMenu()
 {
   popup->exec();
-  setDown(false);
+  button->setDown(false);
 }
 
 //--------------------------------------------------------------------------------

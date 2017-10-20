@@ -33,6 +33,7 @@ QWidget *DeviceNotifier::getDetailsList()
 {
   deviceList->adjustSize();
   deviceList->resize(deviceList->size().expandedTo(QSize(300, 100)));
+  setVisible(!deviceList->isEmpty());
   return deviceList;
 }
 

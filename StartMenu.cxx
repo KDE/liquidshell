@@ -1,8 +1,11 @@
 #include <StartMenu.hxx>
 
+#include <QAction>
+
 #include <KRun>
 #include <KSycoca>
 #include <KService>
+#include <KLocalizedString>
 
 //--------------------------------------------------------------------------------
 
@@ -78,6 +81,20 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
 
     connect(action, &QAction::triggered, [serviceEntry]() { KRun::runApplication(*serviceEntry, QList<QUrl>(), nullptr); });
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void StartMenu::contextMenuEvent(QContextMenuEvent *event)
+{
+  Q_UNUSED(event)
+
+  QMenu menu;
+
+  QAction *action = menu.addAction(QIcon::fromTheme("configure"), i18n("Configure Menu..."));
+  connect(action, &QAction::triggered, []() { KRun::runCommand(QString("kmenuedit"), nullptr); });
+
+  menu.exec(QCursor::pos());
 }
 
 //--------------------------------------------------------------------------------
