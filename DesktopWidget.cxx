@@ -71,6 +71,9 @@ void DesktopWidget::loadSettings()
 
 void DesktopWidget::configure()
 {
+  bool showingDesktop = KWindowSystem::showingDesktop();
+  KWindowSystem::setShowingDesktop(true);
+
   Wallpaper origWallpaper = wallpapers[currentDesktop];
 
   ConfigureDesktopDialog dialog(this, wallpapers[currentDesktop]);
@@ -92,6 +95,7 @@ void DesktopWidget::configure()
     group.writeEntry(QString("Wallpaper"), wallpaper.fileName);
     group.writeEntry("WallpaperMode", wallpaper.mode);
   }
+  KWindowSystem::setShowingDesktop(showingDesktop);  // restore
 }
 
 //--------------------------------------------------------------------------------
