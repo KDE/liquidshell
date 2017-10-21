@@ -23,6 +23,7 @@ set(SOURCES
     desktop.cxx
     DesktopWidget.cxx
     DesktopPanel.cxx
+    ConfigureDesktopDialog.cxx
     StartMenu.cxx
     Launcher.cxx
     QuickLaunch.cxx
@@ -49,6 +50,8 @@ set(SOURCES
     Bluetooth.cxx
 )
 
+qt5_wrap_ui(UI_FILES ConfigureDesktopDialog.ui)
+
 set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)
 set_source_files_properties(${statusnotifieritem_xml} PROPERTIES
    INCLUDE "DBusTypes.hxx"
@@ -58,7 +61,7 @@ qt5_add_dbus_interface(SOURCES ${statusnotifieritem_xml} statusnotifieritem_inte
 
 qt5_add_dbus_adaptor(SOURCES org.freedesktop.Notifications.xml NotificationServer.hxx NotificationServer)
 
-add_executable(desktop ${SOURCES})
+add_executable(desktop ${SOURCES} ${UI_FILES})
 
 target_link_libraries(desktop
                       Qt5::Core

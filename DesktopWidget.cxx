@@ -1,16 +1,47 @@
 #include <DesktopWidget.hxx>
 #include <DesktopPanel.hxx>
+#include <ConfigureDesktopDialog.hxx>
 
 #include <KWindowSystem>
 
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QPainter>
+#include <QAction>
+#include <QIcon>
 #include <QDebug>
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
+//--------------------------------------------------------------------------------
+
+QPixmap DesktopWidget::Wallpaper::getFinalPixmap(const QSize &size) const
+{
+  QPixmap pix;
+  pix.fill(color);
+
+  if ( !fileName.isEmpty() )
+  {
+    pix.load(fileName);
+
+    if ( !pix.isNull() )
+    {
+      if ( mode == "Scaled" )
+        pix = pix.scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+      else if ( mode == "ScaledKeepRatio" )
+        pix = pix.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+      else if ( mode == "ScaledKeepRatioExpand" )
+        pix = pix.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+    }
+  }
+
+  return pix;
+}
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
 DesktopWidget::DesktopWidget()
@@ -30,6 +61,11 @@ DesktopWidget::DesktopWidget()
 
   connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &DesktopWidget::desktopChanged);
   connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopWidget::loadSettings);
+
+  setContextMenuPolicy(Qt::ActionsContextMenu);
+  QAction *action = new QAction(QIcon::fromTheme("configure"), i18n("Configure..."), this);
+  connect(action, &QAction::triggered, this, &DesktopWidget::configure);
+  addAction(action);
 
   loadSettings();
 }
@@ -56,6 +92,14 @@ void DesktopWidget::loadSettings()
   wallpapers.squeeze();
 
   desktopChanged();
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::configure()
+{
+  ConfigureDesktopDialog *dialog = new ConfigureDesktopDialog(this, wallpapers[currentDesktop]);
+  dialog->exec();
 }
 
 //--------------------------------------------------------------------------------

@@ -13,6 +13,15 @@ class DesktopWidget : public QWidget
   public:
     DesktopWidget();
 
+    struct Wallpaper
+    {
+      QString fileName, mode;
+      QColor color;
+      QPixmap pixmap;
+
+      QPixmap getFinalPixmap(const QSize &size) const;
+    };
+
   protected:
     virtual void paintEvent(QPaintEvent *event);
 
@@ -20,16 +29,11 @@ class DesktopWidget : public QWidget
     void loadSettings();
     void placePanel();
     void desktopChanged();
+    void configure();
 
   private:
     DesktopPanel *panel;
 
-    struct Wallpaper
-    {
-      QString fileName, mode;
-      QColor color;
-      QPixmap pixmap;
-    };
     QVector<Wallpaper> wallpapers;
     int currentDesktop = -1;
 };
