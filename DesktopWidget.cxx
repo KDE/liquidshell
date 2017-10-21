@@ -17,33 +17,6 @@
 
 //--------------------------------------------------------------------------------
 
-QPixmap DesktopWidget::Wallpaper::getFinalPixmap(const QSize &size) const
-{
-  QPixmap pix;
-  pix.fill(color);
-
-  if ( !fileName.isEmpty() )
-  {
-    pix.load(fileName);
-
-    if ( !pix.isNull() )
-    {
-      if ( mode == "Scaled" )
-        pix = pix.scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-      else if ( mode == "ScaledKeepRatio" )
-        pix = pix.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-      else if ( mode == "ScaledKeepRatioExpand" )
-        pix = pix.scaled(size, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
-    }
-  }
-
-  return pix;
-}
-
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-
 DesktopWidget::DesktopWidget()
   : QWidget(nullptr, Qt::WindowDoesNotAcceptFocus)
 {
@@ -98,8 +71,27 @@ void DesktopWidget::loadSettings()
 
 void DesktopWidget::configure()
 {
-  ConfigureDesktopDialog *dialog = new ConfigureDesktopDialog(this, wallpapers[currentDesktop]);
-  dialog->exec();
+  Wallpaper origWallpaper = wallpapers[currentDesktop];
+
+  ConfigureDesktopDialog dialog(this, wallpapers[currentDesktop]);
+
+  connect(&dialog, &ConfigureDesktopDialog::changed,
+          [this, &dialog]() { wallpapers[currentDesktop] = dialog.getWallpaper(); desktopChanged(); });
+
+  if ( dialog.exec() == QDialog::Rejected )
+  {
+    wallpapers[currentDesktop] = origWallpaper;
+    desktopChanged();
+  }
+  else  // store in config file
+  {
+    Wallpaper &wallpaper = wallpapers[currentDesktop];
+    KConfig config;
+    KConfigGroup group = config.group(QString("Desktop_%1").arg(currentDesktop + 1));
+    group.writeEntry("Color", wallpaper.color);
+    group.writeEntry(QString("Wallpaper"), wallpaper.fileName);
+    group.writeEntry("WallpaperMode", wallpaper.mode);
+  }
 }
 
 //--------------------------------------------------------------------------------

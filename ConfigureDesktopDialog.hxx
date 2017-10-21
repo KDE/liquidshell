@@ -2,6 +2,7 @@
 #define _ConfigureDesktopDialog_H_
 
 #include <QDialog>
+#include <QButtonGroup>
 #include <DesktopWidget.hxx>
 
 #include <ui_ConfigureDesktopDialog.h>
@@ -15,14 +16,12 @@ class ConfigureDesktopDialog : public QDialog
 
     const DesktopWidget::Wallpaper &getWallpaper() const { return wallpaper; }
 
-  protected:
-    void resizeEvent(QResizeEvent *event) override;
-
-  private slots:
-    void fill();
+  signals:
+    void changed();
 
   private:
     Ui::ConfigureDesktopDialog ui;
+    QButtonGroup buttonGroup;
     DesktopWidget::Wallpaper wallpaper;
 };
 

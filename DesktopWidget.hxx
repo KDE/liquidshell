@@ -18,8 +18,6 @@ class DesktopWidget : public QWidget
       QString fileName, mode;
       QColor color;
       QPixmap pixmap;
-
-      QPixmap getFinalPixmap(const QSize &size) const;
     };
 
   protected:
