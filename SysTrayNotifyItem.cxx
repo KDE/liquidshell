@@ -10,6 +10,8 @@
 #include <QContextMenuEvent>
 #include <QPainter>
 
+#include <KWindowSystem>
+
 //--------------------------------------------------------------------------------
 
 SysTrayNotifyItem::SysTrayNotifyItem(QWidget *parent, const QString &service, const QString &path)
@@ -174,24 +176,26 @@ void SysTrayNotifyItem::wheelEvent(QWheelEvent *event)
   }
 
   dbus->Scroll(delta, orientation);
+  event->accept();
 }
 
 //--------------------------------------------------------------------------------
 
-void SysTrayNotifyItem::contextMenuEvent(QContextMenuEvent *event)
+void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
 {
-  QPoint pos = mapToGlobal(event->pos());
-  dbus->ContextMenu(pos.x(), pos.y());
-}
+  // need to do this in the release event since otherwise the popup opened
+  // by the other application would immediately close again (I assume since this widget
+  // still grabs the mouse)
 
-//--------------------------------------------------------------------------------
-
-void SysTrayNotifyItem::mousePressEvent(QMouseEvent *event)
-{
   if ( event->button() == Qt::LeftButton )
   {
-    QPoint pos = mapToGlobal(event->pos());
-    dbus->Activate(pos.x(), pos.y());
+    dbus->Activate(event->globalPos().x(), event->globalPos().y());
+    KWindowSystem::raiseWindow(dbus->windowId());
+    KWindowSystem::forceActiveWindow(dbus->windowId());
+  }
+  else if ( event->button() == Qt::RightButton )
+  {
+    dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
   }
 }
 

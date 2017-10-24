@@ -43,46 +43,36 @@ void TaskBar::fill()
     delete child;
   }
 
-  QList<WId> windows = KWindowSystem::windows();
-
+  QList<WId> windowsToShow;
   const int MAX_ROWS = 2;
 
-  int count = 0;
-  for (WId wid : windows)
+  for (WId wid : KWindowSystem::windows())
   {
     KWindowInfo win(wid, NET::WMDesktop | NET::WMWindowType | NET::WMState);
     if ( win.valid(true) && win.isOnCurrentDesktop() &&
         (win.windowType(NET::DesktopMask) != NET::Desktop) &&
         (win.windowType(NET::DockMask) != NET::Dock) &&
+        (win.windowType(NET::PopupMenuMask) != NET::PopupMenu) &&
          !(win.state() & NET::SkipTaskbar) )
-      count++;
+      windowsToShow.append(wid);
   }
 
-  if ( count == 0 )
+  if ( windowsToShow.count() == 0 )
   {
     grid->addItem(new QSpacerItem(0, 0,  QSizePolicy::Expanding), 0, 0);
     return;
   }
 
   int row = 0, col = 0;
-  const int MAX_COLUMNS = count / MAX_ROWS + 1;
+  const int MAX_COLUMNS = windowsToShow.count() / MAX_ROWS + 1;
 
-  for (WId wid : windows)
+  for (WId wid : windowsToShow)
   {
-    NET::Properties props = NET::WMDesktop | NET::WMWindowType | NET::WMVisibleName | NET::WMState;
-    KWindowInfo win(wid, props);
-    if ( win.valid(true) && win.isOnCurrentDesktop() &&
-        (win.windowType(NET::DesktopMask) != NET::Desktop) &&
-        (win.windowType(NET::DockMask) != NET::Dock) &&
-        (win.windowType(NET::PopupMenuMask) != NET::PopupMenu) &&
-         !(win.state() & NET::SkipTaskbar) )
-    {
-      TaskBarButton *b = new TaskBarButton(wid);
-      grid->addWidget(b, row, col);
+    TaskBarButton *b = new TaskBarButton(wid);
+    grid->addWidget(b, row, col);
 
-      col = (col + 1) % MAX_COLUMNS;
-      if ( col == 0 ) row++;
-    }
+    col = (col + 1) % MAX_COLUMNS;
+    if ( col == 0 ) row++;
   }
 }
 

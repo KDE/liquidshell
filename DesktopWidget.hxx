@@ -27,7 +27,8 @@ class DesktopWidget : public QWidget
     void loadSettings();
     void placePanel();
     void desktopChanged();
-    void configure();
+    void configureWallpaper();
+    void configureDisplay();
 
   private:
     DesktopPanel *panel;

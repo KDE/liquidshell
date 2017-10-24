@@ -18,8 +18,7 @@ class SysTrayNotifyItem : public QLabel
 
   protected:
     void wheelEvent(QWheelEvent *event) override;
-    void contextMenuEvent(QContextMenuEvent *event) override;
-    void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
   private slots:
     void startTimer();

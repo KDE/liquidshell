@@ -9,11 +9,13 @@
 #include <QPainter>
 #include <QAction>
 #include <QIcon>
+#include <QScreen>
 #include <QDebug>
 
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <KCMultiDialog>
 
 //--------------------------------------------------------------------------------
 
@@ -36,11 +38,18 @@ DesktopWidget::DesktopWidget()
   connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopWidget::loadSettings);
 
   setContextMenuPolicy(Qt::ActionsContextMenu);
-  QAction *action = new QAction(QIcon::fromTheme("configure"), i18n("Configure..."), this);
-  connect(action, &QAction::triggered, this, &DesktopWidget::configure);
+  QAction *action = new QAction(QIcon::fromTheme("configure"), i18n("Configure Wallpaper..."), this);
+  connect(action, &QAction::triggered, this, &DesktopWidget::configureWallpaper);
+  addAction(action);
+
+  action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
+  connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
   addAction(action);
 
   loadSettings();
+
+  connect(qApp->primaryScreen(), &QScreen::geometryChanged,
+          [this](const QRect &rect) { setFixedSize(rect.size()); placePanel(); desktopChanged(); });
 }
 
 //--------------------------------------------------------------------------------
@@ -69,7 +78,7 @@ void DesktopWidget::loadSettings()
 
 //--------------------------------------------------------------------------------
 
-void DesktopWidget::configure()
+void DesktopWidget::configureWallpaper()
 {
   bool showingDesktop = KWindowSystem::showingDesktop();
   KWindowSystem::setShowingDesktop(true);
@@ -96,6 +105,18 @@ void DesktopWidget::configure()
     group.writeEntry("WallpaperMode", wallpaper.mode);
   }
   KWindowSystem::setShowingDesktop(showingDesktop);  // restore
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::configureDisplay()
+{
+  KCMultiDialog *dialog = new KCMultiDialog(this);
+  dialog->addModule("kcm_kscreen");
+  dialog->adjustSize();
+  dialog->setWindowTitle(i18n("Configure Display"));
+  dialog->exec();
+  delete dialog;
 }
 
 //--------------------------------------------------------------------------------
