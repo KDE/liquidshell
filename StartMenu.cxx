@@ -2,6 +2,10 @@
 
 #include <QAction>
 #include <QContextMenuEvent>
+#include <QDrag>
+#include <QMimeData>
+#include <QGuiApplication>
+#include <QStyleHints>
 
 #include <KRun>
 #include <KSycoca>
@@ -21,7 +25,7 @@ StartMenu::StartMenu(DesktopPanel *parent)
 
   setThemeIcon("start-here-kde");
 
-  setMenu(new QMenu(this));
+  setMenu(new PopupMenu(this));
 
   fill();
 
@@ -69,7 +73,9 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
     if ( groupEntry->childCount() == 0 )
       continue;
 
-    QMenu *submenu = menu->addMenu(groupEntry->caption());
+    QMenu *submenu = new PopupMenu(menu);
+    menu->addMenu(submenu);
+    submenu->setTitle(groupEntry->caption());
     submenu->setIcon(QIcon::fromTheme(groupEntry->icon()));
     fillFromGroup(submenu, groupEntry);
   }
@@ -89,8 +95,9 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
       text += QString(" (%1)").arg(serviceEntry->genericName());
 
     QAction *action = menu->addAction(icon, text);
+    action->setData(serviceEntry->entryPath());
 
-    action->setToolTip(static_cast<KService *>(serviceEntry.data())->comment());
+    action->setToolTip(static_cast<const KService *>(serviceEntry.data())->comment());
 
     connect(action, &QAction::triggered, [serviceEntry]() { KRun::runApplication(*serviceEntry, QList<QUrl>(), nullptr); });
   }
@@ -106,6 +113,43 @@ void StartMenu::contextMenuEvent(QContextMenuEvent *event)
   connect(action, &QAction::triggered, []() { KRun::runCommand(QString("kmenuedit"), nullptr); });
 
   menu.exec(event->globalPos());
+}
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+
+void PopupMenu::mousePressEvent(QMouseEvent *event)
+{
+  if ( event->button() == Qt::LeftButton )
+    dragStartPos = event->pos();
+
+  QMenu::mousePressEvent(event);
+}
+
+//--------------------------------------------------------------------------------
+
+void PopupMenu::mouseMoveEvent(QMouseEvent *event)
+{
+  if ( (event->buttons() == Qt::LeftButton) && (dragStartPos != QPoint(-1, -1)) &&
+       (event->pos() - dragStartPos).manhattanLength() > QGuiApplication::styleHints()->startDragDistance() )
+  {
+    dragStartPos = QPoint(-1, -1);
+    QAction *action = actionAt(event->pos());
+    if ( action && !action->menu() && action->data().isValid() )
+    {
+      event->accept();
+
+      QDrag *drag = new QDrag(this);
+      QMimeData *mimeData = new QMimeData;
+      mimeData->setUrls(QList<QUrl>() << QUrl::fromLocalFile(action->data().toString()));
+      drag->setMimeData(mimeData);
+      drag->setPixmap(action->icon().pixmap(32, 32));
+      drag->exec(Qt::CopyAction);
+    }
+  }
+  else
+    QMenu::mouseMoveEvent(event);
 }
 
 //--------------------------------------------------------------------------------

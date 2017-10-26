@@ -33,4 +33,21 @@ class StartMenu : public QPushButton
     QString themeIcon;
 };
 
+//--------------------------------------------------------------------------------
+
+class PopupMenu : public QMenu
+{
+  Q_OBJECT
+
+  public:
+    PopupMenu(QWidget *parent) : QMenu(parent), dragStartPos(-1, -1) { }
+
+  protected:
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+
+  private:
+    QPoint dragStartPos;
+};
+
 #endif

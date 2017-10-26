@@ -116,7 +116,8 @@ void TaskBarButton::mouseMoveEvent(QMouseEvent *event)
 {
   event->accept();
 
-  if ( (event->pos() - dragStartPos).manhattanLength() > QGuiApplication::styleHints()->startDragDistance() )
+  if ( (event->buttons() == Qt::LeftButton) &&
+       (event->pos() - dragStartPos).manhattanLength() > QGuiApplication::styleHints()->startDragDistance() )
   {
     QDrag *drag = new QDrag(parentWidget());
     QMimeData *mimeData = new QMimeData;
