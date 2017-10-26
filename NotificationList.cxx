@@ -34,8 +34,8 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   QHBoxLayout *hbox = new QHBoxLayout(this);
   textLabel = new QLabel;
   QToolButton *closeButton = new QToolButton;
+  closeButton->setAutoRaise(true);
   closeButton->setIcon(QIcon::fromTheme("window-close"));
-  closeButton->setFixedSize(QSize(22, 22));
   connect(closeButton, &QToolButton::clicked, this, &NotifyItem::deleteLater);
 
   textLabel->setWordWrap(true);
