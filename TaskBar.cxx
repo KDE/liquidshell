@@ -60,7 +60,7 @@ void TaskBar::fill()
   }
 
   int row = 0, col = 0;
-  const int MAX_COLUMNS = windowsToShow.count() / MAX_ROWS + 1;
+  const int MAX_COLUMNS = std::max(2, static_cast<int>(std::round(windowsToShow.count() / float(MAX_ROWS))));
 
   for (WId wid : windowsToShow)
   {

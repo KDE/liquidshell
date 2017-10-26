@@ -115,7 +115,7 @@ void QuickLaunch::fill()
     button->setAutoRaise(true);
     button->setIcon(QIcon::fromTheme("internet-web-browser"));
     button->setIconSize(QSize(22, 22));
-    connect(button, &QToolButton::clicked, []() { new KRun(QUrl("www.kde.org"), nullptr); });
+    connect(button, &QToolButton::clicked, []() { new KRun(QUrl("http://www.kde.org"), nullptr); });
 
     if ( MAX_ROWS == 1 )
       grid->addWidget(button, 0, 1, Qt::AlignCenter);
