@@ -15,6 +15,8 @@ class TaskBarButton : public QPushButton
   public:
     TaskBarButton(WId wid);
 
+    void setIconSize(int size);
+
   signals:
     void clicked();
 

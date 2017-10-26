@@ -61,6 +61,13 @@ TaskBarButton::TaskBarButton(WId theWid)
 
 //--------------------------------------------------------------------------------
 
+void TaskBarButton::setIconSize(int size)
+{
+  iconLabel->setFixedSize(size, size);
+}
+
+//--------------------------------------------------------------------------------
+
 void TaskBarButton::fill()
 {
   KWindowInfo win(wid, NET::WMName | NET::WMIcon);

@@ -61,10 +61,12 @@ void TaskBar::fill()
 
   int row = 0, col = 0;
   const int MAX_COLUMNS = std::max(2, static_cast<int>(std::round(windowsToShow.count() / float(MAX_ROWS))));
+  const int ICON_SIZE = windowsToShow.count() > MAX_COLUMNS ? 22 : 32;
 
   for (WId wid : windowsToShow)
   {
     TaskBarButton *b = new TaskBarButton(wid);
+    b->setIconSize(ICON_SIZE);
     grid->addWidget(b, row, col);
 
     col = (col + 1) % MAX_COLUMNS;
