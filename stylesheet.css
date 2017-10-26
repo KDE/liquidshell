@@ -1,3 +1,4 @@
+/*
 ClockWidget QLabel
 {
   margin-top: -5px;
@@ -9,13 +10,7 @@ ClockWidget QLabel#time
   font-size: 26px;
   font-weight: bold;
 }
-
-SysTray
-{
-  padding-left: 5px;
-  padding-right: 5px;
-  /* background: darkgrey; */
-}
+*/
 
 StartMenu
 {
@@ -32,9 +27,3 @@ AppMenu QPushButton
 {
   padding: -2px;
 }
-
-AppMenu QPushButton::menu-indicator
-{
-  image: url()
-}
-

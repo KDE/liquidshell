@@ -6,6 +6,8 @@
 
 #include <KServiceGroup>
 
+#include <DesktopPanel.hxx>
+
 class StartMenu : public QPushButton
 {
   Q_OBJECT
@@ -13,7 +15,7 @@ class StartMenu : public QPushButton
   Q_PROPERTY(QString themeIcon READ getThemeIcon WRITE setThemeIcon)
 
   public:
-    StartMenu(QWidget *parent);
+    StartMenu(DesktopPanel *parent);
 
     QString getThemeIcon() const { return themeIcon; }
     void setThemeIcon(const QString &icon);

@@ -5,8 +5,10 @@
 #include <QMap>
 #include <QVector>
 #include <QPointer>
-class QHBoxLayout;
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 
+#include <DesktopPanel.hxx>
 #include <SysTrayNotifyItem.hxx>
 
 class SysTray : public QFrame
@@ -14,9 +16,10 @@ class SysTray : public QFrame
   Q_OBJECT
 
   public:
-    SysTray(QWidget *parent);
+    SysTray(DesktopPanel *parent);
 
   private slots:
+    void fill();
     void itemRegistered(QString service);
     void itemUnregistered(QString service);
     void itemInitialized(SysTrayNotifyItem *item);
@@ -25,6 +28,7 @@ class SysTray : public QFrame
     void registerWatcher();
 
   private:
+    QVBoxLayout *vbox, *appsVbox;
     QVector<QHBoxLayout *> appsRows;
     QString serviceName;
     QMap<QString, QPointer<SysTrayNotifyItem>> items;

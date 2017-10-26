@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=desktop
+Name=Desktop Workspace
+Type=Application
+X-KDE-StartupNotify=false
+OnlyShowIn=KDE;
+X-KDE-autostart-phase=0

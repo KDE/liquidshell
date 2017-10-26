@@ -11,9 +11,12 @@
 #include <WindowList.hxx>
 
 #include <kwindowsystem.h>
+#include <netwm.h>
 
 #include <QHBoxLayout>
 #include <QResizeEvent>
+#include <QX11Info>
+#include <QDBusConnection>
 #include <QDebug>
 
 //--------------------------------------------------------------------------------
@@ -34,6 +37,11 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   hboxLayout->setContentsMargins(QMargins());
   hboxLayout->setSpacing(2);
 
+  // to get notified about num-of-rows changed
+  updateRowCount();
+  QDBusConnection dbus = QDBusConnection::sessionBus();
+  dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(updateRowCount()));
+
   hboxLayout->addWidget(new StartMenu(this));
   hboxLayout->addWidget(new QuickLaunch(this));
   hboxLayout->addWidget(new AppMenu(this));
@@ -44,6 +52,21 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   hboxLayout->addWidget(new SysLoad(this));
   hboxLayout->addWidget(new SysTray(this));
   hboxLayout->addWidget(new ClockWidget(this));
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopPanel::updateRowCount()
+{
+  NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
+
+  int newRows = std::max(1, ri.desktopLayoutColumnsRows().height());
+
+  if ( newRows != rows )
+  {
+    rows = newRows;
+    emit rowsChanged(rows);
+  }
 }
 
 //--------------------------------------------------------------------------------

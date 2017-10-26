@@ -13,46 +13,18 @@
 
 //--------------------------------------------------------------------------------
 
-Menu::Menu(QWidget *parent)
-  : QFrame(parent, Qt::Popup)
-{
-  setFrameShape(QFrame::StyledPanel);
-  QVBoxLayout *vbox = new QVBoxLayout(this);
-  vbox->setContentsMargins(QMargins());
-}
-
-//--------------------------------------------------------------------------------
-
-void Menu::hideEvent(QHideEvent *event)
-{
-  Q_UNUSED(event);
-  eventLoop.exit();
-}
-
-//--------------------------------------------------------------------------------
-
-void Menu::exec()
-{
-  adjustSize();
-  QPoint p = parentWidget()->mapToGlobal(QPoint(0, 0));
-  move(p.x(), p.y() - height());
-  show();
-  eventLoop.exec();
-}
-
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-
-AppMenu::AppMenu(QWidget *parent)
+AppMenu::AppMenu(DesktopPanel *parent)
   : Launcher(parent, "AppMenu")
 {
-  button = new QPushButton;
+  button = new QToolButton;  // QToolButton is smaller than QPushButton
   button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-  button->setIconSize(QSize(48, 48));
+  button->setIconSize((parent->getRows() == 1) ? QSize(22, 22) : QSize(48, 48));
+
+  connect(parent, &DesktopPanel::rowsChanged,
+          [this](int rows) { button->setIconSize((rows == 1) ? QSize(22, 22) : QSize(48, 48)); });
 
   popup = new Menu(button);
-  connect(button, &QPushButton::pressed, this, &AppMenu::showMenu);
+  connect(button, &QToolButton::pressed, this, &AppMenu::showMenu);
 
   layout()->addWidget(button);
   loadConfig(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
@@ -123,14 +95,9 @@ void AppMenu::fill()
     if ( name.isEmpty() )
       name = info.fileName();
 
-    QToolButton *entryButton = new QToolButton(this);
-    entryButton->setAutoRaise(true);
-    entryButton->setIcon(icon);
-    entryButton->setText(name);
-    entryButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    AppButton *entryButton = new AppButton(this, icon, name);
     entryButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    entryButton->setIconSize(QSize(32, 32));
-    connect(entryButton, &QToolButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
+    connect(entryButton, &AppButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
     popup->layout()->addWidget(entryButton);
   }
 }
@@ -141,6 +108,68 @@ void AppMenu::showMenu()
 {
   popup->exec();
   button->setDown(false);
+}
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+
+Menu::Menu(QWidget *parent)
+  : QFrame(parent, Qt::Popup)
+{
+  setFrameShape(QFrame::StyledPanel);
+  QVBoxLayout *vbox = new QVBoxLayout(this);
+  vbox->setContentsMargins(QMargins());
+  vbox->setSpacing(0);
+}
+
+//--------------------------------------------------------------------------------
+
+void Menu::hideEvent(QHideEvent *event)
+{
+  Q_UNUSED(event);
+  eventLoop.exit();
+}
+
+//--------------------------------------------------------------------------------
+
+void Menu::exec()
+{
+  adjustSize();
+  QPoint p = parentWidget()->mapToGlobal(QPoint(0, 0));
+  move(p.x(), p.y() - height());
+  show();
+  eventLoop.exec();
+}
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+// helper class to ensure the positioning of the icon and text independent of the style
+
+#include <QLabel>
+
+AppButton::AppButton(QWidget *parent, const QIcon &icon, const QString &name)
+  : QToolButton(parent)
+{
+  setAutoRaise(true);
+  QHBoxLayout *hbox = new QHBoxLayout(this);
+
+  QLabel *iconLabel = new QLabel;
+  iconLabel->setContextMenuPolicy(Qt::PreventContextMenu);
+  iconLabel->setFixedSize(32, 32);
+  iconLabel->setPixmap(icon.pixmap(QSize(32, 32)));
+  hbox->addWidget(iconLabel);
+
+  QLabel *textLabel = new QLabel(name);
+  hbox->addWidget(textLabel);
+}
+
+//--------------------------------------------------------------------------------
+
+QSize AppButton::sizeHint() const
+{
+  return layout()->sizeHint();
 }
 
 //--------------------------------------------------------------------------------

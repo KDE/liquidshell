@@ -1,6 +1,7 @@
 #include <ClockWidget.hxx>
 
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QDateTime>
 #include <QMouseEvent>
 #include <QApplication>
@@ -37,7 +38,7 @@ void CalendarPopup::goToday()
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-ClockWidget::ClockWidget(QWidget *parent)
+ClockWidget::ClockWidget(DesktopPanel *parent)
   : QFrame(parent), calendar(nullptr)
 {
   timer = new QTimer(this);
@@ -45,9 +46,7 @@ ClockWidget::ClockWidget(QWidget *parent)
   timer->start();
   connect(timer, &QTimer::timeout, this, &ClockWidget::tick);
 
-  QVBoxLayout *vbox = new QVBoxLayout(this);
-  vbox->setContentsMargins(QMargins());
-  vbox->setSpacing(0);
+  connect(parent, &DesktopPanel::rowsChanged, this, &ClockWidget::fill);
 
   timeLabel = new QLabel(this);
   dayLabel = new QLabel(this);
@@ -56,20 +55,48 @@ ClockWidget::ClockWidget(QWidget *parent)
   timeLabel->setObjectName("time");
   dayLabel->setObjectName("day");
   dateLabel->setObjectName("date");
-  
+
+  timeLabel->setContentsMargins(QMargins(0, -5, 0, -5));
+  dayLabel->setContentsMargins(QMargins(0, -5, 0, -5));
+  dateLabel->setContentsMargins(QMargins(0, -5, 0, -5));
+
   timeLabel->setAlignment(Qt::AlignCenter);
   dayLabel->setAlignment(Qt::AlignCenter);
   dateLabel->setAlignment(Qt::AlignCenter);
 
   QFont f = font();
+  f.setPointSizeF(fontInfo().pointSizeF() * 1.5);
   f.setBold(true);
   timeLabel->setFont(f);
 
-  vbox->addWidget(timeLabel);
-  vbox->addWidget(dayLabel);
-  vbox->addWidget(dateLabel);
-
+  fill();
   tick();
+}
+
+//--------------------------------------------------------------------------------
+
+void ClockWidget::fill()
+{
+  delete layout();
+
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
+
+  QBoxLayout *box;
+  if ( MAX_ROWS >= 2 )
+  {
+    box = new QVBoxLayout(this);
+    box->setSpacing(0);
+  }
+  else
+  {
+    box = new QHBoxLayout(this);
+  }
+
+  box->setContentsMargins(QMargins());
+
+  box->addWidget(timeLabel);
+  box->addWidget(dayLabel);
+  box->addWidget(dateLabel);
 }
 
 //--------------------------------------------------------------------------------
@@ -78,9 +105,9 @@ void ClockWidget::tick()
 {
   QDateTime dateTime = QDateTime::currentDateTime();
 
-  timeLabel->setText(dateTime.time().toString(QLatin1String("HH:mm")));
-  dayLabel->setText(dateTime.date().toString(QLatin1String("ddd")));
-  dateLabel->setText(dateTime.date().toString(QLatin1String("d.MMM yyyy")));
+  timeLabel->setText(dateTime.time().toString(timeFormat));
+  dayLabel->setText(dateTime.date().toString(dayFormat));
+  dateLabel->setText(dateTime.date().toString(dateFormat));
 }
 
 //--------------------------------------------------------------------------------

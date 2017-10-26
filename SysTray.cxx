@@ -6,8 +6,6 @@
 #include <Battery.hxx>
 #include <Bluetooth.hxx>
 
-#include <QVBoxLayout>
-#include <QHBoxLayout>
 #include <QApplication>
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -15,15 +13,13 @@
 #include <QDBusMetaType>
 #include <QDebug>
 
-const int MAX_ROWS = 2;
-
 //--------------------------------------------------------------------------------
 
 static const QLatin1String WATCHER_SERVICE("org.kde.StatusNotifierWatcher");
 
 //--------------------------------------------------------------------------------
 
-SysTray::SysTray(QWidget *parent)
+SysTray::SysTray(DesktopPanel *parent)
   : QFrame(parent)
 {
   qRegisterMetaType<KDbusImageStruct>("KDbusImageStruct");
@@ -35,37 +31,21 @@ SysTray::SysTray(QWidget *parent)
 
   setFrameShape(QFrame::StyledPanel);
 
+  connect(parent, &DesktopPanel::rowsChanged, this, &SysTray::fill);
+
   QHBoxLayout *hbox = new QHBoxLayout(this);
 
-  QVBoxLayout *vbox = new QVBoxLayout;
+  vbox = new QVBoxLayout;
   vbox->setContentsMargins(QMargins());
   vbox->setSpacing(4);
-
-  QHBoxLayout *rowsLayout[MAX_ROWS];
-  for (int i = 0; i < MAX_ROWS; i++)
-  {
-    rowsLayout[i] = new QHBoxLayout;
-    rowsLayout[i]->setContentsMargins(QMargins());
-    rowsLayout[i]->setSpacing(4);
-    vbox->addLayout(rowsLayout[i]);
-  }
 
   QFrame *separator = new QFrame;
   separator->setFrameStyle(QFrame::Plain);
   separator->setFrameShape(QFrame::VLine);
 
-  QVBoxLayout *appsVbox = new QVBoxLayout;
+  appsVbox = new QVBoxLayout;
   appsVbox->setContentsMargins(QMargins());
   appsVbox->setSpacing(4);
-
-  appsRows.resize(MAX_ROWS);
-  for (int i = 0; i < MAX_ROWS; i++)
-  {
-    appsRows[i] = new QHBoxLayout;
-    appsRows[i]->setContentsMargins(QMargins());
-    appsRows[i]->setSpacing(4);
-    appsVbox->addLayout(appsRows[i]);
-  }
 
   hbox->addLayout(vbox);
   hbox->addWidget(separator);
@@ -79,11 +59,69 @@ SysTray::SysTray(QWidget *parent)
     registerWatcher();
   }
 
-  rowsLayout[0]->addWidget(new NotificationServer(this), 0, Qt::AlignLeft);
-  rowsLayout[1]->addWidget(new Network(this), 0, Qt::AlignLeft);
-  rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
-  rowsLayout[1]->addWidget(new Battery(this), 0, Qt::AlignLeft);
-  rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
+  fill();
+}
+
+//--------------------------------------------------------------------------------
+
+void SysTray::fill()
+{
+  // delete all internal widgets
+  QLayoutItem *child;
+  while ( (child = vbox->takeAt(0)) )
+  {
+    if ( child->layout() )
+    {
+      while ( QLayoutItem *widgetItem = child->layout()->takeAt(0) )
+        delete widgetItem->widget();
+    }
+
+    delete child;
+  }
+
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
+
+  QHBoxLayout *rowsLayout[MAX_ROWS];
+  for (int i = 0; i < MAX_ROWS; i++)
+  {
+    rowsLayout[i] = new QHBoxLayout;
+    rowsLayout[i]->setContentsMargins(QMargins());
+    rowsLayout[i]->setSpacing(4);
+    vbox->addLayout(rowsLayout[i]);
+  }
+
+  if ( MAX_ROWS == 1 )
+  {
+    rowsLayout[0]->addWidget(new NotificationServer(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new Network(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new Battery(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
+  }
+  else if ( MAX_ROWS >= 2 )
+  {
+    rowsLayout[0]->addWidget(new NotificationServer(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
+    rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
+    rowsLayout[1]->addWidget(new Network(this), 0, Qt::AlignLeft);
+    rowsLayout[1]->addWidget(new Battery(this), 0, Qt::AlignLeft);
+  }
+
+  // notifier items
+
+  qDeleteAll(appsRows);
+  appsRows.clear();
+  appsRows.resize(MAX_ROWS);
+  for (int i = 0; i < MAX_ROWS; i++)
+  {
+    appsRows[i] = new QHBoxLayout;
+    appsRows[i]->setContentsMargins(QMargins());
+    appsRows[i]->setSpacing(4);
+    appsVbox->addLayout(appsRows[i]);
+  }
+
+  for (SysTrayNotifyItem *item : items)
+    itemInitialized(item);
 }
 
 //--------------------------------------------------------------------------------
@@ -137,7 +175,7 @@ void SysTray::registerWatcher()
 
 void SysTray::itemRegistered(QString item)
 {
-  //qDebug() << "itemRegistered" << item;
+  qDebug() << "itemRegistered" << item;
 
   int slash = item.indexOf('/');
   if ( slash < 1 )

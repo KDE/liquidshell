@@ -2,11 +2,32 @@
 #define _AppMenu_H_
 
 #include <Launcher.hxx>
+#include <DesktopPanel.hxx>
 
 #include <QPushButton>
+#include <QToolButton>
 #include <QFrame>
 #include <QEventLoop>
 
+//--------------------------------------------------------------------------------
+
+class AppMenu : public Launcher
+{
+  Q_OBJECT
+
+  public:
+    AppMenu(DesktopPanel *parent);
+
+  private slots:
+    void fill() override;
+    void showMenu();
+
+  private:
+    QToolButton *button;
+    class Menu *popup;
+};
+
+//--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
 class Menu : public QFrame
@@ -25,21 +46,16 @@ class Menu : public QFrame
 };
 
 //--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 
-class AppMenu : public Launcher
+class AppButton : public QToolButton
 {
-  Q_OBJECT
-
   public:
-    AppMenu(QWidget *parent);
+    AppButton(QWidget *parent, const QIcon &icon, const QString &name);
 
-  private slots:
-    void fill() override;
-    void showMenu();
-
-  private:
-    QPushButton *button;
-    Menu *popup;
+    QSize sizeHint() const override;
 };
+
+//--------------------------------------------------------------------------------
 
 #endif

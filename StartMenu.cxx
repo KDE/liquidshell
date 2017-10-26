@@ -1,6 +1,7 @@
 #include <StartMenu.hxx>
 
 #include <QAction>
+#include <QContextMenuEvent>
 
 #include <KRun>
 #include <KSycoca>
@@ -9,11 +10,15 @@
 
 //--------------------------------------------------------------------------------
 
-StartMenu::StartMenu(QWidget *parent)
+StartMenu::StartMenu(DesktopPanel *parent)
   : QPushButton(parent)
 {
   setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-  setIconSize(QSize(48, 48));
+  setIconSize((parent->getRows() == 1) ? QSize(22, 22) : QSize(48, 48));
+
+  connect(parent, &DesktopPanel::rowsChanged,
+          [this](int rows) { setIconSize((rows == 1) ? QSize(22, 22) : QSize(48, 48)); });
+
   setThemeIcon("start-here-kde");
 
   setMenu(new QMenu(this));
@@ -38,6 +43,14 @@ void StartMenu::fill()
   menu()->clear();
 
   fillFromGroup(menu(), KServiceGroup::root());
+
+  QAction *action = menu()->addAction(QIcon::fromTheme("system-switch-user"), i18n("Switch User"));
+  connect(action, &QAction::triggered,
+          []()
+          {
+            std::system("dbus-send --type=method_call --dest=org.kde.ksmserver "
+                        "/KSMServer org.kde.KSMServerInterface.openSwitchUserDialog");
+          });
 }
 
 //--------------------------------------------------------------------------------
@@ -87,14 +100,12 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
 
 void StartMenu::contextMenuEvent(QContextMenuEvent *event)
 {
-  Q_UNUSED(event)
-
   QMenu menu;
 
   QAction *action = menu.addAction(QIcon::fromTheme("configure"), i18n("Configure Menu..."));
   connect(action, &QAction::triggered, []() { KRun::runCommand(QString("kmenuedit"), nullptr); });
 
-  menu.exec(QCursor::pos());
+  menu.exec(event->globalPos());
 }
 
 //--------------------------------------------------------------------------------

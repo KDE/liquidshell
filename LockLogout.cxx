@@ -1,24 +1,25 @@
 #include <LockLogout.hxx>
 
-#include <QToolButton>
-#include <QVBoxLayout>
+#include <QGridLayout>
 #include <QIcon>
 
 #include <cstdlib>
 
+#include <KLocalizedString>
+
 //--------------------------------------------------------------------------------
 
-LockLogout::LockLogout(QWidget *parent)
+LockLogout::LockLogout(DesktopPanel *parent)
   : QWidget(parent)
 {
   setObjectName("LockLogout");
 
-  QVBoxLayout *vbox = new QVBoxLayout(this);
-  vbox->setContentsMargins(QMargins());
-  vbox->setSpacing(2);
+  QGridLayout *grid = new QGridLayout(this);
+  grid->setContentsMargins(QMargins());
+  grid->setSpacing(2);
 
-  QToolButton *lock   = new QToolButton;
-  QToolButton *logout = new QToolButton;
+  lock   = new QToolButton;
+  logout = new QToolButton;
 
   lock->setIcon(QIcon::fromTheme("system-lock-screen"));
   logout->setIcon(QIcon::fromTheme("system-shutdown"));
@@ -29,9 +30,6 @@ LockLogout::LockLogout(QWidget *parent)
   lock->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
   logout->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-  vbox->addWidget(lock);
-  vbox->addWidget(logout);
-
   connect(lock, &QToolButton::clicked, []() { std::system("xdg-screensaver lock >/dev/null 2>/dev/null&"); });
 
   connect(logout, &QToolButton::clicked,
@@ -41,6 +39,29 @@ LockLogout::LockLogout(QWidget *parent)
                         "/KSMServer org.kde.KSMServerInterface.logout "
                         "int32:-1 int32:0 int32:0");
           });
+
+  fill(parent->getRows());
+  connect(parent, &DesktopPanel::rowsChanged, this, &LockLogout::fill);
+}
+
+//--------------------------------------------------------------------------------
+
+void LockLogout::fill(int rows)
+{
+  QGridLayout *grid = static_cast<QGridLayout *>(layout());
+  delete grid->takeAt(0);
+  delete grid->takeAt(1);
+
+  if ( rows == 1 )
+  {
+    grid->addWidget(lock, 0, 0);
+    grid->addWidget(logout, 0, 1);
+  }
+  else
+  {
+    grid->addWidget(lock, 0, 0);
+    grid->addWidget(logout, 1, 0);
+  }
 }
 
 //--------------------------------------------------------------------------------

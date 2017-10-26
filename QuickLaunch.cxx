@@ -16,11 +16,7 @@
 
 //--------------------------------------------------------------------------------
 
-const int MAX_ROWS = 2;
-
-//--------------------------------------------------------------------------------
-
-QuickLaunch::QuickLaunch(QWidget *parent)
+QuickLaunch::QuickLaunch(DesktopPanel *parent)
   : Launcher(parent, "QuickLaunch")
 {
   QFrame *frame = new QFrame;
@@ -32,12 +28,16 @@ QuickLaunch::QuickLaunch(QWidget *parent)
 
   layout()->addWidget(frame);
   loadConfig();
+
+  connect(parent, &DesktopPanel::rowsChanged, this, &QuickLaunch::fill);
 }
 
 //--------------------------------------------------------------------------------
 
 void QuickLaunch::fill()
 {
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
+
   QLayoutItem *child;
   while ( (child = grid->takeAt(0)) )
   {
@@ -110,6 +110,17 @@ void QuickLaunch::fill()
     connect(button, &QToolButton::clicked, [url]() { new KRun(url, nullptr); });
 
     grid->addWidget(button, 0, 0, Qt::AlignCenter);
+
+    button = new QToolButton(this);
+    button->setAutoRaise(true);
+    button->setIcon(QIcon::fromTheme("internet-web-browser"));
+    button->setIconSize(QSize(22, 22));
+    connect(button, &QToolButton::clicked, []() { new KRun(QUrl("www.kde.org"), nullptr); });
+
+    if ( MAX_ROWS == 1 )
+      grid->addWidget(button, 0, 1, Qt::AlignCenter);
+    else
+      grid->addWidget(button, 1, 0, Qt::AlignCenter);
   }
 }
 

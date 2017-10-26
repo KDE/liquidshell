@@ -80,7 +80,6 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
     else
       KWindowSystem::forceActiveWindow(wid);
 
-    //dragStartTimer.start();
     dragStartPos = event->pos();
     event->accept();
   }
@@ -113,29 +112,11 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
 
 //--------------------------------------------------------------------------------
 
-void TaskBarButton::mouseReleaseEvent(QMouseEvent *event)
-{
-  event->accept();
-  //dragStartTimer.invalidate();
-}
-
-//--------------------------------------------------------------------------------
-
 void TaskBarButton::mouseMoveEvent(QMouseEvent *event)
 {
   event->accept();
 
-  /*
-  if ( !rect().contains(event->pos()) )
-  {
-    event->ignore();
-    dragStartTimer.invalidate();
-    return;
-  }
-  */
-
-  if ( /*dragStartTimer.isValid() && (dragStartTimer.elapsed() > QGuiApplication::styleHints()->startDragTime()) &&*/
-       ((event->pos() - dragStartPos).manhattanLength() > QGuiApplication::styleHints()->startDragDistance()) )
+  if ( (event->pos() - dragStartPos).manhattanLength() > QGuiApplication::styleHints()->startDragDistance() )
   {
     QDrag *drag = new QDrag(parentWidget());
     QMimeData *mimeData = new QMimeData;

@@ -9,7 +9,7 @@
 
 //--------------------------------------------------------------------------------
 
-TaskBar::TaskBar(QWidget *parent)
+TaskBar::TaskBar(DesktopPanel *parent)
   : QWidget(parent)
 {
   grid = new QGridLayout(this);
@@ -18,15 +18,11 @@ TaskBar::TaskBar(QWidget *parent)
 
   fill();
 
-  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged,
-          this, [this](){ fill(); });
-          //this, &TaskBar::currentDesktopChanged);
+  connect(parent, &DesktopPanel::rowsChanged, this, &TaskBar::fill);
 
-  connect(KWindowSystem::self(), &KWindowSystem::windowAdded,
-          this, [this](){ fill(); });
-
-  connect(KWindowSystem::self(), &KWindowSystem::windowRemoved,
-          this, [this](){ fill(); });
+  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &TaskBar::fill);
+  connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &TaskBar::fill);
+  connect(KWindowSystem::self(), &KWindowSystem::windowRemoved, this, &TaskBar::fill);
 
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
@@ -44,7 +40,7 @@ void TaskBar::fill()
   }
 
   QList<WId> windowsToShow;
-  const int MAX_ROWS = 2;
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
 
   for (WId wid : KWindowSystem::windows())
   {
@@ -74,15 +70,6 @@ void TaskBar::fill()
     col = (col + 1) % MAX_COLUMNS;
     if ( col == 0 ) row++;
   }
-}
-
-//--------------------------------------------------------------------------------
-
-void TaskBar::currentDesktopChanged(int desktop)
-{
-  Q_UNUSED(desktop)
-
-  fill();
 }
 
 //--------------------------------------------------------------------------------

@@ -61,9 +61,11 @@ qt5_add_dbus_interface(SOURCES ${statusnotifieritem_xml} statusnotifieritem_inte
 
 qt5_add_dbus_adaptor(SOURCES org.freedesktop.Notifications.xml NotificationServer.hxx NotificationServer)
 
-add_executable(desktop ${SOURCES} ${UI_FILES})
+set(TARGET kollix_desktop)
 
-target_link_libraries(desktop
+add_executable(${TARGET} ${SOURCES} ${UI_FILES})
+
+target_link_libraries(${TARGET}
                       Qt5::Core
                       Qt5::Widgets
                       Qt5::DBus
@@ -84,3 +86,6 @@ target_link_libraries(desktop
                       KF5::KCMUtils
                       KF5::Crash
 )
+
+install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS ${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

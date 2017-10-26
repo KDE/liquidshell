@@ -3,7 +3,6 @@
 
 #include <QPushButton>
 #include <QTimer>
-#include <QElapsedTimer>
 class QLabel;
 class KSqueezedTextLabel;
 
@@ -21,7 +20,6 @@ class TaskBarButton : public QPushButton
 
   protected:
     void mousePressEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
     void dragEnterEvent(QDragEnterEvent *event) override;
@@ -39,7 +37,6 @@ class TaskBarButton : public QPushButton
     KSqueezedTextLabel *textLabel;
     QTimer dragDropTimer;
     QPoint dragStartPos;
-    QElapsedTimer dragStartTimer;
 };
 
 #endif
