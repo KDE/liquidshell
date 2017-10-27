@@ -18,20 +18,54 @@
 */
 
 #include <QApplication>
+#include <QCommandLineParser>
+#include <QDBusMessage>
+#include <QDBusConnection>
+#include <QDBusPendingCall>
 
 #include <DesktopWidget.hxx>
 
 #include <KCrash>
+#include <KLocalizedString>
+#include <KAboutData>
+#include <KDBusService>
 
 int main(int argc, char **argv)
 {
   QCoreApplication::setAttribute(Qt::AA_UseStyleSheetPropagationInWidgetStyles);
   QApplication app(argc, argv);
 
+  KLocalizedString::setApplicationDomain("liquidshell");
+
+  KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.0",
+                       i18n("A QtWidgets based replacement for plasmashell"),
+                       KAboutLicense::GPL_V3,
+                       i18n("Copyright 2017 Martin Koller"), QString(),
+                       QString(), // homepage
+                       QString("kollix@aon.at")); // bugs to
+
+  aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
+
+  KAboutData::setApplicationData(aboutData);
+
+  QCommandLineParser parser;
+  aboutData.setupCommandLine(&parser);
+  parser.process(app);
+  aboutData.processCommandLine(&parser);
+
+  KCrash::setFlags(KCrash::AutoRestart);
+  KDBusService programDBusService(KDBusService::Unique | KDBusService::NoExitOnFailure);
+
   DesktopWidget desktop;
   desktop.show();
 
-  KCrash::setFlags(KCrash::AutoRestart);
+  QDBusMessage ksplashProgressMessage =
+      QDBusMessage::createMethodCall(QStringLiteral("org.kde.KSplash"),
+                                     QStringLiteral("/KSplash"),
+                                     QStringLiteral("org.kde.KSplash"),
+                                     QStringLiteral("setStage"));
+  ksplashProgressMessage.setArguments(QList<QVariant>() << QStringLiteral("desktop"));
+  QDBusConnection::sessionBus().asyncCall(ksplashProgressMessage);
 
   return app.exec();
 }

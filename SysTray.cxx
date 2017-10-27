@@ -194,7 +194,7 @@ void SysTray::registerWatcher()
 
 void SysTray::itemRegistered(QString item)
 {
-  qDebug() << "itemRegistered" << item;
+  //qDebug() << "itemRegistered" << item;
 
   int slash = item.indexOf('/');
   if ( slash < 1 )

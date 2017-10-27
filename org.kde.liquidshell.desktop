@@ -6,3 +6,4 @@ Type=Application
 X-KDE-StartupNotify=false
 OnlyShowIn=KDE;
 X-KDE-autostart-phase=0
+NoDisplay=true

@@ -16,7 +16,7 @@ find_package(Qt5 CONFIG REQUIRED COMPONENTS
 
 find_package(KF5 REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes
-             Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash
+             Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
 )
 
 set(SOURCES
@@ -85,7 +85,8 @@ target_link_libraries(${TARGET}
                       KF5::BluezQt
                       KF5::KCMUtils
                       KF5::Crash
+                      KF5::DBusAddons
 )
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS ${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

@@ -1,0 +1,65 @@
+Author: Martin Koller, kollix@aon.at
+First release: Oktober 2017
+
+liquidshell is a replacement for plasmashell
+
+It does not use QtQuick but instead relies on QtWidgets,
+therefore no hardware graphics acceleration is needed.
+
+Main Features:
+- Wallpaper per virtual desktop
+- No animations, no CPU hogging, low Memory footprint
+- Instant startup
+- No use of activities (I never used nor needed them)
+- QtWidgets based, therefore follows widget style from systemsettings
+- Icons are used from your globally defined icon theme from systemsettings
+- Colors are used from your globally defined color theme from systemsettings
+- Can additionally be styled with css by passing the commandline option -stylesheet filename.css
+  (see included example stylesheet.css)
+- uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network
+- Just one bottom DesktopPanel, containing:
+  StartMenu (allowing drag of entries into konqueror/dolphin to configure QuickLaunch or AppMenu entries)
+  QuickLaunch (showing icons for .desktop files from a configurable folder)
+  AppMenu (showing .desktop files in a menu from a configurable folder, defaults to users desktop folder)
+  Pager (for switching virtual desktops)
+  WindowList (Popup showing all open windows on all desktops)
+  TaskBar (showing windows on the current desktop, allowing drag of an entry onto the Pager to move to a different desktop)
+  LockLogout
+  SysLoad widget including CPU, Memory, Swap and Network bars, live updated tooltip
+  SysTray with integrated Network-, Notifications-, Device Notifier-, Bluetooth-, Battery- display.
+      Display of StatusNotifier items from other applications (no legacy embedded icons yet).
+      Notifications kept in a history list for some minutes, including timestamp and text selectable per mouse
+      (very handy for copy/paste of TAC numbers from online banking received via SMS and transferred to KDE
+       via kdeconnect)
+  Clock widget (with calendar popup)
+
+The main motivation was to have a reliable desktop shell which does not hog the CPU or RAM.
+It should be slick and have just the features I need in my daily
+work. No need having all the bells and whistles anyone can think of.
+Just have a plain, solid, fast workhorse.
+
+The Desktop just shows a wallpaper or only a color. No icons or widgets on it, since
+they are covered anyway most of the time in my daily workflow
+(which is of course also true for the wallpaper ...)
+However icons or widgets might come in a future version.
+
+How to start liquidshell instead of plasmashell
+-----------------------------------------------
+
+just copy liquidshell.desktop into your ~/.config/autostart/ folder
+
+To avoid the start of plasmashell, create a file
+~/.config/autostart/plasmashell.desktop
+
+with the following 2 lines as content:
+[Desktop Entry]
+Hidden=true
+
+
+Building from source
+--------------------
+
+mkdir build
+cd build
+cmake ..
+make
