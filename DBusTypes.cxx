@@ -43,7 +43,7 @@ const QDBusArgument &operator>>(const QDBusArgument &argument, KDbusImageStruct 
     {
       if ( QSysInfo::ByteOrder == QSysInfo::LittleEndian )
       {
-        quint32 *uintBuf = (quint32 *)data.data();
+        quint32 *uintBuf = reinterpret_cast<quint32 *>(data.data());
         for (uint i = 0; i < data.size() / sizeof(quint32); ++i)
         {
           *uintBuf = qToBigEndian(*uintBuf);
