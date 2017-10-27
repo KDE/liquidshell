@@ -106,6 +106,7 @@ void QuickLaunch::fill()
     button->setAutoRaise(true);
     button->setIcon(QIcon::fromTheme("user-home"));
     button->setIconSize(QSize(22, 22));
+    button->setToolTip(QStandardPaths::displayName(QStandardPaths::HomeLocation));
     QUrl url = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
     connect(button, &QToolButton::clicked, [url]() { new KRun(url, nullptr); });
 
@@ -115,6 +116,7 @@ void QuickLaunch::fill()
     button->setAutoRaise(true);
     button->setIcon(QIcon::fromTheme("internet-web-browser"));
     button->setIconSize(QSize(22, 22));
+    button->setToolTip(i18n("Web Browser"));
     connect(button, &QToolButton::clicked, []() { new KRun(QUrl("http://www.kde.org"), nullptr); });
 
     if ( MAX_ROWS == 1 )
