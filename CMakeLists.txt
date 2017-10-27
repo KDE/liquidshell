@@ -50,7 +50,7 @@ set(SOURCES
     Bluetooth.cxx
 )
 
-qt5_wrap_ui(UI_FILES ConfigureDesktopDialog.ui)
+ki18n_wrap_ui(UI_FILES ConfigureDesktopDialog.ui)
 
 set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)
 set_source_files_properties(${statusnotifieritem_xml} PROPERTIES
@@ -61,7 +61,7 @@ qt5_add_dbus_interface(SOURCES ${statusnotifieritem_xml} statusnotifieritem_inte
 
 qt5_add_dbus_adaptor(SOURCES org.freedesktop.Notifications.xml NotificationServer.hxx NotificationServer)
 
-set(TARGET kollix_desktop)
+set(TARGET liquidshell)
 
 add_executable(${TARGET} ${SOURCES} ${UI_FILES})
 

@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=desktop
+Exec=liquidshell
 Name=Desktop Workspace
 Type=Application
 X-KDE-StartupNotify=false
