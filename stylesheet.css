@@ -1,14 +1,15 @@
-/*
-ClockWidget QLabel
-{
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
+/* some examples ...
 
 ClockWidget QLabel#time
 {
   font-size: 26px;
   font-weight: bold;
+}
+
+ClockWidget
+{
+  qproperty-dayFormat: "dddd";
+  qproperty-dateFormat: "dd.MM.yyyy";
 }
 */
 
@@ -21,9 +22,4 @@ StartMenu
 StartMenu::menu-indicator
 {
   image: url()
-}
-
-AppMenu QPushButton
-{
-  padding: -2px;
 }

@@ -42,7 +42,7 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   : QFrame(parent), calendar(nullptr)
 {
   timer = new QTimer(this);
-  timer->setInterval(10000);
+  timer->setInterval(5000);
   timer->start();
   connect(timer, &QTimer::timeout, this, &ClockWidget::tick);
 
@@ -70,6 +70,7 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   timeLabel->setFont(f);
 
   fill();
+  ensurePolished();  // make sure we already have the css applied
   tick();
 }
 
