@@ -56,6 +56,25 @@ DesktopWidget::DesktopWidget()
 
 void DesktopWidget::loadSettings()
 {
+  // simple check for default files matching current desktop size
+  QStringList dirNames = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
+                                                   "wallpapers", QStandardPaths::LocateDirectory);
+
+  QStringList defaultFiles;
+  const QString wantedPrefix = QString("%1x%2").arg(width()).arg(height());
+  for (const QString &dirName : dirNames)
+  {
+    for (const QString &subdir : QDir(dirName).entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Readable))
+    {
+      QDir dir(dirName + '/' + subdir + "/contents/images");
+      for (const QString &fileName : dir.entryList(QDir::Files | QDir::Readable))
+      {
+        if ( fileName.startsWith(wantedPrefix) )
+          defaultFiles.append(dir.absoluteFilePath(fileName));
+      }
+    }
+  }
+
   KConfig config;
   for (int i = wallpapers.count() + 1; i <= KWindowSystem::numberOfDesktops(); i++)
   {
@@ -64,8 +83,10 @@ void DesktopWidget::loadSettings()
     Wallpaper wallpaper;
 
     wallpaper.color = group.readEntry("Color", QColor(Qt::black));
-    wallpaper.fileName = group.readEntry(QString("Wallpaper"), QString());
     wallpaper.mode = group.readEntry("WallpaperMode", QString());
+
+    int idx = defaultFiles.count() ? ((i - 1) % defaultFiles.count()) : -1;
+    wallpaper.fileName = group.readEntry(QString("Wallpaper"), (i != -1) ? defaultFiles[idx] : QString());
 
     wallpapers.append(wallpaper);
   }
