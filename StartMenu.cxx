@@ -67,6 +67,9 @@ void StartMenu::fill()
 
   fillFromGroup(menu(), KServiceGroup::root());
 
+  menu()->addSeparator();
+
+  // add important actions
   QAction *action = menu()->addAction(QIcon::fromTheme("system-switch-user"), i18n("Switch User"));
   connect(action, &QAction::triggered,
           []()
@@ -74,6 +77,13 @@ void StartMenu::fill()
             std::system("dbus-send --type=method_call --dest=org.kde.ksmserver "
                         "/KSMServer org.kde.KSMServerInterface.openSwitchUserDialog");
           });
+
+  KService::Ptr sysSettings = KService::serviceByDesktopName("systemsettings");
+  if ( sysSettings )
+  {
+    action = menu()->addAction(QIcon::fromTheme(sysSettings->icon()), sysSettings->name());
+    connect(action, &QAction::triggered, [this, sysSettings]() { KRun::runApplication(*sysSettings, QList<QUrl>(), this); });
+  }
 
   action = menu()->addAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
   connect(action, &QAction::triggered,
