@@ -1,6 +1,7 @@
 [Desktop Entry]
 Exec=liquidshell
-Name=Desktop Workspace
+X-DBUS-StartupType=Unique
+Name=Liquid Desktop Workspace
 Type=Application
 X-KDE-StartupNotify=false
 OnlyShowIn=KDE;
