@@ -59,6 +59,33 @@ Battery::Battery(QWidget *parent)
 
 //--------------------------------------------------------------------------------
 
+QString Battery::secsToHM(int secs) const
+{
+  int h = secs / 3600;
+  int m = (secs % 3600) / 60;
+  qDebug() << "battery:" << secs << h << m;
+
+  QString hStr = i18np("%1 hour", "%1 hours", h);
+  QString mStr = i18np("%1 minute", "%1 minutes", m);
+
+  QString result;
+
+  if ( h )
+    result = hStr;
+
+  if ( m )
+  {
+    if ( h )
+      result += ", ";
+
+    result += mStr;
+  }
+
+  return result;
+}
+
+//--------------------------------------------------------------------------------
+
 void Battery::changed()
 {
   Solid::Battery *battery = device.as<Solid::Battery>();
@@ -86,16 +113,14 @@ void Battery::changed()
       if ( battery->chargeState() == Solid::Battery::Charging )
       {
         tip = i18n("Charging at %1%").arg(battery->chargePercent());
-
-        int min = battery->timeToFull() / 60;
-        tip += '\n' + i18n("Time until full: %1 minutes").arg(min);
+        if ( battery->timeToFull() )  // it can be 0, so we don't know
+          tip += '\n' + i18n("Time until full: ") + secsToHM(battery->timeToFull());
       }
       else
       {
         tip = i18n("Discharging at %1%").arg(battery->chargePercent());
-
-        int min = battery->timeToEmpty() / 60;
-        tip += '\n' + i18n("Remaining Time: %1 minutes").arg(min);
+        if ( battery->timeToEmpty() )  // it can be 0, so we don't know
+          tip += '\n' + i18n("Remaining Time: ") + secsToHM(battery->timeToEmpty());
       }
 
       if ( p < 20 )
@@ -115,6 +140,23 @@ void Battery::changed()
 
   setPixmap(QIcon::fromTheme(icon).pixmap(size()));
   setToolTip(tip);
+}
+
+//--------------------------------------------------------------------------------
+
+QWidget *Battery::getDetailsList()
+{
+  if ( !dialog )
+  {
+    dialog = new KCMultiDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->addModule("powerdevilglobalconfig");
+    dialog->addModule("powerdevilprofilesconfig");
+    dialog->adjustSize();
+    dialog->setWindowTitle(i18n("Power Management"));
+  }
+
+  return dialog;
 }
 
 //--------------------------------------------------------------------------------

@@ -22,6 +22,8 @@
 
 #include <SysTrayItem.hxx>
 #include <Solid/Device>
+#include <QPointer>
+#include <KCMultiDialog>
 
 class Battery : public SysTrayItem
 {
@@ -30,11 +32,18 @@ class Battery : public SysTrayItem
   public:
     Battery(QWidget *parent);
 
+  protected:
+    QWidget *getDetailsList() override;
+
   private slots:
     void changed();
 
   private:
+    QString secsToHM(int secs) const;
+
+  private:
     Solid::Device device;
+    QPointer<KCMultiDialog> dialog;
 };
 
 #endif
