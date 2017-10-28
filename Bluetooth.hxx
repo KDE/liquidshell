@@ -41,7 +41,7 @@ class Bluetooth : public SysTrayItem
 
   private:
     BluezQt::Manager *manager;
-    QPointer<KCMultiDialog> dialog = nullptr;
+    QPointer<KCMultiDialog> dialog;
 };
 
 #endif
