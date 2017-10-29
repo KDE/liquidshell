@@ -63,7 +63,6 @@ QString Battery::secsToHM(int secs) const
 {
   int h = secs / 3600;
   int m = (secs % 3600) / 60;
-  qDebug() << "battery:" << secs << h << m;
 
   QString hStr = i18np("%1 hour", "%1 hours", h);
   QString mStr = i18np("%1 minute", "%1 minutes", m);
