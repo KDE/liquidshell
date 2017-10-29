@@ -26,6 +26,8 @@
 #include <QSpacerItem>
 #include <QDebug>
 
+#include <cmath>
+
 //--------------------------------------------------------------------------------
 
 TaskBar::TaskBar(DesktopPanel *parent)

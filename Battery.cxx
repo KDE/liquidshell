@@ -27,6 +27,8 @@
 
 #include <KLocalizedString>
 
+#include <cmath>
+
 //--------------------------------------------------------------------------------
 
 Battery::Battery(QWidget *parent)
