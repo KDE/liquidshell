@@ -221,46 +221,70 @@ void SysLoad::paintEvent(QPaintEvent *event)
 {
   QFrame::paintEvent(event);
 
-  int const barWidth = contentsRect().width() / (cpus.count() + 2 + 1);  // mem usage 2 bars + netSum
+  const int cpuBars = cpuSummaryBar ? 1 : cpus.count();
+  int const barWidth = contentsRect().width() / (cpuBars + 2 + 1);  // mem usage 2 bars + netSum
   int x = contentsRect().x(), y = contentsRect().y() + contentsRect().height();
 
   QPainter painter(this);
-  for (const CpuData &data : cpus)
+
+  // cpu
+  QVector<CpuData> drawCpus;
+
+  if ( !cpuSummaryBar )
+    drawCpus = cpus;
+  else
   {
-    int h = (contentsRect().height() * (data.userPercent / 100.0));
-    painter.fillRect(x, y - h, barWidth, h, Qt::blue);
+    CpuData sum;
+    for (const CpuData &data : cpus)
+    {
+      sum.userPercent   += data.userPercent;
+      sum.systemPercent += data.systemPercent;
+      sum.nicePercent   += data.nicePercent;
+    }
+    sum.userPercent   /= cpus.count();
+    sum.systemPercent /= cpus.count();
+    sum.nicePercent   /= cpus.count();
+
+    drawCpus.append(sum);
+  }
+
+  for (const CpuData &data : drawCpus)
+  {
+    int h = contentsRect().height() * (data.userPercent / 100.0);
+    painter.fillRect(x, y - h, barWidth, h, cpuUserColor);
     y -= h;
-    h = (contentsRect().height() * (data.systemPercent / 100.0));
-    painter.fillRect(x, y - h, barWidth, h, Qt::darkGreen);
+    h = contentsRect().height() * (data.systemPercent / 100.0);
+    painter.fillRect(x, y - h, barWidth, h, cpuSystemColor);
     y -= h;
-    h = (contentsRect().height() * (data.nicePercent / 100.0));
-    painter.fillRect(x, y - h, barWidth, h, Qt::yellow);
+    h = contentsRect().height() * (data.nicePercent / 100.0);
+    painter.fillRect(x, y - h, barWidth, h, cpuNiceColor);
 
     x += barWidth;
     y = contentsRect().y() + contentsRect().height();
   }
 
-  int h = (contentsRect().height() * (memData.memPercent / 100.0));
-  painter.fillRect(x, y - h, barWidth, h, Qt::blue);
+  // memory
+  int h = contentsRect().height() * (memData.memPercent / 100.0);
+  painter.fillRect(x, y - h, barWidth, h, memUsedColor);
   y -= h;
-  h = (contentsRect().height() * (memData.memCachedPercent / 100.0));
-  painter.fillRect(x, y, barWidth, h, Qt::darkGreen);
+  h = contentsRect().height() * (memData.memCachedPercent / 100.0);
+  painter.fillRect(x, y, barWidth, h, memCachedColor);
 
   x += barWidth;
   y = contentsRect().y() + contentsRect().height();
-  h = (contentsRect().height() * (memData.swapPercent / 100.0));
-  painter.fillRect(x, y - h, barWidth, h, Qt::cyan);
+  h = contentsRect().height() * (memData.swapPercent / 100.0);
+  painter.fillRect(x, y - h, barWidth, h, memSwapColor);
 
   // net
   maxBytes = std::max(maxBytes, (sumReceived + sumSent));
 
   x += barWidth;
   y = contentsRect().y() + contentsRect().height();
-  h = (contentsRect().height() * (double(sumReceived) / maxBytes));
-  painter.fillRect(x, y - h, barWidth, h, Qt::green);
+  h = contentsRect().height() * (double(sumReceived) / maxBytes);
+  painter.fillRect(x, y - h, barWidth, h, netReceivedColor);
   y -= h;
-  h = (contentsRect().height() * (double(sumSent) / maxBytes));
-  painter.fillRect(x, y - h, barWidth, h, Qt::red);
+  h = contentsRect().height() * (double(sumSent) / maxBytes);
+  painter.fillRect(x, y - h, barWidth, h, netSentColor);
 }
 
 //--------------------------------------------------------------------------------

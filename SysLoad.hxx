@@ -30,6 +30,18 @@ class SysLoad : public QFrame
 {
   Q_OBJECT
 
+  Q_PROPERTY(QColor cpuUserColor   MEMBER cpuUserColor)
+  Q_PROPERTY(QColor cpuSystemColor MEMBER cpuSystemColor)
+  Q_PROPERTY(QColor cpuNiceColor   MEMBER cpuNiceColor)
+  Q_PROPERTY(bool   cpuSummaryBar  MEMBER cpuSummaryBar)
+
+  Q_PROPERTY(QColor memUsedColor   MEMBER memUsedColor)
+  Q_PROPERTY(QColor memCachedColor MEMBER memCachedColor)
+  Q_PROPERTY(QColor memSwapColor   MEMBER memSwapColor)
+
+  Q_PROPERTY(QColor netReceivedColor MEMBER netReceivedColor)
+  Q_PROPERTY(QColor netSentColor     MEMBER netSentColor)
+
   public:
     SysLoad(QWidget *parent);
 
@@ -69,6 +81,18 @@ class SysLoad : public QFrame
     size_t sumSent = 0, sumReceived = 0;
 
     QTimer timeoutTimer;
+
+    QColor cpuUserColor   = "#881f1f";
+    QColor cpuSystemColor = Qt::darkGreen;
+    QColor cpuNiceColor   = Qt::yellow;
+    bool cpuSummaryBar    = false;
+
+    QColor memUsedColor   = Qt::blue;
+    QColor memCachedColor = Qt::darkGreen;
+    QColor memSwapColor   = Qt::cyan;
+
+    QColor netReceivedColor = Qt::green;
+    QColor netSentColor     = Qt::red;
 };
 
 #endif

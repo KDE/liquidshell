@@ -11,6 +11,21 @@ ClockWidget
   qproperty-dayFormat: "dddd";
   qproperty-dateFormat: "dd.MM.yyyy";
 }
+
+SysLoad
+{
+  qproperty-cpuUserColor: orange;
+  qproperty-cpuSystemColorColor: red;
+  qproperty-cpuNiceColorColor: yellow;
+  qproperty-cpuSummaryBar: true;
+
+  qproperty-memUsedColor: blue;
+  qproperty-memCachedColor: darkGreen;
+  qproperty-memSwapColor: cyan;
+
+  qproperty-netReceivedColor: green;
+  qproperty-netSentColor: red;
+}
 */
 
 StartMenu
