@@ -41,7 +41,7 @@ CalendarPopup::CalendarPopup(QWidget *parent)
   cal = new QCalendarWidget;
   vbox->addWidget(cal);
 
-  QPushButton *today = new QPushButton(QIcon::fromTheme("go-home"), QString());
+  QPushButton *today = new QPushButton(QIcon::fromTheme("go-jump-today"), QString());
   vbox->addWidget(today);
   connect(today, &QPushButton::clicked, this, &CalendarPopup::goToday);
 }
@@ -90,6 +90,11 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
 
   fill();
   ensurePolished();  // make sure we already have the css applied
+
+  timeLabel->setVisible(!timeFormat.isEmpty());
+  dayLabel->setVisible(!dayFormat.isEmpty());
+  dateLabel->setVisible(!dateFormat.isEmpty());
+
   tick();
 }
 
