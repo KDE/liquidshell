@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller
+  Copyright 2017 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
