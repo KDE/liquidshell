@@ -44,6 +44,7 @@ DesktopWidget::DesktopWidget()
   setAttribute(Qt::WA_AlwaysShowToolTips);
   setAutoFillBackground(true);
   setFixedSize(QApplication::desktop()->size());
+  setWindowIcon(QIcon::fromTheme("kde"));
 
   KWindowSystem::setType(winId(), NET::Desktop);
   KWindowSystem::setState(winId(), NET::KeepBelow);
