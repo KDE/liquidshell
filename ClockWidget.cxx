@@ -18,6 +18,7 @@
 */
 
 #include <ClockWidget.hxx>
+#include <ConfigureClockWidgetDialog.hxx>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -27,6 +28,13 @@
 #include <QDesktopWidget>
 #include <QPushButton>
 #include <QIcon>
+#include <QAction>
+#include <QTimeZone>
+
+#include <KConfig>
+#include <KConfigGroup>
+#include <KCMultiDialog>
+#include <KLocalizedString>
 
 //--------------------------------------------------------------------------------
 
@@ -54,6 +62,7 @@ void CalendarPopup::goToday()
   cal->setSelectedDate(QDate::currentDate());
 }
 
+//--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
@@ -95,6 +104,56 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   dayLabel->setVisible(!dayFormat.isEmpty());
   dateLabel->setVisible(!dateFormat.isEmpty());
 
+  // context menu
+  QAction *action = new QAction(this);
+  action->setIcon(QIcon::fromTheme("configure"));
+  action->setText(i18n("Select Timezones..."));
+  addAction(action);
+  connect(action, &QAction::triggered,
+          [this]()
+          {
+            ConfigureClockWidgetDialog dialog(parentWidget(), timeZoneIds);
+            dialog.setWindowTitle(i18n("Select Timezones"));
+            dialog.resize(600, 400);
+            if ( dialog.exec() == QDialog::Accepted )
+            {
+              timeZoneIds = dialog.getSelectedTimeZoneIds();
+              KConfig config;
+              KConfigGroup group = config.group("ClockWidget");
+              QStringList list;
+              for (const QByteArray &id : timeZoneIds)
+                list.append(id);
+              group.writeEntry("timeZoneIds", list);
+              tick();  // update tooltip
+            }
+          }
+         );
+
+  action = new QAction(this);
+  action->setIcon(QIcon::fromTheme("preferences-system-time"));
+  action->setText(i18n("Configure Date & Time..."));
+  addAction(action);
+  connect(action, &QAction::triggered,
+          [this]()
+          {
+            auto dialog = new KCMultiDialog(parentWidget());
+            dialog->setAttribute(Qt::WA_DeleteOnClose);
+            dialog->setWindowTitle(i18n("Date & Time"));
+            dialog->addModule("clock");
+            dialog->adjustSize();
+            dialog->show();
+          }
+         );
+  setContextMenuPolicy(Qt::ActionsContextMenu);
+
+  // load config
+  KConfig config;
+  KConfigGroup group = config.group("ClockWidget");
+  QStringList list;
+  list = group.readEntry<QStringList>("timeZoneIds", QStringList());
+  for (const QString &id : list)
+    timeZoneIds.append(id.toLatin1());
+
   tick();
 }
 
@@ -128,11 +187,31 @@ void ClockWidget::fill()
 
 void ClockWidget::tick()
 {
-  QDateTime dateTime = QDateTime::currentDateTime();
+  QDateTime dateTimeUtc = QDateTime::currentDateTimeUtc();
+  QDateTime dateTime = dateTimeUtc.toLocalTime();
 
   timeLabel->setText(dateTime.time().toString(timeFormat));
   dayLabel->setText(dateTime.date().toString(dayFormat));
   dateLabel->setText(dateTime.date().toString(dateFormat));
+
+  if ( !timeZoneIds.isEmpty() )
+  {
+    QString tip = "<html><table cellpadding=5 style='white-space:pre;'>";
+    for (const QByteArray &id : timeZoneIds)
+    {
+      QTimeZone timeZone(id);
+      QDateTime dt = dateTimeUtc;
+      dateTime = dt.toTimeZone(timeZone);
+
+      tip += QString("<tr><td>%1</td> <td>%2</td> <td>%3</td> <td>%4</td></tr>")
+                     .arg(QLatin1String(id))
+                     .arg(dateTime.time().toString(timeFormat))
+                     .arg(dateTime.date().toString(dayFormat))
+                     .arg(dateTime.date().toString(dateFormat));
+    }
+    tip += "</table></html>";
+    setToolTip(tip);
+  }
 }
 
 //--------------------------------------------------------------------------------

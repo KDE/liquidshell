@@ -15,7 +15,7 @@ find_package(Qt5 CONFIG REQUIRED COMPONENTS
 )
 
 find_package(KF5 REQUIRED COMPONENTS
-             WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes
+             WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews
              Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
 )
 
@@ -32,6 +32,7 @@ set(SOURCES
     PagerButton.cxx
     WindowList.cxx
     ClockWidget.cxx
+    ConfigureClockWidgetDialog.cxx
     TaskBar.cxx
     TaskBarButton.cxx
     LockLogout.cxx
@@ -65,6 +66,8 @@ set(TARGET liquidshell)
 
 add_executable(${TARGET} ${SOURCES} ${UI_FILES})
 
+set_property(TARGET ${TARGET} PROPERTY CXX_STANDARD 11)
+
 target_link_libraries(${TARGET}
                       Qt5::Core
                       Qt5::Widgets
@@ -86,6 +89,7 @@ target_link_libraries(${TARGET}
                       KF5::KCMUtils
                       KF5::Crash
                       KF5::DBusAddons
+                      KF5::ItemViews
 )
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -68,6 +68,8 @@ class ClockWidget : public QFrame
     QString timeFormat = QStringLiteral("HH:mm");
     QString dayFormat  = QStringLiteral("ddd");
     QString dateFormat = QStringLiteral("d.MMM yyyy");
+
+    QVector<QByteArray> timeZoneIds;
 };
 
 #endif
