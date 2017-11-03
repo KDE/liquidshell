@@ -370,7 +370,7 @@ void WeatherApplet::configure()
   dialog->setAttribute(Qt::WA_DeleteOnClose);
   dialog->show();
 
-  connect(dialog, &QDialog::accepted,
+  connect(dialog.data(), &QDialog::accepted,
           [this]()
           {
             KConfig config;

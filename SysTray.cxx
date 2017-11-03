@@ -100,7 +100,7 @@ void SysTray::fill()
 
   const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
 
-  QHBoxLayout *rowsLayout[MAX_ROWS];
+  QVector<QHBoxLayout *> rowsLayout(MAX_ROWS);
   for (int i = 0; i < MAX_ROWS; i++)
   {
     rowsLayout[i] = new QHBoxLayout;
