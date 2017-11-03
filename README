@@ -31,17 +31,12 @@ Main Features:
       Notifications kept in a history list for some minutes, including timestamp and text selectable per mouse
       (very handy for copy/paste of TAC numbers from online banking received via SMS and transferred to KDE
        via kdeconnect)
-  Clock widget (with calendar popup)
+  Clock widget (with calendar popup, tooltip for selected cities)
 
 The main motivation was to have a reliable desktop shell which does not hog the CPU or RAM.
 It should be slick and have just the features I need in my daily
 work. No need having all the bells and whistles anyone can think of.
 Just have a plain, solid, fast workhorse.
-
-The Desktop just shows a wallpaper or only a color. No icons or widgets on it, since
-they are covered anyway most of the time in my daily workflow
-(which is of course also true for the wallpaper ...)
-However icons or widgets might come in a future version.
 
 How to start liquidshell instead of plasmashell
 -----------------------------------------------
@@ -50,6 +45,9 @@ just copy liquidshell.desktop into your ~/.config/autostart/ folder
 
 To avoid the start of plasmashell, create a file
 ~/.config/autostart/plasmashell.desktop
+
+(or ~/.config/autostart/org.kde.plasmashell.desktop - depending on what's the name in
+/etc/xdg/autostart/ as it seems this was changed recently)
 
 with the following 2 lines as content:
 [Desktop Entry]
