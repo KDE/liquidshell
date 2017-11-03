@@ -7,7 +7,7 @@ include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-find_package(Qt5 CONFIG REQUIRED COMPONENTS
+find_package(Qt5 5.7 CONFIG REQUIRED COMPONENTS
     Core
     Widgets
     DBus
