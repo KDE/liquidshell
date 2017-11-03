@@ -17,7 +17,7 @@
   along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <ConfigureClockWidgetDialog.hxx>
+#include <ClockWidgetConfigureDialog.hxx>
 
 #include <QTreeWidget>
 #include <QDialogButtonBox>
@@ -32,7 +32,7 @@
 
 //--------------------------------------------------------------------------------
 
-ConfigureClockWidgetDialog::ConfigureClockWidgetDialog(QWidget *parent, const QVector<QByteArray> &timeZoneIds)
+ClockWidgetConfigureDialog::ClockWidgetConfigureDialog(QWidget *parent, const QVector<QByteArray> &timeZoneIds)
   : QDialog(parent)
 {
   tree = new QTreeWidget;
@@ -84,7 +84,7 @@ ConfigureClockWidgetDialog::ConfigureClockWidgetDialog(QWidget *parent, const QV
 
 //--------------------------------------------------------------------------------
 
-QVector<QByteArray> ConfigureClockWidgetDialog::getSelectedTimeZoneIds() const
+QVector<QByteArray> ClockWidgetConfigureDialog::getSelectedTimeZoneIds() const
 {
   QVector<QByteArray> timeZoneIds;
 

@@ -38,3 +38,18 @@ StartMenu::menu-indicator
 {
   image: url()
 }
+
+/*
+WeatherApplet
+{
+  background: rgba(32, 56, 92, 75%);
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+WeatherApplet QLabel#city
+{
+  font-size: 28px;
+}
+*/

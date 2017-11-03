@@ -19,6 +19,7 @@
 
 #include <DesktopWidget.hxx>
 #include <DesktopPanel.hxx>
+#include <WeatherApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 
 #include <KWindowSystem>
@@ -29,12 +30,18 @@
 #include <QAction>
 #include <QIcon>
 #include <QScreen>
+#include <QMenu>
+#include <QCursor>
 #include <QDebug>
 
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KCMultiDialog>
+
+//--------------------------------------------------------------------------------
+
+int DesktopWidget::appletNum = 0;
 
 //--------------------------------------------------------------------------------
 
@@ -62,9 +69,39 @@ DesktopWidget::DesktopWidget()
   connect(action, &QAction::triggered, this, &DesktopWidget::configureWallpaper);
   addAction(action);
 
+  action = new QAction(i18n("Add Applet"), this);
+  addAction(action);
+  QMenu *menu = new QMenu;
+  action->setMenu(menu);
+  action = menu->addAction(QIcon::fromTheme("weather-clouds"), i18n("Weather"));
+  connect(action, &QAction::triggered, [this]() { addApplet("Weather"); });
+
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
   addAction(action);
+
+  // restore aapplets
+  KConfig config;
+  KConfigGroup group = config.group("DesktopApplets");
+  QStringList appletNames = group.readEntry("applets", QStringList());
+  for (const QString &appletName : appletNames)
+  {
+    DesktopApplet *applet = nullptr;
+
+    if ( appletName.startsWith("Weather_") )
+      applet = new WeatherApplet(this, appletName);
+
+    if ( applet )
+    {
+      int num = appletName.mid(appletName.indexOf('_') + 1).toInt();
+      if ( num > appletNum )
+        appletNum = num;
+
+      applet->loadConfig();
+      applets.append(applet);
+      connect(applet, &DesktopApplet::removeThis, this, &DesktopWidget::removeApplet);
+    }
+  }
 
   loadSettings();
 
@@ -81,7 +118,7 @@ void DesktopWidget::loadSettings()
                                                    "wallpapers", QStandardPaths::LocateDirectory);
 
   QStringList defaultFiles;
-  const QString wantedPrefix = QString("%1x%2").arg(width()).arg(height());
+  const QString geometryString = QString("%1x%2").arg(width()).arg(height());
   for (const QString &dirName : dirNames)
   {
     for (const QString &subdir : QDir(dirName).entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::Readable))
@@ -89,7 +126,7 @@ void DesktopWidget::loadSettings()
       QDir dir(dirName + '/' + subdir + "/contents/images");
       for (const QString &fileName : dir.entryList(QDir::Files | QDir::Readable))
       {
-        if ( fileName.startsWith(wantedPrefix) )
+        if ( fileName.startsWith(geometryString) )
           defaultFiles.append(dir.absoluteFilePath(fileName));
       }
     }
@@ -102,11 +139,11 @@ void DesktopWidget::loadSettings()
 
     Wallpaper wallpaper;
 
-    wallpaper.color = group.readEntry("Color", QColor(Qt::black));
-    wallpaper.mode = group.readEntry("WallpaperMode", QString());
+    wallpaper.color = group.readEntry("color", QColor(Qt::black));
+    wallpaper.mode = group.readEntry("wallpaperMode", QString());
 
     int idx = defaultFiles.count() ? ((i - 1) % defaultFiles.count()) : -1;
-    wallpaper.fileName = group.readEntry(QString("Wallpaper"), (i != -1) ? defaultFiles[idx] : QString());
+    wallpaper.fileName = group.readEntry("wallpaper", (i != -1) ? defaultFiles[idx] : QString());
 
     wallpapers.append(wallpaper);
   }
@@ -141,9 +178,9 @@ void DesktopWidget::configureWallpaper()
     Wallpaper &wallpaper = wallpapers[currentDesktop];
     KConfig config;
     KConfigGroup group = config.group(QString("Desktop_%1").arg(currentDesktop + 1));
-    group.writeEntry("Color", wallpaper.color);
-    group.writeEntry(QString("Wallpaper"), wallpaper.fileName);
-    group.writeEntry("WallpaperMode", wallpaper.mode);
+    group.writeEntry("color", wallpaper.color);
+    group.writeEntry("wallpaper", wallpaper.fileName);
+    group.writeEntry("wallpaperMode", wallpaper.mode);
   }
   KWindowSystem::setShowingDesktop(showingDesktop);  // restore
 }
@@ -210,6 +247,13 @@ void DesktopWidget::desktopChanged()
   }
 
   update();
+
+  // show applets for new desktop
+  for (DesktopApplet *applet : applets)
+  {
+    if ( !applet->isConfiguring() )
+      applet->setVisible(applet->isOnDesktop(currentDesktop + 1));
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -230,6 +274,46 @@ void DesktopWidget::paintEvent(QPaintEvent *event)
                          wallpaper.pixmap);
     }
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::addApplet(const QString &type)
+{
+  if ( type == "Weather" )
+  {
+    DesktopApplet *applet = new WeatherApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+    applets.append(applet);
+    applet->loadConfig();  // defaults + size
+    applet->move(QCursor::pos());
+    applet->saveConfig();
+    applet->show();
+    connect(applet, &DesktopApplet::removeThis, this, &DesktopWidget::removeApplet);
+  }
+  saveAppletsList();
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::removeApplet(DesktopApplet *applet)
+{
+  applets.removeOne(applet);
+  applet->deleteLater();
+  saveAppletsList();
+}
+
+//--------------------------------------------------------------------------------
+
+void DesktopWidget::saveAppletsList()
+{
+  KConfig config;
+  KConfigGroup group = config.group("DesktopApplets");
+
+  QStringList appletNames;
+  for (DesktopApplet *applet : applets)
+    appletNames.append(applet->getId());
+
+  group.writeEntry("applets", appletNames);
 }
 
 //--------------------------------------------------------------------------------

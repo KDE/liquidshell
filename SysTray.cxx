@@ -217,6 +217,7 @@ void SysTray::itemRegistered(QString item)
 
 void SysTray::itemInitialized(SysTrayNotifyItem *item)
 {
+  // TODO count only visible items
   int lowestCount = 0;
   int lowestCountAt = 0;
   for (int i = 0; i < appsRows.count(); i++)

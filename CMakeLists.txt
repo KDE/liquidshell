@@ -15,7 +15,7 @@ find_package(Qt5 CONFIG REQUIRED COMPONENTS
 )
 
 find_package(KF5 REQUIRED COMPONENTS
-             WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews
+             WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews Archive
              Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
 )
 
@@ -32,7 +32,7 @@ set(SOURCES
     PagerButton.cxx
     WindowList.cxx
     ClockWidget.cxx
-    ConfigureClockWidgetDialog.cxx
+    ClockWidgetConfigureDialog.cxx
     TaskBar.cxx
     TaskBarButton.cxx
     LockLogout.cxx
@@ -49,9 +49,13 @@ set(SOURCES
     DeviceList.cxx
     Battery.cxx
     Bluetooth.cxx
+
+    DesktopApplet.cxx
+    WeatherApplet.cxx
+    WeatherAppletConfigureDialog.cxx
 )
 
-ki18n_wrap_ui(UI_FILES ConfigureDesktopDialog.ui)
+ki18n_wrap_ui(UI_FILES ConfigureDesktopDialog.ui WeatherAppletConfigureDialog.ui)
 
 set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)
 set_source_files_properties(${statusnotifieritem_xml} PROPERTIES
@@ -90,6 +94,7 @@ target_link_libraries(${TARGET}
                       KF5::Crash
                       KF5::DBusAddons
                       KF5::ItemViews
+                      KF5::Archive
 )
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})

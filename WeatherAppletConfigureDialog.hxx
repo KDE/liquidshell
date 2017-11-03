@@ -17,25 +17,32 @@
   along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _ConfigureClockWidgetDialog_H_
-#define _ConfigureClockWidgetDialog_H_
+#ifndef _WeatherAppletConfigureDialog_H_
+#define _WeatherAppletConfigureDialog_H_
 
 #include <QDialog>
-class QTreeWidget;
+#include <ui_WeatherAppletConfigureDialog.h>
+#include <KIO/CopyJob>
+class WeatherApplet;
 
-class ConfigureClockWidgetDialog : public QDialog
+class WeatherAppletConfigureDialog : public QDialog
 {
   Q_OBJECT
 
   public:
-    ConfigureClockWidgetDialog(QWidget *parent, const QVector<QByteArray> &timeZoneIds);
+    WeatherAppletConfigureDialog(WeatherApplet *parent);
 
-    QVector<QByteArray> getSelectedTimeZoneIds() const;
+  public slots:
+    void accept() override;
 
   private slots:
+    void gotJsonFile(KJob *job);
+    void readJsonFile(const QString &filePath);
 
   private:
-    QTreeWidget *tree;
+    WeatherApplet *applet;
+    Ui::WeatherAppletConfigureDialog ui;
+    QString cityId;
 };
 
 #endif

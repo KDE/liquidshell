@@ -24,6 +24,7 @@
 #include <QPixmap>
 #include <QVector>
 class DesktopPanel;
+class DesktopApplet;
 
 class DesktopWidget : public QWidget
 {
@@ -48,12 +49,20 @@ class DesktopWidget : public QWidget
     void desktopChanged();
     void configureWallpaper();
     void configureDisplay();
+    void addApplet(const QString &type);
+    void removeApplet(DesktopApplet *applet);
+
+  private:
+    void saveAppletsList();
 
   private:
     DesktopPanel *panel;
 
     QVector<Wallpaper> wallpapers;
     int currentDesktop = -1;
+
+    QVector<DesktopApplet *> applets;
+    static int appletNum;
 };
 
 #endif

@@ -18,7 +18,7 @@
 */
 
 #include <ClockWidget.hxx>
-#include <ConfigureClockWidgetDialog.hxx>
+#include <ClockWidgetConfigureDialog.hxx>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -112,7 +112,7 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   connect(action, &QAction::triggered,
           [this]()
           {
-            ConfigureClockWidgetDialog dialog(parentWidget(), timeZoneIds);
+            ClockWidgetConfigureDialog dialog(parentWidget(), timeZoneIds);
             dialog.setWindowTitle(i18n("Select Timezones"));
             dialog.resize(600, 400);
             if ( dialog.exec() == QDialog::Accepted )
