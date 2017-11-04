@@ -29,7 +29,6 @@
 #include <QPainter>
 #include <QAction>
 #include <QIcon>
-#include <QScreen>
 #include <QMenu>
 #include <QCursor>
 #include <QDebug>
@@ -80,7 +79,7 @@ DesktopWidget::DesktopWidget()
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
   addAction(action);
 
-  // restore aapplets
+  // restore applets
   KConfig config;
   KConfigGroup group = config.group("DesktopApplets");
   QStringList appletNames = group.readEntry("applets", QStringList());
@@ -105,8 +104,13 @@ DesktopWidget::DesktopWidget()
 
   loadSettings();
 
-  connect(qApp->primaryScreen(), &QScreen::geometryChanged,
-          [this](const QRect &rect) { setFixedSize(rect.size()); placePanel(); desktopChanged(); });
+  connect(QApplication::desktop(), &QDesktopWidget::primaryScreenChanged, this, &DesktopWidget::placePanel);
+
+  connect(QApplication::desktop(), &QDesktopWidget::screenCountChanged,
+          [this]() { setFixedSize(QApplication::desktop()->size()); desktopChanged(); });
+
+  connect(QApplication::desktop(), &QDesktopWidget::resized,
+          [this]() { setFixedSize(QApplication::desktop()->size()); placePanel(); desktopChanged(); });
 }
 
 //--------------------------------------------------------------------------------
@@ -202,7 +206,8 @@ void DesktopWidget::configureDisplay()
 void DesktopWidget::placePanel()
 {
   int panelHeight = panel->sizeHint().height();
-  panel->setGeometry(0, height() - panelHeight, width(), panelHeight);
+  QRect r = QApplication::desktop()->screenGeometry();
+  panel->setGeometry(r.x(), r.height() - panelHeight, r.width(), panelHeight);
   KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight);
 }
 
@@ -212,7 +217,7 @@ void DesktopWidget::desktopChanged()
 {
   // free memory in previous shown desktop
   if ( (currentDesktop >= 0) && (currentDesktop < wallpapers.count()) )
-    wallpapers[currentDesktop].pixmap = QPixmap();
+    wallpapers[currentDesktop].pixmaps.clear();
 
   currentDesktop = KWindowSystem::currentDesktop() - 1;  // num to index
 
@@ -230,19 +235,24 @@ void DesktopWidget::desktopChanged()
 
   if ( !wallpaper.fileName.isEmpty() )
   {
-    QPixmap pixmap;
-    pixmap.load(wallpaper.fileName);
+    QPixmap pixmap(wallpaper.fileName);
 
     if ( !pixmap.isNull() )
     {
-      if ( wallpaper.mode == "Scaled" )
-        pixmap = pixmap.scaled(size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-      else if ( wallpaper.mode == "ScaledKeepRatio" )
-        pixmap = pixmap.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
-      else if ( wallpaper.mode == "ScaledKeepRatioExpand" )
-        pixmap = pixmap.scaled(size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+      for (int i = 0; i < QApplication::desktop()->screenCount(); i++)
+      {
+        QRect r = QApplication::desktop()->screenGeometry(i);
+        QPixmap scaledPixmap = pixmap;
 
-      wallpaper.pixmap = pixmap;
+        if ( wallpaper.mode == "Scaled" )
+          scaledPixmap = pixmap.scaled(r.size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        else if ( wallpaper.mode == "ScaledKeepRatio" )
+          scaledPixmap = pixmap.scaled(r.size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        else if ( wallpaper.mode == "ScaledKeepRatioExpand" )
+          scaledPixmap = pixmap.scaled(r.size(), Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+
+        wallpaper.pixmaps.append(scaledPixmap);
+      }
     }
   }
 
@@ -266,12 +276,19 @@ void DesktopWidget::paintEvent(QPaintEvent *event)
   {
     Wallpaper &wallpaper = wallpapers[currentDesktop];
 
-    if ( !wallpaper.pixmap.isNull() )
+    QPainter painter(this);
+
+    for (int i = 0; i < QApplication::desktop()->screenCount(); i++)
     {
-      QPainter painter(this);
-      painter.drawPixmap(x() + (width() - wallpaper.pixmap.width()) / 2,
-                         y() + (height() - wallpaper.pixmap.height()) / 2,
-                         wallpaper.pixmap);
+      if ( i < wallpaper.pixmaps.count() )
+      {
+        QRect r = QApplication::desktop()->screenGeometry(i);
+        painter.setClipRect(r);
+
+        painter.drawPixmap(r.x() + (r.width() - wallpaper.pixmaps[i].width()) / 2,
+                           r.y() + (r.height() - wallpaper.pixmaps[i].height()) / 2,
+                           wallpaper.pixmaps[i]);
+      }
     }
   }
 }

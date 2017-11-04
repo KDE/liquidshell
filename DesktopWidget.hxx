@@ -37,7 +37,7 @@ class DesktopWidget : public QWidget
     {
       QString fileName, mode;
       QColor color;
-      QPixmap pixmap;
+      QVector<QPixmap> pixmaps;  // per screen
     };
 
   protected:
