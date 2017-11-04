@@ -143,7 +143,7 @@ void DesktopWidget::loadSettings()
     wallpaper.mode = group.readEntry("wallpaperMode", QString());
 
     int idx = defaultFiles.count() ? ((i - 1) % defaultFiles.count()) : -1;
-    wallpaper.fileName = group.readEntry("wallpaper", (i != -1) ? defaultFiles[idx] : QString());
+    wallpaper.fileName = group.readEntry("wallpaper", (idx != -1) ? defaultFiles[idx] : QString());
 
     wallpapers.append(wallpaper);
   }
