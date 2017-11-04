@@ -32,7 +32,7 @@ class LockLogout : public QWidget
   public:
     LockLogout(DesktopPanel *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill(int rows);
 
   private:

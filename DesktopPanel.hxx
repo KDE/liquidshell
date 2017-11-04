@@ -31,7 +31,7 @@ class DesktopPanel : public QFrame
 
     int getRows() const { return rows; }
 
-  signals:
+  Q_SIGNALS:
     void resized();
     void rowsChanged(int rows);
 
@@ -39,7 +39,7 @@ class DesktopPanel : public QFrame
     bool event(QEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void updateRowCount();
 
   private:

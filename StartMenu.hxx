@@ -42,7 +42,7 @@ class StartMenu : public QPushButton
   protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void fill();
 
   private:

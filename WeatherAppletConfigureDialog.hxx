@@ -32,10 +32,10 @@ class WeatherAppletConfigureDialog : public QDialog
   public:
     WeatherAppletConfigureDialog(WeatherApplet *parent);
 
-  public slots:
+  public Q_SLOTS:
     void accept() override;
 
-  private slots:
+  private Q_SLOTS:
     void gotJsonFile(KJob *job);
     void readJsonFile(const QString &filePath);
 

@@ -35,8 +35,12 @@ class ConfigureDesktopDialog : public QDialog
 
     const DesktopWidget::Wallpaper &getWallpaper() const { return wallpaper; }
 
-  signals:
+  Q_SIGNALS:
     void changed();
+
+  private Q_SLOTS:
+    void returnPressed(const QString &text);
+    void buttonClicked(QAbstractButton *button);
 
   private:
     Ui::ConfigureDesktopDialog ui;

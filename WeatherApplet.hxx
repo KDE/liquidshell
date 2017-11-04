@@ -43,7 +43,7 @@ class WeatherApplet : public DesktopApplet
   protected:
     void showEvent(QShowEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void fetchData();
     void gotData(KJob *job);
     void configure();

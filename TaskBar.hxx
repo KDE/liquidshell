@@ -32,7 +32,7 @@ class TaskBar : public QWidget
   public:
     TaskBar(DesktopPanel *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill();
     void windowChanged(WId wid, NET::Properties props, NET::Properties2 props2);
 

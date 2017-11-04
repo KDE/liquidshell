@@ -33,7 +33,7 @@ class DeviceNotifier : public SysTrayItem
   protected:
     QWidget *getDetailsList() override;
 
-  private slots:
+  private Q_SLOTS:
     void checkDeviceList();
 
   private:

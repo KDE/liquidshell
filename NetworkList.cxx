@@ -110,7 +110,7 @@ void NetworkButton::toggleNetworkStatus(bool on)
 NetworkList::NetworkList(QWidget *parent)
   : QFrame(parent)
 {
-  setWindowFlag(Qt::Popup);
+  setWindowFlags(windowFlags() | Qt::Popup);
   setFrameShape(QFrame::StyledPanel);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);

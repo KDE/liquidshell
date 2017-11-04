@@ -41,7 +41,7 @@
 CalendarPopup::CalendarPopup(QWidget *parent)
   : QFrame(parent)
 {
-  setWindowFlag(Qt::Popup);
+  setWindowFlags(windowFlags() | Qt::Popup);
   setFrameShape(QFrame::StyledPanel);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);

@@ -62,7 +62,7 @@ class DeviceItem : public QFrame
     enum Action { Mount, Unmount };
     void mountDone(Action action, Solid::ErrorType error, QVariant errorData, const QString &udi);
 
-  private slots:
+  private Q_SLOTS:
     void teardownDone(Solid::ErrorType error, QVariant errorData, const QString &udi);
     void setupDone(Solid::ErrorType error, QVariant errorData, const QString &udi);
 
@@ -85,11 +85,11 @@ class DeviceList : public QFrame
 
     bool isEmpty() const { return items.isEmpty(); }
 
-  signals:
+  Q_SIGNALS:
     void deviceWasAdded();
     void deviceWasRemoved();
 
-  private slots:
+  private Q_SLOTS:
     void deviceAdded(const QString &dev);
     void deviceRemoved(const QString &dev);
 

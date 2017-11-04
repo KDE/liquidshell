@@ -54,7 +54,7 @@ class NotificationList : public QScrollArea
 
     int itemCount() const { return numItems; }
 
-  signals:
+  Q_SIGNALS:
     void itemsCountChanged();
     void listNowEmpty();
 

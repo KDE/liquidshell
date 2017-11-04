@@ -36,7 +36,7 @@ class Bluetooth : public SysTrayItem
   protected:
     QWidget *getDetailsList() override;
 
-  private slots:
+  private Q_SLOTS:
     void changed();
 
   private:

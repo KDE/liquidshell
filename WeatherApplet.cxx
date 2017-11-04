@@ -213,7 +213,7 @@ void WeatherApplet::gotData(KJob *job)
 
   if ( data.contains("weather") && data["weather"].isArray() )
   {
-    QDateTime dt = QDateTime::fromSecsSinceEpoch(data["dt"].toInt());
+    QDateTime dt = QDateTime::fromMSecsSinceEpoch(data["dt"].toInt() * 1000);
     shortForecast[0]->day->setText(dt.time().toString(Qt::SystemLocaleShortDate));
     setIcon(shortForecast[0]->icon, data["weather"].toArray()[0].toObject()["icon"].toString());
   }
@@ -230,7 +230,7 @@ void WeatherApplet::gotData(KJob *job)
     for (int i = 0; i < 3; i++)
     {
       setIcon(shortForecast[1 + i]->icon, array[i].toObject()["weather"].toArray()[0].toObject()["icon"].toString());
-      QDateTime dt = QDateTime::fromSecsSinceEpoch(array[i].toObject()["dt"].toInt());
+      QDateTime dt = QDateTime::fromMSecsSinceEpoch(array[i].toObject()["dt"].toInt() * 1000);
       shortForecast[1 + i]->day->setText(dt.time().toString(Qt::SystemLocaleShortDate));
       shortForecast[1 + i]->show();
     }
@@ -241,7 +241,7 @@ void WeatherApplet::gotData(KJob *job)
     {
       QJsonObject obj = value.toObject();
 
-      int day = QDateTime::fromSecsSinceEpoch(obj["dt"].toInt()).date().dayOfWeek();
+      int day = QDateTime::fromMSecsSinceEpoch(obj["dt"].toInt() * 1000).date().dayOfWeek();
       double temp = obj["main"].toObject()["temp"].toDouble();
 
       if ( !minTemp.contains(day) )
@@ -266,7 +266,7 @@ void WeatherApplet::gotData(KJob *job)
         QString icon = obj["weather"].toArray()[0].toObject()["icon"].toString();
         setIcon(forecast[idx]->icon, icon);
 
-        int day = QDateTime::fromSecsSinceEpoch(obj["dt"].toInt()).date().dayOfWeek();
+        int day = QDateTime::fromMSecsSinceEpoch(obj["dt"].toInt() * 1000).date().dayOfWeek();
         forecast[idx]->day->setText(QDate::shortDayName(day));
         forecast[idx]->min->setText(i18n("%1 %2").arg(minTemp[day], 0, 'f', 1).arg(tempUnit));
         forecast[idx]->max->setText(i18n("%1 %2").arg(maxTemp[day], 0, 'f', 1).arg(tempUnit));

@@ -257,7 +257,7 @@ void DeviceItem::setupDone(Solid::ErrorType error, QVariant errorData, const QSt
 DeviceList::DeviceList(QWidget *parent)
   : QFrame(parent)
 {
-  setWindowFlag(Qt::Tool);
+  setWindowFlags(windowFlags() | Qt::Tool);
   setFrameShape(QFrame::StyledPanel);
   setAttribute(Qt::WA_AlwaysShowToolTips);
 

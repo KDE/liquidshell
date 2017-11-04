@@ -36,7 +36,7 @@ class TaskBarButton : public QPushButton
 
     void setIconSize(int size);
 
-  signals:
+  Q_SIGNALS:
     void clicked();
 
   protected:
@@ -47,7 +47,7 @@ class TaskBarButton : public QPushButton
     void dragLeaveEvent(QDragLeaveEvent *event) override;
     void dropEvent(QDropEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void fill();
     void setBackground();
     void windowChanged(WId id, NET::Properties props, NET::Properties2 props2);

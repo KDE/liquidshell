@@ -7,7 +7,7 @@ include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-find_package(Qt5 5.7 CONFIG REQUIRED COMPONENTS
+find_package(Qt5 5.6 CONFIG REQUIRED COMPONENTS
     Core
     Widgets
     DBus
@@ -54,6 +54,9 @@ set(SOURCES
     WeatherApplet.cxx
     WeatherAppletConfigureDialog.cxx
 )
+
+# e.g. on openSuse Leap 42.3 compile fails as a GLib header included uses signals as var
+add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
 
 ki18n_wrap_ui(UI_FILES ConfigureDesktopDialog.ui WeatherAppletConfigureDialog.ui)
 

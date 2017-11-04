@@ -31,7 +31,7 @@ class Pager : public QWidget
   public:
     Pager(QWidget *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill();
     void changeDesktop(bool checked);
 

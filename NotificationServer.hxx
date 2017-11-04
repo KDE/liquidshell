@@ -45,7 +45,7 @@ class NotificationServer : public SysTrayItem
   protected:
     QWidget *getDetailsList() override;
 
-  signals:
+  Q_SIGNALS:
     void ActionInvoked(uint id, const QString &action_key);
     void NotificationClosed(uint id, uint reason);
 

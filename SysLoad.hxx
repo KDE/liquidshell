@@ -49,7 +49,7 @@ class SysLoad : public QFrame
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void fetch();
 
   private:

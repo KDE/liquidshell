@@ -35,8 +35,10 @@ ConfigureDesktopDialog::ConfigureDesktopDialog(QWidget *parent, const DesktopWid
   connect(ui.kurlrequester, &KUrlRequester::urlSelected,
           [this](const QUrl &url) { wallpaper.fileName = url.toLocalFile(); emit changed(); });
 
-  connect(ui.kurlrequester, QOverload<const QString &>::of(&KUrlRequester::returnPressed),
-          [this](const QString &text) { wallpaper.fileName = text; emit changed(); });
+  // older compiler can't use this
+  //connect(ui.kurlrequester, QOverload<const QString &>::of(&KUrlRequester::returnPressed),
+  //        [this](const QString &text) { wallpaper.fileName = text; emit changed(); });
+  connect(ui.kurlrequester, SIGNAL(returnPressed(QString)), this, SLOT(returnPressed(QString)));
 
   if ( wallpaper.mode == "Scaled" )
     ui.scaledIgnoreRatioButton->setChecked(true);
@@ -52,20 +54,32 @@ ConfigureDesktopDialog::ConfigureDesktopDialog(QWidget *parent, const DesktopWid
   buttonGroup.addButton(ui.scaledKeepRatioButton);
   buttonGroup.addButton(ui.scaledKeepRatioClipButton);
 
-  connect(&buttonGroup, QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked),
-          [this](QAbstractButton *button)
-          {
-            if ( button == ui.origSizeButton )
-              wallpaper.mode = "";
-            else if ( button == ui.scaledIgnoreRatioButton )
-              wallpaper.mode = "Scaled";
-            else if ( button == ui.scaledKeepRatioButton )
-              wallpaper.mode = "ScaledKeepRatio";
-            else if ( button == ui.scaledKeepRatioClipButton )
-              wallpaper.mode = "ScaledKeepRatioExpand";
+  connect(&buttonGroup, SIGNAL(buttonClicked(QAbstractButton *)),
+          this, SLOT(buttonClicked(QAbstractButton *)));
+}
 
-            emit changed();
-          });
+//--------------------------------------------------------------------------------
+
+void ConfigureDesktopDialog::returnPressed(const QString &text)
+{
+  wallpaper.fileName = text;
+  emit changed();
+}
+
+//--------------------------------------------------------------------------------
+
+void ConfigureDesktopDialog::buttonClicked(QAbstractButton *button)
+{
+  if ( button == ui.origSizeButton )
+    wallpaper.mode = "";
+  else if ( button == ui.scaledIgnoreRatioButton )
+    wallpaper.mode = "Scaled";
+  else if ( button == ui.scaledKeepRatioButton )
+    wallpaper.mode = "ScaledKeepRatio";
+  else if ( button == ui.scaledKeepRatioClipButton )
+    wallpaper.mode = "ScaledKeepRatioExpand";
+
+  emit changed();
 }
 
 //--------------------------------------------------------------------------------

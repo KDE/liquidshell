@@ -86,7 +86,7 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
 NotificationList::NotificationList(QWidget *parent)
   : QScrollArea(parent)
 {
-  setWindowFlag(Qt::Tool);
+  setWindowFlags(windowFlags() | Qt::Tool);
   setWindowTitle(i18n("Notifications"));
   setWidgetResizable(true);
 

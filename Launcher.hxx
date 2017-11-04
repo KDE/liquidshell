@@ -35,7 +35,7 @@ class Launcher : public QWidget
     void loadConfig(const QString &defaultDir = QString());
     void setDir(const QString &theDirPath);
 
-  private slots:
+  private Q_SLOTS:
     virtual void fill() = 0;
 
   protected:

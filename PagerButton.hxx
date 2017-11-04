@@ -40,7 +40,7 @@ class PagerButton : public QPushButton
     void dragLeaveEvent(QDragLeaveEvent *event) override;
     void dropEvent(QDropEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void createPixmap();
     void windowChanged(WId id, NET::Properties props, NET::Properties2 props2);
 

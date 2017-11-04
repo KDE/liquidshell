@@ -29,7 +29,7 @@ class SysTrayItem : public QLabel
   public:
     SysTrayItem(QWidget *parent);
 
-  protected slots:
+  protected Q_SLOTS:
     void toggleDetailsList();
     void showDetailsList();
 

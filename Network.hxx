@@ -37,7 +37,7 @@ class Network : public SysTrayItem
   protected:
     QWidget *getDetailsList() override;
 
-  private slots:
+  private Q_SLOTS:
     void checkState();
 
   private:

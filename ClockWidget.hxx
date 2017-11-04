@@ -34,7 +34,7 @@ class CalendarPopup : public QFrame
   public:
     CalendarPopup(QWidget *parent);
 
-  public slots:
+  public Q_SLOTS:
     void goToday();
 
   private:
@@ -56,7 +56,7 @@ class ClockWidget : public QFrame
   protected:
     void mousePressEvent(QMouseEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void fill();
     void tick();
 

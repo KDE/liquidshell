@@ -32,7 +32,7 @@ class QuickLaunch : public Launcher
   public:
     QuickLaunch(DesktopPanel *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill() override;
 
   private:

@@ -31,10 +31,10 @@ class NetworkList : public QFrame
   public:
     NetworkList(QWidget *parent);
 
-  signals:
+  Q_SIGNALS:
     void changed();
 
-  private slots:
+  private Q_SLOTS:
     void statusUpdate();
     void fillConnections();
 
@@ -52,9 +52,10 @@ class NetworkButton : public QToolButton
   Q_OBJECT
 
   public:
-    NetworkButton(NetworkManager::Connection::Ptr c = nullptr, NetworkManager::Device::Ptr dev = nullptr);
+    NetworkButton(NetworkManager::Connection::Ptr c = NetworkManager::Connection::Ptr(),
+                  NetworkManager::Device::Ptr dev = NetworkManager::Device::Ptr());
 
-  private slots:
+  private Q_SLOTS:
     void toggleNetworkStatus(bool on);
 
   private:

@@ -43,7 +43,7 @@ class DesktopWidget : public QWidget
   protected:
     virtual void paintEvent(QPaintEvent *event);
 
-  private slots:
+  private Q_SLOTS:
     void loadSettings();
     void placePanel();
     void desktopChanged();

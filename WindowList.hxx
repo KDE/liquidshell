@@ -29,7 +29,7 @@ class WindowList : public QPushButton
   public:
     WindowList(QWidget *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fillMenu();
 };
 

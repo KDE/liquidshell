@@ -39,14 +39,14 @@ class DesktopApplet : public QFrame
     const QString &getId() const { return id; }
     int isOnDesktop(int d) const { return (onDesktop == NET::OnAllDesktops) || (onDesktop == d); }
 
-  signals:
+  Q_SIGNALS:
     void geometryChanged();
     void removeThis(DesktopApplet *);
 
   protected:
     QString id;
 
-  private slots:
+  private Q_SLOTS:
     void startGeometryChange();
     void finishGeometryChange(QAbstractButton *clicked);
     void removeThisApplet();

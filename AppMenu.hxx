@@ -37,7 +37,7 @@ class AppMenu : public Launcher
   public:
     AppMenu(DesktopPanel *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill() override;
     void showMenu();
 

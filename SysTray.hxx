@@ -37,7 +37,7 @@ class SysTray : public QFrame
   public:
     SysTray(DesktopPanel *parent);
 
-  private slots:
+  private Q_SLOTS:
     void fill();
     void itemRegistered(QString service);
     void itemUnregistered(QString service);

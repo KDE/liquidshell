@@ -32,14 +32,14 @@ class SysTrayNotifyItem : public QLabel
   public:
     SysTrayNotifyItem(QWidget *parent, const QString &service, const QString &path);
 
-  signals:
+  Q_SIGNALS:
     void initialized(SysTrayNotifyItem *);
 
   protected:
     void wheelEvent(QWheelEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
 
-  private slots:
+  private Q_SLOTS:
     void startTimer();
     void fetchData();
     void fetchDataReply(QDBusPendingCallWatcher *w);
