@@ -190,8 +190,8 @@ void SysLoad::fetch()
   memFree += cached;  // show also the cached memory as free (for user applications)
   size_t memUsed = memTotal - memFree;
   size_t swapUsed = swapTotal - swapFree;
-  int memUsedPercent = memUsed * 100 / memTotal;
-  int swapUsedPercent = swapUsed * 100 / swapTotal;
+  int memUsedPercent = memTotal ? memUsed * 100 / memTotal : 0;
+  int swapUsedPercent = swapTotal ? swapUsed * 100 / swapTotal : 0;
   tip += i18n("Memory Total: %1 MB (%2 GB)"   ).arg(memTotal  / 1024).arg(memTotal  / 1024.0 / 1024.0, 0, 'f', 2);
   tip += "<br>";
   tip += i18n("Memory Used: %1 MB (%2 GB) %3%").arg(memUsed   / 1024).arg(memUsed   / 1024.0 / 1024.0, 0, 'f', 2).arg(memUsedPercent);
