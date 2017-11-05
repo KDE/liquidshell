@@ -70,7 +70,7 @@ void AppMenu::fill()
   }
 
   QDir dir(dirPath);
-  QFileInfoList entries = dir.entryInfoList();
+  QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotDot);
 
   for (const QFileInfo &info : entries)
   {
@@ -95,9 +95,7 @@ void AppMenu::fill()
     }
     else if ( info.isDir() )
     {
-      if ( info.fileName() == ".." )
-        continue;
-      else if ( info.fileName() == "." )
+      if ( info.fileName() == "." )
       {
         name = info.dir().dirName();
         icon = button->icon();
