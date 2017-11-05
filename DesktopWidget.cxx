@@ -53,7 +53,6 @@ DesktopWidget::DesktopWidget()
   setWindowIcon(QIcon::fromTheme("kde"));
 
   KWindowSystem::setType(winId(), NET::Desktop);
-  KWindowSystem::setState(winId(), NET::KeepBelow);
 
   panel = new DesktopPanel(nullptr);
   panel->show();
