@@ -67,7 +67,7 @@ void QuickLaunch::fill()
   if ( !dirPath.isEmpty() )
   {
     QDir dir(dirPath);
-    QFileInfoList entries = dir.entryInfoList();
+    QFileInfoList entries = dir.entryInfoList(QDir::Files);
     int row = 0, col = 0;
 
     for (const QFileInfo &info : entries)
@@ -91,13 +91,11 @@ void QuickLaunch::fill()
         QString iconName = desktopFile.readIcon();
         icon = QIcon::fromTheme(iconName.isEmpty() ? name : iconName);
       }
-      else if ( !info.isDir() )
+      else
       {
         QMimeDatabase db;
         icon = QIcon::fromTheme(db.mimeTypeForFile(info.absoluteFilePath()).iconName());
       }
-      else
-        continue;
 
       QToolButton *button = new QToolButton(this);
       button->setAutoRaise(true);
