@@ -16,7 +16,7 @@ Main Features:
 - Colors are used from your globally defined color theme from systemsettings
 - Can additionally be styled with css by passing the commandline option -stylesheet filename.css
   (see included example stylesheet.css)
-- uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network
+- uses existing KDE Frameworks dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network
 - Just one bottom DesktopPanel, containing:
   StartMenu (allowing drag of entries into konqueror/dolphin to configure QuickLaunch or AppMenu entries)
   QuickLaunch (showing icons for .desktop files from a configurable folder)
