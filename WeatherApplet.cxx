@@ -34,6 +34,7 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <NetworkManagerQt/Manager>
 
 //--------------------------------------------------------------------------------
 
@@ -53,6 +54,7 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
   QVBoxLayout *vbox = new QVBoxLayout(this);
   cityLabel = new QLabel(this);
   cityLabel->setObjectName("city");
+  cityLabel->setWordWrap(true);
 
   QFont f = font();
   f.setPointSizeF(fontInfo().pointSizeF() * 2);
@@ -97,21 +99,18 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
       hbox->addStretch();
   }
 
-  if ( !apiKey.isEmpty() && !cityId.isEmpty() )
-  {
-    fetchData();
-    timer.start();
-  }
-  else
-  {
-    cityLabel->setText(i18n("Not configured"));
-  }
-
   QAction *action = new QAction(this);
   action->setText(i18n("Configure..."));
   action->setIcon(QIcon::fromTheme("configure"));
   insertAction(actions()[0], action);
   connect(action, &QAction::triggered, this, &WeatherApplet::configure);
+
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged,
+          [this](NetworkManager::Connectivity connectivity)
+          {
+            if ( connectivity == NetworkManager::Full )
+              fetchData();
+          });
 }
 
 //--------------------------------------------------------------------------------
@@ -133,13 +132,21 @@ void WeatherApplet::loadConfig()
   setPalette(pal);
 
   DesktopApplet::loadConfig();
+
+  if ( apiKey.isEmpty() || cityId.isEmpty() )
+    cityLabel->setText(i18n("Not configured"));
 }
 
 //--------------------------------------------------------------------------------
 
 void WeatherApplet::showEvent(QShowEvent *)
 {
-  fetchData();
+  // only query every 10 minutes, which is the limit for free data
+  if ( !timer.isActive() )
+  {
+    timer.start();
+    fetchData();
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -167,7 +174,10 @@ void WeatherApplet::fetchData()
 void WeatherApplet::gotData(KJob *job)
 {
   if ( job->error() )
+  {
+    cityLabel->setText(job->errorString());
     return;
+  }
 
   QJsonDocument doc = QJsonDocument::fromJson(static_cast<KIO::StoredTransferJob *>(job)->data());
   if ( doc.isNull() || !doc.isObject() )
