@@ -24,6 +24,8 @@
 #include <Solid/Device>
 #include <QPointer>
 #include <KCMultiDialog>
+class QDBusMessage;
+class QDBusError;
 
 class Battery : public SysTrayItem
 {
@@ -36,6 +38,8 @@ class Battery : public SysTrayItem
     QWidget *getDetailsList() override;
 
   private Q_SLOTS:
+    void onBatteryReply(const QDBusMessage &msg);
+    void upowerPropertiesChanged(const QString &interface, const QVariantMap &properties, const QStringList &invalidated);
     void changed();
 
   private:

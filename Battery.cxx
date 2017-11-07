@@ -20,9 +20,11 @@
 #include <Battery.hxx>
 
 #include <QIcon>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusVariant>
 #include <QDebug>
 
-#include <Solid/Power>
 #include <Solid/Battery>
 
 #include <KLocalizedString>
@@ -49,7 +51,22 @@ Battery::Battery(QWidget *parent)
     hide();
   else
   {
-    connect(Solid::Power::self(), &Solid::Power::acPluggedChanged, this, &Battery::changed);
+    QDBusConnection::systemBus()
+      .connect("org.freedesktop.UPower",
+               "/org/freedesktop/UPower",
+               "org.freedesktop.DBus.Properties",
+               "PropertiesChanged",
+               this,
+               SLOT(upowerPropertiesChanged(QString, QVariantMap, QStringList)));
+
+    QDBusMessage msg =
+      QDBusMessage::createMethodCall("org.freedesktop.UPower",
+                                     "/org/freedesktop/UPower",
+                                     "org.freedesktop.DBus.Properties",
+                                     "Get");
+    msg << QLatin1String("org.freedesktop.UPower") << QLatin1String("OnBattery");
+    QDBusConnection::systemBus().callWithCallback(msg, this, SLOT(onBatteryReply(QDBusMessage)), nullptr);
+
     connect(device.as<Solid::Battery>(), &Solid::Battery::chargePercentChanged, this, &Battery::changed);
     connect(device.as<Solid::Battery>(), &Solid::Battery::chargeStateChanged, this, &Battery::changed);
     connect(device.as<Solid::Battery>(), &Solid::Battery::timeToFullChanged, this, &Battery::changed);
@@ -87,17 +104,27 @@ QString Battery::secsToHM(int secs) const
 
 //--------------------------------------------------------------------------------
 
+void Battery::onBatteryReply(const QDBusMessage &msg)
+{
+  setVisible(msg.arguments()[0].value<QDBusVariant>().variant().toBool());
+}
+
+//--------------------------------------------------------------------------------
+
+void Battery::upowerPropertiesChanged(const QString &interface, const QVariantMap &properties, const QStringList &invalidated)
+{
+  if ( properties.contains("OnBattery") )
+  {
+    setVisible(properties.value("OnBattery").toBool());
+    changed();
+  }
+}
+
+//--------------------------------------------------------------------------------
+
 void Battery::changed()
 {
   Solid::Battery *battery = device.as<Solid::Battery>();
-
-  if ( battery->remainingTime() == -1 )  // when on AC
-  {
-    hide();
-    return;
-  }
-
-  show();
 
   QString icon, tip;
 
