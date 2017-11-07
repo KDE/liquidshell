@@ -68,7 +68,7 @@ void Network::checkState()
   QString tip = i18n("Full Network Connectivity (%1)").arg(conn->connection()->name());
 
   NetworkManager::Device::Ptr device;
- 
+
   if ( conn->devices().count() )
   {
     device = NetworkManager::findNetworkInterface(conn->devices()[0]);
