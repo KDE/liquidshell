@@ -3,8 +3,7 @@ First release: Oktober 2017
 
 liquidshell is a replacement for plasmashell
 
-It does not use QtQuick but instead relies on QtWidgets,
-therefore no hardware graphics acceleration is needed.
+It does not use QtQuick but instead relies on QtWidgets.
 
 Main Features:
 - Wallpaper per virtual desktop
