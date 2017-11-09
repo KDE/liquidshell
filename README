@@ -1,9 +1,9 @@
 Author: Martin Koller, kollix@aon.at
 First release: Oktober 2017
 
-liquidshell is a replacement for plasmashell
+liquidshell is an alternative to plasmashell
 
-It does not use QtQuick but instead relies on QtWidgets.
+It does not use QtQuick but instead uses QtWidgets.
 
 Main Features:
 - Wallpaper per virtual desktop
