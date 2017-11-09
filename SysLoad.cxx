@@ -181,10 +181,9 @@ void SysLoad::fetch()
   for (int i = 0; i < cpus.count(); i++)
   {
     if ( i ) tip += "<br>";
-    tip += QString("CPU %1: %2% (%3 MHz)")
-                   .arg(i)
-                   .arg(std::min(100.0, cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent))
-                   .arg(static_cast<int>(cpus[i].MHz));
+    tip += i18n("CPU %1: %2% (%3 MHz)", i,
+                std::min(100.0, cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent),
+                static_cast<int>(cpus[i].MHz));
   }
   tip += "<hr>";
   memFree += cached;  // show also the cached memory as free (for user applications)
@@ -192,24 +191,24 @@ void SysLoad::fetch()
   size_t swapUsed = swapTotal - swapFree;
   int memUsedPercent = memTotal ? memUsed * 100 / memTotal : 0;
   int swapUsedPercent = swapTotal ? swapUsed * 100 / swapTotal : 0;
-  tip += i18n("Memory Total: %1 MB (%2 GB)"   ).arg(memTotal  / 1024).arg(memTotal  / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += i18n("Memory Total: %1 MB (%2 GB)"   , memTotal  / 1024, QString::number(memTotal  / 1024.0 / 1024.0, 'f', 2));
   tip += "<br>";
-  tip += i18n("Memory Used: %1 MB (%2 GB) %3%").arg(memUsed   / 1024).arg(memUsed   / 1024.0 / 1024.0, 0, 'f', 2).arg(memUsedPercent);
+  tip += i18n("Memory Used: %1 MB (%2 GB) %3%", memUsed   / 1024, QString::number(memUsed   / 1024.0 / 1024.0, 'f', 2), memUsedPercent);
   tip += "<br>";
-  tip += i18n("Memory Free: %1 MB (%2 GB)"    ).arg(memFree   / 1024).arg(memFree   / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += i18n("Memory Free: %1 MB (%2 GB)"    , memFree   / 1024, QString::number(memFree   / 1024.0 / 1024.0, 'f', 2));
   tip += "<hr>";
-  tip += i18n("Swap Total: %1 MB (%2 GB)"     ).arg(swapTotal / 1024).arg(swapTotal / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += i18n("Swap Total: %1 MB (%2 GB)"     , swapTotal / 1024, QString::number(swapTotal / 1024.0 / 1024.0, 'f', 2));
   tip += "<br>";
-  tip += i18n("Swap Used: %1 MB (%2 GB) %3%"  ).arg(swapUsed  / 1024).arg(swapUsed  / 1024.0 / 1024.0, 0, 'f', 2).arg(swapUsedPercent);
+  tip += i18n("Swap Used: %1 MB (%2 GB) %3%"  , swapUsed  / 1024, QString::number(swapUsed  / 1024.0 / 1024.0, 'f', 2), swapUsedPercent);
   tip += "<br>";
-  tip += i18n("Swap Free: %1 MB (%2 GB)"        ).arg(swapFree  / 1024).arg(swapFree  / 1024.0 / 1024.0, 0, 'f', 2);
+  tip += i18n("Swap Free: %1 MB (%2 GB)"      , swapFree  / 1024, QString::number(swapFree  / 1024.0 / 1024.0, 'f', 2));
 
   tip += "<hr>";
-  tip += i18n("Net send/receive: %1/%2 KB/sec")
-              .arg((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 0, 'f', 2)
-              .arg((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 0, 'f', 2);
+  tip += i18n("Net send/receive: %1/%2 KB/sec",
+              QString::number((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2),
+              QString::number((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2));
   tip += "<br>";
-  tip += i18n("Net max used: %1 KB/sec").arg((maxBytes / 1024) / (INTERVAL_MS / 1000.0));
+  tip += i18n("Net max used: %1 KB/sec", (maxBytes / 1024) / (INTERVAL_MS / 1000.0));
 
   if ( underMouse() )
     QToolTip::showText(QCursor::pos(), QLatin1String("<html>") + tip + QLatin1String("</html>"), this, rect());
