@@ -182,7 +182,7 @@ void SysLoad::fetch()
   {
     if ( i ) tip += "<br>";
     tip += i18n("CPU %1: %2% (%3 MHz)", i,
-                std::min(100.0, cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent),
+                locale().toString(std::min(100.0, cpus[i].userPercent + cpus[i].nicePercent + cpus[i].systemPercent), 'f', 1),
                 static_cast<int>(cpus[i].MHz));
   }
   tip += "<hr>";
@@ -191,24 +191,24 @@ void SysLoad::fetch()
   size_t swapUsed = swapTotal - swapFree;
   int memUsedPercent = memTotal ? memUsed * 100 / memTotal : 0;
   int swapUsedPercent = swapTotal ? swapUsed * 100 / swapTotal : 0;
-  tip += i18n("Memory Total: %1 MB (%2 GB)"   , memTotal  / 1024, QString::number(memTotal  / 1024.0 / 1024.0, 'f', 2));
+  tip += i18n("Memory Total: %1 MB (%2 GB)"   , memTotal  / 1024, locale().toString(memTotal  / 1024.0 / 1024.0, 'f', 2));
   tip += "<br>";
-  tip += i18n("Memory Used: %1 MB (%2 GB) %3%", memUsed   / 1024, QString::number(memUsed   / 1024.0 / 1024.0, 'f', 2), memUsedPercent);
+  tip += i18n("Memory Used: %1 MB (%2 GB) %3%", memUsed   / 1024, locale().toString(memUsed   / 1024.0 / 1024.0, 'f', 2), memUsedPercent);
   tip += "<br>";
-  tip += i18n("Memory Free: %1 MB (%2 GB)"    , memFree   / 1024, QString::number(memFree   / 1024.0 / 1024.0, 'f', 2));
+  tip += i18n("Memory Free: %1 MB (%2 GB)"    , memFree   / 1024, locale().toString(memFree   / 1024.0 / 1024.0, 'f', 2));
   tip += "<hr>";
-  tip += i18n("Swap Total: %1 MB (%2 GB)"     , swapTotal / 1024, QString::number(swapTotal / 1024.0 / 1024.0, 'f', 2));
+  tip += i18n("Swap Total: %1 MB (%2 GB)"     , swapTotal / 1024, locale().toString(swapTotal / 1024.0 / 1024.0, 'f', 2));
   tip += "<br>";
-  tip += i18n("Swap Used: %1 MB (%2 GB) %3%"  , swapUsed  / 1024, QString::number(swapUsed  / 1024.0 / 1024.0, 'f', 2), swapUsedPercent);
+  tip += i18n("Swap Used: %1 MB (%2 GB) %3%"  , swapUsed  / 1024, locale().toString(swapUsed  / 1024.0 / 1024.0, 'f', 2), swapUsedPercent);
   tip += "<br>";
-  tip += i18n("Swap Free: %1 MB (%2 GB)"      , swapFree  / 1024, QString::number(swapFree  / 1024.0 / 1024.0, 'f', 2));
+  tip += i18n("Swap Free: %1 MB (%2 GB)"      , swapFree  / 1024, locale().toString(swapFree  / 1024.0 / 1024.0, 'f', 2));
 
   tip += "<hr>";
   tip += i18n("Net send/receive: %1/%2 KB/sec",
-              QString::number((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2),
-              QString::number((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2));
+              locale().toString((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2),
+              locale().toString((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2));
   tip += "<br>";
-  tip += i18n("Net max used: %1 KB/sec", (maxBytes / 1024) / (INTERVAL_MS / 1000.0));
+  tip += i18n("Net max used: %1 KB/sec", locale().toString((maxBytes / 1024) / (INTERVAL_MS / 1000.0), 'f', 2));
 
   if ( underMouse() )
     QToolTip::showText(QCursor::pos(), QLatin1String("<html>") + tip + QLatin1String("</html>"), this, rect());

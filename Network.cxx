@@ -65,7 +65,7 @@ void Network::checkState()
   NetworkManager::ActiveConnection::Ptr conn(NetworkManager::primaryConnection());
   //connect(conn.data(), &NetworkManager::ActiveConnection::vpnChanged, this, &Network::checkState);
 
-  QString tip = i18n("Full Network Connectivity (%1)").arg(conn->connection()->name());
+  QString tip = i18n("Full Network Connectivity (%1)", conn->connection()->name());
 
   NetworkManager::Device::Ptr device;
 
@@ -74,7 +74,7 @@ void Network::checkState()
     device = NetworkManager::findNetworkInterface(conn->devices()[0]);
 
     if ( device && device->ipV4Config().addresses().count() )
-      tip += "\n" + i18n("IPv4 Address: %1").arg(device->ipV4Config().addresses()[0].ip().toString());
+      tip += "\n" + i18n("IPv4 Address: %1", device->ipV4Config().addresses()[0].ip().toString());
   }
 
   QPixmap pixmap;
@@ -90,8 +90,8 @@ void Network::checkState()
       int x = std::round(signalStrength / 25.0) * 25;
       pixmap = QIcon::fromTheme(QString("network-wireless-connected-%1").arg(x)).pixmap(size());
 
-      tip += "\n" + i18n("SSID: %1").arg(accessPoint->ssid());
-      tip += "\n" + i18n("Signal Strength: %1").arg(signalStrength);
+      tip += "\n" + i18n("SSID: %1", accessPoint->ssid());
+      tip += "\n" + i18n("Signal Strength: %1", signalStrength);
     }
   }
   else

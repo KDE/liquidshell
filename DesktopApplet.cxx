@@ -84,7 +84,7 @@ void DesktopApplet::startGeometryChange()
 
   oldRect = geometry();
   setWindowFlags(Qt::Window);
-  setWindowTitle(i18n("%1: Change Size & Position").arg(id));
+  setWindowTitle(i18n("%1: Change Size & Position", id));
 
   if ( onDesktop == NET::OnAllDesktops )
     KWindowSystem::setOnAllDesktops(winId(), true);

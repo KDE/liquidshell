@@ -183,9 +183,9 @@ void WeatherApplet::gotData(KJob *job)
   if ( doc.isNull() || !doc.isObject() )
     return;
 
-  QString tempUnit = "°K";
-  if ( units == "metric" ) tempUnit = "°C";
-  else if ( units == "imperial" ) tempUnit = "°F";
+  QString tempUnit = i18n("°K");
+  if ( units == "metric" ) tempUnit = i18n("°C");
+  else if ( units == "imperial" ) tempUnit = i18n("°F");
 
   QJsonObject data = doc.object();
 
@@ -198,13 +198,13 @@ void WeatherApplet::gotData(KJob *job)
     QJsonObject mainData = data["main"].toObject();
     double temp = mainData["temp"].toDouble();
 
-    tempLabel->setText(i18n("%1 %2").arg(temp, 0, 'f', 1).arg(tempUnit));
+    tempLabel->setText(i18n("%1 %2", locale().toString(temp, 'f', 1), tempUnit));
 
     double pressure = mainData["pressure"].toDouble();
-    pressureLabel->setText(i18n("%1 hPa").arg(pressure, 0, 'f', 1));
+    pressureLabel->setText(i18n("%1 hPa", locale().toString(pressure, 'f', 1)));
 
     double humidity = mainData["humidity"].toDouble();
-    humidityLabel->setText(i18n("%1 %").arg(humidity, 0, 'f', 1));
+    humidityLabel->setText(i18n("%1 %", locale().toString(humidity, 'f', 1)));
   }
 
   if ( data.contains("wind") && data["wind"].isObject() )
@@ -215,10 +215,10 @@ void WeatherApplet::gotData(KJob *job)
     if ( units == "imperial" ) speedUnit = "mi/h";
 
     double speed = windData["speed"].toDouble();
-    windSpeedLabel->setText(i18n("%1 %2").arg(speed, 0, 'f', 0).arg(speedUnit));
+    windSpeedLabel->setText(i18n("%1 %2", locale().toString(speed, 'f', 0), speedUnit));
 
     double deg = windData["deg"].toDouble();
-    windDirectionLabel->setText(i18n("%1 °").arg(deg, 0, 'f', 0));
+    windDirectionLabel->setText(i18n("%1 °", locale().toString(deg, 'f', 0)));
   }
 
   if ( data.contains("weather") && data["weather"].isArray() )
@@ -278,8 +278,8 @@ void WeatherApplet::gotData(KJob *job)
 
         int day = QDateTime::fromMSecsSinceEpoch(obj["dt"].toInt() * 1000).date().dayOfWeek();
         forecast[idx]->day->setText(QDate::shortDayName(day));
-        forecast[idx]->min->setText(i18n("%1 %2").arg(minTemp[day], 0, 'f', 1).arg(tempUnit));
-        forecast[idx]->max->setText(i18n("%1 %2").arg(maxTemp[day], 0, 'f', 1).arg(tempUnit));
+        forecast[idx]->min->setText(i18n("%1 %2", locale().toString(minTemp[day], 'f', 1), tempUnit));
+        forecast[idx]->max->setText(i18n("%1 %2", locale().toString(maxTemp[day], 'f', 1), tempUnit));
         forecast[idx]->show();
         idx++;
         if ( idx == 5 ) break;

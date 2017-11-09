@@ -111,8 +111,13 @@ void Battery::onBatteryReply(const QDBusMessage &msg)
 
 //--------------------------------------------------------------------------------
 
-void Battery::upowerPropertiesChanged(const QString &interface, const QVariantMap &properties, const QStringList &invalidated)
+void Battery::upowerPropertiesChanged(const QString &interface,
+                                      const QVariantMap &properties,
+                                      const QStringList &invalidated)
 {
+  Q_UNUSED(interface)
+  Q_UNUSED(invalidated)
+
   if ( properties.contains("OnBattery") )
   {
     setVisible(properties.value("OnBattery").toBool());
@@ -140,13 +145,13 @@ void Battery::changed()
 
       if ( battery->chargeState() == Solid::Battery::Charging )
       {
-        tip = i18n("Charging at %1%").arg(battery->chargePercent());
+        tip = i18n("Charging at %1%", battery->chargePercent());
         if ( battery->timeToFull() )  // it can be 0, so we don't know
           tip += '\n' + i18n("Time until full: ") + secsToHM(battery->timeToFull());
       }
       else
       {
-        tip = i18n("Discharging at %1%").arg(battery->chargePercent());
+        tip = i18n("Discharging at %1%", battery->chargePercent());
         if ( battery->timeToEmpty() )  // it can be 0, so we don't know
           tip += '\n' + i18n("Remaining Time: ") + secsToHM(battery->timeToEmpty());
       }
