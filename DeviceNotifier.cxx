@@ -42,8 +42,14 @@ DeviceNotifier::DeviceNotifier(QWidget *parent)
   if ( deviceList->isEmpty() )
     hide();
 
-  connect(deviceList, &DeviceList::deviceWasAdded, this, &DeviceNotifier::showDetailsList);
   connect(deviceList, &DeviceList::deviceWasRemoved, this, &DeviceNotifier::checkDeviceList);
+  connect(deviceList, &DeviceList::deviceWasAdded, [this]() { timer.start(); showDetailsList(); });
+
+  // if the user did not activate the device list window, auto-hide it
+  timer.setInterval(5000);
+  timer.setSingleShot(true);
+  connect(&timer, &QTimer::timeout, deviceList, &DeviceList::hide);
+  deviceList->installEventFilter(this);
 }
 
 //--------------------------------------------------------------------------------
@@ -67,6 +73,18 @@ void DeviceNotifier::checkDeviceList()
   }
   else if ( deviceList->isVisible() )
     showDetailsList();  // reposition
+}
+
+//--------------------------------------------------------------------------------
+
+bool DeviceNotifier::eventFilter(QObject *watched, QEvent *event)
+{
+  Q_UNUSED(watched)
+
+  if ( event->type() == QEvent::WindowActivate )
+    timer.stop();
+
+  return false;
 }
 
 //--------------------------------------------------------------------------------

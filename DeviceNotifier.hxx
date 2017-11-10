@@ -21,6 +21,7 @@
 #define _DeviceNotifier_H_
 
 #include <SysTrayItem.hxx>
+#include <QTimer>
 class DeviceList;
 
 class DeviceNotifier : public SysTrayItem
@@ -32,12 +33,14 @@ class DeviceNotifier : public SysTrayItem
 
   protected:
     QWidget *getDetailsList() override;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
   private Q_SLOTS:
     void checkDeviceList();
 
   private:
     DeviceList *deviceList = nullptr;
+    QTimer timer;
 };
 
 #endif
