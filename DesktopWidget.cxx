@@ -23,8 +23,6 @@
 #include <DiskUsageApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 
-#include <KWindowSystem>
-
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QPainter>
@@ -34,10 +32,12 @@
 #include <QCursor>
 #include <QDebug>
 
+#include <KWindowSystem>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KCMultiDialog>
+#include <KHelpMenu>
 
 //--------------------------------------------------------------------------------
 
@@ -79,6 +79,13 @@ DesktopWidget::DesktopWidget()
 
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
+  addAction(action);
+
+  action = new QAction(i18n("Help"));
+  KHelpMenu *helpMenu = new KHelpMenu(this);
+  helpMenu->action(KHelpMenu::menuHelpContents)->setVisible(false); // no handbook
+  helpMenu->action(KHelpMenu::menuWhatsThis)->setVisible(false);
+  action->setMenu(helpMenu->menu());
   addAction(action);
 
   // restore applets
