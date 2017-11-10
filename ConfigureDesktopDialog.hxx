@@ -43,6 +43,9 @@ class ConfigureDesktopDialog : public QDialog
     void buttonClicked(QAbstractButton *button);
 
   private:
+    void showImages();
+
+  private:
     Ui::ConfigureDesktopDialog ui;
     QButtonGroup buttonGroup;
     DesktopWidget::Wallpaper wallpaper;

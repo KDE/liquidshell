@@ -131,7 +131,10 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
           }
          );
 
-  QTimer::singleShot(5000,
+  int wordCount = body.splitRef(' ', QString::SkipEmptyParts).count();
+  int timeout = 4000 + 250 * wordCount;
+
+  QTimer::singleShot(timeout,
                      [item, appName, this]()
                      {
                        if ( item )

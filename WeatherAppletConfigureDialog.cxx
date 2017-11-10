@@ -30,6 +30,7 @@
 #include <QDebug>
 #include <QElapsedTimer>
 #include <QTimer>
+#include <QDir>
 
 #include <KRun>
 #include <KFilterDev>
@@ -62,6 +63,8 @@ WeatherAppletConfigureDialog::WeatherAppletConfigureDialog(WeatherApplet *parent
   QString cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) +
                      "/api.openweathermap.org/";
 
+  QDir dir;
+  dir.mkpath(cacheDir);
   QString filePath = cacheDir + "city.list.json.gz";
 
   if ( QFile::exists(filePath) )

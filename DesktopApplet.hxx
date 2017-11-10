@@ -32,15 +32,16 @@ class DesktopApplet : public QFrame
     DesktopApplet(QWidget *parent, const QString &theId);
 
     virtual void loadConfig();
-    virtual void saveConfig();
 
     bool isConfiguring() const { return buttons->isVisible(); }
 
     const QString &getId() const { return id; }
     int isOnDesktop(int d) const { return (onDesktop == NET::OnAllDesktops) || (onDesktop == d); }
 
+  public Q_SLOTS:
+    virtual void saveConfig();
+
   Q_SIGNALS:
-    void geometryChanged();
     void removeThis(DesktopApplet *);
 
   protected:

@@ -20,6 +20,7 @@
 #include <DesktopWidget.hxx>
 #include <DesktopPanel.hxx>
 #include <WeatherApplet.hxx>
+#include <DiskUsageApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 
 #include <KWindowSystem>
@@ -73,6 +74,8 @@ DesktopWidget::DesktopWidget()
   action->setMenu(menu);
   action = menu->addAction(QIcon::fromTheme("weather-clouds"), i18n("Weather"));
   connect(action, &QAction::triggered, [this]() { addApplet("Weather"); });
+  action = menu->addAction(QIcon::fromTheme("drive-harddisk"), i18n("Disk Usage"));
+  connect(action, &QAction::triggered, [this]() { addApplet("DiskUsage"); });
 
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
@@ -88,6 +91,8 @@ DesktopWidget::DesktopWidget()
 
     if ( appletName.startsWith("Weather_") )
       applet = new WeatherApplet(this, appletName);
+    else if ( appletName.startsWith("DiskUsage_") )
+      applet = new DiskUsageApplet(this, appletName);
 
     if ( applet )
     {
@@ -161,31 +166,43 @@ void DesktopWidget::loadSettings()
 
 void DesktopWidget::configureWallpaper()
 {
+  if ( dialog )  // already open, do nothing
+    return;
+
   bool showingDesktop = KWindowSystem::showingDesktop();
   KWindowSystem::setShowingDesktop(true);
 
-  Wallpaper origWallpaper = wallpapers[currentDesktop];
+  int desktopNum = currentDesktop;
+  Wallpaper origWallpaper = wallpapers[desktopNum];
 
-  ConfigureDesktopDialog dialog(this, wallpapers[currentDesktop]);
+  dialog = new ConfigureDesktopDialog(nullptr, wallpapers[desktopNum]);
 
-  connect(&dialog, &ConfigureDesktopDialog::changed,
-          [this, &dialog]() { wallpapers[currentDesktop] = dialog.getWallpaper(); desktopChanged(); });
+  connect(dialog, &ConfigureDesktopDialog::changed,
+          [=]() { wallpapers[desktopNum] = dialog->getWallpaper(); desktopChanged(); });
 
-  if ( dialog.exec() == QDialog::Rejected )
-  {
-    wallpapers[currentDesktop] = origWallpaper;
-    desktopChanged();
-  }
-  else  // store in config file
-  {
-    Wallpaper &wallpaper = wallpapers[currentDesktop];
-    KConfig config;
-    KConfigGroup group = config.group(QString("Desktop_%1").arg(currentDesktop + 1));
-    group.writeEntry("color", wallpaper.color);
-    group.writeEntry("wallpaper", wallpaper.fileName);
-    group.writeEntry("wallpaperMode", wallpaper.mode);
-  }
-  KWindowSystem::setShowingDesktop(showingDesktop);  // restore
+  connect(dialog, &QDialog::finished,
+          [=](int result)
+          {
+            if ( result == QDialog::Rejected )
+            {
+              wallpapers[desktopNum] = origWallpaper;
+              desktopChanged();
+            }
+            else  // store in config file
+            {
+              const Wallpaper &wallpaper = wallpapers[desktopNum];
+              KConfig config;
+              KConfigGroup group = config.group(QString("Desktop_%1").arg(desktopNum + 1));
+              group.writeEntry("color", wallpaper.color);
+              group.writeEntry("wallpaper", wallpaper.fileName);
+              group.writeEntry("wallpaperMode", wallpaper.mode);
+            }
+            KWindowSystem::setShowingDesktop(showingDesktop);  // restore
+            dialog->deleteLater();
+            dialog = nullptr;
+          });
+
+  dialog->show(); // not modal
 }
 
 //--------------------------------------------------------------------------------
@@ -193,11 +210,11 @@ void DesktopWidget::configureWallpaper()
 void DesktopWidget::configureDisplay()
 {
   KCMultiDialog *dialog = new KCMultiDialog(this);
+  dialog->setAttribute(Qt::WA_DeleteOnClose);
   dialog->addModule("kcm_kscreen");
   dialog->adjustSize();
   dialog->setWindowTitle(i18n("Configure Display"));
-  dialog->exec();
-  delete dialog;
+  dialog->show();  // not modal
 }
 
 //--------------------------------------------------------------------------------
@@ -296,9 +313,19 @@ void DesktopWidget::paintEvent(QPaintEvent *event)
 
 void DesktopWidget::addApplet(const QString &type)
 {
+  DesktopApplet *applet = nullptr;
+
   if ( type == "Weather" )
   {
-    DesktopApplet *applet = new WeatherApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+    applet = new WeatherApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+  }
+  else if ( type == "DiskUsage" )
+  {
+    applet = new DiskUsageApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+  }
+
+  if ( applet )
+  {
     applets.append(applet);
     applet->loadConfig();  // defaults + size
     applet->move(QCursor::pos());
@@ -306,6 +333,7 @@ void DesktopWidget::addApplet(const QString &type)
     applet->show();
     connect(applet, &DesktopApplet::removeThis, this, &DesktopWidget::removeApplet);
   }
+
   saveAppletsList();
 }
 

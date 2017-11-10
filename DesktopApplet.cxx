@@ -34,7 +34,7 @@
 DesktopApplet::DesktopApplet(QWidget *parent, const QString &theId)
   : QFrame(parent), id(theId)
 {
-  setFrameShape(QFrame::StyledPanel);
+  setFrameShape(QFrame::NoFrame);
   setContextMenuPolicy(Qt::ActionsContextMenu);
 
   QAction *action = new QAction(this);
@@ -61,8 +61,15 @@ void DesktopApplet::loadConfig()
 {
   KConfig config;
   KConfigGroup group = config.group(id);
-  setGeometry(group.readEntry("rect", QRect(30, 30, 600, 400)));
+  setGeometry(group.readEntry("rect", QRect(QPoint(30, 30), sizeHint())));
   onDesktop = group.readEntry("onDesktop", int(NET::OnAllDesktops));
+
+  QColor textCol = group.readEntry("textCol", QColor(Qt::white));
+  QColor backCol = group.readEntry("backCol", QColor(32, 56, 92, 190));
+  QPalette pal;
+  pal.setColor(foregroundRole(), textCol);
+  pal.setColor(backgroundRole(), backCol);
+  setPalette(pal);
 }
 
 //--------------------------------------------------------------------------------
@@ -73,6 +80,8 @@ void DesktopApplet::saveConfig()
   KConfigGroup group = config.group(id);
   group.writeEntry("rect", geometry());
   group.writeEntry("onDesktop", onDesktop);
+  group.writeEntry("textCol", palette().color(foregroundRole()));
+  group.writeEntry("backCol", palette().color(backgroundRole()));
 }
 
 //--------------------------------------------------------------------------------

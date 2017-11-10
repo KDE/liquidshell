@@ -39,6 +39,7 @@ class WeatherApplet : public DesktopApplet
     WeatherApplet(QWidget *parent, const QString &theId);
 
     void loadConfig() override;
+    QSize sizeHint() const override;
 
   protected:
     void showEvent(QShowEvent *event) override;

@@ -25,6 +25,7 @@
 #include <QVector>
 class DesktopPanel;
 class DesktopApplet;
+class ConfigureDesktopDialog;
 
 class DesktopWidget : public QWidget
 {
@@ -56,7 +57,8 @@ class DesktopWidget : public QWidget
     void saveAppletsList();
 
   private:
-    DesktopPanel *panel;
+    DesktopPanel *panel = nullptr;
+    ConfigureDesktopDialog *dialog = nullptr;
 
     QVector<Wallpaper> wallpapers;
     int currentDesktop = -1;

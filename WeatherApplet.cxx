@@ -48,7 +48,6 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
   setAutoFillBackground(true);
 
   timer.setInterval(600000); // 10min smallest update interval for free data
-
   connect(&timer, &QTimer::timeout, this, &WeatherApplet::fetchData);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);
@@ -115,6 +114,13 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
 
 //--------------------------------------------------------------------------------
 
+QSize WeatherApplet::sizeHint() const
+{
+  return QSize(700, 300);
+}
+
+//--------------------------------------------------------------------------------
+
 void WeatherApplet::loadConfig()
 {
   KConfig config;
@@ -123,13 +129,6 @@ void WeatherApplet::loadConfig()
   group = config.group(id);
   cityId = group.readEntry("cityId", QString());
   units = group.readEntry("units", QString("metric"));
-
-  QColor textCol = group.readEntry("textCol", QColor(Qt::white));
-  QColor backCol = group.readEntry("backCol", QColor(32, 56, 92, 190));
-  QPalette pal;
-  pal.setColor(foregroundRole(), textCol);
-  pal.setColor(backgroundRole(), backCol);
-  setPalette(pal);
 
   DesktopApplet::loadConfig();
 
@@ -383,15 +382,14 @@ void WeatherApplet::configure()
   connect(dialog.data(), &QDialog::accepted,
           [this]()
           {
+            saveConfig();
+
             KConfig config;
             KConfigGroup group = config.group("Weather");
             group.writeEntry("apiKey", apiKey);
             group = config.group(id);
             group.writeEntry("cityId", cityId);
             group.writeEntry("units", units);
-
-            group.writeEntry("textCol", palette().color(foregroundRole()));
-            group.writeEntry("backCol", palette().color(backgroundRole()));
 
             if ( !apiKey.isEmpty() && !cityId.isEmpty() )
             {
