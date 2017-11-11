@@ -33,7 +33,10 @@ class NotifyItem : public QFrame
 
   public:
     NotifyItem(QWidget *parent, uint theid, const QString &app,
-               const QString &summary, const QString &body, const QIcon &icon);
+               const QString &summary, const QString &body, const QIcon &icon,
+               const QStringList &actions);
+
+    uint getId() const { return id; }
 
   private:
     QLabel *timeLabel, *iconLabel, *textLabel;
@@ -50,7 +53,10 @@ class NotificationList : public QScrollArea
   public:
     NotificationList(QWidget *parent);
 
-    void addItem(uint id, const QString &appName, const QString &summary, const QString &body, const QIcon &icon);
+    void addItem(uint id, const QString &appName, const QString &summary, const QString &body,
+                 const QIcon &icon, const QStringList &actions, const QVariantMap &hints, int timeout);
+
+    void closeItem(uint id);
 
     int itemCount() const { return numItems; }
 
@@ -62,6 +68,7 @@ class NotificationList : public QScrollArea
     QVBoxLayout *listVbox;
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
     int numItems = 0;
+    QVector<NotifyItem *> items;
 };
 
 #endif

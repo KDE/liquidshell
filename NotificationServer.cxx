@@ -49,6 +49,7 @@ NotificationServer::NotificationServer(QWidget *parent)
   connect(notificationList, &NotificationList::itemsCountChanged,
           [this]()
           {
+            show();
             setToolTip(i18np("%1 notification", "%1 notifications", notificationList->itemCount()));
           }
          );
@@ -67,6 +68,7 @@ QStringList NotificationServer::GetCapabilities()
            << "body-markup"
            << "icon-static"
            << "persistence"
+           << "actions"
            ;
 }
 
@@ -74,7 +76,7 @@ QStringList NotificationServer::GetCapabilities()
 
 void NotificationServer::CloseNotification(uint id)
 {
-  qDebug() << "close notif" << id;
+  notificationList->closeItem(id);
 }
 
 //--------------------------------------------------------------------------------
@@ -93,11 +95,15 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
                                 const QString &summary, const QString &theBody, const QStringList &actions,
                                 const QVariantMap &hints, int timeout)
 {
-  //qDebug() << "app" << app_name << "summary" << summary << "body" << theBody << "timeout" << timeout << "replaceId" << replaces_id;
+  //qDebug() << "app" << app_name << "summary" << summary << "body" << theBody << "timeout" << timeout << "replaceId" << replaces_id
+  //         << "hints" << hints << "actions" << actions;
+
   QString body(theBody);
   body.replace("\n", "<br>");
-  notificationList->addItem(notifyId, app_name, summary, body, QIcon::fromTheme(app_icon));
-  show();
+  notificationList->addItem(notifyId, app_name, summary, body, QIcon::fromTheme(app_icon), actions, hints, timeout);
+
+  if ( replaces_id != 0 )
+    notificationList->closeItem(replaces_id);
 
   return notifyId++;
 }

@@ -23,11 +23,14 @@
 #include <QHBoxLayout>
 #include <QScrollArea>
 #include <QToolButton>
+#include <QPushButton>
 #include <QPointer>
 #include <QTimer>
 #include <QTime>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QDebug>
 
 #include <KRun>
@@ -39,7 +42,8 @@ static const Qt::WindowFlags POPUP_FLAGS = Qt::Tool | Qt::WindowStaysOnTopHint |
 //--------------------------------------------------------------------------------
 
 NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
-                       const QString &summary, const QString &body, const QIcon &icon)
+                       const QString &summary, const QString &body, const QIcon &icon,
+                       const QStringList &actions)
   : QFrame(parent, POPUP_FLAGS), id(theId), appName(app)
 {
   setFrameShape(QFrame::StyledPanel);
@@ -49,6 +53,8 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   iconLabel = new QLabel;
   vbox->addWidget(timeLabel, 0, Qt::AlignTop | Qt::AlignHCenter);
   vbox->addWidget(iconLabel, 0, Qt::AlignTop | Qt::AlignHCenter);
+
+  QVBoxLayout *centerBox = new QVBoxLayout;
 
   QHBoxLayout *hbox = new QHBoxLayout(this);
   textLabel = new QLabel;
@@ -64,8 +70,39 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   textLabel->setMaximumWidth(600);
   textLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
+  centerBox->addWidget(textLabel);
+
+  if ( actions.count() )
+  {
+    QHBoxLayout *actionBox = new QHBoxLayout;
+    centerBox->addLayout(actionBox);
+
+    for (int i = 0; i < actions.count(); i++)
+    {
+      if ( (i % 2) != 0 )  // id
+      {
+        QPushButton *button = new QPushButton;
+        button->setText(actions[i]);
+        actionBox->addWidget(button);
+        QString key = actions[i - 1];
+
+        connect(button, &QPushButton::clicked,
+                [this, key]()
+                {
+                  QDBusMessage msg =
+                      QDBusMessage::createSignal("/org/freedesktop/Notifications",
+                                                 "org.freedesktop.Notifications",
+                                                 "ActionInvoked");
+                  msg.setArguments(QList<QVariant>() << id << key);
+
+                  QDBusConnection::sessionBus().send(msg);
+                });
+      }
+    }
+  }
+
   hbox->addLayout(vbox);
-  hbox->addWidget(textLabel);
+  hbox->addLayout(centerBox);
   hbox->addWidget(closeButton, 0, Qt::AlignTop);
 
   iconLabel->setFixedSize(32, 32);
@@ -102,12 +139,10 @@ NotificationList::NotificationList(QWidget *parent)
 
 //--------------------------------------------------------------------------------
 
-void NotificationList::addItem(uint id, const QString &appName, const QString &summary, const QString &body, const QIcon &icon)
+void NotificationList::addItem(uint id, const QString &appName, const QString &summary, const QString &body,
+                               const QIcon &icon, const QStringList &actions, const QVariantMap &hints, int timeout)
 {
-  numItems++;
-  emit itemsCountChanged();
-
-  QPointer<NotifyItem> item = new NotifyItem(nullptr, id, appName, summary, body, icon);
+  QPointer<NotifyItem> item = new NotifyItem(nullptr, id, appName, summary, body, icon, actions);
   item->resize(500, item->sizeHint().height());
   KWindowSystem::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
 
@@ -118,40 +153,106 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
   item->move(point);
   item->show();
 
-  connect(item.data(), &NotifyItem::destroyed,
-          [this]()
-          {
-            if ( --numItems == 0 )
-            {
-              hide();
-              emit listNowEmpty();
-            }
-            else
-              emit itemsCountChanged();
-          }
-         );
+  items.append(item.data());
+  connect(item.data(), &NotifyItem::destroyed, [this](QObject *obj) { items.removeOne(static_cast<NotifyItem *>(obj)); });
 
   int wordCount = body.splitRef(' ', QString::SkipEmptyParts).count();
-  int timeout = 4000 + 250 * wordCount;
+
+  bool neverExpires = timeout == 0;  // according to spec
+
+  if ( timeout <= 0 )
+  {
+    timeout = 4000 + 250 * wordCount;
+
+    if ( actions.count() )
+      timeout += 15000;  // give user more time to think ...
+  }
+
+  // 0=low, 1=normal, 2=critical
+  if ( hints.contains("urgency") && (hints["urgency"].toInt() == 2) )
+  {
+    neverExpires = true;
+    timeout = 20000;  // just show it longer since its urgent
+  }
+
+  bool transient = hints.contains("transient") ? hints["transient"].toBool() : false;
+
+  // if there are actions, show it longer
+  if ( actions.count() || neverExpires )
+    transient = false;
+
+  // exceptions ...
+  if ( transient && hints.contains("x-kde-eventId") )
+  {
+    // I'd like to keep this much longer
+    if ( hints["x-kde-eventId"].toString() == "new-email" )
+      transient = false;
+  }
+
+  if ( !transient )
+  {
+    // transient notification shall not show the "i" icon in SysTray, since
+    // it will be hidden shortly after again as the item will not be persisted
+
+    numItems++;
+    emit itemsCountChanged();
+
+    connect(item.data(), &NotifyItem::destroyed,
+            [this]()
+            {
+              if ( --numItems == 0 )
+              {
+                hide();
+                emit listNowEmpty();
+              }
+              else
+                emit itemsCountChanged();
+            }
+           );
+  }
 
   QTimer::singleShot(timeout,
-                     [item, appName, this]()
+                     [=]()
                      {
                        if ( item )
                        {
-                         listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
-                         item->show();
+                         if ( transient )
+                         {
+                           item->deleteLater();
+                         }
+                         else
+                         {
+                           listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
+                           item->show();
 
-                         setWidgetResizable(true);  // to update scrollbars, else next line does not work
-                         ensureWidgetVisible(item);
+                           setWidgetResizable(true);  // to update scrollbars, else next line does not work
+                           ensureWidgetVisible(item);
 
-                         if ( !appTimeouts.contains(appName) )
-                           appTimeouts.insert(appName, 10);  // default: 10 minutes lifetime
+                           if ( !neverExpires )
+                           {
+                             if ( !appTimeouts.contains(appName) )
+                               appTimeouts.insert(appName, 10);  // default: 10 minutes lifetime
 
-                         QTimer::singleShot(appTimeouts[appName] * 60 * 1000, item.data(), &NotifyItem::deleteLater);
+                             QTimer::singleShot(appTimeouts[appName] * 60 * 1000, item.data(), &NotifyItem::deleteLater);
+                           }
+                         }
                        }
                      }
                     );
+}
+
+//--------------------------------------------------------------------------------
+
+void NotificationList::closeItem(uint id)
+{
+  for (NotifyItem *item : items)
+  {
+    if ( item->getId() == id )
+    {
+      item->deleteLater();
+      break;
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------
