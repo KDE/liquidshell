@@ -93,7 +93,7 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
                       QDBusMessage::createSignal("/org/freedesktop/Notifications",
                                                  "org.freedesktop.Notifications",
                                                  "ActionInvoked");
-                  msg.setArguments(QList<QVariant>() << id << key);
+                  msg << id << key;
 
                   QDBusConnection::sessionBus().send(msg);
                 });
@@ -189,52 +189,46 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
       transient = false;
   }
 
-  if ( !transient )
-  {
-    // transient notification shall not show the "i" icon in SysTray, since
-    // it will be hidden shortly after again as the item will not be persisted
+  numItems++;
+  emit itemsCountChanged();
 
-    numItems++;
-    emit itemsCountChanged();
-
-    connect(item.data(), &NotifyItem::destroyed,
-            [this]()
+  connect(item.data(), &NotifyItem::destroyed,
+          [this]()
+          {
+            if ( --numItems == 0 )
             {
-              if ( --numItems == 0 )
-              {
-                hide();
-                emit listNowEmpty();
-              }
-              else
-                emit itemsCountChanged();
+              hide();
+              emit listNowEmpty();
             }
-           );
-  }
+            else
+              emit itemsCountChanged();
+          }
+         );
 
   QTimer::singleShot(timeout,
                      [=]()
                      {
                        if ( item )
                        {
-                         if ( transient )
+                         listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
+                         item->show();
+
+                         setWidgetResizable(true);  // to update scrollbars, else next line does not work
+                         ensureWidgetVisible(item);
+
+                         if ( !neverExpires )
                          {
-                           item->deleteLater();
-                         }
-                         else
-                         {
-                           listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
-                           item->show();
+                           if ( !appTimeouts.contains(appName) )
+                             appTimeouts.insert(appName, 10);  // default: 10 minutes lifetime
 
-                           setWidgetResizable(true);  // to update scrollbars, else next line does not work
-                           ensureWidgetVisible(item);
+                           int expireTimeout;
 
-                           if ( !neverExpires )
-                           {
-                             if ( !appTimeouts.contains(appName) )
-                               appTimeouts.insert(appName, 10);  // default: 10 minutes lifetime
+                           if ( transient )
+                             expireTimeout = 2 * 60 * 1000;  // still keep it a short time
+                           else
+                             expireTimeout = appTimeouts[appName] * 60 * 1000;
 
-                             QTimer::singleShot(appTimeouts[appName] * 60 * 1000, item.data(), &NotifyItem::deleteLater);
-                           }
+                           QTimer::singleShot(expireTimeout, item.data(), &NotifyItem::deleteLater);
                          }
                        }
                      }
