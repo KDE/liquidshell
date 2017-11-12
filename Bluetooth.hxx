@@ -32,6 +32,7 @@ class Bluetooth : public SysTrayItem
 
   public:
     Bluetooth(QWidget *parent);
+    ~Bluetooth() override;
 
   protected:
     QWidget *getDetailsList() override;
@@ -41,6 +42,7 @@ class Bluetooth : public SysTrayItem
 
   private:
     BluezQt::Manager *manager;
+    BluezQt::InitManagerJob *job;
     QPointer<KCMultiDialog> dialog;
 };
 

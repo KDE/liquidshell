@@ -32,7 +32,7 @@ Bluetooth::Bluetooth(QWidget *parent)
   : SysTrayItem(parent)
 {
   manager = new BluezQt::Manager(this);
-  BluezQt::InitManagerJob *job = manager->init();
+  job = manager->init();
   job->start();
   connect(job, &BluezQt::InitManagerJob::result, this, &Bluetooth::changed);
 
@@ -45,8 +45,18 @@ Bluetooth::Bluetooth(QWidget *parent)
 
 //--------------------------------------------------------------------------------
 
+Bluetooth::~Bluetooth()
+{
+  if ( job )
+    job->kill();
+}
+
+//--------------------------------------------------------------------------------
+
 void Bluetooth::changed()
 {
+  job = nullptr;
+
   if ( manager->adapters().isEmpty() || !manager->isOperational() )
   {
     hide();  // no BT
