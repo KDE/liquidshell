@@ -22,6 +22,7 @@
 #include <WeatherApplet.hxx>
 #include <DiskUsageApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
+#include <OnScreenVolume.hxx>
 
 #include <QApplication>
 #include <QDesktopWidget>
@@ -122,6 +123,8 @@ DesktopWidget::DesktopWidget()
 
   connect(QApplication::desktop(), &QDesktopWidget::resized,
           [this]() { setFixedSize(QApplication::desktop()->size()); placePanel(); desktopChanged(); });
+
+  new OnScreenVolume(this);
 }
 
 //--------------------------------------------------------------------------------

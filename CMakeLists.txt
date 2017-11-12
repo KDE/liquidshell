@@ -26,6 +26,7 @@ set(SOURCES
     desktop.cxx
     DesktopWidget.cxx
     DesktopPanel.cxx
+    OnScreenVolume.cxx
     ConfigureDesktopDialog.cxx
     StartMenu.cxx
     Launcher.cxx
