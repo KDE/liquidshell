@@ -147,7 +147,7 @@ void SysTray::fill()
 
 void SysTray::registerWatcher()
 {
-  QDBusMessage msg = 
+  QDBusMessage msg =
       QDBusMessage::createMethodCall(WATCHER_SERVICE, "/StatusNotifierWatcher",
                                      "org.kde.StatusNotifierWatcher",
                                      "RegisterStatusNotifierHost");
