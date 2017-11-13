@@ -53,6 +53,7 @@ set(SOURCES
     DeviceList.cxx
     Battery.cxx
     Bluetooth.cxx
+    PopupMenu.cxx
 
     DesktopApplet.cxx
     WeatherApplet.cxx

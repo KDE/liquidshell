@@ -17,39 +17,26 @@
   along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _StartMenu_H_
-#define _StartMenu_H_
+#ifndef _PopupMenu_H_
+#define _PopupMenu_H_
 
-#include <QPushButton>
+// A QMenu with drag functionality
+
 #include <QMenu>
 
-#include <KServiceGroup>
-
-#include <DesktopPanel.hxx>
-
-class StartMenu : public QPushButton
+class PopupMenu : public QMenu
 {
   Q_OBJECT
 
-  Q_PROPERTY(QString themeIcon READ getThemeIcon WRITE setThemeIcon)
-
   public:
-    StartMenu(DesktopPanel *parent);
-
-    QString getThemeIcon() const { return themeIcon; }
-    void setThemeIcon(const QString &icon);
+    PopupMenu(QWidget *parent) : QMenu(parent), dragStartPos(-1, -1) { }
 
   protected:
-    void contextMenuEvent(QContextMenuEvent *event) override;
-
-  private Q_SLOTS:
-    void fill();
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 
   private:
-    void fillFromGroup(QMenu *menu, KServiceGroup::Ptr group);
-
-  private:
-    QString themeIcon;
+    QPoint dragStartPos;
 };
 
 #endif

@@ -18,9 +18,9 @@
 */
 
 #include <WindowList.hxx>
+#include <PopupMenu.hxx>
 
 #include <QIcon>
-#include <QMenu>
 
 #include <KWindowSystem>
 
@@ -33,8 +33,8 @@ WindowList::WindowList(QWidget *parent)
   setMaximumWidth(22);
   setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
 
-  setMenu(new QMenu(this));
-  connect(menu(), &QMenu::aboutToShow, this, &WindowList::fillMenu);
+  setMenu(new PopupMenu(this));
+  connect(menu(), &PopupMenu::aboutToShow, this, &WindowList::fillMenu);
 }
 
 //--------------------------------------------------------------------------------
@@ -58,8 +58,11 @@ void WindowList::fillMenu()
           (win.windowType(NET::DockMask) != NET::Dock) &&
            !(win.state() & NET::SkipTaskbar) )
       {
-        menu()->addAction(KWindowSystem::icon(wid, 22, 22, true), win.name(),
-                          [wid]() { KWindowSystem::forceActiveWindow(wid); });
+        QAction *action =
+            menu()->addAction(KWindowSystem::icon(wid, 22, 22, true), win.name(),
+                              [wid]() { KWindowSystem::forceActiveWindow(wid); });
+
+        action->setData(static_cast<int>(wid));
       }
     }
   }
