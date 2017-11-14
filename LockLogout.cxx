@@ -21,8 +21,8 @@
 
 #include <QGridLayout>
 #include <QIcon>
-
-#include <cstdlib>
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 #include <KLocalizedString>
 
@@ -49,14 +49,22 @@ LockLogout::LockLogout(DesktopPanel *parent)
   lock->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
   logout->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
-  connect(lock, &QToolButton::clicked, []() { (void)std::system("xdg-screensaver lock >/dev/null 2>/dev/null&"); });
+  connect(lock, &QToolButton::clicked,
+          []()
+          {
+            QDBusConnection::sessionBus().send(
+                QDBusMessage::createMethodCall("org.freedesktop.ScreenSaver", "/ScreenSaver",
+                                               "org.freedesktop.ScreenSaver", "Lock"));
+          });
 
   connect(logout, &QToolButton::clicked,
           []()
           {
-            (void)std::system("dbus-send --type=method_call --dest=org.kde.ksmserver "
-                              "/KSMServer org.kde.KSMServerInterface.logout "
-                              "int32:-1 int32:0 int32:0");
+            QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
+                                                              "org.kde.KSMServerInterface", "logout");
+            msg << -1 << 0 << 0;
+
+            QDBusConnection::sessionBus().send(msg);
           });
 
   fill(parent->getRows());

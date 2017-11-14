@@ -22,6 +22,8 @@
 
 #include <QAction>
 #include <QContextMenuEvent>
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 #include <KRun>
 #include <KSycoca>
@@ -71,8 +73,9 @@ void StartMenu::fill()
   connect(action, &QAction::triggered,
           []()
           {
-            std::system("dbus-send --type=method_call --dest=org.kde.ksmserver "
-                        "/KSMServer org.kde.KSMServerInterface.openSwitchUserDialog");
+            QDBusConnection::sessionBus().send(
+                QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
+                                               "org.kde.KSMServerInterface", "openSwitchUserDialog"));
           });
 
   KService::Ptr sysSettings = KService::serviceByDesktopName("systemsettings");
@@ -86,8 +89,9 @@ void StartMenu::fill()
   connect(action, &QAction::triggered,
           []()
           {
-            std::system("dbus-send --type=method_call --dest=org.kde.krunner "
-                        "/App org.kde.krunner.App.display");
+            QDBusConnection::sessionBus().send(
+                QDBusMessage::createMethodCall("org.kde.krunner", "/App",
+                                               "org.kde.krunner.App", "display"));
           });
 }
 
