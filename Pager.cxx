@@ -98,7 +98,6 @@ void Pager::fill()
 
     b->setCheckable(true);
     b->setFocusPolicy(Qt::NoFocus);
-    b->setMaximumWidth(50);
     group->addButton(b);
     buttons.append(b);
 

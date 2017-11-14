@@ -34,6 +34,8 @@ class PagerButton : public QPushButton
 
     int getDesktop() const { return desktop; }
 
+    QSize sizeHint() const override;
+
   protected:
     void paintEvent(QPaintEvent *event) override;
     void dragEnterEvent(QDragEnterEvent *event) override;

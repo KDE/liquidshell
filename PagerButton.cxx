@@ -39,7 +39,7 @@ PagerButton::PagerButton(int num)
   setText(KWindowSystem::desktopName(desktop).isEmpty() ?
           QString::number(desktop) : KWindowSystem::desktopName(desktop));
 
-  setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+  setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
   setAcceptDrops(true);
   dragDropTimer.setSingleShot(true);
   dragDropTimer.setInterval(1000);
@@ -59,6 +59,16 @@ PagerButton::PagerButton(int num)
 
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
+}
+
+//--------------------------------------------------------------------------------
+
+QSize PagerButton::sizeHint() const
+{
+  QSize s = fontMetrics().size(0, text());
+  s.setWidth(std::max(45, s.width() + 10));
+  s.setHeight(QPushButton::sizeHint().height());
+  return s;
 }
 
 //--------------------------------------------------------------------------------
