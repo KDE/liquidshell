@@ -25,6 +25,8 @@
 
 #include <QIcon>
 #include <QMouseEvent>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -43,6 +45,10 @@ Network::Network(QWidget *parent)
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionRemoved, this, &Network::checkState);
+
+  QDBusConnection::sessionBus().send(
+      QDBusMessage::createMethodCall("org.kde.kded5", "/modules/networkmanagement",
+                                     "org.kde.plasmanetworkmanagement", "init"));
 }
 
 //--------------------------------------------------------------------------------
