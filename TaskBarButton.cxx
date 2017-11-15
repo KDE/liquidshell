@@ -34,6 +34,7 @@
 #include <QMimeData>
 #include <QGuiApplication>
 #include <QStyleHints>
+#include <QPointer>
 
 #include <KSqueezedTextLabel>
 #include <KColorScheme>
@@ -101,6 +102,8 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
 {
   if ( event->button() == Qt::LeftButton )
   {
+    KWindowSystem::setShowingDesktop(false);
+
     if ( wid == KWindowSystem::activeWindow() )
       KWindowSystem::minimizeWindow(wid);
     else
@@ -112,7 +115,7 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
   else if ( event->button() == Qt::RightButton )
   {
     // context menu to close window etc.
-    QScopedPointer<QMenu> menu(new QMenu(this));
+    QPointer<QMenu> menu(new QMenu(this));
 
     if ( KWindowSystem::numberOfDesktops() > 1 )
     {
@@ -133,6 +136,7 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
                    );
 
     menu->exec(event->globalPos());
+    delete menu;
   }
 }
 
