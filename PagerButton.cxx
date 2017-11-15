@@ -53,6 +53,9 @@ PagerButton::PagerButton(int num)
   connect(KWindowSystem::self(), &KWindowSystem::windowRemoved,
           this, &PagerButton::createPixmap);
 
+  connect(KWindowSystem::self(), &KWindowSystem::stackingOrderChanged,
+          this, &PagerButton::createPixmap);
+
   connect(KWindowSystem::self(), &KWindowSystem::desktopNamesChanged,
           [this]() { KWindowSystem::desktopName(desktop).isEmpty() ?
                      QString::number(desktop) : KWindowSystem::desktopName(desktop); });
@@ -95,10 +98,12 @@ void PagerButton::paintEvent(QPaintEvent *event)
 void PagerButton::createPixmap()
 {
   firstPixmap = QPixmap();
-  QList<WId> windows = KWindowSystem::windows();
+  QList<WId> windows = KWindowSystem::stackingOrder();
 
-  for (WId wid : windows)
+  // from top to bottom
+  for (int i = windows.count() - 1; i >= 0; i--)
   {
+    WId wid = windows[i];
     KWindowInfo win(wid, NET::WMDesktop | NET::WMWindowType | NET::WMState | NET::WMIcon);
 
     if ( win.valid(true) && win.isOnDesktop(desktop) &&
