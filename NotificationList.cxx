@@ -37,7 +37,7 @@
 #include <KLocalizedString>
 #include <KWindowSystem>
 
-static const Qt::WindowFlags POPUP_FLAGS = Qt::Tool | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint;
+static const Qt::WindowFlags POPUP_FLAGS = Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint;
 
 //--------------------------------------------------------------------------------
 
@@ -146,15 +146,9 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
   item->resize(500, item->sizeHint().height());
   KWindowSystem::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
 
-  QPoint point = parentWidget()->mapToGlobal(parentWidget()->pos());
-  QRect screen = QApplication::desktop()->availableGeometry(this);
-  point.setX(std::min(point.x(), screen.x() + screen.width() - item->sizeHint().width()));
-  point.setY(screen.bottom() - item->sizeHint().height());
-  item->move(point);
-  item->show();
-
   items.append(item.data());
-  connect(item.data(), &NotifyItem::destroyed, [this](QObject *obj) { items.removeOne(static_cast<NotifyItem *>(obj)); });
+
+  placeItems();
 
   int wordCount = body.splitRef(' ', QString::SkipEmptyParts).count();
 
@@ -193,8 +187,11 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
   emit itemsCountChanged();
 
   connect(item.data(), &NotifyItem::destroyed,
-          [this]()
+          [this](QObject *obj)
           {
+            items.removeOne(static_cast<NotifyItem *>(obj));
+            placeItems();
+
             if ( --numItems == 0 )
             {
               hide();
@@ -212,6 +209,8 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                        {
                          listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
                          item->show();
+
+                         placeItems();  // reorder the remaining ones
 
                          setWidgetResizable(true);  // to update scrollbars, else next line does not work
                          ensureWidgetVisible(item);
@@ -245,6 +244,30 @@ void NotificationList::closeItem(uint id)
     {
       item->deleteLater();
       break;
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void NotificationList::placeItems()
+{
+  QRect screen = QApplication::desktop()->availableGeometry(this);
+  QPoint point = parentWidget()->mapToGlobal(parentWidget()->pos());
+  int x = point.x();
+  int y = screen.bottom();
+
+  for (NotifyItem *item : items)
+  {
+    if ( !item->parentWidget() )  // temporary item not in the list yet
+    {
+      y -= item->sizeHint().height();
+      y -= 5; // a small space
+
+      point.setX(std::min(x, screen.x() + screen.width() - item->sizeHint().width()));
+      point.setY(y);
+      item->move(point);
+      item->show();
     }
   }
 }

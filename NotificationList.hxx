@@ -65,6 +65,9 @@ class NotificationList : public QScrollArea
     void listNowEmpty();
 
   private:
+    void placeItems();
+
+  private:
     QVBoxLayout *listVbox;
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
     int numItems = 0;
