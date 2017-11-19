@@ -59,6 +59,8 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   QHBoxLayout *hbox = new QHBoxLayout(this);
   textLabel = new QLabel;
   QToolButton *closeButton = new QToolButton;
+  // easier to click with larger size
+  closeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
   closeButton->setAutoRaise(true);
   closeButton->setIcon(QIcon::fromTheme("window-close"));
   connect(closeButton, &QToolButton::clicked, this, &NotifyItem::deleteLater);
@@ -103,7 +105,7 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
 
   hbox->addLayout(vbox);
   hbox->addLayout(centerBox);
-  hbox->addWidget(closeButton, 0, Qt::AlignTop);
+  hbox->addWidget(closeButton);
 
   iconLabel->setFixedSize(32, 32);
   iconLabel->setPixmap(icon.pixmap(iconLabel->size()));
@@ -117,22 +119,40 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
 }
 
 //--------------------------------------------------------------------------------
+
+void NotifyItem::destroySysResources()
+{
+  destroy();
+}
+
+//--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
 NotificationList::NotificationList(QWidget *parent)
-  : QScrollArea(parent)
+  : QWidget(parent)
 {
   setWindowFlags(windowFlags() | Qt::Tool);
   setWindowTitle(i18n("Notifications"));
-  setWidgetResizable(true);
+
+  scrollArea = new QScrollArea;
+  scrollArea->setWidgetResizable(true);
 
   QWidget *listWidget = new QWidget;
   listVbox = new QVBoxLayout(listWidget);
   listVbox->setContentsMargins(QMargins());
   listVbox->addStretch();
 
-  setWidget(listWidget);
+  scrollArea->setWidget(listWidget);
+
+  QVBoxLayout *vbox = new QVBoxLayout(this);
+  vbox->setContentsMargins(QMargins());
+  vbox->addWidget(scrollArea);
+
+  QPushButton *clearButton = new QPushButton;
+  clearButton->setIcon(QIcon::fromTheme("edit-clear-list"));
+  connect(clearButton, &QPushButton::clicked, [this]() { for (NotifyItem *item : items) item->deleteLater(); });
+  vbox->addWidget(clearButton);
 
   resize(500, 300);
 }
@@ -207,13 +227,16 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                      {
                        if ( item )
                        {
+                         // sometimes there were some leftover/half-functioning windows. This seems to avoid that
+                         item->destroySysResources();
+
                          listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
                          item->show();
 
                          placeItems();  // reorder the remaining ones
 
-                         setWidgetResizable(true);  // to update scrollbars, else next line does not work
-                         ensureWidgetVisible(item);
+                         scrollArea->setWidgetResizable(true);  // to update scrollbars, else next line does not work
+                         scrollArea->ensureWidgetVisible(item);
 
                          if ( !neverExpires )
                          {

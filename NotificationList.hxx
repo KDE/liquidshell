@@ -38,6 +38,8 @@ class NotifyItem : public QFrame
 
     uint getId() const { return id; }
 
+    void destroySysResources();
+
   private:
     QLabel *timeLabel, *iconLabel, *textLabel;
     uint id;
@@ -46,7 +48,7 @@ class NotifyItem : public QFrame
 
 //--------------------------------------------------------------------------------
 
-class NotificationList : public QScrollArea
+class NotificationList : public QWidget
 {
   Q_OBJECT
 
@@ -68,6 +70,7 @@ class NotificationList : public QScrollArea
     void placeItems();
 
   private:
+    QScrollArea *scrollArea;
     QVBoxLayout *listVbox;
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
     int numItems = 0;
