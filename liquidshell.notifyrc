@@ -1,0 +1,6 @@
+[Global]
+IconName=system-software-update
+
+[Event/updates available]
+Name=Updates available
+Action=Popup
