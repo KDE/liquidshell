@@ -23,6 +23,8 @@ find_package(KF5 REQUIRED COMPONENTS
              NewStuff
 )
 
+find_package(packagekitqt5 REQUIRED)
+
 set(SOURCES
     desktop.cxx
     DesktopWidget.cxx
@@ -55,6 +57,8 @@ set(SOURCES
     Battery.cxx
     Bluetooth.cxx
     PopupMenu.cxx
+    PkUpdates.cxx
+    PkUpdateList.cxx
 
     DesktopApplet.cxx
     WeatherApplet.cxx
@@ -111,10 +115,13 @@ target_link_libraries(${TARGET}
                       KF5::ItemViews
                       KF5::Archive
                       KF5::NewStuff
+                      PK::packagekitqt5
 )
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+
+install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ecm_install_icons(ICONS
                   48-apps-liquidshell.png
