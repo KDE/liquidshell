@@ -1,2 +1,4 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cxx -o $podir/liquidshell.pot
+$EXTRACTRC `find . -name \*.ui` >> rc.cpp || exit 11
+$XGETTEXT *.cxx rc.cpp -o $podir/liquidshell.pot
+rm -f rc.cpp
