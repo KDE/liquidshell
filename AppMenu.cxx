@@ -60,7 +60,7 @@ void AppMenu::fill()
   else if ( dirPath == QStandardPaths::writableLocation(QStandardPaths::DesktopLocation) )
     button->setIcon(QIcon::fromTheme("user-desktop"));
   else // fallback
-    button->setIcon(QIcon::fromTheme("start-here"));
+    button->setIcon(QIcon::fromTheme("folder"));
 
   QLayoutItem *child;
   while ( (child = popup->layout()->takeAt(0)) )

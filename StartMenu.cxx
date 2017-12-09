@@ -33,7 +33,7 @@
 //--------------------------------------------------------------------------------
 
 StartMenu::StartMenu(DesktopPanel *parent)
-  : QPushButton(parent)
+  : QToolButton(parent)
 {
   setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
   setIconSize((parent->getRows() == 1) ? QSize(22, 22) : QSize(48, 48));
@@ -41,9 +41,10 @@ StartMenu::StartMenu(DesktopPanel *parent)
   connect(parent, &DesktopPanel::rowsChanged,
           [this](int rows) { setIconSize((rows == 1) ? QSize(22, 22) : QSize(48, 48)); });
 
-  setThemeIcon("start-here-kde");
+  setThemeIcon("liquidshell");
 
-  setMenu(new PopupMenu(this));
+  popup = new PopupMenu(this);
+  connect(this, &QToolButton::pressed, this, &StartMenu::showMenu);
 
   fill();
 
@@ -62,14 +63,14 @@ void StartMenu::setThemeIcon(const QString &icon)
 
 void StartMenu::fill()
 {
-  menu()->clear();
+  popup->clear();
 
-  fillFromGroup(menu(), KServiceGroup::root());
+  fillFromGroup(popup, KServiceGroup::root());
 
-  menu()->addSeparator();
+  popup->addSeparator();
 
   // add important actions
-  QAction *action = menu()->addAction(QIcon::fromTheme("system-switch-user"), i18n("Switch User"));
+  QAction *action = popup->addAction(QIcon::fromTheme("system-switch-user"), i18n("Switch User"));
   connect(action, &QAction::triggered,
           []()
           {
@@ -81,11 +82,11 @@ void StartMenu::fill()
   KService::Ptr sysSettings = KService::serviceByDesktopName("systemsettings");
   if ( sysSettings )
   {
-    action = menu()->addAction(QIcon::fromTheme(sysSettings->icon()), sysSettings->name());
+    action = popup->addAction(QIcon::fromTheme(sysSettings->icon()), sysSettings->name());
     connect(action, &QAction::triggered, [this, sysSettings]() { KRun::runApplication(*sysSettings, QList<QUrl>(), this); });
   }
 
-  action = menu()->addAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
+  action = popup->addAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
   connect(action, &QAction::triggered,
           []()
           {
@@ -151,6 +152,17 @@ void StartMenu::contextMenuEvent(QContextMenuEvent *event)
   connect(action, &QAction::triggered, []() { KRun::runCommand(QString("kmenuedit"), nullptr); });
 
   menu.exec(event->globalPos());
+}
+
+//--------------------------------------------------------------------------------
+
+void StartMenu::showMenu()
+{
+  popup->adjustSize();
+  QPoint p = mapToGlobal(QPoint(0, 0));
+  popup->move(p.x(), p.y() - popup->height());
+  popup->exec();
+  setDown(false);
 }
 
 //--------------------------------------------------------------------------------

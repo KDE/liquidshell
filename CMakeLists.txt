@@ -8,6 +8,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(ECMInstallIcons)
 
 find_package(Qt5 5.6 CONFIG REQUIRED COMPONENTS
     Core
@@ -114,3 +115,8 @@ target_link_libraries(${TARGET}
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+
+ecm_install_icons(ICONS
+                  48-apps-liquidshell.png
+                  DESTINATION ${ICON_INSTALL_DIR}
+                  THEME hicolor)
