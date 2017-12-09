@@ -4,6 +4,7 @@
 #include <PkUpdates.hxx>
 #include <QWidget>
 #include <QQueue>
+#include <QPointer>
 class QCheckBox;
 class QProgressBar;
 class QVBoxLayout;
@@ -27,12 +28,17 @@ class PkUpdateList : public QWidget
   private Q_SLOTS:
     void checkAll(bool on);
     void install();
+    void installOne();
     void countChecked();
     void filterChanged(const QString &text);
 
   private:
     QVBoxLayout *itemsLayout;
     QPushButton *installButton;
+    QPushButton *refreshButton;
+
+    QQueue<QPointer<class PkUpdateListItem>> installQ;
+    QPointer<PackageKit::Transaction> transaction;
 };
 
 //--------------------------------------------------------------------------------
@@ -71,9 +77,6 @@ class PkUpdateListItem : public QWidget
                       PackageKit::Transaction::UpdateState state,
                       const QDateTime &issued,
                       const QDateTime &updated);
-
-  private:
-    QQueue<QString> installQ;
 };
 
 #endif

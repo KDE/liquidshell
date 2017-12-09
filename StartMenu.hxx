@@ -20,14 +20,14 @@
 #ifndef _StartMenu_H_
 #define _StartMenu_H_
 
-#include <QPushButton>
+#include <QToolButton>
 #include <QMenu>
 
 #include <KServiceGroup>
 
 #include <DesktopPanel.hxx>
 
-class StartMenu : public QPushButton
+class StartMenu : public QToolButton
 {
   Q_OBJECT
 
@@ -44,12 +44,14 @@ class StartMenu : public QPushButton
 
   private Q_SLOTS:
     void fill();
+    void showMenu();
 
   private:
     void fillFromGroup(QMenu *menu, KServiceGroup::Ptr group);
 
   private:
     QString themeIcon;
+    QMenu *popup;
 };
 
 #endif

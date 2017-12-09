@@ -71,6 +71,13 @@ void PkUpdates::checkForUpdates()
   connect(transaction, &PackageKit::Transaction::package, this, &PkUpdates::package);
   connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
   connect(transaction, &PackageKit::Transaction::finished, this, &PkUpdates::transactionFinished);
+
+  connect(transaction, &PackageKit::Transaction::percentageChanged,
+          [this, transaction]()
+          {
+            if ( transaction->percentage() <= 100 )
+              setToolTip(i18n("Checking for updates ... %1%", transaction->percentage()));
+          });
 }
 
 //--------------------------------------------------------------------------------

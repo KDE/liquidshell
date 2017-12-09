@@ -9,7 +9,6 @@
 #include <QProgressBar>
 #include <QToolButton>
 #include <QIcon>
-#include <QPointer>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -23,7 +22,7 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
 
   QGridLayout *grid = new QGridLayout(this);
   grid->setContentsMargins(QMargins());
-  grid->setVerticalSpacing(0);
+  grid->setSpacing(0);
 
   checkBox = new QCheckBox;
   checkBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -67,10 +66,6 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
     progress->setFixedWidth(300);
     progressHbox->addWidget(progress);
 
-    cancelButton = new QToolButton;
-    cancelButton->setIcon(QIcon::fromTheme("process-stop"));
-    progressHbox->addWidget(cancelButton);
-
     errorLabel = new QLabel;
     errorLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
     errorLabel->hide();
@@ -85,14 +80,20 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
 
 void PkUpdateListItem::showProgress(bool yes)
 {
+  progress->setValue(0);
   progress->setVisible(yes);
-  cancelButton->setVisible(yes);
 }
 
 //--------------------------------------------------------------------------------
 
 void PkUpdateListItem::getUpdateDetails()
 {
+  if ( !detailsLabel->isHidden() )
+  {
+    detailsLabel->hide();
+    return;
+  }
+
   qDebug() << "getUpdateDetails" << package.id;
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdateDetail(package.id);
   detailsLabel->setText(i18n("Gettings details ..."));
@@ -166,13 +167,13 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   installButton->setEnabled(false);
   connect(installButton, &QPushButton::clicked, this, &PkUpdateList::install);
 
-  QPushButton *refresh = new QPushButton(i18n("Refresh"));
-  connect(refresh, &QPushButton::clicked, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
+  refreshButton = new QPushButton(i18n("Refresh"));
+  connect(refreshButton, &QPushButton::clicked, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
 
   hbox->addWidget(checkAll);
   hbox->addWidget(filterEdit);
   hbox->addWidget(installButton);
-  hbox->addWidget(refresh);
+  hbox->addWidget(refreshButton);
   vbox->addLayout(hbox);
 
   // list of items in the order: security, important, bugfix, others
@@ -287,6 +288,8 @@ void PkUpdateList::countChecked()
     installButton->setText(i18n("Install"));
     installButton->setEnabled(false);
   }
+  installButton->setIcon(QIcon());
+  refreshButton->setEnabled(true);
 }
 
 //--------------------------------------------------------------------------------
@@ -310,6 +313,38 @@ void PkUpdateList::filterChanged(const QString &text)
 
 void PkUpdateList::install()
 {
+  if ( !installQ.isEmpty() )
+  {
+    QPointer<PkUpdateListItem> currentItem = installQ.head();
+
+    if ( transaction )
+    {
+      QDBusPendingReply<> reply = transaction->cancel();
+      reply.waitForFinished();
+      if ( reply.isError() && currentItem )
+      {
+        currentItem->errorLabel->setText(reply.error().message());
+        currentItem->errorLabel->show();
+      }
+    }
+
+    for (int i = 0; i < itemsLayout->count(); i++)
+    {
+      PkUpdateListItem *item = qobject_cast<PkUpdateListItem *>(itemsLayout->itemAt(i)->widget());
+
+      if ( !transaction || (item != currentItem) )
+      {
+        item->showProgress(false);
+        item->errorLabel->hide();
+      }
+    }
+
+    installQ.clear();
+
+    countChecked();
+    return;
+  }
+
   for (int i = 0; i < itemsLayout->count(); i++)
   {
     QPointer<PkUpdateListItem> item = qobject_cast<PkUpdateListItem *>(itemsLayout->itemAt(i)->widget());
@@ -318,73 +353,111 @@ void PkUpdateList::install()
     {
       item->showProgress(true);
       item->errorLabel->hide();
+      item->detailsLabel->hide();
 
-      PackageKit::Transaction *transaction = PackageKit::Daemon::updatePackage(item->package.id);
-      qDebug() << "installing" << item->package.id;
-
-      connect(item->cancelButton, &QToolButton::clicked, transaction, &PackageKit::Transaction::cancel);
-
-      connect(transaction, &PackageKit::Transaction::allowCancelChanged,
-              [item, transaction]() { if ( item ) item->cancelButton->setEnabled(transaction->allowCancel()); });
-
-      connect(transaction, &PackageKit::Transaction::statusChanged,
-              [item, transaction]()
-              {
-                if ( !item )  // already deleted
-                  return;
-
-                qDebug() << "status" << transaction->status();
-                QString text;
-                switch ( transaction->status() )
-                {
-                  case PackageKit::Transaction::StatusUpdate: text = i18n("Updating"); break;
-                  case PackageKit::Transaction::StatusInstall: text = i18n("Installing"); break;
-                  case PackageKit::Transaction::StatusDownload: text = i18n("Downloading "); break;
-                  case PackageKit::Transaction::StatusCancel: text = i18n("Canceling "); break;
-                  default: ;
-                }
-
-                if ( text.isEmpty() )
-                  item->errorLabel->hide();
-                else
-                {
-                  item->errorLabel->setText(text);
-                  item->errorLabel->show();
-                }
-              });
-
-      connect(transaction, &PackageKit::Transaction::percentageChanged,
-              [item, transaction]() { if ( item ) item->progress->setValue(transaction->percentage()); });
-
-      connect(transaction, &PackageKit::Transaction::errorCode,
-              [item, transaction](PackageKit::Transaction::Error error, const QString &details)
-              {
-                Q_UNUSED(error)
-
-                if ( !item )
-                  return;
-
-                item->showProgress(false);
-                item->errorLabel->setText(details);
-                item->errorLabel->show();
-              });
-
-      connect(transaction, &PackageKit::Transaction::finished,
-              [this, item, transaction](PackageKit::Transaction::Exit status, uint runtime)
-              {
-                Q_UNUSED(runtime)
-
-                if ( status == PackageKit::Transaction::ExitSuccess )
-                {
-                  item->checkBox->setChecked(false);  // re-count packages
-                  item->deleteLater();
-                  emit packageInstalled(item->package.id);
-                }
-                else
-                  item->showProgress(false);
-              });
+      installQ.enqueue(item);
     }
   }
+
+  installOne();
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdateList::installOne()
+{
+  if ( installQ.isEmpty() )
+  {
+    countChecked();
+    return;
+  }
+
+  QPointer<PkUpdateListItem> item = installQ.head();
+
+  if ( !item )
+    return;
+
+  installButton->setText(i18n("Cancel Installation"));
+  installButton->setIcon(QIcon::fromTheme("process-stop"));
+  refreshButton->setEnabled(false);
+
+  transaction = PackageKit::Daemon::updatePackage(item->package.id);
+  qDebug() << "installing" << item->package.id;
+
+  connect(transaction.data(), &PackageKit::Transaction::statusChanged,
+          [item, this]()
+          {
+            if ( !item )  // already deleted
+              return;
+
+            qDebug() << "status" << transaction->status();
+            QString text;
+            switch ( transaction->status() )
+            {
+              case PackageKit::Transaction::StatusWait: text = i18n("Waiting"); break;
+              case PackageKit::Transaction::StatusWaitingForAuth: text = i18n("Waiting for authentication"); break;
+              case PackageKit::Transaction::StatusDepResolve: text = i18n("Resolving dependencies"); break;
+              case PackageKit::Transaction::StatusUpdate: text = i18n("Updating"); break;
+              case PackageKit::Transaction::StatusInstall: text = i18n("Installing"); break;
+              case PackageKit::Transaction::StatusDownload: text = i18n("Downloading "); break;
+              case PackageKit::Transaction::StatusCancel: text = i18n("Canceling "); break;
+              default: ;
+            }
+
+            if ( text.isEmpty() )
+              item->errorLabel->hide();
+            else
+            {
+              item->errorLabel->setText(text);
+              item->errorLabel->show();
+            }
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::itemProgress,
+          [item, this](const QString &itemID, PackageKit::Transaction::Status status, uint percentage)
+          {
+            Q_UNUSED(itemID)
+            Q_UNUSED(status)
+
+            if ( item && (percentage <= 100) )  // 101 .. unknown
+              item->progress->setValue(percentage);
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::errorCode,
+          [item, this](PackageKit::Transaction::Error error, const QString &details)
+          {
+            Q_UNUSED(error)
+
+            if ( !item )
+              return;
+
+            item->showProgress(false);
+            item->errorLabel->setText(details);
+            item->errorLabel->show();
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::finished,
+          [item, this](PackageKit::Transaction::Exit status, uint runtime)
+          {
+            Q_UNUSED(runtime)
+
+            if ( status == PackageKit::Transaction::ExitSuccess )
+            {
+              item->deleteLater();
+              emit packageInstalled(item->package.id);
+            }
+            else
+            {
+              item->showProgress(false);
+              item->detailsLabel->setText(i18n("Update failed"));
+              item->detailsLabel->show();
+            }
+
+            if ( !installQ.isEmpty() )  // might have been cancelled, q cleared
+              installQ.dequeue();
+
+            installOne();
+          });
 }
 
 //--------------------------------------------------------------------------------
