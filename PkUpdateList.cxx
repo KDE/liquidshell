@@ -115,7 +115,7 @@ void PkUpdateListItem::getUpdateDetails()
 
   qDebug() << "getUpdateDetails" << package.id;
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdateDetail(package.id);
-  detailsLabel->setText(i18n("Gettings details ..."));
+  detailsLabel->setText(i18n("Getting details ..."));
   detailsLabel->show();
 
   connect(transaction, &PackageKit::Transaction::updateDetail, this, &PkUpdateListItem::updateDetail);
