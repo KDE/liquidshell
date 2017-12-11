@@ -3,4 +3,11 @@ IconName=system-software-update
 
 [Event/updates available]
 Name=Updates available
+Name[ca]=Actualitzacions disponibles
+Name[ca@valencia]=Actualitzacions disponibles
+Name[nl]=Elementen voor bijwerken beschikbaar
+Name[pt]=Actualizações disponíveis
+Name[sv]=Uppdateringar tillgängliga
+Name[uk]=Доступні оновлення
+Name[x-test]=xxUpdates availablexx
 Action=Popup
