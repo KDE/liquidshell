@@ -134,6 +134,7 @@ void AppMenu::showMenu()
 Menu::Menu(QWidget *parent)
   : QFrame(parent, Qt::Popup)
 {
+  setProperty("_KDE_NET_WM_FORCE_SHADOW", true);
   setFrameShape(QFrame::StyledPanel);
   QVBoxLayout *vbox = new QVBoxLayout(this);
   vbox->setContentsMargins(QMargins());
