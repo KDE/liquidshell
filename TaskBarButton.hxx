@@ -46,11 +46,16 @@ class TaskBarButton : public QPushButton
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *event) override;
     void dropEvent(QDropEvent *event) override;
+    void moveEvent(QMoveEvent *) override { updateWMGeometry(); }
+    void resizeEvent(QResizeEvent *) override { updateWMGeometry(); }
 
   private Q_SLOTS:
     void fill();
     void setBackground();
     void windowChanged(WId id, NET::Properties props, NET::Properties2 props2);
+
+  private:
+    void updateWMGeometry();
 
   private:
     WId wid;

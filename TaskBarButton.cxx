@@ -244,3 +244,18 @@ void TaskBarButton::dropEvent(QDropEvent *event)
 }
 
 //--------------------------------------------------------------------------------
+
+void TaskBarButton::updateWMGeometry()
+{
+  NETWinInfo info(QX11Info::connection(), wid, QX11Info::appRootWindow(), 0, 0);
+  NETRect rect;
+  QPoint globalPos = mapToGlobal(QPoint(0, 0));
+  rect.pos.x = globalPos.x();
+  rect.pos.y = globalPos.y();
+  rect.size.width = width();
+  rect.size.height = height();
+
+  info.setIconGeometry(rect);
+}
+
+//--------------------------------------------------------------------------------

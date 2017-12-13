@@ -113,7 +113,7 @@ void PkUpdateListItem::getUpdateDetails()
     return;
   }
 
-  qDebug() << "getUpdateDetails" << package.id;
+  //qDebug() << "getUpdateDetails" << package.id;
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdateDetail(package.id);
   detailsLabel->setText(i18n("Getting details ..."));
   detailsLabel->show();
@@ -401,7 +401,7 @@ void PkUpdateList::installOne()
   refreshButton->setEnabled(false);
 
   transaction = PackageKit::Daemon::updatePackage(item->package.id);
-  qDebug() << "installing" << item->package.id;
+  //qDebug() << "installing" << item->package.id;
 
   connect(transaction.data(), &PackageKit::Transaction::statusChanged,
           [item, this]()
@@ -409,7 +409,7 @@ void PkUpdateList::installOne()
             if ( !item )  // already deleted
               return;
 
-            qDebug() << "status" << transaction->status();
+            //qDebug() << "status" << transaction->status();
             QString text;
             switch ( transaction->status() )
             {
@@ -418,8 +418,8 @@ void PkUpdateList::installOne()
               case PackageKit::Transaction::StatusDepResolve: text = i18n("Resolving dependencies"); break;
               case PackageKit::Transaction::StatusUpdate: text = i18n("Updating"); break;
               case PackageKit::Transaction::StatusInstall: text = i18n("Installing"); break;
-              case PackageKit::Transaction::StatusDownload: text = i18n("Downloading "); break;
-              case PackageKit::Transaction::StatusCancel: text = i18n("Canceling "); break;
+              case PackageKit::Transaction::StatusDownload: text = i18n("Downloading"); break;
+              case PackageKit::Transaction::StatusCancel: text = i18n("Canceling"); break;
               default: ;
             }
 
@@ -462,6 +462,7 @@ void PkUpdateList::installOne()
 
             if ( status == PackageKit::Transaction::ExitSuccess )
             {
+              item->hide();
               item->deleteLater();
               emit packageInstalled(item->package.id);
             }

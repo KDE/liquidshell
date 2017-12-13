@@ -164,6 +164,9 @@ void NetworkList::statusUpdate()
 
 void NetworkList::fillConnections()
 {
+  if ( underMouse() )  // avoid to delete the widget we are possibly hovering over
+    return;
+
   QLayoutItem *child;
   while ( (child = connectionsVbox->takeAt(0)) )
   {
