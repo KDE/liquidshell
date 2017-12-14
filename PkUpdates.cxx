@@ -42,7 +42,7 @@ PkUpdates::PkUpdates(QWidget *parent)
   updateTimer.start();
   connect(&updateTimer, &QTimer::timeout, this, &PkUpdates::checkForUpdatesReached);
 
-  checkForUpdatesReached();
+  QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
 }
 
 //--------------------------------------------------------------------------------
