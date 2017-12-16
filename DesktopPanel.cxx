@@ -45,7 +45,7 @@ DesktopPanel::DesktopPanel(QWidget *parent)
 {
   setAttribute(Qt::WA_AlwaysShowToolTips);
   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-  setWindowIcon(QIcon::fromTheme("kde"));
+  setWindowIcon(QIcon::fromTheme("liquidshell"));
 
   KWindowSystem::setState(winId(), NET::KeepAbove);
   KWindowSystem::setOnAllDesktops(winId(), true);
