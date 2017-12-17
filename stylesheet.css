@@ -26,20 +26,12 @@ SysLoad
   qproperty-netReceivedColor: green;
   qproperty-netSentColor: red;
 }
-*/
 
 StartMenu
 {
-  padding: -2px;
-  /* qproperty-themeIcon: "start-here-kde" */
+  qproperty-themeIcon: "start-here-kde"
 }
 
-StartMenu::menu-indicator
-{
-  image: url()
-}
-
-/*
 WeatherApplet
 {
   background: rgba(32, 56, 92, 75%);
