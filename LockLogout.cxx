@@ -62,7 +62,7 @@ LockLogout::LockLogout(DesktopPanel *parent)
           {
             QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
                                                               "org.kde.KSMServerInterface", "logout");
-            msg << -1 << 0 << 0;
+            msg << -1 << 0 << 0;  // plasma-workspace/libkworkspace/kworkspace.h
 
             QDBusConnection::sessionBus().send(msg);
           });
