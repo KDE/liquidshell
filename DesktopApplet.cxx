@@ -66,7 +66,7 @@ void DesktopApplet::loadConfig()
 
   QColor textCol = group.readEntry("textCol", QColor(Qt::white));
   QColor backCol = group.readEntry("backCol", QColor(32, 56, 92, 190));
-  QPalette pal;
+  QPalette pal = palette();
   pal.setColor(foregroundRole(), textCol);
   pal.setColor(backgroundRole(), backCol);
   setPalette(pal);

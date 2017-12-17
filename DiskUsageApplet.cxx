@@ -90,6 +90,11 @@ void DiskUsageApplet::fill()
       grid->addWidget(label, row, 0);
       grid->addWidget(progress, row, 1);
       grid->addWidget(sizeLabel = new QLabel(this), row, 2);
+
+      label->setPalette(palette());
+      progress->setPalette(palette());
+      sizeLabel->setPalette(palette());
+
       row++;
 
       SizeInfo sizeInfo;
