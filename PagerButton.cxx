@@ -43,7 +43,7 @@ PagerButton::PagerButton(int num)
   setAcceptDrops(true);
   dragDropTimer.setSingleShot(true);
   dragDropTimer.setInterval(1000);
-  connect(&dragDropTimer, &QTimer::timeout, [this]() { emit clicked(true); });
+  connect(&dragDropTimer, &QTimer::timeout, this, [this]() { emit clicked(true); });
 
   createPixmap();
 
@@ -56,9 +56,12 @@ PagerButton::PagerButton(int num)
   connect(KWindowSystem::self(), &KWindowSystem::stackingOrderChanged,
           this, &PagerButton::createPixmap);
 
-  connect(KWindowSystem::self(), &KWindowSystem::desktopNamesChanged,
-          [this]() { KWindowSystem::desktopName(desktop).isEmpty() ?
-                     QString::number(desktop) : KWindowSystem::desktopName(desktop); });
+  connect(KWindowSystem::self(), &KWindowSystem::desktopNamesChanged, this,
+          [this]()
+          {
+            setText(KWindowSystem::desktopName(desktop).isEmpty() ?
+                    QString::number(desktop) : KWindowSystem::desktopName(desktop));
+          });
 
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
