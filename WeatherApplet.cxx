@@ -104,7 +104,7 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
   insertAction(actions()[0], action);
   connect(action, &QAction::triggered, this, &WeatherApplet::configure);
 
-  connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged,
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this,
           [this](NetworkManager::Connectivity connectivity)
           {
             if ( connectivity == NetworkManager::Full )
@@ -310,7 +310,7 @@ void WeatherApplet::setIcon(QLabel *label, const QString &icon)
     KIO::StoredTransferJob *job =
         KIO::storedGet(QUrl("http://api.openweathermap.org/img/w/" + icon), KIO::Reload, KIO::HideProgressInfo);
 
-    connect(job, &KIO::Job::result,
+    connect(job, &KIO::Job::result, this,
             [label, filePath](KJob *job)
             {
               if ( job->error() )
@@ -379,7 +379,7 @@ void WeatherApplet::configure()
   dialog->setAttribute(Qt::WA_DeleteOnClose);
   dialog->show();
 
-  connect(dialog.data(), &QDialog::accepted,
+  connect(dialog.data(), &QDialog::accepted, this,
           [this]()
           {
             saveConfig();
