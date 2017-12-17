@@ -57,12 +57,6 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   hboxLayout->setContentsMargins(QMargins());
   hboxLayout->setSpacing(2);
 
-  // to get notified about num-of-rows changed
-  updateRowCount();
-  QDBusConnection dbus = QDBusConnection::sessionBus();
-  dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(updateRowCount()));
-  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopPanel::updateRowCount);
-
   hboxLayout->addWidget(new StartMenu(this));
   hboxLayout->addWidget(new QuickLaunch(this));
   hboxLayout->addWidget(new AppMenu(this));
@@ -73,6 +67,12 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   hboxLayout->addWidget(new SysLoad(this));
   hboxLayout->addWidget(new SysTray(this));
   hboxLayout->addWidget(new ClockWidget(this));
+
+  // to get notified about num-of-rows changed
+  updateRowCount();
+  QDBusConnection dbus = QDBusConnection::sessionBus();
+  dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(updateRowCount()));
+  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopPanel::updateRowCount);
 }
 
 //--------------------------------------------------------------------------------

@@ -43,7 +43,7 @@ class DesktopPanel : public QFrame
     void updateRowCount();
 
   private:
-    int rows = 1;
+    int rows = 2;
 };
 
 #endif
