@@ -13,3 +13,11 @@ Name[sv]=Uppdateringar tillgängliga
 Name[uk]=Доступні оновлення
 Name[x-test]=xxUpdates availablexx
 Action=Popup
+
+[Event/update error]
+Name=Update error
+Action=Popup
+
+[Event/restart needed]
+Name=Restart needed
+Action=Popup

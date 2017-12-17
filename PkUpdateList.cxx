@@ -28,9 +28,14 @@
 #include <QProgressBar>
 #include <QToolButton>
 #include <QIcon>
+#include <QDBusConnection>
 #include <QDebug>
 
 #include <KLocalizedString>
+#include <KNotification>
+
+//#define TEST_LOGOUT
+//#define TEST_REBOOT
 
 //--------------------------------------------------------------------------------
 
@@ -81,6 +86,7 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
 
   {
     QHBoxLayout *progressHbox = new QHBoxLayout;
+    progressHbox->setSpacing(10);
     progress = new QProgressBar;
     progress->setFixedWidth(300);
     progressHbox->addWidget(progress);
@@ -89,6 +95,11 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
     errorLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
     errorLabel->hide();
     progressHbox->addWidget(errorLabel);
+
+    packageLabel = new QLabel;
+    packageLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    packageLabel->hide();
+    progressHbox->addWidget(packageLabel);
 
     grid->addLayout(progressHbox, 2, 2, Qt::AlignLeft);
     showProgress(false);
@@ -120,7 +131,7 @@ void PkUpdateListItem::getUpdateDetails()
 
   connect(transaction, &PackageKit::Transaction::updateDetail, this, &PkUpdateListItem::updateDetail);
 
-  connect(transaction, &PackageKit::Transaction::errorCode,
+  connect(transaction, &PackageKit::Transaction::errorCode, this,
           [this, transaction](PackageKit::Transaction::Error error, const QString &details)
           {
             Q_UNUSED(error)
@@ -149,13 +160,19 @@ void PkUpdateListItem::updateDetail(const QString &packageID,
   Q_UNUSED(vendorUrls)
   Q_UNUSED(bugzillaUrls)
   Q_UNUSED(cveUrls)
-  Q_UNUSED(restart)
   Q_UNUSED(changelog)
   Q_UNUSED(state)
   Q_UNUSED(issued)
   Q_UNUSED(updated)
 
-  detailsLabel->setText(updateText);
+  QString text;
+
+  if ( restart == PackageKit::Transaction::RestartSession )
+    text = i18n("<b>Session restart required</b><br>");
+  else if ( restart == PackageKit::Transaction::RestartSystem )
+    text = i18n("<b>Reboot required</b><br>");
+
+  detailsLabel->setText(text + updateText);
 }
 
 //--------------------------------------------------------------------------------
@@ -163,7 +180,7 @@ void PkUpdateListItem::updateDetail(const QString &packageID,
 //--------------------------------------------------------------------------------
 
 PkUpdateList::PkUpdateList(QWidget *parent)
-  : QWidget(parent)
+  : QWidget(parent), restart(PackageKit::Transaction::RestartNone)
 {
   setWindowFlags(windowFlags() | Qt::Tool);
   setWindowTitle(i18n("Software Updates"));
@@ -177,7 +194,7 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   QCheckBox *checkAll = new QCheckBox(i18n("All"));
   connect(checkAll, &QCheckBox::toggled, this, &PkUpdateList::checkAll);
 
-  QLineEdit *filterEdit = new QLineEdit;
+  filterEdit = new QLineEdit;
   filterEdit->setPlaceholderText(i18n("Filter"));
   filterEdit->setClearButtonEnabled(true);
   connect(filterEdit, &QLineEdit::textEdited, this, &PkUpdateList::filterChanged);
@@ -187,7 +204,7 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   connect(installButton, &QPushButton::clicked, this, &PkUpdateList::install);
 
   refreshButton = new QPushButton(i18n("Refresh"));
-  connect(refreshButton, &QPushButton::clicked, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
+  connect(refreshButton, &QPushButton::clicked, this, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
 
   hbox->addWidget(checkAll);
   hbox->addWidget(filterEdit);
@@ -262,6 +279,9 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
       item->show();
     }
   }
+
+  filterChanged(filterEdit->text());
+
   countChecked();
 }
 
@@ -332,7 +352,7 @@ void PkUpdateList::filterChanged(const QString &text)
 
 void PkUpdateList::install()
 {
-  if ( !installQ.isEmpty() )
+  if ( !installQ.isEmpty() )  // installation in progress; cancel it
   {
     QPointer<PkUpdateListItem> currentItem = installQ.head();
 
@@ -364,6 +384,8 @@ void PkUpdateList::install()
     return;
   }
 
+  restart = PackageKit::Transaction::RestartNone;
+
   for (int i = 0; i < itemsLayout->count(); i++)
   {
     QPointer<PkUpdateListItem> item = qobject_cast<PkUpdateListItem *>(itemsLayout->itemAt(i)->widget());
@@ -385,8 +407,56 @@ void PkUpdateList::install()
 
 void PkUpdateList::installOne()
 {
-  if ( installQ.isEmpty() )
+  if ( installQ.isEmpty() ) // installation finished
   {
+    if ( restart != PackageKit::Transaction::RestartNone )
+    {
+      QString text;
+
+      if ( (restart == PackageKit::Transaction::RestartSystem) ||
+           (restart == PackageKit::Transaction::RestartSecuritySystem) )
+      {
+        KNotification *notif = new KNotification("restart needed", parentWidget(), KNotification::Persistent);
+
+        notif->setTitle(i18n("System Reboot Required"));
+        notif->setText(i18n("One of the installed packages requires a system reboot"));
+        notif->setActions(QStringList() << i18n("Reboot System"));
+
+        connect(notif, &KNotification::action1Activated, this,
+                []()
+                {
+                  QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
+                                                                    "org.kde.KSMServerInterface", "logout");
+                  msg << 0/*no confirm*/ << 1/*reboot*/ << 0; // plasma-workspace/libkworkspace/kworkspace.h
+
+                  QDBusConnection::sessionBus().send(msg);
+                });
+
+        notif->sendEvent();
+      }
+      else if ( (restart == PackageKit::Transaction::RestartSession) ||
+                (restart == PackageKit::Transaction::RestartSecuritySession) )
+      {
+        KNotification *notif = new KNotification("restart needed", parentWidget(), KNotification::Persistent);
+
+        notif->setTitle(i18n("Session Restart Required"));
+        notif->setText(i18n("One of the installed packages requires you to logout"));
+        notif->setActions(QStringList() << i18n("Logout"));
+
+        connect(notif, &KNotification::action1Activated, this,
+                []()
+                {
+                  QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
+                                                                    "org.kde.KSMServerInterface", "logout");
+                  msg << 0/*no confirm*/ << 0/*logout*/ << 0; // plasma-workspace/libkworkspace/kworkspace.h
+
+                  QDBusConnection::sessionBus().send(msg);
+                });
+
+        notif->sendEvent();
+      }
+    }
+
     countChecked();
     return;
   }
@@ -400,10 +470,18 @@ void PkUpdateList::installOne()
   installButton->setIcon(QIcon::fromTheme("process-stop"));
   refreshButton->setEnabled(false);
 
-  transaction = PackageKit::Daemon::updatePackage(item->package.id);
+  PackageKit::Transaction::TransactionFlag flag = PackageKit::Transaction::TransactionFlagOnlyTrusted;
+#ifdef TEST_LOGOUT
+  flag |= PackageKit::Transaction::TransactionFlagSimulate;
+  restart = PackageKit::Transaction::RestartSession;
+#elif defined TEST_REBOOT
+  flag |= PackageKit::Transaction::TransactionFlagSimulate;
+  restart = PackageKit::Transaction::RestartSystem;
+#endif
+  transaction = PackageKit::Daemon::updatePackage(item->package.id, flag);
   //qDebug() << "installing" << item->package.id;
 
-  connect(transaction.data(), &PackageKit::Transaction::statusChanged,
+  connect(transaction.data(), &PackageKit::Transaction::statusChanged, this,
           [item, this]()
           {
             if ( !item )  // already deleted
@@ -432,17 +510,36 @@ void PkUpdateList::installOne()
             }
           });
 
-  connect(transaction.data(), &PackageKit::Transaction::itemProgress,
+  connect(transaction.data(), &PackageKit::Transaction::itemProgress, this,
           [item, this](const QString &itemID, PackageKit::Transaction::Status status, uint percentage)
           {
-            Q_UNUSED(itemID)
             Q_UNUSED(status)
 
-            if ( item && (percentage <= 100) )  // 101 .. unknown
+            if ( !item )  // already deleted
+              return;
+
+            item->packageLabel->setText(PackageKit::Daemon::packageName(itemID));
+            item->packageLabel->show();
+
+            if ( percentage <= 100 )  // 101 .. unknown
               item->progress->setValue(percentage);
           });
 
-  connect(transaction.data(), &PackageKit::Transaction::errorCode,
+  connect(transaction.data(), &PackageKit::Transaction::requireRestart, this,
+          [this](PackageKit::Transaction::Restart type, const QString &/*packageID*/)
+          {
+            // keep most important restart type: System, Session
+            if ( (type == PackageKit::Transaction::RestartSystem) ||
+                 (type == PackageKit::Transaction::RestartSecuritySystem) ||
+
+                 (((type == PackageKit::Transaction::RestartSession) ||
+                   (type == PackageKit::Transaction::RestartSecuritySession)) &&
+                   (restart != PackageKit::Transaction::RestartSystem) &&
+                   (restart != PackageKit::Transaction::RestartSecuritySystem)) )
+              restart = type;
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::errorCode, this,
           [item, this](PackageKit::Transaction::Error error, const QString &details)
           {
             Q_UNUSED(error)
@@ -455,7 +552,7 @@ void PkUpdateList::installOne()
             item->errorLabel->show();
           });
 
-  connect(transaction.data(), &PackageKit::Transaction::finished,
+  connect(transaction.data(), &PackageKit::Transaction::finished, this,
           [item, this](PackageKit::Transaction::Exit status, uint runtime)
           {
             Q_UNUSED(runtime)

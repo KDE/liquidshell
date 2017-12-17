@@ -30,6 +30,7 @@ class QVBoxLayout;
 class QToolButton;
 class QPushButton;
 class QLabel;
+class QLineEdit;
 
 class PkUpdateList : public QWidget
 {
@@ -53,11 +54,14 @@ class PkUpdateList : public QWidget
 
   private:
     QVBoxLayout *itemsLayout;
+    QLineEdit *filterEdit;
     QPushButton *installButton;
     QPushButton *refreshButton;
 
     QQueue<QPointer<class PkUpdateListItem>> installQ;
     QPointer<PackageKit::Transaction> transaction;
+
+    PackageKit::Transaction::Restart restart;
 };
 
 //--------------------------------------------------------------------------------
@@ -77,6 +81,7 @@ class PkUpdateListItem : public QWidget
     QToolButton *cancelButton;
     QLabel *detailsLabel;
     QLabel *errorLabel;
+    QLabel *packageLabel;
 
   Q_SIGNALS:
     void toggled();

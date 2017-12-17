@@ -51,9 +51,9 @@ class PkUpdates : public SysTrayItem
   private Q_SLOTS:
     void checkForUpdatesReached();
     void checkForUpdates();
+    void refreshFinished(PackageKit::Transaction::Exit status, uint runtime);
     void package(PackageKit::Transaction::Info info, const QString &packageID, const QString &summary);
     void transactionError(PackageKit::Transaction::Error error, const QString &details);
-    void transactionFinished(PackageKit::Transaction::Exit status, uint runtime);
     void packageInstalled(const QString &id);
 
   private:

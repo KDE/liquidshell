@@ -66,16 +66,40 @@ void PkUpdates::checkForUpdates()
   setToolTip(i18n("Checking for updates ..."));
 
   packages.clear();
+
+  PackageKit::Transaction *transaction = PackageKit::Daemon::refreshCache(true);
+
+  connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
+  connect(transaction, &PackageKit::Transaction::finished, this, &PkUpdates::refreshFinished);
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runtime)
+{
+  Q_UNUSED(runtime)
+
+  if ( status != PackageKit::Transaction::ExitSuccess )
+    return;
+
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdates();
 
   connect(transaction, &PackageKit::Transaction::package, this, &PkUpdates::package);
   connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
-  connect(transaction, &PackageKit::Transaction::finished, this, &PkUpdates::transactionFinished);
 
-  connect(transaction, &PackageKit::Transaction::percentageChanged,
+  connect(transaction, &PackageKit::Transaction::finished, this,
           [this, transaction]()
           {
-            if ( transaction->percentage() <= 100 )
+            if ( updateList )
+              updateList->setPackages(packages);
+
+            createToolTip(true);
+          });
+
+  connect(transaction, &PackageKit::Transaction::percentageChanged, this,
+          [this, transaction]()
+          {
+            if ( (transaction->percentage() <= 100) && (transaction->status() != PackageKit::Transaction::StatusFinished) )
               setToolTip(i18n("Checking for updates ... %1%", transaction->percentage()));
           });
 }
@@ -95,22 +119,13 @@ void PkUpdates::package(PackageKit::Transaction::Info info, const QString &packa
 
 void PkUpdates::transactionError(PackageKit::Transaction::Error error, const QString &details)
 {
-  qDebug() << error << details;
+  Q_UNUSED(error)
+
   setToolTip(i18n("Last check: %1\nError on checking for updates: %2",
                   QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), details));
-}
 
-//--------------------------------------------------------------------------------
-
-void PkUpdates::transactionFinished(PackageKit::Transaction::Exit status, uint runtime)
-{
-  Q_UNUSED(status)
-  Q_UNUSED(runtime)
-
-  if ( updateList )
-    updateList->setPackages(packages);
-
-  createToolTip(true);
+  KNotification::event("update error", i18n("Software Update Error"), details,
+                       QIcon::fromTheme("dialog-error").pixmap(32), this);
 }
 
 //--------------------------------------------------------------------------------
@@ -144,7 +159,6 @@ void PkUpdates::createToolTip(bool notify)
     addItems(tooltip, list);
   }
 
-
   list = packages.values(PackageKit::Transaction::InfoBugfix);
 
   if ( list.count() )
@@ -157,10 +171,10 @@ void PkUpdates::createToolTip(bool notify)
     addItems(tooltip, list);
   }
 
+  int others = packages.count() - count;
+
   if ( tooltip.isEmpty() )
   {
-    int others = packages.count() - count;
-
     if ( others )
     {
       setToolTip(i18np("Last check: %1\nNo important updates available\n%2 other",
@@ -177,7 +191,10 @@ void PkUpdates::createToolTip(bool notify)
   }
   else
   {
-    tooltip = i18n("<html>Last check: %1<br/>%2</html>",
+    if ( others )
+      tooltip += i18np("<br>%1 other", "<br>%1 others", others);
+
+    tooltip = i18n("<html>Last check: %1<br>%2</html>",
                    QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), tooltip);
     setToolTip(tooltip);
 
