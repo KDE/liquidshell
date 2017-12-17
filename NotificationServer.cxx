@@ -59,16 +59,6 @@ NotificationServer::NotificationServer(QWidget *parent)
 
 //--------------------------------------------------------------------------------
 
-NotificationServer::~NotificationServer()
-{
-  // delete before this widgets is deleted, else in QWidget dtor when all children
-  // are deleted, the NotificationList will delete all items which finally will emit
-  // listNowEmpty, which would call this->hide() which crashes as this was already degenerated
-  delete notificationList;
-}
-
-//--------------------------------------------------------------------------------
-
 QStringList NotificationServer::GetCapabilities()
 {
   return QStringList()

@@ -54,6 +54,7 @@ class NotificationList : public QWidget
 
   public:
     NotificationList(QWidget *parent);
+    ~NotificationList() override;
 
     void addItem(uint id, const QString &appName, const QString &summary, const QString &body,
                  const QIcon &icon, const QStringList &actions, const QVariantMap &hints, int timeout);

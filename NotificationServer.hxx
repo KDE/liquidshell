@@ -31,7 +31,6 @@ class NotificationServer : public SysTrayItem
 
   public:
     NotificationServer(QWidget *parent);
-    ~NotificationServer() override;
 
     void CloseNotification(uint id);
 

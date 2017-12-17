@@ -88,7 +88,7 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
         actionBox->addWidget(button);
         QString key = actions[i - 1];
 
-        connect(button, &QPushButton::clicked,
+        connect(button, &QPushButton::clicked, this,
                 [this, key]()
                 {
                   QDBusMessage msg =
@@ -151,10 +151,18 @@ NotificationList::NotificationList(QWidget *parent)
 
   QPushButton *clearButton = new QPushButton;
   clearButton->setIcon(QIcon::fromTheme("edit-clear-list"));
-  connect(clearButton, &QPushButton::clicked, [this]() { for (NotifyItem *item : items) item->deleteLater(); });
+  connect(clearButton, &QPushButton::clicked, this, [this]() { for (NotifyItem *item : items) item->deleteLater(); });
   vbox->addWidget(clearButton);
 
   resize(500, 300);
+}
+
+//--------------------------------------------------------------------------------
+
+NotificationList::~NotificationList()
+{
+  for (NotifyItem *item : items)
+    item->disconnect();  // make sure destroyed() is no longer triggered
 }
 
 //--------------------------------------------------------------------------------
@@ -206,7 +214,7 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
   numItems++;
   emit itemsCountChanged();
 
-  connect(item.data(), &NotifyItem::destroyed,
+  connect(item.data(), &NotifyItem::destroyed, this,
           [this](QObject *obj)
           {
             items.removeOne(static_cast<NotifyItem *>(obj));
