@@ -68,7 +68,7 @@ PkUpdateListItem::PkUpdateListItem(QWidget *parent, PackageKit::Transaction::Inf
   checkBox->setChecked(!icon.isEmpty());  // auto-check the important ones
   connect(checkBox, &QCheckBox::toggled, this, &PkUpdateListItem::toggled);
 
-  QToolButton *label = new QToolButton;
+  label = new QToolButton;
   label->setAutoRaise(true);
   label->setText(package.summary + " [" +
                  PackageKit::Daemon::packageName(package.id) + ", " +
@@ -344,7 +344,7 @@ void PkUpdateList::filterChanged(const QString &text)
   {
     PkUpdateListItem *item = qobject_cast<PkUpdateListItem *>(itemsLayout->itemAt(i)->widget());
 
-    item->setVisible(text.isEmpty() || (item->package.summary.indexOf(text, 0, Qt::CaseInsensitive) != -1));
+    item->setVisible(text.isEmpty() || (item->label->text().indexOf(text, 0, Qt::CaseInsensitive) != -1));
   }
 
   itemsLayout->parentWidget()->layout()->setEnabled(true);

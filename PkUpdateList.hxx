@@ -76,6 +76,7 @@ class PkUpdateListItem : public QWidget
     void showProgress(bool yes);
 
     PkUpdates::PackageData package;
+    QToolButton *label;
     QCheckBox *checkBox;
     QProgressBar *progress;
     QToolButton *cancelButton;
