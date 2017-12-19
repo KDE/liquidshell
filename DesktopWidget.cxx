@@ -82,7 +82,7 @@ DesktopWidget::DesktopWidget()
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
   addAction(action);
 
-  action = new QAction(i18n("Help"));
+  action = new QAction(i18n("Help"), this);
   KHelpMenu *helpMenu = new KHelpMenu(this);
   helpMenu->action(KHelpMenu::menuHelpContents)->setVisible(false); // no handbook
   helpMenu->action(KHelpMenu::menuWhatsThis)->setVisible(false);
