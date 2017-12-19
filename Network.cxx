@@ -43,6 +43,7 @@ Network::Network(QWidget *parent)
   checkState();
 
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &Network::checkState);
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionRemoved, this, &Network::checkState);
 
