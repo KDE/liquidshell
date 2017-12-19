@@ -117,13 +117,13 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   else if ( !pixmap.isNull() )
     finalPixmap = applyOverlay(pixmap, overlay);
 
-  if ( dbus->id() == "KMail" )
+  if ( (dbus->id() == "KMail") || (dbus->id() == "Akregator") )
   {
     // hack for the unwillingness of the kmail maintainer to show unread message count on icon
     QString text = dbus->toolTip().subTitle.left(dbus->toolTip().subTitle.indexOf(QChar(' ')));
     bool ok = false;
     int num = text.toInt(&ok);
-    if ( ok )
+    if ( ok && (num < 100) )
     {
       QPainter painter(&finalPixmap);
       painter.setPen(Qt::blue);
