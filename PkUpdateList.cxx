@@ -172,7 +172,10 @@ void PkUpdateListItem::updateDetail(const QString &packageID,
   else if ( restart == PackageKit::Transaction::RestartSystem )
     text = i18n("<b>Reboot required</b><br>");
 
-  detailsLabel->setText(text + updateText);
+  text += updateText.trimmed();
+  text.replace("\n", "<br>");
+
+  detailsLabel->setText(text);
 }
 
 //--------------------------------------------------------------------------------
@@ -335,7 +338,7 @@ void PkUpdateList::countChecked()
 
 void PkUpdateList::filterChanged(const QString &text)
 {
-  itemsLayout->setEnabled(false);
+  itemsLayout->parentWidget()->layout()->setEnabled(false);
 
   for (int i = 0; i < itemsLayout->count(); i++)
   {
@@ -344,7 +347,7 @@ void PkUpdateList::filterChanged(const QString &text)
     item->setVisible(text.isEmpty() || (item->package.summary.indexOf(text, 0, Qt::CaseInsensitive) != -1));
   }
 
-  itemsLayout->setEnabled(true);
+  itemsLayout->parentWidget()->layout()->setEnabled(true);
   countChecked();
 }
 
