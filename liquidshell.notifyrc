@@ -16,8 +16,20 @@ Action=Popup
 
 [Event/update error]
 Name=Update error
+Name[ca]=Error en actualitzar
+Name[nl]=Fout tijdens bijwerken
+Name[pt]=Erro de actualização
+Name[sv]=Uppdateringsfel
+Name[uk]=Помилка оновлення
+Name[x-test]=xxUpdate errorxx
 Action=Popup
 
 [Event/restart needed]
 Name=Restart needed
+Name[ca]=Cal reiniciar
+Name[nl]=Herstart vereist
+Name[pt]=Reinício necessário
+Name[sv]=Omstart behövs
+Name[uk]=Потрібен перезапуск
+Name[x-test]=xxRestart neededxx
 Action=Popup
