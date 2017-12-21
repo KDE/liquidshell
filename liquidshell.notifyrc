@@ -6,6 +6,7 @@ Name=Updates available
 Name[ca]=Actualitzacions disponibles
 Name[ca@valencia]=Actualitzacions disponibles
 Name[es]=Actualizaciones disponibles
+Name[fi]=Päivityksiä saatavilla
 Name[fr]=Mises à jour disponibles
 Name[nl]=Elementen voor bijwerken beschikbaar
 Name[pt]=Actualizações disponíveis
@@ -17,6 +18,7 @@ Action=Popup
 [Event/update error]
 Name=Update error
 Name[ca]=Error en actualitzar
+Name[fi]=Päivitysvirhe
 Name[nl]=Fout tijdens bijwerken
 Name[pt]=Erro de actualização
 Name[sv]=Uppdateringsfel
@@ -27,6 +29,7 @@ Action=Popup
 [Event/restart needed]
 Name=Restart needed
 Name[ca]=Cal reiniciar
+Name[fi]=Uudelleenkäynnistys tarpeen
 Name[nl]=Herstart vereist
 Name[pt]=Reinício necessário
 Name[sv]=Omstart behövs
