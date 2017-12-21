@@ -7,6 +7,7 @@
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="nl">liquidshell</name>
   <name xml:lang="pt">liquidshell</name>
+  <name xml:lang="sk">liquidshell</name>
   <name xml:lang="sv">Liquid-skal</name>
   <name xml:lang="uk">liquidshell</name>
   <name xml:lang="x-test">xxliquidshellxx</name>
@@ -14,6 +15,7 @@
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
   <summary xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</summary>
+  <summary xml:lang="sk">liquidshell je alternatíva pre plasmashell</summary>
   <summary xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</summary>
   <summary xml:lang="uk">liquidshell є альтернативою оболонки Плазми</summary>
   <summary xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</summary>
@@ -22,6 +24,7 @@
     <p xml:lang="ca">El liquidshell és una alternativa al plasmashell</p>
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
     <p xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</p>
+    <p xml:lang="sk">liquidshell je alternatíva pre plasmashell</p>
     <p xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</p>
     <p xml:lang="uk">liquidshell є альтернативою оболонки Плазми</p>
     <p xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</p>
@@ -37,6 +40,7 @@
     <p xml:lang="ca">Característiques principals:</p>
     <p xml:lang="nl">Hoofdkenmerken:</p>
     <p xml:lang="pt">Funcionalidades Principais:</p>
+    <p xml:lang="sk">Hlavné funkcie:</p>
     <p xml:lang="sv">Huvudfunktionalitet:</p>
     <p xml:lang="uk">Основні можливості:</p>
     <p xml:lang="x-test">xxMain Features:xx</p>
@@ -59,6 +63,7 @@
       <li xml:lang="ca">Inici instantani</li>
       <li xml:lang="nl">Onmiddellijk opgestart</li>
       <li xml:lang="pt">Arranque instantâneo</li>
+      <li xml:lang="sk">Rýchle spustenie</li>
       <li xml:lang="sv">Omedelbar start</li>
       <li xml:lang="uk">Миттєвий запуск</li>
       <li xml:lang="x-test">xxInstant startupxx</li>
@@ -66,6 +71,7 @@
       <li xml:lang="ca">No empra les activitats</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
       <li xml:lang="pt">Não usa as actividades</li>
+      <li xml:lang="sk">Žiadne použitie aktívít</li>
       <li xml:lang="sv">Ingen användning av aktiviteter</li>
       <li xml:lang="uk">Не використовуються простори дій</li>
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
@@ -115,6 +121,7 @@
       <li xml:lang="ca">Miniaplicacions de l'escriptori</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
       <li xml:lang="pt">Elementos Gráficos do Ecrã</li>
+      <li xml:lang="sk">Applety plochy</li>
       <li xml:lang="sv">Skrivbordsminiprogram</li>
       <li xml:lang="uk">Аплети на стільниці</li>
       <li xml:lang="x-test">xxDesktop Appletsxx</li>
@@ -137,6 +144,7 @@
     <binary xml:lang="ca">liquidshell</binary>
     <binary xml:lang="nl">liquidshell</binary>
     <binary xml:lang="pt">liquidshell</binary>
+    <binary xml:lang="sk">liquidshell</binary>
     <binary xml:lang="sv">Liquid-skal</binary>
     <binary xml:lang="uk">liquidshell</binary>
     <binary xml:lang="x-test">xxliquidshellxx</binary>
