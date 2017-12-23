@@ -6,6 +6,7 @@
   <name>liquidshell</name>
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="ca-valencia">liquidshell</name>
+  <name xml:lang="en-GB">liquidshell</name>
   <name xml:lang="nl">liquidshell</name>
   <name xml:lang="pt">liquidshell</name>
   <name xml:lang="sk">liquidshell</name>
@@ -15,6 +16,7 @@
   <summary> liquidshell is an alternative to plasmashell </summary>
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
   <summary xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</summary>
+  <summary xml:lang="en-GB">liquidshell is an alternative to plasmashell</summary>
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
   <summary xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</summary>
   <summary xml:lang="sk">liquidshell je alternatíva pre plasmashell</summary>
@@ -25,6 +27,7 @@
     <p>liquidshell is an alternative to plasmashell</p>
     <p xml:lang="ca">El liquidshell és una alternativa al plasmashell</p>
     <p xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</p>
+    <p xml:lang="en-GB">liquidshell is an alternative to plasmashell</p>
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
     <p xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</p>
     <p xml:lang="sk">liquidshell je alternatíva pre plasmashell</p>
@@ -35,6 +38,7 @@
        therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="ca">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="ca-valencia">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
     <p xml:lang="pt">Não usa o QtQuick mas baseia-se sim no QtWidgets, pelo que não é necessária nenhuma aceleração gráfica por 'hardware'.</p>
     <p xml:lang="sv">Det använder inte QtQuick, utan förlitar sig istället på QtWidgets. Därför behövs ingen grafikacceleration i hårdvara.</p>
@@ -43,6 +47,7 @@
     <p>Main Features:</p>
     <p xml:lang="ca">Característiques principals:</p>
     <p xml:lang="ca-valencia">Característiques principals:</p>
+    <p xml:lang="en-GB">Main Features:</p>
     <p xml:lang="nl">Hoofdkenmerken:</p>
     <p xml:lang="pt">Funcionalidades Principais:</p>
     <p xml:lang="sk">Hlavné funkcie:</p>
@@ -53,6 +58,7 @@
       <li>Wallpaper per virtual desktop</li>
       <li xml:lang="ca">Fons de pantalla per a l'escriptori virtual</li>
       <li xml:lang="ca-valencia">Fons de pantalla per a l'escriptori virtual</li>
+      <li xml:lang="en-GB">Wallpaper per virtual desktop</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pt">Papel de parede por ecrã virtual</li>
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
@@ -61,6 +67,7 @@
       <li>No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="ca-valencia">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
+      <li xml:lang="en-GB">No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="nl">Geen animaties, geen CPU belasting, lage voetafdruk op geheugen</li>
       <li xml:lang="pt">Sem animações, sem bloqueios do CPU, pouco consumo de memória</li>
       <li xml:lang="sv">Inga animeringar, ingen beslagtagning av processorn, liten minnesanvändning</li>
@@ -69,6 +76,7 @@
       <li>Instant startup</li>
       <li xml:lang="ca">Inici instantani</li>
       <li xml:lang="ca-valencia">Inici instantani</li>
+      <li xml:lang="en-GB">Instant startup</li>
       <li xml:lang="nl">Onmiddellijk opgestart</li>
       <li xml:lang="pt">Arranque instantâneo</li>
       <li xml:lang="sk">Rýchle spustenie</li>
@@ -78,6 +86,7 @@
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
       <li xml:lang="ca-valencia">No empra les activitats</li>
+      <li xml:lang="en-GB">No use of activities</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
       <li xml:lang="pt">Não usa as actividades</li>
       <li xml:lang="sk">Žiadne použitie aktívít</li>
@@ -87,6 +96,7 @@
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
+      <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="nl">Gebaseerd op QtWidgets, volgt daarom widgetstijl uit systeeminstellingen</li>
       <li xml:lang="pt">Baseado no QtWidgets, pelo que segue o estilo gráfico da Configuração do Sistema</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
@@ -95,6 +105,7 @@
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="nl">Pictogrammen worden gebruikt uit uw globaal gedefinieerd pictogramthema uit systeeminstellingen</li>
       <li xml:lang="pt">São usados os ícones do seu tema de ícones definido a nível global na Configuração do Sistema</li>
       <li xml:lang="sv">Ikoner kommer från det globalt definierade ikontemat i systeminställningarna</li>
@@ -103,6 +114,7 @@
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
       <li xml:lang="nl">Kleuren worden gebruikt uit uw globaal gedefinieerd kleurenthema uit systeeminstellingen</li>
       <li xml:lang="pt">São usadas as cores do seu tema de cores definido a nível global na Configuração do Sistema</li>
       <li xml:lang="sv">Färger kommer från det globalt definierade färgtemat i systeminställningarna</li>
@@ -111,6 +123,7 @@
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordes «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
       <li xml:lang="pt">Pode ser modificado o seu estilo gráfico com CSS se passar a opção da linha de comandos '-stylesheet ficheiro.css' (veja o 'stylesheet.css' incluída no exemplo)</li>
       <li xml:lang="sv">Kan dessutom formateras med CSS genom att ange kommandoradsväljaren -stylesheet filnamn.css (se det inkluderade exemplet stylesheet.css)</li>
@@ -119,6 +132,7 @@
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
       <li xml:lang="pt">usa as janelas existentes no KDE para a maioria das configurações, p.ex., Menu Iniciar, Ecrãs Virtuais, Bluetooth, Rede</li>
       <li xml:lang="sv">Använder befintliga dialogrutor i KDE för de flesta inställningar, t.ex. startmeny, virtuella skrivbord, Blåtand, nätverk</li>
@@ -127,6 +141,7 @@
       <li>One bottom DesktopPanel</li>
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
+      <li xml:lang="en-GB">One bottom DesktopPanel</li>
       <li xml:lang="nl">Eén bureaubladpaneel onderaan</li>
       <li xml:lang="pt">Um único painel inferior</li>
       <li xml:lang="sv">En skrivbordspanel längst ner</li>
@@ -135,6 +150,7 @@
       <li>Desktop Applets</li>
       <li xml:lang="ca">Miniaplicacions de l'escriptori</li>
       <li xml:lang="ca-valencia">Miniaplicacions de l'escriptori</li>
+      <li xml:lang="en-GB">Desktop Applets</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
       <li xml:lang="pt">Elementos Gráficos do Ecrã</li>
       <li xml:lang="sk">Applety plochy</li>
@@ -159,6 +175,7 @@
     <binary>liquidshell</binary>
     <binary xml:lang="ca">liquidshell</binary>
     <binary xml:lang="ca-valencia">liquidshell</binary>
+    <binary xml:lang="en-GB">liquidshell</binary>
     <binary xml:lang="nl">liquidshell</binary>
     <binary xml:lang="pt">liquidshell</binary>
     <binary xml:lang="sk">liquidshell</binary>
