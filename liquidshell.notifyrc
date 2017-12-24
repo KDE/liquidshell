@@ -14,6 +14,7 @@ Name[pt]=Actualizações disponíveis
 Name[sv]=Uppdateringar tillgängliga
 Name[uk]=Доступні оновлення
 Name[x-test]=xxUpdates availablexx
+Name[zh_CN]=更新可用
 Action=Popup
 
 [Event/update error]
