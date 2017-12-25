@@ -59,6 +59,7 @@ set(SOURCES
     PopupMenu.cxx
     PkUpdates.cxx
     PkUpdateList.cxx
+    KdeConnect.cxx
 
     DesktopApplet.cxx
     WeatherApplet.cxx

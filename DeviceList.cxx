@@ -44,7 +44,7 @@
 //--------------------------------------------------------------------------------
 
 DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceActions)
-  : device(dev), actions(deviceActions)
+  : device(dev)
 {
   setFrameShape(QFrame::StyledPanel);
 
@@ -105,7 +105,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
   fillData();
 
   // append actions
-  for (const DeviceAction &action : actions)
+  for (const DeviceAction &action : deviceActions)
   {
     QHBoxLayout *hbox = new QHBoxLayout;
     hbox->addSpacing(iconLabel->sizeHint().width());
@@ -144,6 +144,86 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
               window()->hide();
             }
            );
+
+    hbox->addWidget(button);
+
+    vbox->addLayout(hbox);
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+DeviceItem::DeviceItem(const KdeConnect::Device &dev)
+{
+  setFrameShape(QFrame::StyledPanel);
+
+  QVBoxLayout *vbox = new QVBoxLayout(this);
+  QHBoxLayout *hbox = new QHBoxLayout;
+  vbox->addLayout(hbox);
+
+  QLabel *iconLabel = new QLabel;
+  iconLabel->setPixmap(dev->icon.pixmap(32));
+  iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+  textLabel = new QLabel;
+  textLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+  textLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+
+  hbox->addWidget(iconLabel, 0, Qt::AlignLeft | Qt::AlignVCenter);
+  hbox->addWidget(textLabel, 0, Qt::AlignVCenter);
+
+  statusLabel = new QLabel;
+  hbox->addWidget(statusLabel, 0, Qt::AlignVCenter);
+
+  if ( dev->charge >= 0 )
+    statusLabel->setText(QString::number(dev->charge) + '%');
+
+  connect(dev.data(), &KdeConnectDevice::chargeChanged, statusLabel,
+          [this](int charge)
+          {
+            if ( charge >= 0 )
+              statusLabel->setText(QString::number(charge) + '%');
+          });
+
+  QToolButton *ringButton = new QToolButton;
+  ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
+  connect(ringButton, &QToolButton::clicked, [dev]() { dev->ringPhone(); });
+
+  QToolButton *configure = new QToolButton;
+  configure->setIcon(QIcon::fromTheme("configure"));
+  connect(configure, &QToolButton::clicked,
+          [this]()
+          {
+            if ( !dialog )
+            {
+              dialog = new KCMultiDialog(this);
+              dialog->setAttribute(Qt::WA_DeleteOnClose);
+              dialog->addModule("kcm_kdeconnect");
+              dialog->setWindowTitle(i18n("KDE Connect"));
+              dialog->adjustSize();
+            }
+            dialog->show();
+          });
+
+  hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
+  hbox->addWidget(configure, 0, Qt::AlignVCenter);
+
+  textLabel->setText(dev->name);
+
+  if ( dev->plugins.contains("kdeconnect_sftp") )
+  {
+    QHBoxLayout *hbox = new QHBoxLayout;
+    hbox->addSpacing(iconLabel->sizeHint().width());
+
+    QToolButton *button = new QToolButton;
+    button->setAutoRaise(true);
+    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    button->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    button->setIcon(QIcon::fromTheme("system-file-manager"));
+    button->setText(i18n("Open with File Manager"));
+
+    connect(button, &QToolButton::clicked,
+            [dev]() { new KRun(QUrl(QLatin1String("kdeconnect://") + dev->id), nullptr); });
 
     hbox->addWidget(button);
 
@@ -265,6 +345,7 @@ DeviceList::DeviceList(QWidget *parent)
 
   vbox = new QVBoxLayout(this);
   vbox->setContentsMargins(QMargins());
+  vbox->addStretch();
 
   predicate = Solid::Predicate(Solid::DeviceInterface::StorageAccess);
   predicate |= Solid::Predicate(Solid::DeviceInterface::StorageDrive);
@@ -279,13 +360,14 @@ DeviceList::DeviceList(QWidget *parent)
   for (Solid::Device device : devices)
     addDevice(device);
 
-  vbox->addStretch();
-
   connect(Solid::DeviceNotifier::instance(), &Solid::DeviceNotifier::deviceAdded,
           this, &DeviceList::deviceAdded);
 
   connect(Solid::DeviceNotifier::instance(), &Solid::DeviceNotifier::deviceRemoved,
           this, &DeviceList::deviceRemoved);
+
+  connect(&kdeConnect, &KdeConnect::deviceAdded, this, &DeviceList::kdeConnectDeviceAdded);
+  connect(&kdeConnect, &KdeConnect::deviceRemoved, this, &DeviceList::deviceRemoved);
 }
 
 //--------------------------------------------------------------------------------
@@ -396,6 +478,25 @@ void DeviceList::deviceRemoved(const QString &dev)
     delete items.take(dev);
     emit deviceWasRemoved();
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void DeviceList::kdeConnectDeviceAdded(const KdeConnect::Device &device)
+{
+  if ( items.contains(device->id) )
+  {
+    //qDebug() << device->id << "already known";
+    return;
+  }
+
+  DeviceItem *item = new DeviceItem(device);
+  vbox->insertWidget(vbox->count() - 1, item);  // insert before stretch
+
+  items.insert(device->id, item);
+
+  // when we added a new device, make sure the DeviceNotifier shows and places this window
+  emit deviceWasAdded();
 }
 
 //--------------------------------------------------------------------------------

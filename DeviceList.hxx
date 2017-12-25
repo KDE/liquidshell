@@ -30,8 +30,12 @@
 #include <QLabel>
 #include <QTimer>
 #include <QToolButton>
+#include <QPointer>
 
+#include <KCMultiDialog>
 #include <KServiceAction>
+
+#include <KdeConnect.hxx>
 
 //--------------------------------------------------------------------------------
 
@@ -54,6 +58,7 @@ class DeviceItem : public QFrame
 
   public:
     DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceActions);
+    DeviceItem(const KdeConnect::Device &dev);
 
   private:
     static QString errorToString(Solid::ErrorType error);
@@ -68,10 +73,10 @@ class DeviceItem : public QFrame
 
   private:
     Solid::Device device;
-    QVector<DeviceAction> actions;
     QToolButton *mountButton = nullptr;
-    QLabel *textLabel, *statusLabel;
+    QLabel *textLabel = nullptr, *statusLabel = nullptr;
     QTimer statusTimer;
+    QPointer<KCMultiDialog> dialog;
 };
 
 //--------------------------------------------------------------------------------
@@ -92,6 +97,7 @@ class DeviceList : public QFrame
   private Q_SLOTS:
     void deviceAdded(const QString &dev);
     void deviceRemoved(const QString &dev);
+    void kdeConnectDeviceAdded(const KdeConnect::Device &dev);
 
   private:
     void loadActions();
@@ -103,6 +109,7 @@ class DeviceList : public QFrame
     Solid::Predicate predicate;
 
     QVector<DeviceAction> actions;
+    KdeConnect kdeConnect;
 };
 
 #endif
