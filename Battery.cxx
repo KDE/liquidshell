@@ -127,22 +127,40 @@ void Battery::upowerPropertiesChanged(const QString &interface,
 
 //--------------------------------------------------------------------------------
 
+QIcon Battery::getStatusIcon(int charge, bool isCharging)
+{
+  QString iconName;
+
+  int p = qRound(charge / 20.0) * 20;
+
+  if ( p < 20 )
+    iconName = "caution";
+  else if ( p < 40 )
+    iconName = "low";
+  else
+    iconName = QString("%1").arg(p, 3, 10, QLatin1Char('0'));
+
+  iconName = QString("battery%1-%2").arg(isCharging ? "-charging" : "").arg(iconName);
+
+  return QIcon::fromTheme(iconName);
+}
+
+//--------------------------------------------------------------------------------
+
 void Battery::changed()
 {
   Solid::Battery *battery = device.as<Solid::Battery>();
 
-  QString icon, tip;
+  QString tip;
 
   switch ( battery->chargeState() )
   {
-    case Solid::Battery::NoCharge: icon = "battery"; tip = i18n("Not Charging"); break;
-    case Solid::Battery::FullyCharged: icon = "battery-100"; tip = i18n("Fully Charged"); break;
+    case Solid::Battery::NoCharge: tip = i18n("Not Charging"); break;
+    case Solid::Battery::FullyCharged: tip = i18n("Fully Charged"); break;
 
     case Solid::Battery::Charging:
     case Solid::Battery::Discharging:
     {
-      int p = std::round(battery->chargePercent() / 20.0) * 20;
-
       if ( battery->chargeState() == Solid::Battery::Charging )
       {
         tip = i18n("Charging at %1%", battery->chargePercent());
@@ -156,22 +174,12 @@ void Battery::changed()
           tip += '\n' + i18n("Remaining Time: ") + secsToHM(battery->timeToEmpty());
       }
 
-      if ( p < 20 )
-        icon = "battery-caution";
-      else if ( p < 40 )
-        icon = "battery-low";
-      else
-      {
-        icon = QString("battery%1-%2")
-                      .arg((battery->chargeState() == Solid::Battery::Charging) ? "-charging" : "")
-                      .arg(p, 3, 10, QLatin1Char('0'));
-      }
-
       break;
     }
   }
 
-  setPixmap(QIcon::fromTheme(icon).pixmap(size()));
+  setPixmap(getStatusIcon(battery->chargePercent(),
+                          battery->chargeState() == Solid::Battery::Charging).pixmap(size()));
   setToolTip(tip);
 }
 

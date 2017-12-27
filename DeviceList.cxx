@@ -175,14 +175,25 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
   statusLabel = new QLabel;
   hbox->addWidget(statusLabel, 0, Qt::AlignVCenter);
 
-  if ( dev->charge >= 0 )
-    statusLabel->setText(QString::number(dev->charge) + '%');
+  QLabel *chargeIcon = new QLabel;
+  hbox->addWidget(chargeIcon, 0, Qt::AlignVCenter);
 
-  connect(dev.data(), &KdeConnectDevice::chargeChanged, statusLabel,
-          [this](int charge)
+  if ( dev->charge >= 0 )
+  {
+    statusLabel->setText(QString::number(dev->charge) + '%');
+    chargeIcon->setPixmap(dev->chargeIcon.pixmap(22));
+  }
+
+  connect(dev.data(), &KdeConnectDevice::changed, this,
+          [this, chargeIcon, dev]()
           {
-            if ( charge >= 0 )
-              statusLabel->setText(QString::number(charge) + '%');
+            textLabel->setText(dev->name);
+
+            if ( dev->charge >= 0 )
+            {
+              statusLabel->setText(QString::number(dev->charge) + '%');
+              chargeIcon->setPixmap(dev->chargeIcon.pixmap(22));
+            }
           });
 
   QToolButton *ringButton = new QToolButton;

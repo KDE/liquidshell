@@ -20,8 +20,6 @@
 #include <DeviceNotifier.hxx>
 #include <DeviceList.hxx>
 
-#include <Solid/DeviceNotifier>
-
 #include <QIcon>
 #include <QMouseEvent>
 #include <QDebug>

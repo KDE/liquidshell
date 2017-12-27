@@ -18,6 +18,7 @@
 */
 
 #include <KdeConnect.hxx>
+#include <Battery.hxx>
 
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
@@ -62,7 +63,7 @@ void KdeConnect::gotDevices(const QDBusMessage &msg)
 {
   QStringList deviceList = msg.arguments()[0].toStringList();
 
-  //qDebug() << deviceList;
+  //qDebug() << __FUNCTION__ << deviceList;
   for (const QString &device : deviceList)
     deviceAddedSlot(device);
 }
@@ -71,6 +72,7 @@ void KdeConnect::gotDevices(const QDBusMessage &msg)
 
 void KdeConnect::deviceVisibilityChanged(const QString &dev, bool visible)
 {
+  //qDebug() << __FUNCTION__ << dev << visible;
   if ( visible )
     deviceAddedSlot(dev);
   else
@@ -81,11 +83,13 @@ void KdeConnect::deviceVisibilityChanged(const QString &dev, bool visible)
 
 void KdeConnect::deviceAddedSlot(const QString &dev)
 {
+  //qDebug() << __FUNCTION__ << dev;
   if ( devices.contains(dev) )
     return;
 
-  QDBusInterface interface("org.kde.kdeconnect", "/modules/kdeconnect/devices/" + dev,
-                           "org.freedesktop.DBus.Properties");
+  const QString devicePath =  "/modules/kdeconnect/devices/" + dev;
+
+  QDBusInterface interface("org.kde.kdeconnect", devicePath, "org.freedesktop.DBus.Properties");
 
   Device device;
   device->id = dev;
@@ -107,21 +111,37 @@ void KdeConnect::deviceAddedSlot(const QString &dev)
   }
 
   QDBusMessage msg =
-    QDBusMessage::createMethodCall("org.kde.kdeconnect", "/modules/kdeconnect/devices/" + dev,
+    QDBusMessage::createMethodCall("org.kde.kdeconnect", devicePath,
                                    "org.kde.kdeconnect.device", "loadedPlugins");
   QDBusReply<QStringList> strings;
   strings = QDBusConnection::sessionBus().call(msg);
   device->plugins = strings.value();
 
-  msg = QDBusMessage::createMethodCall("org.kde.kdeconnect", "/modules/kdeconnect/devices/" + dev,
+  msg = QDBusMessage::createMethodCall("org.kde.kdeconnect", devicePath,
                                        "org.kde.kdeconnect.device.battery", "charge");
   QDBusReply<int> chargeReply = QDBusConnection::sessionBus().call(msg);
   if ( chargeReply.isValid() )
     device->charge = chargeReply.value();
 
-  QDBusConnection::sessionBus().connect("org.kde.kdeconnect", "/modules/kdeconnect/devices/" + dev,
+  msg = QDBusMessage::createMethodCall("org.kde.kdeconnect", devicePath,
+                                       "org.kde.kdeconnect.device.battery", "isCharging");
+  QDBusReply<bool> isChargingReply = QDBusConnection::sessionBus().call(msg);
+  if ( isChargingReply.isValid() )
+    device->isCharging = isChargingReply.value();
+
+  device->calcChargeIcon();
+
+  QDBusConnection::sessionBus().connect("org.kde.kdeconnect", devicePath,
                                         "org.kde.kdeconnect.device.battery", "chargeChanged",
-                                        device.data(), SLOT(chargeChanged(int)));
+                                        device.data(), SLOT(chargeChangedSlot(int)));
+
+  QDBusConnection::sessionBus().connect("org.kde.kdeconnect", devicePath,
+                                        "org.kde.kdeconnect.device.battery", "stateChanged",
+                                        device.data(), SLOT(stateChangedSlot(bool)));
+
+  QDBusConnection::sessionBus().connect("org.kde.kdeconnect", devicePath,
+                                        "org.kde.kdeconnect.device.battery", "nameChanged",
+                                        device.data(), SLOT(nameChangedSlot(const QString &)));
 
   devices.insert(dev, device);
 
@@ -146,6 +166,42 @@ void KdeConnectDevice::ringPhone()
     QDBusMessage::createMethodCall("org.kde.kdeconnect", "/modules/kdeconnect/devices/" + id + "/findmyphone",
                                    "org.kde.kdeconnect.device.findmyphone", "ring");
   QDBusConnection::sessionBus().call(msg);
+}
+
+//--------------------------------------------------------------------------------
+
+void KdeConnectDevice::chargeChangedSlot(int c)
+{
+  //qDebug() << __FUNCTION__ << c;
+  charge = c;
+  calcChargeIcon();
+}
+
+//--------------------------------------------------------------------------------
+
+void KdeConnectDevice::stateChangedSlot(bool c)
+{
+  //qDebug() << __FUNCTION__ << c;
+  isCharging = c;
+  calcChargeIcon();
+}
+
+//--------------------------------------------------------------------------------
+
+void KdeConnectDevice::calcChargeIcon()
+{
+  chargeIcon = Battery::getStatusIcon(charge, isCharging);
+
+  emit changed();
+}
+
+//--------------------------------------------------------------------------------
+
+void KdeConnectDevice::nameChangedSlot(const QString &newName)
+{
+  //qDebug() << __FUNCTION__ << newName;
+  name = newName;
+  emit changed();
 }
 
 //--------------------------------------------------------------------------------

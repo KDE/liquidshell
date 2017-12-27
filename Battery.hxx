@@ -25,7 +25,6 @@
 #include <QPointer>
 #include <KCMultiDialog>
 class QDBusMessage;
-class QDBusError;
 
 class Battery : public SysTrayItem
 {
@@ -33,6 +32,8 @@ class Battery : public SysTrayItem
 
   public:
     Battery(QWidget *parent);
+
+    static QIcon getStatusIcon(int charge, bool isCharging);
 
   protected:
     QWidget *getDetailsList() override;

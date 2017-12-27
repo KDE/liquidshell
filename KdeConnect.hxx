@@ -33,23 +33,23 @@ class KdeConnectDevice : public QObject
   Q_OBJECT
 
   Q_SIGNALS:
-    void chargeChanged(int charge);
+    void changed();
 
   public:
     void ringPhone();
+    void calcChargeIcon();
 
     QString id;
     QString name;
-    QIcon icon;
+    QIcon icon, chargeIcon;
     QStringList plugins;
     int charge = -1;
+    bool isCharging = false;
     
   private Q_SLOTS:
-    void chargeChangedSlot(int c)
-    {
-      charge = c;
-      emit chargeChanged(charge);
-    }
+    void chargeChangedSlot(int c);
+    void stateChangedSlot(bool c);
+    void nameChangedSlot(const QString &newName);
 };
 
 //--------------------------------------------------------------------------------
