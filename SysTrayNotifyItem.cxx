@@ -152,8 +152,7 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   if ( dbus->status() == "Passive" )
   {
     // TODO make it configurable
-    if ( (dbus->id() == "KOrganizer Reminder Daemon") ||
-         (dbus->id() == "KMail") )
+    if ( dbus->id() == "KMail" )
       hide();
   }
 
