@@ -24,6 +24,10 @@
 #include <QMap>
 #include <QIcon>
 #include <QSharedPointer>
+#include <QPointer>
+
+#include <KNotification>
+
 class QDBusMessage;
 
 //--------------------------------------------------------------------------------
@@ -35,9 +39,11 @@ class KdeConnectDevice : public QObject
   Q_SIGNALS:
     void changed();
 
+  public Q_SLOTS:
+    void chargeChangedSlot(int c);
+
   public:
     void ringPhone();
-    void calcChargeIcon();
 
     QString id;
     QString name;
@@ -45,11 +51,16 @@ class KdeConnectDevice : public QObject
     QStringList plugins;
     int charge = -1;
     bool isCharging = false;
+    bool warned = false;
     
   private Q_SLOTS:
-    void chargeChangedSlot(int c);
     void stateChangedSlot(bool c);
     void nameChangedSlot(const QString &newName);
+
+  private:
+    void calcChargeIcon();
+
+    QPointer<KNotification> notif;
 };
 
 //--------------------------------------------------------------------------------

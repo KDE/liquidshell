@@ -27,6 +27,8 @@
 #include <QDBusInterface>
 #include <QDebug>
 
+#include <KLocalizedString>
+
 //--------------------------------------------------------------------------------
 
 KdeConnect::KdeConnect()
@@ -129,7 +131,7 @@ void KdeConnect::deviceAddedSlot(const QString &dev)
   if ( isChargingReply.isValid() )
     device->isCharging = isChargingReply.value();
 
-  device->calcChargeIcon();
+  device->chargeChangedSlot(device->charge);
 
   QDBusConnection::sessionBus().connect("org.kde.kdeconnect", devicePath,
                                         "org.kde.kdeconnect.device.battery", "chargeChanged",
@@ -172,9 +174,33 @@ void KdeConnectDevice::ringPhone()
 
 void KdeConnectDevice::chargeChangedSlot(int c)
 {
-  //qDebug() << __FUNCTION__ << c;
+  //qDebug() << __FUNCTION__ << name << c;
   charge = c;
+
+  if ( charge < 0 )
+    return;
+
   calcChargeIcon();
+
+  const int LIMIT = 40;
+
+  if ( charge < LIMIT )  // I want to keep charge above 40%
+  {
+    if ( !warned )
+    {
+      warned = true;
+      notif = new KNotification("device needs charging", KNotification::Persistent);
+      notif->setTitle(i18n("Device needs charging"));
+      notif->setText(i18n("Device charge of '%1' is at %2%.\nYou should charge it.", name, charge));
+      notif->setIconName("battery-040");
+      notif->sendEvent();
+    }
+  }
+  else
+  {
+    warned = false;
+    if ( notif ) notif->close();
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -184,6 +210,9 @@ void KdeConnectDevice::stateChangedSlot(bool c)
   //qDebug() << __FUNCTION__ << c;
   isCharging = c;
   calcChargeIcon();
+
+  if ( isCharging && notif )
+    notif->close();
 }
 
 //--------------------------------------------------------------------------------
