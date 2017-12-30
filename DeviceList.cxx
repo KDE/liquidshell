@@ -73,7 +73,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
     mountButton = new QToolButton;
     mountButton->setIconSize(QSize(32, 32));
 
-    connect(mountButton, &QToolButton::clicked,
+    connect(mountButton, &QToolButton::clicked, mountButton,
             [this]()
             {
               statusLabel->hide();
@@ -117,7 +117,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
     button->setIcon(QIcon::fromTheme(action.action.icon()));
     button->setText(action.action.text() + " (" + QFileInfo(action.path).baseName() + ")");
 
-    connect(button, &QToolButton::clicked,
+    connect(button, &QToolButton::clicked, button,
             [action, this]()
             {
               QString command = action.action.exec();
@@ -196,13 +196,17 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
             }
           });
 
-  QToolButton *ringButton = new QToolButton;
-  ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
-  connect(ringButton, &QToolButton::clicked, [dev]() { dev->ringPhone(); });
+  if ( dev->plugins.contains("kdeconnect_findmyphone") )
+  {
+    QToolButton *ringButton = new QToolButton;
+    ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
+    connect(ringButton, &QToolButton::clicked, [dev]() { dev->ringPhone(); });
+    hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
+  }
 
   QToolButton *configure = new QToolButton;
   configure->setIcon(QIcon::fromTheme("configure"));
-  connect(configure, &QToolButton::clicked,
+  connect(configure, &QToolButton::clicked, configure,
           [this]()
           {
             if ( !dialog )
@@ -216,7 +220,6 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
             dialog->show();
           });
 
-  hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
   hbox->addWidget(configure, 0, Qt::AlignVCenter);
 
   textLabel->setText(dev->name);

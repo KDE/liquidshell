@@ -93,10 +93,13 @@ void KdeConnect::deviceAddedSlot(const QString &dev)
 
   QDBusInterface interface("org.kde.kdeconnect", devicePath, "org.freedesktop.DBus.Properties");
 
+  QDBusReply<QVariant> reply;
+  reply = interface.call("Get", "org.kde.kdeconnect.device", "isTrusted");
+  if ( !reply.value().toBool() )
+    return;  // only show paired devices
+
   Device device;
   device->id = dev;
-
-  QDBusReply<QVariant> reply;
 
   reply = interface.call("Get", "org.kde.kdeconnect.device", "name");
   device->name = reply.value().toString();
@@ -154,6 +157,9 @@ void KdeConnect::deviceAddedSlot(const QString &dev)
 
 void KdeConnect::deviceRemovedSlot(const QString &dev)
 {
+  if ( !devices.contains(dev) )
+    return;
+
   devices.remove(dev);
   emit deviceRemoved(dev);
 }
