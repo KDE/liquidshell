@@ -2,7 +2,7 @@
 <component type="desktop">
   <id>org.kde.liquidshell.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license> see https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-metadata_license </project_license>
+  <project_license> GPL-3.0 </project_license>
   <name>liquidshell</name>
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="ca-valencia">liquidshell</name>
@@ -172,11 +172,7 @@
   <url type="donation">https://www.kde.org/community/donations/?app=liquidshell</url>
   <screenshots>
     <screenshot type="default">
-      <image>
-        see https://www.freedesktop.org/software/appstream/docs/chap-Metadata.html#tag-screenshots
-        Central hosting for uploading at https://phabricator.kde.org/source/websites-product-screenshots/
-        Central URL to use here https://cdn.kde.org/screenshots/...
-      </image>
+      <image> https://cdn.kde.org/screenshots/liquidshell/liquidshell-light.png </image>
     </screenshot>
   </screenshots>
   <provides>
