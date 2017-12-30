@@ -25,7 +25,7 @@
 
 #include <QPushButton>
 #include <QToolButton>
-#include <QFrame>
+#include <QMenu>
 #include <QEventLoop>
 
 //--------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ class AppMenu : public Launcher
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-class Menu : public QFrame
+class Menu : public QMenu
 {
   Q_OBJECT
 
