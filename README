@@ -26,6 +26,8 @@ Main Features:
   LockLogout
   SysLoad widget including CPU, Memory, Swap and Network bars, live updated tooltip
   SysTray with integrated Network-, Notifications-, Device Notifier-, Bluetooth-, Battery- display.
+      It also features PackageKit software updates integration.
+      The DeviceList also shows devices connected and paired with KDEConnect.
       Display of StatusNotifier items from other applications (no legacy embedded icons yet).
       Notifications kept in a history list for some minutes, including timestamp and text selectable per mouse
       (very handy for copy/paste of TAC numbers from online banking received via SMS and transferred to KDE
