@@ -44,3 +44,8 @@ Name[sv]=Omstart behövs
 Name[uk]=Потрібен перезапуск
 Name[x-test]=xxRestart neededxx
 Action=Popup
+
+[Event/device needs charging]
+Name=Device needs charging
+IconName=battery-040
+Action=Popup
