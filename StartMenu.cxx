@@ -160,7 +160,7 @@ void StartMenu::showMenu()
 {
   popup->adjustSize();
   QPoint p = mapToGlobal(QPoint(0, 0));
-  popup->move(p.x(), p.y() - popup->height());
+  popup->move(p.x(), p.y() - popup->sizeHint().height());
   popup->exec();
   setDown(false);
 }
