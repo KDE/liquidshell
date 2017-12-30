@@ -13,12 +13,16 @@ Name:    liquidshell
 Version: 1.0
 Release: 1
 License: GPL-3.0
-#Group:   Productivity/Graphics/Viewers
-Source:  %{name}-%{version}.tar.bz2
+Group:   System/GUI/KDE
+Source:  %{name}-%{version}.tar.xz
 URL: https://cgit.kde.org/liquidshell.git
 BuildRequires: kconfig-devel kio-devel kwidgetsaddons-devel kdoctools-devel	
-BuildRequires: ki18n-devel libQt5Widgets-devel update-desktop-files
-BuildRoot: %{_tmppath}/%{name}-%{version}-build
+BuildRequires: kwindowsystem-devel kdbusaddons-devel libKF5NetworkManagerQt-devel
+BuildRequires: kitemviews-devel ki18n-devel kservice-devel solid-devel
+BuildRequires: kiconthemes-devel knotifications-devel kcmutils-devel
+BuildRequires: libQt5Widgets-devel libqt5-qtx11extras-devel kcrash-devel
+BuildRequires: bluez-qt-devel karchive-devel knewstuff-devel PackageKit-Qt5-devel
+BuildRoot: %{_tmppath}/%{name}-build
  
 %description
 Alternative desktop replacement for Plasma, using QtWidgets
@@ -54,11 +58,6 @@ make DESTDIR=$RPM_BUILD_ROOT install
 popd
 %endif
  
-%if 0%{?suse_version}
-%suse_update_desktop_file %name
-%else
-%endif
- 
  
 #================= POST / POSTUN Mandriva ==================
 %if 0%{?mandriva_version}
@@ -79,6 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{_bindir}/%{name}
 %{_datadir}/applications/org.kde.liquidshell.desktop
+%{_datadir}/icons/hicolor/48x48/apps/liquidshell.png
+%{_datadir}/knotifications5/liquidshell.notifyrc
  
 #================= CHANGELOG ==================
 %changelog
