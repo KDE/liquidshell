@@ -1,5 +1,11 @@
 /* some examples ...
 
+DesktopPanel
+{
+  min-height: 65px;
+  max-height: 65px;
+}
+
 ClockWidget QLabel#time
 {
   font-size: 26px;
