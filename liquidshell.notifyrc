@@ -47,5 +47,12 @@ Action=Popup
 
 [Event/device needs charging]
 Name=Device needs charging
+Name[ca]=Cal carregar el dispositiu
+Name[ca@valencia]=Cal carregar el dispositiu
+Name[en_GB]=Device needs charging
+Name[nl]=Apparaat moet opgeladen worden
+Name[pt]=O dispositivo necessita de carga
+Name[uk]=Пристрій потребує заряджання
+Name[x-test]=xxDevice needs chargingxx
 IconName=battery-040
 Action=Popup
