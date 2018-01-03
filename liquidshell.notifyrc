@@ -52,6 +52,7 @@ Name[ca@valencia]=Cal carregar el dispositiu
 Name[en_GB]=Device needs charging
 Name[nl]=Apparaat moet opgeladen worden
 Name[pt]=O dispositivo necessita de carga
+Name[sv]=Enhet behöver laddas
 Name[uk]=Пристрій потребує заряджання
 Name[x-test]=xxDevice needs chargingxx
 IconName=battery-040
