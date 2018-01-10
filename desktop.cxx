@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 -2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -46,8 +46,7 @@ int main(int argc, char **argv)
                        i18n("A QtWidgets based alternative to plasmashell"),
                        KAboutLicense::GPL_V3,
                        i18n("Copyright 2017 Martin Koller"), QString(),
-                       QString(), // homepage
-                       QString("kollix@aon.at")); // bugs to
+                       "https://www.linux-apps.com/p/1205621/"); // homepage
 
   aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
 
