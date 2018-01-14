@@ -32,6 +32,7 @@
 #include <KFileItem>
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -49,6 +50,7 @@ QuickLaunch::QuickLaunch(DesktopPanel *parent)
   loadConfig();
 
   connect(parent, &DesktopPanel::rowsChanged, this, &QuickLaunch::fill);
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &QuickLaunch::fill);
 }
 
 //--------------------------------------------------------------------------------
@@ -101,7 +103,15 @@ void QuickLaunch::fill()
       button->setAutoRaise(true);
       button->setIcon(icon);
       button->setToolTip(name);
-      button->setIconSize(QSize(22, 22));
+
+      if ( MAX_ROWS > 1 )
+        button->setIconSize(QSize(22, 22));
+      else
+      {
+        int size = KIconLoader::global()->currentSize(KIconLoader::Panel);
+        button->setIconSize(QSize(size, size));
+      }
+
       connect(button, &QToolButton::clicked, [url]() { new KRun(url, nullptr); });
 
       grid->addWidget(button, row, col, Qt::AlignCenter);

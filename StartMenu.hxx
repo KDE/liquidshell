@@ -43,6 +43,7 @@ class StartMenu : public QToolButton
     void contextMenuEvent(QContextMenuEvent *event) override;
 
   private Q_SLOTS:
+    void adjustIconSize();
     void fill();
     void showMenu();
 

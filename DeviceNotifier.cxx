@@ -29,9 +29,8 @@
 //--------------------------------------------------------------------------------
 
 DeviceNotifier::DeviceNotifier(QWidget *parent)
-  : SysTrayItem(parent)
+  : SysTrayItem(parent, "device-notifier")
 {
-  setPixmap(QIcon::fromTheme("device-notifier").pixmap(size()));
   setToolTip(i18n("Device Notifier"));
 
   deviceList = new DeviceList(this);

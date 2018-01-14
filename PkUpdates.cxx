@@ -26,6 +26,7 @@
 
 #include <KLocalizedString>
 #include <KNotification>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -33,6 +34,7 @@ PkUpdates::PkUpdates(QWidget *parent)
   : SysTrayItem(parent)
 {
   setPixmap(QIcon::fromTheme("system-software-update").pixmap(size()));
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { createToolTip(); });
 
   // check every hour if the next checkpoint was reached. This ensures that
   // we check for updates even when the computer was suspended for a while

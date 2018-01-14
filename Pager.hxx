@@ -23,13 +23,14 @@
 #include <QWidget>
 class QButtonGroup;
 class PagerButton;
+class DesktopPanel;
 
 class Pager : public QWidget
 {
   Q_OBJECT
 
   public:
-    Pager(QWidget *parent);
+    Pager(DesktopPanel *parent);
 
   private Q_SLOTS:
     void fill();

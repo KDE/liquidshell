@@ -18,6 +18,7 @@
 */
 
 #include <PagerButton.hxx>
+#include <DesktopPanel.hxx>
 
 #include <QPainter>
 #include <QStyle>
@@ -30,11 +31,12 @@
 #include <QDebug>
 
 #include <KWindowSystem>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
-PagerButton::PagerButton(int num)
-  : desktop(num)
+PagerButton::PagerButton(int num, DesktopPanel *p)
+  : desktop(num), panel(p)
 {
   setText(KWindowSystem::desktopName(desktop).isEmpty() ?
           QString::number(desktop) : KWindowSystem::desktopName(desktop));
@@ -65,6 +67,8 @@ PagerButton::PagerButton(int num)
 
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
+
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { updateGeometry(); });
 }
 
 //--------------------------------------------------------------------------------
@@ -74,6 +78,10 @@ QSize PagerButton::sizeHint() const
   QSize s = fontMetrics().size(0, text());
   s.setWidth(std::max(45, s.width() + 10));
   s.setHeight(QPushButton::sizeHint().height());
+
+  if ( panel->getRows() == 1 )
+    s.setHeight(std::max(s.height(), KIconLoader::global()->currentSize(KIconLoader::Panel)));
+
   return s;
 }
 

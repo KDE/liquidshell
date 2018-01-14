@@ -27,7 +27,7 @@ class SysTrayItem : public QLabel
   Q_OBJECT
 
   public:
-    SysTrayItem(QWidget *parent);
+    SysTrayItem(QWidget *parent, const QString &icon = QString());
 
   protected Q_SLOTS:
     void toggleDetailsList();
@@ -36,6 +36,9 @@ class SysTrayItem : public QLabel
   protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual QWidget *getDetailsList() { return nullptr; }
+
+  private:
+    QString iconName;
 };
 
 #endif

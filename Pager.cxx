@@ -19,12 +19,12 @@
 
 #include <Pager.hxx>
 #include <PagerButton.hxx>
+#include <DesktopPanel.hxx>
 
 #include <QGridLayout>
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QX11Info>
-#include <QDBusConnection>
 #include <QAction>
 #include <QDebug>
 
@@ -35,11 +35,9 @@
 
 //--------------------------------------------------------------------------------
 
-Pager::Pager(QWidget *parent)
+Pager::Pager(DesktopPanel *parent)
   : QWidget(parent)
 {
-  setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-
   group = new QButtonGroup(this);
 
   QGridLayout *grid = new QGridLayout(this);
@@ -56,9 +54,7 @@ Pager::Pager(QWidget *parent)
           }
          );
 
-  // to get notified about num-of-rows changed
-  QDBusConnection dbus = QDBusConnection::sessionBus();
-  dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(fill()));
+  connect(parent, &DesktopPanel::rowsChanged, this, &Pager::fill);
 
   fill();
 
@@ -94,7 +90,7 @@ void Pager::fill()
 
   for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
   {
-    PagerButton *b = new PagerButton(i);
+    PagerButton *b = new PagerButton(i, qobject_cast<DesktopPanel *>(parentWidget()));
 
     b->setCheckable(true);
     b->setFocusPolicy(Qt::NoFocus);

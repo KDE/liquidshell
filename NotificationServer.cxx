@@ -31,11 +31,9 @@
 //--------------------------------------------------------------------------------
 
 NotificationServer::NotificationServer(QWidget *parent)
-  : SysTrayItem(parent)
+  : SysTrayItem(parent, "preferences-desktop-notification")
 {
   new NotificationsAdaptor(this);
-
-  setPixmap(QIcon::fromTheme("preferences-desktop-notification").pixmap(size()));
 
   QDBusConnection dbus = QDBusConnection::sessionBus();
   if ( dbus.registerService("org.freedesktop.Notifications") )

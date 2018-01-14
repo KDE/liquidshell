@@ -29,6 +29,7 @@
 #include <KFileItem>
 #include <KDesktopFile>
 #include <KIOWidgets/KRun>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -36,17 +37,33 @@ AppMenu::AppMenu(DesktopPanel *parent)
   : Launcher(parent, "AppMenu")
 {
   button = new QToolButton;  // QToolButton is smaller than QPushButton
+  adjustIconSize();
   button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-  button->setIconSize((parent->getRows() == 1) ? QSize(22, 22) : QSize(48, 48));
-
-  connect(parent, &DesktopPanel::rowsChanged,
-          [this](int rows) { button->setIconSize((rows == 1) ? QSize(22, 22) : QSize(48, 48)); });
 
   popup = new Menu(button);
   connect(button, &QToolButton::pressed, this, &AppMenu::showMenu);
 
   layout()->addWidget(button);
   loadConfig(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
+
+  connect(parent, &DesktopPanel::rowsChanged, this, &AppMenu::adjustIconSize);
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::adjustIconSize);
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::fill);
+}
+
+//--------------------------------------------------------------------------------
+
+void AppMenu::adjustIconSize()
+{
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
+
+  if ( MAX_ROWS > 1 )
+    button->setIconSize(QSize(48, 48));
+  else
+  {
+    int size = KIconLoader::global()->currentSize(KIconLoader::Panel);
+    button->setIconSize(QSize(size, size));
+  }
 }
 
 //--------------------------------------------------------------------------------

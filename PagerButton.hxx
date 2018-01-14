@@ -22,6 +22,7 @@
 
 #include <QPushButton>
 #include <QTimer>
+class DesktopPanel;
 
 #include <kwindowsystem.h>
 
@@ -30,7 +31,7 @@ class PagerButton : public QPushButton
   Q_OBJECT
 
   public:
-    PagerButton(int num);
+    PagerButton(int num, DesktopPanel *panel);
 
     int getDesktop() const { return desktop; }
 
@@ -48,6 +49,7 @@ class PagerButton : public QPushButton
 
   private:
     int desktop;
+    DesktopPanel *panel;
     QPixmap firstPixmap;
     QTimer dragDropTimer;
 };

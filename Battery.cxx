@@ -28,6 +28,7 @@
 #include <Solid/Battery>
 
 #include <KLocalizedString>
+#include <KIconLoader>
 
 #include <cmath>
 
@@ -71,6 +72,8 @@ Battery::Battery(QWidget *parent)
     connect(device.as<Solid::Battery>(), &Solid::Battery::chargeStateChanged, this, &Battery::changed);
     connect(device.as<Solid::Battery>(), &Solid::Battery::timeToFullChanged, this, &Battery::changed);
     connect(device.as<Solid::Battery>(), &Solid::Battery::timeToEmptyChanged, this, &Battery::changed);
+
+    connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &Battery::changed);
 
     changed();
   }

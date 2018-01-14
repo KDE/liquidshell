@@ -38,6 +38,7 @@ class AppMenu : public Launcher
     AppMenu(DesktopPanel *parent);
 
   private Q_SLOTS:
+    void adjustIconSize();
     void fill() override;
     void showMenu();
 

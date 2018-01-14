@@ -25,6 +25,7 @@
 #include <BluezQt/InitManagerJob>
 
 #include <KLocalizedString>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -41,6 +42,8 @@ Bluetooth::Bluetooth(QWidget *parent)
   connect(manager, &BluezQt::Manager::allAdaptersRemoved, this, &Bluetooth::changed);
   connect(manager, &BluezQt::Manager::bluetoothOperationalChanged, this, &Bluetooth::changed);
   connect(manager, &BluezQt::Manager::operationalChanged, this, &Bluetooth::changed);
+
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &Bluetooth::changed);
 }
 
 //--------------------------------------------------------------------------------

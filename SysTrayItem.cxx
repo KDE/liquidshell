@@ -22,15 +22,25 @@
 #include <QMouseEvent>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QIcon>
 
 #include <KWindowSystem>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
-SysTrayItem::SysTrayItem(QWidget *parent)
-  : QLabel(parent)
+SysTrayItem::SysTrayItem(QWidget *parent, const QString &icon)
+  : QLabel(parent), iconName(icon)
 {
   setFixedSize(QSize(22, 22));
+
+  if ( !iconName.isEmpty() )
+  {
+    setPixmap(QIcon::fromTheme(iconName).pixmap(size()));
+
+    connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this,
+            [this]() { setPixmap(QIcon::fromTheme(iconName).pixmap(size())); });
+  }
 }
 
 //--------------------------------------------------------------------------------

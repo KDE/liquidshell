@@ -29,6 +29,7 @@
 #include <KSycoca>
 #include <KService>
 #include <KLocalizedString>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -36,10 +37,6 @@ StartMenu::StartMenu(DesktopPanel *parent)
   : QToolButton(parent)
 {
   setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-  setIconSize((parent->getRows() == 1) ? QSize(22, 22) : QSize(48, 48));
-
-  connect(parent, &DesktopPanel::rowsChanged,
-          [this](int rows) { setIconSize((rows == 1) ? QSize(22, 22) : QSize(48, 48)); });
 
   setThemeIcon("liquidshell");
 
@@ -47,8 +44,26 @@ StartMenu::StartMenu(DesktopPanel *parent)
   connect(this, &QToolButton::pressed, this, &StartMenu::showMenu);
 
   fill();
+  adjustIconSize();
 
   connect(KSycoca::self(), SIGNAL(databaseChanged()), this, SLOT(fill()));
+  connect(parent, &DesktopPanel::rowsChanged, this, &StartMenu::adjustIconSize);
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &StartMenu::adjustIconSize);
+}
+
+//--------------------------------------------------------------------------------
+
+void StartMenu::adjustIconSize()
+{
+  const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
+
+  if ( MAX_ROWS > 1 )
+    setIconSize(QSize(48, 48));
+  else
+  {
+    int size = KIconLoader::global()->currentSize(KIconLoader::Panel);
+    setIconSize(QSize(size, size));
+  }
 }
 
 //--------------------------------------------------------------------------------
