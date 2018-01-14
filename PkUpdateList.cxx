@@ -132,7 +132,7 @@ void PkUpdateListItem::getUpdateDetails()
   connect(transaction, &PackageKit::Transaction::updateDetail, this, &PkUpdateListItem::updateDetail);
 
   connect(transaction, &PackageKit::Transaction::errorCode, this,
-          [this, transaction](PackageKit::Transaction::Error error, const QString &details)
+          [this](PackageKit::Transaction::Error error, const QString &details)
           {
             Q_UNUSED(error)
             detailsLabel->setText(details);
@@ -514,7 +514,7 @@ void PkUpdateList::installOne()
           });
 
   connect(transaction.data(), &PackageKit::Transaction::itemProgress, this,
-          [item, this](const QString &itemID, PackageKit::Transaction::Status status, uint percentage)
+          [item](const QString &itemID, PackageKit::Transaction::Status status, uint percentage)
           {
             Q_UNUSED(status)
 
@@ -543,7 +543,7 @@ void PkUpdateList::installOne()
           });
 
   connect(transaction.data(), &PackageKit::Transaction::errorCode, this,
-          [item, this](PackageKit::Transaction::Error error, const QString &details)
+          [item](PackageKit::Transaction::Error error, const QString &details)
           {
             Q_UNUSED(error)
 

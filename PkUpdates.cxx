@@ -88,7 +88,7 @@ void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runti
   connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
 
   connect(transaction, &PackageKit::Transaction::finished, this,
-          [this, transaction]()
+          [this]()
           {
             if ( updateList )
               updateList->setPackages(packages);
