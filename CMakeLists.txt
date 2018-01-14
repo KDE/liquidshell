@@ -20,7 +20,7 @@ find_package(Qt5 5.6 CONFIG REQUIRED COMPONENTS
 find_package(KF5 REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews Archive
              Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
-             NewStuff
+             NewStuff Parts
 )
 
 find_package(packagekitqt5 REQUIRED)
@@ -66,6 +66,8 @@ set(SOURCES
     WeatherAppletConfigureDialog.cxx
     DiskUsageApplet.cxx
     DiskUsageAppletConfigureDialog.cxx
+    KPartApplet.cxx
+    KPartAppletConfigureDialog.cxx
 )
 
 # e.g. on openSuse Leap 42.3 compile fails as a GLib header included uses signals as var
@@ -75,6 +77,7 @@ ki18n_wrap_ui(UI_FILES
               ConfigureDesktopDialog.ui
               WeatherAppletConfigureDialog.ui
               DiskUsageAppletConfigureDialog.ui
+              KPartAppletConfigureDialog.ui
 )
 
 set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)
@@ -116,6 +119,7 @@ target_link_libraries(${TARGET}
                       KF5::ItemViews
                       KF5::Archive
                       KF5::NewStuff
+                      KF5::Parts
                       PK::packagekitqt5
 )
 

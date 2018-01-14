@@ -21,6 +21,7 @@
 #include <DesktopPanel.hxx>
 #include <WeatherApplet.hxx>
 #include <DiskUsageApplet.hxx>
+#include <KPartApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 #include <OnScreenVolume.hxx>
 
@@ -77,6 +78,8 @@ DesktopWidget::DesktopWidget()
   connect(action, &QAction::triggered, [this]() { addApplet("Weather"); });
   action = menu->addAction(QIcon::fromTheme("drive-harddisk"), i18n("Disk Usage"));
   connect(action, &QAction::triggered, [this]() { addApplet("DiskUsage"); });
+  action = menu->addAction(QIcon::fromTheme("preferences-plugin"), i18n("KDE-Viewer Component"));
+  connect(action, &QAction::triggered, [this]() { addApplet("KPart"); });
 
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
@@ -101,6 +104,8 @@ DesktopWidget::DesktopWidget()
       applet = new WeatherApplet(this, appletName);
     else if ( appletName.startsWith("DiskUsage_") )
       applet = new DiskUsageApplet(this, appletName);
+    else if ( appletName.startsWith("KPart_") )
+      applet = new KPartApplet(this, appletName);
 
     if ( applet )
     {
@@ -332,6 +337,10 @@ void DesktopWidget::addApplet(const QString &type)
   else if ( type == "DiskUsage" )
   {
     applet = new DiskUsageApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+  }
+  else if ( type == "KPart" )
+  {
+    applet = new KPartApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
   }
 
   if ( applet )
