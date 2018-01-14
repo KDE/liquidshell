@@ -26,6 +26,7 @@
 
 #include <KLocalizedString>
 #include <KRun>
+#include <KService>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WirelessDevice>
@@ -137,7 +138,7 @@ NetworkList::NetworkList(QWidget *parent)
 
   QToolButton *configure = new QToolButton;
   configure->setIcon(QIcon::fromTheme("configure"));
-  connect(configure, &QToolButton::clicked, [this]() { hide(); KRun::runCommand("kcmshell5 kcm_networkmanagement", this); });
+  connect(configure, &QToolButton::clicked, this, &NetworkList::openConfigureDialog);
   hbox->addWidget(configure);
 
   // show connections
@@ -150,6 +151,21 @@ NetworkList::NetworkList(QWidget *parent)
   checkConnectionsTimer->setInterval(1000);
   connect(checkConnectionsTimer, &QTimer::timeout, this, &NetworkList::fillConnections);
   checkConnectionsTimer->start();
+}
+
+//--------------------------------------------------------------------------------
+
+void NetworkList::openConfigureDialog()
+{
+  hide();
+
+  // newer plasma has already a KCM
+  KService::Ptr service = KService::serviceByDesktopName("kcm_networkmanagement");
+
+  if ( service )
+    KRun::runApplication(*service, QList<QUrl>(), this);
+  else
+    KRun::run("kde5-nm-connection-editor", QList<QUrl>(), this);
 }
 
 //--------------------------------------------------------------------------------

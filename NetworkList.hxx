@@ -37,6 +37,7 @@ class NetworkList : public QFrame
   private Q_SLOTS:
     void statusUpdate();
     void fillConnections();
+    void openConfigureDialog();
 
   private:
     QToolButton *network, *wireless;
