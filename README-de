@@ -1,0 +1,24 @@
+liquidshell ist eine Alternative zu plasmashell, welche im Unterschied dazu QtWidgets anstatt QtQuick verwendet.
+
+Features:
+- Hintergrundbild pro virtueller Arbeitsfläche
+- Verwendet den Widget-Stil, das Farbschema sowie das Icon-Thema aus den Systemeinstellungen
+- Kann per css stylesheet weiter angepasst werden
+- Verwendet für einige Konfigurationen die std. KDE Dialoge, wie z.B. Bluetooth, Startmenü, virtuelle Desktops
+- Ein Panel am unteren Bildschirmrand, welches folgende Komponenten bereitstellt:
+  Startmenü (erlaubt Drag von Einträgen in ein Konqueror/Dolphin Fenster zum Konfigurieren der QuickLaunch oder AppMenu Einträge)
+  QuickLaunch (zum Starten von Applikation oder Öffnen von Dokumenten mit einem Klick.
+               Zeigt Einträge von .desktop Dateien aus einem einstellbaren Ordner)
+  AppMenu (Ähnlich wie QuickLaunch nur werden Einträge als Menü angezeigt. Standardmäßig wird der Desktop Ordner verwendet)
+  Pager (zum Umschalten der virtuellen Arbeitsflächen)
+  Fensterliste (Popup-Menü zeigt alle offenen Fenster aller Arbeitsflächen zum schnellen Wechseln des aktiven Fensters)
+  TaskBar (zeigt die offenen Fenster der aktiven Arbeitsfläche. Erlaubt ein Drag eines Eintrags auf den Pager
+           zum schnellen Verschieben auf eine andere Arbeitsfläche)
+  LockLogout (Abmelden, Bildschirmsperre)
+  SysLoad (Systemlastanzeige von CPU, Speicher, Auslagerungsspeicher und Netzwerk mit live-Aktualisierung des ToolTips)
+  SysTray mit integrierter Anzeige von Netzwerkverbindungen, Benachrichtigungen, Benachrichtigung
+     über neu angesteckte Laufwerke inklusive KDE-Connect verbundener Geräte, Bluetooth, Batterie und
+     Software-Updates mittels PackageKit. Ebenso Anzeige von Status-Icons anderer Applikationen.
+     Benachrichtigungen erscheinen als Popup und werden ebenso für einige Minuten historisch abgelegt und können
+     in einer Liste angesehen werden. Sie zeigen den Zeitstempel und erlauben den Text per Maus zu selektieren.
+  Uhrenwidget (mit Kalender Popup und Tooltip für einstellbare Städte)    
