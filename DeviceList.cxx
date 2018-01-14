@@ -200,7 +200,7 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
   {
     QToolButton *ringButton = new QToolButton;
     ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
-    connect(ringButton, &QToolButton::clicked, [dev]() { dev->ringPhone(); });
+    connect(ringButton, &QToolButton::clicked, dev.data(), [dev]() { dev->ringPhone(); });
     hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
   }
 
@@ -211,7 +211,7 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
           {
             if ( !dialog )
             {
-              dialog = new KCMultiDialog(this);
+              dialog = new KCMultiDialog(nullptr);
               dialog->setAttribute(Qt::WA_DeleteOnClose);
               dialog->addModule("kcm_kdeconnect");
               dialog->setWindowTitle(i18n("KDE Connect"));
