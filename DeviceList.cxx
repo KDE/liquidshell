@@ -268,12 +268,12 @@ void DeviceItem::fillData()
 
   if ( mountButton )
   {
-    if ( device.emblems().count() )
-      mountButton->setIcon(QIcon::fromTheme(device.emblems()[0]));
+    if ( storage && storage->isAccessible() )
+      mountButton->setIcon(QIcon::fromTheme("media-eject"));
     else
     {
-      if ( storage && storage->isAccessible() )
-        mountButton->setIcon(QIcon::fromTheme("emblem-mounted"));
+      if ( device.emblems().count() )
+        mountButton->setIcon(QIcon::fromTheme(device.emblems()[0]));
       else
         mountButton->setIcon(QIcon::fromTheme("emblem-unmounted"));
     }
