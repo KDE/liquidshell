@@ -7,6 +7,7 @@
   <name xml:lang="ast">liquidshell</name>
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="ca-valencia">liquidshell</name>
+  <name xml:lang="de">liquidshell</name>
   <name xml:lang="en-GB">liquidshell</name>
   <name xml:lang="es">liquidshell</name>
   <name xml:lang="it">liquidshell</name>
@@ -20,6 +21,7 @@
   <summary> liquidshell is an alternative to plasmashell </summary>
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
   <summary xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</summary>
+  <summary xml:lang="de">liquidshell ist eine Alternative zu plasmashell</summary>
   <summary xml:lang="en-GB">liquidshell is an alternative to plasmashell</summary>
   <summary xml:lang="es">liquidshell es una alternativa a plasmashell</summary>
   <summary xml:lang="it">liquidshell è un'alternativa a plasmashell</summary>
@@ -34,6 +36,7 @@
     <p>liquidshell is an alternative to plasmashell</p>
     <p xml:lang="ca">El liquidshell és una alternativa al plasmashell</p>
     <p xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</p>
+    <p xml:lang="de">liquidshell ist eine Alternative zu plasmashell</p>
     <p xml:lang="en-GB">liquidshell is an alternative to plasmashell</p>
     <p xml:lang="es">liquidshell es una alternativa a plasmashell</p>
     <p xml:lang="it">liquidshell è un'alternativa a plasmashell</p>
@@ -214,6 +217,7 @@
     <binary xml:lang="ast">liquidshell</binary>
     <binary xml:lang="ca">liquidshell</binary>
     <binary xml:lang="ca-valencia">liquidshell</binary>
+    <binary xml:lang="de">liquidshell</binary>
     <binary xml:lang="en-GB">liquidshell</binary>
     <binary xml:lang="es">liquidshell</binary>
     <binary xml:lang="it">liquidshell</binary>
