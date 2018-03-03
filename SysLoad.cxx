@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -33,12 +33,19 @@
 //--------------------------------------------------------------------------------
 
 const int INTERVAL_MS = 800;
+const int NET_INTERVAL_S = 60;
+
+// to avoid that a constant small network traffic always shows a full bar,
+// we set some arbitrary higher maximum value for the scale
+const size_t NET_INIT_SCALE = 50 * 1024;
 
 //--------------------------------------------------------------------------------
 
 SysLoad::SysLoad(QWidget *parent)
   : QFrame(parent)
 {
+  maxScale = NET_INIT_SCALE;
+
   setFrameShape(QFrame::StyledPanel);
 
   timeoutTimer.setInterval(INTERVAL_MS);
@@ -46,7 +53,12 @@ SysLoad::SysLoad(QWidget *parent)
   connect(&timeoutTimer, &QTimer::timeout, this, &SysLoad::fetch);
 
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged,
-          [this]() { maxBytes = 100; });  // reset since we're changing network (which might be slower)
+          [this]() { maxScale = NET_INIT_SCALE; maxBytes = 0; });  // reset since we're changing network (which might be slower)
+
+  // gradually decrease max network throughput to really be able to see when network traffic occurs
+  netLoadTimer.setInterval(NET_INTERVAL_S * 1000);
+  netLoadTimer.start();
+  connect(&netLoadTimer, &QTimer::timeout, this, [this]() { maxBytes = 0; if ( maxScale > NET_INIT_SCALE ) maxScale /= 2; });
 
   setFixedWidth(60);
 }
@@ -164,7 +176,8 @@ void SysLoad::fetch()
           data.prevSent = sent;
           data.valid = true;
 
-          if ( !device.startsWith("tun") ) // TODO: correct ?
+          if ( (device != "lo") &&         // don't count loopback adapter
+               !device.startsWith("tun") ) // TODO: correct ?
           {
             sumReceived += data.received;
             sumSent += data.sent;
@@ -174,6 +187,9 @@ void SysLoad::fetch()
     }
     f.close();
   }
+
+  maxBytes = std::max(maxBytes, (sumReceived + sumSent));
+  maxScale = std::max(maxBytes, maxScale);
 
   update();
 
@@ -208,7 +224,7 @@ void SysLoad::fetch()
               locale().toString((sumSent / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2),
               locale().toString((sumReceived / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2));
   tip += "<br>";
-  tip += i18n("Net max used: %1 KB/sec", locale().toString((maxBytes / 1024) / (INTERVAL_MS / 1000.0), 'f', 2));
+  tip += i18n("Net max (last %2 secs): %1 KB/sec", locale().toString((maxBytes / 1024.0) / (INTERVAL_MS / 1000.0), 'f', 2), NET_INTERVAL_S);
 
   if ( underMouse() )
     QToolTip::showText(QCursor::pos(), QLatin1String("<html>") + tip + QLatin1String("</html>"), this, rect());
@@ -274,15 +290,14 @@ void SysLoad::paintEvent(QPaintEvent *event)
   h = contentsRect().height() * (memData.swapPercent / 100.0);
   painter.fillRect(x, y - h, barWidth, h, memSwapColor);
 
-  // net
-  maxBytes = std::max(maxBytes, (sumReceived + sumSent));
 
+  // net
   x += barWidth;
   y = contentsRect().y() + contentsRect().height();
-  h = contentsRect().height() * (double(sumReceived) / maxBytes);
+  h = contentsRect().height() * (double(sumReceived) / maxScale);
   painter.fillRect(x, y - h, barWidth, h, netReceivedColor);
   y -= h;
-  h = contentsRect().height() * (double(sumSent) / maxBytes);
+  h = contentsRect().height() * (double(sumSent) / maxScale);
   painter.fillRect(x, y - h, barWidth, h, netSentColor);
 }
 

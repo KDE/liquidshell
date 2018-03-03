@@ -77,10 +77,12 @@ class SysLoad : public QFrame
     QVector<CpuData> cpus;
 
     QMap<QByteArray, NetworkData> netDevs;
-    size_t maxBytes = 100;
+    size_t maxScale = 0;
+    size_t maxBytes = 0;
     size_t sumSent = 0, sumReceived = 0;
 
     QTimer timeoutTimer;
+    QTimer netLoadTimer;
 
     QColor cpuUserColor   = "#881f1f";
     QColor cpuSystemColor = Qt::darkGreen;
