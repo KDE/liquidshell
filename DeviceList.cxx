@@ -252,9 +252,9 @@ void DeviceItem::fillData()
   Solid::StorageAccess *storage = device.as<Solid::StorageAccess>();
   QString text = device.description();
 
-  if ( !device.product().isEmpty() )
+  if ( !device.product().isEmpty() && (device.product() != text) )
     text += " (" + device.product() + ")";
-  else if ( !device.vendor().isEmpty() )
+  else if ( !device.vendor().isEmpty() && (device.vendor() != text) )
     text += " (" + device.vendor() + ")";
 
   Solid::StorageVolume *volume = device.as<Solid::StorageVolume>();
