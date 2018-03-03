@@ -233,7 +233,7 @@ void DesktopWidget::placePanel()
 {
   int panelHeight = qMin(panel->sizeHint().height(), panel->height());
   QRect r = QApplication::desktop()->screenGeometry();
-  panel->setGeometry(r.x(), r.height() - panelHeight, r.width(), panelHeight);
+  panel->setGeometry(r.x(), r.y() + r.height() - panelHeight, r.width(), panelHeight);
   KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight);
 }
 
