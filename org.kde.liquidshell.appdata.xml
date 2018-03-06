@@ -79,7 +79,7 @@
       <li xml:lang="ca-valencia">Fons de pantalla per a l'escriptori virtual</li>
       <li xml:lang="en-GB">Wallpaper per virtual desktop</li>
       <li xml:lang="es">Fondo de pantalla por escritorio virtual</li>
-      <li xml:lang="it">Sfondo per virtual desktop</li>
+      <li xml:lang="it">Sfondo per desktop virtuali</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pl">Tapeta na wirtualny pulpit</li>
       <li xml:lang="pt">Papel de parede por ecrã virtual</li>
@@ -160,7 +160,7 @@
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordes «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
-      <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi ad esempio l'incluso stylesheet.css)</li>
+      <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
       <li xml:lang="pl">Możliwość uszczegółowienia wyglądu poprzez podanie opcji wiersza poleceń css -stylesheet filename.css (zobacz załączony przykład stylesheet.css)</li>
       <li xml:lang="pt">Pode ser modificado o seu estilo gráfico com CSS se passar a opção da linha de comandos '-stylesheet ficheiro.css' (veja o 'stylesheet.css' incluída no exemplo)</li>
