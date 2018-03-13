@@ -158,7 +158,7 @@
       <li xml:lang="x-test">xxColors are used from your globally defined color theme from systemsettingsxx</li>
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
-      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordes «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
