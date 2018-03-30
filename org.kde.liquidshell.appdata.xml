@@ -7,6 +7,7 @@
   <name xml:lang="ast">liquidshell</name>
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="ca-valencia">liquidshell</name>
+  <name xml:lang="cs">liquidshell</name>
   <name xml:lang="de">liquidshell</name>
   <name xml:lang="en-GB">liquidshell</name>
   <name xml:lang="es">liquidshell</name>
@@ -62,6 +63,7 @@
     <p>Main Features:</p>
     <p xml:lang="ca">Característiques principals:</p>
     <p xml:lang="ca-valencia">Característiques principals:</p>
+    <p xml:lang="cs">Hlavní vlastnosti:</p>
     <p xml:lang="de">Kernfunktionen:</p>
     <p xml:lang="en-GB">Main Features:</p>
     <p xml:lang="es">Funciones principales:</p>
@@ -100,6 +102,7 @@
       <li>Instant startup</li>
       <li xml:lang="ca">Inici instantani</li>
       <li xml:lang="ca-valencia">Inici instantani</li>
+      <li xml:lang="cs">Okamžité spuštění</li>
       <li xml:lang="en-GB">Instant startup</li>
       <li xml:lang="es">Inicio instantáneo</li>
       <li xml:lang="it">Avvio istantaneo</li>
@@ -217,6 +220,7 @@
     <binary xml:lang="ast">liquidshell</binary>
     <binary xml:lang="ca">liquidshell</binary>
     <binary xml:lang="ca-valencia">liquidshell</binary>
+    <binary xml:lang="cs">liquidshell</binary>
     <binary xml:lang="de">liquidshell</binary>
     <binary xml:lang="en-GB">liquidshell</binary>
     <binary xml:lang="es">liquidshell</binary>
