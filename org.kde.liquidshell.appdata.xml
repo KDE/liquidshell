@@ -11,6 +11,7 @@
   <name xml:lang="de">liquidshell</name>
   <name xml:lang="en-GB">liquidshell</name>
   <name xml:lang="es">liquidshell</name>
+  <name xml:lang="gl">liquidshell</name>
   <name xml:lang="it">liquidshell</name>
   <name xml:lang="nl">liquidshell</name>
   <name xml:lang="pl">liquidshell</name>
@@ -25,6 +26,7 @@
   <summary xml:lang="de">liquidshell ist eine Alternative zu plasmashell</summary>
   <summary xml:lang="en-GB">liquidshell is an alternative to plasmashell</summary>
   <summary xml:lang="es">liquidshell es una alternativa a plasmashell</summary>
+  <summary xml:lang="gl">liquidshell é unha alternativa a plasmashell.</summary>
   <summary xml:lang="it">liquidshell è un'alternativa a plasmashell</summary>
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
   <summary xml:lang="pl">liquidshell jest alternatywą dla plasmashell</summary>
@@ -40,6 +42,7 @@
     <p xml:lang="de">liquidshell ist eine Alternative zu plasmashell</p>
     <p xml:lang="en-GB">liquidshell is an alternative to plasmashell</p>
     <p xml:lang="es">liquidshell es una alternativa a plasmashell</p>
+    <p xml:lang="gl">liquidshell é unha alternativa a plasmashell.</p>
     <p xml:lang="it">liquidshell è un'alternativa a plasmashell</p>
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
     <p xml:lang="pl">liquidshell jest alternatywą dla plasmashell</p>
@@ -53,6 +56,7 @@
     <p xml:lang="ca">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="ca-valencia">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
+    <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por hardware.</p>
     <p xml:lang="it">Non usa QtQuick ma fa invece affidamento su QtWidgets, quindi non necessita di accelerazione grafica hardware.</p>
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
     <p xml:lang="pl">Zamiast używać QtQuick używa QtWidgets, więc nie jest wymagane żande sprzętowe przyspieszenie grafiki.</p>
@@ -67,6 +71,7 @@
     <p xml:lang="de">Kernfunktionen:</p>
     <p xml:lang="en-GB">Main Features:</p>
     <p xml:lang="es">Funciones principales:</p>
+    <p xml:lang="gl">Funcionalidades principais:</p>
     <p xml:lang="it">Funzionalità principali:</p>
     <p xml:lang="nl">Hoofdkenmerken:</p>
     <p xml:lang="pl">Główne możliwości:</p>
@@ -81,6 +86,7 @@
       <li xml:lang="ca-valencia">Fons de pantalla per a l'escriptori virtual</li>
       <li xml:lang="en-GB">Wallpaper per virtual desktop</li>
       <li xml:lang="es">Fondo de pantalla por escritorio virtual</li>
+      <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="it">Sfondo per desktop virtuali</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pl">Tapeta na wirtualny pulpit</li>
@@ -92,6 +98,7 @@
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="ca-valencia">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="en-GB">No animations, no CPU hogging, low Memory footprint</li>
+      <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, uso limitato della memoria</li>
       <li xml:lang="nl">Geen animaties, geen CPU belasting, lage voetafdruk op geheugen</li>
       <li xml:lang="pl">Brak animacji, brak zapychania CPU, małe wykorzystanie pamięci</li>
@@ -105,6 +112,7 @@
       <li xml:lang="cs">Okamžité spuštění</li>
       <li xml:lang="en-GB">Instant startup</li>
       <li xml:lang="es">Inicio instantáneo</li>
+      <li xml:lang="gl">Inicio instantáneo.</li>
       <li xml:lang="it">Avvio istantaneo</li>
       <li xml:lang="nl">Onmiddellijk opgestart</li>
       <li xml:lang="pl">Natychmiastowe uruchamianie</li>
@@ -118,6 +126,7 @@
       <li xml:lang="ca-valencia">No empra les activitats</li>
       <li xml:lang="en-GB">No use of activities</li>
       <li xml:lang="es">No se usan las actividades</li>
+      <li xml:lang="gl">Sen actividades.</li>
       <li xml:lang="it">Nessun uso delle attività</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
       <li xml:lang="pl">Nie używa aktywności</li>
@@ -130,6 +139,7 @@
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
+      <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti delle Impostazioni di sistema</li>
       <li xml:lang="nl">Gebaseerd op QtWidgets, volgt daarom widgetstijl uit systeeminstellingen</li>
       <li xml:lang="pl">Oparte na QtWidgets, więc podąża za wyglądem z ustawień systemowych</li>
@@ -141,6 +151,7 @@
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
+      <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="it">Le icone usate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="nl">Pictogrammen worden gebruikt uit uw globaal gedefinieerd pictogramthema uit systeeminstellingen</li>
       <li xml:lang="pl">Ikony są brane z globalnie określonego zestawu ikon w ustawieniach systemowych</li>
@@ -152,6 +163,7 @@
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
+      <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="it">I colori usati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="nl">Kleuren worden gebruikt uit uw globaal gedefinieerd kleurenthema uit systeeminstellingen</li>
       <li xml:lang="pl">Kolory są brane z globalnie określonego zestawu kolorów w ustawieniach systemowych</li>
@@ -163,6 +175,7 @@
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
+      <li xml:lang="gl">O seu estilo pode cambiarse a maiores con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
       <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
       <li xml:lang="pl">Możliwość uszczegółowienia wyglądu poprzez podanie opcji wiersza poleceń css -stylesheet filename.css (zobacz załączony przykład stylesheet.css)</li>
@@ -174,6 +187,7 @@
       <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
+      <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="it">usa per la maggior parte delle configurazioni le finestre esistenti di KDE, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth, la rete</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
       <li xml:lang="pl">używa istniejących okien dialogowych KDE w większości przypadków, np. menu start, pulpity wirtualne, Bluetooth, sieć</li>
@@ -185,6 +199,7 @@
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="en-GB">One bottom DesktopPanel</li>
+      <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="it">Un pannello desktop in basso</li>
       <li xml:lang="nl">Eén bureaubladpaneel onderaan</li>
       <li xml:lang="pl">Jeden panel pulpitu na dole</li>
@@ -197,6 +212,7 @@
       <li xml:lang="ca-valencia">Miniaplicacions de l'escriptori</li>
       <li xml:lang="en-GB">Desktop Applets</li>
       <li xml:lang="es">Miniaplicaciones de escritorio</li>
+      <li xml:lang="gl">Trebellos de escritorio.</li>
       <li xml:lang="it">Applet desktop</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
       <li xml:lang="pl">Aplety pulpitu</li>
@@ -224,6 +240,7 @@
     <binary xml:lang="de">liquidshell</binary>
     <binary xml:lang="en-GB">liquidshell</binary>
     <binary xml:lang="es">liquidshell</binary>
+    <binary xml:lang="gl">liquidshell</binary>
     <binary xml:lang="it">liquidshell</binary>
     <binary xml:lang="nl">liquidshell</binary>
     <binary xml:lang="pl">liquidshell</binary>
