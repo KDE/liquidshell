@@ -56,7 +56,7 @@ TaskBarButton::TaskBarButton(WId theWid)
           [this]() { KWindowSystem::raiseWindow(wid); KWindowSystem::forceActiveWindow(wid); });
 
   QHBoxLayout *hbox = new QHBoxLayout(this);
-  hbox->setContentsMargins(QMargins(4, 2, 4, 4));
+  hbox->setContentsMargins(QMargins(4, 2, 4, 2));
 
   iconLabel = new QLabel;
   iconLabel->setScaledContents(true);
