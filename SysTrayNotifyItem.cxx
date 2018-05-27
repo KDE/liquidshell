@@ -208,8 +208,9 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
   if ( event->button() == Qt::LeftButton )
   {
     dbus->Activate(event->globalPos().x(), event->globalPos().y());
-    KWindowSystem::raiseWindow(dbus->windowId());
-    KWindowSystem::forceActiveWindow(dbus->windowId());
+    WId wid = dbus->windowId();
+    KWindowSystem::raiseWindow(wid);
+    KWindowSystem::forceActiveWindow(wid);
   }
   else if ( event->button() == Qt::RightButton )
   {
