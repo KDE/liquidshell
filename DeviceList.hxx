@@ -60,6 +60,8 @@ class DeviceItem : public QFrame
     DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceActions);
     DeviceItem(const KdeConnect::Device &dev);
 
+    void markAsNew();
+
   private:
     static QString errorToString(Solid::ErrorType error);
     void fillData();
@@ -74,7 +76,7 @@ class DeviceItem : public QFrame
   private:
     Solid::Device device;
     QToolButton *mountButton = nullptr;
-    QLabel *textLabel = nullptr, *statusLabel = nullptr;
+    QLabel *textLabel = nullptr, *statusLabel = nullptr, *newFlagLabel = nullptr;
     QTimer statusTimer;
     QPointer<KCMultiDialog> dialog;
 };
@@ -101,7 +103,7 @@ class DeviceList : public QFrame
 
   private:
     void loadActions();
-    void addDevice(Solid::Device device);
+    DeviceItem *addDevice(Solid::Device device);
 
   private:
     QVBoxLayout *vbox;

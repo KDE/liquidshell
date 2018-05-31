@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -56,11 +56,17 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
   iconLabel->setPixmap(QIcon::fromTheme(device.icon()).pixmap(32));
   iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
+  newFlagLabel = new QLabel;
+  newFlagLabel->setPixmap(QIcon::fromTheme("emblem-important").pixmap(16));
+  newFlagLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+  newFlagLabel->hide();
+
   textLabel = new QLabel;
   textLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
   textLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
 
   hbox->addWidget(iconLabel, 0, Qt::AlignLeft | Qt::AlignVCenter);
+  hbox->addWidget(newFlagLabel, 0, Qt::AlignCenter);
   hbox->addWidget(textLabel, 0, Qt::AlignVCenter);
 
   Solid::StorageAccess *storage = device.as<Solid::StorageAccess>();
@@ -165,11 +171,17 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
   iconLabel->setPixmap(dev->icon.pixmap(32));
   iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
+  newFlagLabel = new QLabel;
+  newFlagLabel->setPixmap(QIcon::fromTheme("emblem-important").pixmap(16));
+  newFlagLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+  newFlagLabel->hide();
+
   textLabel = new QLabel;
   textLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
   textLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
 
   hbox->addWidget(iconLabel, 0, Qt::AlignLeft | Qt::AlignVCenter);
+  hbox->addWidget(newFlagLabel, 0, Qt::AlignCenter);
   hbox->addWidget(textLabel, 0, Qt::AlignVCenter);
 
   statusLabel = new QLabel;
@@ -243,6 +255,14 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
 
     vbox->addLayout(hbox);
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void DeviceItem::markAsNew()
+{
+  newFlagLabel->show();
+  QTimer::singleShot(5000, newFlagLabel, &QLabel::hide);
 }
 
 //--------------------------------------------------------------------------------
@@ -411,12 +431,12 @@ void DeviceList::loadActions()
 
 //--------------------------------------------------------------------------------
 
-void DeviceList::addDevice(Solid::Device device)
+DeviceItem *DeviceList::addDevice(Solid::Device device)
 {
   if ( items.contains(device.udi()) )
   {
     //qDebug() << device.udi() << "already known";
-    return;
+    return nullptr;
   }
 
   QVector<DeviceAction> deviceActions;
@@ -434,13 +454,13 @@ void DeviceList::addDevice(Solid::Device device)
     if ( deviceActions.isEmpty() )
     {
       //qDebug() << device.udi() << "no action found";
-      return;
+      return nullptr;
     }
   }
   else if ( storage->usage() != Solid::StorageVolume::FileSystem )
   {
     //qDebug() << device.udi() << "storage no filesystem";
-    return;
+    return nullptr;
   }
 
   // show only removable devices
@@ -448,7 +468,7 @@ void DeviceList::addDevice(Solid::Device device)
        !device.as<Solid::StorageDrive>()->isRemovable() )
   {
     //qDebug() << device.udi() << "not Removable";
-    return;
+    return nullptr;
   }
 
   // show only removable devices
@@ -456,31 +476,33 @@ void DeviceList::addDevice(Solid::Device device)
        !device.parent().as<Solid::StorageDrive>()->isRemovable() )
   {
     //qDebug() << device.parent().udi() << "parent() not Removable";
-    return;
+    return nullptr;
   }
 
   DeviceItem *item = new DeviceItem(device, deviceActions);
   vbox->insertWidget(vbox->count() - 1, item);  // insert before stretch
 
   items.insert(device.udi(), item);
+  return item;
 }
 
 //--------------------------------------------------------------------------------
 
 void DeviceList::deviceAdded(const QString &dev)
 {
-  int oldCount = items.count();
-
   Solid::Device device(dev);
 
   if ( !predicate.matches(device) )
     return;
 
-  addDevice(device);
+  DeviceItem *item = addDevice(device);
 
   // when we added a new device, make sure the DeviceNotifier shows and places this window
-  if ( items.count() != oldCount )
+  if ( item )
+  {
+    item->markAsNew();
     emit deviceWasAdded();
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -508,6 +530,7 @@ void DeviceList::kdeConnectDeviceAdded(const KdeConnect::Device &device)
   vbox->insertWidget(vbox->count() - 1, item);  // insert before stretch
 
   items.insert(device->id, item);
+  item->markAsNew();
 
   // when we added a new device, make sure the DeviceNotifier shows and places this window
   emit deviceWasAdded();
