@@ -84,6 +84,7 @@
       <li>Wallpaper per virtual desktop</li>
       <li xml:lang="ca">Fons de pantalla per a l'escriptori virtual</li>
       <li xml:lang="ca-valencia">Fons de pantalla per a l'escriptori virtual</li>
+      <li xml:lang="de">Hintergrundbild je virtueller Arbeitsfläche</li>
       <li xml:lang="en-GB">Wallpaper per virtual desktop</li>
       <li xml:lang="es">Fondo de pantalla por escritorio virtual</li>
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
@@ -124,6 +125,7 @@
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
       <li xml:lang="ca-valencia">No empra les activitats</li>
+      <li xml:lang="de">Aktivitäten werden nicht verwendet</li>
       <li xml:lang="en-GB">No use of activities</li>
       <li xml:lang="es">No se usan las actividades</li>
       <li xml:lang="gl">Sen actividades.</li>
