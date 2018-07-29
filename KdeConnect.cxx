@@ -188,6 +188,9 @@ void KdeConnectDevice::chargeChangedSlot(int c)
 
   calcChargeIcon();
 
+  if ( isCharging )
+    return;
+
   const int LIMIT = 40;
 
   if ( charge < LIMIT )  // I want to keep charge above 40%
