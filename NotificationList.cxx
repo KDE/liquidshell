@@ -46,6 +46,8 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
                        const QStringList &actions)
   : QFrame(parent, POPUP_FLAGS), id(theId), appName(app)
 {
+  setAttribute(Qt::WA_ShowWithoutActivating);  // avoid focus stealing
+
   setFrameShape(QFrame::StyledPanel);
 
   QVBoxLayout *vbox = new QVBoxLayout;
