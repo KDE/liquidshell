@@ -43,7 +43,7 @@ DeviceNotifier::DeviceNotifier(QWidget *parent)
   connect(deviceList, &DeviceList::deviceWasAdded, [this]() { timer.start(); showDetailsList(); });
 
   // if the user did not activate the device list window, auto-hide it
-  timer.setInterval(5000);
+  timer.setInterval(4000);
   timer.setSingleShot(true);
   connect(&timer, &QTimer::timeout, deviceList, &DeviceList::hide);
   deviceList->installEventFilter(this);
