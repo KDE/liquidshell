@@ -38,10 +38,7 @@
 NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::Device::Ptr dev)
   : connection(c), device(dev)
 {
-  setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-  setAutoRaise(true);
   setCheckable(true);
-  setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
   if ( connection )
   {
@@ -200,14 +197,14 @@ void NetworkList::fillConnections()
     if ( (c->settings()->connectionType() == NetworkManager::ConnectionSettings::Wired) &&
          !c->uuid().isEmpty() )
     {
-      QToolButton *net = new NetworkButton(c);
+      NetworkButton *net = new NetworkButton(c);
       net->setText(c->name());
       net->setIcon(QIcon::fromTheme("network-wired"));
       connectionsVbox->addWidget(net);
     }
     else if ( c->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn )
     {
-      QToolButton *vpn = new NetworkButton(c);
+      NetworkButton *vpn = new NetworkButton(c);
       vpn->setText(c->name());
       vpn->setIcon(QIcon::fromTheme("security-high"));
       connectionsVbox->addWidget(vpn);
@@ -252,14 +249,14 @@ void NetworkList::fillConnections()
 
         if ( haveConnection )
         {
-          QToolButton *net = new NetworkButton(conn, device);
+          NetworkButton *net = new NetworkButton(conn, device);
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
           connectionsVbox->addWidget(net);
         }
         else
         {
-          QToolButton *net = new NetworkButton;
+          NetworkButton *net = new NetworkButton;
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
           net->setEnabled(false);  // TODO: allow to add a new connection. See NetworkManager::addAndActivateConnection

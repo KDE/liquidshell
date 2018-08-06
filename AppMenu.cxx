@@ -18,6 +18,7 @@
 */
 
 #include <AppMenu.hxx>
+#include <IconButton.hxx>
 
 #include <QGridLayout>
 #include <QToolButton>
@@ -135,9 +136,8 @@ void AppMenu::fill()
     if ( name.isEmpty() )
       name = info.fileName();
 
-    AppButton *entryButton = new AppButton(this, icon, name);
-    entryButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    connect(entryButton, &AppButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
+    IconButton *entryButton = new IconButton(this, icon, 32, name);
+    connect(entryButton, &IconButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
 
     h += entryButton->sizeHint().height();
 
@@ -189,36 +189,6 @@ void Menu::exec()
   move(p.x(), p.y() - height());
   show();
   eventLoop.exec();
-}
-
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-// helper class to ensure the positioning of the icon and text independent of the style
-
-#include <QLabel>
-
-AppButton::AppButton(QWidget *parent, const QIcon &icon, const QString &name)
-  : QToolButton(parent)
-{
-  setAutoRaise(true);
-  QHBoxLayout *hbox = new QHBoxLayout(this);
-
-  QLabel *iconLabel = new QLabel;
-  iconLabel->setContextMenuPolicy(Qt::PreventContextMenu);
-  iconLabel->setFixedSize(32, 32);
-  iconLabel->setPixmap(icon.pixmap(QSize(32, 32)));
-  hbox->addWidget(iconLabel);
-
-  QLabel *textLabel = new QLabel(name);
-  hbox->addWidget(textLabel);
-}
-
-//--------------------------------------------------------------------------------
-
-QSize AppButton::sizeHint() const
-{
-  return layout()->sizeHint();
 }
 
 //--------------------------------------------------------------------------------

@@ -66,16 +66,5 @@ class Menu : public QMenu
 };
 
 //--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
-
-class AppButton : public QToolButton
-{
-  public:
-    AppButton(QWidget *parent, const QIcon &icon, const QString &name);
-
-    QSize sizeHint() const override;
-};
-
-//--------------------------------------------------------------------------------
 
 #endif

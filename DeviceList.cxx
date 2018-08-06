@@ -18,6 +18,7 @@
 */
 
 #include <DeviceList.hxx>
+#include <IconButton.hxx>
 
 #include <Solid/DeviceNotifier>
 #include <Solid/DeviceInterface>
@@ -116,14 +117,11 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
     QHBoxLayout *hbox = new QHBoxLayout;
     hbox->addSpacing(iconLabel->sizeHint().width());
 
-    QToolButton *button = new QToolButton;
-    button->setAutoRaise(true);
-    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    button->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    IconButton *button = new IconButton;
     button->setIcon(QIcon::fromTheme(action.action.icon()));
     button->setText(action.action.text() + " (" + QFileInfo(action.path).baseName() + ")");
 
-    connect(button, &QToolButton::clicked, button,
+    connect(button, &IconButton::clicked, button,
             [action, this]()
             {
               QString command = action.action.exec();
@@ -241,14 +239,11 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
     QHBoxLayout *hbox = new QHBoxLayout;
     hbox->addSpacing(iconLabel->sizeHint().width());
 
-    QToolButton *button = new QToolButton;
-    button->setAutoRaise(true);
-    button->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    button->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    IconButton *button = new IconButton;
     button->setIcon(QIcon::fromTheme("system-file-manager"));
     button->setText(i18n("Open with File Manager"));
 
-    connect(button, &QToolButton::clicked,
+    connect(button, &IconButton::clicked,
             [dev]() { new KRun(QUrl(QLatin1String("kdeconnect://") + dev->id), nullptr); });
 
     hbox->addWidget(button);

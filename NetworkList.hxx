@@ -47,8 +47,9 @@ class NetworkList : public QFrame
 //--------------------------------------------------------------------------------
 
 #include <NetworkManagerQt/Manager>
+#include <IconButton.hxx>
 
-class NetworkButton : public QToolButton
+class NetworkButton : public IconButton
 {
   Q_OBJECT
 

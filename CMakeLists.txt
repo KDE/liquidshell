@@ -34,6 +34,7 @@ set(SOURCES
     StartMenu.cxx
     Launcher.cxx
     QuickLaunch.cxx
+    IconButton.cxx
     AppMenu.cxx
     Pager.cxx
     PagerButton.cxx
