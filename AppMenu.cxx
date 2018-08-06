@@ -19,11 +19,13 @@
 
 #include <AppMenu.hxx>
 
-#include <QVBoxLayout>
+#include <QGridLayout>
 #include <QToolButton>
 #include <QStandardPaths>
 #include <QDir>
 #include <QMimeDatabase>
+#include <QApplication>
+#include <QDesktopWidget>
 #include <QDebug>
 
 #include <KFileItem>
@@ -49,6 +51,7 @@ AppMenu::AppMenu(DesktopPanel *parent)
   connect(parent, &DesktopPanel::rowsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::fill);
+  connect(QApplication::desktop(), &QDesktopWidget::resized, this, &AppMenu::fill);
 }
 
 //--------------------------------------------------------------------------------
@@ -88,6 +91,9 @@ void AppMenu::fill()
 
   QDir dir(dirPath);
   QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotDot);
+
+  int row = 0, col = 0, h = 0;
+  const int maxHeight = QApplication::desktop()->height() - parentWidget()->sizeHint().height();
 
   for (const QFileInfo &info : entries)
   {
@@ -132,7 +138,17 @@ void AppMenu::fill()
     AppButton *entryButton = new AppButton(this, icon, name);
     entryButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     connect(entryButton, &AppButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
-    popup->layout()->addWidget(entryButton);
+
+    h += entryButton->sizeHint().height();
+
+    if ( h >= maxHeight )
+    {
+      h = entryButton->sizeHint().height();
+      col++;
+      row = 0;
+    }
+
+    static_cast<QGridLayout *>(popup->layout())->addWidget(entryButton, row++, col);
   }
 }
 
@@ -151,9 +167,9 @@ void AppMenu::showMenu()
 Menu::Menu(QWidget *parent)
   : QMenu(parent)
 {
-  QVBoxLayout *vbox = new QVBoxLayout(this);
-  vbox->setContentsMargins(QMargins());
-  vbox->setSpacing(0);
+  QGridLayout *grid = new QGridLayout(this);
+  grid->setContentsMargins(QMargins());
+  grid->setSpacing(0);
 }
 
 //--------------------------------------------------------------------------------
