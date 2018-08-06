@@ -42,7 +42,7 @@ Just have a plain, solid, fast workhorse.
 How to start liquidshell instead of plasmashell
 -----------------------------------------------
 
-just copy liquidshell.desktop into your ~/.config/autostart/ folder
+just copy org.kde.liquidshell.desktop into your ~/.config/autostart/ folder
 
 To avoid the start of plasmashell, create a file
 ~/.config/autostart/plasmashell.desktop
