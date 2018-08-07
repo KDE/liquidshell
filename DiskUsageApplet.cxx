@@ -22,6 +22,7 @@
 #include <QLabel>
 #include <QProgressBar>
 #include <QGridLayout>
+#include <QAction>
 
 #include <Solid/Device>
 #include <Solid/StorageVolume>
