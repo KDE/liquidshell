@@ -10,7 +10,7 @@
  
 Summary: A replacement for plasmashell
 Name:    liquidshell
-Version: 1.0
+Version: 1.1
 Release: 1
 License: GPL-3.0
 Group:   System/GUI/KDE
