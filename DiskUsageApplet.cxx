@@ -47,12 +47,6 @@ DiskUsageApplet::DiskUsageApplet(QWidget *parent, const QString &theId)
 
   new QGridLayout(this);
   fill();
-
-  QAction *action = new QAction(this);
-  action->setText(i18n("Configure..."));
-  action->setIcon(QIcon::fromTheme("configure"));
-  insertAction(actions()[0], action);
-  connect(action, &QAction::triggered, this, &DiskUsageApplet::configure);
 }
 
 //--------------------------------------------------------------------------------

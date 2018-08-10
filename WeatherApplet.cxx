@@ -98,12 +98,6 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
       hbox->addStretch();
   }
 
-  QAction *action = new QAction(this);
-  action->setText(i18n("Configure..."));
-  action->setIcon(QIcon::fromTheme("configure"));
-  insertAction(actions()[0], action);
-  connect(action, &QAction::triggered, this, &WeatherApplet::configure);
-
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this,
           [this](NetworkManager::Connectivity connectivity)
           {

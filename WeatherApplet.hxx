@@ -41,13 +41,15 @@ class WeatherApplet : public DesktopApplet
     void loadConfig() override;
     QSize sizeHint() const override;
 
+  public Q_SLOTS:
+    void configure() override;
+
   protected:
     void showEvent(QShowEvent *event) override;
 
   private Q_SLOTS:
     void fetchData();
     void gotData(KJob *job);
-    void configure();
 
   private:  // methods
     void setIcon(QLabel *label, const QString &icon);

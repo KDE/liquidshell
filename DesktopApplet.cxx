@@ -31,11 +31,20 @@
 
 //--------------------------------------------------------------------------------
 
-DesktopApplet::DesktopApplet(QWidget *parent, const QString &theId)
+DesktopApplet::DesktopApplet(QWidget *parent, const QString &theId, bool addConfigureAction)
   : QFrame(parent), id(theId)
 {
   setFrameShape(QFrame::NoFrame);
   setContextMenuPolicy(Qt::ActionsContextMenu);
+
+  if ( addConfigureAction )
+  {
+    QAction *action = new QAction(this);
+    action->setText(i18n("Configure..."));
+    action->setIcon(QIcon::fromTheme("configure"));
+    addAction(action);
+    connect(action, &QAction::triggered, this, &DesktopApplet::configure);
+  }
 
   QAction *action = new QAction(this);
   action->setIcon(QIcon::fromTheme("preferences-system-windows-move"));

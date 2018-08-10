@@ -29,7 +29,7 @@ class DesktopApplet : public QFrame
   Q_OBJECT
 
   public:
-    DesktopApplet(QWidget *parent, const QString &theId);
+    DesktopApplet(QWidget *parent, const QString &theId, bool addConfigureAction = true);
 
     virtual void loadConfig();
 
@@ -39,6 +39,7 @@ class DesktopApplet : public QFrame
     int isOnDesktop(int d) const { return (onDesktop == NET::OnAllDesktops) || (onDesktop == d); }
 
   public Q_SLOTS:
+    virtual void configure() { }
     virtual void saveConfig();
 
   Q_SIGNALS:

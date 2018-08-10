@@ -21,6 +21,7 @@
 #include <DesktopPanel.hxx>
 #include <WeatherApplet.hxx>
 #include <DiskUsageApplet.hxx>
+#include <PictureFrameApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 #include <OnScreenVolume.hxx>
 
@@ -75,8 +76,12 @@ DesktopWidget::DesktopWidget()
   action->setMenu(menu);
   action = menu->addAction(QIcon::fromTheme("weather-clouds"), i18n("Weather"));
   connect(action, &QAction::triggered, [this]() { addApplet("Weather"); });
+
   action = menu->addAction(QIcon::fromTheme("drive-harddisk"), i18n("Disk Usage"));
   connect(action, &QAction::triggered, [this]() { addApplet("DiskUsage"); });
+
+  action = menu->addAction(QIcon::fromTheme("image-x-generix"), i18n("Picture Frame"));
+  connect(action, &QAction::triggered, [this]() { addApplet("PictureFrame"); });
 
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
@@ -101,6 +106,8 @@ DesktopWidget::DesktopWidget()
       applet = new WeatherApplet(this, appletName);
     else if ( appletName.startsWith("DiskUsage_") )
       applet = new DiskUsageApplet(this, appletName);
+    else if ( appletName.startsWith("PictureFrame_") )
+      applet = new PictureFrameApplet(this, appletName);
 
     if ( applet )
     {
@@ -332,6 +339,10 @@ void DesktopWidget::addApplet(const QString &type)
   else if ( type == "DiskUsage" )
   {
     applet = new DiskUsageApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
+  }
+  else if ( type == "PictureFrame" )
+  {
+    applet = new PictureFrameApplet(this, QString("%1_%2").arg(type).arg(++appletNum));
   }
 
   if ( applet )

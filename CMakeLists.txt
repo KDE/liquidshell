@@ -67,6 +67,8 @@ set(SOURCES
     WeatherAppletConfigureDialog.cxx
     DiskUsageApplet.cxx
     DiskUsageAppletConfigureDialog.cxx
+    PictureFrameApplet.cxx
+    PictureFrameAppletConfigureDialog.cxx
 )
 
 # e.g. on openSuse Leap 42.3 compile fails as a GLib header included uses signals as var
@@ -76,6 +78,7 @@ ki18n_wrap_ui(UI_FILES
               ConfigureDesktopDialog.ui
               WeatherAppletConfigureDialog.ui
               DiskUsageAppletConfigureDialog.ui
+              PictureFrameAppletConfigureDialog.ui
 )
 
 set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)

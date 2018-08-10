@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -17,43 +17,26 @@
   along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _DiskUsageApplet_H_
-#define _DiskUsageApplet_H_
+#ifndef _PictureFrameAppletConfigureDialog_H_
+#define _PictureFrameAppletConfigureDialog_H_
 
-#include <DesktopApplet.hxx>
-#include <DiskUsageAppletConfigureDialog.hxx>
-#include <QTimer>
-#include <QMap>
-#include <QPointer>
-class QProgressBar;
-class QLabel;
+#include <QDialog>
+#include <ui_PictureFrameAppletConfigureDialog.h>
+class PictureFrameApplet;
 
-class DiskUsageApplet : public DesktopApplet
+class PictureFrameAppletConfigureDialog : public QDialog
 {
   Q_OBJECT
 
   public:
-    DiskUsageApplet(QWidget *parent, const QString &theId);
-
-  public Q_SLOTS:
-    void configure() override;
+    PictureFrameAppletConfigureDialog(PictureFrameApplet *parent);
 
   private Q_SLOTS:
-    void fill();
+    void accept() override;
 
   private:
-    QTimer timer;
-
-    struct SizeInfo
-    {
-      QLabel *label;
-      QProgressBar *progress;
-      QLabel *sizeLabel;
-      bool used;
-    };
-
-    QMap<QString, SizeInfo> partitionMap;
-    QPointer<DiskUsageAppletConfigureDialog> dialog;
+    PictureFrameApplet *applet;
+    Ui::PictureFrameAppletConfigureDialog ui;
 };
 
 #endif
