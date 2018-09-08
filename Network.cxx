@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -46,6 +46,7 @@ Network::Network(QWidget *parent)
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &Network::checkState);
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionRemoved, this, &Network::checkState);
+  connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, &Network::checkState);
 
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &Network::checkState);
 
