@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -49,6 +49,9 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   setAttribute(Qt::WA_ShowWithoutActivating);  // avoid focus stealing
 
   setFrameShape(QFrame::StyledPanel);
+  QMargins margins = contentsMargins();
+  margins.setRight(0); // allow the close button to reach to the right screen border - easier to click
+  setContentsMargins(margins);
 
   QVBoxLayout *vbox = new QVBoxLayout;
   timeLabel = new QLabel;
@@ -59,10 +62,15 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   QVBoxLayout *centerBox = new QVBoxLayout;
 
   QHBoxLayout *hbox = new QHBoxLayout(this);
+  margins = hbox->contentsMargins();
+  margins.setRight(0); // allow the close button to reach to the right screen border - easier to click
+  hbox->setContentsMargins(margins);
+
   textLabel = new QLabel;
   QToolButton *closeButton = new QToolButton;
   // easier to click with larger size
   closeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+  closeButton->setMinimumWidth(40);
   closeButton->setAutoRaise(true);
   closeButton->setIcon(QIcon::fromTheme("window-close"));
   connect(closeButton, &QToolButton::clicked, this, &NotifyItem::deleteLater);
