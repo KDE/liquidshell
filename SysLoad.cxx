@@ -102,7 +102,7 @@ void SysLoad::fetch()
   f.close();
 
   // get memory information
-  size_t memTotal = 0, memFree = 0, swapTotal = 0, swapFree = 0, cached = 0;
+  size_t memTotal = 0, memFree = 0, swapTotal = 0, swapFree = 0, cached = 0, buffers = 0;
   f.setFileName("/proc/meminfo");
   if ( f.open(QIODevice::ReadOnly) )
   {
@@ -117,7 +117,9 @@ void SysLoad::fetch()
       else if ( line.startsWith("SwapTotal:") ) sscanf(line, "%*s %zd kB", &swapTotal);
       else if ( line.startsWith("SwapFree:")  ) sscanf(line, "%*s %zd kB", &swapFree);
       else if ( line.startsWith("Cached:")    ) sscanf(line, "%*s %zd kB", &cached);
+      else if ( line.startsWith("Buffers:")   ) sscanf(line, "%*s %zd kB", &buffers);
     }
+    cached += buffers;
     memData.memPercent = memTotal ? (double(memTotal - memFree) / double(memTotal)) * 100.0 : 0.0;
     memData.memCachedPercent = memTotal ? (double(cached) / double(memTotal)) * 100.0 : 0.0;
     memData.swapPercent = swapTotal ? (double(swapTotal - swapFree) / double(swapTotal)) * 100.0 : 0.0;
