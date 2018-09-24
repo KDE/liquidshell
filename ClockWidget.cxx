@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -69,8 +69,16 @@ void CalendarPopup::goToday()
 ClockWidget::ClockWidget(DesktopPanel *parent)
   : QFrame(parent), calendar(nullptr)
 {
+  ensurePolished();  // make sure we already have the css applied
+
   timer = new QTimer(this);
-  timer->setInterval(5000);
+
+  // if seconds are shown, update every second, else less often
+  if ( timeFormat.contains('s') )
+    timer->setInterval(1000);
+  else
+    timer->setInterval(5000);
+
   timer->start();
   connect(timer, &QTimer::timeout, this, &ClockWidget::tick);
 
@@ -98,7 +106,6 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   timeLabel->setFont(f);
 
   fill();
-  ensurePolished();  // make sure we already have the css applied
 
   timeLabel->setVisible(!timeFormat.isEmpty());
   dayLabel->setVisible(!dayFormat.isEmpty());
