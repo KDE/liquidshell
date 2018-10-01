@@ -77,7 +77,7 @@ class DeviceItem : public QFrame
     Solid::Device device;
     QToolButton *mountButton = nullptr;
     QLabel *textLabel = nullptr, *statusLabel = nullptr, *newFlagLabel = nullptr;
-    QTimer statusTimer;
+    QTimer statusTimer, mountBusyTimer;
     QPointer<KCMultiDialog> dialog;
 };
 

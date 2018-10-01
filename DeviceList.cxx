@@ -77,6 +77,10 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
     connect(storage, &Solid::StorageAccess::teardownDone, this, &DeviceItem::teardownDone);
     connect(storage, &Solid::StorageAccess::setupDone, this, &DeviceItem::setupDone);
 
+    mountBusyTimer.setInterval(500);
+    connect(&mountBusyTimer, &QTimer::timeout, this,
+            [this]() { mountButton->setVisible(!mountButton->isVisible()); });
+
     mountButton = new QToolButton;
     mountButton->setIconSize(QSize(32, 32));
 
@@ -84,6 +88,8 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
             [this]()
             {
               statusLabel->hide();
+              mountButton->setEnabled(false);
+              mountBusyTimer.start();
 
               Solid::StorageAccess *storage = device.as<Solid::StorageAccess>();
 
@@ -324,6 +330,10 @@ QString DeviceItem::errorToString(Solid::ErrorType error)
 void DeviceItem::mountDone(Action action, Solid::ErrorType error, QVariant errorData, const QString &udi)
 {
   Q_UNUSED(udi)
+
+  mountBusyTimer.stop();
+  mountButton->setEnabled(true);
+  mountButton->setVisible(true);
 
   if ( error == Solid::NoError )
   {
