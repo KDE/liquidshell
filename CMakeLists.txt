@@ -23,8 +23,6 @@ find_package(KF5 REQUIRED COMPONENTS
              NewStuff
 )
 
-find_package(packagekitqt5 REQUIRED)
-
 set(SOURCES
     desktop.cxx
     DesktopWidget.cxx
@@ -58,8 +56,6 @@ set(SOURCES
     Battery.cxx
     Bluetooth.cxx
     PopupMenu.cxx
-    PkUpdates.cxx
-    PkUpdateList.cxx
     KdeConnect.cxx
 
     DesktopApplet.cxx
@@ -70,6 +66,19 @@ set(SOURCES
     PictureFrameApplet.cxx
     PictureFrameAppletConfigureDialog.cxx
 )
+
+find_package(packagekitqt5 QUIET)
+
+if ( packagekitqt5_FOUND )
+  set(SOURCES ${SOURCES}
+      PkUpdates.cxx
+      PkUpdateList.cxx
+     )
+
+  add_definitions(-DWITH_PACKAGEKIT)
+else()
+  message(WARNING "PackageKit integration not available. packagekitqt5 development files not found")
+endif()
 
 # e.g. on openSuse Leap 42.3 compile fails as a GLib header included uses signals as var
 add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
@@ -120,8 +129,11 @@ target_link_libraries(${TARGET}
                       KF5::ItemViews
                       KF5::Archive
                       KF5::NewStuff
-                      PK::packagekitqt5
 )
+
+if ( packagekitqt5_FOUND )
+  target_link_libraries(${TARGET} PK::packagekitqt5)
+endif()
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

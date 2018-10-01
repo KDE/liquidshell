@@ -24,7 +24,10 @@
 #include <DeviceNotifier.hxx>
 #include <Battery.hxx>
 #include <Bluetooth.hxx>
+
+#ifdef WITH_PACKAGEKIT
 #include <PkUpdates.hxx>
+#endif
 
 #include <QApplication>
 #include <QDBusConnection>
@@ -118,7 +121,9 @@ void SysTray::fill()
     rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
     rowsLayout[0]->addWidget(new Battery(this), 0, Qt::AlignLeft);
     rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
+#ifdef WITH_PACKAGEKIT
     rowsLayout[0]->addWidget(new PkUpdates(this), 0, Qt::AlignLeft);
+#endif
   }
   else if ( MAX_ROWS >= 2 )
   {
@@ -127,7 +132,9 @@ void SysTray::fill()
     rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
     rowsLayout[1]->addWidget(new Network(this), 0, Qt::AlignLeft);
     rowsLayout[1]->addWidget(new Battery(this), 0, Qt::AlignLeft);
+#ifdef WITH_PACKAGEKIT
     rowsLayout[1]->addWidget(new PkUpdates(this), 0, Qt::AlignLeft);
+#endif
   }
 
   // notifier items
