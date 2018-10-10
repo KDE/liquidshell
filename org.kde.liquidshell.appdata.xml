@@ -4,7 +4,6 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license> GPL-3.0 </project_license>
   <name>liquidshell</name>
-  <name xml:lang="ast">liquidshell</name>
   <name xml:lang="ca">liquidshell</name>
   <name xml:lang="ca-valencia">liquidshell</name>
   <name xml:lang="cs">liquidshell</name>
@@ -251,7 +250,6 @@
   </screenshots>
   <provides>
     <binary>liquidshell</binary>
-    <binary xml:lang="ast">liquidshell</binary>
     <binary xml:lang="ca">liquidshell</binary>
     <binary xml:lang="ca-valencia">liquidshell</binary>
     <binary xml:lang="cs">liquidshell</binary>
