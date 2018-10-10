@@ -67,7 +67,6 @@ Action=Popup
 
 [Event/device needs charging]
 Name=Device needs charging
-Name[ast]=El preséu precisa cargase
 Name[ca]=Cal carregar el dispositiu
 Name[ca@valencia]=Cal carregar el dispositiu
 Name[cs]=Zařízení je potřeba nabít
