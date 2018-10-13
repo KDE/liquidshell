@@ -81,7 +81,7 @@ void TaskBar::fill()
   }
 
   int row = 0, col = 0, actualRows;
-  const int MAX_COLUMNS = std::max(2, static_cast<int>(std::round(windowsToShow.count() / float(MAX_ROWS))));
+  const int MAX_COLUMNS = std::max(2, static_cast<int>(std::ceil(windowsToShow.count() / float(MAX_ROWS))));
   actualRows = static_cast<int>(std::ceil(windowsToShow.count() / float(MAX_COLUMNS)));
   const int ICON_SIZE = height() / actualRows >= 36 ? 32 : 22;
 
