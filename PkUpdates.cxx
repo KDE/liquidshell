@@ -37,7 +37,7 @@ PkUpdates::PkUpdates(QWidget *parent)
 {
   KConfig config;
   KConfigGroup group = config.group("SoftwareUpdates");
-  if ( !group.hasKey("SoftwareUpdates") )  // create config entry so that one knows it exists
+  if ( !group.hasKey("enabled") )  // create config entry so that one knows it exists
     group.writeEntry("enabled", true);
 
   bool isEnabled = group.readEntry("enabled", true);
