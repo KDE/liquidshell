@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -36,8 +36,8 @@
 
 //--------------------------------------------------------------------------------
 
-PagerButton::PagerButton(int num, DesktopPanel *p)
-  : desktop(num), panel(p)
+PagerButton::PagerButton(int num, DesktopPanel *p, bool doShowIcon)
+  : desktop(num), panel(p), showIcon(doShowIcon)
 {
   setText(KWindowSystem::desktopName(desktop).isEmpty() ?
           QString::number(desktop) : KWindowSystem::desktopName(desktop));
@@ -48,16 +48,24 @@ PagerButton::PagerButton(int num, DesktopPanel *p)
   dragDropTimer.setInterval(1000);
   connect(&dragDropTimer, &QTimer::timeout, this, [this]() { emit clicked(true); });
 
-  createPixmap();
+  if ( showIcon )
+  {
+    createPixmap();
 
-  connect(KWindowSystem::self(), &KWindowSystem::windowAdded,
-          this, &PagerButton::createPixmap);
+    connect(KWindowSystem::self(), &KWindowSystem::windowAdded,
+            this, &PagerButton::createPixmap);
 
-  connect(KWindowSystem::self(), &KWindowSystem::windowRemoved,
-          this, &PagerButton::createPixmap);
+    connect(KWindowSystem::self(), &KWindowSystem::windowRemoved,
+            this, &PagerButton::createPixmap);
 
-  connect(KWindowSystem::self(), &KWindowSystem::stackingOrderChanged,
-          this, &PagerButton::createPixmap);
+    connect(KWindowSystem::self(), &KWindowSystem::stackingOrderChanged,
+            this, &PagerButton::createPixmap);
+
+    connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
+            this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
+
+    connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { updateGeometry(); });
+  }
 
   connect(KWindowSystem::self(), &KWindowSystem::desktopNamesChanged, this,
           [this]()
@@ -65,11 +73,6 @@ PagerButton::PagerButton(int num, DesktopPanel *p)
             setText(KWindowSystem::desktopName(desktop).isEmpty() ?
                     QString::number(desktop) : KWindowSystem::desktopName(desktop));
           });
-
-  connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
-          this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
-
-  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { updateGeometry(); });
 }
 
 //--------------------------------------------------------------------------------

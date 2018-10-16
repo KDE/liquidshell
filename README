@@ -71,10 +71,20 @@ selected via the systemsettings), you can use the commandline option -stylesheet
 to provide a Qt CSS widget stylesheet. For some examples see the included stylesheet.css file.
 For details about the syntax and possible options see http://doc.qt.io/qt-5/stylesheet.html
 
+#############
 To explicitely disable the Software-Updater (packagekit based), set the ~/.config/liquidshellrc
 config file entry:
 
 [SoftwareUpdates]
 enabled=false
 
-The config file and a default entry (enabled=true) will be created at first run of liquidshell
+The config file and a default entry will be created at first run of liquidshell
+
+#############
+To explicitely disable icons shown on the Pager buttons, set the ~/.config/liquidshellrc
+config file entry:
+
+[Pager]
+showIcons=true
+
+The config file and a default entry will be created at first run of liquidshell

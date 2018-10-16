@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -31,6 +31,8 @@
 #include <KLocalizedString>
 #include <KCMultiDialog>
 #include <KWindowSystem>
+#include <KConfig>
+#include <KConfigGroup>
 #include <netwm.h>
 
 //--------------------------------------------------------------------------------
@@ -55,6 +57,13 @@ Pager::Pager(DesktopPanel *parent)
          );
 
   connect(parent, &DesktopPanel::rowsChanged, this, &Pager::fill);
+
+  KConfig config;
+  KConfigGroup group = config.group("Pager");
+  if ( !group.hasKey("showIcons") )  // create config entry so that one knows it exists
+    group.writeEntry("showIcons", true);
+
+  showIcons  = group.readEntry("showIcons", true);
 
   fill();
 
@@ -90,7 +99,7 @@ void Pager::fill()
 
   for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
   {
-    PagerButton *b = new PagerButton(i, qobject_cast<DesktopPanel *>(parentWidget()));
+    PagerButton *b = new PagerButton(i, qobject_cast<DesktopPanel *>(parentWidget()), showIcons);
 
     b->setCheckable(true);
     b->setFocusPolicy(Qt::NoFocus);

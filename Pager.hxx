@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -39,6 +39,7 @@ class Pager : public QWidget
   private:
     QButtonGroup *group;
     QVector<PagerButton *> buttons;
+    bool showIcons = true;
 };
 
 #endif

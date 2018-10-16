@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -31,7 +31,7 @@ class PagerButton : public QPushButton
   Q_OBJECT
 
   public:
-    PagerButton(int num, DesktopPanel *panel);
+    PagerButton(int num, DesktopPanel *panel, bool showIcon);
 
     int getDesktop() const { return desktop; }
 
@@ -50,6 +50,7 @@ class PagerButton : public QPushButton
   private:
     int desktop;
     DesktopPanel *panel;
+    bool showIcon;
     QPixmap firstPixmap;
     QTimer dragDropTimer;
 };
