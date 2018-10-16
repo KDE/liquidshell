@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -32,7 +32,8 @@
 #include <QIcon>
 #include <QMenu>
 #include <QCursor>
-#include <QDebug>
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 #include <KWindowSystem>
 #include <KConfig>
@@ -85,6 +86,16 @@ DesktopWidget::DesktopWidget()
 
   action = new QAction(QIcon::fromTheme("preferences-desktop-display"), i18n("Configure Display..."), this);
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
+  addAction(action);
+
+  action = new QAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
+  connect(action, &QAction::triggered,
+          []()
+          {
+            QDBusConnection::sessionBus().send(
+                QDBusMessage::createMethodCall("org.kde.krunner", "/App",
+                                               "org.kde.krunner.App", "display"));
+          });
   addAction(action);
 
   action = new QAction(i18n("Help"), this);
