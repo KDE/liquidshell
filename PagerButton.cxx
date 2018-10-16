@@ -32,6 +32,7 @@
 
 #include <KWindowSystem>
 #include <KIconLoader>
+#include <KIconEffect>
 
 //--------------------------------------------------------------------------------
 
@@ -123,6 +124,10 @@ void PagerButton::createPixmap()
          !(win.state() & NET::SkipTaskbar) )
     {
       firstPixmap = KWindowSystem::icon(wid, 22, 22, true);
+
+      KIconEffect effect;
+      firstPixmap = effect.apply(firstPixmap, KIconEffect::DeSaturate, 0, QColor(), true);
+
       break;
     }
   }
