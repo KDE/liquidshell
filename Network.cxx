@@ -59,6 +59,15 @@ Network::Network(QWidget *parent)
 
 void Network::checkState()
 {
+  if ( NetworkManager::status() == NetworkManager::Unknown )
+  {
+    // if the system does not have NM running, hide the icon
+    hide();
+    return;
+  }
+
+  show();
+
   if ( NetworkManager::status() == NetworkManager::Connecting )
     blinkTimer.start();
   else
