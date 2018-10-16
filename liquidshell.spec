@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 #================= FILES ==================
 %files
 %defattr(-,root,root)
-%doc README
+%doc README stylesheet.css
 %{_bindir}/%{name}
 %{_datadir}/applications/org.kde.liquidshell.desktop
 %{_datadir}/icons/hicolor/48x48/apps/liquidshell.png

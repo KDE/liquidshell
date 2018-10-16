@@ -27,12 +27,27 @@
 #include <KLocalizedString>
 #include <KNotification>
 #include <KIconLoader>
+#include <KConfig>
+#include <KConfigGroup>
 
 //--------------------------------------------------------------------------------
 
 PkUpdates::PkUpdates(QWidget *parent)
   : SysTrayItem(parent)
 {
+  KConfig config;
+  KConfigGroup group = config.group("SoftwareUpdates");
+  if ( !group.hasKey("SoftwareUpdates") )  // create config entry so that one knows it exists
+    group.writeEntry("enabled", true);
+
+  bool isEnabled = group.readEntry("enabled", true);
+
+  if ( !isEnabled )
+  {
+    hide();
+    return;
+  }
+
   setPixmap(QIcon::fromTheme("system-software-update").pixmap(size()));
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { createToolTip(); });
 
