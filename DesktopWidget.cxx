@@ -88,7 +88,7 @@ DesktopWidget::DesktopWidget()
   connect(action, &QAction::triggered, this, &DesktopWidget::configureDisplay);
   addAction(action);
 
-  action = new QAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
+  action = new QAction(QIcon::fromTheme("system-run"), i18n("Run Command..."), this);
   connect(action, &QAction::triggered,
           []()
           {
