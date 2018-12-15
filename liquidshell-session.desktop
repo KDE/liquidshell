@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/bin/start_liquidshell
+TryExec=/usr/bin/start_liquidshell
+DesktopNames=KDE
+Name=Liquidshell

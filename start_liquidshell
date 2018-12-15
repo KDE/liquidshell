@@ -1,0 +1,45 @@
+#!/bin/bash
+# disable plasmashell and enable liquidshell instead
+
+if [ ${XDG_CONFIG_HOME} ]
+then
+  configDir=$XDG_CONFIG_HOME;
+else
+  configDir=${HOME}/.config; #this is the default, http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+fi
+
+if [ -f /etc/xdg/autostart/plasmashell.desktop ]
+then
+  plasmaFileName=$configDir/autostart/plasmashell.desktop
+else
+  plasmaFileName=$configDir/autostart/org.kde.plasmashell.desktop
+fi
+
+liquidFileName=$configDir/autostart/org.kde.liquidshell.desktop
+
+mkdir -p $configDir/autostart
+
+test -f $liquidFileName
+liquidNotExists=$?
+if [ $liquidNotExists -eq 1 ]
+then
+  cp /usr/share/applications/org.kde.liquidshell.desktop $configDir/autostart
+else
+  sed -i -e "s/Hidden=true/Hidden=false/" $liquidFileName
+fi
+
+cat > $plasmaFileName <<EOF
+[Desktop Entry]
+Hidden=true
+EOF
+
+/usr/bin/startkde
+
+rm -f $plasmaFileName 
+
+if [ $liquidNotExists -eq 1 ]
+then
+  rm -f $configDir/autostart/org.kde.liquidshell.desktop
+else
+  sed -i -e "s/Hidden=false/Hidden=true/" $liquidFileName
+fi

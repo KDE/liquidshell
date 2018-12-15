@@ -42,18 +42,7 @@ Just have a plain, solid, fast workhorse.
 How to start liquidshell instead of plasmashell
 -----------------------------------------------
 
-just copy org.kde.liquidshell.desktop into your ~/.config/autostart/ folder
-
-To avoid the start of plasmashell, create a file
-~/.config/autostart/plasmashell.desktop
-
-(or ~/.config/autostart/org.kde.plasmashell.desktop - depending on what's the name in
-/etc/xdg/autostart/ as it seems this was changed recently)
-
-with the following 2 lines as content:
-[Desktop Entry]
-Hidden=true
-
+Select "Liquidshell" from the list of possible session types on your login screen
 
 Building from source
 --------------------
