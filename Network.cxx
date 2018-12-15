@@ -109,7 +109,9 @@ void Network::checkState()
       int x = std::round(signalStrength / 25.0) * 25;
       pixmap = QIcon::fromTheme(QString("network-wireless-connected-%1").arg(x)).pixmap(size());
 
-      tip += "\n" + i18n("SSID: %1", accessPoint->ssid());
+      if ( !accessPoint.isNull() )
+        tip += "\n" + i18n("SSID: %1", accessPoint->ssid());
+
       tip += "\n" + i18n("Signal Strength: %1", signalStrength);
     }
   }
