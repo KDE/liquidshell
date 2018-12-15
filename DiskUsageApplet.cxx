@@ -94,6 +94,10 @@ void DiskUsageApplet::fill()
       sizeInfo.sizeLabel = sizeLabel;
       sizeInfo.used = true;
       partitionMap.insert(storage->filePath(), sizeInfo);
+
+      // workaround Qt bug
+      label->setPalette(palette());
+      sizeLabel->setPalette(palette());
     }
     else
     {
