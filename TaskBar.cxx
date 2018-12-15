@@ -70,6 +70,7 @@ void TaskBar::fill()
         (win.windowType(NET::DesktopMask) != NET::Desktop) &&
         (win.windowType(NET::DockMask) != NET::Dock) &&
         (win.windowType(NET::PopupMenuMask) != NET::PopupMenu) &&
+        (win.windowType(NET::UtilityMask) != NET::Utility) &&
          !(win.state() & NET::SkipTaskbar) )
       windowsToShow.append(wid);
   }
