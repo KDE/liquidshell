@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -20,7 +20,7 @@
 #ifndef _DeviceList_H_
 #define _DeviceList_H_
 
-#include <QFrame>
+#include <QScrollArea>
 #include <QVBoxLayout>
 #include <QMap>
 
@@ -83,7 +83,7 @@ class DeviceItem : public QFrame
 
 //--------------------------------------------------------------------------------
 
-class DeviceList : public QFrame
+class DeviceList : public QScrollArea
 {
   Q_OBJECT
 
@@ -91,6 +91,8 @@ class DeviceList : public QFrame
     DeviceList(QWidget *parent);
 
     bool isEmpty() const { return items.isEmpty(); }
+
+    QSize sizeHint() const override;
 
   Q_SIGNALS:
     void deviceWasAdded();

@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -40,7 +40,14 @@ DeviceNotifier::DeviceNotifier(QWidget *parent)
     hide();
 
   connect(deviceList, &DeviceList::deviceWasRemoved, this, &DeviceNotifier::checkDeviceList);
-  connect(deviceList, &DeviceList::deviceWasAdded, [this]() { timer.start(); showDetailsList(); });
+  connect(deviceList, &DeviceList::deviceWasAdded,
+          [this]()
+          {
+            if ( !deviceList->isVisible() )
+              timer.start();  // auto-hide
+
+            showDetailsList();
+          });
 
   // if the user did not activate the device list window, auto-hide it
   timer.setInterval(4000);

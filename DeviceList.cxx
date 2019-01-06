@@ -1,5 +1,5 @@
 /*
-  Copyright 2017, 2018 Martin Koller, kollix@aon.at
+  Copyright 2017, 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -32,6 +32,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QFileInfo>
+#include <QScrollBar>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -374,17 +375,22 @@ void DeviceItem::setupDone(Solid::ErrorType error, QVariant errorData, const QSt
 //--------------------------------------------------------------------------------
 
 DeviceList::DeviceList(QWidget *parent)
-  : QFrame(parent)
+  : QScrollArea(parent)
 {
   setWindowFlags(windowFlags() | Qt::Tool);
   setFrameShape(QFrame::StyledPanel);
   setAttribute(Qt::WA_AlwaysShowToolTips);
+  setWidgetResizable(true);
 
   loadActions();
 
-  vbox = new QVBoxLayout(this);
+  QWidget *widget = new QWidget;
+
+  vbox = new QVBoxLayout(widget);
   vbox->setContentsMargins(QMargins());
   vbox->addStretch();
+  vbox->setSizeConstraint(QLayout::SetMinAndMaxSize);
+  setWidget(widget);
 
   predicate = Solid::Predicate(Solid::DeviceInterface::StorageAccess);
   predicate |= Solid::Predicate(Solid::DeviceInterface::StorageDrive);
@@ -407,6 +413,18 @@ DeviceList::DeviceList(QWidget *parent)
 
   connect(&kdeConnect, &KdeConnect::deviceAdded, this, &DeviceList::kdeConnectDeviceAdded);
   connect(&kdeConnect, &KdeConnect::deviceRemoved, this, &DeviceList::deviceRemoved);
+}
+
+//--------------------------------------------------------------------------------
+
+QSize DeviceList::sizeHint() const
+{
+  // avoid horizontal scrollbar when the list is higher than 2/3 of the screen
+  // where a vertical scrollbar will be shown, reducing the available width
+  // leading to also getting a horizontal scrollbar
+  QSize s = widget()->sizeHint() + QSize(2 * frameWidth(), 2 * frameWidth());
+  s.setWidth(s.width() + verticalScrollBar()->sizeHint().width());
+  return s;
 }
 
 //--------------------------------------------------------------------------------
@@ -506,6 +524,9 @@ void DeviceList::deviceAdded(const QString &dev)
   if ( item )
   {
     item->markAsNew();
+    item->show();
+    verticalScrollBar()->setValue(verticalScrollBar()->maximum());
+
     emit deviceWasAdded();
   }
 }
@@ -536,6 +557,8 @@ void DeviceList::kdeConnectDeviceAdded(const KdeConnect::Device &device)
 
   items.insert(device->id, item);
   item->markAsNew();
+  item->show();
+  verticalScrollBar()->setValue(verticalScrollBar()->maximum());
 
   // when we added a new device, make sure the DeviceNotifier shows and places this window
   emit deviceWasAdded();
