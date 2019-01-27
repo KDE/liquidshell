@@ -91,7 +91,7 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
 
     for (int i = 0; i < actions.count(); i++)
     {
-      if ( (i % 2) != 0 )  // id
+      if ( ((i % 2) != 0) && !actions[i].isEmpty() )  // id
       {
         QPushButton *button = new QPushButton;
         button->setText(actions[i]);

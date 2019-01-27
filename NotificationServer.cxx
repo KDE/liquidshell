@@ -27,6 +27,7 @@
 #include <QDebug>
 
 #include <KLocalizedString>
+#include <KService>
 
 //--------------------------------------------------------------------------------
 
@@ -98,7 +99,22 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
 
   QString body(theBody);
   body.replace("\n", "<br>");
-  notificationList->addItem(notifyId, app_name, summary, body, QIcon::fromTheme(app_icon), actions, hints, timeout);
+
+  QIcon icon;
+  if ( !app_icon.isEmpty() )
+    icon = QIcon::fromTheme(app_icon);
+  else if ( hints.contains("image-path") )
+    icon = QIcon(hints["image-path"].toString());
+
+  QString appName = app_name;
+  if ( appName.isEmpty() && hints.contains("desktop-entry") )
+  {
+    KService::Ptr service = KService::serviceByDesktopName(hints["desktop-entry"].toString().toLower());
+    if ( service )
+      appName = service->name();
+  }
+
+  notificationList->addItem(notifyId, appName, summary, body, icon, actions, hints, timeout);
 
   if ( replaces_id != 0 )
     notificationList->closeItem(replaces_id);
