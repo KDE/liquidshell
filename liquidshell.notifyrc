@@ -21,6 +21,7 @@ Name[sv]=Uppdateringar tillgängliga
 Name[uk]=Доступні оновлення
 Name[x-test]=xxUpdates availablexx
 Name[zh_CN]=更新可用
+Name[zh_TW]=已有可使用的更新
 Action=Popup
 
 [Event/update error]
@@ -42,6 +43,7 @@ Name[pt_BR]=Erro na atualização
 Name[sv]=Uppdateringsfel
 Name[uk]=Помилка оновлення
 Name[x-test]=xxUpdate errorxx
+Name[zh_TW]=更新時發生錯誤
 Action=Popup
 
 [Event/restart needed]
@@ -63,6 +65,7 @@ Name[pt_BR]=Reinício necessário
 Name[sv]=Omstart behövs
 Name[uk]=Потрібен перезапуск
 Name[x-test]=xxRestart neededxx
+Name[zh_TW]=需要重新開機
 Action=Popup
 
 [Event/device needs charging]
@@ -84,5 +87,6 @@ Name[pt_BR]=O dispositivo precisa ser carregado
 Name[sv]=Enhet behöver laddas
 Name[uk]=Пристрій потребує заряджання
 Name[x-test]=xxDevice needs chargingxx
+Name[zh_TW]=裝置需要充電
 IconName=battery-040
 Action=Popup

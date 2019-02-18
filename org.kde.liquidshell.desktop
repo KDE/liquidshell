@@ -21,6 +21,7 @@ Name[sk]=Pracovná plocha Liquid
 Name[sv]=Liquid arbetsområde för skrivbordet
 Name[uk]=Робочий простір Ліквід для комп'ютерів
 Name[x-test]=xxLiquid Desktop Workspacexx
+Name[zh_TW]=Liquid 桌面工作空間
 Type=Application
 X-KDE-StartupNotify=false
 OnlyShowIn=KDE;
