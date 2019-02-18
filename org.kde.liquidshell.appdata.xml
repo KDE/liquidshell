@@ -21,6 +21,7 @@
   <name xml:lang="sv">Liquid-skal</name>
   <name xml:lang="uk">liquidshell</name>
   <name xml:lang="x-test">xxliquidshellxx</name>
+  <name xml:lang="zh-TW">liquidshell</name>
   <summary> liquidshell is an alternative to plasmashell </summary>
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
   <summary xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</summary>
@@ -38,6 +39,7 @@
   <summary xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</summary>
   <summary xml:lang="uk">liquidshell є альтернативою оболонки Плазми</summary>
   <summary xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</summary>
+  <summary xml:lang="zh-TW">liquidshell 是 plasmashell 的替代品</summary>
   <description>
     <p>liquidshell is an alternative to plasmashell</p>
     <p xml:lang="ca">El liquidshell és una alternativa al plasmashell</p>
@@ -56,6 +58,7 @@
     <p xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</p>
     <p xml:lang="uk">liquidshell є альтернативою оболонки Плазми</p>
     <p xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</p>
+    <p xml:lang="zh-TW">liquidshell 是 plasmashell 的替代品</p>
     <p>It does not use QtQuick but instead relies on QtWidgets,
        therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="ca">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
@@ -89,6 +92,7 @@
     <p xml:lang="sv">Huvudfunktionalitet:</p>
     <p xml:lang="uk">Основні можливості:</p>
     <p xml:lang="x-test">xxMain Features:xx</p>
+    <p xml:lang="zh-TW">主要功能：</p>
     <ul>
       <li>Wallpaper per virtual desktop</li>
       <li xml:lang="ca">Fons de pantalla per a l'escriptori virtual</li>
@@ -106,6 +110,7 @@
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
       <li xml:lang="uk">Різні зображення тла для різних віртуальних стільниць</li>
       <li xml:lang="x-test">xxWallpaper per virtual desktopxx</li>
+      <li xml:lang="zh-TW">每個虛擬桌面都能選擇桌布</li>
       <li>No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="ca-valencia">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
@@ -120,6 +125,7 @@
       <li xml:lang="sv">Inga animeringar, ingen beslagtagning av processorn, liten minnesanvändning</li>
       <li xml:lang="uk">Немає анімацій, зайвого споживання часу процесора, менше споживання пам'яті</li>
       <li xml:lang="x-test">xxNo animations, no CPU hogging, low Memory footprintxx</li>
+      <li xml:lang="zh-TW">沒有動畫、不會佔用 CPU 資源、更減少記憶體的使用量</li>
       <li>Instant startup</li>
       <li xml:lang="ca">Inici instantani</li>
       <li xml:lang="ca-valencia">Inici instantani</li>
@@ -137,6 +143,7 @@
       <li xml:lang="sv">Omedelbar start</li>
       <li xml:lang="uk">Миттєвий запуск</li>
       <li xml:lang="x-test">xxInstant startupxx</li>
+      <li xml:lang="zh-TW">即時啟動</li>
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
       <li xml:lang="ca-valencia">No empra les activitats</li>
@@ -283,6 +290,7 @@
     <binary xml:lang="sv">Liquid-skal</binary>
     <binary xml:lang="uk">liquidshell</binary>
     <binary xml:lang="x-test">xxliquidshellxx</binary>
+    <binary xml:lang="zh-TW">liquidshell</binary>
   </provides>
   <project_group>KDE</project_group>
 </component>
