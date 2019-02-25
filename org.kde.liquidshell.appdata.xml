@@ -17,6 +17,7 @@
   <name xml:lang="nl">liquidshell</name>
   <name xml:lang="pl">liquidshell</name>
   <name xml:lang="pt">liquidshell</name>
+  <name xml:lang="ru">liquidshell</name>
   <name xml:lang="sk">liquidshell</name>
   <name xml:lang="sv">Liquid-skal</name>
   <name xml:lang="uk">liquidshell</name>
@@ -286,6 +287,7 @@
     <binary xml:lang="nl">liquidshell</binary>
     <binary xml:lang="pl">liquidshell</binary>
     <binary xml:lang="pt">liquidshell</binary>
+    <binary xml:lang="ru">liquidshell</binary>
     <binary xml:lang="sk">liquidshell</binary>
     <binary xml:lang="sv">Liquid-skal</binary>
     <binary xml:lang="uk">liquidshell</binary>
