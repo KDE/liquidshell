@@ -1,5 +1,5 @@
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -59,7 +59,7 @@ PkUpdates::PkUpdates(QWidget *parent)
   updateTimer.start();
   connect(&updateTimer, &QTimer::timeout, this, &PkUpdates::checkForUpdatesReached);
 
-  QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
+  //QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
 }
 
 //--------------------------------------------------------------------------------
