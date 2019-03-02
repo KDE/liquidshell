@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
   KLocalizedString::setApplicationDomain("liquidshell");
 
-  KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.4",
+  KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.5",
                        i18n("A QtWidgets based alternative to plasmashell"),
                        KAboutLicense::GPL_V3,
                        i18n("Copyright 2017,2018 Martin Koller"), QString(),
