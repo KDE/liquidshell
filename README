@@ -1,15 +1,13 @@
 Author: Martin Koller, kollix@aon.at
 First release: Oktober 2017
 
-liquidshell is an alternative to plasmashell
-
-It does not use QtQuick but instead uses QtWidgets.
+liquidshell is a basic Desktop Shell implemented using QtWidgets.
 
 Main Features:
 - Wallpaper per virtual desktop
-- No animations, no CPU hogging, low Memory footprint
+- No animations, low memory and CPU footprint
 - Instant startup
-- No use of activities (I never used nor needed them)
+- No use of activities
 - QtWidgets based, therefore follows widget style from systemsettings
 - Icons are used from your globally defined icon theme from systemsettings
 - Colors are used from your globally defined color theme from systemsettings
@@ -33,11 +31,6 @@ Main Features:
       (very handy for copy/paste of TAC numbers from online banking received via SMS and transferred to KDE
        via kdeconnect)
   Clock widget (with calendar popup, tooltip for selected cities)
-
-The main motivation was to have a reliable desktop shell which does not hog the CPU or RAM.
-It should be slick and have just the features I need in my daily
-work. No need having all the bells and whistles anyone can think of.
-Just have a plain, solid, fast workhorse.
 
 How to start liquidshell instead of plasmashell
 -----------------------------------------------
