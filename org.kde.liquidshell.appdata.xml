@@ -275,25 +275,6 @@
   </screenshots>
   <provides>
     <binary>liquidshell</binary>
-    <binary xml:lang="ca">liquidshell</binary>
-    <binary xml:lang="ca-valencia">liquidshell</binary>
-    <binary xml:lang="cs">liquidshell</binary>
-    <binary xml:lang="de">liquidshell</binary>
-    <binary xml:lang="en-GB">liquidshell</binary>
-    <binary xml:lang="es">liquidshell</binary>
-    <binary xml:lang="fi">liquidshell</binary>
-    <binary xml:lang="gl">liquidshell</binary>
-    <binary xml:lang="id">liquidshell</binary>
-    <binary xml:lang="it">liquidshell</binary>
-    <binary xml:lang="nl">liquidshell</binary>
-    <binary xml:lang="pl">liquidshell</binary>
-    <binary xml:lang="pt">liquidshell</binary>
-    <binary xml:lang="ru">liquidshell</binary>
-    <binary xml:lang="sk">liquidshell</binary>
-    <binary xml:lang="sv">Liquid-skal</binary>
-    <binary xml:lang="uk">liquidshell</binary>
-    <binary xml:lang="x-test">xxliquidshellxx</binary>
-    <binary xml:lang="zh-TW">liquidshell</binary>
   </provides>
   <project_group>KDE</project_group>
 </component>
