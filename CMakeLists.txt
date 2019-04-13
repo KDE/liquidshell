@@ -144,3 +144,5 @@ ecm_install_icons(ICONS
                   48-apps-liquidshell.png
                   DESTINATION ${ICON_INSTALL_DIR}
                   THEME hicolor)
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES)
