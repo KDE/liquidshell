@@ -1,7 +1,8 @@
-liquidshell ist eine Alternative zu plasmashell, welche im Unterschied dazu QtWidgets anstatt QtQuick verwendet.
+liquidshell ist eine Desktop Shell, welche auf Basis QtWidgets implementiert wurde
 
 Features:
 - Hintergrundbild pro virtueller Arbeitsfläche
+- Wetter, Disk-Verbrauch, Bilderrahmen Applets (pro virtueller Arbeitsfläche oder auf allen)
 - Verwendet den Widget-Stil, das Farbschema sowie das Icon-Thema aus den Systemeinstellungen
 - Kann per css stylesheet weiter angepasst werden
 - Verwendet für einige Konfigurationen die std. KDE Dialoge, wie z.B. Bluetooth, Startmenü, virtuelle Desktops

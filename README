@@ -5,9 +5,9 @@ liquidshell is a basic Desktop Shell implemented using QtWidgets.
 
 Main Features:
 - Wallpaper per virtual desktop
+- Weather, Disk Usage, Picture Frame Applets (per virtual desktop or on all)
 - No animations, low memory and CPU footprint
 - Instant startup
-- No use of activities
 - QtWidgets based, therefore follows widget style from systemsettings
 - Icons are used from your globally defined icon theme from systemsettings
 - Colors are used from your globally defined color theme from systemsettings
@@ -54,7 +54,7 @@ to provide a Qt CSS widget stylesheet. For some examples see the included styles
 For details about the syntax and possible options see http://doc.qt.io/qt-5/stylesheet.html
 
 #############
-To explicitely disable the Software-Updater (packagekit based), set the ~/.config/liquidshellrc
+To explicitly disable the Software-Updater (packagekit based), set the ~/.config/liquidshellrc
 config file entry:
 
 [SoftwareUpdates]
@@ -63,7 +63,7 @@ enabled=false
 The config file and a default entry will be created at first run of liquidshell
 
 #############
-To explicitely disable icons shown on the Pager buttons, set the ~/.config/liquidshellrc
+To explicitly disable icons shown on the Pager buttons, set the ~/.config/liquidshellrc
 config file entry:
 
 [Pager]
