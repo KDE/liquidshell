@@ -65,6 +65,7 @@
     <p xml:lang="ca">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="ca-valencia">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
+    <p xml:lang="es">No usa QtQuick, sino que se basa en QtWidgets, por lo que no se necesita aceleración de gráficos por hardware.</p>
     <p xml:lang="fi">Se ei käytä QtQuickiä vaan luottaa QtWidgetsiin, joten se ei vaadi laitteistokiihdytystä.</p>
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por hardware.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
@@ -117,6 +118,7 @@
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="ca-valencia">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="en-GB">No animations, no CPU hogging, low Memory footprint</li>
+      <li xml:lang="es">Sin animaciones, no acapara la CPU, bajo impacto en la memoria</li>
       <li xml:lang="fi">Ei animointeja tai suorittimen rohmuamista; vähäinen muistinkulutus</li>
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
@@ -167,6 +169,7 @@
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
+      <li xml:lang="es">Basado en QtWidgets, por lo que sigue el estilo de widgets del sistema</li>
       <li xml:lang="fi">Perustuu QtWidgetsiin, joten noudattaa järjestelmäasetusten käyttöliittymäalkiotyyliä</li>
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
@@ -181,6 +184,7 @@
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
+      <li xml:lang="es">Usa iconos del tema definido globalmente en las preferencias del sistema</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritetyn yleisen kuvaketeeman kuvakkeita</li>
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
@@ -195,6 +199,7 @@
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
+      <li xml:lang="es">Usa colores del tema definido globalmente en las preferencias del sistema</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritettyjä yleisiä väriasetuksia</li>
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
@@ -209,6 +214,7 @@
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
+      <li xml:lang="es">Puede usar estilos adicionales con CSS mediante la opción de la línea de órdenes «-stylesheet archivo.css» (consulte el ejemplo incluido stylesheet.css)</li>
       <li xml:lang="fi">Tyyliä voi vielä CSS:llä muokata komentorivivalitsinta ”-stylesheet tiedosto.css” käyttäen (ks. esimerkkitiedostoa stylesheet.css)</li>
       <li xml:lang="gl">Ademais pode aplicárselle un estilo con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
       <li xml:lang="id">Bisa ditambah-tambah gaya dengan css lewat commandline opsi -stylesheet filename.css (lihatlah contoh yang disertakan stylesheet.css)</li>
@@ -223,6 +229,7 @@
       <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
+      <li xml:lang="es">Usa los diálogos de KDE existentes para la mayoría de las configuraciones, como menú de inicio, escritorios virtuales, Bluetooth y red</li>
       <li xml:lang="fi">Käyttää useimmiten olemassa olevia KDE-valintaikkunoita, esim. käynnistysvalikko, virtuaalityöpöydät, Bluetooth, verkko</li>
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
@@ -237,6 +244,7 @@
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="en-GB">One bottom DesktopPanel</li>
+      <li xml:lang="es">Un panel de escritorio inferior</li>
       <li xml:lang="fi">Yksi alhaalla oleva työpöytäpaneeli</li>
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
