@@ -136,7 +136,7 @@ if ( packagekitqt5_FOUND )
 endif()
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
