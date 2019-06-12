@@ -39,6 +39,7 @@
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
   <summary xml:lang="pl">liquidshell jest alternatywą dla plasmashell</summary>
   <summary xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</summary>
+  <summary xml:lang="pt-BR">O liquidshell é um alternativa ao plasmashell</summary>
   <summary xml:lang="sk">liquidshell je alternatíva pre plasmashell</summary>
   <summary xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</summary>
   <summary xml:lang="uk">liquidshell є альтернативою оболонки Плазми</summary>
@@ -59,6 +60,7 @@
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
     <p xml:lang="pl">liquidshell jest alternatywą dla plasmashell</p>
     <p xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</p>
+    <p xml:lang="pt-BR">O liquidshell é um alternativa ao plasmashell</p>
     <p xml:lang="sk">liquidshell je alternatíva pre plasmashell</p>
     <p xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</p>
     <p xml:lang="uk">liquidshell є альтернативою оболонки Плазми</p>
@@ -78,6 +80,7 @@
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
     <p xml:lang="pl">Zamiast używać QtQuick używa QtWidgets, więc nie jest wymagane żande sprzętowe przyspieszenie grafiki.</p>
     <p xml:lang="pt">Não usa o QtQuick mas baseia-se sim no QtWidgets, pelo que não é necessária nenhuma aceleração gráfica por 'hardware'.</p>
+    <p xml:lang="pt-BR">Ele não usa o QtQuick ao invés usa o QtWidgets, portando nenhuma aceleração gráfica por hardware é necessária.</p>
     <p xml:lang="sv">Det använder inte QtQuick, utan förlitar sig istället på QtWidgets. Därför behövs ingen grafikacceleration i hårdvara.</p>
     <p xml:lang="uk">Не використовує QtQuick, а лише QtWidgets, тому не потрібне апаратне прискорення виведення графіки</p>
     <p xml:lang="x-test">xxIt does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.xx</p>
@@ -96,6 +99,7 @@
     <p xml:lang="nl">Hoofdkenmerken:</p>
     <p xml:lang="pl">Główne możliwości:</p>
     <p xml:lang="pt">Funcionalidades Principais:</p>
+    <p xml:lang="pt-BR">Principais recursos:</p>
     <p xml:lang="ru">Основные возможности:</p>
     <p xml:lang="sk">Hlavné funkcie:</p>
     <p xml:lang="sv">Huvudfunktionalitet:</p>
@@ -117,6 +121,7 @@
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pl">Tapeta na wirtualny pulpit</li>
       <li xml:lang="pt">Papel de parede por ecrã virtual</li>
+      <li xml:lang="pt-BR">Papel de parede por área de trabalho virtual</li>
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
       <li xml:lang="uk">Різні зображення тла для різних віртуальних стільниць</li>
       <li xml:lang="x-test">xxWallpaper per virtual desktopxx</li>
@@ -152,6 +157,7 @@
       <li xml:lang="nl">Onmiddellijk opgestart</li>
       <li xml:lang="pl">Natychmiastowe uruchamianie</li>
       <li xml:lang="pt">Arranque instantâneo</li>
+      <li xml:lang="pt-BR">Inicialização instantânea</li>
       <li xml:lang="sk">Rýchle spustenie</li>
       <li xml:lang="sv">Omedelbar start</li>
       <li xml:lang="uk">Миттєвий запуск</li>
@@ -171,6 +177,7 @@
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
       <li xml:lang="pl">Nie używa aktywności</li>
       <li xml:lang="pt">Não usa as actividades</li>
+      <li xml:lang="pt-BR">Sem uso de atividades</li>
       <li xml:lang="sk">Žiadne použitie aktívít</li>
       <li xml:lang="sv">Ingen användning av aktiviteter</li>
       <li xml:lang="uk">Не використовуються простори дій</li>
