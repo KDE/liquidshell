@@ -185,7 +185,7 @@
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels ginys («widgets») indicat per l'arranjament del sistema</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="es">Basado en QtWidgets, por lo que sigue el estilo de widgets del sistema</li>
       <li xml:lang="fi">Perustuu QtWidgetsiin, joten noudattaa järjestelmäasetusten käyttöliittymäalkiotyyliä</li>
