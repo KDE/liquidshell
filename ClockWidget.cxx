@@ -93,9 +93,9 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
   dayLabel->setObjectName("day");
   dateLabel->setObjectName("date");
 
-  timeLabel->setContentsMargins(QMargins(0, -5, 0, -5));
-  dayLabel->setContentsMargins(QMargins(0, -5, 0, -5));
-  dateLabel->setContentsMargins(QMargins(0, -5, 0, -5));
+  timeLabel->setTextFormat(Qt::PlainText);
+  dayLabel->setTextFormat(Qt::PlainText);
+  dateLabel->setTextFormat(Qt::PlainText);
 
   timeLabel->setAlignment(Qt::AlignCenter);
   dayLabel->setAlignment(Qt::AlignCenter);
@@ -163,6 +163,10 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
     timeZoneIds.append(id.toLatin1());
 
   tick();
+
+  timeLabel->setFixedHeight(timeLabel->fontMetrics().tightBoundingRect(timeLabel->text()).height() + 2);
+  dayLabel->setFixedHeight(dayLabel->fontMetrics().tightBoundingRect(dayLabel->text()).height() + 4);
+  dateLabel->setFixedHeight(dateLabel->fontMetrics().tightBoundingRect(dateLabel->text()).height() + 4);
 }
 
 //--------------------------------------------------------------------------------

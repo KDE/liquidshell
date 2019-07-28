@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017, 2018, 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -257,6 +257,15 @@ void TaskBarButton::updateWMGeometry()
   rect.size.height = height();
 
   info.setIconGeometry(rect);
+}
+
+//--------------------------------------------------------------------------------
+
+QSize TaskBarButton::sizeHint() const
+{
+  QSize s = QPushButton::sizeHint();
+  s.setHeight(s.height() - 2);
+  return s;
 }
 
 //--------------------------------------------------------------------------------

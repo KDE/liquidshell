@@ -37,6 +37,8 @@ class TaskBarButton : public QPushButton
 
     void setIconSize(int size);
 
+    QSize sizeHint() const override;
+
   Q_SIGNALS:
     void clicked();
 

@@ -82,7 +82,7 @@ QSize PagerButton::sizeHint() const
 {
   QSize s = fontMetrics().size(0, text());
   s.setWidth(std::max(45, s.width() + 10));
-  s.setHeight(QPushButton::sizeHint().height());
+  s.setHeight(QPushButton::sizeHint().height() - 2);
 
   if ( panel->getRows() == 1 )
     s.setHeight(std::max(s.height(), KIconLoader::global()->currentSize(KIconLoader::Panel)));
