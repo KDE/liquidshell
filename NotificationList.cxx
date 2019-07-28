@@ -43,9 +43,9 @@ static const Qt::WindowFlags POPUP_FLAGS = Qt::WindowStaysOnTopHint | Qt::Framel
 //--------------------------------------------------------------------------------
 
 NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
-                       const QString &summary, const QString &body, const QIcon &icon,
-                       const QStringList &actions)
-  : QFrame(parent, POPUP_FLAGS), id(theId), appName(app)
+                       const QString &theSummary, const QString &theBody, const QIcon &icon,
+                       const QStringList &theActions)
+  : QFrame(parent, POPUP_FLAGS), id(theId), appName(app), summary(theSummary), body(theBody), actions(theActions)
 {
   setAttribute(Qt::WA_ShowWithoutActivating);  // avoid focus stealing
 
@@ -222,6 +222,21 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
       transient = false;
   }
 
+  // I often get the same notification multiple times (e.g. KDE-connect or EWS akonadi resource)
+  // but I don't want to fill up the screen with useless duplicate information. Therefore
+  // whenever the same notification is received while another instance of it is still visible,
+  // only put it in the list-view (it has a different id, therefore still store it), but don't show it as popup
+  for (NotifyItem *it : items)
+  {
+    if ( (it != item) &&         // not the new item already in items
+         !it->parentWidget() &&  // temporary item not in the list-view yet
+         (appName == it->appName) && (summary == it->summary) &&
+         (body == it->body) && (actions == it->actions) )
+    {
+      timeout = 0;
+    }
+  }
+
   numItems++;
   emit itemsCountChanged();
 
@@ -282,7 +297,7 @@ void NotificationList::closeItem(uint id)
 {
   for (NotifyItem *item : items)
   {
-    if ( item->getId() == id )
+    if ( item->id == id )
     {
       item->deleteLater();
       break;

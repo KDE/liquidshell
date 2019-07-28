@@ -37,14 +37,14 @@ class NotifyItem : public QFrame
                const QString &summary, const QString &body, const QIcon &icon,
                const QStringList &actions);
 
-    uint getId() const { return id; }
-
     void destroySysResources();
+
+    uint id;
+    QString appName, summary, body;
+    QStringList actions;
 
   private:
     QLabel *timeLabel, *iconLabel, *textLabel;
-    uint id;
-    QString appName;
 };
 
 //--------------------------------------------------------------------------------
