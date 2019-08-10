@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -24,7 +24,7 @@
 #include <QMimeDatabase>
 #include <QImageReader>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QDebug>
 
 #include <KNS3/DownloadDialog>
@@ -137,8 +137,8 @@ void ConfigureDesktopDialog::showImages()
                                                    "wallpapers", QStandardPaths::LocateDirectory);
 
   const QString geometryString = QString("%1x%2")
-                                         .arg(QApplication::desktop()->width())
-                                         .arg(QApplication::desktop()->height());
+                                         .arg(QApplication::primaryScreen()->size().width())
+                                         .arg(QApplication::primaryScreen()->size().height());
 
   for (const QString &dirName : dirNames)
   {

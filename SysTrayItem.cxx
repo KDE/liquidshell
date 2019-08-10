@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -22,7 +22,7 @@
 
 #include <QMouseEvent>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QIcon>
 
 #include <KWindowSystem>
@@ -64,9 +64,9 @@ void SysTrayItem::showDetailsList()
     return;
 
   QPoint point = mapToGlobal(pos());
-  QRect screen = QApplication::desktop()->availableGeometry(this);
-  point.setX(std::min(point.x(), screen.x() + screen.width() - detailsList->size().width()));
-  point.setY(screen.bottom() - detailsList->size().height());
+  QRect screen = QApplication::primaryScreen()->availableGeometry();
+  point.setX(std::min(point.x(), screen.x() + screen.width() - detailsList->width()));
+  point.setY(screen.bottom() - detailsList->height());
   detailsList->move(point);
   detailsList->show();
   KWindowSystem::raiseWindow(detailsList->winId());

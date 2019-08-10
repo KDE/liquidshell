@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -27,7 +27,7 @@
 #include <QDir>
 #include <QMimeDatabase>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QDebug>
 
 #include <KFileItem>
@@ -53,7 +53,8 @@ AppMenu::AppMenu(DesktopPanel *parent)
   connect(parent, &DesktopPanel::rowsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::fill);
-  connect(QApplication::desktop(), &QDesktopWidget::resized, this, &AppMenu::fill);
+  connect(QApplication::primaryScreen(), &QScreen::geometryChanged, this, &AppMenu::fill);
+  connect(qApp, &QApplication::primaryScreenChanged, this, &AppMenu::fill);
 }
 
 //--------------------------------------------------------------------------------
@@ -95,7 +96,7 @@ void AppMenu::fill()
   QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotDot);
 
   int row = 0, col = 0, h = 0;
-  const int maxHeight = QApplication::desktop()->height() - parentWidget()->sizeHint().height();
+  const int maxHeight = QApplication::primaryScreen()->size().height() - parentWidget()->sizeHint().height();
 
   for (const QFileInfo &info : entries)
   {

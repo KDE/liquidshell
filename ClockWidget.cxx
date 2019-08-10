@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -26,7 +26,7 @@
 #include <QDateTime>
 #include <QMouseEvent>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QPushButton>
 #include <QIcon>
 #include <QAction>
@@ -237,7 +237,7 @@ void ClockWidget::mousePressEvent(QMouseEvent *event)
 
     calendar->goToday();
     QPoint point = mapToGlobal(pos());
-    QRect screen = QApplication::desktop()->availableGeometry(this);
+    QRect screen = QApplication::primaryScreen()->availableGeometry();
     point.setX(std::min(point.x(), screen.x() + screen.width() - calendar->sizeHint().width()));
     point.setY(point.y() - calendar->sizeHint().height());
     calendar->move(point);

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -29,7 +29,7 @@
 #include <QTimer>
 #include <QTime>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDebug>
@@ -309,7 +309,7 @@ void NotificationList::closeItem(uint id)
 
 void NotificationList::placeItems()
 {
-  QRect screen = QApplication::desktop()->availableGeometry(this);
+  QRect screen = QApplication::primaryScreen()->availableGeometry();
   QPoint point = parentWidget()->mapToGlobal(parentWidget()->pos());
   int x = point.x();
   int y = screen.bottom();

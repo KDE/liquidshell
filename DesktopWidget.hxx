@@ -43,7 +43,7 @@ class DesktopWidget : public QWidget
     };
 
   protected:
-    virtual void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event) override;
 
   private Q_SLOTS:
     void loadSettings();

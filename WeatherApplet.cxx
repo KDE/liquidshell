@@ -271,7 +271,7 @@ void WeatherApplet::gotData(KJob *job)
         setIcon(forecast[idx]->icon, icon);
 
         int day = QDateTime::fromMSecsSinceEpoch(qint64(obj["dt"].toInt()) * 1000).date().dayOfWeek();
-        forecast[idx]->day->setText(QDate::shortDayName(day));
+        forecast[idx]->day->setText(locale().dayName(day, QLocale::ShortFormat));
         forecast[idx]->min->setText(i18n("%1 %2", locale().toString(minTemp[day], 'f', 1), tempUnit));
         forecast[idx]->max->setText(i18n("%1 %2", locale().toString(maxTemp[day], 'f', 1), tempUnit));
         forecast[idx]->show();

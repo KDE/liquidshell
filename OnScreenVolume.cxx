@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -26,7 +26,7 @@
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QDebug>
 
 #include <KWindowSystem>
@@ -164,8 +164,8 @@ void OnScreenVolume::volumeChanged(QDBusMessage reply)
         return;
     }
 
-    move((QApplication::desktop()->width() - width()) / 2,
-          QApplication::desktop()->height() * 0.8);
+    move((QApplication::primaryScreen()->size().width() - width()) / 2,
+          QApplication::primaryScreen()->size().height() * 0.8);
 
     show();
     hideTimer.start();

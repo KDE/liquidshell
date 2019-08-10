@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -27,7 +27,7 @@
 #include <OnScreenVolume.hxx>
 
 #include <QApplication>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <QPainter>
 #include <QAction>
 #include <QIcon>
@@ -54,7 +54,7 @@ DesktopWidget::DesktopWidget()
 {
   setAttribute(Qt::WA_AlwaysShowToolTips);
   setAutoFillBackground(true);
-  setFixedSize(QApplication::desktop()->size());
+  setFixedSize(QApplication::primaryScreen()->virtualSize());
   setWindowIcon(QIcon::fromTheme("liquidshell"));
 
   KWindowSystem::setType(winId(), NET::Desktop);
@@ -135,13 +135,16 @@ DesktopWidget::DesktopWidget()
 
   loadSettings();
 
-  connect(QApplication::desktop(), &QDesktopWidget::primaryScreenChanged, this, &DesktopWidget::placePanel);
+  connect(qApp, &QApplication::primaryScreenChanged, this, &DesktopWidget::placePanel);
 
-  connect(QApplication::desktop(), &QDesktopWidget::screenCountChanged,
-          [this]() { setFixedSize(QApplication::desktop()->size()); desktopChanged(); });
+  connect(qApp, &QApplication::screenAdded,
+          [this]() { setFixedSize(QApplication::primaryScreen()->virtualSize()); desktopChanged(); });
 
-  connect(QApplication::desktop(), &QDesktopWidget::resized,
-          [this]() { setFixedSize(QApplication::desktop()->size()); placePanel(); desktopChanged(); });
+  connect(qApp, &QApplication::screenRemoved,
+          [this]() { setFixedSize(QApplication::primaryScreen()->virtualSize()); desktopChanged(); });
+
+  connect(QApplication::primaryScreen(), &QScreen::virtualGeometryChanged,
+          [this]() { setFixedSize(QApplication::primaryScreen()->virtualSize()); placePanel(); desktopChanged(); });
 
   new OnScreenVolume(this);
 }
@@ -251,7 +254,7 @@ void DesktopWidget::configureDisplay()
 void DesktopWidget::placePanel()
 {
   int panelHeight = qMin(panel->sizeHint().height(), panel->height());
-  QRect r = QApplication::desktop()->screenGeometry();
+  QRect r = QApplication::primaryScreen()->geometry();
   panel->setGeometry(r.x(), r.y() + r.height() - panelHeight, r.width(), panelHeight);
   KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight);
 }
@@ -284,9 +287,9 @@ void DesktopWidget::desktopChanged()
 
     if ( !pixmap.isNull() )
     {
-      for (int i = 0; i < QApplication::desktop()->screenCount(); i++)
+      for (int i = 0; i < QApplication::screens().count(); i++)
       {
-        QRect r = QApplication::desktop()->screenGeometry(i);
+        QRect r = QApplication::screens().at(i)->geometry();
         QPixmap scaledPixmap = pixmap;
 
         if ( wallpaper.mode == "Scaled" )
@@ -323,11 +326,11 @@ void DesktopWidget::paintEvent(QPaintEvent *event)
 
     QPainter painter(this);
 
-    for (int i = 0; i < QApplication::desktop()->screenCount(); i++)
+    for (int i = 0; i < QApplication::screens().count(); i++)
     {
       if ( i < wallpaper.pixmaps.count() )
       {
-        QRect r = QApplication::desktop()->screenGeometry(i);
+        QRect r = QApplication::screens().at(i)->geometry();
         painter.setClipRect(r);
 
         painter.drawPixmap(r.x() + (r.width() - wallpaper.pixmaps[i].width()) / 2,
