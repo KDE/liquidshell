@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -20,9 +20,9 @@
 
 #include <NetworkList.hxx>
 
-#include <QHBoxLayout>
 #include <QCheckBox>
 #include <QToolButton>
+#include <QScrollBar>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -113,7 +113,7 @@ NetworkList::NetworkList(QWidget *parent)
   setFrameShape(QFrame::StyledPanel);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);
-  QHBoxLayout *hbox = new QHBoxLayout;
+  hbox = new QHBoxLayout;
   vbox->addLayout(hbox);
 
   network = new QToolButton;
@@ -140,9 +140,17 @@ NetworkList::NetworkList(QWidget *parent)
   hbox->addWidget(configure);
 
   // show connections
-  connectionsVbox = new QVBoxLayout;
+  QWidget *widget = new QWidget;
+  connectionsVbox = new QVBoxLayout(widget);
   connectionsVbox->setContentsMargins(QMargins());
-  vbox->addLayout(connectionsVbox);
+  connectionsVbox->setSizeConstraint(QLayout::SetMinAndMaxSize);
+
+  scroll = new QScrollArea;
+  scroll->setWidgetResizable(true);
+  scroll->setWidget(widget);
+
+  vbox->addWidget(scroll);
+
   fillConnections();
 
   QTimer *checkConnectionsTimer = new QTimer(this);
@@ -155,8 +163,6 @@ NetworkList::NetworkList(QWidget *parent)
 
 void NetworkList::openConfigureDialog()
 {
-  hide();
-
   // newer plasma has already a KCM
   KService::Ptr service = KService::serviceByDesktopName("kcm_networkmanagement");
 
@@ -164,6 +170,8 @@ void NetworkList::openConfigureDialog()
     KRun::runApplication(*service, QList<QUrl>(), this);
   else
     KRun::run("kde5-nm-connection-editor", QList<QUrl>(), this);
+
+  close();
 }
 
 //--------------------------------------------------------------------------------
@@ -202,6 +210,7 @@ void NetworkList::fillConnections()
       net->setText(c->name());
       net->setIcon(QIcon::fromTheme("network-wired"));
       connectionsVbox->addWidget(net);
+      net->show();
     }
     else if ( c->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn )
     {
@@ -209,6 +218,7 @@ void NetworkList::fillConnections()
       vpn->setText(c->name());
       vpn->setIcon(QIcon::fromTheme("security-high"));
       connectionsVbox->addWidget(vpn);
+      vpn->show();
     }
   }
 
@@ -254,6 +264,7 @@ void NetworkList::fillConnections()
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
           connectionsVbox->addWidget(net);
+          net->show();
         }
         else
         {
@@ -262,6 +273,7 @@ void NetworkList::fillConnections()
           net->setIcon(QIcon::fromTheme("network-wireless"));
           net->setEnabled(false);  // TODO: allow to add a new connection. See NetworkManager::addAndActivateConnection
           connectionsVbox->addWidget(net);
+          net->show();
         }
 
         /*
@@ -279,9 +291,62 @@ void NetworkList::fillConnections()
     }
   }
 
+#if 0
+  // TEST
+  static int count = 15;
+  for (int i = 0; i < count; i++)
+  {
+    NetworkButton *net = new NetworkButton();
+    net->setText(QString("dummy %1").arg(i));
+    net->setIcon(QIcon::fromTheme("network-wired"));
+    connectionsVbox->addWidget(net);
+    net->show();
+  }
+  count -= 3;
+  if ( count <= 0 ) count = 15;
+#endif
+
   connectionsVbox->addStretch();
   adjustSize();
   emit changed();
+}
+
+//--------------------------------------------------------------------------------
+
+QSize NetworkList::sizeHint() const
+{
+  QWidget *w = scroll->widget();
+  QSize s;
+
+  s.setHeight(frameWidth() +
+              contentsMargins().top() +
+              layout()->contentsMargins().top() +
+              hbox->sizeHint().height() +
+              layout()->spacing() +
+              scroll->frameWidth() +
+              scroll->contentsMargins().top() +
+              w->sizeHint().height() +
+              scroll->contentsMargins().bottom() +
+              scroll->frameWidth() +
+              layout()->contentsMargins().bottom() +
+              contentsMargins().bottom() +
+              frameWidth()
+             );
+
+  s.setWidth(frameWidth() +
+             contentsMargins().left() +
+             layout()->contentsMargins().left() +
+             scroll->frameWidth() +
+             scroll->contentsMargins().left() +
+             w->sizeHint().width() +
+             scroll->verticalScrollBar()->sizeHint().width() +
+             scroll->contentsMargins().right() +
+             scroll->frameWidth() +
+             layout()->contentsMargins().right() +
+             contentsMargins().right() +
+             frameWidth()
+            );
+  return s;
 }
 
 //--------------------------------------------------------------------------------

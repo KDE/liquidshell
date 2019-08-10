@@ -23,7 +23,9 @@
 
 #include <QFrame>
 #include <QToolButton>
+#include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QScrollArea>
 
 class NetworkList : public QFrame
 {
@@ -31,6 +33,8 @@ class NetworkList : public QFrame
 
   public:
     NetworkList(QWidget *parent);
+
+    QSize sizeHint() const override;
 
   Q_SIGNALS:
     void changed();
@@ -43,6 +47,8 @@ class NetworkList : public QFrame
   private:
     QToolButton *network, *wireless;
     QVBoxLayout *connectionsVbox;
+    QHBoxLayout *hbox;
+    QScrollArea *scroll;
 };
 
 //--------------------------------------------------------------------------------

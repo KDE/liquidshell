@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -74,8 +74,7 @@ void Network::checkState()
   else
     blinkTimer.stop();
 
-  if ( (NetworkManager::connectivity() != NetworkManager::Full) ||
-       !NetworkManager::primaryConnection() || !NetworkManager::primaryConnection()->connection() )
+  if ( !NetworkManager::primaryConnection() || !NetworkManager::primaryConnection()->connection() )
   {
     setPixmap(origPixmap = QIcon::fromTheme("network-disconnect").pixmap(size()));
     setToolTip(i18n("No Network Connection"));
@@ -85,7 +84,12 @@ void Network::checkState()
   NetworkManager::ActiveConnection::Ptr conn(NetworkManager::primaryConnection());
   //connect(conn.data(), &NetworkManager::ActiveConnection::vpnChanged, this, &Network::checkState);
 
-  QString tip = i18n("Full Network Connectivity (%1)", conn->connection()->name());
+  QString tip;
+
+  if ( NetworkManager::connectivity() == NetworkManager::Full )
+    tip = i18n("Full Network Connectivity (%1)", conn->connection()->name());
+  else
+    tip = i18n("Limited Network Connectivity (%1)", conn->connection()->name());
 
   NetworkManager::Device::Ptr device;
 
