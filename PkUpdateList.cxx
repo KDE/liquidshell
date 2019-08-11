@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -20,7 +20,7 @@
 
 #include <PkUpdateList.hxx>
 
-#include <QScrollArea>
+#include <QScrollBar>
 #include <QGridLayout>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -217,7 +217,7 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   vbox->addLayout(hbox);
 
   // list of items in the order: security, important, bugfix, others
-  QScrollArea *scrollArea = new QScrollArea;
+  scrollArea = new QScrollArea;
   scrollArea->setWidgetResizable(true);
 
   vbox->addWidget(scrollArea);
@@ -230,6 +230,15 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   vbox->addStretch();
 
   scrollArea->setWidget(w);
+}
+
+//--------------------------------------------------------------------------------
+
+QSize PkUpdateList::sizeHint() const
+{
+  QSize s = scrollArea->widget()->sizeHint() + QSize(2 * scrollArea->frameWidth(), 2 * scrollArea->frameWidth());
+  s.setWidth(s.width() + scrollArea->verticalScrollBar()->sizeHint().width());
+  return s;
 }
 
 //--------------------------------------------------------------------------------
@@ -483,6 +492,7 @@ void PkUpdateList::installOne()
   restart = PackageKit::Transaction::RestartSystem;
 #endif
   transaction = PackageKit::Daemon::updatePackage(item->package.id, flag);
+  packageNoLongerAvailable = false;
   //qDebug() << "installing" << item->package.id;
 
   connect(transaction.data(), &PackageKit::Transaction::statusChanged, this,
@@ -491,7 +501,7 @@ void PkUpdateList::installOne()
             if ( !item )  // already deleted
               return;
 
-            //qDebug() << "status" << transaction->status();
+            //qDebug() << "status" << QMetaEnum::fromType<PackageKit::Transaction::Status>().valueToKey(transaction->status());
             QString text;
             switch ( transaction->status() )
             {
@@ -502,7 +512,8 @@ void PkUpdateList::installOne()
               case PackageKit::Transaction::StatusInstall: text = i18n("Installing"); break;
               case PackageKit::Transaction::StatusDownload: text = i18n("Downloading"); break;
               case PackageKit::Transaction::StatusCancel: text = i18n("Canceling"); break;
-              default: ;
+              case PackageKit::Transaction::StatusFinished: return;  // don't hide error label
+              default: return;
             }
 
             if ( text.isEmpty() )
@@ -544,16 +555,23 @@ void PkUpdateList::installOne()
           });
 
   connect(transaction.data(), &PackageKit::Transaction::errorCode, this,
-          [item](PackageKit::Transaction::Error error, const QString &details)
+          [item, this](PackageKit::Transaction::Error error, const QString &details)
           {
-            Q_UNUSED(error)
-
             if ( !item )
               return;
 
             item->showProgress(false);
             item->errorLabel->setText(details);
             item->errorLabel->show();
+            //qDebug() << "errorCode" << details << QMetaEnum::fromType<PackageKit::Transaction::Error>().valueToKey(error);
+
+            if ( (error == PackageKit::Transaction::ErrorDepResolutionFailed) &&
+                 (transaction->status() == PackageKit::Transaction::StatusSetup) )
+            {
+              // when a package was already installed due to another dependency, then it's no more an update candidate.
+              // Still the finished() signal will arrive which will do cleanup (delete item, dequeue, etc.).
+              packageNoLongerAvailable = true;
+            }
           });
 
   connect(transaction.data(), &PackageKit::Transaction::finished, this,
@@ -561,7 +579,10 @@ void PkUpdateList::installOne()
           {
             Q_UNUSED(runtime)
 
-            if ( status == PackageKit::Transaction::ExitSuccess )
+            if ( !item )
+              return;
+
+            if ( (status == PackageKit::Transaction::ExitSuccess) || packageNoLongerAvailable )
             {
               item->hide();
               item->deleteLater();

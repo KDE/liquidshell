@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -22,7 +22,7 @@
 #define _PkUpdateList_H_
 
 #include <PkUpdates.hxx>
-#include <QWidget>
+#include <QScrollArea>
 #include <QQueue>
 #include <QPointer>
 class QCheckBox;
@@ -42,6 +42,8 @@ class PkUpdateList : public QWidget
 
     void setPackages(const PkUpdates::PackageList &packages);
 
+    QSize sizeHint() const override;
+
   Q_SIGNALS:
     void refreshRequested();
     void packageInstalled(QString id);
@@ -54,6 +56,7 @@ class PkUpdateList : public QWidget
     void filterChanged(const QString &text);
 
   private:
+    QScrollArea *scrollArea;
     QVBoxLayout *itemsLayout;
     QLineEdit *filterEdit;
     QPushButton *installButton;
@@ -61,6 +64,7 @@ class PkUpdateList : public QWidget
 
     QQueue<QPointer<class PkUpdateListItem>> installQ;
     QPointer<PackageKit::Transaction> transaction;
+    bool packageNoLongerAvailable;
 
     PackageKit::Transaction::Restart restart;
 };
