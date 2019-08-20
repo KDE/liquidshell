@@ -155,6 +155,7 @@
       <li xml:lang="ca">Inici instantani</li>
       <li xml:lang="ca-valencia">Inici instantani</li>
       <li xml:lang="cs">Okamžité spuštění</li>
+      <li xml:lang="de">Unmittelbarer Programmstart</li>
       <li xml:lang="el">Άμεση εκκίνηση</li>
       <li xml:lang="en-GB">Instant startup</li>
       <li xml:lang="es">Inicio instantáneo</li>
@@ -195,6 +196,7 @@
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels ginys («widgets») indicat per l'arranjament del sistema</li>
+      <li xml:lang="de">Basiert auf QtWidgets, daher wird der Stil der Bedienelemente aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="es">Basado en QtWidgets, por lo que sigue el estilo de widgets del sistema</li>
@@ -213,6 +215,7 @@
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="de">Es werden Symbole vom global definierten Symboldesign aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα εικονίδια χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα εικονιδίου από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="es">Usa iconos del tema definido globalmente en las preferencias del sistema</li>
@@ -231,6 +234,7 @@
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="de">Es werden Farben vom global definierten Farbschema aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα χρώματα χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα χρώματος από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
       <li xml:lang="es">Usa colores del tema definido globalmente en las preferencias del sistema</li>
@@ -267,6 +271,7 @@
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="es">Usa los diálogos de KDE existentes para la mayoría de las configuraciones, como menú de inicio, escritorios virtuales, Bluetooth y red</li>
@@ -285,6 +290,7 @@
       <li>One bottom DesktopPanel</li>
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
+      <li xml:lang="de">Eine Arbeitsflächenleiste unten</li>
       <li xml:lang="el">Ένας πίνακας επιφάνειας εργασίας στη βάση</li>
       <li xml:lang="en-GB">One bottom DesktopPanel</li>
       <li xml:lang="es">Un panel de escritorio inferior</li>
@@ -303,6 +309,7 @@
       <li>Desktop Applets</li>
       <li xml:lang="ca">Miniaplicacions de l'escriptori</li>
       <li xml:lang="ca-valencia">Miniaplicacions de l'escriptori</li>
+      <li xml:lang="de">Arbeitsflächen-Miniprogramme</li>
       <li xml:lang="el">Μικροεφαρμογές επιφάνειας εργασίας</li>
       <li xml:lang="en-GB">Desktop Applets</li>
       <li xml:lang="es">Miniaplicaciones de escritorio</li>
