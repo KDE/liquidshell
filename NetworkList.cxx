@@ -23,6 +23,7 @@
 #include <QCheckBox>
 #include <QToolButton>
 #include <QScrollBar>
+#include <QStyle>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -322,7 +323,7 @@ QSize NetworkList::sizeHint() const
               contentsMargins().top() +
               layout()->contentsMargins().top() +
               hbox->sizeHint().height() +
-              layout()->spacing() +
+              ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
               scroll->frameWidth() +
               scroll->contentsMargins().top() +
               w->sizeHint().height() +

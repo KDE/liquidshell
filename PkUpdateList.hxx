@@ -56,6 +56,7 @@ class PkUpdateList : public QWidget
     void filterChanged(const QString &text);
 
   private:
+    QVBoxLayout *vbox;
     QScrollArea *scrollArea;
     QVBoxLayout *itemsLayout;
     QLineEdit *filterEdit;

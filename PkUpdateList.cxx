@@ -30,6 +30,7 @@
 #include <QToolButton>
 #include <QIcon>
 #include <QDBusConnection>
+#include <QStyle>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -189,7 +190,7 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   setWindowFlags(windowFlags() | Qt::Tool);
   setWindowTitle(i18n("Software Updates"));
 
-  QVBoxLayout *vbox = new QVBoxLayout(this);
+  vbox = new QVBoxLayout(this);
   vbox->setContentsMargins(QMargins(0, -1, 0, 0));
 
   // action buttons
@@ -238,6 +239,9 @@ QSize PkUpdateList::sizeHint() const
 {
   QSize s = scrollArea->widget()->sizeHint() + QSize(2 * scrollArea->frameWidth(), 2 * scrollArea->frameWidth());
   s.setWidth(s.width() + scrollArea->verticalScrollBar()->sizeHint().width());
+  s.setHeight(layout()->contentsMargins().top() + installButton->sizeHint().height() +
+              ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
+              s.height() + layout()->contentsMargins().bottom());
   return s;
 }
 
