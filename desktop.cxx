@@ -46,7 +46,7 @@ int main(int argc, char **argv)
   KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.5",
                        i18n("A QtWidgets based alternative to plasmashell"),
                        KAboutLicense::GPL_V3,
-                       i18n("Copyright 2017,2018 Martin Koller"), QString(),
+                       i18n("Copyright 2017 - 2019 Martin Koller"), QString(),
                        "https://www.linux-apps.com/p/1205621/"); // homepage
 
   aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
