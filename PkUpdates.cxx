@@ -96,9 +96,11 @@ void PkUpdates::checkForUpdates()
 void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runtime)
 {
   Q_UNUSED(runtime)
+  Q_UNUSED(status)
 
-  if ( status != PackageKit::Transaction::ExitSuccess )
-    return;
+  // don't stop on exit error; it could e.g. only be an error on one of the repos
+  //if ( status != PackageKit::Transaction::ExitSuccess )
+    //return;
 
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdates();
 
