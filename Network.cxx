@@ -111,7 +111,7 @@ void Network::checkState()
     {
       NetworkManager::AccessPoint::Ptr accessPoint = dev->activeAccessPoint();
       int signalStrength = accessPoint.isNull() ? 0 : accessPoint->signalStrength();
-      int x = std::round(signalStrength / 25.0) * 25;
+      int x = qRound(signalStrength / 25.0) * 25;
       pixmap = QIcon::fromTheme(QString("network-wireless-connected-%1").arg(x)).pixmap(size());
 
       if ( !accessPoint.isNull() )

@@ -24,6 +24,7 @@
 #include <QToolButton>
 #include <QScrollBar>
 #include <QStyle>
+#include <QTimer>
 #include <QDebug>
 
 #include <KLocalizedString>

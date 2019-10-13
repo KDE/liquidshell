@@ -25,6 +25,7 @@
 
 #include <SysTrayItem.hxx>
 #include <NetworkList.hxx>
+#include <QPointer>
 #include <QTimer>
 #include <QPixmap>
 
