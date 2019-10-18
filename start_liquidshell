@@ -33,7 +33,12 @@ cat > $plasmaFileName <<EOF
 Hidden=true
 EOF
 
-/usr/bin/startkde
+if [ -f /usr/bin/startkde ]
+then
+  /usr/bin/startkde
+else
+  /usr/bin/startplasma-x11
+fi
 
 rm -f $plasmaFileName 
 
