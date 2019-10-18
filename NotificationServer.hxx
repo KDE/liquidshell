@@ -51,6 +51,9 @@ class NotificationServer : public SysTrayItem
     void NotificationClosed(uint id, uint reason);
 
   private:
+    QString makeToolTip() const;
+
+  private:
     uint notifyId = 1;
     NotificationList *notificationList;
 };

@@ -42,8 +42,6 @@ class NotifyItem : public QFrame
     uint id;
     QString appName, summary, body;
     QStringList actions;
-
-  private:
     QLabel *timeLabel, *iconLabel, *textLabel;
 };
 
@@ -63,6 +61,7 @@ class NotificationList : public QWidget
     void closeItem(uint id);
 
     int itemCount() const { return numItems; }
+    QVector<NotifyItem *> getItems() const { return items; }
 
   Q_SIGNALS:
     void itemsCountChanged();

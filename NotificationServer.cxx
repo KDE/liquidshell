@@ -50,11 +50,34 @@ NotificationServer::NotificationServer(QWidget *parent)
           [this]()
           {
             show();
-            setToolTip(i18np("%1 notification", "%1 notifications", notificationList->itemCount()));
+            setToolTip(makeToolTip());
           }
          );
 
   hide();
+}
+
+//--------------------------------------------------------------------------------
+
+QString NotificationServer::makeToolTip() const
+{
+  QString tip = "<html>";
+  tip += i18np("%1 notification", "%1 notifications", notificationList->itemCount());
+
+  if ( notificationList->itemCount() < 4 )
+  {
+    for (const NotifyItem *item : notificationList->getItems())
+    {
+      tip += "<hr>";
+      tip += item->timeLabel->text() + " ";
+      QString title = (item->appName == item->summary) ? item->appName : (item->appName + ": " + item->summary);
+      tip += "<b>" + title + "</b>";
+      tip += "<br>" + item->body;
+    }
+  }
+
+  tip += "</html>";
+  return tip;
 }
 
 //--------------------------------------------------------------------------------
