@@ -200,6 +200,23 @@ void NetworkList::fillConnections()
 
   NetworkManager::Connection::List allConnections = NetworkManager::listConnections();
 
+  // show VPN networks on top
+  for (const NetworkManager::Connection::Ptr c : allConnections)
+  {
+    if ( !c->isValid() )
+      continue;
+
+    if ( c->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn )
+    {
+      NetworkButton *vpn = new NetworkButton(c);
+      vpn->setText(c->name());
+      vpn->setIcon(QIcon::fromTheme("security-high"));
+      connectionsVbox->addWidget(vpn);
+      vpn->show();
+    }
+  }
+
+  // wired networks
   for (const NetworkManager::Connection::Ptr c : allConnections)
   {
     if ( !c->isValid() )
@@ -213,14 +230,6 @@ void NetworkList::fillConnections()
       net->setIcon(QIcon::fromTheme("network-wired"));
       connectionsVbox->addWidget(net);
       net->show();
-    }
-    else if ( c->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn )
-    {
-      NetworkButton *vpn = new NetworkButton(c);
-      vpn->setText(c->name());
-      vpn->setIcon(QIcon::fromTheme("security-high"));
-      connectionsVbox->addWidget(vpn);
-      vpn->show();
     }
   }
 
