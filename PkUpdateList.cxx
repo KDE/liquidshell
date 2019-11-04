@@ -31,6 +31,8 @@
 #include <QIcon>
 #include <QDBusConnection>
 #include <QStyle>
+#include <QApplication>
+#include <QScreen>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -196,13 +198,16 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   // action buttons
   QHBoxLayout *hbox = new QHBoxLayout;
 
-  QCheckBox *checkAll = new QCheckBox(i18n("All"));
-  connect(checkAll, &QCheckBox::toggled, this, &PkUpdateList::checkAll);
+  checkAllBox = new QCheckBox(i18n("All"));
+  connect(checkAllBox, &QCheckBox::toggled, this, &PkUpdateList::checkAll);
 
   filterEdit = new QLineEdit;
   filterEdit->setPlaceholderText(i18n("Filter"));
   filterEdit->setClearButtonEnabled(true);
   connect(filterEdit, &QLineEdit::textEdited, this, &PkUpdateList::filterChanged);
+
+  // create "busy" indicator
+  progressBar = new QProgressBar;
 
   installButton = new QPushButton(i18n("Install"));
   installButton->setEnabled(false);
@@ -211,8 +216,9 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   refreshButton = new QPushButton(i18n("Refresh"));
   connect(refreshButton, &QPushButton::clicked, this, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
 
-  hbox->addWidget(checkAll);
+  hbox->addWidget(checkAllBox);
   hbox->addWidget(filterEdit);
+  hbox->addWidget(progressBar);
   hbox->addWidget(installButton);
   hbox->addWidget(refreshButton);
   vbox->addLayout(hbox);
@@ -242,7 +248,43 @@ QSize PkUpdateList::sizeHint() const
   s.setHeight(layout()->contentsMargins().top() + installButton->sizeHint().height() +
               ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
               s.height() + layout()->contentsMargins().bottom());
+
+  s = s.expandedTo(QSize(500, 300));
+
+  // Qt doc: The size of top-level widgets are constrained to 2/3 of the desktop's height and width.
+  QSize screen = QApplication::primaryScreen()->availableSize();
+  s = s.boundedTo(screen * 2 / 3);
+
   return s;
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdateList::setRefreshProgress(int progress)
+{
+  if ( progress >= 100 )
+  {
+    filterEdit->show();
+    progressBar->hide();
+    refreshButton->setEnabled(true);
+  }
+  else if ( progress == 0 )
+  {
+    // we don't know if there will be a value between 0..100
+    // Until the first value arrives, use a busy indicator
+    progressBar->setMinimum(0);
+    progressBar->setMaximum(0);
+    progressBar->setValue(0);
+    progressBar->show();
+    filterEdit->hide();
+    refreshButton->setEnabled(false);
+  }
+  else
+  {
+    progressBar->setMinimum(0);
+    progressBar->setMaximum(100);
+    progressBar->setValue(progress);
+  }
 }
 
 //--------------------------------------------------------------------------------
@@ -255,6 +297,8 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
     delete child->widget();
     delete child;
   }
+
+  checkAllBox->setChecked(false);
 
   QList<PkUpdates::PackageData> list = packages.values(PackageKit::Transaction::InfoSecurity);
   for (const PkUpdates::PackageData &data : list)

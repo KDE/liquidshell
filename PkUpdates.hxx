@@ -60,12 +60,14 @@ class PkUpdates : public SysTrayItem
   private:
     void addItems(QString &tooltip, const QList<PackageData> &list) const;
     void createToolTip(bool notify = false);
+    void setRefreshProgress(int progress);
 
   private:
     PackageList packages;
     QTimer updateTimer;
     QDateTime nextCheck;
     PkUpdateList *updateList = nullptr;
+    int refreshProgress = 100;
 };
 
 #endif

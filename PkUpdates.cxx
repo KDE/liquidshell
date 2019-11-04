@@ -84,6 +84,7 @@ void PkUpdates::checkForUpdates()
   setToolTip(i18n("Checking for updates ..."));
 
   packages.clear();
+  setRefreshProgress(0);
 
   PackageKit::Transaction *transaction = PackageKit::Daemon::refreshCache(true);
 
@@ -113,6 +114,7 @@ void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runti
             if ( updateList )
               updateList->setPackages(packages);
 
+            setRefreshProgress(100);
             createToolTip(true);
           });
 
@@ -120,7 +122,10 @@ void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runti
           [this, transaction]()
           {
             if ( (transaction->percentage() <= 100) && (transaction->status() != PackageKit::Transaction::StatusFinished) )
-              setToolTip(i18n("Checking for updates ... %1%", transaction->percentage()));
+            {
+              setRefreshProgress(transaction->percentage());
+              setToolTip(i18n("Checking for updates ... %1%", refreshProgress));
+            }
           });
 }
 
@@ -146,6 +151,8 @@ void PkUpdates::transactionError(PackageKit::Transaction::Error error, const QSt
 
   KNotification::event("update error", i18n("Software Update Error"), details,
                        QIcon::fromTheme("dialog-error").pixmap(32), this);
+
+  setRefreshProgress(100);
 }
 
 //--------------------------------------------------------------------------------
@@ -263,6 +270,7 @@ QWidget *PkUpdates::getDetailsList()
   {
     updateList = new PkUpdateList(this);
     updateList->setPackages(packages);
+    updateList->setRefreshProgress(refreshProgress);
     connect(updateList, &PkUpdateList::refreshRequested, this, &PkUpdates::checkForUpdates);
     connect(updateList, &PkUpdateList::packageInstalled, this, &PkUpdates::packageInstalled);
   }
@@ -283,6 +291,16 @@ void PkUpdates::packageInstalled(const QString &id)
     }
   }
   createToolTip();
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdates::setRefreshProgress(int progress)
+{
+  refreshProgress = progress;
+
+  if ( updateList )
+    updateList->setRefreshProgress(refreshProgress);
 }
 
 //--------------------------------------------------------------------------------

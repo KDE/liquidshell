@@ -41,6 +41,7 @@ class PkUpdateList : public QWidget
     PkUpdateList(QWidget *parent);
 
     void setPackages(const PkUpdates::PackageList &packages);
+    void setRefreshProgress(int progress);
 
     QSize sizeHint() const override;
 
@@ -60,8 +61,10 @@ class PkUpdateList : public QWidget
     QScrollArea *scrollArea;
     QVBoxLayout *itemsLayout;
     QLineEdit *filterEdit;
+    QProgressBar *progressBar;
     QPushButton *installButton;
     QPushButton *refreshButton;
+    QCheckBox *checkAllBox;
 
     QQueue<QPointer<class PkUpdateListItem>> installQ;
     QPointer<PackageKit::Transaction> transaction;
