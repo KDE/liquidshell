@@ -272,7 +272,7 @@ void NetworkList::fillConnections()
         if ( haveConnection )
         {
           NetworkButton *net = new NetworkButton(conn, device);
-          net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
+          net->setText(QString("%1 (%2%)").arg(conn->name()).arg(network->signalStrength()));
           net->setIcon(QIcon::fromTheme("network-wireless"));
           connectionsVbox->addWidget(net);
           net->show();
