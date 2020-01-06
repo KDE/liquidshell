@@ -80,7 +80,7 @@
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="es">No usa QtQuick, sino que se basa en QtWidgets, por lo que no se necesita aceleración de gráficos por hardware.</p>
     <p xml:lang="fi">Se ei käytä QtQuickiä vaan luottaa QtWidgetsiin, joten se ei vaadi laitteistokiihdytystä.</p>
-    <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por hardware.</p>
+    <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
     <p xml:lang="it">Non usa QtQuick ma fa invece affidamento su QtWidgets, quindi non necessita di accelerazione grafica hardware.</p>
     <p xml:lang="ko">QtQuick 대신 QtWidgets을 사용하여 하드웨어 그래픽 가속이 필요하지 않습니다.</p>
