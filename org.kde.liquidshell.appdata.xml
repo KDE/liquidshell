@@ -11,6 +11,7 @@
   <name xml:lang="el">liquidshell</name>
   <name xml:lang="en-GB">liquidshell</name>
   <name xml:lang="es">liquidshell</name>
+  <name xml:lang="et">Liquidshell</name>
   <name xml:lang="fi">liquidshell</name>
   <name xml:lang="gl">liquidshell</name>
   <name xml:lang="id">liquidshell</name>
@@ -34,6 +35,7 @@
   <summary xml:lang="el">Το liquidshell είναι ένα εναλλακτικό του plasmashell</summary>
   <summary xml:lang="en-GB">liquidshell is an alternative to plasmashell</summary>
   <summary xml:lang="es">liquidshell es una alternativa a plasmashell</summary>
+  <summary xml:lang="et">Liquidshell on plasmashelli alternatiiv</summary>
   <summary xml:lang="fi">liquidshell on plasmashellin vaihtoehto</summary>
   <summary xml:lang="gl">liquidshell é unha alternativa a plasmashell</summary>
   <summary xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</summary>
@@ -57,6 +59,7 @@
     <p xml:lang="el">Το liquidshell είναι ένα εναλλακτικό του plasmashell</p>
     <p xml:lang="en-GB">liquidshell is an alternative to plasmashell</p>
     <p xml:lang="es">liquidshell es una alternativa a plasmashell</p>
+    <p xml:lang="et">Liquidshell on plasmashelli alternatiiv</p>
     <p xml:lang="fi">liquidshell on plasmashellin vaihtoehto</p>
     <p xml:lang="gl">liquidshell é unha alternativa a plasmashell</p>
     <p xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</p>
@@ -79,6 +82,7 @@
     <p xml:lang="el">Δεν χρησιμοποιεί το QtQuick αλλά βασίζεται στο QtWidgets, συνεπώς δεν απαιτείται επιτάχυνση γραφικών από το υλικό.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="es">No usa QtQuick, sino que se basa en QtWidgets, por lo que no se necesita aceleración de gráficos por hardware.</p>
+    <p xml:lang="et">See ei kasuta QtQuicki, vaid põhineb QtWidgetsil, mistõttu pole ka tarvis riistvaralist graafikakiirendust.</p>
     <p xml:lang="fi">Se ei käytä QtQuickiä vaan luottaa QtWidgetsiin, joten se ei vaadi laitteistokiihdytystä.</p>
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
@@ -100,6 +104,7 @@
     <p xml:lang="el">Κύριες λειτουργίες:</p>
     <p xml:lang="en-GB">Main Features:</p>
     <p xml:lang="es">Funciones principales:</p>
+    <p xml:lang="et">Põhiomadused:</p>
     <p xml:lang="fi">Keskeiset ominaisuudet:</p>
     <p xml:lang="gl">Funcionalidades principais:</p>
     <p xml:lang="id">Fitur Utama:</p>
@@ -124,6 +129,7 @@
       <li xml:lang="el">Ταπετσαρία ανά εικονική επιφάνεια εργασίας</li>
       <li xml:lang="en-GB">Wallpaper per virtual desktop</li>
       <li xml:lang="es">Fondo de pantalla por escritorio virtual</li>
+      <li xml:lang="et">Taustapildid igale virtuaalsele töölauale</li>
       <li xml:lang="fi">Virtuaalityöpöydittäiset taustakuvat</li>
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
@@ -144,6 +150,7 @@
       <li xml:lang="el">Χωρίς γραφικά, χωρίς μονοπώληση της CPU, με χαμηλό αποτύπωμα μνήμης</li>
       <li xml:lang="en-GB">No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="es">Sin animaciones, no acapara la CPU, bajo impacto en la memoria</li>
+      <li xml:lang="et">Animatsioonid puuduvad, protsessorit üle ei koormata, mälukoormus on tagasihoidlik</li>
       <li xml:lang="fi">Ei animointeja tai suorittimen rohmuamista; vähäinen muistinkulutus</li>
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
@@ -166,6 +173,7 @@
       <li xml:lang="el">Άμεση εκκίνηση</li>
       <li xml:lang="en-GB">Instant startup</li>
       <li xml:lang="es">Inicio instantáneo</li>
+      <li xml:lang="et">Viivitamatu käivitumine</li>
       <li xml:lang="fi">Välitön käynnistys</li>
       <li xml:lang="gl">Inicio instantáneo.</li>
       <li xml:lang="id">Pemulaian sekejap</li>
@@ -188,6 +196,7 @@
       <li xml:lang="el">Χωρίς χρήση δραστηριοτήτων</li>
       <li xml:lang="en-GB">No use of activities</li>
       <li xml:lang="es">No se usan las actividades</li>
+      <li xml:lang="et">Tegevusi ei kasutata</li>
       <li xml:lang="fi">Ei käytä aktiviteetteja</li>
       <li xml:lang="gl">Sen actividades.</li>
       <li xml:lang="id">Tidak ada penggunaan aktivitas</li>
@@ -209,6 +218,7 @@
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="es">Basado en QtWidgets, por lo que sigue el estilo de widgets del sistema</li>
+      <li xml:lang="et">QtWidgetsi-põhine, mistõttu järgib Süsteemi seadistuste vidinastiili</li>
       <li xml:lang="fi">Perustuu QtWidgetsiin, joten noudattaa järjestelmäasetusten käyttöliittymäalkiotyyliä</li>
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
@@ -229,6 +239,7 @@
       <li xml:lang="el">Τα εικονίδια χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα εικονιδίου από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="es">Usa iconos del tema definido globalmente en las preferencias del sistema</li>
+      <li xml:lang="et">Ikoonid võetakse Süsteemi seadistustes määratud globaalsest ikooniteemast</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritetyn yleisen kuvaketeeman kuvakkeita</li>
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
@@ -249,6 +260,7 @@
       <li xml:lang="el">Τα χρώματα χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα χρώματος από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
       <li xml:lang="es">Usa colores del tema definido globalmente en las preferencias del sistema</li>
+      <li xml:lang="et">Värvid võetakse Süsteemi seadistustes määratud globaalsest värviteemiast</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritettyjä yleisiä väriasetuksia</li>
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
@@ -268,6 +280,7 @@
       <li xml:lang="el">Μπορεί επιπλέον να αποκτήσει στιλ με css με χρήση της επιλογής γραμμής εντολών -stylesheet filename.css (δείτε το παράδειγμα stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="es">Puede usar estilos adicionales con CSS mediante la opción de la línea de órdenes «-stylesheet archivo.css» (consulte el ejemplo incluido stylesheet.css)</li>
+      <li xml:lang="et">Stiili saab lisaks mõjutada CSS-iga, andes käsureal võtme -stylesheet failinimi.css (vt kaasa pandud näidist stylesheet.css)</li>
       <li xml:lang="fi">Tyyliä voi vielä CSS:llä muokata komentorivivalitsinta ”-stylesheet tiedosto.css” käyttäen (ks. esimerkkitiedostoa stylesheet.css)</li>
       <li xml:lang="gl">Ademais pode aplicárselle un estilo con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
       <li xml:lang="id">Bisa ditambah-tambah gaya dengan css lewat commandline opsi -stylesheet filename.css (lihatlah contoh yang disertakan stylesheet.css)</li>
@@ -288,6 +301,7 @@
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="es">Usa los diálogos de KDE existentes para la mayoría de las configuraciones, como menú de inicio, escritorios virtuales, Bluetooth y red</li>
+      <li xml:lang="et">Enamiku asjade puhul olemasolevate KDE dialoogide kasutamine (nt käivitusmenüü, virtuaalsed töölauad, Bluetooth, võrk)</li>
       <li xml:lang="fi">Käyttää useimmiten olemassa olevia KDE-valintaikkunoita, esim. käynnistysvalikko, virtuaalityöpöydät, Bluetooth, verkko</li>
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
@@ -308,6 +322,7 @@
       <li xml:lang="el">Ένας πίνακας επιφάνειας εργασίας στη βάση</li>
       <li xml:lang="en-GB">One bottom DesktopPanel</li>
       <li xml:lang="es">Un panel de escritorio inferior</li>
+      <li xml:lang="et">Üks alumine töölauapaneel</li>
       <li xml:lang="fi">Yksi alhaalla oleva työpöytäpaneeli</li>
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
@@ -328,6 +343,7 @@
       <li xml:lang="el">Μικροεφαρμογές επιφάνειας εργασίας</li>
       <li xml:lang="en-GB">Desktop Applets</li>
       <li xml:lang="es">Miniaplicaciones de escritorio</li>
+      <li xml:lang="et">Töölauaapletid</li>
       <li xml:lang="fi">Työpöytäsovelmat</li>
       <li xml:lang="gl">Trebellos de escritorio.</li>
       <li xml:lang="id">Applet Desktop</li>
