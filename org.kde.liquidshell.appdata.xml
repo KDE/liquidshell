@@ -134,7 +134,7 @@
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
       <li xml:lang="it">Sfondo per desktop virtuali</li>
-      <li xml:lang="ko">가상 데스크톱별 배경 그림 지정</li>
+      <li xml:lang="ko">가상 바탕 화면별 배경 그림 지정</li>
       <li xml:lang="lt">Atskiras darbalaukio fonas kiekvienam virtualiam darbalaukiui</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pl">Tapeta na wirtualny pulpit</li>
@@ -306,7 +306,7 @@
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="it">usa per la maggior parte delle configurazioni le finestre esistenti di KDE, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth, la rete</li>
-      <li xml:lang="ko">KDE 대화 상자로 설정 진행. 예: 시작 메뉴, 가상 데스크톱, 블루투스, 네트워크</li>
+      <li xml:lang="ko">KDE 대화 상자로 설정 진행. 예: 시작 메뉴, 가상 바탕 화면, 블루투스, 네트워크</li>
       <li xml:lang="lt">Daugumai konfigūracijų naudoja esamus KDE dialogus, pvz., Paleidimo meniu, Virtualūs darbalaukiai, Bluetooth, Tinklas</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
       <li xml:lang="pl">używa istniejących okien dialogowych KDE w większości przypadków, np. menu start, pulpity wirtualne, Bluetooth, sieć</li>
@@ -327,7 +327,7 @@
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
       <li xml:lang="it">Un pannello desktop in basso</li>
-      <li xml:lang="ko">아래쪽의 데스크톱 패널</li>
+      <li xml:lang="ko">아래쪽의 바탕 화면 패널</li>
       <li xml:lang="lt">Vienas apatinis darbalaukio skydelis</li>
       <li xml:lang="nl">Eén bureaubladpaneel onderaan</li>
       <li xml:lang="pl">Jeden panel pulpitu na dole</li>
@@ -348,7 +348,7 @@
       <li xml:lang="gl">Trebellos de escritorio.</li>
       <li xml:lang="id">Applet Desktop</li>
       <li xml:lang="it">Applet desktop</li>
-      <li xml:lang="ko">데스크톱 애플릿</li>
+      <li xml:lang="ko">바탕 화면 애플릿</li>
       <li xml:lang="lt">Darbalaukio programėlės</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
       <li xml:lang="pl">Aplety pulpitu</li>
