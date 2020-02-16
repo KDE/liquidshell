@@ -440,6 +440,7 @@ void PkUpdateList::install()
     }
 
     installQ.clear();
+    emit packageCountToInstall(0);
 
     countChecked();
     return;
@@ -468,6 +469,8 @@ void PkUpdateList::install()
 
 void PkUpdateList::installOne()
 {
+  emit packageCountToInstall(installQ.count());
+
   if ( installQ.isEmpty() ) // installation finished
   {
     if ( restart != PackageKit::Transaction::RestartNone )

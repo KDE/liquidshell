@@ -23,6 +23,7 @@
 
 #include <QIcon>
 #include <QDateTime>
+#include <QPainter>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -49,7 +50,7 @@ PkUpdates::PkUpdates(QWidget *parent)
     return;
   }
 
-  setPixmap(QIcon::fromTheme("system-software-update").pixmap(size()));
+  setPixmap(currentPixmap = QIcon::fromTheme("system-software-update").pixmap(size()));
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { createToolTip(); });
 
   // check every hour if the next checkpoint was reached. This ensures that
@@ -80,7 +81,7 @@ void PkUpdates::checkForUpdatesReached()
 
 void PkUpdates::checkForUpdates()
 {
-  setPixmap(QIcon::fromTheme("system-software-update").pixmap(size()));
+  setPixmap(currentPixmap = QIcon::fromTheme("system-software-update").pixmap(size()));
   setToolTip(i18n("Checking for updates ..."));
 
   packages.clear();
@@ -214,7 +215,7 @@ void PkUpdates::createToolTip(bool notify)
                       QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate)));
     }
 
-    setPixmap(QIcon::fromTheme("update-none").pixmap(size()));
+    setPixmap(currentPixmap = QIcon::fromTheme("update-none").pixmap(size()));
   }
   else
   {
@@ -233,7 +234,7 @@ void PkUpdates::createToolTip(bool notify)
       case PackageKit::Transaction::InfoBugfix: icon = "update-low"; break;
       default: ;
     }
-    setPixmap(QIcon::fromTheme(icon).pixmap(size()));
+    setPixmap(currentPixmap = QIcon::fromTheme(icon).pixmap(size()));
 
     if ( notify )
     {
@@ -273,6 +274,7 @@ QWidget *PkUpdates::getDetailsList()
     updateList->setRefreshProgress(refreshProgress);
     connect(updateList, &PkUpdateList::refreshRequested, this, &PkUpdates::checkForUpdates);
     connect(updateList, &PkUpdateList::packageInstalled, this, &PkUpdates::packageInstalled);
+    connect(updateList, &PkUpdateList::packageCountToInstall, this, &PkUpdates::packageCountToInstallChanged);
   }
 
   return updateList;
@@ -301,6 +303,29 @@ void PkUpdates::setRefreshProgress(int progress)
 
   if ( updateList )
     updateList->setRefreshProgress(refreshProgress);
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdates::packageCountToInstallChanged(int num)
+{
+  if ( num == 0 )
+  {
+    setPixmap(currentPixmap);
+    return;
+  }
+
+  QPixmap pix = currentPixmap;
+  QPainter painter(&pix);
+  QFont f = font();
+  f.setPixelSize(contentsRect().width() / 2);
+  f.setBold(true);
+  painter.setFont(f);
+
+  painter.drawText(contentsRect(), Qt::AlignCenter, QString::number(num));
+  painter.end();
+
+  setPixmap(pix);
 }
 
 //--------------------------------------------------------------------------------

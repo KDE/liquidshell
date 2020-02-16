@@ -56,6 +56,7 @@ class PkUpdates : public SysTrayItem
     void package(PackageKit::Transaction::Info info, const QString &packageID, const QString &summary);
     void transactionError(PackageKit::Transaction::Error error, const QString &details);
     void packageInstalled(const QString &id);
+    void packageCountToInstallChanged(int num);
 
   private:
     void addItems(QString &tooltip, const QList<PackageData> &list) const;
@@ -68,6 +69,7 @@ class PkUpdates : public SysTrayItem
     QDateTime nextCheck;
     PkUpdateList *updateList = nullptr;
     int refreshProgress = 100;
+    QPixmap currentPixmap;
 };
 
 #endif

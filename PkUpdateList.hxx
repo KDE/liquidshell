@@ -48,6 +48,7 @@ class PkUpdateList : public QWidget
   Q_SIGNALS:
     void refreshRequested();
     void packageInstalled(QString id);
+    void packageCountToInstall(int num);
 
   private Q_SLOTS:
     void checkAll(bool on);
