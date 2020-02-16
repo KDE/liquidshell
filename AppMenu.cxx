@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -28,6 +28,7 @@
 #include <QMimeDatabase>
 #include <QApplication>
 #include <QScreen>
+#include <QTimer>
 #include <QDebug>
 
 #include <KFileItem>
@@ -76,6 +77,13 @@ void AppMenu::adjustIconSize()
 
 void AppMenu::fill()
 {
+  if ( QApplication::primaryScreen()->availableSize().height() == QApplication::primaryScreen()->size().height() )
+  {
+    // when the desktop panel size was not set yet, delay the creation
+    QTimer::singleShot(0, this, &AppMenu::fill);
+    return;
+  }
+
   KDesktopFile desktopFile(dirPath + "/.directory");
 
   if ( !desktopFile.readIcon().isEmpty() )
@@ -96,7 +104,7 @@ void AppMenu::fill()
   QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotDot);
 
   int row = 0, col = 0, h = 0;
-  const int maxHeight = QApplication::primaryScreen()->size().height() - parentWidget()->sizeHint().height();
+  const int maxHeight = QApplication::primaryScreen()->availableSize().height();
 
   for (const QFileInfo &info : entries)
   {
