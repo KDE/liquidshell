@@ -65,8 +65,9 @@ void SysTrayItem::showDetailsList()
 
   QPoint point = mapToGlobal(pos());
   QRect screen = QApplication::primaryScreen()->availableGeometry();
-  point.setX(std::min(point.x(), screen.x() + screen.width() - detailsList->sizeHint().width()));
-  point.setY(screen.bottom() - detailsList->sizeHint().height());
+  QSize size = detailsList->frameSize();
+  point.setX(std::min(point.x(), screen.x() + screen.width() - size.width()));
+  point.setY(screen.bottom() - size.height());
   detailsList->move(point);
   detailsList->show();
   KWindowSystem::raiseWindow(detailsList->winId());
