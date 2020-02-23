@@ -78,7 +78,13 @@ Pager::Pager(DesktopPanel *parent)
             auto dialog = new KCMultiDialog(parentWidget());
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
-            dialog->addModule("desktop");
+
+            KCModuleInfo module("kcm_kwin_virtualdesktops");
+            if ( module.service() )
+              dialog->addModule("kcm_kwin_virtualdesktops");
+            else
+              dialog->addModule("desktop");  // in older KDE versions
+
             dialog->adjustSize();
             dialog->show();
           }
