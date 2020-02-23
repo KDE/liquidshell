@@ -137,6 +137,7 @@ endif()
 
 install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS start_liquidshell DESTINATION ${KDE_INSTALL_BINDIR})
 
 install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
