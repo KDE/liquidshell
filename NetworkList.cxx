@@ -35,6 +35,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/Utils>
+#include <networkmanagerqt_version.h>
 
 #include <sys/types.h>
 #include <pwd.h>
@@ -100,8 +101,10 @@ void NetworkButton::toggleNetworkStatus(bool on)
         QVariantMap security;
         if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtPsk )
           security.insert("key-mgmt", QString("wpa-psk"));
+#if (NETWORKMANAGERQT_VERSION >= QT_VERSION_CHECK(5, 63, 0))
         else if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtSAE )
           security.insert("key-mgmt", QString("sae"));
+#endif
         else
         {
           // TODO: other types - find value names
