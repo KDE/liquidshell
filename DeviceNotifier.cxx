@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -51,9 +51,17 @@ DeviceNotifier::DeviceNotifier(QWidget *parent)
           });
 
   // if the user did not activate the device list window, auto-hide it
+  // but keep it if the mouse is over it (e.g. the user wants to click)
   timer.setInterval(4000);
   timer.setSingleShot(true);
-  connect(&timer, &QTimer::timeout, deviceList, &DeviceList::hide);
+
+  connect(&timer, &QTimer::timeout, this,
+          [this]()
+          {
+            if ( !deviceList->underMouse() )
+              deviceList->hide();
+          });
+
   deviceList->installEventFilter(this);
 }
 
