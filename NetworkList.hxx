@@ -54,6 +54,7 @@ class NetworkList : public QFrame
 //--------------------------------------------------------------------------------
 
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/AccessPoint>
 #include <IconButton.hxx>
 
 class NetworkButton : public IconButton
@@ -61,8 +62,9 @@ class NetworkButton : public IconButton
   Q_OBJECT
 
   public:
-    NetworkButton(NetworkManager::Connection::Ptr c = NetworkManager::Connection::Ptr(),
-                  NetworkManager::Device::Ptr dev = NetworkManager::Device::Ptr());
+    NetworkButton(NetworkManager::Connection::Ptr c = nullptr,
+                  NetworkManager::Device::Ptr dev = nullptr,
+                  NetworkManager::AccessPoint::Ptr accessPoint = nullptr);
 
   private Q_SLOTS:
     void toggleNetworkStatus(bool on);
@@ -70,6 +72,9 @@ class NetworkButton : public IconButton
   private:
     NetworkManager::Connection::Ptr connection;
     NetworkManager::Device::Ptr device;
+    QByteArray rawSsid;
+    QString ssid;
+    NetworkManager::AccessPoint::WpaFlags wpaFlags;
 };
 
 #endif

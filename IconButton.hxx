@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2018 Martin Koller, kollix@aon.at
+  Copyright 2018 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -36,11 +36,13 @@ class IconButton : public QToolButton
 
     void setText(const QString &txt);
     void setIcon(const QIcon &icon);
+    void setIcon2(const QIcon &icon);
 
     QSize sizeHint() const override;
 
   private:
     QLabel *iconLabel = nullptr;
+    QLabel *icon2Label = nullptr;
     QLabel *textLabel = nullptr;
 };
 

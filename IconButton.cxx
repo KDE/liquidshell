@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2018 Martin Koller, kollix@aon.at
+  Copyright 2018 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -37,6 +37,12 @@ IconButton::IconButton(QWidget *parent)
   iconLabel->setContextMenuPolicy(Qt::PreventContextMenu);
   hbox->addWidget(iconLabel);
 
+  icon2Label = new QLabel;
+  icon2Label->setFixedSize(iconSize());
+  icon2Label->setContextMenuPolicy(Qt::PreventContextMenu);
+  icon2Label->hide();  // until an icon is set
+  hbox->addWidget(icon2Label);
+
   textLabel = new QLabel;
   hbox->addWidget(textLabel);
 }
@@ -67,6 +73,14 @@ void IconButton::setText(const QString &txt)
 void IconButton::setIcon(const QIcon &icon)
 {
   iconLabel->setPixmap(icon.pixmap(iconSize()));
+}
+
+//--------------------------------------------------------------------------------
+
+void IconButton::setIcon2(const QIcon &icon)
+{
+  icon2Label->setPixmap(icon.pixmap(iconSize()));
+  icon2Label->show();
 }
 
 //--------------------------------------------------------------------------------

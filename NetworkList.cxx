@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -36,9 +36,13 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/Utils>
 
+#include <sys/types.h>
+#include <pwd.h>
+
 //--------------------------------------------------------------------------------
 
-NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::Device::Ptr dev)
+NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::Device::Ptr dev,
+                             NetworkManager::AccessPoint::Ptr accessPoint)
   : connection(c), device(dev)
 {
   setCheckable(true);
@@ -53,11 +57,15 @@ NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::
         break;
       }
     }
-
-    connect(this, &NetworkButton::toggled, this, &NetworkButton::toggleNetworkStatus);
   }
-  else
-    setEnabled(false);
+  else if ( accessPoint )
+  {
+    ssid = accessPoint->ssid();
+    rawSsid = accessPoint->rawSsid();
+    wpaFlags = accessPoint->wpaFlags();
+  }
+
+  connect(this, &NetworkButton::toggled, this, &NetworkButton::toggleNetworkStatus);
 }
 
 //--------------------------------------------------------------------------------
@@ -66,6 +74,65 @@ void NetworkButton::toggleNetworkStatus(bool on)
 {
   if ( on )
   {
+    if ( !connection )  // no connection yet -> create one
+    {
+      // the connMap content was "reverse-engineered" by using qdbusviewer and the result of getting
+      // GetSettings of one of theSettings.Connection elements
+
+      NMVariantMapMap connMap;
+      QVariantMap map;
+      map.insert("id", ssid);
+
+      // ensure to not need root password by creating only for the current user
+      struct passwd *pwd = getpwuid(geteuid());
+      if ( pwd )
+        map.insert("permissions", QStringList(QString("user:") + QString::fromUtf8(pwd->pw_name)));
+
+      connMap.insert("connection", map);
+
+      QVariantMap wirelessMap;
+      wirelessMap.insert("ssid", rawSsid);
+
+      if ( wpaFlags )
+      {
+        wirelessMap.insert("security", "802-11-wireless-security");
+
+        QVariantMap security;
+        if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtPsk )
+          security.insert("key-mgmt", QString("wpa-psk"));
+        else if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtSAE )
+          security.insert("key-mgmt", QString("sae"));
+        else
+        {
+          // TODO: other types - find value names
+        }
+
+        connMap.insert("802-11-wireless-security", security);
+      }
+
+      connMap.insert("802-11-wireless", wirelessMap);
+
+      QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> call =
+          NetworkManager::addAndActivateConnection(connMap, device->uni(), QString());
+
+      /*
+      QDBusPendingCallWatcher *pendingCallWatcher = new QDBusPendingCallWatcher(call, this);
+      connect(pendingCallWatcher, &QDBusPendingCallWatcher::finished, this,
+              [this](QDBusPendingCallWatcher *w)
+              {
+                w->deleteLater();
+                QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply = *w;
+                qDebug() << reply.error();
+              }
+             );
+      */
+
+      // without closing our popup, the user can not enter the password in the password dialog which appears
+      window()->close();
+
+      return;
+    }
+
     switch ( connection->settings()->connectionType() )
     {
       case NetworkManager::ConnectionSettings::Wired:
@@ -91,7 +158,7 @@ void NetworkButton::toggleNetworkStatus(bool on)
       default: ; // TODO
     }
   }
-  else
+  else if ( connection )
   {
     for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
     {
@@ -254,7 +321,6 @@ void NetworkList::fillConnections()
           continue;
 
         // check if we have a connection for this SSID
-        bool haveConnection = false;
         NetworkManager::Connection::Ptr conn;
         for (const NetworkManager::Connection::Ptr c : allConnections)
         {
@@ -265,42 +331,34 @@ void NetworkList::fillConnections()
 
             if ( s->ssid() == network->ssid() )
             {
-              haveConnection = true;
               conn = c;
               break;
             }
           }
         }
 
-        if ( haveConnection )
+        NetworkButton *net;
+
+        if ( conn )
         {
-          NetworkButton *net = new NetworkButton(conn, device);
+          net = new NetworkButton(conn, device);
           net->setText(QString("%1 (%2%)").arg(conn->name()).arg(network->signalStrength()));
-          net->setIcon(QIcon::fromTheme("network-wireless"));
-          connectionsVbox->addWidget(net);
-          net->show();
         }
         else
         {
-          NetworkButton *net = new NetworkButton;
+          net = new NetworkButton(nullptr, device, accessPoint);
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
-          net->setIcon(QIcon::fromTheme("network-wireless"));
-          net->setEnabled(false);  // TODO: allow to add a new connection. See NetworkManager::addAndActivateConnection
-          connectionsVbox->addWidget(net);
-          net->show();
         }
 
-        /*
-        NetworkManager::WirelessSecurityType security =
-            NetworkManager::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(), true,
-                                                     wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc,
-                                                     accessPoint->capabilities(), accessPoint->wpaFlags(), accessPoint->rsnFlags());
+        net->setIcon(QIcon::fromTheme("network-wireless"));
 
-        if ( (security != NetworkManager::UnknownSecurity) && (security != NetworkManager::NoneSecurity) )
-          net->setIcon(QIcon::fromTheme("object-locked"));
+        if ( accessPoint->wpaFlags() )
+          net->setIcon2(QIcon::fromTheme("object-locked"));
         else
-          net->setIcon(QIcon::fromTheme("object-unlocked"));
-        */
+          net->setIcon2(QIcon::fromTheme("object-unlocked"));
+
+        connectionsVbox->addWidget(net);
+        net->show();
       }
     }
   }
