@@ -23,7 +23,7 @@ test -f $liquidFileName
 liquidNotExists=$?
 if [ $liquidNotExists -eq 1 ]
 then
-  cp /usr/share/applications/org.kde.liquidshell.desktop $configDir/autostart
+  cp @CMAKE_INSTALL_PREFIX@/@XDG_APPS_INSTALL_DIR@/org.kde.liquidshell.desktop $configDir/autostart
 else
   sed -i -e "s/Hidden=true/Hidden=false/" $liquidFileName
 fi
