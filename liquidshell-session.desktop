@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=XSession
-Exec=/usr/bin/start_liquidshell
-TryExec=/usr/bin/start_liquidshell
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/start_liquidshell
+TryExec=@CMAKE_INSTALL_FULL_BINDIR@/start_liquidshell
 DesktopNames=KDE
 Name=Liquidshell
 Name[ca]=Liquidshell
