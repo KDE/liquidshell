@@ -62,9 +62,9 @@ class NetworkButton : public IconButton
   Q_OBJECT
 
   public:
-    NetworkButton(NetworkManager::Connection::Ptr c = nullptr,
-                  NetworkManager::Device::Ptr dev = nullptr,
-                  NetworkManager::AccessPoint::Ptr accessPoint = nullptr);
+    NetworkButton(NetworkManager::Connection::Ptr c = NetworkManager::Connection::Ptr(),
+                  NetworkManager::Device::Ptr dev = NetworkManager::Device::Ptr(),
+                  NetworkManager::AccessPoint::Ptr accessPoint = NetworkManager::AccessPoint::Ptr());
 
   private Q_SLOTS:
     void toggleNetworkStatus(bool on);

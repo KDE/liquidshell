@@ -349,7 +349,7 @@ void NetworkList::fillConnections()
         }
         else
         {
-          net = new NetworkButton(nullptr, device, accessPoint);
+          net = new NetworkButton(conn, device, accessPoint);
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
         }
 
