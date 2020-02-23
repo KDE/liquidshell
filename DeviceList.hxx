@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -80,6 +80,7 @@ class DeviceItem : public QFrame
     QLabel *textLabel = nullptr, *statusLabel = nullptr, *newFlagLabel = nullptr;
     QTimer statusTimer, mountBusyTimer;
     QPointer<KCMultiDialog> dialog;
+    QString pendingCommand;  // used when click -> mount -> action
 };
 
 //--------------------------------------------------------------------------------

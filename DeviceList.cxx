@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -134,6 +134,11 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
             {
               QString command = action.action.exec();
 
+              if ( device.is<Solid::Block>() )
+                command.replace("%d", device.as<Solid::Block>()->device());
+
+              command.replace("%i", device.udi());
+
               Solid::StorageAccess *storage = device.as<Solid::StorageAccess>();
               if ( storage )
               {
@@ -141,16 +146,12 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
                 {
                   statusLabel->hide();
                   storage->setup();
+                  pendingCommand = command;
                   return;
                 }
 
                 command.replace("%f", storage->filePath());
               }
-
-              if ( device.is<Solid::Block>() )
-                command.replace("%d", device.as<Solid::Block>()->device());
-
-              command.replace("%i", device.udi());
 
               KRun::runCommand(command, this);
               window()->hide();
@@ -369,6 +370,21 @@ void DeviceItem::teardownDone(Solid::ErrorType error, QVariant errorData, const 
 void DeviceItem::setupDone(Solid::ErrorType error, QVariant errorData, const QString &udi)
 {
   mountDone(Mount, error, errorData, udi);
+
+  if ( !pendingCommand.isEmpty() )
+  {
+    if ( error == Solid::NoError )
+    {
+      Solid::StorageAccess *storage = device.as<Solid::StorageAccess>();
+      if ( storage )  // should always be true. paranoid check
+      {
+        pendingCommand.replace("%f", storage->filePath());
+        KRun::runCommand(pendingCommand, this);
+        window()->hide();
+      }
+    }
+    pendingCommand.clear();
+  }
 }
 
 //--------------------------------------------------------------------------------
