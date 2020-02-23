@@ -142,7 +142,7 @@ configure_file(start_liquidshell start_liquidshell @ONLY)
 install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/start_liquidshell DESTINATION ${KDE_INSTALL_BINDIR})
 
 configure_file(liquidshell-session.desktop liquidshell-session.desktop @ONLY)
-install(FILES liquidshell-session.desktop DESTINATION ${KDE_INSTALL_DATADIR}/xsessions)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liquidshell-session.desktop DESTINATION ${KDE_INSTALL_DATADIR}/xsessions)
 
 install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
