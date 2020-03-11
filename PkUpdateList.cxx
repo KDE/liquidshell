@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <PkUpdateList.hxx>
+#include <DesktopWidget.hxx>
 
 #include <QScrollBar>
 #include <QGridLayout>
@@ -252,7 +253,7 @@ QSize PkUpdateList::sizeHint() const
   s = s.expandedTo(QSize(500, 300));
 
   // Qt doc: The size of top-level widgets are constrained to 2/3 of the desktop's height and width.
-  QSize screen = QApplication::primaryScreen()->availableSize();
+  QSize screen = DesktopWidget::availableSize();
   s = s.boundedTo(screen * 2 / 3);
 
   return s;

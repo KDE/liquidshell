@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -42,6 +42,11 @@ class DesktopWidget : public QWidget
       QVector<QPixmap> pixmaps;  // per screen
     };
 
+    // since on X11 QScreen:available* methods do not deliver the true
+    // values (according to Qt doc: This is a limitation in X11 window manager specification.)
+    static QRect availableGeometry();
+    static QSize availableSize();
+
   protected:
     void paintEvent(QPaintEvent *event) override;
 
@@ -66,6 +71,7 @@ class DesktopWidget : public QWidget
 
     QVector<DesktopApplet *> applets;
     static int appletNum;
+    static DesktopWidget *instance;
 };
 
 #endif

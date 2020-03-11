@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -46,12 +46,15 @@
 //--------------------------------------------------------------------------------
 
 int DesktopWidget::appletNum = 0;
+DesktopWidget *DesktopWidget::instance = nullptr;
 
 //--------------------------------------------------------------------------------
 
 DesktopWidget::DesktopWidget()
   : QWidget(nullptr, Qt::WindowDoesNotAcceptFocus)
 {
+  instance = this;
+
   setAttribute(Qt::WA_AlwaysShowToolTips);
   setAutoFillBackground(true);
   setFixedSize(QApplication::primaryScreen()->virtualSize());
@@ -255,8 +258,27 @@ void DesktopWidget::placePanel()
 {
   int panelHeight = qMin(panel->sizeHint().height(), panel->height());
   QRect r = QApplication::primaryScreen()->geometry();
+  QSize vs = QApplication::primaryScreen()->virtualSize();
   panel->setGeometry(r.x(), r.y() + r.height() - panelHeight, r.width(), panelHeight);
-  KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight);
+
+  // struts are to the combined screen geoms, not the single screen
+  KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight + vs.height() - r.bottom());
+}
+
+//--------------------------------------------------------------------------------
+
+QRect DesktopWidget::availableGeometry()
+{
+  QRect geom = QApplication::primaryScreen()->geometry();
+  geom.setHeight(geom.height() - instance->panel->height());
+  return geom;
+}
+
+//--------------------------------------------------------------------------------
+
+QSize DesktopWidget::availableSize()
+{
+  return availableGeometry().size();
 }
 
 //--------------------------------------------------------------------------------

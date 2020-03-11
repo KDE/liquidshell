@@ -20,6 +20,7 @@
 
 #include <AppMenu.hxx>
 #include <IconButton.hxx>
+#include <DesktopWidget.hxx>
 
 #include <QGridLayout>
 #include <QToolButton>
@@ -28,8 +29,6 @@
 #include <QMimeDatabase>
 #include <QApplication>
 #include <QScreen>
-#include <QTimer>
-#include <QDebug>
 
 #include <KFileItem>
 #include <KDesktopFile>
@@ -45,7 +44,6 @@ AppMenu::AppMenu(DesktopPanel *parent)
   adjustIconSize();
   button->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
 
-  popup = new Menu(button);
   connect(button, &QToolButton::pressed, this, &AppMenu::showMenu);
 
   layout()->addWidget(button);
@@ -54,8 +52,6 @@ AppMenu::AppMenu(DesktopPanel *parent)
   connect(parent, &DesktopPanel::rowsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::adjustIconSize);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &AppMenu::fill);
-  connect(QApplication::primaryScreen(), &QScreen::geometryChanged, this, &AppMenu::fill);
-  connect(qApp, &QApplication::primaryScreenChanged, this, &AppMenu::fill);
 }
 
 //--------------------------------------------------------------------------------
@@ -77,13 +73,6 @@ void AppMenu::adjustIconSize()
 
 void AppMenu::fill()
 {
-  if ( QApplication::primaryScreen()->availableSize().height() == QApplication::primaryScreen()->size().height() )
-  {
-    // when the desktop panel size was not set yet, delay the creation
-    QTimer::singleShot(0, this, &AppMenu::fill);
-    return;
-  }
-
   KDesktopFile desktopFile(dirPath + "/.directory");
 
   if ( !desktopFile.readIcon().isEmpty() )
@@ -92,19 +81,19 @@ void AppMenu::fill()
     button->setIcon(QIcon::fromTheme("user-desktop"));
   else // fallback
     button->setIcon(QIcon::fromTheme("folder"));
+}
 
-  QLayoutItem *child;
-  while ( (child = popup->layout()->takeAt(0)) )
-  {
-    delete child->widget();
-    delete child;
-  }
+//--------------------------------------------------------------------------------
+
+void AppMenu::showMenu()
+{
+  Menu *popup = new Menu(button);
 
   QDir dir(dirPath);
   QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotDot);
 
   int row = 0, col = 0, h = 0;
-  const int maxHeight = QApplication::primaryScreen()->availableSize().height();
+  const int maxHeight = DesktopWidget::availableSize().height();
 
   for (const QFileInfo &info : entries)
   {
@@ -147,7 +136,7 @@ void AppMenu::fill()
       name = info.fileName();
 
     IconButton *entryButton = new IconButton(this, icon, 32, name);
-    connect(entryButton, &IconButton::clicked, [this, url]() { popup->close(); new KRun(url, nullptr); });
+    connect(entryButton, &IconButton::clicked, [this, url, popup]() { popup->close(); new KRun(url, nullptr); });
 
     h += entryButton->sizeHint().height();
 
@@ -160,14 +149,10 @@ void AppMenu::fill()
 
     static_cast<QGridLayout *>(popup->layout())->addWidget(entryButton, row++, col);
   }
-}
 
-//--------------------------------------------------------------------------------
-
-void AppMenu::showMenu()
-{
   popup->exec();
   button->setDown(false);
+  delete popup;
 }
 
 //--------------------------------------------------------------------------------

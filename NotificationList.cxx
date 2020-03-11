@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <NotificationList.hxx>
+#include <DesktopWidget.hxx>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -309,7 +310,7 @@ void NotificationList::closeItem(uint id)
 
 void NotificationList::placeItems()
 {
-  QRect screen = QApplication::primaryScreen()->availableGeometry();
+  QRect screen = DesktopWidget::availableGeometry();
   QPoint point = parentWidget()->mapToGlobal(parentWidget()->pos());
   int x = point.x();
   int y = screen.bottom();

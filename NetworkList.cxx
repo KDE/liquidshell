@@ -190,6 +190,7 @@ NetworkList::NetworkList(QWidget *parent)
 
   network = new QToolButton;
   network->setIcon(QIcon::fromTheme("network-wired"));
+  network->setIconSize(QSize(22, 22));
   network->setToolTip(i18n("Enable Networking"));
   network->setCheckable(true);
   connect(network, &QToolButton::clicked, [](bool on) { NetworkManager::setNetworkingEnabled(on); });
@@ -198,6 +199,7 @@ NetworkList::NetworkList(QWidget *parent)
 
   wireless = new QToolButton;
   wireless->setIcon(QIcon::fromTheme("network-wireless"));
+  wireless->setIconSize(QSize(22, 22));
   wireless->setToolTip(i18n("Enable Wireless Networking"));
   wireless->setCheckable(true);
   connect(wireless, &QToolButton::clicked, [](bool on) { NetworkManager::setWirelessEnabled(on); });
@@ -210,6 +212,7 @@ NetworkList::NetworkList(QWidget *parent)
 
   QToolButton *configure = new QToolButton;
   configure->setIcon(QIcon::fromTheme("configure"));
+  configure->setIconSize(QSize(22, 22));
   configure->setToolTip(i18n("Configure Network Connections"));
   connect(configure, &QToolButton::clicked, this, &NetworkList::openConfigureDialog);
   hbox->addWidget(configure);

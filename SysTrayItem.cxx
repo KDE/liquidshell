@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <SysTrayItem.hxx>
+#include <DesktopWidget.hxx>
 
 #include <QMouseEvent>
 #include <QApplication>
@@ -64,7 +65,7 @@ void SysTrayItem::showDetailsList()
     return;
 
   QPoint point = mapToGlobal(pos());
-  QRect screen = QApplication::primaryScreen()->availableGeometry();
+  QRect screen = DesktopWidget::availableGeometry();
   QSize size = detailsList->frameSize();
   point.setX(std::min(point.x(), screen.x() + screen.width() - size.width()));
   point.setY(screen.bottom() - size.height());
