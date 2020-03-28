@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -110,7 +110,8 @@ QString Battery::secsToHM(int secs) const
 
 void Battery::onBatteryReply(const QDBusMessage &msg)
 {
-  setVisible(msg.arguments()[0].value<QDBusVariant>().variant().toBool());
+  onBattery = msg.arguments()[0].value<QDBusVariant>().variant().toBool();
+  changed();
 }
 
 //--------------------------------------------------------------------------------
@@ -124,7 +125,7 @@ void Battery::upowerPropertiesChanged(const QString &interface,
 
   if ( properties.contains("OnBattery") )
   {
-    setVisible(properties.value("OnBattery").toBool());
+    onBattery = properties.value("OnBattery").toBool();
     changed();
   }
 }
@@ -185,6 +186,8 @@ void Battery::changed()
   setPixmap(getStatusIcon(battery->chargePercent(),
                           battery->chargeState() == Solid::Battery::Charging).pixmap(size()));
   setToolTip(tip);
+
+  setVisible(onBattery || (battery->chargeState() != Solid::Battery::FullyCharged));
 }
 
 //--------------------------------------------------------------------------------

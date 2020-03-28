@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 -2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -49,6 +49,7 @@ class Battery : public SysTrayItem
 
   private:
     Solid::Device device;
+    bool onBattery = false;
     QPointer<KCMultiDialog> dialog;
 };
 
