@@ -194,10 +194,14 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   setWindowTitle(i18n("Software Updates"));
 
   vbox = new QVBoxLayout(this);
+  QMargins margins = vbox->contentsMargins();
   vbox->setContentsMargins(QMargins(0, -1, 0, 0));
 
   // action buttons
   QHBoxLayout *hbox = new QHBoxLayout;
+  margins.setTop(0);
+  margins.setBottom(0);
+  hbox->setContentsMargins(margins);
 
   checkAllBox = new QCheckBox(i18n("All"));
   connect(checkAllBox, &QCheckBox::toggled, this, &PkUpdateList::checkAll);
@@ -292,6 +296,9 @@ void PkUpdateList::setRefreshProgress(int progress)
 
 void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
 {
+  itemsLayout->parentWidget()->layout()->setEnabled(false);
+  itemsLayout->setEnabled(false);
+
   QLayoutItem *child;
   while ( (child = itemsLayout->takeAt(0)) )
   {
@@ -341,6 +348,7 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
       item->show();
     }
   }
+  itemsLayout->setEnabled(true);
 
   filterChanged(filterEdit->text());
 
