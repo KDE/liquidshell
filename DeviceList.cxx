@@ -487,35 +487,37 @@ DeviceItem *DeviceList::addDevice(Solid::Device device)
       deviceActions.append(action);
   }
 
-  Solid::StorageVolume *storage = device.as<Solid::StorageVolume>();
+  Solid::StorageVolume *volume = device.as<Solid::StorageVolume>();
+  Solid::StorageAccess *access = device.as<Solid::StorageAccess>();
 
-  if ( !storage )  // storage can at least be mounted; others need some specific actions
+  if ( !volume )  // volume can at least be mounted; others need some specific actions
   {
     if ( deviceActions.isEmpty() )
     {
       //qDebug() << device.udi() << "no action found";
       return nullptr;
     }
+    if ( access && access->isAccessible() && !QFileInfo(access->filePath()).isReadable() )
+    {
+      //qDebug() << device.udi() << access->filePath() << "not readable";
+      return nullptr;
+    }
   }
-  else if ( storage->usage() != Solid::StorageVolume::FileSystem )
+  else if ( (volume->usage() != Solid::StorageVolume::FileSystem) || volume->isIgnored() )
   {
-    //qDebug() << device.udi() << "storage no filesystem";
+    //qDebug() << device.udi() << (access ? access->filePath() : QString()) << "no filesystem or ignored";
     return nullptr;
   }
 
   // show only removable devices
-  if ( device.is<Solid::StorageDrive>() &&
-       !device.as<Solid::StorageDrive>()->isRemovable() )
+  bool isRemovable = (device.is<Solid::StorageDrive>() &&
+                      device.as<Solid::StorageDrive>()->isRemovable()) ||
+                     (device.parent().is<Solid::StorageDrive>() &&
+                      device.parent().as<Solid::StorageDrive>()->isRemovable());
+
+  if ( !isRemovable )
   {
     //qDebug() << device.udi() << "not Removable";
-    return nullptr;
-  }
-
-  // show only removable devices
-  if ( device.parent().is<Solid::StorageDrive>() &&
-       !device.parent().as<Solid::StorageDrive>()->isRemovable() )
-  {
-    //qDebug() << device.parent().udi() << "parent() not Removable";
     return nullptr;
   }
 

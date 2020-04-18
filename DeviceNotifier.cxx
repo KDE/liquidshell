@@ -58,7 +58,9 @@ DeviceNotifier::DeviceNotifier(QWidget *parent)
   connect(&timer, &QTimer::timeout, this,
           [this]()
           {
-            if ( !deviceList->underMouse() )
+            if ( deviceList->underMouse() )
+              timer.start();
+            else
               deviceList->hide();
           });
 
