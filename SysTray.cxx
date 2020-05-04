@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -37,6 +37,8 @@
 #include <QDBusMetaType>
 #include <QDebug>
 
+#include <cmath>
+
 //--------------------------------------------------------------------------------
 
 static const QLatin1String WATCHER_SERVICE("org.kde.StatusNotifierWatcher");
@@ -54,6 +56,7 @@ SysTray::SysTray(DesktopPanel *parent)
   qDBusRegisterMetaType<KDbusToolTipStruct>();
 
   setFrameShape(QFrame::StyledPanel);
+  setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
 
   connect(parent, &DesktopPanel::rowsChanged, this, &SysTray::fill);
 
@@ -115,28 +118,23 @@ void SysTray::fill()
     vbox->addLayout(rowsLayout[i]);
   }
 
-  if ( MAX_ROWS == 1 )
+  QVector<QWidget *> internalWidgets =
   {
-    rowsLayout[0]->addWidget(new NotificationServer(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new Network(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new Battery(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
+    new NotificationServer(this),
+    new Network(this),
+    new DeviceNotifier(this),
+    new Battery(this),
+    new Bluetooth(this),
 #ifdef WITH_PACKAGEKIT
-    rowsLayout[0]->addWidget(new PkUpdates(this), 0, Qt::AlignLeft);
+    new PkUpdates(this)
 #endif
-  }
-  else if ( MAX_ROWS >= 2 )
-  {
-    rowsLayout[0]->addWidget(new NotificationServer(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new DeviceNotifier(this), 0, Qt::AlignLeft);
-    rowsLayout[0]->addWidget(new Bluetooth(this), 0, Qt::AlignLeft);
-    rowsLayout[1]->addWidget(new Network(this), 0, Qt::AlignLeft);
-    rowsLayout[1]->addWidget(new Battery(this), 0, Qt::AlignLeft);
-#ifdef WITH_PACKAGEKIT
-    rowsLayout[1]->addWidget(new PkUpdates(this), 0, Qt::AlignLeft);
-#endif
-  }
+  };
+
+  for (int i = 0; i < internalWidgets.count(); i++)
+    rowsLayout[i % MAX_ROWS]->addWidget(internalWidgets[i], 0, Qt::AlignLeft);
+
+  for (int i = 0; i < MAX_ROWS; i++)
+    rowsLayout[i]->addStretch();
 
   // notifier items
 
@@ -151,8 +149,7 @@ void SysTray::fill()
     appsVbox->addLayout(appsRows[i]);
   }
 
-  for (SysTrayNotifyItem *item : items)
-    itemInitialized(item);
+  arrangeNotifyItems();
 }
 
 //--------------------------------------------------------------------------------
@@ -229,27 +226,10 @@ void SysTray::itemRegistered(QString item)
 
 void SysTray::itemInitialized(SysTrayNotifyItem *item)
 {
-  // TODO count only visible items
-  int lowestCount = 0;
-  int lowestCountAt = 0;
-  for (int i = 0; i < appsRows.count(); i++)
-  {
-    if ( i == 0 )
-      lowestCount = appsRows[i]->count();
-    else if ( appsRows[i]->count() < lowestCount )
-    {
-      lowestCount = appsRows[i]->count();
-      lowestCountAt = i;
-    }
-  }
-
-  appsRows[lowestCountAt]->addWidget(item, 0, Qt::AlignLeft);
-
   if ( !items.contains(item->objectName()) )
-  {
     items.insert(item->objectName(), item);
-    disconnect(item, &SysTrayNotifyItem::initialized, this, &SysTray::itemInitialized);
-  }
+
+  arrangeNotifyItems();  // show/hide icons
 }
 
 //--------------------------------------------------------------------------------
@@ -259,7 +239,48 @@ void SysTray::itemUnregistered(QString item)
   //qDebug() << "itemUnregistered" << item;
 
   if ( items.contains(item) )
+  {
     delete items.take(item);
+    arrangeNotifyItems();
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void SysTray::arrangeNotifyItems()
+{
+  // cut all items from all layouts
+  foreach (QHBoxLayout *row, appsRows)
+  {
+    while ( QLayoutItem *item = row->itemAt(0) )
+    {
+      if ( item->widget() )
+        row->removeWidget(item->widget());  // take widget out but do not delete it
+      else
+        delete row->takeAt(0);  // spacer items
+    }
+  }
+
+  // rearrange visible items - "row first" layout
+  int visibleItems = 0;
+  foreach (SysTrayNotifyItem *item, items)
+    if ( item->isVisible() )
+      visibleItems++;
+
+  const int MAX_COLUMNS = static_cast<int>(std::ceil(visibleItems / float(appsRows.count())));
+  int row = 0;
+  foreach (SysTrayNotifyItem *item, items)
+  {
+    if ( item->isVisible() )
+    {
+      appsRows[row]->addWidget(item, 0, Qt::AlignLeft);
+      if ( appsRows[row]->count() == MAX_COLUMNS )
+        row++;
+    }
+  }
+
+  foreach (QHBoxLayout *row, appsRows)
+    row->addStretch();
 }
 
 //--------------------------------------------------------------------------------
