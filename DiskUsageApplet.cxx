@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -149,6 +149,36 @@ void DiskUsageApplet::configure()
   dialog->show();
 
   connect(dialog.data(), &QDialog::accepted, this, &DiskUsageApplet::saveConfig);
+}
+
+//--------------------------------------------------------------------------------
+
+void DiskUsageApplet::loadConfig()
+{
+  DesktopApplet::loadConfig();
+
+  KConfig config;
+  KConfigGroup group = config.group(id);
+
+  QColor barTextCol = group.readEntry("barTextCol", palette().color(QPalette::HighlightedText));
+  QColor barBackCol = group.readEntry("barBackCol", palette().color(QPalette::Highlight));
+
+  QPalette pal = palette();
+  pal.setColor(QPalette::HighlightedText, barTextCol);
+  pal.setColor(QPalette::Highlight, barBackCol);
+  setPalette(pal);
+}
+
+//--------------------------------------------------------------------------------
+
+void DiskUsageApplet::saveConfig()
+{
+  DesktopApplet::saveConfig();
+
+  KConfig config;
+  KConfigGroup group = config.group(id);
+  group.writeEntry("barTextCol", palette().color(QPalette::HighlightedText));
+  group.writeEntry("barBackCol", palette().color(QPalette::Highlight));
 }
 
 //--------------------------------------------------------------------------------

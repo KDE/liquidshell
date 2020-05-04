@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -36,8 +36,11 @@ class DiskUsageApplet : public DesktopApplet
   public:
     DiskUsageApplet(QWidget *parent, const QString &theId);
 
+    void loadConfig() override;
+
   public Q_SLOTS:
     void configure() override;
+    void saveConfig() override;
 
   private Q_SLOTS:
     void fill();
