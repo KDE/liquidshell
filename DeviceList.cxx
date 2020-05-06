@@ -20,6 +20,7 @@
 
 #include <DeviceList.hxx>
 #include <IconButton.hxx>
+#include <Battery.hxx>
 
 #include <Solid/DeviceNotifier>
 #include <Solid/DeviceInterface>
@@ -27,6 +28,7 @@
 #include <Solid/StorageVolume>
 #include <Solid/StorageDrive>
 #include <Solid/Block>
+#include <Solid/Battery>
 
 #include <QHBoxLayout>
 #include <QIcon>
@@ -107,15 +109,43 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
   }
 
   statusLabel = new QLabel;
-  statusLabel->setWordWrap(true);
-  statusLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
-  statusLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-  vbox->addWidget(statusLabel);
-  statusLabel->hide();
 
-  statusTimer.setSingleShot(true);
-  statusTimer.setInterval(60000);
-  connect(&statusTimer, &QTimer::timeout, statusLabel, &QLabel::hide);
+  if ( device.is<Solid::Battery>() )
+  {
+    hbox->addWidget(statusLabel, 0, Qt::AlignVCenter);
+
+    QLabel *chargeIcon = new QLabel;
+    hbox->addWidget(chargeIcon, 0, Qt::AlignVCenter);
+
+    Solid::Battery *battery = device.as<Solid::Battery>();
+
+    if ( battery->chargePercent() >= 0 )
+    {
+      statusLabel->setText(QString::number(battery->chargePercent()) + '%');
+      chargeIcon->setPixmap(Battery::getStatusIcon(battery->chargePercent(),
+                            battery->chargeState() == Solid::Battery::Charging).pixmap(22));
+    }
+
+    connect(battery, &Solid::Battery::chargePercentChanged, this,
+            [this, chargeIcon, battery]()
+            {
+              statusLabel->setText(QString::number(battery->chargePercent()) + '%');
+              chargeIcon->setPixmap(Battery::getStatusIcon(battery->chargePercent(),
+                                    battery->chargeState() == Solid::Battery::Charging).pixmap(22));
+            });
+  }
+  else
+  {
+    statusLabel->setWordWrap(true);
+    statusLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    statusLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+    vbox->addWidget(statusLabel);
+    statusLabel->hide();
+
+    statusTimer.setSingleShot(true);
+    statusTimer.setInterval(60000);
+    connect(&statusTimer, &QTimer::timeout, statusLabel, &QLabel::hide);
+  }
 
   fillData();
 
@@ -416,6 +446,7 @@ DeviceList::DeviceList(QWidget *parent)
   predicate |= Solid::Predicate(Solid::DeviceInterface::OpticalDisc);
   predicate |= Solid::Predicate(Solid::DeviceInterface::PortableMediaPlayer);
   predicate |= Solid::Predicate(Solid::DeviceInterface::Camera);
+  predicate |= Solid::Predicate(Solid::DeviceInterface::Battery);  // non-primary batteries, e.g. mouse
 
   QList<Solid::Device> devices = Solid::Device::listFromQuery(predicate);
 
@@ -487,38 +518,45 @@ DeviceItem *DeviceList::addDevice(Solid::Device device)
       deviceActions.append(action);
   }
 
-  Solid::StorageVolume *volume = device.as<Solid::StorageVolume>();
-  Solid::StorageAccess *access = device.as<Solid::StorageAccess>();
-
-  if ( !volume )  // volume can at least be mounted; others need some specific actions
+  if ( device.is<Solid::Battery>() && (device.as<Solid::Battery>()->type() != Solid::Battery::PrimaryBattery) )
   {
-    if ( deviceActions.isEmpty() )
+    // show also non-primary batteries
+  }
+  else
+  {
+    Solid::StorageVolume *volume = device.as<Solid::StorageVolume>();
+    Solid::StorageAccess *access = device.as<Solid::StorageAccess>();
+
+    if ( !volume )  // volume can at least be mounted; others need some specific actions
     {
-      //qDebug() << device.udi() << "no action found";
+      if ( deviceActions.isEmpty() )
+      {
+        //qDebug() << device.udi() << "no action found";
+        return nullptr;
+      }
+      if ( access && access->isAccessible() && !QFileInfo(access->filePath()).isReadable() )
+      {
+        //qDebug() << device.udi() << access->filePath() << "not readable";
+        return nullptr;
+      }
+    }
+    else if ( (volume->usage() != Solid::StorageVolume::FileSystem) || volume->isIgnored() )
+    {
+      //qDebug() << device.udi() << (access ? access->filePath() : QString()) << "no filesystem or ignored";
       return nullptr;
     }
-    if ( access && access->isAccessible() && !QFileInfo(access->filePath()).isReadable() )
+
+    // show only removable devices
+    bool isRemovable = (device.is<Solid::StorageDrive>() &&
+                        device.as<Solid::StorageDrive>()->isRemovable()) ||
+                       (device.parent().is<Solid::StorageDrive>() &&
+                        device.parent().as<Solid::StorageDrive>()->isRemovable());
+
+    if ( !isRemovable )
     {
-      //qDebug() << device.udi() << access->filePath() << "not readable";
+      //qDebug() << device.udi() << "not Removable";
       return nullptr;
     }
-  }
-  else if ( (volume->usage() != Solid::StorageVolume::FileSystem) || volume->isIgnored() )
-  {
-    //qDebug() << device.udi() << (access ? access->filePath() : QString()) << "no filesystem or ignored";
-    return nullptr;
-  }
-
-  // show only removable devices
-  bool isRemovable = (device.is<Solid::StorageDrive>() &&
-                      device.as<Solid::StorageDrive>()->isRemovable()) ||
-                     (device.parent().is<Solid::StorageDrive>() &&
-                      device.parent().as<Solid::StorageDrive>()->isRemovable());
-
-  if ( !isRemovable )
-  {
-    //qDebug() << device.udi() << "not Removable";
-    return nullptr;
   }
 
   DeviceItem *item = new DeviceItem(device, deviceActions);
