@@ -14,6 +14,7 @@
   <name xml:lang="et">Liquidshell</name>
   <name xml:lang="eu">liquidshell</name>
   <name xml:lang="fi">liquidshell</name>
+  <name xml:lang="fr">liquidshell</name>
   <name xml:lang="gl">liquidshell</name>
   <name xml:lang="id">liquidshell</name>
   <name xml:lang="it">liquidshell</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="et">Liquidshell on plasmashelli alternatiiv</summary>
   <summary xml:lang="eu">liquidshell plasmashell-en ordezko aukera bat da</summary>
   <summary xml:lang="fi">liquidshell on plasmashellin vaihtoehto</summary>
+  <summary xml:lang="fr">Le composant « liquidshell » est une alternative à « plasmashell »</summary>
   <summary xml:lang="gl">liquidshell é unha alternativa a plasmashell</summary>
   <summary xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</summary>
   <summary xml:lang="it">liquidshell è un'alternativa a plasmashell</summary>
@@ -64,6 +66,7 @@
     <p xml:lang="et">Liquidshell on plasmashelli alternatiiv</p>
     <p xml:lang="eu">liquidshell plasmashell-en ordezko aukera bat da</p>
     <p xml:lang="fi">liquidshell on plasmashellin vaihtoehto</p>
+    <p xml:lang="fr">Le composant « liquidshell » est une alternative à « plasmashell »</p>
     <p xml:lang="gl">liquidshell é unha alternativa a plasmashell</p>
     <p xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</p>
     <p xml:lang="it">liquidshell è un'alternativa a plasmashell</p>
@@ -88,6 +91,7 @@
     <p xml:lang="et">See ei kasuta QtQuicki, vaid põhineb QtWidgetsil, mistõttu pole ka tarvis riistvaralist graafikakiirendust.</p>
     <p xml:lang="eu">Ez du QtQuick erabiltzen horren ordez QtWidgets-en mende dago, ondorioz ez da hardware grafikoen azeleraziorik behar.</p>
     <p xml:lang="fi">Se ei käytä QtQuickiä vaan luottaa QtWidgetsiin, joten se ei vaadi laitteistokiihdytystä.</p>
+    <p xml:lang="fr">Il n'utilise par « QtQuick » mais à la place « QtWidgets ». Par conséquent, aucune accélération graphique matérielle n'est requise.</p>
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
     <p xml:lang="it">Non usa QtQuick ma fa invece affidamento su QtWidgets, quindi non necessita di accelerazione grafica hardware.</p>
@@ -111,6 +115,7 @@
     <p xml:lang="et">Põhiomadused:</p>
     <p xml:lang="eu">Ezaugarri nagusiak:</p>
     <p xml:lang="fi">Keskeiset ominaisuudet:</p>
+    <p xml:lang="fr">Fonctions principales :</p>
     <p xml:lang="gl">Funcionalidades principais:</p>
     <p xml:lang="id">Fitur Utama:</p>
     <p xml:lang="it">Funzionalità principali:</p>
@@ -137,6 +142,7 @@
       <li xml:lang="et">Taustapildid igale virtuaalsele töölauale</li>
       <li xml:lang="eu">Horma-paper bat alegiazko mahaigaineko</li>
       <li xml:lang="fi">Virtuaalityöpöydittäiset taustakuvat</li>
+      <li xml:lang="fr">Fonds d'écran pour chaque bureau virtuel</li>
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
       <li xml:lang="it">Sfondo per desktop virtuali</li>
@@ -159,6 +165,7 @@
       <li xml:lang="et">Animatsioonid puuduvad, protsessorit üle ei koormata, mälukoormus on tagasihoidlik</li>
       <li xml:lang="eu">Animaziorik ez, ez du PUZa bereganatzen, memoria-aztarna txikia</li>
       <li xml:lang="fi">Ei animointeja tai suorittimen rohmuamista; vähäinen muistinkulutus</li>
+      <li xml:lang="fr">Aucune animation. Aucune surcharge du processeur. Empreinte mémoire faible</li>
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
       <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, uso limitato della memoria</li>
@@ -183,6 +190,7 @@
       <li xml:lang="et">Viivitamatu käivitumine</li>
       <li xml:lang="eu">Bat-bateko abioa</li>
       <li xml:lang="fi">Välitön käynnistys</li>
+      <li xml:lang="fr">Démarrage rapide</li>
       <li xml:lang="gl">Inicio instantáneo.</li>
       <li xml:lang="id">Pemulaian sekejap</li>
       <li xml:lang="it">Avvio istantaneo</li>
@@ -207,6 +215,7 @@
       <li xml:lang="et">Tegevusi ei kasutata</li>
       <li xml:lang="eu">Jardueren erabilerarik ez</li>
       <li xml:lang="fi">Ei käytä aktiviteetteja</li>
+      <li xml:lang="fr">Aucune utilisation d'activités</li>
       <li xml:lang="gl">Sen actividades.</li>
       <li xml:lang="id">Tidak ada penggunaan aktivitas</li>
       <li xml:lang="it">Nessun uso delle attività</li>
@@ -230,6 +239,7 @@
       <li xml:lang="et">QtWidgetsi-põhine, mistõttu järgib Süsteemi seadistuste vidinastiili</li>
       <li xml:lang="eu">QtWidgets oinarri du, beraz sistema-ezarpenetako trepeten estiloa jarraitzen du</li>
       <li xml:lang="fi">Perustuu QtWidgetsiin, joten noudattaa järjestelmäasetusten käyttöliittymäalkiotyyliä</li>
+      <li xml:lang="fr">Utilisant « QtWidgets ». Par conséquent, il utilise les styles des composants graphiques définis dans les réglages du système.</li>
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
       <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti delle Impostazioni di sistema</li>
@@ -252,6 +262,7 @@
       <li xml:lang="et">Ikoonid võetakse Süsteemi seadistustes määratud globaalsest ikooniteemast</li>
       <li xml:lang="eu">Sistema-ezarpenetan definitu duzun ikono gai orokorreko ikonoak erabiltzen dira</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritetyn yleisen kuvaketeeman kuvakkeita</li>
+      <li xml:lang="fr">Les icônes sont utilisées à partir du thème que vous avez défini pour l'ensemble de votre bureau, à partir des réglages du système.</li>
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">Le icone usate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
@@ -274,6 +285,7 @@
       <li xml:lang="et">Värvid võetakse Süsteemi seadistustes määratud globaalsest värviteemiast</li>
       <li xml:lang="eu">Sistema-ezarpenetan definitu duzun kolore gai orokorreko koloreak erabiltzen dira</li>
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritettyjä yleisiä väriasetuksia</li>
+      <li xml:lang="fr">Les couleurs sont utilisées à partir du thème de couleurs que vous avez défini dans les réglages du système.</li>
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">I colori usati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
@@ -295,6 +307,7 @@
       <li xml:lang="et">Stiili saab lisaks mõjutada CSS-iga, andes käsureal võtme -stylesheet failinimi.css (vt kaasa pandud näidist stylesheet.css)</li>
       <li xml:lang="eu">Gainera css-ak erabiliz apaindu daiteke komando-lerroko  «-stylesheet fitxategia.css»  aukera pasatuz (ikusi  stylesheet.css  adibidea)</li>
       <li xml:lang="fi">Tyyliä voi vielä CSS:llä muokata komentorivivalitsinta ”-stylesheet tiedosto.css” käyttäen (ks. esimerkkitiedostoa stylesheet.css)</li>
+      <li xml:lang="fr">Peut être optionnellement décoré avec les styles « css » avec l'option de ligne de commandes « -stylesheet nom_de_fichier.css » (Veuillez consulter les exemples fournis avec « stylesheet.css »)</li>
       <li xml:lang="gl">Ademais pode aplicárselle un estilo con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
       <li xml:lang="id">Bisa ditambah-tambah gaya dengan css lewat commandline opsi -stylesheet filename.css (lihatlah contoh yang disertakan stylesheet.css)</li>
       <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
@@ -317,6 +330,7 @@
       <li xml:lang="et">Enamiku asjade puhul olemasolevate KDE dialoogide kasutamine (nt käivitusmenüü, virtuaalsed töölauad, Bluetooth, võrk)</li>
       <li xml:lang="eu">Konfigurazio gehienetarako existitzen diren KDE elkarrizketa-koadroak erabiltzen ditu, adib. hasiera-menua, alegiazko mahaigainak, Bluetooth, sarea</li>
       <li xml:lang="fi">Käyttää useimmiten olemassa olevia KDE-valintaikkunoita, esim. käynnistysvalikko, virtuaalityöpöydät, Bluetooth, verkko</li>
+      <li xml:lang="fr">utilise les boîtes de dialogue existantes de KDE pour la plupart des configurations comme le menu de démarrage, les bureaux virtuels, le bluetooth, le réseau</li>
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="it">usa per la maggior parte delle configurazioni le finestre esistenti di KDE, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth, la rete</li>
@@ -339,6 +353,7 @@
       <li xml:lang="et">Üks alumine töölauapaneel</li>
       <li xml:lang="eu">Mahaigaineko panel bat behean</li>
       <li xml:lang="fi">Yksi alhaalla oleva työpöytäpaneeli</li>
+      <li xml:lang="fr">Un panneau de bureau en bas</li>
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
       <li xml:lang="it">Un pannello desktop in basso</li>
@@ -361,6 +376,7 @@
       <li xml:lang="et">Töölauaapletid</li>
       <li xml:lang="eu">Mahaigaineko aplikaziotxoak</li>
       <li xml:lang="fi">Työpöytäsovelmat</li>
+      <li xml:lang="fr">Applets de bureau</li>
       <li xml:lang="gl">Trebellos de escritorio.</li>
       <li xml:lang="id">Applet Desktop</li>
       <li xml:lang="it">Applet desktop</li>
