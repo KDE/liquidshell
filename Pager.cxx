@@ -27,6 +27,7 @@
 #include <QPushButton>
 #include <QX11Info>
 #include <QAction>
+#include <QWheelEvent>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -137,6 +138,20 @@ void Pager::changeDesktop(bool checked)
     KWindowSystem::setShowingDesktop(!KWindowSystem::showingDesktop());
   else
     KWindowSystem::setCurrentDesktop(desktopNum);
+}
+
+//--------------------------------------------------------------------------------
+
+void Pager::wheelEvent(QWheelEvent *event)
+{
+  int desktopNum = KWindowSystem::currentDesktop() - 1 + KWindowSystem::numberOfDesktops();
+
+  if ( event->angleDelta().y() > 0 )
+    desktopNum++;
+  else
+    desktopNum--;
+
+  KWindowSystem::setCurrentDesktop((desktopNum % KWindowSystem::numberOfDesktops()) + 1);
 }
 
 //--------------------------------------------------------------------------------

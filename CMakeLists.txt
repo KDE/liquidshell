@@ -28,6 +28,7 @@ set(SOURCES
     DesktopWidget.cxx
     DesktopPanel.cxx
     OnScreenVolume.cxx
+    OnScreenBrightness.cxx
     ConfigureDesktopDialog.cxx
     StartMenu.cxx
     Launcher.cxx

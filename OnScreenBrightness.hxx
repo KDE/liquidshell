@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2018 Martin Koller, kollix@aon.at
+  Copyright 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -18,32 +18,27 @@
   along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef _Pager_H_
-#define _Pager_H_
+#ifndef _OnScreenBrightness_H_
+#define _OnScreenBrightness_H_
 
-#include <QWidget>
-class QButtonGroup;
-class PagerButton;
-class DesktopPanel;
+#include <QProgressBar>
+#include <QTimer>
+class QDBusMessage;
+class QDBusError;
 
-class Pager : public QWidget
+class OnScreenBrightness : public QProgressBar
 {
   Q_OBJECT
 
   public:
-    Pager(DesktopPanel *parent);
-
-  protected:
-    void wheelEvent(QWheelEvent *event) override;
+    OnScreenBrightness(QWidget *parent);
 
   private Q_SLOTS:
-    void fill();
-    void changeDesktop(bool checked);
+    void gotBrightnessMax(QDBusMessage msg);
+    void brightnessChanged(int value);
 
   private:
-    QButtonGroup *group;
-    QVector<PagerButton *> buttons;
-    bool showIcons = true;
+    QTimer hideTimer;
 };
 
 #endif

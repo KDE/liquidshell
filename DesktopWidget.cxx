@@ -25,6 +25,7 @@
 #include <PictureFrameApplet.hxx>
 #include <ConfigureDesktopDialog.hxx>
 #include <OnScreenVolume.hxx>
+#include <OnScreenBrightness.hxx>
 
 #include <QApplication>
 #include <QScreen>
@@ -150,6 +151,7 @@ DesktopWidget::DesktopWidget()
           [this]() { setFixedSize(QApplication::primaryScreen()->virtualSize()); placePanel(); desktopChanged(); });
 
   new OnScreenVolume(this);
+  new OnScreenBrightness(this);
 }
 
 //--------------------------------------------------------------------------------
