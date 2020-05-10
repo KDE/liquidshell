@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -22,6 +22,9 @@
 #include <PopupMenu.hxx>
 
 #include <QIcon>
+#include <QStyle>
+#include <QStyleOptionButton>
+#include <QPainter>
 
 #include <KWindowSystem>
 
@@ -67,6 +70,21 @@ void WindowList::fillMenu()
       }
     }
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void WindowList::paintEvent(QPaintEvent *event)
+{
+  Q_UNUSED(event);
+
+  QPainter painter(this);
+
+  QStyleOptionButton option;
+  initStyleOption(&option);
+  option.features = QStyleOptionButton::None;  // avoid menu arrow
+
+  style()->drawControl(QStyle::CE_PushButton, &option, &painter, this);
 }
 
 //--------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -29,6 +29,9 @@ class WindowList : public QPushButton
 
   public:
     WindowList(QWidget *parent);
+
+  protected:
+    void paintEvent(QPaintEvent *event) override;
 
   private Q_SLOTS:
     void fillMenu();
