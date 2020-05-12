@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -54,6 +54,7 @@ class PagerButton : public QPushButton
     bool showIcon;
     QPixmap firstPixmap;
     QTimer dragDropTimer;
+    QTimer pixmapTimer;
 };
 
 #endif

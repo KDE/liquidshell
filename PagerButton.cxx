@@ -65,6 +65,13 @@ PagerButton::PagerButton(int num, DesktopPanel *p, bool doShowIcon)
     connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
             this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
 
+    // when an application changes its icon very often very fast (windowChanged called)
+    // (e.g. davmail when no network connection available)
+    // let's avoid that liquidshell uses 100% CPU
+    pixmapTimer.setSingleShot(true);
+    pixmapTimer.setInterval(300);
+    connect(&pixmapTimer, &QTimer::timeout, this, &PagerButton::createPixmap);
+
     connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { updateGeometry(); });
   }
 
@@ -147,7 +154,7 @@ void PagerButton::windowChanged(WId id, NET::Properties props, NET::Properties2 
   Q_UNUSED(props2)
 
   if ( props & (NET::WMIcon | NET::WMDesktop) )
-    createPixmap();
+    pixmapTimer.start();
 }
 
 //--------------------------------------------------------------------------------
