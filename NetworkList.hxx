@@ -66,6 +66,8 @@ class NetworkButton : public IconButton
                   NetworkManager::Device::Ptr dev = NetworkManager::Device::Ptr(),
                   NetworkManager::AccessPoint::Ptr accessPoint = NetworkManager::AccessPoint::Ptr());
 
+    static bool compare(const NetworkButton *left, const NetworkButton *right);
+
   private Q_SLOTS:
     void toggleNetworkStatus(bool on);
 

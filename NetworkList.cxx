@@ -39,6 +39,7 @@
 
 #include <sys/types.h>
 #include <pwd.h>
+#include <algorithm>
 
 //--------------------------------------------------------------------------------
 
@@ -59,14 +60,25 @@ NetworkButton::NetworkButton(NetworkManager::Connection::Ptr c, NetworkManager::
       }
     }
   }
-  else if ( accessPoint )
+
+  if ( accessPoint )
   {
     ssid = accessPoint->ssid();
     rawSsid = accessPoint->rawSsid();
-    wpaFlags = accessPoint->wpaFlags();
+    wpaFlags = accessPoint->rsnFlags() ? accessPoint->rsnFlags() : accessPoint->wpaFlags();
   }
 
   connect(this, &NetworkButton::toggled, this, &NetworkButton::toggleNetworkStatus);
+}
+
+//--------------------------------------------------------------------------------
+
+bool NetworkButton::compare(const NetworkButton *left, const NetworkButton *right)
+{
+  if ( left->wpaFlags && !right->wpaFlags )
+    return true;
+
+  return left->ssid.localeAwareCompare(right->ssid) < 0;
 }
 
 //--------------------------------------------------------------------------------
@@ -312,6 +324,8 @@ void NetworkList::fillConnections()
   // show available wifi networks
   if ( NetworkManager::isWirelessEnabled() )
   {
+    QVector<NetworkButton *> entries;
+
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces())
     {
       if ( device->type() != NetworkManager::Device::Wifi )
@@ -343,29 +357,35 @@ void NetworkList::fillConnections()
           }
         }
 
-        NetworkButton *net;
+        NetworkButton *net = new NetworkButton(conn, device, accessPoint);
 
         if ( conn )
-        {
-          net = new NetworkButton(conn, device);
           net->setText(QString("%1 (%2%)").arg(conn->name()).arg(network->signalStrength()));
-        }
         else
-        {
-          net = new NetworkButton(conn, device, accessPoint);
           net->setText(QString("%1 (%2%)").arg(network->ssid()).arg(network->signalStrength()));
-        }
 
         net->setIcon(QIcon::fromTheme("network-wireless"));
 
-        if ( accessPoint->wpaFlags() )
+        if ( accessPoint->wpaFlags() || accessPoint->rsnFlags() )
           net->setIcon2(QIcon::fromTheme("object-locked"));
         else
-          net->setIcon2(QIcon::fromTheme("object-unlocked"));
+        {
+          // make it more obvious when an access point is not secured
+          // by not showing any "lock" icon (also the unlocked icon is hardly different than the locked one,
+          // so the user might easily miss the "insecure" icon)
+          //net->setIcon2(QIcon::fromTheme("object-unlocked"));
+        }
 
-        connectionsVbox->addWidget(net);
-        net->show();
+        entries.append(net);
       }
+    }
+
+    // sort entries: secure before insecure APs
+    std::stable_sort(entries.begin(), entries.end(), &NetworkButton::compare);
+    foreach (NetworkButton *entry, entries)
+    {
+      connectionsVbox->addWidget(entry);
+      entry->show();
     }
   }
 
