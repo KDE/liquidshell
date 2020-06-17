@@ -28,7 +28,6 @@
   <name xml:lang="sk">liquidshell</name>
   <name xml:lang="sv">Liquid-skal</name>
   <name xml:lang="uk">liquidshell</name>
-  <name xml:lang="x-test">xxliquidshellxx</name>
   <name xml:lang="zh-TW">liquidshell</name>
   <summary> liquidshell is an alternative to plasmashell </summary>
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
@@ -53,7 +52,6 @@
   <summary xml:lang="sk">liquidshell je alternatíva pre plasmashell</summary>
   <summary xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</summary>
   <summary xml:lang="uk">liquidshell є альтернативою оболонки Плазми</summary>
-  <summary xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</summary>
   <summary xml:lang="zh-TW">liquidshell 是 plasmashell 的替代品</summary>
   <description>
     <p>liquidshell is an alternative to plasmashell</p>
@@ -79,7 +77,6 @@
     <p xml:lang="sk">liquidshell je alternatíva pre plasmashell</p>
     <p xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</p>
     <p xml:lang="uk">liquidshell є альтернативою оболонки Плазми</p>
-    <p xml:lang="x-test">xxliquidshell is an alternative to plasmashellxx</p>
     <p xml:lang="zh-TW">liquidshell 是 plasmashell 的替代品</p>
     <p>It does not use QtQuick but instead relies on QtWidgets,
        therefore no hardware graphics acceleration is needed.</p>
@@ -103,7 +100,6 @@
     <p xml:lang="pt-BR">Ele não usa o QtQuick ao invés usa o QtWidgets, portando nenhuma aceleração gráfica por hardware é necessária.</p>
     <p xml:lang="sv">Det använder inte QtQuick, utan förlitar sig istället på QtWidgets. Därför behövs ingen grafikacceleration i hårdvara.</p>
     <p xml:lang="uk">Не використовує QtQuick, а лише QtWidgets, тому не потрібне апаратне прискорення виведення графіки</p>
-    <p xml:lang="x-test">xxIt does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.xx</p>
     <p>Main Features:</p>
     <p xml:lang="ca">Característiques principals:</p>
     <p xml:lang="ca-valencia">Característiques principals:</p>
@@ -129,7 +125,6 @@
     <p xml:lang="sk">Hlavné funkcie:</p>
     <p xml:lang="sv">Huvudfunktionalitet:</p>
     <p xml:lang="uk">Основні можливості:</p>
-    <p xml:lang="x-test">xxMain Features:xx</p>
     <p xml:lang="zh-TW">主要功能：</p>
     <ul>
       <li>Wallpaper per virtual desktop</li>
@@ -154,7 +149,6 @@
       <li xml:lang="pt-BR">Papel de parede por área de trabalho virtual</li>
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
       <li xml:lang="uk">Різні зображення тла для різних віртуальних стільниць</li>
-      <li xml:lang="x-test">xxWallpaper per virtual desktopxx</li>
       <li xml:lang="zh-TW">每個虛擬桌面都能選擇桌布</li>
       <li>No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
@@ -177,7 +171,6 @@
       <li xml:lang="pt-BR">Sem animações, sem sobrecarga na CPU, baixo consumo de memória</li>
       <li xml:lang="sv">Inga animeringar, ingen beslagtagning av processorn, liten minnesanvändning</li>
       <li xml:lang="uk">Немає анімацій, зайвого споживання часу процесора, менше споживання пам'яті</li>
-      <li xml:lang="x-test">xxNo animations, no CPU hogging, low Memory footprintxx</li>
       <li xml:lang="zh-TW">沒有動畫、不會佔用 CPU 資源、更減少記憶體的使用量</li>
       <li>Instant startup</li>
       <li xml:lang="ca">Inici instantani</li>
@@ -203,7 +196,6 @@
       <li xml:lang="sk">Rýchle spustenie</li>
       <li xml:lang="sv">Omedelbar start</li>
       <li xml:lang="uk">Миттєвий запуск</li>
-      <li xml:lang="x-test">xxInstant startupxx</li>
       <li xml:lang="zh-TW">即時啟動</li>
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
@@ -228,7 +220,6 @@
       <li xml:lang="sk">Žiadne použitie aktívít</li>
       <li xml:lang="sv">Ingen användning av aktiviteter</li>
       <li xml:lang="uk">Не використовуються простори дій</li>
-      <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
@@ -251,7 +242,6 @@
       <li xml:lang="pt-BR">Baseado no QtWidgets, portanto segue o estilo dos widgets das configurações do sistema</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
       <li xml:lang="uk">Засновано на QtWidgets, тому стиль віджетів повністю визначається «Системними параметрами»</li>
-      <li xml:lang="x-test">xxQtWidgets based, therefore follows widget style from systemsettingsxx</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
@@ -274,7 +264,6 @@
       <li xml:lang="pt-BR">Os ícones são usados a partir de um tema de ícones definido globalmente nas configurações do sistema</li>
       <li xml:lang="sv">Ikoner kommer från det globalt definierade ikontemat i systeminställningarna</li>
       <li xml:lang="uk">Використання піктограм із загальної визначеної теми із «Системних параметрів»</li>
-      <li xml:lang="x-test">xxIcons are used from your globally defined icon theme from systemsettingsxx</li>
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
@@ -297,7 +286,6 @@
       <li xml:lang="pt-BR">As cores são usadas a partir de um tema de cores definido globalmente nas configurações do sistema</li>
       <li xml:lang="sv">Färger kommer från det globalt definierade färgtemat i systeminställningarna</li>
       <li xml:lang="uk">Використання заданих на загальному рівні кольорів із «Системних параметрів»</li>
-      <li xml:lang="x-test">xxColors are used from your globally defined color theme from systemsettingsxx</li>
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
@@ -319,7 +307,6 @@
       <li xml:lang="pt-BR">Pode ser estilizado adicionalmente com CSS usando a opção da linha de comando -stylesheet arquivo.css (veja o exemplo incluído stylesheet.css)</li>
       <li xml:lang="sv">Kan dessutom formateras med CSS genom att ange kommandoradsväljaren -stylesheet filnamn.css (se det inkluderade exemplet stylesheet.css)</li>
       <li xml:lang="uk">Додаткова зміна стилю за допомогою css, достатньо лише передати параметр командного рядка -stylesheet назва_файла.css (див. включений приклад stylesheet.css)</li>
-      <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
@@ -342,7 +329,6 @@
       <li xml:lang="pt-BR">usa as janelas existentes do KDE para a maioria das configurações, ex.: menu iniciar, áreas de trabalho virtuais, Bluetooth, rede</li>
       <li xml:lang="sv">Använder befintliga dialogrutor i KDE för de flesta inställningar, t.ex. startmeny, virtuella skrivbord, Blåtand, nätverk</li>
       <li xml:lang="uk">Використання наявних вікон KDE для більшості налаштувань, зокрема меню запуску, віртуальних стільниць, Bluetooth, мережі</li>
-      <li xml:lang="x-test">xxuses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Networkxx</li>
       <li>One bottom DesktopPanel</li>
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
@@ -365,7 +351,6 @@
       <li xml:lang="pt-BR">Um painel da área de trabalho abaixo</li>
       <li xml:lang="sv">En skrivbordspanel längst ner</li>
       <li xml:lang="uk">Одна панель у нижній частині екрана</li>
-      <li xml:lang="x-test">xxOne bottom DesktopPanelxx</li>
       <li>Desktop Applets</li>
       <li xml:lang="ca">Miniaplicacions de l'escriptori</li>
       <li xml:lang="ca-valencia">Miniaplicacions de l'escriptori</li>
@@ -389,7 +374,6 @@
       <li xml:lang="sk">Applety plochy</li>
       <li xml:lang="sv">Skrivbordsminiprogram</li>
       <li xml:lang="uk">Аплети на стільниці</li>
-      <li xml:lang="x-test">xxDesktop Appletsxx</li>
     </ul>
   </description>
   <url type="homepage">https://www.kde.org</url>
