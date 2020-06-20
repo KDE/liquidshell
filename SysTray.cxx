@@ -205,6 +205,9 @@ void SysTray::itemRegistered(QString item)
 {
   //qDebug() << "itemRegistered" << item;
 
+  if ( items.contains(item) )  // we have this already (e.g. try kded5 --replace)
+    return;
+
   int slash = item.indexOf('/');
   if ( slash < 1 )
     return;
