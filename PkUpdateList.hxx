@@ -43,6 +43,8 @@ class PkUpdateList : public QWidget
     void setPackages(const PkUpdates::PackageList &packages);
     void setRefreshProgress(int progress);
 
+    bool isInstallInProgress() const { return !installQ.isEmpty(); }
+
     QSize sizeHint() const override;
 
   Q_SIGNALS:

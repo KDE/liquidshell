@@ -68,6 +68,9 @@ PkUpdates::PkUpdates(QWidget *parent)
 
 void PkUpdates::checkForUpdatesReached()
 {
+  if ( updateList && updateList->isInstallInProgress() )
+    return;
+
   QDateTime current = QDateTime::currentDateTime();
 
   if ( !nextCheck.isValid() || (current >= nextCheck) )
