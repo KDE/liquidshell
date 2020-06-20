@@ -130,7 +130,16 @@ void Network::checkState()
   bool vpnActive = false;
   for (const NetworkManager::ActiveConnection::Ptr &ac : NetworkManager::activeConnections())
   {
+    //qDebug() << ac << ac->id() << ac->type();
+
     if ( ac->vpn() )
+    {
+      vpnActive = true;
+      break;
+    }
+
+    // search for tunnel device
+    if ( ac->type() == NetworkManager::ConnectionSettings::Tun )
     {
       vpnActive = true;
       break;
