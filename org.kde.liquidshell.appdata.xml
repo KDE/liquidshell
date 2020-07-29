@@ -86,8 +86,8 @@
     <p xml:lang="zh-TW">liquidshell 是 plasmashell 的替代品</p>
     <p>It does not use QtQuick but instead relies on QtWidgets,
        therefore no hardware graphics acceleration is needed.</p>
-    <p xml:lang="ca">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
-    <p xml:lang="ca-valencia">No usa el QtQuick, sinó que es basa en els QtWidgets, per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="ca">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="ca-valencia">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="el">Δεν χρησιμοποιεί το QtQuick αλλά βασίζεται στο QtWidgets, συνεπώς δεν απαιτείται επιτάχυνση γραφικών από το υλικό.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="es">No usa QtQuick, sino que se basa en QtWidgets, por lo que no se necesita aceleración de gráficos por hardware.</p>
@@ -239,8 +239,8 @@
       <li xml:lang="uk">Не використовуються простори дій</li>
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
-      <li xml:lang="ca">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Està basat en els QtWidgets, per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
       <li xml:lang="de">Basiert auf QtWidgets, daher wird der Stil der Bedienelemente aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
@@ -311,8 +311,8 @@
       <li xml:lang="uk">Використання заданих на загальному рівні кольорів із «Системних параметрів»</li>
       <li xml:lang="x-test">xxColors are used from your globally defined color theme from systemsettingsxx</li>
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
-      <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
-      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet filename.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="el">Μπορεί επιπλέον να αποκτήσει στιλ με css με χρήση της επιλογής γραμμής εντολών -stylesheet filename.css (δείτε το παράδειγμα stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="es">Puede usar estilos adicionales con CSS mediante la opción de la línea de órdenes «-stylesheet archivo.css» (consulte el ejemplo incluido stylesheet.css)</li>
@@ -334,8 +334,8 @@
       <li xml:lang="uk">Додаткова зміна стилю за допомогою css, достатньо лише передати параметр командного рядка -stylesheet назва_файла.css (див. включений приклад stylesheet.css)</li>
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
-      <li xml:lang="ca">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
-      <li xml:lang="ca-valencia">Usa els diàlegs del KDE existents per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="ca-valencia">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
