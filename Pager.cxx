@@ -100,7 +100,11 @@ void Pager::fill()
   qDeleteAll(buttons);
   buttons.clear();
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+  NETRootInfo ri(QX11Info::connection(), NET::Property(), NET::WM2DesktopLayout);
+#else
   NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
+#endif
 
   int row = 0, col = 0;
   const int MAX_COLUMNS = std::max(1, ri.desktopLayoutColumnsRows().width());

@@ -190,7 +190,11 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
 
   placeItems();
 
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+  int wordCount = body.splitRef(' ', Qt::SkipEmptyParts).count();
+#else
   int wordCount = body.splitRef(' ', QString::SkipEmptyParts).count();
+#endif
 
   bool neverExpires = timeout == 0;  // according to spec
 

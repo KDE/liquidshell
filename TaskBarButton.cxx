@@ -154,7 +154,11 @@ void TaskBarButton::mouseMoveEvent(QMouseEvent *event)
     QMimeData *mimeData = new QMimeData;
     mimeData->setData("application/x-winId", QByteArray::number(static_cast<int>(wid)));
     drag->setMimeData(mimeData);
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+    drag->setPixmap(iconLabel->pixmap(Qt::ReturnByValue));
+#else
     drag->setPixmap(*(iconLabel->pixmap()));
+#endif
     drag->exec();
   }
 }
@@ -248,7 +252,12 @@ void TaskBarButton::dropEvent(QDropEvent *event)
 
 void TaskBarButton::updateWMGeometry()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+  NETWinInfo info(QX11Info::connection(), wid, QX11Info::appRootWindow(), NET::Properties(), NET::Properties2());
+#else
   NETWinInfo info(QX11Info::connection(), wid, QX11Info::appRootWindow(), 0, 0);
+#endif
+
   NETRect rect;
   QPoint globalPos = mapToGlobal(QPoint(0, 0));
   rect.pos.x = globalPos.x();

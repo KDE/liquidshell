@@ -489,7 +489,8 @@ void PkUpdateList::installOne()
       if ( (restart == PackageKit::Transaction::RestartSystem) ||
            (restart == PackageKit::Transaction::RestartSecuritySystem) )
       {
-        KNotification *notif = new KNotification("restart needed", parentWidget(), KNotification::Persistent);
+        KNotification *notif = new KNotification("restart needed", KNotification::Persistent);
+        notif->setWidget(parentWidget());
 
         notif->setTitle(i18n("System Reboot Required"));
         notif->setText(i18n("One of the installed packages requires a system reboot"));
@@ -510,7 +511,8 @@ void PkUpdateList::installOne()
       else if ( (restart == PackageKit::Transaction::RestartSession) ||
                 (restart == PackageKit::Transaction::RestartSecuritySession) )
       {
-        KNotification *notif = new KNotification("restart needed", parentWidget(), KNotification::Persistent);
+        KNotification *notif = new KNotification("restart needed", KNotification::Persistent);
+        notif->setWidget(parentWidget());
 
         notif->setTitle(i18n("Session Restart Required"));
         notif->setText(i18n("One of the installed packages requires you to logout"));

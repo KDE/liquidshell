@@ -80,7 +80,11 @@ DesktopPanel::DesktopPanel(QWidget *parent)
 
 void DesktopPanel::updateRowCount()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+  NETRootInfo ri(QX11Info::connection(), NET::Property(), NET::WM2DesktopLayout);
+#else
   NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
+#endif
 
   int newRows = std::max(1, ri.desktopLayoutColumnsRows().height());
 
