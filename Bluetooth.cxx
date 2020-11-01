@@ -89,9 +89,17 @@ QWidget *Bluetooth::getDetailsList()
   {
     dialog = new KCMultiDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->addModule("bluedevilglobal");
-    dialog->addModule("bluedeviladapters");
-    dialog->addModule("bluedevildevices");
+
+    KCModuleInfo module("bluetooth");
+    if ( module.service() )
+      dialog->addModule("bluetooth");
+    else  // older KDE versions
+    {
+      dialog->addModule("bluedevilglobal");
+      dialog->addModule("bluedeviladapters");
+      dialog->addModule("bluedevildevices");
+    }
+
     dialog->adjustSize();
     dialog->setWindowTitle(i18n("Bluetooth"));
   }
