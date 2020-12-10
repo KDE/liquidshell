@@ -239,8 +239,8 @@
       <li xml:lang="uk">Не використовуються простори дій</li>
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
-      <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels estris indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
       <li xml:lang="de">Basiert auf QtWidgets, daher wird der Stil der Bedienelemente aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
