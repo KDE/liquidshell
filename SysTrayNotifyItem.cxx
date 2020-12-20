@@ -33,6 +33,7 @@
 #include <KWindowSystem>
 
 //--------------------------------------------------------------------------------
+// See https://www.freedesktop.org/wiki/Specifications/StatusNotifierItem/StatusNotifierItem
 
 SysTrayNotifyItem::SysTrayNotifyItem(QWidget *parent, const QString &service, const QString &path)
   : QLabel("?", parent)
@@ -65,7 +66,7 @@ void SysTrayNotifyItem::startTimer()
 
 void SysTrayNotifyItem::fetchData()
 {
-  QDBusMessage msg = 
+  QDBusMessage msg =
       QDBusMessage::createMethodCall(dbus->service(), dbus->path(),
                                      "org.freedesktop.DBus.Properties",
                                      "GetAll");
@@ -92,11 +93,26 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   }
 
   /*
-  qDebug() << dbus->service();
+  qDebug() << dbus->title() << dbus->service() << dbus->path() << dbus->interface();
   qDebug() << "att pixmap file:" << dbus->attentionIconName();
   qDebug() << "pixmap file:" << dbus->iconName();
   qDebug() << "overlay pixmap file:" << dbus->overlayIconName();
+  qDebug() << "IconThemePath" << dbus->iconThemePath();
+  qDebug() << "ItemIsMenu" << dbus->itemIsMenu();
+  qDebug() << "Menu" << dbus->menu().path();
   */
+
+  menuPath = dbus->menu().path();
+
+  QStringList origThemePaths = QIcon::themeSearchPaths();
+
+  QString path = dbus->iconThemePath();
+  if ( !path.isEmpty() )
+  {
+    QStringList paths = origThemePaths;
+    paths.prepend(path);
+    QIcon::setThemeSearchPaths(paths);
+  }
 
   QPixmap attentionPixmap = dbus->attentionIconPixmap().pixmap(size());
   if ( attentionPixmap.isNull() )
@@ -105,11 +121,22 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   QPixmap pixmap = dbus->iconPixmap().pixmap(size());
 
   if ( pixmap.isNull() )
+  {
     pixmap = QIcon::fromTheme(dbus->iconName(), QIcon()).pixmap(size());
+
+    if ( pixmap.isNull() && !dbus->iconName().isEmpty() && !dbus->iconThemePath().isEmpty() )
+    {
+      // the file should be findable, but probably the iconThemePath does not contain the index.theme file
+      pixmap = findPixmap(dbus->iconName(), dbus->iconThemePath());
+    }
+  }
 
   QPixmap overlay = dbus->overlayIconPixmap().pixmap(size());
   if ( overlay.isNull() )
     overlay = QIcon::fromTheme(dbus->overlayIconName(), QIcon()).pixmap(size());
+
+  // reset to orig since this setting is application wide
+  QIcon::setThemeSearchPaths(origThemePaths);
 
   QPixmap finalPixmap;
 
@@ -162,6 +189,25 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 
 //--------------------------------------------------------------------------------
 
+QPixmap SysTrayNotifyItem::findPixmap(const QString &name, const QString &path)
+{
+  QDir dir(path);
+  QFileInfoList infoList = dir.entryInfoList(QDir::NoDotAndDotDot | QDir::Dirs | QDir::Files);
+
+  for (const QFileInfo &info : infoList)
+  {
+    if ( info.fileName().startsWith(name) )    // maybe check for xxx and xxx. to match xxx.png etc when only xxx given
+      return QPixmap(info.absoluteFilePath());
+
+    if ( info.isDir() )
+      return findPixmap(name, info.absoluteFilePath());
+  }
+
+  return QPixmap();
+}
+
+//--------------------------------------------------------------------------------
+
 QPixmap SysTrayNotifyItem::applyOverlay(const QPixmap &pixmap, const QPixmap &overlay)
 {
   QPixmap result(pixmap);
@@ -208,14 +254,168 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
 
   if ( event->button() == Qt::LeftButton )
   {
-    dbus->Activate(event->globalPos().x(), event->globalPos().y());
-    WId wid = dbus->windowId();
-    KWindowSystem::raiseWindow(wid);
-    KWindowSystem::forceActiveWindow(wid);
+    QDBusPendingReply<> reply = dbus->Activate(event->globalPos().x(), event->globalPos().y());
+    reply.waitForFinished();
+
+    if ( !reply.isError() && dbus->windowId() )
+    {
+      WId wid = dbus->windowId();
+      KWindowSystem::raiseWindow(wid);
+      KWindowSystem::forceActiveWindow(wid);
+    }
   }
   else if ( event->button() == Qt::RightButton )
   {
-    dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
+    QDBusPendingReply<> reply = dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
+    reply.waitForFinished();
+
+    if ( reply.isError() && (reply.error().type() == QDBusError::UnknownMethod) &&
+         !menuPath.isEmpty() )
+    {
+      QDBusMessage msg =
+          QDBusMessage::createMethodCall(dbus->service(), menuPath,
+                                         "com.canonical.dbusmenu",
+                                         "GetLayout");
+
+      msg << 0;  // root node id
+      msg << -1; // all items below root
+      msg << QStringList(); // all properties
+
+      QDBusPendingCall call = QDBusConnection::sessionBus().asyncCall(msg);
+      QDBusPendingCallWatcher *pendingCallWatcher = new QDBusPendingCallWatcher(call, this);
+      connect(pendingCallWatcher, &QDBusPendingCallWatcher::finished, this, &SysTrayNotifyItem::menuLayoutReply);
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------
+
+void SysTrayNotifyItem::menuLayoutReply(QDBusPendingCallWatcher *w)
+{
+  w->deleteLater();
+
+  QDBusMenuItem::registerDBusTypes();
+  QDBusPendingReply<unsigned int, QDBusMenuLayoutItem> reply = *w;
+
+  if ( reply.isError() )
+  {
+    //qDebug() << dbus->service() << reply.error();
+    return;
+  }
+
+  QDBusMenuLayoutItem item = reply.argumentAt<1>();
+
+  QMenu menu;
+  fillMenu(menu, item);
+
+  QAction *action = menu.exec(QCursor::pos());
+
+  if ( !action )
+    return;
+
+  QDBusMessage msg =
+      QDBusMessage::createMethodCall(dbus->service(), menuPath,
+                                     "com.canonical.dbusmenu",
+                                     "Event");
+
+  msg << action->data().toInt();
+  msg << "clicked";
+  msg << QVariant::fromValue(QDBusVariant(0));
+  msg << (unsigned)QDateTime::currentDateTime().toSecsSinceEpoch();
+
+  QDBusConnection::sessionBus().asyncCall(msg);
+}
+
+//--------------------------------------------------------------------------------
+// https://github.com/gnustep/libs-dbuskit/blob/master/Bundles/DBusMenu/com.canonical.dbusmenu.xml
+
+void SysTrayNotifyItem::fillMenu(QMenu &menu, const QDBusMenuLayoutItem &item)
+{
+  QString type = item.m_properties.value("type", "standard").toString();
+
+  if ( type == "separator" )
+    menu.addSeparator();
+  else if ( type == "standard" )
+  {
+    if ( item.m_properties.value("visible", true).toBool() )
+    {
+      QIcon icon;
+
+      QString iconName = item.m_properties.value("icon-name").toString();
+      if ( !iconName.isEmpty() )
+      {
+        QStringList origThemePaths = QIcon::themeSearchPaths();
+
+        QString path = dbus->iconThemePath();
+        if ( !path.isEmpty() )
+        {
+          QStringList paths = origThemePaths;
+          paths.append(path);
+          QIcon::setThemeSearchPaths(paths);
+        }
+
+        icon = QIcon::fromTheme(iconName);
+
+        // reset to orig since this setting is application wide
+        QIcon::setThemeSearchPaths(origThemePaths);
+      }
+      else
+      {
+        QByteArray pixmapData = item.m_properties.value("icon-data").toByteArray();
+        if ( !pixmapData.isEmpty() )
+        {
+          QPixmap pixmap;
+          pixmap.loadFromData(pixmapData, "PNG");
+          icon = QIcon(pixmap);
+        }
+      }
+
+      QString title, label = item.m_properties.value("label").toString();
+      bool foundAccessKey = false;
+      for (int i = 0; i < label.length(); i++)
+      {
+        if ( label[i] != '_' )
+          title += label[i];
+        else if ( (i < (label.length() - 1)) && (label[i + 1] == '_') )
+        {
+          title += '_';  // two consecutive underscore characters "__" are displayed as a single underscore
+          i++;
+        }
+        else if ( i != (label.length() - 1) && !foundAccessKey )
+        {
+          foundAccessKey = true;
+          title += QString('&') + label[i];
+        }
+      }
+
+      if ( item.m_properties.value("children-display").toString() == "submenu" )
+      {
+        QMenu *submenu = title.isEmpty() ? &menu : menu.addMenu(icon, title);
+
+        for (const QDBusMenuLayoutItem &subItem : item.m_children)
+        {
+          fillMenu(*submenu, subItem);
+
+          if ( submenu != &menu )
+            menu.addMenu(submenu);
+        }
+      }
+      else
+      {
+        QAction *action = menu.addAction(icon, title);
+        action->setEnabled(item.m_properties.value("enabled", true).toBool());
+
+        if ( item.m_properties.value("toggle-type").toString() == "checkmark" )
+        {
+          action->setCheckable(true);
+          int state = item.m_properties.value("toggle-state").toInt();
+          if ( state == 1 )
+            action->setChecked(true);
+        }
+
+        action->setData(item.m_id);
+      }
+    }
   }
 }
 

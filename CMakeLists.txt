@@ -15,6 +15,7 @@ find_package(Qt5 5.6 CONFIG REQUIRED COMPONENTS
     Widgets
     DBus
     X11Extras
+    ThemeSupport
 )
 
 find_package(KF5 REQUIRED COMPONENTS
@@ -111,6 +112,7 @@ target_link_libraries(${TARGET}
                       Qt5::Widgets
                       Qt5::DBus
                       Qt5::X11Extras
+                      Qt5::ThemeSupportPrivate
                       KF5::WindowSystem
                       KF5::WidgetsAddons
                       KF5::ConfigWidgets

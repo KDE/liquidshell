@@ -66,7 +66,7 @@ void SysTrayItem::showDetailsList()
 
   QPoint point = mapToGlobal(pos());
   QRect screen = DesktopWidget::availableGeometry();
-  QSize size = detailsList->frameSize();
+  QSize size = detailsList->sizeHint();
   point.setX(std::min(point.x(), screen.x() + screen.width() - size.width()));
   point.setY(screen.bottom() - size.height());
   detailsList->move(point);

@@ -76,7 +76,11 @@ void Network::checkState()
 
   if ( !NetworkManager::primaryConnection() || !NetworkManager::primaryConnection()->connection() )
   {
-    setPixmap(origPixmap = QIcon::fromTheme("network-disconnect").pixmap(size()));
+    if ( QIcon::hasThemeIcon("network-offline") )
+      setPixmap(origPixmap = QIcon::fromTheme("network-offline").pixmap(size()));
+    else
+      setPixmap(origPixmap = QIcon::fromTheme("network-disconnect").pixmap(size()));
+
     setToolTip(i18n("No Network Connection"));
     return;
   }

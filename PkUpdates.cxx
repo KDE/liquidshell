@@ -61,6 +61,10 @@ PkUpdates::PkUpdates(QWidget *parent)
   updateTimer.start();
   connect(&updateTimer, &QTimer::timeout, this, &PkUpdates::checkForUpdatesReached);
 
+  setToolTip(i18n("Next check: %1 ")
+                 .arg(QDateTime::currentDateTime().addMSecs(updateTimer.interval())
+                     .toString(Qt::SystemLocaleShortDate)));
+
   //QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
 }
 
@@ -211,14 +215,19 @@ void PkUpdates::createToolTip(bool notify)
       setToolTip(i18np("Last check: %1\nNo important updates available\n%2 other",
                        "Last check: %1\nNo important updates available\n%2 others",
                        QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), others));
+
+      if ( QIcon::hasThemeIcon("software-update-available") )
+        setPixmap(currentPixmap = QIcon::fromTheme("software-update-available").pixmap(size()));
+      else
+        setPixmap(currentPixmap = QIcon::fromTheme("update-low").pixmap(size()));
     }
     else
     {
-      setToolTip(i18n("Last check: %1\nNo important updates available",
+      setToolTip(i18n("Last check: %1\nNo updates available",
                       QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate)));
-    }
 
-    setPixmap(currentPixmap = QIcon::fromTheme("update-none").pixmap(size()));
+      setPixmap(currentPixmap = QIcon::fromTheme("update-none").pixmap(size()));
+    }
   }
   else
   {
@@ -232,10 +241,30 @@ void PkUpdates::createToolTip(bool notify)
     QString icon;
     switch ( info )
     {
-      case PackageKit::Transaction::InfoSecurity: icon = "update-high"; break;
-      case PackageKit::Transaction::InfoImportant: icon = "update-medium"; break;
-      case PackageKit::Transaction::InfoBugfix: icon = "update-low"; break;
-      default: ;
+      case PackageKit::Transaction::InfoSecurity:
+      {
+        if ( QIcon::hasThemeIcon("software-update-urgent") )
+          icon = "software-update-urgent";
+        else
+          icon = "update-high";
+        break;
+      }
+      case PackageKit::Transaction::InfoImportant:
+      {
+        if ( QIcon::hasThemeIcon("software-update-urgent") )
+          icon = "software-update-urgent";
+        else
+          icon = "update-medium";
+        break;
+      }
+      default: // PackageKit::Transaction::InfoBugfix:  // and others
+      {
+        if ( QIcon::hasThemeIcon("software-update-available") )
+          icon = "software-update-available";
+        else
+          icon = "update-low";
+        break;
+      }
     }
     setPixmap(currentPixmap = QIcon::fromTheme(icon).pixmap(size()));
 

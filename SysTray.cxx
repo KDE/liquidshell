@@ -267,14 +267,14 @@ void SysTray::arrangeNotifyItems()
   // rearrange visible items - "row first" layout
   int visibleItems = 0;
   foreach (SysTrayNotifyItem *item, items)
-    if ( item->isVisible() )
+    if ( item && item->isVisible() )
       visibleItems++;
 
   const int MAX_COLUMNS = static_cast<int>(std::ceil(visibleItems / float(appsRows.count())));
   int row = 0;
   foreach (SysTrayNotifyItem *item, items)
   {
-    if ( item->isVisible() )
+    if ( item && item->isVisible() )
     {
       appsRows[row]->addWidget(item, 0, Qt::AlignLeft);
       if ( appsRows[row]->count() == MAX_COLUMNS )

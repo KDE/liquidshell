@@ -47,6 +47,9 @@ class PkUpdateList : public QWidget
 
     QSize sizeHint() const override;
 
+  protected:
+    void hideEvent(QHideEvent *event) override;
+
   Q_SIGNALS:
     void refreshRequested();
     void packageInstalled(QString id);
@@ -68,6 +71,7 @@ class PkUpdateList : public QWidget
     QPushButton *installButton;
     QPushButton *refreshButton;
     QCheckBox *checkAllBox;
+    QSize savedSize;
 
     QQueue<QPointer<class PkUpdateListItem>> installQ;
     QPointer<PackageKit::Transaction> transaction;
@@ -91,7 +95,6 @@ class PkUpdateListItem : public QWidget
     QToolButton *label;
     QCheckBox *checkBox;
     QProgressBar *progress;
-    QToolButton *cancelButton;
     QLabel *detailsLabel;
     QLabel *errorLabel;
     QLabel *packageLabel;

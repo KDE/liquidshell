@@ -23,6 +23,10 @@
 
 #include <QLabel>
 #include <QTimer>
+#include <QMenu>
+
+#include <QtThemeSupport/private/qdbusmenutypes_p.h>
+
 class OrgKdeStatusNotifierItem;
 class QDBusPendingCallWatcher;
 
@@ -44,13 +48,17 @@ class SysTrayNotifyItem : public QLabel
     void startTimer();
     void fetchData();
     void fetchDataReply(QDBusPendingCallWatcher *w);
+    void menuLayoutReply(QDBusPendingCallWatcher *w);
 
   private:
+    QPixmap findPixmap(const QString &name, const QString &path);
     QPixmap applyOverlay(const QPixmap &pixmap, const QPixmap &overlay);
+    void fillMenu(QMenu &menu, const QDBusMenuLayoutItem &item);
 
   private:
     QTimer fetchTimer;
     OrgKdeStatusNotifierItem *dbus;
+    QString menuPath;
 };
 
 #endif

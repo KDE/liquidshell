@@ -129,7 +129,7 @@ void PkUpdateListItem::getUpdateDetails()
     return;
   }
 
-  //qDebug() << "getUpdateDetails" << package.id;
+  //qDebug() << "getUpdateDetails" << package.id << PackageKit::Daemon::packageName(package.id);
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdateDetail(package.id);
   detailsLabel->setText(i18n("Getting details ..."));
   detailsLabel->show();
@@ -248,19 +248,38 @@ PkUpdateList::PkUpdateList(QWidget *parent)
 
 QSize PkUpdateList::sizeHint() const
 {
-  QSize s = scrollArea->widget()->sizeHint() + QSize(2 * scrollArea->frameWidth(), 2 * scrollArea->frameWidth());
-  s.setWidth(s.width() + scrollArea->verticalScrollBar()->sizeHint().width());
-  s.setHeight(layout()->contentsMargins().top() + installButton->sizeHint().height() +
-              ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
-              s.height() + layout()->contentsMargins().bottom());
+  QSize s;
 
-  s = s.expandedTo(QSize(500, 300));
+  if ( savedSize.isValid() )
+    s = savedSize;
+  else
+  {
+    s = scrollArea->widget()->sizeHint() + QSize(2 * scrollArea->frameWidth(), 2 * scrollArea->frameWidth());
+    s.setWidth(s.width() + scrollArea->verticalScrollBar()->sizeHint().width());
+    s.setHeight(layout()->contentsMargins().top() + installButton->sizeHint().height() +
+                ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
+                s.height() + layout()->contentsMargins().bottom());
+
+    s = s.expandedTo(QSize(500, 300));
+  }
 
   // Qt doc: The size of top-level widgets are constrained to 2/3 of the desktop's height and width.
   QSize screen = DesktopWidget::availableSize();
   s = s.boundedTo(screen * 2 / 3);
 
   return s;
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdateList::hideEvent(QHideEvent *event)
+{
+  Q_UNUSED(event)
+
+  if ( itemsLayout->count() )
+    savedSize = size();
+  else
+    savedSize = QSize();
 }
 
 //--------------------------------------------------------------------------------
@@ -556,6 +575,12 @@ void PkUpdateList::installOne()
   transaction = PackageKit::Daemon::updatePackage(item->package.id, flag);
   packageNoLongerAvailable = false;
   //qDebug() << "installing" << item->package.id;
+
+  connect(transaction.data(), &PackageKit::Transaction::allowCancelChanged, this,
+          [this]()
+          {
+            installButton->setEnabled(transaction->allowCancel());
+          });
 
   connect(transaction.data(), &PackageKit::Transaction::statusChanged, this,
           [item, this]()
