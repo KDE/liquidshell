@@ -24,8 +24,11 @@
 #include <QProgressBar>
 #include <QGridLayout>
 #include <QAction>
+#include <QFileInfo>
+#include <QDebug>
 
 #include <Solid/Device>
+#include <Solid/DeviceNotifier>
 #include <Solid/StorageVolume>
 #include <Solid/StorageAccess>
 #include <KDiskFreeSpaceInfo>
@@ -48,6 +51,13 @@ DiskUsageApplet::DiskUsageApplet(QWidget *parent, const QString &theId)
 
   new QGridLayout(this);
   fill();
+
+  // beside cyclic update, react immediately when a device is added/removed
+  connect(Solid::DeviceNotifier::instance(), &Solid::DeviceNotifier::deviceAdded,
+          this, &DiskUsageApplet::fill);
+
+  connect(Solid::DeviceNotifier::instance(), &Solid::DeviceNotifier::deviceRemoved,
+          this, &DiskUsageApplet::fill);
 }
 
 //--------------------------------------------------------------------------------
@@ -70,19 +80,34 @@ void DiskUsageApplet::fill()
       continue;
 
     const Solid::StorageAccess *storage = partition.as<Solid::StorageAccess>();
-    if ( !storage || !storage->isAccessible() )
+    if ( !storage )
       continue;
+
+    if ( !storage->isAccessible() )
+    {
+      connect(storage, &Solid::StorageAccess::setupDone, this, &DiskUsageApplet::fill, Qt::UniqueConnection);
+      continue;
+    }
 
     QProgressBar *progress;
     QLabel *sizeLabel;
 
     KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(storage->filePath());
 
-    if ( !partitionMap.contains(info.mountPoint()) )
+    //qDebug() << "mount" << info.mountPoint() << "path" << storage->filePath()
+    //         << "valid" << info.isValid() << "size" << info.size() << "used" << info.used()
+    //         << "readable" << QFileInfo(storage->filePath()).isReadable();
+
+    if ( !info.isValid() || (info.size() == 0) || !QFileInfo(storage->filePath()).isReadable() )
+      continue;
+
+    QString key = storage->filePath();
+
+    if ( !partitionMap.contains(key) )
     {
       progress = new QProgressBar(this);
 
-      QLabel *label = new QLabel(info.mountPoint(), this);
+      QLabel *label = new QLabel(storage->filePath(), this);
       grid->addWidget(label, row, 0);
       grid->addWidget(progress, row, 1);
       grid->addWidget(sizeLabel = new QLabel(this), row, 2);
@@ -94,16 +119,18 @@ void DiskUsageApplet::fill()
       sizeInfo.progress = progress;
       sizeInfo.sizeLabel = sizeLabel;
       sizeInfo.used = true;
-      partitionMap.insert(storage->filePath(), sizeInfo);
+      partitionMap.insert(key, sizeInfo);
 
       // workaround Qt bug
       label->setPalette(palette());
       sizeLabel->setPalette(palette());
+
+      connect(storage, &Solid::StorageAccess::teardownDone, this, &DiskUsageApplet::fill, Qt::UniqueConnection);
     }
     else
     {
-      partitionMap[info.mountPoint()].used = true;
-      SizeInfo sizeInfo = partitionMap[info.mountPoint()];
+      partitionMap[key].used = true;
+      SizeInfo sizeInfo = partitionMap[key];
       progress = sizeInfo.progress;
       sizeLabel = sizeInfo.sizeLabel;
     }
