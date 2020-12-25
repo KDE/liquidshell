@@ -66,6 +66,7 @@ class DeviceItem : public QFrame
   private:
     static QString errorToString(Solid::ErrorType error);
     void fillData();
+    void kdeConnectDeviceChanged(const KdeConnect::Device &dev);
 
     enum Action { Mount, Unmount };
     void mountDone(Action action, Solid::ErrorType error, QVariant errorData, const QString &udi);
@@ -78,6 +79,8 @@ class DeviceItem : public QFrame
     Solid::Device device;
     QToolButton *mountButton = nullptr;
     QLabel *textLabel = nullptr, *statusLabel = nullptr, *newFlagLabel = nullptr;
+    QLabel *chargeIcon = nullptr;
+    QToolButton *ringButton = nullptr;
     QTimer statusTimer, mountBusyTimer;
     QPointer<KCMultiDialog> dialog;
     QString pendingCommand;  // used when click -> mount -> action

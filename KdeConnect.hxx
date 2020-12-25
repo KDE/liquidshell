@@ -26,6 +26,7 @@
 #include <QIcon>
 #include <QSharedPointer>
 #include <QPointer>
+#include <QDBusInterface>
 
 #include <KNotification>
 
@@ -41,7 +42,7 @@ class KdeConnectDevice : public QObject
     void changed();
 
   public Q_SLOTS:
-    void chargeChangedSlot(int c);
+    void updatePlugins();
 
   public:
     void ringPhone();
@@ -53,14 +54,13 @@ class KdeConnectDevice : public QObject
     int charge = -1;
     bool isCharging = false;
     bool warned = false;
-    
+    QDBusInterface *batteryInterface = nullptr;
+
   private Q_SLOTS:
-    void stateChangedSlot(bool c);
     void nameChangedSlot(const QString &newName);
+    void chargeChangedSlot();
 
   private:
-    void calcChargeIcon();
-
     QPointer<KNotification> notif;
 };
 

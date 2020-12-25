@@ -114,7 +114,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
   {
     hbox->addWidget(statusLabel, 0, Qt::AlignVCenter);
 
-    QLabel *chargeIcon = new QLabel;
+    chargeIcon = new QLabel;
     hbox->addWidget(chargeIcon, 0, Qt::AlignVCenter);
 
     Solid::Battery *battery = device.as<Solid::Battery>();
@@ -127,7 +127,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
     }
 
     connect(battery, &Solid::Battery::chargePercentChanged, this,
-            [this, chargeIcon, battery]()
+            [this, battery]()
             {
               statusLabel->setText(QString::number(battery->chargePercent()) + '%');
               chargeIcon->setPixmap(Battery::getStatusIcon(battery->chargePercent(),
@@ -224,34 +224,17 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
   statusLabel = new QLabel;
   hbox->addWidget(statusLabel, 0, Qt::AlignVCenter);
 
-  QLabel *chargeIcon = new QLabel;
+  chargeIcon = new QLabel;
   hbox->addWidget(chargeIcon, 0, Qt::AlignVCenter);
 
-  if ( dev->charge >= 0 )
-  {
-    statusLabel->setText(QString::number(dev->charge) + '%');
-    chargeIcon->setPixmap(dev->chargeIcon.pixmap(22));
-  }
+  ringButton = new QToolButton;
+  ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
+  connect(ringButton, &QToolButton::clicked, dev.data(), [dev]() { dev->ringPhone(); });
+  hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
 
-  connect(dev.data(), &KdeConnectDevice::changed, this,
-          [this, chargeIcon, dev]()
-          {
-            textLabel->setText(dev->name);
+  kdeConnectDeviceChanged(dev);
 
-            if ( dev->charge >= 0 )
-            {
-              statusLabel->setText(QString::number(dev->charge) + '%');
-              chargeIcon->setPixmap(dev->chargeIcon.pixmap(22));
-            }
-          });
-
-  if ( dev->plugins.contains("kdeconnect_findmyphone") )
-  {
-    QToolButton *ringButton = new QToolButton;
-    ringButton->setIcon(QIcon::fromTheme("preferences-desktop-notification-bell"));
-    connect(ringButton, &QToolButton::clicked, dev.data(), [dev]() { dev->ringPhone(); });
-    hbox->addWidget(ringButton, 0, Qt::AlignVCenter);
-  }
+  connect(dev.data(), &KdeConnectDevice::changed, this, [this, dev]() { kdeConnectDeviceChanged(dev); });
 
   QToolButton *configure = new QToolButton;
   configure->setIcon(QIcon::fromTheme("configure"));
@@ -289,6 +272,28 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
 
     vbox->addLayout(hbox);
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void DeviceItem::kdeConnectDeviceChanged(const KdeConnect::Device &dev)
+{
+  textLabel->setText(dev->name);
+
+  if ( dev->charge >= 0 )
+  {
+    statusLabel->setText(QString::number(dev->charge) + '%');
+    chargeIcon->setPixmap(dev->chargeIcon.pixmap(22));
+    statusLabel->show();
+    chargeIcon->show();
+  }
+  else
+  {
+    statusLabel->hide();
+    chargeIcon->hide();
+  }
+
+  ringButton->setVisible(dev->plugins.contains("kdeconnect_findmyphone"));
 }
 
 //--------------------------------------------------------------------------------
