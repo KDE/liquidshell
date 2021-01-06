@@ -93,8 +93,9 @@ void KdeConnect::deviceAddedSlot(const QString &dev)
 
   QDBusInterface interface("org.kde.kdeconnect", devicePath, "org.kde.kdeconnect.device");
 
-  if ( !interface.property("isTrusted").toBool() )
-    return;  // only show paired devices
+  if ( !interface.property("isTrusted").toBool() ||
+       !interface.property("isReachable").toBool() )
+    return;  // only show paired, reachable devices
 
   Device device;
   device->id = dev;
