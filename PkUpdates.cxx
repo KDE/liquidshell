@@ -98,6 +98,16 @@ void PkUpdates::checkForUpdates()
 
   connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
   connect(transaction, &PackageKit::Transaction::finished, this, &PkUpdates::refreshFinished);
+
+  connect(transaction, &PackageKit::Transaction::percentageChanged, this,
+          [this, transaction]()
+          {
+            if ( (transaction->percentage() <= 100) && (transaction->status() != PackageKit::Transaction::StatusFinished) )
+            {
+              setRefreshProgress(transaction->percentage() / 2);  // first step: refresh cache, second: get updates
+              setToolTip(i18n("Checking for updates ... %1%", refreshProgress));
+            }
+          });
 }
 
 //--------------------------------------------------------------------------------
@@ -131,7 +141,7 @@ void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runti
           {
             if ( (transaction->percentage() <= 100) && (transaction->status() != PackageKit::Transaction::StatusFinished) )
             {
-              setRefreshProgress(transaction->percentage());
+              setRefreshProgress(50 + (transaction->percentage() / 2));  // second step in checking for updates
               setToolTip(i18n("Checking for updates ... %1%", refreshProgress));
             }
           });
