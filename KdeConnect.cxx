@@ -217,7 +217,7 @@ void KdeConnectDevice::updatePlugins()
 
       chargeChangedSlot();
 
-      connect(batteryInterface, SIGNAL(refreshed()), this, SLOT(chargeChangedSlot()));
+      connect(batteryInterface, SIGNAL(refreshed(bool, int)), this, SLOT(chargeChangedSlot()));
     }
   }
   else
