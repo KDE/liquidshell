@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017,2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -20,6 +20,7 @@
 
 #include <WeatherApplet.hxx>
 #include <WeatherAppletConfigureDialog.hxx>
+#include <Moon.hxx>
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -61,7 +62,15 @@ WeatherApplet::WeatherApplet(QWidget *parent, const QString &theId)
   f.setBold(true);
   cityLabel->setFont(f);
 
-  vbox->addWidget(cityLabel);
+  moonLabel = new QLabel;
+  moon.load(":/moon_56frames.png", "PNG");
+
+  QHBoxLayout *topHbox = new QHBoxLayout;
+  topHbox->addWidget(cityLabel);
+  topHbox->addStretch();
+  topHbox->addWidget(moonLabel);
+
+  vbox->addLayout(topHbox);
 
   QGridLayout *grid = new QGridLayout;
   vbox->addLayout(grid);
@@ -147,7 +156,14 @@ void WeatherApplet::showEvent(QShowEvent *)
 
 void WeatherApplet::fetchData()
 {
-  if ( !isVisible() || apiKey.isEmpty() || cityId.isEmpty() )
+  if ( !isVisible() )
+    return;
+
+  double phase = Moon::phase(QDate::currentDate());
+  int x = 48 * int(phase / 4.0 * 55);
+  moonLabel->setPixmap(moon.copy(x, 0, 48, 48));
+
+  if ( apiKey.isEmpty() || cityId.isEmpty() )
     return;
 
   QString url = QString("http://api.openweathermap.org/data/2.5/weather?APPID=%1&units=%2&id=%3")

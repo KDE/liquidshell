@@ -67,6 +67,9 @@ set(SOURCES
     DiskUsageAppletConfigureDialog.cxx
     PictureFrameApplet.cxx
     PictureFrameAppletConfigureDialog.cxx
+
+    Moon.cxx
+    liquidshell.qrc
 )
 
 find_package(packagekitqt5 QUIET)
@@ -106,6 +109,7 @@ set(TARGET liquidshell)
 add_executable(${TARGET} ${SOURCES} ${UI_FILES})
 
 set_property(TARGET ${TARGET} PROPERTY CXX_STANDARD 11)
+set_property(TARGET ${TARGET} PROPERTY AUTORCC ON)
 
 target_link_libraries(${TARGET}
                       Qt5::Core
@@ -151,6 +155,7 @@ install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ecm_install_icons(ICONS
                   48-apps-liquidshell.png
+                  48-status-liquidshell_moon.png
                   DESTINATION ${ICON_INSTALL_DIR}
                   THEME hicolor)
 

@@ -59,7 +59,9 @@ class WeatherApplet : public DesktopApplet
     static QString apiKey; // see http://openweathermap.org/api
     QString cityId, units;
     QTimer timer;
+    QPixmap moon;
     QLabel *cityLabel = nullptr;
+    QLabel *moonLabel = nullptr;
     QLabel *tempLabel = nullptr;
     QLabel *pressureLabel = nullptr;
     QLabel *humidityLabel = nullptr;
