@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -197,7 +197,7 @@ QPixmap SysTrayNotifyItem::findPixmap(const QString &name, const QString &path)
   for (const QFileInfo &info : infoList)
   {
     if ( info.fileName().startsWith(name) )    // maybe check for xxx and xxx. to match xxx.png etc when only xxx given
-      return QPixmap(info.absoluteFilePath());
+      return QPixmap(info.absoluteFilePath()).scaled(size(), Qt::KeepAspectRatio);
 
     if ( info.isDir() )
       return findPixmap(name, info.absoluteFilePath());
