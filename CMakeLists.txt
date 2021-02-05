@@ -155,7 +155,6 @@ install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ecm_install_icons(ICONS
                   48-apps-liquidshell.png
-                  48-status-liquidshell_moon.png
                   DESTINATION ${ICON_INSTALL_DIR}
                   THEME hicolor)
 
