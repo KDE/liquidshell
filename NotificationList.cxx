@@ -242,32 +242,23 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
     }
   }
 
-  numItems++;
   emit itemsCountChanged();
-
-  connect(item.data(), &NotifyItem::destroyed, this,
-          [this](QObject *obj)
-          {
-            items.removeOne(static_cast<NotifyItem *>(obj));
-            placeItems();
-
-            if ( --numItems == 0 )
-            {
-              hide();
-              emit listNowEmpty();
-            }
-            else
-              emit itemsCountChanged();
-          }
-         );
+  connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);
 
   QTimer::singleShot(timeout,
-                     [=]()
+                     [=]() mutable
                      {
                        if ( item )
                        {
-                         // sometimes there were some leftover/half-functioning windows. This seems to avoid that
-                         item->destroySysResources();
+                         // I must create a new item since otherwise when closing the NotificationList
+                         // and moving this toplevel item into the list, weird behavior happens
+                         // e.g. no longer showing anything in the list, appearing at wrong position when shown...
+                         item->hide();
+                         item->deleteLater();
+                         item = new NotifyItem(this, id, appName, summary, body, icon, actions);
+                         items.append(item.data());
+                         emit itemsCountChanged();
+                         connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);
 
                          listVbox->insertWidget(listVbox->count() - 1, item);  // insert before stretch
                          item->show();
@@ -294,6 +285,22 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                        }
                      }
                     );
+}
+
+//--------------------------------------------------------------------------------
+
+void NotificationList::itemDestroyed(QObject *obj)
+{
+  items.removeOne(static_cast<NotifyItem *>(obj));
+  placeItems();
+
+  if ( items.isEmpty() )
+  {
+    hide();
+    emit listNowEmpty();
+  }
+  else
+    emit itemsCountChanged();
 }
 
 //--------------------------------------------------------------------------------

@@ -60,12 +60,15 @@ class NotificationList : public QWidget
 
     void closeItem(uint id);
 
-    int itemCount() const { return numItems; }
+    int itemCount() const { return items.count(); }
     QVector<NotifyItem *> getItems() const { return items; }
 
   Q_SIGNALS:
     void itemsCountChanged();
     void listNowEmpty();
+
+  private Q_SLOTS:
+    void itemDestroyed(QObject *item);
 
   private:
     void placeItems();
@@ -74,7 +77,6 @@ class NotificationList : public QWidget
     QScrollArea *scrollArea;
     QVBoxLayout *listVbox;
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
-    int numItems = 0;
     QVector<NotifyItem *> items;
 };
 
