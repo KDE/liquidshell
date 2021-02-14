@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2020 Martin Koller, kollix@aon.at
+  Copyright 2020-2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -35,6 +35,7 @@ class OnScreenBrightness : public QProgressBar
 
   private Q_SLOTS:
     void gotBrightnessMax(QDBusMessage msg);
+    void brightnessMaxChanged(int value);
     void brightnessChanged(int value);
 
   private:

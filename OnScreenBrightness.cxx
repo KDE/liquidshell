@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2020 Martin Koller, kollix@aon.at
+  Copyright 2020-2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -52,6 +52,11 @@ OnScreenBrightness::OnScreenBrightness(QWidget *parent)
                "org.kde.Solid.PowerManagement.Actions.BrightnessControl", "brightnessChanged",
                this, SLOT(brightnessChanged(int)));
 
+  QDBusConnection::sessionBus()
+      .connect("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement/Actions/BrightnessControl",
+               "org.kde.Solid.PowerManagement.Actions.BrightnessControl", "brightnessMaxChanged",
+               this, SLOT(brightnessMaxChanged(int)));
+
   QDBusMessage msg =
       QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement",
                                      "/org/kde/Solid/PowerManagement/Actions/BrightnessControl",
@@ -73,6 +78,13 @@ void OnScreenBrightness::gotBrightnessMax(QDBusMessage msg)
   int max = reply.value();
 
   setMaximum(max);
+}
+
+//--------------------------------------------------------------------------------
+
+void OnScreenBrightness::brightnessMaxChanged(int value)
+{
+  setMaximum(value);
 }
 
 //--------------------------------------------------------------------------------
