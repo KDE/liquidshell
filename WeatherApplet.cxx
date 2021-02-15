@@ -160,7 +160,7 @@ void WeatherApplet::fetchData()
     return;
 
   double phase = Moon::phase(QDate::currentDate());
-  int x = 48 * int(phase / 4.0 * 55);
+  int x = 48 * int(phase * 55);
   moonLabel->setPixmap(moon.copy(x, 0, 48, 48));
 
   if ( apiKey.isEmpty() || cityId.isEmpty() )
