@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -66,7 +66,7 @@ void SysTrayItem::showDetailsList()
 
   QPoint point = mapToGlobal(pos());
   QRect screen = DesktopWidget::availableGeometry();
-  QSize size = detailsList->sizeHint();
+  QSize size = detailsList->windowHandle() ? detailsList->size() : detailsList->sizeHint();
   point.setX(std::min(point.x(), screen.x() + screen.width() - size.width()));
   point.setY(screen.bottom() - size.height());
   detailsList->move(point);
