@@ -3,8 +3,8 @@
 class Moon
 {
   public:
-    // returns the moon phase as a real number (0-1)
-    static double phase(const QDate &date);
+    // returns the frame to be used from the moon_56frames.png
+    static int phase(const QDate &date);
 
   private:
     static double sun_position(double j);

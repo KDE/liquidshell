@@ -10,7 +10,7 @@
 
 //--------------------------------------------------------------------------------
 
-double Moon::phase(const QDate &date)
+int Moon::phase(const QDate &date)
 {
   double j = date.toJulianDay() - 2444238.5;
   double ls = sun_position(j);
@@ -18,8 +18,7 @@ double Moon::phase(const QDate &date)
   double t = lm - ls;
 
   if (t < 0) t += 360;
-
-  return (1.0 - std::cos((lm - ls) * RAD)) / 2;
+  return static_cast<int>((t / 360.0) * 55);
 }
 
 //--------------------------------------------------------------------------------
