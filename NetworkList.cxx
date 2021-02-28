@@ -276,9 +276,6 @@ void NetworkList::statusUpdate()
 
 void NetworkList::fillConnections()
 {
-  if ( underMouse() )  // avoid to delete the widget we are possibly hovering over
-    return;
-
   QLayoutItem *child;
   while ( (child = connectionsVbox->takeAt(0)) )
   {
@@ -407,6 +404,16 @@ void NetworkList::fillConnections()
   connectionsVbox->addStretch();
   adjustSize();
   emit changed();
+
+  // WA_UnderMouse is only updated with Enter/Leave events in QApplication, but this status
+  // is used to render the button hovered or not. Therefore we must update the flag on our own here
+  QPoint p = scroll->widget()->mapFromGlobal(QCursor::pos());
+  for (int i = 0; i < connectionsVbox->count(); i++)
+  {
+    QWidget *button = connectionsVbox->itemAt(i)->widget();
+    if ( button )
+      button->setAttribute(Qt::WA_UnderMouse, button->geometry().contains(p));
+  }
 }
 
 //--------------------------------------------------------------------------------
