@@ -33,7 +33,6 @@
 #include <QScreen>
 #include <QDBusConnection>
 #include <QDBusMessage>
-#include <QDebug>
 
 #include <KRun>
 #include <KLocalizedString>
@@ -307,11 +306,11 @@ void NotificationList::itemDestroyed(QObject *obj)
 
 void NotificationList::closeItem(uint id)
 {
-  for (NotifyItem *item : items)
+  for (int i = 0; i < items.count(); i++)
   {
-    if ( item->id == id )
+    if ( items[i]->id == id )
     {
-      item->deleteLater();
+      items.takeAt(i)->deleteLater();
       break;
     }
   }
