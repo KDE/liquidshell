@@ -88,6 +88,7 @@
        therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="ca">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="ca-valencia">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="de">Es verwendet kein QtQuick, sondern QtWidgets, daher wird keine Hardware-Grafikbeschleunigung benötigt.</p>
     <p xml:lang="el">Δεν χρησιμοποιεί το QtQuick αλλά βασίζεται στο QtWidgets, συνεπώς δεν απαιτείται επιτάχυνση γραφικών από το υλικό.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="es">No usa QtQuick, sino que se basa en QtWidgets, por lo que no se necesita aceleración de gráficos por hardware.</p>
@@ -165,6 +166,7 @@
       <li>No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="ca">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
       <li xml:lang="ca-valencia">No hi ha animacions, sense acaparar la CPU, consum baix de la memòria</li>
+      <li xml:lang="de">Keine Animationen, geringe CPU-Ressourcen, geringer Speicherbedarf</li>
       <li xml:lang="el">Χωρίς γραφικά, χωρίς μονοπώληση της CPU, με χαμηλό αποτύπωμα μνήμης</li>
       <li xml:lang="en-GB">No animations, no CPU hogging, low Memory footprint</li>
       <li xml:lang="es">Sin animaciones, no acapara la CPU, bajo impacto en la memoria</li>
@@ -313,6 +315,7 @@
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="de">Der Stile kann zusätzlich mit CSS (Cascading Style Sheets) angepasst werden, indem die Befehlszeilenoption -stylesheet dateiname.css übergeben wird (siehe mitgeliefertes Beispiel stylesheet.css)</li>
       <li xml:lang="el">Μπορεί επιπλέον να αποκτήσει στιλ με css με χρήση της επιλογής γραμμής εντολών -stylesheet filename.css (δείτε το παράδειγμα stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="es">Puede usar estilos adicionales con CSS mediante la opción de la línea de órdenes «-stylesheet archivo.css» (consulte el ejemplo incluido stylesheet.css)</li>
