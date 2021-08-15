@@ -203,7 +203,6 @@ NetworkList::NetworkList(QWidget *parent)
   network = new QToolButton;
   network->setIcon(QIcon::fromTheme("network-wired"));
   network->setIconSize(QSize(22, 22));
-  network->setToolTip(i18n("Enable Networking"));
   network->setCheckable(true);
   connect(network, &QToolButton::clicked, [](bool on) { NetworkManager::setNetworkingEnabled(on); });
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::networkingEnabledChanged, this, &NetworkList::statusUpdate);
@@ -212,7 +211,6 @@ NetworkList::NetworkList(QWidget *parent)
   wireless = new QToolButton;
   wireless->setIcon(QIcon::fromTheme("network-wireless"));
   wireless->setIconSize(QSize(22, 22));
-  wireless->setToolTip(i18n("Enable Wireless Networking"));
   wireless->setCheckable(true);
   connect(wireless, &QToolButton::clicked, [](bool on) { NetworkManager::setWirelessEnabled(on); });
   connect(NetworkManager::notifier(), &NetworkManager::Notifier::wirelessEnabledChanged, this, &NetworkList::statusUpdate);
@@ -270,6 +268,16 @@ void NetworkList::statusUpdate()
 {
   network->setChecked(NetworkManager::isNetworkingEnabled());
   wireless->setChecked(NetworkManager::isWirelessEnabled());
+
+  if ( NetworkManager::isNetworkingEnabled() )
+    network->setToolTip(i18n("Networking is enabled. Click to disable"));
+  else
+    network->setToolTip(i18n("Networking is disabled. Click to enable"));
+
+  if ( NetworkManager::isWirelessEnabled() )
+    wireless->setToolTip(i18n("Wireless Networking is enabled. Click to disable"));
+  else
+    wireless->setToolTip(i18n("Wireless Networking is disabled. Click to enable"));
 }
 
 //--------------------------------------------------------------------------------
