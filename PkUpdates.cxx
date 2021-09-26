@@ -121,6 +121,23 @@ void PkUpdates::refreshFinished(PackageKit::Transaction::Exit status, uint runti
   //if ( status != PackageKit::Transaction::ExitSuccess )
     //return;
 
+  /////////////////
+  // hmm ... does that do anything on openSuse ? seems not implemented there
+  /*
+  {
+    PackageKit::Transaction *transaction = PackageKit::Daemon::getDistroUpgrades();
+
+    connect(transaction, &PackageKit::Transaction::errorCode, this, &PkUpdates::transactionError);
+
+    connect(transaction, &PackageKit::Transaction::distroUpgrade, this,
+            [this](PackageKit::Transaction::DistroUpgrade type, const QString &name, const QString &description)
+            {
+              qDebug() << "distroUpgrade" << type << name << description;
+            });
+  }
+  */
+  /////////////////
+
   PackageKit::Transaction *transaction = PackageKit::Daemon::getUpdates();
 
   connect(transaction, &PackageKit::Transaction::package, this, &PkUpdates::package);
