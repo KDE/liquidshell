@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -34,6 +34,7 @@
 #include <QStyle>
 #include <QApplication>
 #include <QScreen>
+#include <QMessageBox>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -313,6 +314,13 @@ void PkUpdateList::setRefreshProgress(int progress)
 
 //--------------------------------------------------------------------------------
 
+bool comparePackageData(const PkUpdates::PackageData &a, const PkUpdates::PackageData &b)
+{
+  return a.summary.localeAwareCompare(b.summary) < 0;
+}
+
+//--------------------------------------------------------------------------------
+
 void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
 {
   itemsLayout->parentWidget()->layout()->setEnabled(false);
@@ -328,6 +336,7 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
   checkAllBox->setChecked(false);
 
   QList<PkUpdates::PackageData> list = packages.values(PackageKit::Transaction::InfoSecurity);
+  std::sort(list.begin(), list.end(), comparePackageData);
   for (const PkUpdates::PackageData &data : list)
   {
     auto *item = new PkUpdateListItem(itemsLayout->parentWidget(), PackageKit::Transaction::InfoSecurity, data);
@@ -337,6 +346,7 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
   }
 
   list = packages.values(PackageKit::Transaction::InfoImportant);
+  std::sort(list.begin(), list.end(), comparePackageData);
   for (const PkUpdates::PackageData &data : list)
   {
     auto *item = new PkUpdateListItem(itemsLayout->parentWidget(), PackageKit::Transaction::InfoImportant, data);
@@ -346,6 +356,7 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
   }
 
   list = packages.values(PackageKit::Transaction::InfoBugfix);
+  std::sort(list.begin(), list.end(), comparePackageData);
   for (const PkUpdates::PackageData &data : list)
   {
     auto *item = new PkUpdateListItem(itemsLayout->parentWidget(), PackageKit::Transaction::InfoBugfix, data);
@@ -355,18 +366,25 @@ void PkUpdateList::setPackages(const PkUpdates::PackageList &packages)
   }
 
   // all the others
+  list.clear();
   for (PkUpdates::PackageList::const_iterator it = packages.constBegin(); it != packages.constEnd(); ++it)
   {
     if ( (it.key() != PackageKit::Transaction::InfoSecurity) &&
          (it.key() != PackageKit::Transaction::InfoImportant) &&
          (it.key() != PackageKit::Transaction::InfoBugfix) )
     {
-      auto *item = new PkUpdateListItem(itemsLayout->parentWidget(), it.key(), it.value());
-      connect(item, &PkUpdateListItem::toggled, this, &PkUpdateList::countChecked);
-      itemsLayout->addWidget(item);
-      item->show();
+      list.append(it.value());
     }
   }
+  std::sort(list.begin(), list.end(), comparePackageData);
+  for (const PkUpdates::PackageData &data : list)
+  {
+    auto *item = new PkUpdateListItem(itemsLayout->parentWidget(), PackageKit::Transaction::InfoUnknown, data);
+    connect(item, &PkUpdateListItem::toggled, this, &PkUpdateList::countChecked);
+    itemsLayout->addWidget(item);
+    item->show();
+  }
+
   itemsLayout->setEnabled(true);
 
   filterChanged(filterEdit->text());
@@ -639,6 +657,45 @@ void PkUpdateList::installOne()
                    (restart != PackageKit::Transaction::RestartSystem) &&
                    (restart != PackageKit::Transaction::RestartSecuritySystem)) )
               restart = type;
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::eulaRequired, this,
+          [this](const QString &eulaID, const QString &packageID, const QString &vendor, const QString &licenseAgreement)
+          {
+            if ( QMessageBox::question(this, i18n("Accept EULA"),
+                                       QString("%1\n%2\n%3")
+                                               .arg(packageID)
+                                               .arg(vendor)
+                                               .arg(licenseAgreement)) == QMessageBox::Yes )
+              PackageKit::Daemon::acceptEula(eulaID);
+            else
+              installQ.dequeue();
+
+            installOne();
+          });
+
+  connect(transaction.data(), &PackageKit::Transaction::repoSignatureRequired, this,
+          [this](const QString &packageID,
+                 const QString &repoName,
+                 const QString &keyUrl,
+                 const QString &keyUserid,
+                 const QString &keyId,
+                 const QString &keyFingerprint,
+                 const QString &keyTimestamp,
+                 PackageKit::Transaction::SigType type)
+          {
+            if ( QMessageBox::question(this, i18n("Validate Signature"),
+                                       QString("%1\n%2\n%3\n%4\n%5\n%6\n%7")
+                                               .arg(packageID)
+                                               .arg(repoName)
+                                               .arg(keyUrl)
+                                               .arg(keyUserid)
+                                               .arg(keyId)
+                                               .arg(keyFingerprint)
+                                               .arg(keyTimestamp)) == QMessageBox::Yes )
+            {
+              PackageKit::Daemon::installSignature(type, keyId, packageID);
+            }
           });
 
   connect(transaction.data(), &PackageKit::Transaction::errorCode, this,
