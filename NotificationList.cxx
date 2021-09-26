@@ -26,6 +26,7 @@
 #include <QScrollArea>
 #include <QToolButton>
 #include <QPushButton>
+#include <QProgressBar>
 #include <QPointer>
 #include <QTimer>
 #include <QTime>
@@ -57,8 +58,13 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   QVBoxLayout *vbox = new QVBoxLayout;
   timeLabel = new QLabel;
   iconLabel = new QLabel;
+  timeoutBar = new QProgressBar;
+  timeoutBar->setTextVisible(false);
+  timeoutBar->setFixedSize(50, 10);
+  timeoutBar->hide();
   vbox->addWidget(timeLabel, 0, Qt::AlignTop | Qt::AlignHCenter);
-  vbox->addWidget(iconLabel, 0, Qt::AlignTop | Qt::AlignHCenter);
+  vbox->addWidget(timeoutBar, 0, Qt::AlignTop | Qt::AlignLeft);
+  vbox->addWidget(iconLabel, 1, Qt::AlignVCenter | Qt::AlignHCenter);
 
   QVBoxLayout *centerBox = new QVBoxLayout;
 
@@ -135,6 +141,31 @@ void NotifyItem::destroySysResources()
 {
   destroy();
 }
+
+//--------------------------------------------------------------------------------
+
+void NotifyItem::setTimeout(int milliSecs)
+{
+  if ( milliSecs == 0 )
+    return;
+
+  timeoutBar->setMaximum(milliSecs);
+  timeoutBar->setValue(milliSecs);
+  timeoutBar->show();
+
+  const int STEP = milliSecs / timeoutBar->width();
+
+  QTimer *timer = new QTimer(this);
+  timer->setInterval(STEP);
+  connect(timer, &QTimer::timeout, this, [this, STEP]()
+          {
+            if ( timeoutBar->value() >= STEP )
+              timeoutBar->setValue(timeoutBar->value() - STEP);
+          });
+
+  timer->start();
+}
+
 
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
@@ -243,6 +274,8 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
 
   emit itemsCountChanged();
   connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);
+
+  item->setTimeout(timeout);
 
   QTimer::singleShot(timeout,
                      [=]() mutable

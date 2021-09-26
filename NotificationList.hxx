@@ -27,6 +27,7 @@
 #include <QIcon>
 #include <QMap>
 class QVBoxLayout;
+class QProgressBar;
 
 class NotifyItem : public QFrame
 {
@@ -39,10 +40,13 @@ class NotifyItem : public QFrame
 
     void destroySysResources();
 
+    void setTimeout(int milliSecs);
+
     uint id;
     QString appName, summary, body;
     QStringList actions;
     QLabel *timeLabel, *iconLabel, *textLabel;
+    QProgressBar *timeoutBar;
 };
 
 //--------------------------------------------------------------------------------
