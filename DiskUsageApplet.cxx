@@ -124,6 +124,7 @@ void DiskUsageApplet::fill()
       // workaround Qt bug
       label->setPalette(palette());
       sizeLabel->setPalette(palette());
+      progress->setPalette(palette());
 
       connect(storage, &Solid::StorageAccess::teardownDone, this, &DiskUsageApplet::fill, Qt::UniqueConnection);
     }
