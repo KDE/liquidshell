@@ -152,6 +152,7 @@ configure_file(liquidshell-session.desktop liquidshell-session.desktop @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liquidshell-session.desktop DESTINATION ${KDE_INSTALL_DATADIR}/xsessions)
 
 install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES org.kde.liquidshell.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
                   48-apps-liquidshell.png

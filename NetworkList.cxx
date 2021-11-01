@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -27,8 +27,15 @@
 #include <QTimer>
 #include <QDebug>
 
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#  include <KIO/ApplicationLauncherJob>
+#  include <KIO/JobUiDelegate>
+#else
+#  include <KRun>
+#endif
+
 #include <KLocalizedString>
-#include <KRun>
 #include <KService>
 
 #include <NetworkManagerQt/Settings>
@@ -254,10 +261,16 @@ void NetworkList::openConfigureDialog()
   // newer plasma has already a KCM
   KService::Ptr service = KService::serviceByDesktopName("kcm_networkmanagement");
 
-  if ( service )
+  if ( !service )
+    service = new KService("", "kde5-nm-connection-editor", "");
+
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+    auto *job = new KIO::ApplicationLauncherJob(service);
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
+#else
     KRun::runApplication(*service, QList<QUrl>(), this);
-  else
-    KRun::run("kde5-nm-connection-editor", QList<QUrl>(), this);
+#endif
 
   close();
 }
@@ -294,7 +307,7 @@ void NetworkList::fillConnections()
   NetworkManager::Connection::List allConnections = NetworkManager::listConnections();
 
   // show VPN networks on top
-  for (const NetworkManager::Connection::Ptr c : allConnections)
+  for (const NetworkManager::Connection::Ptr &c : allConnections)
   {
     if ( !c->isValid() )
       continue;
@@ -310,7 +323,7 @@ void NetworkList::fillConnections()
   }
 
   // wired networks
-  for (const NetworkManager::Connection::Ptr c : allConnections)
+  for (const NetworkManager::Connection::Ptr &c : allConnections)
   {
     if ( !c->isValid() )
       continue;
@@ -347,7 +360,7 @@ void NetworkList::fillConnections()
 
         // check if we have a connection for this SSID
         NetworkManager::Connection::Ptr conn;
-        for (const NetworkManager::Connection::Ptr c : allConnections)
+        for (const NetworkManager::Connection::Ptr &c : allConnections)
         {
           if ( c->isValid() && (c->settings()->connectionType() == NetworkManager::ConnectionSettings::Wireless) )
           {

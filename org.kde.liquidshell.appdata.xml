@@ -315,7 +315,7 @@
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
-      <li xml:lang="de">Der Stile kann zusätzlich mit CSS (Cascading Style Sheets) angepasst werden, indem die Befehlszeilenoption -stylesheet dateiname.css übergeben wird (siehe mitgeliefertes Beispiel stylesheet.css)</li>
+      <li xml:lang="de">Der Stil kann zusätzlich mit CSS (Cascading Style Sheets) angepasst werden, indem die Befehlszeilenoption -stylesheet dateiname.css übergeben wird (siehe mitgeliefertes Beispiel stylesheet.css)</li>
       <li xml:lang="el">Μπορεί επιπλέον να αποκτήσει στιλ με css με χρήση της επιλογής γραμμής εντολών -stylesheet filename.css (δείτε το παράδειγμα stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="es">Puede usar estilos adicionales con CSS mediante la opción de la línea de órdenes «-stylesheet archivo.css» (consulte el ejemplo incluido stylesheet.css)</li>
