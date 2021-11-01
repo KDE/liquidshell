@@ -1,0 +1,9 @@
+---
+Version: 1.8
+Date: 2021-12-01
+Description:
+- Notifications show how long they remain open (small animation)
+- Weather Applet shows moon phase
+- Disk Usage Applet watches for mount/unmount to react quicker for update
+- Display improvements in software updates component
+- Added DBUS-Menu support (some apps don't provide own menu but only via DBUS, e.g. MS teams)
