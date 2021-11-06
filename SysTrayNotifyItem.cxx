@@ -40,7 +40,7 @@ SysTrayNotifyItem::SysTrayNotifyItem(QWidget *parent, const QString &service, co
 {
   // make sure several "New*" signals from dbus just trigger one fetchData() call
   fetchTimer.setSingleShot(true);
-  fetchTimer.setInterval(100);
+  fetchTimer.setInterval(500);
   connect(&fetchTimer, &QTimer::timeout, this, &SysTrayNotifyItem::fetchData);
 
   dbus = new OrgKdeStatusNotifierItem(service, path, QDBusConnection::sessionBus(), this);
@@ -102,15 +102,18 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   qDebug() << "Menu" << dbus->menu().path();
   */
 
+  // NOTE: each call to get a property of the "dbus" object involves a DBUS call, which I often
+  // encounter blocking. Therefore reduce the number of calls as much as possible
+
   menuPath = dbus->menu().path();
 
   QStringList origThemePaths = QIcon::themeSearchPaths();
 
-  QString path = dbus->iconThemePath();
-  if ( !path.isEmpty() )
+  const QString iconThemePath = dbus->iconThemePath();
+  if ( !iconThemePath.isEmpty() )
   {
     QStringList paths = origThemePaths;
-    paths.prepend(path);
+    paths.prepend(iconThemePath);
     QIcon::setThemeSearchPaths(paths);
   }
 
@@ -122,12 +125,14 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 
   if ( pixmap.isNull() )
   {
-    pixmap = QIcon::fromTheme(dbus->iconName(), QIcon()).pixmap(size());
+    const QString iconName = dbus->iconName();
 
-    if ( pixmap.isNull() && !dbus->iconName().isEmpty() && !dbus->iconThemePath().isEmpty() )
+    pixmap = QIcon::fromTheme(iconName, QIcon()).pixmap(size());
+
+    if ( pixmap.isNull() && !iconName.isEmpty() && !iconThemePath.isEmpty() )
     {
       // the file should be findable, but probably the iconThemePath does not contain the index.theme file
-      pixmap = findPixmap(dbus->iconName(), dbus->iconThemePath());
+      pixmap = findPixmap(iconName, iconThemePath);
     }
   }
 
@@ -140,15 +145,20 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 
   QPixmap finalPixmap;
 
-  if ( !attentionPixmap.isNull() && (dbus->status() == "NeedsAttention") )
+  const QString status = dbus->status();
+
+  if ( !attentionPixmap.isNull() && (status == "NeedsAttention") )
     finalPixmap = applyOverlay(attentionPixmap, overlay);
   else if ( !pixmap.isNull() )
     finalPixmap = applyOverlay(pixmap, overlay);
 
-  if ( (dbus->id() == "KMail") || (dbus->id() == "Akregator") )
+  const QString id = dbus->id();
+  const KDbusToolTipStruct toolTip = dbus->toolTip();
+
+  if ( (id == "KMail") || (id == "Akregator") )
   {
     // hack for the unwillingness of the kmail maintainer to show unread message count on icon
-    QString text = dbus->toolTip().subTitle.left(dbus->toolTip().subTitle.indexOf(QChar(' ')));
+    QString text = toolTip.subTitle.left(toolTip.subTitle.indexOf(QChar(' ')));
     bool ok = false;
     int num = text.toInt(&ok);
     if ( ok && (num < 100) )
@@ -164,23 +174,23 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 
   QString tip(dbus->title());
 
-  if ( !dbus->toolTip().icon.isEmpty() ||
-       !dbus->toolTip().image.isNull() ||
-       !dbus->toolTip().title.isEmpty() ||
-       !dbus->toolTip().subTitle.isEmpty() )
+  if ( //!toolTip.icon.isEmpty() ||
+       //!toolTip.image.isNull() ||
+       !toolTip.title.isEmpty() ||
+       !toolTip.subTitle.isEmpty() )
   {
     tip = QString("<html><center><b>%1</b><br>%2</center></html>")
-                  .arg(dbus->toolTip().title)
-                  .arg(dbus->toolTip().subTitle);
+                  .arg(toolTip.title)
+                  .arg(toolTip.subTitle);
   }
 
   setToolTip(tip);
   show();
 
-  if ( dbus->status() == "Passive" )
+  if ( status == "Passive" )
   {
     // TODO make it configurable
-    if ( dbus->id() == "KMail" )
+    if ( id == "KMail" )
       hide();
   }
 
