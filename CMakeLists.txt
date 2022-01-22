@@ -3,20 +3,21 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 project(liquidshell)
 
 find_package(ECM 1.3.0 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR})
 
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 include(ECMInstallIcons)
 
-find_package(Qt5 5.6 CONFIG REQUIRED COMPONENTS
+find_package(Qt5 5.6 REQUIRED COMPONENTS
     Core
     Widgets
     DBus
     X11Extras
-    ThemeSupport
 )
+
+find_package(Qt5ThemeSupport REQUIRED)
 
 find_package(KF5 REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews Archive
@@ -116,7 +117,7 @@ target_link_libraries(${TARGET}
                       Qt5::Widgets
                       Qt5::DBus
                       Qt5::X11Extras
-                      Qt5::ThemeSupportPrivate
+                      Qt5ThemeSupport::Qt5ThemeSupport
                       KF5::WindowSystem
                       KF5::WidgetsAddons
                       KF5::ConfigWidgets
