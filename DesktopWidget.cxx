@@ -52,7 +52,9 @@ DesktopWidget *DesktopWidget::instance = nullptr;
 //--------------------------------------------------------------------------------
 
 DesktopWidget::DesktopWidget()
-  : QWidget(nullptr, Qt::WindowDoesNotAcceptFocus)
+  : QWidget(nullptr)
+  // would love to add Qt::WindowDoesNotAcceptFocus, but this leads to global shortcuts
+  // no longer working when last maximized firefox window is closed on an empty desktop
 {
   instance = this;
 
