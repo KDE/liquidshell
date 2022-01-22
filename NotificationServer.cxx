@@ -106,10 +106,10 @@ void NotificationServer::CloseNotification(uint id)
 
 QString NotificationServer::GetServerInformation(QString &vendor, QString &version, QString &spec_version)
 {
-  vendor = "kollix";
+  vendor = "KDE";
   version = "1.0";
   spec_version = "1.2";
-  return vendor;
+  return "liquidshell";
 }
 
 //--------------------------------------------------------------------------------
