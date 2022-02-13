@@ -90,8 +90,11 @@ QWidget *Bluetooth::getDetailsList()
     dialog = new KCMultiDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
-    KCModuleInfo module("bluetooth");
-    if ( module.service() )
+    // different KDE versions need different ways ...
+    KPluginMetaData module("plasma/kcms/systemsettings/kcm_bluetooth");
+    if ( !module.name().isEmpty() )
+      dialog->addModule(module);
+    else if ( KCModuleInfo("bluetooth").service() )
       dialog->addModule("bluetooth");
     else  // older KDE versions
     {
