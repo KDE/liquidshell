@@ -374,7 +374,7 @@
       <li xml:lang="x-test">xxuses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Networkxx</li>
       <li>One bottom DesktopPanel</li>
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
-      <li xml:lang="ca-valencia">Un plafó d'escriptori a la part inferior</li>
+      <li xml:lang="ca-valencia">Un quadre d'escriptori a la part inferior</li>
       <li xml:lang="de">Eine Arbeitsflächenleiste unten</li>
       <li xml:lang="el">Ένας πίνακας επιφάνειας εργασίας στη βάση</li>
       <li xml:lang="en-GB">One bottom DesktopPanel</li>
