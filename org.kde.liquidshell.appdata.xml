@@ -89,7 +89,7 @@
     <p>It does not use QtQuick but instead relies on QtWidgets,
        therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="ca">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
-    <p xml:lang="ca-valencia">No usa «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="ca-valencia">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="de">Es verwendet kein QtQuick, sondern QtWidgets, daher wird keine Hardware-Grafikbeschleunigung benötigt.</p>
     <p xml:lang="el">Δεν χρησιμοποιεί το QtQuick αλλά βασίζεται στο QtWidgets, συνεπώς δεν απαιτείται επιτάχυνση γραφικών από το υλικό.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
