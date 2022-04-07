@@ -249,7 +249,7 @@
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per la configuració del sistema</li>
       <li xml:lang="de">Basiert auf QtWidgets, daher wird der Stil der Bedienelemente aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
@@ -274,7 +274,7 @@
       <li xml:lang="x-test">xxQtWidgets based, therefore follows widget style from systemsettingsxx</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Les icones s'usen des del tema d'icones definit globalment des de la configuració del sistema</li>
       <li xml:lang="de">Es werden Symbole vom global definierten Symboldesign aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα εικονίδια χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα εικονιδίου από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
@@ -299,7 +299,7 @@
       <li xml:lang="x-test">xxIcons are used from your globally defined icon theme from systemsettingsxx</li>
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
+      <li xml:lang="ca-valencia">Els colors s'usen des del tema de color definit globalment des de la configuració del sistema</li>
       <li xml:lang="de">Es werden Farben vom global definierten Farbschema aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα χρώματα χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα χρώματος από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
