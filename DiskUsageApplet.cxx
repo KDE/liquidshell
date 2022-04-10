@@ -25,16 +25,17 @@
 #include <QGridLayout>
 #include <QAction>
 #include <QFileInfo>
+#include <QStorageInfo>
 #include <QDebug>
 
 #include <Solid/Device>
 #include <Solid/DeviceNotifier>
 #include <Solid/StorageVolume>
 #include <Solid/StorageAccess>
-#include <KDiskFreeSpaceInfo>
 #include <KLocalizedString>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KIO/Global>
 
 #include <cmath>
 
@@ -92,13 +93,14 @@ void DiskUsageApplet::fill()
     QProgressBar *progress;
     QLabel *sizeLabel;
 
-    KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(storage->filePath());
+    QStorageInfo info = QStorageInfo(storage->filePath());
 
-    //qDebug() << "mount" << info.mountPoint() << "path" << storage->filePath()
-    //         << "valid" << info.isValid() << "size" << info.size() << "used" << info.used()
+    //qDebug() << "mount" << info.rootPath() << "path" << storage->filePath()
+    //         << "valid" << info.isValid() << "bytesTotal" << info.bytesTotal()
+    //         << "available" << info.bytesAvailable() << "free" << info.bytesFree()
     //         << "readable" << QFileInfo(storage->filePath()).isReadable();
 
-    if ( !info.isValid() || (info.size() == 0) || !QFileInfo(storage->filePath()).isReadable() )
+    if ( !info.isValid() || (info.bytesTotal() == 0) || !info.isReady() || !QFileInfo(storage->filePath()).isReadable() )
       continue;
 
     QString key = storage->filePath();
@@ -136,11 +138,11 @@ void DiskUsageApplet::fill()
       sizeLabel = sizeInfo.sizeLabel;
     }
 
-    progress->setValue(std::round(double(info.used()) / double(info.size()) * 100.0));
+    progress->setValue(std::round(double(info.bytesTotal() - info.bytesAvailable()) / double(info.bytesTotal()) * 100.0));
 
     sizeLabel->setText(i18n("%1 free / %2",
-                            KIO::convertSize(info.available()),
-                            KIO::convertSize(info.size())));
+                            KIO::convertSize(info.bytesAvailable()),
+                            KIO::convertSize(info.bytesTotal())));
   }
 
   // remove entries which are no longer used
