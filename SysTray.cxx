@@ -221,6 +221,7 @@ void SysTray::itemRegistered(QString item)
   SysTrayNotifyItem *sysItem = new SysTrayNotifyItem(this, service, path);
   sysItem->setObjectName(item);
   sysItem->setFixedSize(QSize(22, 22));
+  sysItem->hide();  // until initialized
 
   connect(sysItem, &SysTrayNotifyItem::initialized, this, &SysTray::itemInitialized);
 }
