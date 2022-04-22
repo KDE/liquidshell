@@ -33,7 +33,7 @@
   <name xml:lang="zh-TW">liquidshell</name>
   <summary> liquidshell is an alternative to plasmashell </summary>
   <summary xml:lang="ca">El liquidshell és una alternativa al plasmashell</summary>
-  <summary xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</summary>
+  <summary xml:lang="ca-valencia">El liquidshell és una alternativa a plasmashell</summary>
   <summary xml:lang="de">liquidshell ist eine Alternative zu plasmashell</summary>
   <summary xml:lang="el">Το liquidshell είναι ένα εναλλακτικό του plasmashell</summary>
   <summary xml:lang="en-GB">liquidshell is an alternative to plasmashell</summary>
@@ -61,7 +61,7 @@
   <description>
     <p>liquidshell is an alternative to plasmashell</p>
     <p xml:lang="ca">El liquidshell és una alternativa al plasmashell</p>
-    <p xml:lang="ca-valencia">El liquidshell és una alternativa al plasmashell</p>
+    <p xml:lang="ca-valencia">El liquidshell és una alternativa a plasmashell</p>
     <p xml:lang="de">liquidshell ist eine Alternative zu plasmashell</p>
     <p xml:lang="el">Το liquidshell είναι ένα εναλλακτικό του plasmashell</p>
     <p xml:lang="en-GB">liquidshell is an alternative to plasmashell</p>
