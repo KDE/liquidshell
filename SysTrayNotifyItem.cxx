@@ -92,7 +92,7 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
     return;
   }
 
-  /*
+#if 0
   qDebug() << dbus->title() << dbus->service() << dbus->path() << dbus->interface();
   qDebug() << "att pixmap file:" << dbus->attentionIconName();
   qDebug() << "pixmap file:" << dbus->iconName();
@@ -100,7 +100,7 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
   qDebug() << "IconThemePath" << dbus->iconThemePath();
   qDebug() << "ItemIsMenu" << dbus->itemIsMenu();
   qDebug() << "Menu" << dbus->menu().path();
-  */
+#endif
 
   // NOTE: each call to get a property of the "dbus" object involves a DBUS call, which I often
   // encounter blocking. Therefore reduce the number of calls as much as possible
@@ -134,6 +134,9 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
       // the file should be findable, but probably the iconThemePath does not contain the index.theme file
       pixmap = findPixmap(iconName, iconThemePath);
     }
+
+    if ( pixmap.isNull() )
+      pixmap =  QIcon::fromTheme("image-missing").pixmap(size());
   }
 
   QPixmap overlay = dbus->overlayIconPixmap().pixmap(size());
@@ -210,7 +213,11 @@ QPixmap SysTrayNotifyItem::findPixmap(const QString &name, const QString &path)
       return QPixmap(info.absoluteFilePath()).scaled(size(), Qt::KeepAspectRatio);
 
     if ( info.isDir() )
-      return findPixmap(name, info.absoluteFilePath());
+    {
+      QPixmap pix = findPixmap(name, info.absoluteFilePath());
+      if ( !pix.isNull() )  // only if found, return it, else continue search
+        return pix;
+    }
   }
 
   return QPixmap();
@@ -394,7 +401,7 @@ void SysTrayNotifyItem::fillMenu(QMenu &menu, const QDBusMenuLayoutItem &item)
         else if ( i != (label.length() - 1) && !foundAccessKey )
         {
           foundAccessKey = true;
-          title += QString('&') + label[i];
+          title += QString('&') + label[++i];
         }
       }
 
