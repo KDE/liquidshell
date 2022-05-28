@@ -92,7 +92,7 @@
     <p>It does not use QtQuick but instead relies on QtWidgets,
        therefore no hardware graphics acceleration is needed.</p>
     <p xml:lang="ca">No usa el «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
-    <p xml:lang="ca-valencia">No utilitza «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
+    <p xml:lang="ca-valencia">No utilisa «QtQuick», sinó que es basa en els «QtWidgets», per tant, no cal acceleració gràfica per maquinari.</p>
     <p xml:lang="de">Es verwendet kein QtQuick, sondern QtWidgets, daher wird keine Hardware-Grafikbeschleunigung benötigt.</p>
     <p xml:lang="el">Δεν χρησιμοποιεί το QtQuick αλλά βασίζεται στο QtWidgets, συνεπώς δεν απαιτείται επιτάχυνση γραφικών από το υλικό.</p>
     <p xml:lang="en-GB">It does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.</p>
@@ -231,7 +231,7 @@
       <li xml:lang="zh-TW">即時啟動</li>
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
-      <li xml:lang="ca-valencia">No utilitza les activitats</li>
+      <li xml:lang="ca-valencia">No utilisa les activitats</li>
       <li xml:lang="de">Aktivitäten werden nicht verwendet</li>
       <li xml:lang="el">Χωρίς χρήση δραστηριοτήτων</li>
       <li xml:lang="en-GB">No use of activities</li>
@@ -284,7 +284,7 @@
       <li xml:lang="x-test">xxQtWidgets based, therefore follows widget style from systemsettingsxx</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Les icones s'utilitzen des del tema d'icones definit globalment des de la configuració del sistema</li>
+      <li xml:lang="ca-valencia">Les icones s'utilisen des del tema d'icones definit globalment des de la configuració del sistema</li>
       <li xml:lang="de">Es werden Symbole vom global definierten Symboldesign aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα εικονίδια χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα εικονιδίου από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Icons are used from your globally defined icon theme from systemsettings</li>
@@ -310,7 +310,7 @@
       <li xml:lang="x-test">xxIcons are used from your globally defined icon theme from systemsettingsxx</li>
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Els colors s'utilitzen des del tema de color definit globalment des de la configuració del sistema</li>
+      <li xml:lang="ca-valencia">Els colors s'utilisen des del tema de color definit globalment des de la configuració del sistema</li>
       <li xml:lang="de">Es werden Farben vom global definierten Farbschema aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Τα χρώματα χρησιμοποιούνται από το καθολικά προκαθορισμένο θέμα χρώματος από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">Colours are used from your globally defined colour theme from systemsettings</li>
@@ -362,7 +362,7 @@
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
-      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="ca-valencia">Utilisa els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Ret</li>
       <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
