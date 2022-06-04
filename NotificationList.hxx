@@ -28,13 +28,14 @@
 #include <QMap>
 class QVBoxLayout;
 class QProgressBar;
+class NotificationServer;
 
 class NotifyItem : public QFrame
 {
   Q_OBJECT
 
   public:
-    NotifyItem(QWidget *parent, uint theid, const QString &app,
+    NotifyItem(QWidget *parent, NotificationServer *server, uint theid, const QString &app,
                const QString &summary, const QString &body, const QIcon &icon,
                const QStringList &actions);
 
@@ -56,7 +57,7 @@ class NotificationList : public QWidget
   Q_OBJECT
 
   public:
-    NotificationList(QWidget *parent);
+    NotificationList(NotificationServer *parent);
     ~NotificationList() override;
 
     void addItem(uint id, const QString &appName, const QString &summary, const QString &body,
@@ -82,6 +83,7 @@ class NotificationList : public QWidget
     QVBoxLayout *listVbox;
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
     QVector<NotifyItem *> items;
+    NotificationServer *server;
 };
 
 #endif

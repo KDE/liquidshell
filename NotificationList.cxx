@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2022 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <NotificationList.hxx>
+#include <NotificationServer.hxx>
 #include <DesktopWidget.hxx>
 
 #include <QVBoxLayout>
@@ -30,10 +31,6 @@
 #include <QPointer>
 #include <QTimer>
 #include <QTime>
-#include <QApplication>
-#include <QScreen>
-#include <QDBusConnection>
-#include <QDBusMessage>
 
 #include <KRun>
 #include <KLocalizedString>
@@ -43,7 +40,7 @@ static const Qt::WindowFlags POPUP_FLAGS = Qt::WindowStaysOnTopHint | Qt::Framel
 
 //--------------------------------------------------------------------------------
 
-NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
+NotifyItem::NotifyItem(QWidget *parent, NotificationServer *server, uint theId, const QString &app,
                        const QString &theSummary, const QString &theBody, const QIcon &icon,
                        const QStringList &theActions)
   : QFrame(parent, POPUP_FLAGS), id(theId), appName(app), summary(theSummary), body(theBody), actions(theActions)
@@ -80,7 +77,12 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
   closeButton->setMinimumWidth(40);
   closeButton->setAutoRaise(true);
   closeButton->setIcon(QIcon::fromTheme("window-close"));
-  connect(closeButton, &QToolButton::clicked, this, &NotifyItem::deleteLater);
+  connect(closeButton, &QToolButton::clicked, this,
+          [this, server]()
+          {
+            emit server->NotificationClosed(id, NotificationServer::CloseReason::Dismissed);
+            deleteLater();
+          });
 
   textLabel->setWordWrap(true);
   textLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
@@ -106,15 +108,9 @@ NotifyItem::NotifyItem(QWidget *parent, uint theId, const QString &app,
         QString key = actions[i - 1];
 
         connect(button, &QPushButton::clicked, this,
-                [this, key]()
+                [this, server, key]()
                 {
-                  QDBusMessage msg =
-                      QDBusMessage::createSignal("/org/freedesktop/Notifications",
-                                                 "org.freedesktop.Notifications",
-                                                 "ActionInvoked");
-                  msg << id << key;
-
-                  QDBusConnection::sessionBus().send(msg);
+                  emit server->ActionInvoked(id, key);
                 });
       }
     }
@@ -171,8 +167,8 @@ void NotifyItem::setTimeout(int milliSecs)
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-NotificationList::NotificationList(QWidget *parent)
-  : QWidget(parent)
+NotificationList::NotificationList(NotificationServer *parent)
+  : QWidget(parent), server(parent)
 {
   setWindowFlags(windowFlags() | Qt::Tool);
   setWindowTitle(i18n("Notifications"));
@@ -193,7 +189,14 @@ NotificationList::NotificationList(QWidget *parent)
 
   QPushButton *clearButton = new QPushButton;
   clearButton->setIcon(QIcon::fromTheme("edit-clear-list"));
-  connect(clearButton, &QPushButton::clicked, this, [this]() { for (NotifyItem *item : items) item->deleteLater(); });
+  connect(clearButton, &QPushButton::clicked, this, [this]()
+          {
+            for (NotifyItem *item : items)
+             {
+               emit server->NotificationClosed(item->id, NotificationServer::CloseReason::Dismissed);
+               item->deleteLater();
+             }
+          });
   vbox->addWidget(clearButton);
 
   resize(500, 300);
@@ -212,7 +215,7 @@ NotificationList::~NotificationList()
 void NotificationList::addItem(uint id, const QString &appName, const QString &summary, const QString &body,
                                const QIcon &icon, const QStringList &actions, const QVariantMap &hints, int timeout)
 {
-  QPointer<NotifyItem> item = new NotifyItem(nullptr, id, appName, summary, body, icon, actions);
+  QPointer<NotifyItem> item = new NotifyItem(nullptr, server, id, appName, summary, body, icon, actions);
   item->resize(500, item->sizeHint().height());
   KWindowSystem::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
 
@@ -287,7 +290,7 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                          // e.g. no longer showing anything in the list, appearing at wrong position when shown...
                          item->hide();
                          item->deleteLater();
-                         item = new NotifyItem(this, id, appName, summary, body, icon, actions);
+                         item = new NotifyItem(this, server, id, appName, summary, body, icon, actions);
                          items.append(item.data());
                          emit itemsCountChanged();
                          connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);
@@ -312,7 +315,12 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                            else
                              expireTimeout = appTimeouts[appName] * 60 * 1000;
 
-                           QTimer::singleShot(expireTimeout, item.data(), &NotifyItem::deleteLater);
+                           QTimer::singleShot(expireTimeout, item.data(),
+                                              [item, this]()
+                                              {
+                                                emit server->NotificationClosed(item->id, NotificationServer::CloseReason::Expired);
+                                                item->NotifyItem::deleteLater();
+                                              });
                          }
                        }
                      }

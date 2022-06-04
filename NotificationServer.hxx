@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2022 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -22,6 +22,7 @@
 #define _NotificationServer_H_
 
 // https://developer.gnome.org/notification-spec/
+// https://specifications.freedesktop.org/notification-spec
 
 #include <SysTrayItem.hxx>
 class NotificationList;
@@ -42,6 +43,14 @@ class NotificationServer : public SysTrayItem
     uint Notify(const QString &app_name, uint replaces_id, const QString &app_icon,
                 const QString &summary, const QString &body, const QStringList &actions,
                 const QVariantMap &hints, int timeout);
+
+    enum CloseReason
+    {
+      Expired = 1,
+      Dismissed = 2,
+      Closed = 3,
+      Undefined = 4
+    };
 
   protected:
     QWidget *getDetailsList() override;
