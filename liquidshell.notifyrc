@@ -4,7 +4,7 @@ IconName=system-software-update
 [Event/updates available]
 Name=Updates available
 Name[ca]=Actualitzacions disponibles
-Name[ca@valencia]=Actualisacions disponibles
+Name[ca@valencia]=Actualitzacions disponibles
 Name[cs]=Jsou dostupné aktualizace.
 Name[de]=Aktualisierungen verfügbar
 Name[el]=Διαθέσιμες ενημερώσεις
@@ -38,7 +38,7 @@ Action=Popup
 [Event/update error]
 Name=Update error
 Name[ca]=Error en actualitzar
-Name[ca@valencia]=S'ha produït un error en actualisar
+Name[ca@valencia]=S'ha produït un error en actualitzar
 Name[cs]=Chyba aktualizace
 Name[de]=Fehler beim Aktualisieren
 Name[el]=Σφάλμα ενημέρωσης
