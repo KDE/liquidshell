@@ -258,7 +258,7 @@
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
-      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per la configuració del sistema</li>
+      <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, seguix l'estil dels ginys indicat per la configuració del sistema</li>
       <li xml:lang="de">Basiert auf QtWidgets, daher wird der Stil der Bedienelemente aus den Systemeinstellungen verwendet</li>
       <li xml:lang="el">Με βάση το QtWidgets, συνεπώς ακολουθεί το στιλ των συστατικών από τις ρυθμίσεις συστήματος</li>
       <li xml:lang="en-GB">QtWidgets based, therefore follows widget style from systemsettings</li>
@@ -362,7 +362,7 @@
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
-      <li xml:lang="ca-valencia">Utilitza els diàlecs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Ret</li>
+      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Ret</li>
       <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
