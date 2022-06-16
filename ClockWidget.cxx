@@ -148,7 +148,18 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
             auto dialog = new KCMultiDialog(parentWidget());
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Date & Time"));
-            dialog->addModule("clock");
+
+            KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_clock"));
+            if ( data.isValid() )
+              dialog->addModule(data);
+            else
+            {
+              KCModuleInfo module("kcm_clock");
+              if ( module.service() )
+                dialog->addModule("kcm_clock");
+              else
+                dialog->addModule("clock");  // in older KDE versions
+            }
             dialog->adjustSize();
             dialog->show();
           }

@@ -83,9 +83,7 @@ Pager::Pager(DesktopPanel *parent)
 
             KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops"));
             if ( data.isValid() )
-            {
-                dialog->addModule(data);
-            }
+              dialog->addModule(data);
             else
             {
               KCModuleInfo module("kcm_kwin_virtualdesktops");
