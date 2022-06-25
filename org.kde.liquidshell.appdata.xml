@@ -336,7 +336,7 @@
       <li xml:lang="x-test">xxColors are used from your globally defined color theme from systemsettingsxx</li>
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
-      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vejau l'exemple inclòs a stylesheet.css)</li>
+      <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="de">Der Stile kann zusätzlich mit CSS (Cascading Style Sheets) angepasst werden, indem die Befehlszeilenoption -stylesheet dateiname.css übergeben wird (siehe mitgeliefertes Beispiel stylesheet.css)</li>
       <li xml:lang="el">Μπορεί επιπλέον να αποκτήσει στιλ με css με χρήση της επιλογής γραμμής εντολών -stylesheet filename.css (δείτε το παράδειγμα stylesheet.css)</li>
       <li xml:lang="en-GB">Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
@@ -362,7 +362,7 @@
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
-      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Ret</li>
+      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
