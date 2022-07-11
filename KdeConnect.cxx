@@ -165,7 +165,10 @@ void KdeConnectDevice::chargeChangedSlot()
   emit changed();
 
   if ( isCharging )
+  {
+    if ( notif ) notif->close();
     return;
+  }
 
   const int LIMIT = 40;
 
