@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2022 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -43,10 +43,10 @@ int main(int argc, char **argv)
 
   KLocalizedString::setApplicationDomain("liquidshell");
 
-  KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.8",
+  KAboutData aboutData("liquidshell", i18n("Liquid Desktop Workspace"), "1.8.1",
                        i18n("A QtWidgets based basic desktop shell"),
                        KAboutLicense::GPL_V3,
-                       i18n("Copyright 2017 - 2021 Martin Koller"), QString(),
+                       i18n("Copyright 2017 - 2022 Martin Koller"), QString(),
                        "https://www.linux-apps.com/p/1205621/"); // homepage
 
   aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
