@@ -27,6 +27,8 @@
 
 #include <KLocalizedString>
 #include <KIconLoader>
+#include <KPluginMetaData>
+#include <kcmutils_version.h>
 
 //--------------------------------------------------------------------------------
 
@@ -91,10 +93,13 @@ QWidget *Bluetooth::getDetailsList()
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     // different KDE versions need different ways ...
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
     KPluginMetaData module("plasma/kcms/systemsettings/kcm_bluetooth");
     if ( !module.name().isEmpty() )
       dialog->addModule(module);
-    else if ( KCModuleInfo("bluetooth").service() )
+    else
+#endif
+    if ( KCModuleInfo("bluetooth").service() )
       dialog->addModule("bluetooth");
     else  // older KDE versions
     {

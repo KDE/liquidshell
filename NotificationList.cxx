@@ -31,6 +31,8 @@
 #include <QPointer>
 #include <QTimer>
 #include <QTime>
+#include <QVariant>
+#include <QVariantMap>
 
 #include <KRun>
 #include <KLocalizedString>

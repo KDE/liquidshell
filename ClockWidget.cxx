@@ -37,6 +37,8 @@
 #include <KConfigGroup>
 #include <KCMultiDialog>
 #include <KLocalizedString>
+#include <KPluginMetaData>
+#include <kcmutils_version.h>
 
 //--------------------------------------------------------------------------------
 
@@ -149,10 +151,12 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Date & Time"));
 
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
             KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_clock"));
             if ( data.isValid() )
               dialog->addModule(data);
             else
+#endif
             {
               KCModuleInfo module("kcm_clock");
               if ( module.service() )

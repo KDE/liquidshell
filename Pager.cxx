@@ -36,6 +36,7 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KPluginMetaData>
+#include <kcmutils_version.h>
 #include <netwm.h>
 
 //--------------------------------------------------------------------------------
@@ -81,10 +82,12 @@ Pager::Pager(DesktopPanel *parent)
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
 
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
             KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops"));
             if ( data.isValid() )
               dialog->addModule(data);
             else
+#endif
             {
               KCModuleInfo module("kcm_kwin_virtualdesktops");
               if ( module.service() )
