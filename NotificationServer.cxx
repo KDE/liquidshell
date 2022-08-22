@@ -120,11 +120,15 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
                                 const QString &summary, const QString &theBody, const QStringList &actions,
                                 const QVariantMap &hints, int timeout)
 {
-  //qDebug() << "app" << app_name << "summary" << summary << "body" << theBody << "timeout" << timeout << "replaceId" << replaces_id
-           //<< "hints" << hints << "actions" << actions;
+  //qDebug() << "app" << app_name << "summary" << summary << "body" << theBody << "timeout" << timeout
+           //<< "replaceId" << replaces_id << "hints" << hints << "actions" << actions;
+
+  uint newId;
 
   if ( replaces_id != 0 )
-    notificationList->closeItem(replaces_id);
+    notificationList->closeItem(newId = replaces_id);  // reuse id
+  else
+    newId = notifyId++;
 
   QString body(theBody);
   body.replace("\n", "<br>");
@@ -143,9 +147,9 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
       appName = service->name();
   }
 
-  notificationList->addItem(notifyId, appName, summary, body, icon, actions, hints, timeout);
+  notificationList->addItem(newId, appName, summary, body, icon, actions, hints, timeout);
 
-  return notifyId++;
+  return newId;
 }
 
 //--------------------------------------------------------------------------------
