@@ -103,7 +103,7 @@
     <p xml:lang="fr">Il n'utilise par « QtQuick » mais à la place « QtWidgets ». Par conséquent, aucune accélération graphique matérielle n'est requise.</p>
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
-    <p xml:lang="it">Non usa QtQuick ma fa invece affidamento su QtWidgets, quindi non necessita di accelerazione grafica hardware.</p>
+    <p xml:lang="it">Non usa QtQuick ma si affida invece a QtWidgets; non è quindi necessaria nessuna accelerazione grafica hardware.</p>
     <p xml:lang="ko">QtQuick 대신 QtWidgets을 사용하여 하드웨어 그래픽 가속이 필요하지 않습니다.</p>
     <p xml:lang="lt">Jis nenaudoja QtQuick, tačiau vietoj to, remiasi QtWidgets ir todėl, nereikalauja aparatinės įrangos grafikos spartinimo.</p>
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
@@ -159,7 +159,7 @@
       <li xml:lang="fr">Fonds d'écran pour chaque bureau virtuel</li>
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
-      <li xml:lang="it">Sfondo per desktop virtuali</li>
+      <li xml:lang="it">Sfondo per i desktop virtuali</li>
       <li xml:lang="ko">가상 바탕 화면별 배경 그림 지정</li>
       <li xml:lang="lt">Atskiras darbalaukio fonas kiekvienam virtualiam darbalaukiui</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
@@ -186,7 +186,7 @@
       <li xml:lang="fr">Aucune animation. Aucune surcharge du processeur. Empreinte mémoire faible</li>
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
-      <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, uso limitato della memoria</li>
+      <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, utilizzo della memoria limitato</li>
       <li xml:lang="ko">애니메이션 없음, 적은 CPU 및 메모리 자원 사용</li>
       <li xml:lang="lt">Jokių animacijų, jokio perteklinio procesoriaus naudojimo, naudoja mažai atminties</li>
       <li xml:lang="nl">Geen animaties, geen CPU belasting, lage voetafdruk op geheugen</li>
@@ -242,7 +242,7 @@
       <li xml:lang="fr">Aucune utilisation d'activités</li>
       <li xml:lang="gl">Sen actividades.</li>
       <li xml:lang="id">Tidak ada penggunaan aktivitas</li>
-      <li xml:lang="it">Nessun uso delle attività</li>
+      <li xml:lang="it">Nessun utilizzo delle attività</li>
       <li xml:lang="ko">활동 없음</li>
       <li xml:lang="lt">Nenaudoja veiklų</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
@@ -269,7 +269,7 @@
       <li xml:lang="fr">Utilisant « QtWidgets ». Par conséquent, il utilise les styles des composants graphiques définis dans les réglages du système.</li>
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
-      <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti delle Impostazioni di sistema</li>
+      <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti dalle Impostazioni di sistema</li>
       <li xml:lang="ko">QtWidgets 기반, 시스템 설정의 위젯 스타일 사용</li>
       <li xml:lang="lt">Pagrįstas QtWidgets, todėl naudoja valdiklių stilių iš sistemos nuostatų</li>
       <li xml:lang="nl">Gebaseerd op QtWidgets, volgt daarom widgetstijl uit systeeminstellingen</li>
@@ -295,7 +295,7 @@
       <li xml:lang="fr">Les icônes sont utilisées à partir du thème que vous avez défini pour l'ensemble de votre bureau, à partir des réglages du système.</li>
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
-      <li xml:lang="it">Le icone usate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
+      <li xml:lang="it">Le icone utilizzate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="ko">시스템 설정의 전역 아이콘 테마에서 사이콘 사용</li>
       <li xml:lang="lt">Piktogramos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto piktogramų apipavidalinimo</li>
       <li xml:lang="nl">Pictogrammen worden gebruikt uit uw globaal gedefinieerd pictogramthema uit systeeminstellingen</li>
@@ -321,7 +321,7 @@
       <li xml:lang="fr">Les couleurs sont utilisées à partir du thème de couleurs que vous avez défini dans les réglages du système.</li>
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
-      <li xml:lang="it">I colori usati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
+      <li xml:lang="it">I colori utilizzati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="ko">시스템 설정의 전역 색 배열에서 색상 사용</li>
       <li xml:lang="lt">Spalvos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto spalvų apipavidalinimo</li>
       <li xml:lang="nl">Kleuren worden gebruikt uit uw globaal gedefinieerd kleurenthema uit systeeminstellingen</li>
@@ -373,7 +373,7 @@
       <li xml:lang="fr">utilise les boîtes de dialogue existantes de KDE pour la plupart des configurations comme le menu de démarrage, les bureaux virtuels, le Bluetooth, le réseau</li>
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
-      <li xml:lang="it">usa per la maggior parte delle configurazioni le finestre esistenti di KDE, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth, la rete</li>
+      <li xml:lang="it">Utilizza le finestre esistenti di KDE per la maggior parte delle configurazioni, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth e la rete</li>
       <li xml:lang="ko">KDE 대화 상자로 설정 진행. 예: 시작 메뉴, 가상 바탕 화면, 블루투스, 네트워크</li>
       <li xml:lang="lt">Daugumai konfigūracijų naudoja esamus KDE dialogus, pvz., Paleidimo meniu, Virtualūs darbalaukiai, Bluetooth, Tinklas</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
