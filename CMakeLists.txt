@@ -143,8 +143,8 @@ if ( packagekitqt5_FOUND )
   target_link_libraries(${TARGET} PK::packagekitqt5)
 endif()
 
-install(TARGETS ${TARGET} ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.${TARGET}.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(TARGETS ${TARGET} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES org.kde.${TARGET}.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 configure_file(start_liquidshell start_liquidshell @ONLY)
 install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/start_liquidshell DESTINATION ${KDE_INSTALL_BINDIR})
@@ -152,12 +152,12 @@ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/start_liquidshell DESTINATION ${KDE
 configure_file(liquidshell-session.desktop liquidshell-session.desktop @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liquidshell-session.desktop DESTINATION ${KDE_INSTALL_DATADIR}/xsessions)
 
-install(FILES liquidshell.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES liquidshell.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
 install(FILES org.kde.liquidshell.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS
                   48-apps-liquidshell.png
-                  DESTINATION ${ICON_INSTALL_DIR}
+                  DESTINATION ${KDE_INSTALL_ICONDIR}
                   THEME hicolor)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES)
