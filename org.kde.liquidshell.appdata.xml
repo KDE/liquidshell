@@ -18,6 +18,7 @@
   <name xml:lang="gl">liquidshell</name>
   <name xml:lang="id">liquidshell</name>
   <name xml:lang="it">liquidshell</name>
+  <name xml:lang="ka">liquidshell</name>
   <name xml:lang="ko">liquidshell</name>
   <name xml:lang="lt">liquidshell</name>
   <name xml:lang="nl">liquidshell</name>
@@ -46,6 +47,7 @@
   <summary xml:lang="gl">liquidshell é unha alternativa a plasmashell</summary>
   <summary xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</summary>
   <summary xml:lang="it">liquidshell è un'alternativa a plasmashell</summary>
+  <summary xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</summary>
   <summary xml:lang="ko">liquidshell은 plasmashell의 대안입니다</summary>
   <summary xml:lang="lt">liquidshell yra plasmashell alternatyva</summary>
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
@@ -75,6 +77,7 @@
     <p xml:lang="gl">liquidshell é unha alternativa a plasmashell</p>
     <p xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</p>
     <p xml:lang="it">liquidshell è un'alternativa a plasmashell</p>
+    <p xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</p>
     <p xml:lang="ko">liquidshell은 plasmashell의 대안입니다</p>
     <p xml:lang="lt">liquidshell yra plasmashell alternatyva</p>
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
@@ -131,6 +134,7 @@
     <p xml:lang="gl">Funcionalidades principais:</p>
     <p xml:lang="id">Fitur Utama:</p>
     <p xml:lang="it">Funzionalità principali:</p>
+    <p xml:lang="ka">მთავარი ფუნქციები:</p>
     <p xml:lang="ko">주 기능:</p>
     <p xml:lang="lt">Pagrindinės ypatybės:</p>
     <p xml:lang="nl">Hoofdkenmerken:</p>
@@ -160,6 +164,7 @@
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
       <li xml:lang="it">Sfondo per i desktop virtuali</li>
+      <li xml:lang="ka">ფონის სურათი თითოეული ვირტუალური სამუშაო მაგიდისთვის</li>
       <li xml:lang="ko">가상 바탕 화면별 배경 그림 지정</li>
       <li xml:lang="lt">Atskiras darbalaukio fonas kiekvienam virtualiam darbalaukiui</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
@@ -187,6 +192,7 @@
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
       <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, utilizzo della memoria limitato</li>
+      <li xml:lang="ka">ანიმაციის გარეშე, არ ჭამს CPU-ს, სჭირდება ცოტა მეხსიერება</li>
       <li xml:lang="ko">애니메이션 없음, 적은 CPU 및 메모리 자원 사용</li>
       <li xml:lang="lt">Jokių animacijų, jokio perteklinio procesoriaus naudojimo, naudoja mažai atminties</li>
       <li xml:lang="nl">Geen animaties, geen CPU belasting, lage voetafdruk op geheugen</li>
@@ -215,6 +221,7 @@
       <li xml:lang="gl">Inicio instantáneo.</li>
       <li xml:lang="id">Pemulaian sekejap</li>
       <li xml:lang="it">Avvio istantaneo</li>
+      <li xml:lang="ka">მყისიერი გაშვება</li>
       <li xml:lang="ko">빠른 시작</li>
       <li xml:lang="lt">Greita paleistis</li>
       <li xml:lang="nl">Onmiddellijk opgestart</li>
@@ -243,6 +250,7 @@
       <li xml:lang="gl">Sen actividades.</li>
       <li xml:lang="id">Tidak ada penggunaan aktivitas</li>
       <li xml:lang="it">Nessun utilizzo delle attività</li>
+      <li xml:lang="ka">არ იყენებს აქტივობებს</li>
       <li xml:lang="ko">활동 없음</li>
       <li xml:lang="lt">Nenaudoja veiklų</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
@@ -400,6 +408,7 @@
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
       <li xml:lang="it">Un pannello desktop in basso</li>
+      <li xml:lang="ka">ერთი ქვედა DesktopPanel</li>
       <li xml:lang="ko">아래쪽의 바탕 화면 패널</li>
       <li xml:lang="lt">Vienas apatinis darbalaukio skydelis</li>
       <li xml:lang="nl">Eén bureaubladpaneel onderaan</li>
