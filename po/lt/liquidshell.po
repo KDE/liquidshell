@@ -1,0 +1,986 @@
+# Lithuanian translations for liquidshell package.
+# Copyright (C) 2019 This file is copyright:
+# This file is distributed under the same license as the liquidshell package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: liquidshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2021-12-13 13:05+0200\n"
+"Last-Translator: Moo\n"
+"Language-Team: lt\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Moo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "<>"
+
+#: Battery.cxx:90
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 valanda"
+msgstr[1] "%1 valandos"
+msgstr[2] "%1 valandų"
+msgstr[3] "%1 valanda"
+
+#: Battery.cxx:91
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minutė"
+msgstr[1] "%1 minutės"
+msgstr[2] "%1 minučių"
+msgstr[3] "%1 minutė"
+
+#: Battery.cxx:163
+#, kde-format
+msgid "Not Charging"
+msgstr "Nekraunamas"
+
+#: Battery.cxx:164
+#, kde-format
+msgid "Fully Charged"
+msgstr "Pilnai įkrautas"
+
+#: Battery.cxx:171
+#, kde-format
+msgid "Charging at %1%"
+msgstr "Įkraunamas ties %1%"
+
+#: Battery.cxx:173
+#, kde-format
+msgid "Time until full: "
+msgstr "Laikas iki pilno įkrovimo: "
+
+#: Battery.cxx:177
+#, kde-format
+msgid "Discharging at %1%"
+msgstr "Išsikrauna ties %1%"
+
+#: Battery.cxx:179
+#, kde-format
+msgid "Remaining Time: "
+msgstr "Liko laiko: "
+
+#: Battery.cxx:204
+#, kde-format
+msgid "Power Management"
+msgstr "Energijos valdymas"
+
+#: Bluetooth.cxx:77
+#, kde-format
+msgid "Bluetooth is operational"
+msgstr "Bluetooth veikia"
+
+#: Bluetooth.cxx:82
+#, kde-format
+msgid "Bluetooth is not operational"
+msgstr "Bluetooth neveikia"
+
+#: Bluetooth.cxx:112
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ClockWidget.cxx:121
+#, kde-format
+msgid "Select Timezones..."
+msgstr "Pasirinkti laiko juostas..."
+
+#: ClockWidget.cxx:127
+#, kde-format
+msgid "Select Timezones"
+msgstr "Pasirinkti laiko juostas"
+
+#: ClockWidget.cxx:145
+#, kde-format
+msgid "Configure Date & Time..."
+msgstr "Konfigūruoti datą ir laiką..."
+
+#: ClockWidget.cxx:152
+#, kde-format
+msgid "Date & Time"
+msgstr "Data ir laikas"
+
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:211
+#, kde-format
+msgid "Filter"
+msgstr "Filtruoti"
+
+#: ClockWidgetConfigureDialog.cxx:53
+#, kde-format
+msgid "Timezone"
+msgstr "Laiko juosta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Šalis"
+
+#: ConfigureDesktopDialog.cxx:49
+#, kde-format
+msgid "Get New Wallpapers..."
+msgstr "Gauti naujus darbalaukio fonus..."
+
+#: ConfigureDesktopDialog.cxx:55
+#, kde-format
+msgid "Download Wallpapers"
+msgstr "Atsisiųsti darbalaukio fonus"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
+#: ConfigureDesktopDialog.ui:15
+#, kde-format
+msgid "Configure Wallpaper"
+msgstr "Konfigūruoti darbalaukio foną"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ConfigureDesktopDialog.ui:23
+#, kde-format
+msgid "Background Color"
+msgstr "Fono spalva"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ConfigureDesktopDialog.ui:33
+#, kde-format
+msgid "Wallpaper File"
+msgstr "Darbalaukio fono failas"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ConfigureDesktopDialog.ui:67
+#, kde-format
+msgid "Scale Mode"
+msgstr "Mastelio keitimo veiksena"
+
+#. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
+#: ConfigureDesktopDialog.ui:73
+#, kde-format
+msgid "Or&iginal Size"
+msgstr "P&radinis dydis"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
+#: ConfigureDesktopDialog.ui:80
+#, kde-format
+msgid "Sca&led Ignoring Aspect Ratio"
+msgstr "&Pakeisto mastelio nepaisant proporcijų"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
+#: ConfigureDesktopDialog.ui:87
+#, kde-format
+msgid "Scale&d Keep Aspect Ratio"
+msgstr "Pa&keisto mastelio išlaikant proporcijas"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
+#: ConfigureDesktopDialog.ui:94
+#, kde-format
+msgid "Scaled Keep Aspec&t Ratio and Clip"
+msgstr "Pakeisto mastelio išlaikant prop&orcijas ir apkerpant"
+
+#: desktop.cxx:46
+#, kde-format
+msgid "Liquid Desktop Workspace"
+msgstr "Liquid darbalaukio darbo sritis"
+
+#: desktop.cxx:47
+#, kde-format
+msgid "A QtWidgets based basic desktop shell"
+msgstr "QtWidgets pagrįstas pagrindinio darbalaukio apvalkalas"
+
+#: desktop.cxx:49
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2021 Martin Koller"
+msgid "Copyright 2017 - 2022 Martin Koller"
+msgstr "Autorių teisės 2017 - 2021 Martin Koller"
+
+#: DesktopApplet.cxx:44 Launcher.cxx:79
+#, kde-format
+msgid "Configure..."
+msgstr "Konfigūruoti..."
+
+#: DesktopApplet.cxx:52
+#, kde-format
+msgid "Change Size && Position"
+msgstr "Keisti dydį ir poziciją"
+
+#: DesktopApplet.cxx:58
+#, kde-format
+msgid "Remove this Applet"
+msgstr "Šalinti šią programėlę"
+
+#: DesktopApplet.cxx:106
+#, kde-format
+msgid "%1: Change Size & Position"
+msgstr "%1: Keisti dydį ir poziciją"
+
+#: DesktopApplet.cxx:146
+#, kde-format
+msgid "Remove Applet"
+msgstr "Šalinti programėlę"
+
+#: DesktopApplet.cxx:147
+#, kde-format
+msgid "Really remove this applet?"
+msgstr "Ar tikrai pašalinti šią programėlę?"
+
+#: DesktopWidget.cxx:77
+#, kde-format
+msgid "Configure Wallpaper..."
+msgstr "Konfigūruoti darbalaukio foną..."
+
+#: DesktopWidget.cxx:81
+#, kde-format
+msgid "Add Applet"
+msgstr "Pridėti programėlę"
+
+#: DesktopWidget.cxx:85
+#, kde-format
+msgid "Weather"
+msgstr "Orai"
+
+#: DesktopWidget.cxx:88
+#, kde-format
+msgid "Disk Usage"
+msgstr "Disko naudojimas"
+
+#: DesktopWidget.cxx:91
+#, kde-format
+msgid "Picture Frame"
+msgstr "Paveiksliukų rėmelis"
+
+#: DesktopWidget.cxx:94
+#, kde-format
+msgid "Configure Display..."
+msgstr "Konfigūruoti ekraną..."
+
+#: DesktopWidget.cxx:98 StartMenu.cxx:105
+#, kde-format
+msgid "Run Command..."
+msgstr "Vykdyti komandą..."
+
+#: DesktopWidget.cxx:108
+#, kde-format
+msgid "Help"
+msgstr "Pagalba"
+
+#: DesktopWidget.cxx:255
+#, kde-format
+msgid "Configure Display"
+msgstr "Konfigūruoti ekraną"
+
+#: DeviceList.cxx:249
+#, kde-format
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: DeviceList.cxx:266
+#, kde-format
+msgid "Open with File Manager"
+msgstr "Atverti naudojant failų tvarkytuvę"
+
+#: DeviceList.cxx:343
+#, kde-format
+msgid ""
+"Device is mounted.\n"
+"Click to unmount/eject"
+msgstr ""
+"Įrenginys yra prijungtas.\n"
+"Spustelėkite, norėdami atjungti/išstumti"
+
+#: DeviceList.cxx:344
+#, kde-format
+msgid ""
+"Device is unmounted.\n"
+"Click to mount"
+msgstr ""
+"Įrenginys yra atjungtas.\n"
+"Spustelėkite, norėdami prijungti"
+
+#: DeviceList.cxx:355
+#, kde-format
+msgid "Unauthorized Operation"
+msgstr "Nesankcionuota operacija"
+
+#: DeviceList.cxx:356
+#, kde-format
+msgid "Device Busy"
+msgstr "Įrenginys užimtas"
+
+#: DeviceList.cxx:357
+#, kde-format
+msgid "Operation Failed"
+msgstr "Operacija patyrė nesėkmę"
+
+#: DeviceList.cxx:358
+#, kde-format
+msgid "User Canceled"
+msgstr "Naudotojas atsisakė"
+
+#: DeviceList.cxx:359
+#, kde-format
+msgid "Invalid Option"
+msgstr "Neteisinga parinktis"
+
+#: DeviceList.cxx:360
+#, kde-format
+msgid "Missing Driver"
+msgstr "Trūksta tvarkyklės"
+
+#: DeviceList.cxx:382
+#, kde-format
+msgid "The device can now be safely removed"
+msgstr "Dabar, įrenginys gali būti saugiai pašalintas"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Mount failed:"
+msgstr "Prijungimas nepavyko:"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Unmount failed:"
+msgstr "Atjungimas nepavyko:"
+
+#: DeviceNotifier.cxx:35
+#, kde-format
+msgid "Device Notifier"
+msgstr "Pranešimai apie įrenginius"
+
+#: DeviceNotifier.cxx:38
+#, kde-format
+msgid "Device List"
+msgstr "Įrenginių sąrašas"
+
+#: DiskUsageApplet.cxx:143
+#, kde-format
+msgid "%1 free / %2"
+msgstr "%1 laisva / %2"
+
+#: DiskUsageApplet.cxx:176
+#, kde-format
+msgid "Configure DiskUsage Applet"
+msgstr "Konfigūruoti disko naudojimo programėlę"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, DiskUsageAppletConfigureDialog)
+#: DiskUsageAppletConfigureDialog.ui:14 PictureFrameAppletConfigureDialog.ui:14
+#: WeatherAppletConfigureDialog.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Dialogas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
+#, kde-format
+msgid "Text"
+msgstr "Tekstas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: DiskUsageAppletConfigureDialog.ui:44
+#, kde-format
+msgid "Bar Text"
+msgstr "Juostos tekstas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
+#: WeatherAppletConfigureDialog.ui:119
+#, kde-format
+msgid "Background"
+msgstr "Fonas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: DiskUsageAppletConfigureDialog.ui:72
+#, kde-format
+msgid "Bar Background"
+msgstr "Juostos fonas"
+
+#: KdeConnect.cxx:181
+#, kde-format
+msgid "Device needs charging"
+msgstr "Įrenginį reikia įkrauti"
+
+#: KdeConnect.cxx:182
+#, kde-format
+msgid ""
+"Device charge of '%1' is at %2%.\n"
+"You should charge it."
+msgstr ""
+"\"%1\" įrenginio įkrova yra ties %2%.\n"
+"Jūs turėtumėte jį įkrauti."
+
+#: Launcher.cxx:96
+#, kde-format
+msgid "Open Folder"
+msgstr "Atverti aplanką"
+
+#: Network.cxx:84
+#, kde-format
+msgid "No Network Connection"
+msgstr "Nėra tinklo ryšio"
+
+#: Network.cxx:94
+#, kde-format
+msgid "Full Network Connectivity (%1)"
+msgstr "Pilnas tinklo jungiamumas (%1)"
+
+#: Network.cxx:96
+#, kde-format
+msgid "Limited Network Connectivity (%1)"
+msgstr "Ribotas tinklo jungiamumas (%1)"
+
+#: Network.cxx:105
+#, kde-format
+msgid "IPv4 Address: %1"
+msgstr "IPv4 adresas: %1"
+
+#: Network.cxx:122
+#, kde-format
+msgid "SSID: %1"
+msgstr "SSID: %1"
+
+#: Network.cxx:124
+#, kde-format
+msgid "Signal Strength: %1"
+msgstr "Signalo stiprumas: %1"
+
+#: Network.cxx:156
+#, kde-format
+msgid "VPN active"
+msgstr "VPN aktyvus"
+
+#: NetworkList.cxx:233
+#, kde-format
+msgid "Configure Network Connections"
+msgstr "Konfigūruoti tinklo ryšius"
+
+#: NetworkList.cxx:286
+#, kde-format
+msgid "Networking is enabled. Click to disable"
+msgstr "Darbas tinkle įjungtas. Spustelėkite norėdami išjungti"
+
+#: NetworkList.cxx:288
+#, kde-format
+msgid "Networking is disabled. Click to enable"
+msgstr "Darbas tinkle išjungtas. Spustelėkite norėdami įjungti"
+
+#: NetworkList.cxx:291
+#, kde-format
+msgid "Wireless Networking is enabled. Click to disable"
+msgstr "Belaidis darbas tinkle įjungtas. Spustelėkite norėdami išjungti"
+
+#: NetworkList.cxx:293
+#, kde-format
+msgid "Wireless Networking is disabled. Click to enable"
+msgstr "Belaidis darbas tinkle išjungtas. Spustelėkite norėdami įjungti"
+
+#: NotificationList.cxx:176
+#, kde-format
+msgid "Notifications"
+msgstr "Pranešimai"
+
+#: NotificationServer.cxx:65
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 pranešimas"
+msgstr[1] "%1 pranešimai"
+msgstr[2] "%1 pranešimų"
+msgstr[3] "%1 pranešimas"
+
+#: Pager.cxx:76
+#, kde-format
+msgid "Configure Virtual Desktops..."
+msgstr "Konfigūruoti virtualius darbalaukius..."
+
+#: Pager.cxx:83
+#, kde-format
+msgid "Configure Virtual Desktops"
+msgstr "Konfigūruoti virtualius darbalaukius"
+
+#: PictureFrameApplet.cxx:107
+#, kde-format
+msgid "Configure PictureFrame Applet"
+msgstr "Konfigūruoti paveiksliukų rėmelio programėlę"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: PictureFrameAppletConfigureDialog.ui:37
+#, kde-format
+msgid "Frame"
+msgstr "Rėmelis"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: PictureFrameAppletConfigureDialog.ui:61
+#, kde-format
+msgid "Path"
+msgstr "Kelias"
+
+#: PkUpdateList.cxx:135
+#, kde-format
+msgid "Getting details ..."
+msgstr "Gaunama išsamesnė informacija ..."
+
+#: PkUpdateList.cxx:177
+#, kde-format
+msgid "<b>Session restart required</b><br>"
+msgstr "<b>Reikia paleisti seansą iš naujo</b><br>"
+
+#: PkUpdateList.cxx:179
+#, kde-format
+msgid "<b>Reboot required</b><br>"
+msgstr "<b>Reikia paleisti kompiuterį iš naujo</b><br>"
+
+#: PkUpdateList.cxx:195
+#, kde-format
+msgid "Software Updates"
+msgstr "Programinės įrangos atnaujinimai"
+
+#: PkUpdateList.cxx:207
+#, kde-format
+msgid "All"
+msgstr "Visi"
+
+#: PkUpdateList.cxx:218 PkUpdateList.cxx:434
+#, kde-format
+msgid "Install"
+msgstr "Įdiegti"
+
+#: PkUpdateList.cxx:222
+#, kde-format
+msgid "Refresh"
+msgstr "Įkelti iš naujo"
+
+#: PkUpdateList.cxx:429
+#, kde-format
+msgid "Install %1 package"
+msgid_plural "Install %1 packages"
+msgstr[0] "Įdiegti %1 paketą"
+msgstr[1] "Įdiegti %1 paketus"
+msgstr[2] "Įdiegti %1 paketų"
+msgstr[3] "Įdiegti %1 paketą"
+
+#: PkUpdateList.cxx:532
+#, kde-format
+msgid "System Reboot Required"
+msgstr "Reikia paleisti sistemą iš naujo"
+
+#: PkUpdateList.cxx:533
+#, kde-format
+msgid "One of the installed packages requires a system reboot"
+msgstr "Vienas iš įdiegtų paketų reikalauja paleisti sistemą iš naujo"
+
+#: PkUpdateList.cxx:534
+#, kde-format
+msgid "Reboot System"
+msgstr "Paleisti sistemą iš naujo"
+
+#: PkUpdateList.cxx:554
+#, kde-format
+msgid "Session Restart Required"
+msgstr "Reikia paleisti seansą iš naujo"
+
+#: PkUpdateList.cxx:555
+#, kde-format
+msgid "One of the installed packages requires you to logout"
+msgstr "Vienas iš įdiegtų paketų reikalauja, kad atsijungtumėte"
+
+#: PkUpdateList.cxx:556
+#, kde-format
+msgid "Logout"
+msgstr "Atsijungti"
+
+#: PkUpdateList.cxx:581
+#, kde-format
+msgid "Cancel Installation"
+msgstr "Atsisakyti įdiegimo"
+
+#: PkUpdateList.cxx:613
+#, kde-format
+msgid "Waiting"
+msgstr "Laukiama"
+
+#: PkUpdateList.cxx:614
+#, kde-format
+msgid "Waiting for authentication"
+msgstr "Laukiama tapatybės nustatymo"
+
+#: PkUpdateList.cxx:615
+#, kde-format
+msgid "Resolving dependencies"
+msgstr "Išsprendžiamos priklausomybės"
+
+#: PkUpdateList.cxx:616
+#, kde-format
+msgid "Updating"
+msgstr "Atnaujinama"
+
+#: PkUpdateList.cxx:617
+#, kde-format
+msgid "Installing"
+msgstr "Įdiegiama"
+
+#: PkUpdateList.cxx:618
+#, kde-format
+msgid "Downloading"
+msgstr "Atsisiunčiama"
+
+#: PkUpdateList.cxx:619
+#, kde-format
+msgid "Canceling"
+msgstr "Atsisakoma"
+
+#: PkUpdateList.cxx:665
+#, kde-format
+msgid "Accept EULA"
+msgstr "Sutinku su licencija"
+
+#: PkUpdateList.cxx:687
+#, kde-format
+msgid "Validate Signature"
+msgstr "Patvirtinti parašą"
+
+#: PkUpdateList.cxx:738
+#, kde-format
+msgid "Update failed"
+msgstr "Atnaujinimas nepavyko"
+
+#: PkUpdates.cxx:64
+#, kde-format
+msgid "Next check: %1 "
+msgstr "Kitas tikrinimas: %1 "
+
+#: PkUpdates.cxx:92
+#, kde-format
+msgid "Checking for updates ..."
+msgstr "Tikrinama, ar yra atnaujinimų..."
+
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#, kde-format
+msgid "Checking for updates ... %1%"
+msgstr "Tikrinama, ar yra atnaujinimų ... %1%"
+
+#: PkUpdates.cxx:184
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"Error on checking for updates: %2"
+msgstr ""
+"Paskiausiai tikrinta: %1\n"
+"Klaida tikrinant, ar yra atnaujinimų: %2"
+
+#: PkUpdates.cxx:187
+#, kde-format
+msgid "Software Update Error"
+msgstr "Programinės įrangos atnaujinimo klaida"
+
+#: PkUpdates.cxx:208
+#, kde-format
+msgid "%1 <b>security</b> update available"
+msgid_plural "%1 <b>security</b> updates available"
+msgstr[0] "Yra prieinamas %1 <b>saugumo</b> atnaujinimas"
+msgstr[1] "Yra prieinami %1 <b>saugumo</b> atnaujinimai"
+msgstr[2] "Yra prieinama %1 <b>saugumo</b> atnaujinimų"
+msgstr[3] "Yra prieinamas %1 <b>saugumo</b> atnaujinimas"
+
+#: PkUpdates.cxx:220
+#, kde-format
+msgid "%1 <i>important</i> update available"
+msgid_plural "%1 <i>important</i> updates available"
+msgstr[0] "Yra prieinamas %1 <b>svarbus</b> atnaujinimas"
+msgstr[1] "Yra prieinami %1 <b>svarbūs</b> atnaujinimai"
+msgstr[2] "Yra prieinama %1 <b>svarbių</b> atnaujinimų"
+msgstr[3] "Yra prieinamas %1 <b>svarbus</b> atnaujinimas"
+
+#: PkUpdates.cxx:232
+#, kde-format
+msgid "%1 bugfix update available"
+msgid_plural "%1 bugfix updates available"
+msgstr[0] "Yra prieinamas %1 klaidų pataisymo atnaujinimas"
+msgstr[1] "Yra prieinami %1 klaidų pataisymo atnaujinimai"
+msgstr[2] "Yra prieinama %1 klaidų pataisymo atnaujinimų"
+msgstr[3] "Yra prieinamas %1 klaidų pataisymo atnaujinimas"
+
+#: PkUpdates.cxx:242
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 other"
+msgid_plural ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 others"
+msgstr[0] ""
+"Paskiausiai tikrinta: %1\n"
+"Neprieinami jokie svarbūs atnaujinimai\n"
+"%2 kitoks"
+msgstr[1] ""
+"Paskiausiai tikrinta: %1\n"
+"Neprieinami jokie svarbūs atnaujinimai\n"
+"%2 kitokie"
+msgstr[2] ""
+"Paskiausiai tikrinta: %1\n"
+"Neprieinami jokie svarbūs atnaujinimai\n"
+"%2 kitokių"
+msgstr[3] ""
+"Paskiausiai tikrinta: %1\n"
+"Neprieinami jokie svarbūs atnaujinimai\n"
+"%2 kitoks"
+
+#: PkUpdates.cxx:253
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No updates available"
+msgstr ""
+"Paskiausiai tikrinta: %1\n"
+"Nėra prieinami jokie atnaujinimai"
+
+#: PkUpdates.cxx:262
+#, kde-format
+msgid "<br>%1 other"
+msgid_plural "<br>%1 others"
+msgstr[0] "<br>%1 kitoks"
+msgstr[1] "<br>%1 kitokie"
+msgstr[2] "<br>%1 kitokių"
+msgstr[3] "<br>%1 kitoks"
+
+#: PkUpdates.cxx:264
+#, kde-format
+msgid "<html>Last check: %1<br>%2</html>"
+msgstr "<html>Paskiausiai tikrinta: %1<br>%2</html>"
+
+#: PkUpdates.cxx:300
+#, kde-format
+msgid "Software Updates Available"
+msgstr "Yra prieinami programinės įrangos atnaujinimai"
+
+#: PkUpdates.cxx:320
+#, kde-format
+msgid "<li>%1 more ...</li>"
+msgstr "<li> ir dar %1 ...</li>"
+
+#: QuickLaunch.cxx:151
+#, kde-format
+msgid "Web Browser"
+msgstr "Saityno naršyklė"
+
+#: StartMenu.cxx:89
+#, kde-format
+msgid "Switch User"
+msgstr "Perjungti naudotoją"
+
+#: StartMenu.cxx:167
+#, kde-format
+msgid "Configure Menu..."
+msgstr "Konfigūruoti meniu..."
+
+#: SysLoad.cxx:203
+#, kde-format
+msgid "CPU %1: %2% (%3 MHz)"
+msgstr "Procesorius %1: %2% (%3 MHz)"
+
+#: SysLoad.cxx:213
+#, kde-format
+msgid "Memory Total: %1 MB (%2 GB)"
+msgstr "Iš viso atminties: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:215
+#, kde-format
+msgid "Memory Used: %1 MB (%2 GB) %3%"
+msgstr "Naudojama atminties: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:217
+#, kde-format
+msgid "Memory Free: %1 MB (%2 GB)"
+msgstr "Laisvos atminties: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:219
+#, kde-format
+msgid "Swap Total: %1 MB (%2 GB)"
+msgstr "Iš viso swap: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:221
+#, kde-format
+msgid "Swap Used: %1 MB (%2 GB) %3%"
+msgstr "Naudojama swap: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:223
+#, kde-format
+msgid "Swap Free: %1 MB (%2 GB)"
+msgstr "Laisvos swap: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:226
+#, kde-format
+msgid "Net send/receive: %1/%2 KB/sec"
+msgstr "Tinklo siuntimas/gavimas: %1/%2 KB/sek."
+
+#: SysLoad.cxx:230
+#, kde-format
+msgid "Net max (last %2 secs): %1 KB/sec"
+msgstr "Tinklo maksimalus (paskutinių %2 sek.): %1 KB/sek."
+
+#: TaskBarButton.cxx:123
+#, kde-format
+msgid "Move To Desktop"
+msgstr "Perkelti į darbalaukį"
+
+#: TaskBarButton.cxx:124
+#, kde-format
+msgid "All Desktops"
+msgstr "Visi darbalaukiai"
+
+#: TaskBarButton.cxx:131
+#, kde-format
+msgid "Close"
+msgstr "Užverti"
+
+#: WeatherApplet.cxx:78
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatūra:"
+
+#: WeatherApplet.cxx:81
+#, kde-format
+msgid "Pressure:"
+msgstr "Slėgis:"
+
+#: WeatherApplet.cxx:84
+#, kde-format
+msgid "Humidity:"
+msgstr "Drėgnumas:"
+
+#: WeatherApplet.cxx:87
+#, kde-format
+msgid "Wind Speed:"
+msgstr "Vėjo greitis:"
+
+#: WeatherApplet.cxx:90
+#, kde-format
+msgid "Wind Direction:"
+msgstr "Vėjo kryptis:"
+
+#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#, kde-format
+msgid "Not configured"
+msgstr "Nesukonfigūruota"
+
+#: WeatherApplet.cxx:195
+#, kde-format
+msgid "°K"
+msgstr "°K"
+
+#: WeatherApplet.cxx:196
+#, kde-format
+msgid "°C"
+msgstr "°C"
+
+#: WeatherApplet.cxx:197
+#, kde-format
+msgid "°F"
+msgstr "°F"
+
+#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
+#: WeatherApplet.cxx:291
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: WeatherApplet.cxx:213
+#, kde-format
+msgid "%1 hPa"
+msgstr "%1 hPa"
+
+#: WeatherApplet.cxx:216
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: WeatherApplet.cxx:230
+#, kde-format
+msgid "%1 °"
+msgstr "%1 °"
+
+#: WeatherApplet.cxx:387
+#, kde-format
+msgid "Configure Weather Applet"
+msgstr "Konfigūruoti orų programėlę"
+
+#: WeatherAppletConfigureDialog.cxx:80
+#, kde-format
+msgid "Downloading city list..."
+msgstr "Atsisiunčiamas miestų sąrašas..."
+
+#: WeatherAppletConfigureDialog.cxx:94
+#, kde-format
+msgid "Download Error"
+msgstr "Atsiuntimo klaida"
+
+#: WeatherAppletConfigureDialog.cxx:95
+#, kde-format
+msgid "Error on downloading city list: %1"
+msgstr "Klaida atsisiunčiant miestų sąrašą: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: WeatherAppletConfigureDialog.ui:20
+#, kde-format
+msgid "API Key"
+msgstr "API raktas"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
+#: WeatherAppletConfigureDialog.ui:27
+#, kde-format
+msgid "The API key is needed to be allowed to get data from openweathermap.org"
+msgstr ""
+"API raktas reikalingas, norint gauti orų duomenis iš openweathermap.org"
+
+#. i18n: ectx: property (text), widget (QPushButton, getApiKey)
+#: WeatherAppletConfigureDialog.ui:34
+#, kde-format
+msgid "Get your personal API key"
+msgstr "Gaukite savo asmeninį API raktą"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: WeatherAppletConfigureDialog.ui:41
+#, kde-format
+msgid "Units"
+msgstr "Vienetai"
+
+#. i18n: ectx: property (text), widget (QRadioButton, metric)
+#: WeatherAppletConfigureDialog.ui:48
+#, kde-format
+msgid "&metric"
+msgstr "&metriniai"
+
+#. i18n: ectx: property (text), widget (QRadioButton, imperial)
+#: WeatherAppletConfigureDialog.ui:58
+#, kde-format
+msgid "&imperial"
+msgstr "&imperiniai"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
+#, kde-format
+msgid "City"
+msgstr "Miestas"
+
+#~ msgid "Enable Networking"
+#~ msgstr "Įjungti darbą tinkle"
+
+#~ msgid "Enable Wireless Networking"
+#~ msgstr "Įjungti belaidžio darbą tinkle"

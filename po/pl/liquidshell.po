@@ -1,0 +1,971 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2018, 2019, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2022-08-07 06:55+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: Battery.cxx:90
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 godzina"
+msgstr[1] "%1 godziny"
+msgstr[2] "%1 godzin"
+
+#: Battery.cxx:91
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minuta"
+msgstr[1] "%1 minuty"
+msgstr[2] "%1 minut"
+
+#: Battery.cxx:163
+#, kde-format
+msgid "Not Charging"
+msgstr "Nie ładuje się"
+
+#: Battery.cxx:164
+#, kde-format
+msgid "Fully Charged"
+msgstr "W pełni naładowana"
+
+#: Battery.cxx:171
+#, kde-format
+msgid "Charging at %1%"
+msgstr "Ładuję się przy %1%"
+
+#: Battery.cxx:173
+#, kde-format
+msgid "Time until full: "
+msgstr "Czas do naładowania: "
+
+#: Battery.cxx:177
+#, kde-format
+msgid "Discharging at %1%"
+msgstr "Rozładowuje się przy %1%"
+
+#: Battery.cxx:179
+#, kde-format
+msgid "Remaining Time: "
+msgstr "Pozostały czas: "
+
+#: Battery.cxx:204
+#, kde-format
+msgid "Power Management"
+msgstr "Zarządzanie energią"
+
+#: Bluetooth.cxx:77
+#, kde-format
+msgid "Bluetooth is operational"
+msgstr "Bluetooth jest dostępny"
+
+#: Bluetooth.cxx:82
+#, kde-format
+msgid "Bluetooth is not operational"
+msgstr "Bluetooth jest niedostępny"
+
+#: Bluetooth.cxx:112
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ClockWidget.cxx:121
+#, kde-format
+msgid "Select Timezones..."
+msgstr "Wybierz strefy czasowe..."
+
+#: ClockWidget.cxx:127
+#, kde-format
+msgid "Select Timezones"
+msgstr "Wybierz strefy czasowe"
+
+#: ClockWidget.cxx:145
+#, kde-format
+msgid "Configure Date & Time..."
+msgstr "Ustawienia &daty i czasu..."
+
+#: ClockWidget.cxx:152
+#, kde-format
+msgid "Date & Time"
+msgstr "Data i czas"
+
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:211
+#, kde-format
+msgid "Filter"
+msgstr "Filtr"
+
+#: ClockWidgetConfigureDialog.cxx:53
+#, kde-format
+msgid "Timezone"
+msgstr "Strefa czasowa"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Kraj"
+
+#: ConfigureDesktopDialog.cxx:49
+#, kde-format
+msgid "Get New Wallpapers..."
+msgstr "Pobierz nową tapetę..."
+
+#: ConfigureDesktopDialog.cxx:55
+#, kde-format
+msgid "Download Wallpapers"
+msgstr "Pobierz tapety"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
+#: ConfigureDesktopDialog.ui:15
+#, kde-format
+msgid "Configure Wallpaper"
+msgstr "Ustawienia tapety"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ConfigureDesktopDialog.ui:23
+#, kde-format
+msgid "Background Color"
+msgstr "Barwa tła"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ConfigureDesktopDialog.ui:33
+#, kde-format
+msgid "Wallpaper File"
+msgstr "Plik tapety"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ConfigureDesktopDialog.ui:67
+#, kde-format
+msgid "Scale Mode"
+msgstr "Tryb skalowania"
+
+#. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
+#: ConfigureDesktopDialog.ui:73
+#, kde-format
+msgid "Or&iginal Size"
+msgstr "Rozm&iar pierwotny"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
+#: ConfigureDesktopDialog.ui:80
+#, kde-format
+msgid "Sca&led Ignoring Aspect Ratio"
+msgstr "Przeska&lowana bez zachowania kształtu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
+#: ConfigureDesktopDialog.ui:87
+#, kde-format
+msgid "Scale&d Keep Aspect Ratio"
+msgstr "&Przeskalowana z zachowaniem kształtu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
+#: ConfigureDesktopDialog.ui:94
+#, kde-format
+msgid "Scaled Keep Aspec&t Ratio and Clip"
+msgstr "Przeskalowana z zachowaniem ksz&tałtu i przycięciem"
+
+#: desktop.cxx:46
+#, kde-format
+msgid "Liquid Desktop Workspace"
+msgstr "Płynna przestrzeń pracy pulpitu"
+
+#: desktop.cxx:47
+#, kde-format
+msgid "A QtWidgets based basic desktop shell"
+msgstr "Podstawowa powłoka pulpitu oparta na QtWidgets"
+
+#: desktop.cxx:49
+#, kde-format
+msgid "Copyright 2017 - 2022 Martin Koller"
+msgstr "Copyright 2017 - 2022 Martin Koller"
+
+#: DesktopApplet.cxx:44 Launcher.cxx:79
+#, kde-format
+msgid "Configure..."
+msgstr "Ustawienia..."
+
+#: DesktopApplet.cxx:52
+#, kde-format
+msgid "Change Size && Position"
+msgstr "Zmień rozmiar i położenie"
+
+#: DesktopApplet.cxx:58
+#, kde-format
+msgid "Remove this Applet"
+msgstr "Usuń ten aplet"
+
+#: DesktopApplet.cxx:106
+#, kde-format
+msgid "%1: Change Size & Position"
+msgstr "%1: Zmień rozmiar i położenie"
+
+#: DesktopApplet.cxx:146
+#, kde-format
+msgid "Remove Applet"
+msgstr "Usuń ten aplet"
+
+#: DesktopApplet.cxx:147
+#, kde-format
+msgid "Really remove this applet?"
+msgstr "Czy na pewno usunąć ten aplet?"
+
+#: DesktopWidget.cxx:77
+#, kde-format
+msgid "Configure Wallpaper..."
+msgstr "Ustawienia tapety..."
+
+#: DesktopWidget.cxx:81
+#, kde-format
+msgid "Add Applet"
+msgstr "Dodaj aplet"
+
+#: DesktopWidget.cxx:85
+#, kde-format
+msgid "Weather"
+msgstr "Pogoda"
+
+#: DesktopWidget.cxx:88
+#, kde-format
+msgid "Disk Usage"
+msgstr "Wykorzystanie dysku"
+
+#: DesktopWidget.cxx:91
+#, kde-format
+msgid "Picture Frame"
+msgstr "Ramka na zdjęcia"
+
+#: DesktopWidget.cxx:94
+#, kde-format
+msgid "Configure Display..."
+msgstr "Ustawienia wyświetlacza..."
+
+#: DesktopWidget.cxx:98 StartMenu.cxx:105
+#, kde-format
+msgid "Run Command..."
+msgstr "Wykonaj polecenie..."
+
+#: DesktopWidget.cxx:108
+#, kde-format
+msgid "Help"
+msgstr "Pomoc"
+
+#: DesktopWidget.cxx:255
+#, kde-format
+msgid "Configure Display"
+msgstr "Ustawienia wyświetlacza"
+
+#: DeviceList.cxx:249
+#, kde-format
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: DeviceList.cxx:266
+#, kde-format
+msgid "Open with File Manager"
+msgstr "Otwórz w przeglądarce plików"
+
+#: DeviceList.cxx:343
+#, kde-format
+msgid ""
+"Device is mounted.\n"
+"Click to unmount/eject"
+msgstr ""
+"Urządzenie jest podpięte.\n"
+"Kliknij, aby odpiąć/wysunąć"
+
+#: DeviceList.cxx:344
+#, kde-format
+msgid ""
+"Device is unmounted.\n"
+"Click to mount"
+msgstr ""
+"Urządzenie nie jest podpięte.\n"
+"Kliknij, aby podpiać"
+
+#: DeviceList.cxx:355
+#, kde-format
+msgid "Unauthorized Operation"
+msgstr "Nieuwierzytelnione działanie"
+
+#: DeviceList.cxx:356
+#, kde-format
+msgid "Device Busy"
+msgstr "Urządzenie zajęte"
+
+#: DeviceList.cxx:357
+#, kde-format
+msgid "Operation Failed"
+msgstr "Nieudane działanie"
+
+#: DeviceList.cxx:358
+#, kde-format
+msgid "User Canceled"
+msgstr "Użytkownik zaniechał"
+
+#: DeviceList.cxx:359
+#, kde-format
+msgid "Invalid Option"
+msgstr "Nieprawidłowa opcja"
+
+#: DeviceList.cxx:360
+#, kde-format
+msgid "Missing Driver"
+msgstr "Brakuje sterownika"
+
+#: DeviceList.cxx:382
+#, kde-format
+msgid "The device can now be safely removed"
+msgstr "Możesz teraz bezpiecznie wysunąć to urządzenie"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Mount failed:"
+msgstr "Odpięcie nie udało się:"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Unmount failed:"
+msgstr "Podpięcie nie udało się:"
+
+#: DeviceNotifier.cxx:35
+#, kde-format
+msgid "Device Notifier"
+msgstr "Powiadomienia o urządzeniach"
+
+#: DeviceNotifier.cxx:38
+#, kde-format
+msgid "Device List"
+msgstr "Lista urządzeń"
+
+#: DiskUsageApplet.cxx:143
+#, kde-format
+msgid "%1 free / %2"
+msgstr "%1 wolnych z %2"
+
+#: DiskUsageApplet.cxx:176
+#, kde-format
+msgid "Configure DiskUsage Applet"
+msgstr "Ustawienia apletu wykorzystania dysku"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, DiskUsageAppletConfigureDialog)
+#: DiskUsageAppletConfigureDialog.ui:14 PictureFrameAppletConfigureDialog.ui:14
+#: WeatherAppletConfigureDialog.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Okno dialogowe"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
+#, kde-format
+msgid "Text"
+msgstr "Tekst"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: DiskUsageAppletConfigureDialog.ui:44
+#, kde-format
+msgid "Bar Text"
+msgstr "Pasek tekstu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
+#: WeatherAppletConfigureDialog.ui:119
+#, kde-format
+msgid "Background"
+msgstr "Tło"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: DiskUsageAppletConfigureDialog.ui:72
+#, kde-format
+msgid "Bar Background"
+msgstr "Tło paska"
+
+#: KdeConnect.cxx:181
+#, kde-format
+msgid "Device needs charging"
+msgstr "Urządzenie wymaga ładowania"
+
+#: KdeConnect.cxx:182
+#, kde-format
+msgid ""
+"Device charge of '%1' is at %2%.\n"
+"You should charge it."
+msgstr ""
+"Ładunek urządzenia '%1' jest na %2%.\n"
+"Należy je naładować."
+
+#: Launcher.cxx:96
+#, kde-format
+msgid "Open Folder"
+msgstr "Otwórz katalog"
+
+#: Network.cxx:84
+#, kde-format
+msgid "No Network Connection"
+msgstr "Brak połączenia z siecią"
+
+#: Network.cxx:94
+#, kde-format
+msgid "Full Network Connectivity (%1)"
+msgstr "Pełna łączność z siecią (%1)"
+
+#: Network.cxx:96
+#, kde-format
+msgid "Limited Network Connectivity (%1)"
+msgstr "Ograniczona łączność z siecią (%1)"
+
+#: Network.cxx:105
+#, kde-format
+msgid "IPv4 Address: %1"
+msgstr "Adres IPv4: %1"
+
+#: Network.cxx:122
+#, kde-format
+msgid "SSID: %1"
+msgstr "SSID: %1"
+
+#: Network.cxx:124
+#, kde-format
+msgid "Signal Strength: %1"
+msgstr "Siła sygnału: %1"
+
+#: Network.cxx:156
+#, kde-format
+msgid "VPN active"
+msgstr "VPN w użyciu"
+
+#: NetworkList.cxx:233
+#, kde-format
+msgid "Configure Network Connections"
+msgstr "Ustawienia połączeń sieciowych"
+
+#: NetworkList.cxx:286
+#, kde-format
+msgid "Networking is enabled. Click to disable"
+msgstr "Sieć jest włączona. Naciśnij, aby wyłączyć"
+
+#: NetworkList.cxx:288
+#, kde-format
+msgid "Networking is disabled. Click to enable"
+msgstr "Sieć jest wyłączona. Naciśnij, aby włączyć"
+
+#: NetworkList.cxx:291
+#, kde-format
+msgid "Wireless Networking is enabled. Click to disable"
+msgstr "Sieć bezprzewodowa jest włączona. Naciśnij, aby wyłączyć"
+
+#: NetworkList.cxx:293
+#, kde-format
+msgid "Wireless Networking is disabled. Click to enable"
+msgstr "Sieć bezprzewodowa jest wyłączona. Naciśnij, aby włączyć"
+
+#: NotificationList.cxx:176
+#, kde-format
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: NotificationServer.cxx:65
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 powiadomienie"
+msgstr[1] "%1 powiadomienia"
+msgstr[2] "%1 powiadomień"
+
+#: Pager.cxx:76
+#, kde-format
+msgid "Configure Virtual Desktops..."
+msgstr "Ustawienia pulpitów wirtualnych..."
+
+#: Pager.cxx:83
+#, kde-format
+msgid "Configure Virtual Desktops"
+msgstr "Ustawienia pulpitów wirtualnych"
+
+#: PictureFrameApplet.cxx:107
+#, kde-format
+msgid "Configure PictureFrame Applet"
+msgstr "Ustawienia apletu ramki ze zdjęciami"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: PictureFrameAppletConfigureDialog.ui:37
+#, kde-format
+msgid "Frame"
+msgstr "Ramka"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: PictureFrameAppletConfigureDialog.ui:61
+#, kde-format
+msgid "Path"
+msgstr "Ścieżka"
+
+#: PkUpdateList.cxx:135
+#, kde-format
+msgid "Getting details ..."
+msgstr "Pobieranie szczegółów ..."
+
+#: PkUpdateList.cxx:177
+#, kde-format
+msgid "<b>Session restart required</b><br>"
+msgstr "<b>Wymagane ponowne uruchomienie sesji</b><br>"
+
+#: PkUpdateList.cxx:179
+#, kde-format
+msgid "<b>Reboot required</b><br>"
+msgstr "<b>Wymagane ponowne uruchomienie komputera</b><br>"
+
+#: PkUpdateList.cxx:195
+#, kde-format
+msgid "Software Updates"
+msgstr "Uaktualnienia oprogramowania"
+
+#: PkUpdateList.cxx:207
+#, kde-format
+msgid "All"
+msgstr "Wszystkie"
+
+#: PkUpdateList.cxx:218 PkUpdateList.cxx:434
+#, kde-format
+msgid "Install"
+msgstr "Wgraj"
+
+#: PkUpdateList.cxx:222
+#, kde-format
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: PkUpdateList.cxx:429
+#, kde-format
+msgid "Install %1 package"
+msgid_plural "Install %1 packages"
+msgstr[0] "Wgraj %1 pakiet"
+msgstr[1] "Wgraj %1 pakiety"
+msgstr[2] "Wgraj %1 pakietów"
+
+#: PkUpdateList.cxx:532
+#, kde-format
+msgid "System Reboot Required"
+msgstr "Wymagane ponowne uruchomienie komputera"
+
+#: PkUpdateList.cxx:533
+#, kde-format
+msgid "One of the installed packages requires a system reboot"
+msgstr "Jeden z wgranych pakietów wymaga ponownego uruchomienia systemu"
+
+#: PkUpdateList.cxx:534
+#, kde-format
+msgid "Reboot System"
+msgstr "Uruchom system ponownie"
+
+#: PkUpdateList.cxx:554
+#, kde-format
+msgid "Session Restart Required"
+msgstr "Wymagane ponowne uruchomienie sesji"
+
+#: PkUpdateList.cxx:555
+#, kde-format
+msgid "One of the installed packages requires you to logout"
+msgstr "Jeden z wgranych pakietów wymaga wylogowania się"
+
+#: PkUpdateList.cxx:556
+#, kde-format
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: PkUpdateList.cxx:581
+#, kde-format
+msgid "Cancel Installation"
+msgstr "Porzuć wgrywanie"
+
+#: PkUpdateList.cxx:613
+#, kde-format
+msgid "Waiting"
+msgstr "Oczekiwanie"
+
+#: PkUpdateList.cxx:614
+#, kde-format
+msgid "Waiting for authentication"
+msgstr "Oczekiwanie na uwierzytelnienie"
+
+#: PkUpdateList.cxx:615
+#, kde-format
+msgid "Resolving dependencies"
+msgstr "Rozwiązywanie zależności"
+
+#: PkUpdateList.cxx:616
+#, kde-format
+msgid "Updating"
+msgstr "Uaktualnianie"
+
+#: PkUpdateList.cxx:617
+#, kde-format
+msgid "Installing"
+msgstr "Wgrywanie"
+
+#: PkUpdateList.cxx:618
+#, kde-format
+msgid "Downloading"
+msgstr "Pobieranie"
+
+#: PkUpdateList.cxx:619
+#, kde-format
+msgid "Canceling"
+msgstr "Porzucanie"
+
+#: PkUpdateList.cxx:665
+#, kde-format
+msgid "Accept EULA"
+msgstr "Akceptuj EULA"
+
+#: PkUpdateList.cxx:687
+#, kde-format
+msgid "Validate Signature"
+msgstr "Potwierdź podpis"
+
+#: PkUpdateList.cxx:738
+#, kde-format
+msgid "Update failed"
+msgstr "Nie udało się uaktualnić"
+
+#: PkUpdates.cxx:64
+#, kde-format
+msgid "Next check: %1 "
+msgstr "Następne sprawdzenie: %1"
+
+#: PkUpdates.cxx:92
+#, kde-format
+msgid "Checking for updates ..."
+msgstr "Sprawdzanie uaktualnień..."
+
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#, kde-format
+msgid "Checking for updates ... %1%"
+msgstr "Sprawdzanie uaktualnień ... %1%"
+
+#: PkUpdates.cxx:184
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"Error on checking for updates: %2"
+msgstr ""
+"Ostatnie sprawdzenie: %1\n"
+"Błąd sprawdzania uaktualnień: %2"
+
+#: PkUpdates.cxx:187
+#, kde-format
+msgid "Software Update Error"
+msgstr "Błąd uaktualniania oprogramowania"
+
+#: PkUpdates.cxx:208
+#, kde-format
+msgid "%1 <b>security</b> update available"
+msgid_plural "%1 <b>security</b> updates available"
+msgstr[0] "%1 uaktualnienie <b>bezpieczeństwa</b> dostępne"
+msgstr[1] "%1 uaktualnienia <b>bezpieczeństwa</b> dostępne"
+msgstr[2] "%1 uaktualnień <b>bezpieczeństwa</b> dostępnych"
+
+#: PkUpdates.cxx:220
+#, kde-format
+msgid "%1 <i>important</i> update available"
+msgid_plural "%1 <i>important</i> updates available"
+msgstr[0] "%1 <i>ważne</i> uaktualnienie dostępne"
+msgstr[1] "%1 <i>ważne</i> uaktualnienia dostępne"
+msgstr[2] "%1 <i>ważne</i> uaktualnień dostępnych"
+
+#: PkUpdates.cxx:232
+#, kde-format
+msgid "%1 bugfix update available"
+msgid_plural "%1 bugfix updates available"
+msgstr[0] "%1 uaktualnienie poprawkowe dostępne"
+msgstr[1] "%1 uaktualnienia poprawkowe dostępne"
+msgstr[2] "%1 uaktualnień poprawkowych dostępnych"
+
+#: PkUpdates.cxx:242
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 other"
+msgid_plural ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 others"
+msgstr[0] ""
+"Ostatnie sprawdzenie: %1\n"
+"Brak ważnych uaktualnień\n"
+"%2 inne"
+msgstr[1] ""
+"Ostatnie sprawdzenie: %1\n"
+"Brak ważnych uaktualnień\n"
+"%2 inne"
+msgstr[2] ""
+"Ostatnie sprawdzenie: %1\n"
+"Brak ważnych uaktualnień\n"
+"%2 innych"
+
+#: PkUpdates.cxx:253
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No updates available"
+msgstr ""
+"Ostatnie sprawdzenie: %1\n"
+"Nie ma żadnych uaktualnień"
+
+#: PkUpdates.cxx:262
+#, kde-format
+msgid "<br>%1 other"
+msgid_plural "<br>%1 others"
+msgstr[0] "<br>%1 inne"
+msgstr[1] "<br>%1 inne"
+msgstr[2] "<br>%1 innych"
+
+#: PkUpdates.cxx:264
+#, kde-format
+msgid "<html>Last check: %1<br>%2</html>"
+msgstr "<html>Ostatnie sprawdzenie: %1<br>%2</html>"
+
+#: PkUpdates.cxx:300
+#, kde-format
+msgid "Software Updates Available"
+msgstr "Dostępne uaktualnienie oprogramowania"
+
+#: PkUpdates.cxx:320
+#, kde-format
+msgid "<li>%1 more ...</li>"
+msgstr "<li>%1 więcej ...</li>"
+
+#: QuickLaunch.cxx:151
+#, kde-format
+msgid "Web Browser"
+msgstr "Przeglądarka sieciowa"
+
+#: StartMenu.cxx:89
+#, kde-format
+msgid "Switch User"
+msgstr "Przełącz użytkownika"
+
+#: StartMenu.cxx:167
+#, kde-format
+msgid "Configure Menu..."
+msgstr "Ustawienia menu..."
+
+#: SysLoad.cxx:203
+#, kde-format
+msgid "CPU %1: %2% (%3 MHz)"
+msgstr "CPU %1: %2% (%3 MHz)"
+
+#: SysLoad.cxx:213
+#, kde-format
+msgid "Memory Total: %1 MB (%2 GB)"
+msgstr "Razem pamięci: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:215
+#, kde-format
+msgid "Memory Used: %1 MB (%2 GB) %3%"
+msgstr "Wykorzystanie pamięci: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:217
+#, kde-format
+msgid "Memory Free: %1 MB (%2 GB)"
+msgstr "Wolnej pamięci: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:219
+#, kde-format
+msgid "Swap Total: %1 MB (%2 GB)"
+msgstr "Razem pamięci wymiany: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:221
+#, kde-format
+msgid "Swap Used: %1 MB (%2 GB) %3%"
+msgstr "Wykorzystanie pamięci wymiany: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:223
+#, kde-format
+msgid "Swap Free: %1 MB (%2 GB)"
+msgstr "Wolnej pamięci wymiany: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:226
+#, kde-format
+msgid "Net send/receive: %1/%2 KB/sec"
+msgstr "Wysyłanie/pobieranie w sieci: %1/%2 KB/sec"
+
+#: SysLoad.cxx:230
+#, kde-format
+msgid "Net max (last %2 secs): %1 KB/sec"
+msgstr "Maks. wykorzystanie sieci (ostanie %2 sekundy) %1 KB/sec"
+
+#: TaskBarButton.cxx:123
+#, kde-format
+msgid "Move To Desktop"
+msgstr "Przenieś na pulpit"
+
+#: TaskBarButton.cxx:124
+#, kde-format
+msgid "All Desktops"
+msgstr "Wszystkie pulpity"
+
+#: TaskBarButton.cxx:131
+#, kde-format
+msgid "Close"
+msgstr "Zamknij"
+
+#: WeatherApplet.cxx:78
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatura:"
+
+#: WeatherApplet.cxx:81
+#, kde-format
+msgid "Pressure:"
+msgstr "Ciśnienie:"
+
+#: WeatherApplet.cxx:84
+#, kde-format
+msgid "Humidity:"
+msgstr "Wilgotność:"
+
+#: WeatherApplet.cxx:87
+#, kde-format
+msgid "Wind Speed:"
+msgstr "Szybkość wiatru:"
+
+#: WeatherApplet.cxx:90
+#, kde-format
+msgid "Wind Direction:"
+msgstr "Kierunek wiatru:"
+
+#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#, kde-format
+msgid "Not configured"
+msgstr "Nieustawiony"
+
+#: WeatherApplet.cxx:195
+#, kde-format
+msgid "°K"
+msgstr "°K"
+
+#: WeatherApplet.cxx:196
+#, kde-format
+msgid "°C"
+msgstr "°C"
+
+#: WeatherApplet.cxx:197
+#, kde-format
+msgid "°F"
+msgstr "°F"
+
+#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
+#: WeatherApplet.cxx:291
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: WeatherApplet.cxx:213
+#, kde-format
+msgid "%1 hPa"
+msgstr "%1 hPa"
+
+#: WeatherApplet.cxx:216
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: WeatherApplet.cxx:230
+#, kde-format
+msgid "%1 °"
+msgstr "%1 °"
+
+#: WeatherApplet.cxx:387
+#, kde-format
+msgid "Configure Weather Applet"
+msgstr "Ustawienia wtyczki pogody"
+
+#: WeatherAppletConfigureDialog.cxx:80
+#, kde-format
+msgid "Downloading city list..."
+msgstr "Pobieranie wykazu miast..."
+
+#: WeatherAppletConfigureDialog.cxx:94
+#, kde-format
+msgid "Download Error"
+msgstr "Błąd pobierania"
+
+#: WeatherAppletConfigureDialog.cxx:95
+#, kde-format
+msgid "Error on downloading city list: %1"
+msgstr "Błąd pobierania wykazu miast: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: WeatherAppletConfigureDialog.ui:20
+#, kde-format
+msgid "API Key"
+msgstr "Klucz API"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
+#: WeatherAppletConfigureDialog.ui:27
+#, kde-format
+msgid "The API key is needed to be allowed to get data from openweathermap.org"
+msgstr "Klucz API jest wymagany do pobierania danych z openweathermap.org"
+
+#. i18n: ectx: property (text), widget (QPushButton, getApiKey)
+#: WeatherAppletConfigureDialog.ui:34
+#, kde-format
+msgid "Get your personal API key"
+msgstr "Pobierz swój osobisty klucz API"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: WeatherAppletConfigureDialog.ui:41
+#, kde-format
+msgid "Units"
+msgstr "Jednostki"
+
+#. i18n: ectx: property (text), widget (QRadioButton, metric)
+#: WeatherAppletConfigureDialog.ui:48
+#, kde-format
+msgid "&metric"
+msgstr "&metryczne"
+
+#. i18n: ectx: property (text), widget (QRadioButton, imperial)
+#: WeatherAppletConfigureDialog.ui:58
+#, kde-format
+msgid "&imperial"
+msgstr "&imperialne"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
+#, kde-format
+msgid "City"
+msgstr "Miasto"
+
+#~ msgid "Enable Networking"
+#~ msgstr "Włącz sieć"
+
+#~ msgid "Enable Wireless Networking"
+#~ msgstr "Włącz sieć bezprzewodową"

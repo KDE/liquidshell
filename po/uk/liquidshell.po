@@ -1,0 +1,988 @@
+# Translation of liquidshell.po to Ukrainian
+# Copyright (C) 2017-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: liquidshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-05 00:47+0000\n"
+"PO-Revision-Date: 2022-07-27 17:48+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: Battery.cxx:90
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 година"
+msgstr[1] "%1 години"
+msgstr[2] "%1 годин"
+msgstr[3] "%1 година"
+
+#: Battery.cxx:91
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 хвилина"
+msgstr[1] "%1 хвилини"
+msgstr[2] "%1 хвилин"
+msgstr[3] "%1 хвилина"
+
+#: Battery.cxx:163
+#, kde-format
+msgid "Not Charging"
+msgstr "Не заряджається"
+
+#: Battery.cxx:164
+#, kde-format
+msgid "Fully Charged"
+msgstr "Повністю заряджено"
+
+#: Battery.cxx:171
+#, kde-format
+msgid "Charging at %1%"
+msgstr "Заряджено на %1%"
+
+#: Battery.cxx:173
+#, kde-format
+msgid "Time until full: "
+msgstr "Час до повного: "
+
+#: Battery.cxx:177
+#, kde-format
+msgid "Discharging at %1%"
+msgstr "Розряджено до %1%"
+
+#: Battery.cxx:179
+#, kde-format
+msgid "Remaining Time: "
+msgstr "Час, що залишився: "
+
+#: Battery.cxx:204
+#, kde-format
+msgid "Power Management"
+msgstr "Керування живленням"
+
+#: Bluetooth.cxx:77
+#, kde-format
+msgid "Bluetooth is operational"
+msgstr "Bluetooth працює"
+
+#: Bluetooth.cxx:82
+#, kde-format
+msgid "Bluetooth is not operational"
+msgstr "Bluetooth не працює"
+
+#: Bluetooth.cxx:112
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ClockWidget.cxx:121
+#, kde-format
+msgid "Select Timezones..."
+msgstr "Вибрати часові пояси…"
+
+#: ClockWidget.cxx:127
+#, kde-format
+msgid "Select Timezones"
+msgstr "Вибір часових поясів"
+
+#: ClockWidget.cxx:145
+#, kde-format
+msgid "Configure Date & Time..."
+msgstr "Налаштування &часу та дати…"
+
+#: ClockWidget.cxx:152
+#, kde-format
+msgid "Date & Time"
+msgstr "Дата і час"
+
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:211
+#, kde-format
+msgid "Filter"
+msgstr "Фільтр"
+
+#: ClockWidgetConfigureDialog.cxx:53
+#, kde-format
+msgid "Timezone"
+msgstr "Часовий пояс"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Країна"
+
+#: ConfigureDesktopDialog.cxx:49
+#, kde-format
+msgid "Get New Wallpapers..."
+msgstr "Отримати зображення тла стільниці…"
+
+#: ConfigureDesktopDialog.cxx:55
+#, kde-format
+msgid "Download Wallpapers"
+msgstr "Отримати зображення тла стільниці"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
+#: ConfigureDesktopDialog.ui:15
+#, kde-format
+msgid "Configure Wallpaper"
+msgstr "Налаштовування зображення тла"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ConfigureDesktopDialog.ui:23
+#, kde-format
+msgid "Background Color"
+msgstr "Колір тла"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ConfigureDesktopDialog.ui:33
+#, kde-format
+msgid "Wallpaper File"
+msgstr "Файл зображення тла"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ConfigureDesktopDialog.ui:67
+#, kde-format
+msgid "Scale Mode"
+msgstr "Режим масштабування"
+
+#. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
+#: ConfigureDesktopDialog.ui:73
+#, kde-format
+msgid "Or&iginal Size"
+msgstr "По&чатковий розмір"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
+#: ConfigureDesktopDialog.ui:80
+#, kde-format
+msgid "Sca&led Ignoring Aspect Ratio"
+msgstr "&Масштабування без врахування співвідношення розмірів"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
+#: ConfigureDesktopDialog.ui:87
+#, kde-format
+msgid "Scale&d Keep Aspect Ratio"
+msgstr "М&асштабування із врахуванням співвідношення розмірів"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
+#: ConfigureDesktopDialog.ui:94
+#, kde-format
+msgid "Scaled Keep Aspec&t Ratio and Clip"
+msgstr "Масштабування із вра&хуванням співвідношення розмірів і обрізання"
+
+#: desktop.cxx:46
+#, kde-format
+msgid "Liquid Desktop Workspace"
+msgstr "Робочий простір Ліквід для комп'ютерів"
+
+#: desktop.cxx:47
+#, kde-format
+msgid "A QtWidgets based basic desktop shell"
+msgstr "Заснована на QtWidgets базова оболонка стільниці"
+
+#: desktop.cxx:49
+#, kde-format
+msgid "Copyright 2017 - 2022 Martin Koller"
+msgstr "© Martin Koller, 2017–2022"
+
+#: DesktopApplet.cxx:44 Launcher.cxx:79
+#, kde-format
+msgid "Configure..."
+msgstr "Налаштувати…"
+
+#: DesktopApplet.cxx:52
+#, kde-format
+msgid "Change Size && Position"
+msgstr "Зміна розмірів і розташування"
+
+#: DesktopApplet.cxx:58
+#, kde-format
+msgid "Remove this Applet"
+msgstr "Вилучити цей аплет"
+
+#: DesktopApplet.cxx:106
+#, kde-format
+msgid "%1: Change Size & Position"
+msgstr "%1: зміна розмірів і розташування"
+
+#: DesktopApplet.cxx:146
+#, kde-format
+msgid "Remove Applet"
+msgstr "Вилучити аплет"
+
+#: DesktopApplet.cxx:147
+#, kde-format
+msgid "Really remove this applet?"
+msgstr "Справді вилучити цей аплет?"
+
+#: DesktopWidget.cxx:77
+#, kde-format
+msgid "Configure Wallpaper..."
+msgstr "Налаштувати шпалери…"
+
+#: DesktopWidget.cxx:81
+#, kde-format
+msgid "Add Applet"
+msgstr "Додати аплет"
+
+#: DesktopWidget.cxx:85
+#, kde-format
+msgid "Weather"
+msgstr "Погода"
+
+#: DesktopWidget.cxx:88
+#, kde-format
+msgid "Disk Usage"
+msgstr "Використання диска"
+
+#: DesktopWidget.cxx:91
+#, kde-format
+msgid "Picture Frame"
+msgstr "Картинна рамка"
+
+#: DesktopWidget.cxx:94
+#, kde-format
+msgid "Configure Display..."
+msgstr "Налаштувати показ…"
+
+#: DesktopWidget.cxx:98 StartMenu.cxx:105
+#, kde-format
+msgid "Run Command..."
+msgstr "Виконати команду…"
+
+#: DesktopWidget.cxx:108
+#, kde-format
+msgid "Help"
+msgstr "Довідка"
+
+#: DesktopWidget.cxx:255
+#, kde-format
+msgid "Configure Display"
+msgstr "Налаштування показу"
+
+#: DeviceList.cxx:249
+#, kde-format
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: DeviceList.cxx:266
+#, kde-format
+msgid "Open with File Manager"
+msgstr "Відкрити у програмі для керування файлами"
+
+#: DeviceList.cxx:343
+#, kde-format
+msgid ""
+"Device is mounted.\n"
+"Click to unmount/eject"
+msgstr ""
+"Пристрій змонтовано.\n"
+"Натисніть, щоб демонтувати або виштовхнути."
+
+#: DeviceList.cxx:344
+#, kde-format
+msgid ""
+"Device is unmounted.\n"
+"Click to mount"
+msgstr ""
+"Пристрій демонтовано.\n"
+"Натисніть, щоб змонтувати"
+
+#: DeviceList.cxx:355
+#, kde-format
+msgid "Unauthorized Operation"
+msgstr "Неуповноважена дія"
+
+#: DeviceList.cxx:356
+#, kde-format
+msgid "Device Busy"
+msgstr "Пристрій зайнято"
+
+#: DeviceList.cxx:357
+#, kde-format
+msgid "Operation Failed"
+msgstr "Не вдалося виконати"
+
+#: DeviceList.cxx:358
+#, kde-format
+msgid "User Canceled"
+msgstr "Скасовано користувачем"
+
+#: DeviceList.cxx:359
+#, kde-format
+msgid "Invalid Option"
+msgstr "Некоректний параметр"
+
+#: DeviceList.cxx:360
+#, kde-format
+msgid "Missing Driver"
+msgstr "Немає драйвера"
+
+#: DeviceList.cxx:382
+#, kde-format
+msgid "The device can now be safely removed"
+msgstr "Пристрій тепер можна безпечно від’єднувати"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Mount failed:"
+msgstr "Помилка монтування:"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Unmount failed:"
+msgstr "Помилка демонтування:"
+
+#: DeviceNotifier.cxx:35
+#, kde-format
+msgid "Device Notifier"
+msgstr "Сповіщення про пристрої"
+
+#: DeviceNotifier.cxx:38
+#, kde-format
+msgid "Device List"
+msgstr "Список пристроїв"
+
+#: DiskUsageApplet.cxx:143
+#, kde-format
+msgid "%1 free / %2"
+msgstr "%1 вільно з %2"
+
+#: DiskUsageApplet.cxx:176
+#, kde-format
+msgid "Configure DiskUsage Applet"
+msgstr "Налаштування аплету диска"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, DiskUsageAppletConfigureDialog)
+#: DiskUsageAppletConfigureDialog.ui:14 PictureFrameAppletConfigureDialog.ui:14
+#: WeatherAppletConfigureDialog.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Вікно"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
+#, kde-format
+msgid "Text"
+msgstr "Текст"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: DiskUsageAppletConfigureDialog.ui:44
+#, kde-format
+msgid "Bar Text"
+msgstr "Текст панелі"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
+#: WeatherAppletConfigureDialog.ui:119
+#, kde-format
+msgid "Background"
+msgstr "Тло"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: DiskUsageAppletConfigureDialog.ui:72
+#, kde-format
+msgid "Bar Background"
+msgstr "Тло панелі"
+
+#: KdeConnect.cxx:181
+#, kde-format
+msgid "Device needs charging"
+msgstr "Пристрій потребує заряджання"
+
+#: KdeConnect.cxx:182
+#, kde-format
+msgid ""
+"Device charge of '%1' is at %2%.\n"
+"You should charge it."
+msgstr ""
+"Заряд пристрою для «%1» дорівнює %2%.\n"
+"Вам варто підзарядити пристрій."
+
+#: Launcher.cxx:96
+#, kde-format
+msgid "Open Folder"
+msgstr "Відкрити теку"
+
+#: Network.cxx:84
+#, kde-format
+msgid "No Network Connection"
+msgstr "Немає з’єднання із мережею"
+
+#: Network.cxx:94
+#, kde-format
+msgid "Full Network Connectivity (%1)"
+msgstr "Повноцінне з'єднання з мережею (%1)"
+
+#: Network.cxx:96
+#, kde-format
+msgid "Limited Network Connectivity (%1)"
+msgstr "Обмежене з'єднання з мережею (%1)"
+
+#: Network.cxx:105
+#, kde-format
+msgid "IPv4 Address: %1"
+msgstr "IPv4-адреса: %1"
+
+#: Network.cxx:122
+#, kde-format
+msgid "SSID: %1"
+msgstr "SSID: %1"
+
+#: Network.cxx:124
+#, kde-format
+msgid "Signal Strength: %1"
+msgstr "Потужність сигналу: %1"
+
+#: Network.cxx:156
+#, kde-format
+msgid "VPN active"
+msgstr "Задіяно VPN"
+
+#: NetworkList.cxx:233
+#, kde-format
+msgid "Configure Network Connections"
+msgstr "Налаштовування з'єднань мережі"
+
+#: NetworkList.cxx:286
+#, kde-format
+msgid "Networking is enabled. Click to disable"
+msgstr "Увімкнено роботу у мережі. Натисніть, щоб вимкнути"
+
+#: NetworkList.cxx:288
+#, kde-format
+msgid "Networking is disabled. Click to enable"
+msgstr "Вимкнено роботу у мережі. Натисніть, щоб увімкнути"
+
+#: NetworkList.cxx:291
+#, kde-format
+msgid "Wireless Networking is enabled. Click to disable"
+msgstr "Увімкнено роботу у бездротовій мережі. Натисніть, щоб вимкнути"
+
+#: NetworkList.cxx:293
+#, kde-format
+msgid "Wireless Networking is disabled. Click to enable"
+msgstr "Вимкнено роботу у бездротовій мережі. Натисніть, щоб увімкнути"
+
+#: NotificationList.cxx:176
+#, kde-format
+msgid "Notifications"
+msgstr "Сповіщення"
+
+#: NotificationServer.cxx:65
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 сповіщення"
+msgstr[1] "%1 сповіщення"
+msgstr[2] "%1 сповіщень"
+msgstr[3] "%1 сповіщення"
+
+#: Pager.cxx:76
+#, kde-format
+msgid "Configure Virtual Desktops..."
+msgstr "Налаштувати віртуальні стільниці…"
+
+#: Pager.cxx:83
+#, kde-format
+msgid "Configure Virtual Desktops"
+msgstr "Налаштування віртуальних стільниць"
+
+#: PictureFrameApplet.cxx:107
+#, kde-format
+msgid "Configure PictureFrame Applet"
+msgstr "Налаштування аплету «Картинна рамка»"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: PictureFrameAppletConfigureDialog.ui:37
+#, kde-format
+msgid "Frame"
+msgstr "Рамка"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: PictureFrameAppletConfigureDialog.ui:61
+#, kde-format
+msgid "Path"
+msgstr "Шлях"
+
+#: PkUpdateList.cxx:135
+#, kde-format
+msgid "Getting details ..."
+msgstr "Отримуємо подробиці…"
+
+#: PkUpdateList.cxx:177
+#, kde-format
+msgid "<b>Session restart required</b><br>"
+msgstr "<b>Потрібен перезапуск сеансу</b><br>"
+
+#: PkUpdateList.cxx:179
+#, kde-format
+msgid "<b>Reboot required</b><br>"
+msgstr "<b>Потрібне перезавантаження</b><br>"
+
+#: PkUpdateList.cxx:195
+#, kde-format
+msgid "Software Updates"
+msgstr "Оновлення програм"
+
+#: PkUpdateList.cxx:207
+#, kde-format
+msgid "All"
+msgstr "Усі"
+
+#: PkUpdateList.cxx:218 PkUpdateList.cxx:434
+#, kde-format
+msgid "Install"
+msgstr "Встановити"
+
+#: PkUpdateList.cxx:222
+#, kde-format
+msgid "Refresh"
+msgstr "Оновити"
+
+#: PkUpdateList.cxx:429
+#, kde-format
+msgid "Install %1 package"
+msgid_plural "Install %1 packages"
+msgstr[0] "Встановити %1 пакунок"
+msgstr[1] "Встановити %1 пакунки"
+msgstr[2] "Встановити %1 пакунків"
+msgstr[3] "Встановити %1 пакунок"
+
+#: PkUpdateList.cxx:532
+#, kde-format
+msgid "System Reboot Required"
+msgstr "Потрібне перезавантаження системи"
+
+#: PkUpdateList.cxx:533
+#, kde-format
+msgid "One of the installed packages requires a system reboot"
+msgstr "Встановлення одного із пакунків потребує перезавантаження системи"
+
+#: PkUpdateList.cxx:534
+#, kde-format
+msgid "Reboot System"
+msgstr "Перезавантажити систему"
+
+#: PkUpdateList.cxx:554
+#, kde-format
+msgid "Session Restart Required"
+msgstr "Потрібен перезапуск сеансу"
+
+#: PkUpdateList.cxx:555
+#, kde-format
+msgid "One of the installed packages requires you to logout"
+msgstr ""
+"Встановлення одного з пакунків потребує виходу вашого користувача із системи"
+
+#: PkUpdateList.cxx:556
+#, kde-format
+msgid "Logout"
+msgstr "Вийти"
+
+#: PkUpdateList.cxx:581
+#, kde-format
+msgid "Cancel Installation"
+msgstr "Скасувати встановлення"
+
+#: PkUpdateList.cxx:613
+#, kde-format
+msgid "Waiting"
+msgstr "Очікування"
+
+#: PkUpdateList.cxx:614
+#, kde-format
+msgid "Waiting for authentication"
+msgstr "Очікування на завершення розпізнавання"
+
+#: PkUpdateList.cxx:615
+#, kde-format
+msgid "Resolving dependencies"
+msgstr "Розв’язання залежностей"
+
+#: PkUpdateList.cxx:616
+#, kde-format
+msgid "Updating"
+msgstr "Оновлення"
+
+#: PkUpdateList.cxx:617
+#, kde-format
+msgid "Installing"
+msgstr "Встановлення"
+
+#: PkUpdateList.cxx:618
+#, kde-format
+msgid "Downloading"
+msgstr "Отримання"
+
+#: PkUpdateList.cxx:619
+#, kde-format
+msgid "Canceling"
+msgstr "Скасування"
+
+#: PkUpdateList.cxx:665
+#, kde-format
+msgid "Accept EULA"
+msgstr "Погодитися з EULA"
+
+#: PkUpdateList.cxx:687
+#, kde-format
+msgid "Validate Signature"
+msgstr "Підтвердити підпис"
+
+#: PkUpdateList.cxx:738
+#, kde-format
+msgid "Update failed"
+msgstr "Спроба оновлення завершилася невдало"
+
+#: PkUpdates.cxx:64
+#, kde-format
+msgid "Next check: %1 "
+msgstr "Наступна перевірка: %1 "
+
+#: PkUpdates.cxx:92
+#, kde-format
+msgid "Checking for updates ..."
+msgstr "Шукаємо оновлення…"
+
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#, kde-format
+msgid "Checking for updates ... %1%"
+msgstr "Шукаємо оновлення… %1 %"
+
+#: PkUpdates.cxx:184
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"Error on checking for updates: %2"
+msgstr ""
+"Попередня перевірка: %1\n"
+"Помилка під час пошуку оновлень: %2"
+
+#: PkUpdates.cxx:187
+#, kde-format
+msgid "Software Update Error"
+msgstr "Помилка під час оновлення програм"
+
+#: PkUpdates.cxx:208
+#, kde-format
+msgid "%1 <b>security</b> update available"
+msgid_plural "%1 <b>security</b> updates available"
+msgstr[0] "Випущено %1 оновлення для забезпечення <b>захисту</b>"
+msgstr[1] "Випущено %1 оновлення для забезпечення <b>захисту</b>"
+msgstr[2] "Випущено %1 оновлень для забезпечення <b>захисту</b>"
+msgstr[3] "Випущено %1 оновлення для забезпечення <b>захисту</b>"
+
+#: PkUpdates.cxx:220
+#, kde-format
+msgid "%1 <i>important</i> update available"
+msgid_plural "%1 <i>important</i> updates available"
+msgstr[0] "Випущено %1 <i>важливе</i> оновлення"
+msgstr[1] "Випущено %1 <i>важливих</i> оновлення"
+msgstr[2] "Випущено %1 <i>важливих</i> оновлень"
+msgstr[3] "Випущено %1 <i>важливе</i> оновлення"
+
+#: PkUpdates.cxx:232
+#, kde-format
+msgid "%1 bugfix update available"
+msgid_plural "%1 bugfix updates available"
+msgstr[0] "Випущено %1 оновлення з виправленням вад"
+msgstr[1] "Випущено %1 оновлення з виправленням вад"
+msgstr[2] "Випущено %1 оновлень з виправленням вад"
+msgstr[3] "Випущено %1 оновлення з виправленням вад"
+
+#: PkUpdates.cxx:242
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 other"
+msgid_plural ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 others"
+msgstr[0] ""
+"Попередня перевірка: %1\n"
+"Не випущено жодного важливого оновлення\n"
+"Інших — %2"
+msgstr[1] ""
+"Попередня перевірка: %1\n"
+"Не випущено жодного важливого оновлення\n"
+"Інших — %2"
+msgstr[2] ""
+"Попередня перевірка: %1\n"
+"Не випущено жодного важливого оновлення\n"
+"Інших — %2"
+msgstr[3] ""
+"Попередня перевірка: %1\n"
+"Не випущено жодного важливого оновлення\n"
+"Інших — %2"
+
+#: PkUpdates.cxx:253
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No updates available"
+msgstr ""
+"Попередня перевірка: %1\n"
+"Не випущено жодного оновлення"
+
+#: PkUpdates.cxx:262
+#, kde-format
+msgid "<br>%1 other"
+msgid_plural "<br>%1 others"
+msgstr[0] "<br>%1 інше"
+msgstr[1] "<br>%1 інших"
+msgstr[2] "<br>%1 інших"
+msgstr[3] "<br>%1 інше"
+
+#: PkUpdates.cxx:264
+#, kde-format
+msgid "<html>Last check: %1<br>%2</html>"
+msgstr "<html>Попередня перевірка: %1<br>%2</html>"
+
+#: PkUpdates.cxx:300
+#, kde-format
+msgid "Software Updates Available"
+msgstr "Доступні оновлення програмного забезпечення"
+
+#: PkUpdates.cxx:320
+#, kde-format
+msgid "<li>%1 more ...</li>"
+msgstr "<li>і ще %1…</li>"
+
+#: QuickLaunch.cxx:151
+#, kde-format
+msgid "Web Browser"
+msgstr "Переглядач інтернету"
+
+#: StartMenu.cxx:89
+#, kde-format
+msgid "Switch User"
+msgstr "Перемкнути користувача"
+
+#: StartMenu.cxx:167
+#, kde-format
+msgid "Configure Menu..."
+msgstr "Налаштувати меню…"
+
+#: SysLoad.cxx:203
+#, kde-format
+msgid "CPU %1: %2% (%3 MHz)"
+msgstr "Процесор %1: %2% (%3 МГц)"
+
+#: SysLoad.cxx:213
+#, kde-format
+msgid "Memory Total: %1 MB (%2 GB)"
+msgstr "Загалом пам'яті: %1 МБ (%2 ГБ)"
+
+#: SysLoad.cxx:215
+#, kde-format
+msgid "Memory Used: %1 MB (%2 GB) %3%"
+msgstr "Вжито пам'яті: %1 МБ (%2 ГБ) %3%"
+
+#: SysLoad.cxx:217
+#, kde-format
+msgid "Memory Free: %1 MB (%2 GB)"
+msgstr "Вільно пам'яті: %1 МБ (%2 ГБ)"
+
+#: SysLoad.cxx:219
+#, kde-format
+msgid "Swap Total: %1 MB (%2 GB)"
+msgstr "Загалом резерву: %1 МБ (%2 ГБ)"
+
+#: SysLoad.cxx:221
+#, kde-format
+msgid "Swap Used: %1 MB (%2 GB) %3%"
+msgstr "Вжито резерву: %1 МБ (%2 ГБ) %3%"
+
+#: SysLoad.cxx:223
+#, kde-format
+msgid "Swap Free: %1 MB (%2 GB)"
+msgstr "Вільно резерву: %1 МБ (%2 ГБ)"
+
+#: SysLoad.cxx:226
+#, kde-format
+msgid "Net send/receive: %1/%2 KB/sec"
+msgstr "Надсилання/Отримання мережею: %1/%2 кБ/с"
+
+#: SysLoad.cxx:230
+#, kde-format
+msgid "Net max (last %2 secs): %1 KB/sec"
+msgstr "Макс. вик. мережі (протягом останніх %2 с): %1 кБ/с"
+
+#: TaskBarButton.cxx:123
+#, kde-format
+msgid "Move To Desktop"
+msgstr "Пересунути на стільницю"
+
+#: TaskBarButton.cxx:124
+#, kde-format
+msgid "All Desktops"
+msgstr "Всі стільниці"
+
+#: TaskBarButton.cxx:131
+#, kde-format
+msgid "Close"
+msgstr "Закрити"
+
+#: WeatherApplet.cxx:78
+#, kde-format
+msgid "Temperature:"
+msgstr "Температура:"
+
+#: WeatherApplet.cxx:81
+#, kde-format
+msgid "Pressure:"
+msgstr "Тиск:"
+
+#: WeatherApplet.cxx:84
+#, kde-format
+msgid "Humidity:"
+msgstr "Вологість:"
+
+#: WeatherApplet.cxx:87
+#, kde-format
+msgid "Wind Speed:"
+msgstr "Швидкість вітру:"
+
+#: WeatherApplet.cxx:90
+#, kde-format
+msgid "Wind Direction:"
+msgstr "Напрям вітру:"
+
+#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#, kde-format
+msgid "Not configured"
+msgstr "Не налаштовано"
+
+#: WeatherApplet.cxx:195
+#, kde-format
+msgid "°K"
+msgstr "K"
+
+#: WeatherApplet.cxx:196
+#, kde-format
+msgid "°C"
+msgstr "°C"
+
+#: WeatherApplet.cxx:197
+#, kde-format
+msgid "°F"
+msgstr "°F"
+
+#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
+#: WeatherApplet.cxx:291
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: WeatherApplet.cxx:213
+#, kde-format
+msgid "%1 hPa"
+msgstr "%1 гПа"
+
+#: WeatherApplet.cxx:216
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: WeatherApplet.cxx:230
+#, kde-format
+msgid "%1 °"
+msgstr "%1°"
+
+#: WeatherApplet.cxx:387
+#, kde-format
+msgid "Configure Weather Applet"
+msgstr "Налаштування аплету погоди"
+
+#: WeatherAppletConfigureDialog.cxx:80
+#, kde-format
+msgid "Downloading city list..."
+msgstr "Отримуємо список міст…"
+
+#: WeatherAppletConfigureDialog.cxx:94
+#, kde-format
+msgid "Download Error"
+msgstr "Помилка під час отримання"
+
+#: WeatherAppletConfigureDialog.cxx:95
+#, kde-format
+msgid "Error on downloading city list: %1"
+msgstr "Помилка під час спроби отримати список міст: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: WeatherAppletConfigureDialog.ui:20
+#, kde-format
+msgid "API Key"
+msgstr "Ключ до програмного інтерфейсу"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
+#: WeatherAppletConfigureDialog.ui:27
+#, kde-format
+msgid "The API key is needed to be allowed to get data from openweathermap.org"
+msgstr ""
+"Для отримання даних з openweathermap.org потрібен ключ до програмного "
+"інтерфейсу"
+
+#. i18n: ectx: property (text), widget (QPushButton, getApiKey)
+#: WeatherAppletConfigureDialog.ui:34
+#, kde-format
+msgid "Get your personal API key"
+msgstr "Отримати ваш особистий ключ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: WeatherAppletConfigureDialog.ui:41
+#, kde-format
+msgid "Units"
+msgstr "Одиниці"
+
+#. i18n: ectx: property (text), widget (QRadioButton, metric)
+#: WeatherAppletConfigureDialog.ui:48
+#, kde-format
+msgid "&metric"
+msgstr "&метричні"
+
+#. i18n: ectx: property (text), widget (QRadioButton, imperial)
+#: WeatherAppletConfigureDialog.ui:58
+#, kde-format
+msgid "&imperial"
+msgstr "&імперські"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
+#, kde-format
+msgid "City"
+msgstr "Місто"
+
+#~ msgid "Enable Networking"
+#~ msgstr "Увімкнути роботу у мережі"
+
+#~ msgid "Enable Wireless Networking"
+#~ msgstr "Увімкнути роботу у бездротовій мережі"
