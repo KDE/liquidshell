@@ -3,14 +3,15 @@
 #
 # Alexander Potashev <aspotashev@gmail.com>, 2017.
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-05 00:47+0000\n"
-"PO-Revision-Date: 2021-12-22 17:32+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2022-10-02 14:44+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -202,10 +203,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Основанная на QtWidgets базовая оболочка рабочего стола"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2021 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2022 Martin Koller"
-msgstr "Авторское право © Martin Koller, 2017–2021"
+msgstr "Авторское право © Martin Koller, 2017–2022"
 
 #: DesktopApplet.cxx:44 Launcher.cxx:79
 #, kde-format
