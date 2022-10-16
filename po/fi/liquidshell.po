@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Tommi Nieminen <translator@legisign.org>, 2017, 2018, 2020, 2021.
+# Tommi Nieminen <translator@legisign.org>, 2017, 2018, 2020, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-05 00:47+0000\n"
-"PO-Revision-Date: 2021-10-12 16:50+0300\n"
+"PO-Revision-Date: 2022-08-19 12:38+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -196,10 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgetsiin perustuva yksinkertainen työpöytäkäyttöliittymä"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2021 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2022 Martin Koller"
-msgstr "Tekijänoikeudet 2017–2021 Martin Koller"
+msgstr "Tekijänoikeudet 2017–2022 Martin Koller"
 
 #: DesktopApplet.cxx:44 Launcher.cxx:79
 #, kde-format
