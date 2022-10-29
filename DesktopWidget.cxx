@@ -43,6 +43,7 @@
 #include <KLocalizedString>
 #include <KCMultiDialog>
 #include <KHelpMenu>
+#include <kcmutils_version.h>
 
 //--------------------------------------------------------------------------------
 
@@ -250,7 +251,16 @@ void DesktopWidget::configureDisplay()
 {
   KCMultiDialog *dialog = new KCMultiDialog(this);
   dialog->setAttribute(Qt::WA_DeleteOnClose);
-  dialog->addModule("kcm_kscreen");
+
+  // different KDE versions need different ways ...
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+  KPluginMetaData module("plasma/kcms/systemsettings/kcm_kscreen");
+  if ( !module.name().isEmpty() )
+    dialog->addModule(module);
+  else
+#endif
+    dialog->addModule("kcm_kscreen");
+
   dialog->adjustSize();
   dialog->setWindowTitle(i18n("Configure Display"));
   dialog->show();  // not modal

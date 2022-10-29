@@ -30,6 +30,7 @@
 
 #include <KLocalizedString>
 #include <KIconLoader>
+#include <kcmutils_version.h>
 
 #include <cmath>
 
@@ -198,8 +199,22 @@ QWidget *Battery::getDetailsList()
   {
     dialog = new KCMultiDialog(this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->addModule("powerdevilglobalconfig");
-    dialog->addModule("powerdevilprofilesconfig");
+
+    // different KDE versions need different ways ...
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+    KPluginMetaData module("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilglobalconfig");
+    if ( !module.name().isEmpty() )
+    {
+      dialog->addModule(module);
+      dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilprofilesconfig"));
+    }
+    else
+#endif
+    {
+      dialog->addModule("powerdevilglobalconfig");
+      dialog->addModule("powerdevilprofilesconfig");
+    }
+
     dialog->adjustSize();
     dialog->setWindowTitle(i18n("Power Management"));
   }
