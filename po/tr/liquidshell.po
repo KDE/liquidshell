@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-10-18 06:00+0300\n"
+"PO-Revision-Date: 2022-10-30 21:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -165,25 +165,25 @@ msgstr "Ölçek Kipi"
 #: ConfigureDesktopDialog.ui:73
 #, kde-format
 msgid "Or&iginal Size"
-msgstr "Özgün Boyut"
+msgstr "Özgün &Boyut"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
 #: ConfigureDesktopDialog.ui:80
 #, kde-format
 msgid "Sca&led Ignoring Aspect Ratio"
-msgstr "En-Boy Oranını Yok Sayarak Ölçekli"
+msgstr "&En-Boy Oranını Yok Sayarak Ölçekli"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
 #: ConfigureDesktopDialog.ui:87
 #, kde-format
 msgid "Scale&d Keep Aspect Ratio"
-msgstr "En-Boy Oranını Tutarak Ölçekli"
+msgstr "En-Boy &Oranını Tutarak Ölçekli"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
 #: ConfigureDesktopDialog.ui:94
 #, kde-format
 msgid "Scaled Keep Aspec&t Ratio and Clip"
-msgstr "En-Boy Oranını Koruyup Kırparak Ölçekli"
+msgstr "En-Boy Oranını &Koruyup Kırparak Ölçekli"
 
 #: desktop.cxx:46
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "Aygıt Listesi"
 #: DiskUsageApplet.cxx:143
 #, kde-format
 msgid "%1 free / %2"
-msgstr "%1 boş/%2"
+msgstr "%1 boş / %2"
 
 #: DiskUsageApplet.cxx:176
 #, kde-format
@@ -559,8 +559,8 @@ msgstr "Yenile"
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
-msgstr[0] "%1 paket yükle"
-msgstr[1] "%1 paket yükle"
+msgstr[0] "%1 paket kur"
+msgstr[1] "%1 paket kur"
 
 #: PkUpdateList.cxx:532
 #, kde-format
@@ -882,7 +882,7 @@ msgstr "%1 hPa"
 #: WeatherApplet.cxx:216
 #, kde-format
 msgid "%1 %"
-msgstr "%1 %"
+msgstr "%​%1"
 
 #: WeatherApplet.cxx:230
 #, kde-format
