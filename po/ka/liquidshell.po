@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-09-30 10:53+0200\n"
+"PO-Revision-Date: 2022-12-07 08:20+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -172,19 +172,19 @@ msgstr "&ორიგინალური ზომა"
 #: ConfigureDesktopDialog.ui:80
 #, kde-format
 msgid "Sca&led Ignoring Aspect Ratio"
-msgstr ""
+msgstr "მასშტაბის &იგნორირებით გადიდება"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
 #: ConfigureDesktopDialog.ui:87
 #, kde-format
 msgid "Scale&d Keep Aspect Ratio"
-msgstr ""
+msgstr "გადიდება &მასშტაბის შენარჩუნებით"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
 #: ConfigureDesktopDialog.ui:94
 #, kde-format
 msgid "Scaled Keep Aspec&t Ratio and Clip"
-msgstr ""
+msgstr "გადიდება მასშტაბის &შენარჩუნებით და ამოჭრა"
 
 #: desktop.cxx:46
 #, kde-format
@@ -194,12 +194,12 @@ msgstr "თხევადი სამუშაო მაგიდის სი
 #: desktop.cxx:47
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
-msgstr ""
+msgstr "QtWidgets-ზე დაწერილი უბრალო სამუშაო მაგიდის გარემო"
 
 #: desktop.cxx:49
 #, kde-format
 msgid "Copyright 2017 - 2022 Martin Koller"
-msgstr ""
+msgstr "2017 - 2022, მარტინ კოლერი, ყველა უფლება დაცულია"
 
 #: DesktopApplet.cxx:44 Launcher.cxx:79
 #, kde-format
@@ -209,7 +209,7 @@ msgstr "მორგება..."
 #: DesktopApplet.cxx:52
 #, kde-format
 msgid "Change Size && Position"
-msgstr ""
+msgstr "ზომისა და მდებარეობის შეცვლა"
 
 #: DesktopApplet.cxx:58
 #, kde-format
@@ -219,7 +219,7 @@ msgstr "ამ აპლეტის წაშლა"
 #: DesktopApplet.cxx:106
 #, kde-format
 msgid "%1: Change Size & Position"
-msgstr ""
+msgstr "%1: ზომისა და მდებარეობის შეცვლა"
 
 #: DesktopApplet.cxx:146
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "აპლეტის წაშლა"
 #: DesktopApplet.cxx:147
 #, kde-format
 msgid "Really remove this applet?"
-msgstr ""
+msgstr "მართლა წავშალო ეს აპლეტი?"
 
 #: DesktopWidget.cxx:78
 #, kde-format
@@ -292,6 +292,8 @@ msgid ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 msgstr ""
+"მოწყობილობა მიმაგრებულია.\n"
+"დააწკაპუნეთ გამოსაღებად/მოსახსნელად"
 
 #: DeviceList.cxx:344
 #, kde-format
@@ -299,11 +301,13 @@ msgid ""
 "Device is unmounted.\n"
 "Click to mount"
 msgstr ""
+"მოწყობილობა მიმაგრებული არაა.\n"
+"მისამაგრებლად დააწკაპუნეთ"
 
 #: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
-msgstr ""
+msgstr "ოპერაცია არაავტორიზებულია"
 
 #: DeviceList.cxx:356
 #, kde-format
@@ -333,7 +337,7 @@ msgstr "დრაივერი ნაპოვნი არაა"
 #: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
-msgstr ""
+msgstr "ახლა შესაძლებელია მოწყობილობის უსაფრთხოდ გამოერთება"
 
 #: DeviceList.cxx:389
 #, kde-format
@@ -409,7 +413,7 @@ msgstr "საჭიროა მოწყობილობის დატე�
 msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
-msgstr ""
+msgstr "%1 მოწყობილობის მუხტი %2%-ია. დატენეთ ის."
 
 #: Launcher.cxx:96
 #, kde-format
@@ -424,12 +428,12 @@ msgstr "ქსელური შეერთებების გარეშ�
 #: Network.cxx:94
 #, kde-format
 msgid "Full Network Connectivity (%1)"
-msgstr ""
+msgstr "შეერთებული %1-სთან (სრული შეერთება)"
 
 #: Network.cxx:96
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
-msgstr ""
+msgstr "შეერთებული %1-სთან (ქსელი შეზღუდულია)"
 
 #: Network.cxx:105
 #, kde-format
@@ -565,7 +569,7 @@ msgstr "საჭიროა სისტემის გადატვირ�
 #: PkUpdateList.cxx:533
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
-msgstr ""
+msgstr "დაყენებული პაკეტებიდან ერთ-ერთს სისტემის გადატვირთვა ესაჭიროება"
 
 #: PkUpdateList.cxx:534
 #, kde-format
@@ -581,6 +585,8 @@ msgstr "საჭიროა სესიის გადატვირთვ�
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr ""
+"დაყენებული პაკეტებიდან ერთ-ერთს ესაჭიროება, რომ გახვიდეთ და თავიდან "
+"შემოხვიდეთ"
 
 #: PkUpdateList.cxx:556
 #, kde-format
@@ -663,6 +669,8 @@ msgid ""
 "Last check: %1\n"
 "Error on checking for updates: %2"
 msgstr ""
+"ბოლო შემოწმება: %1\n"
+"შეცდომა განახლებების შემოწმებისას: %2"
 
 #: PkUpdates.cxx:187
 #, kde-format
@@ -673,22 +681,22 @@ msgstr "პროგრამების განახლების შე�
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ხელმისაწვდომია %1 <b>უსაფრთხოების</b> განახლება"
+msgstr[1] "ხელმისაწვდომია %1 <b>უსაფრთხოების</b> განახლება"
 
 #: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ხელმისაწვდომია %1 <b>მნიშვნელოვანი</b> განახლება"
+msgstr[1] "ხელმისაწვდომია %1 <b>მნიშვნელოვანი</b> განახლება"
 
 #: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ხელმისაწვდომია %1 გამართვის განახლება"
+msgstr[1] "ხელმისაწვდომია %1 გამართვის განახლება"
 
 #: PkUpdates.cxx:242
 #, kde-format
@@ -701,7 +709,13 @@ msgid_plural ""
 "No important updates available\n"
 "%2 others"
 msgstr[0] ""
+"ბოლო შემოწმება: %1\n"
+"მნიშვნელოვანი განახლებების გარეშე\n"
+"%2 სხვა"
 msgstr[1] ""
+"ბოლო შემოწმება: %1\n"
+"მნიშვნელოვანი განახლებების გარეშე\n"
+"%2 სხვა"
 
 #: PkUpdates.cxx:253
 #, kde-format
@@ -709,6 +723,8 @@ msgid ""
 "Last check: %1\n"
 "No updates available"
 msgstr ""
+"ბოლო შემოწმება: %1\n"
+"მნიშვნელოვანი განახლებების გარეშე"
 
 #: PkUpdates.cxx:262
 #, kde-format
@@ -770,27 +786,27 @@ msgstr "თავისუფალი მეხსიერება: %1 მბ
 #: SysLoad.cxx:219
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
-msgstr ""
+msgstr "სვოპი სულ %1 მბ (%2 გბ)"
 
 #: SysLoad.cxx:221
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
-msgstr ""
+msgstr "გამოყენებული სვოპი: %1 მბ (%2 გბ) %3%"
 
 #: SysLoad.cxx:223
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
-msgstr ""
+msgstr "თავისუფალი სვოპი: %1 მბ (%2 გბ)"
 
 #: SysLoad.cxx:226
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
-msgstr ""
+msgstr "ქსელის გაგზავნა/მიღება %1/%2 კბ/წმ"
 
 #: SysLoad.cxx:230
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
-msgstr ""
+msgstr "ქსელი მაქს (ბოლო %2წამში) %1 კბ/წმ"
 
 #: TaskBarButton.cxx:123
 #, kde-format
@@ -903,13 +919,13 @@ msgstr "API-ის გასაღები"
 #: WeatherAppletConfigureDialog.ui:27
 #, kde-format
 msgid "The API key is needed to be allowed to get data from openweathermap.org"
-msgstr ""
+msgstr "Openweathermap.org-დან მონაცემების მისაღებად საჭიროა API-ის გასაღები"
 
 #. i18n: ectx: property (text), widget (QPushButton, getApiKey)
 #: WeatherAppletConfigureDialog.ui:34
 #, kde-format
 msgid "Get your personal API key"
-msgstr ""
+msgstr "მიიღეთ თქვენი API გასაღები"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: WeatherAppletConfigureDialog.ui:41
