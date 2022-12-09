@@ -107,6 +107,7 @@
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
     <p xml:lang="it">Non usa QtQuick ma si affida invece a QtWidgets; non è quindi necessaria nessuna accelerazione grafica hardware.</p>
+    <p xml:lang="ka">QtQuick -ის მაგიერ ის QtWidgets-ზეა დაწერილი, ამიტომ გრაფიკის აპარატურული აჩქარება საჭირო არაა.</p>
     <p xml:lang="ko">QtQuick 대신 QtWidgets을 사용하여 하드웨어 그래픽 가속이 필요하지 않습니다.</p>
     <p xml:lang="lt">Jis nenaudoja QtQuick, tačiau vietoj to, remiasi QtWidgets ir todėl, nereikalauja aparatinės įrangos grafikos spartinimo.</p>
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
@@ -278,6 +279,7 @@
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
       <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti dalle Impostazioni di sistema</li>
+      <li xml:lang="ka">დაფუძნებულია QtWidgets-ზე, ამიტომ სტილი სისტემის მორგებიდან ეთითება</li>
       <li xml:lang="ko">QtWidgets 기반, 시스템 설정의 위젯 스타일 사용</li>
       <li xml:lang="lt">Pagrįstas QtWidgets, todėl naudoja valdiklių stilių iš sistemos nuostatų</li>
       <li xml:lang="nl">Gebaseerd op QtWidgets, volgt daarom widgetstijl uit systeeminstellingen</li>
@@ -304,6 +306,7 @@
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">Le icone utilizzate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
+      <li xml:lang="ka">ხატულები სისტემაში გლობალურად დაყენებული ხატულების თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
       <li xml:lang="ko">시스템 설정의 전역 아이콘 테마에서 사이콘 사용</li>
       <li xml:lang="lt">Piktogramos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto piktogramų apipavidalinimo</li>
       <li xml:lang="nl">Pictogrammen worden gebruikt uit uw globaal gedefinieerd pictogramthema uit systeeminstellingen</li>
@@ -330,6 +333,7 @@
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">I colori utilizzati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
+      <li xml:lang="ka">ფერები სისტემაში გლობალურად დაყენებული ფერებს თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
       <li xml:lang="ko">시스템 설정의 전역 색 배열에서 색상 사용</li>
       <li xml:lang="lt">Spalvos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto spalvų apipavidalinimo</li>
       <li xml:lang="nl">Kleuren worden gebruikt uit uw globaal gedefinieerd kleurenthema uit systeeminstellingen</li>
@@ -356,6 +360,7 @@
       <li xml:lang="gl">Ademais pode aplicárselle un estilo con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
       <li xml:lang="id">Bisa ditambah-tambah gaya dengan css lewat commandline opsi -stylesheet filename.css (lihatlah contoh yang disertakan stylesheet.css)</li>
       <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
+      <li xml:lang="ka">ასევე შეგიძლიათ სტილი CSS-თაც შეცვალოთ ბრძანების სტრიქონის პარამეტრის -stylesheet filename.css -ით შეცვალოთ (იხილეთ მაგალითისთვის მოყოლებული stylesheet.css)</li>
       <li xml:lang="ko">-stylesheet filename.css 명령행 옵션을 지정하여 CSS 스타일 지정 가능(포함된 예제 stylesheet.css 참조)</li>
       <li xml:lang="lt">Gali būti papildomai stilizuojamas naudojant css, perduodant komandų eilutės parinktį -stylesheet failo_pavadinimas.css (žiūrėkite pridėtą pavyzdį stylesheet.css)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
@@ -382,6 +387,7 @@
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="it">Utilizza le finestre esistenti di KDE per la maggior parte delle configurazioni, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth e la rete</li>
+      <li xml:lang="ka">კონფიგურაციისთვის (როგორიცაა მთავარი მენიუ, ვირტუალური სამუშაო მაგიდა, ქსელი) ძირითადად, KDE-ის უკვე არსებულ ფანჯრებს იყენებს</li>
       <li xml:lang="ko">KDE 대화 상자로 설정 진행. 예: 시작 메뉴, 가상 바탕 화면, 블루투스, 네트워크</li>
       <li xml:lang="lt">Daugumai konfigūracijų naudoja esamus KDE dialogus, pvz., Paleidimo meniu, Virtualūs darbalaukiai, Bluetooth, Tinklas</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
@@ -435,6 +441,7 @@
       <li xml:lang="gl">Trebellos de escritorio.</li>
       <li xml:lang="id">Applet Desktop</li>
       <li xml:lang="it">Applet desktop</li>
+      <li xml:lang="ka">სამუშაო მაგიდის აპლეტები</li>
       <li xml:lang="ko">바탕 화면 애플릿</li>
       <li xml:lang="lt">Darbalaukio programėlės</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
