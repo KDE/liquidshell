@@ -192,7 +192,7 @@ void WeatherApplet::gotData(KJob *job)
   if ( doc.isNull() || !doc.isObject() )
     return;
 
-  QString tempUnit = i18n("°K");
+  QString tempUnit = i18n("K");
   if ( units == "metric" ) tempUnit = i18n("°C");
   else if ( units == "imperial" ) tempUnit = i18n("°F");
 
