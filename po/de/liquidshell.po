@@ -2,21 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Burkhard Lück <lueck@hube-lueck.de>, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022.
+# Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:49+0000\n"
-"PO-Revision-Date: 2022-08-20 20:45+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2022-12-20 13:57+0100\n"
+"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,7 +61,7 @@ msgstr "Wird geladen: %1 %"
 #: Battery.cxx:174
 #, kde-format
 msgid "Time until full: "
-msgstr "Zeit bis Akku voll:"
+msgstr "Zeit bis voll: "
 
 #: Battery.cxx:178
 #, kde-format
@@ -362,7 +363,7 @@ msgstr "Geräteliste"
 #: DiskUsageApplet.cxx:143
 #, kde-format
 msgid "%1 free / %2"
-msgstr "%1 Frei / %2"
+msgstr "%1 frei / %2"
 
 #: DiskUsageApplet.cxx:176
 #, kde-format
@@ -414,6 +415,8 @@ msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
 msgstr ""
+"Ladung von Gerät „%1“ ist bei %2 %.\n"
+"Sie sollten es aufladen."
 
 #: Launcher.cxx:96
 #, kde-format
@@ -463,22 +466,22 @@ msgstr "Netzwerkverbindungen einrichten"
 #: NetworkList.cxx:286
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr ""
+msgstr "Netzwerk ist aktiviert. Klicken, um es abzuschalten"
 
 #: NetworkList.cxx:288
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr ""
+msgstr "Netzwerk ist deaktiviert. Klicken, um es einzuschalten"
 
 #: NetworkList.cxx:291
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
-msgstr ""
+msgstr "Drahtloses Netzwerk ist aktiviert. Klicken, um es abzuschalten"
 
 #: NetworkList.cxx:293
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
-msgstr ""
+msgstr "Drahtloses Netzwerk ist deaktiviert. Klicken, um es einzuschalten"
 
 #: NotificationList.cxx:176
 #, kde-format
@@ -660,7 +663,7 @@ msgstr "Es wird nach Aktualisierungen gesucht  ..."
 #: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "Es wird nach Aktualisierungen gesucht  ... %1%"
+msgstr "Es wird nach Aktualisierungen gesucht  ... %1 %"
 
 #: PkUpdates.cxx:184
 #, kde-format
@@ -729,8 +732,8 @@ msgstr ""
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
-msgstr[0] "<br>%1 Weitere"
-msgstr[1] "<br>%1 Weitere"
+msgstr[0] "<br>%1 weitere"
+msgstr[1] "<br>%1 weitere"
 
 #: PkUpdates.cxx:264
 #, kde-format
@@ -765,7 +768,7 @@ msgstr "Menü einrichten ..."
 #: SysLoad.cxx:203
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
-msgstr "CPU %1: %2% (%3 MHz)"
+msgstr "CPU %1: %2 % (%3 MHz)"
 
 #: SysLoad.cxx:213
 #, kde-format
@@ -775,7 +778,7 @@ msgstr "Gesamter Speicher: %1 MB (%2 GB)"
 #: SysLoad.cxx:215
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
-msgstr "Verwendeter Speicher: %1 MB (%2 GB) %3%"
+msgstr "Verwendeter Speicher: %1 MB (%2 GB) %3 %"
 
 #: SysLoad.cxx:217
 #, kde-format
@@ -790,7 +793,7 @@ msgstr "Gesamter Auslagerungsspeicher: %1 MB (%2 GB)"
 #: SysLoad.cxx:221
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
-msgstr "Verwendeter Auslagerungsspeicher: %1 MB (%2 GB) %3%"
+msgstr "Verwendeter Auslagerungsspeicher: %1 MB (%2 GB) %3 %"
 
 #: SysLoad.cxx:223
 #, kde-format
@@ -800,12 +803,12 @@ msgstr "Freier Auslagerungsspeicher:  %1 MB (%2 GB)"
 #: SysLoad.cxx:226
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
-msgstr ""
+msgstr "Empfang/Versand: %1/%2 kB/s"
 
 #: SysLoad.cxx:230
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
-msgstr ""
+msgstr "Netz-Max. (letzte %2 s): %1 kB/s"
 
 #: TaskBarButton.cxx:123
 #, kde-format
@@ -919,12 +922,14 @@ msgstr "API-Schlüssel"
 #, kde-format
 msgid "The API key is needed to be allowed to get data from openweathermap.org"
 msgstr ""
+"Der API-Schlüssel wird benötigt, um Daten von openweathermap.org beziehen zu "
+"dürfen"
 
 #. i18n: ectx: property (text), widget (QPushButton, getApiKey)
 #: WeatherAppletConfigureDialog.ui:34
 #, kde-format
 msgid "Get your personal API key"
-msgstr ""
+msgstr "Persönlichen API-Schlüssel holen"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: WeatherAppletConfigureDialog.ui:41
