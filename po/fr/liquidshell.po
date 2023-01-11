@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 01:01+0000\n"
 "PO-Revision-Date: 2022-07-28 13:38+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -862,8 +862,8 @@ msgstr "Non configuré"
 
 #: WeatherApplet.cxx:195
 #, kde-format
-msgid "°K"
-msgstr "°K"
+msgid "K"
+msgstr ""
 
 #: WeatherApplet.cxx:196
 #, kde-format
@@ -960,6 +960,9 @@ msgstr "&Impérial"
 #, kde-format
 msgid "City"
 msgstr "Ville"
+
+#~ msgid "°K"
+#~ msgstr "°K"
 
 #~ msgid "Enable Networking"
 #~ msgstr "Autoriser le fonctionnement en réseau"

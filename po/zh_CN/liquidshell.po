@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 01:01+0000\n"
 "PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -829,8 +829,8 @@ msgstr "未配置"
 
 #: WeatherApplet.cxx:195
 #, kde-format
-msgid "°K"
-msgstr "°K"
+msgid "K"
+msgstr ""
 
 #: WeatherApplet.cxx:196
 #, kde-format
@@ -925,3 +925,6 @@ msgstr ""
 #, kde-format
 msgid "City"
 msgstr "城市"
+
+#~ msgid "°K"
+#~ msgstr "°K"

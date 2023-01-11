@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 01:01+0000\n"
 "PO-Revision-Date: 2022-08-07 06:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -867,8 +867,8 @@ msgstr "Nieustawiony"
 
 #: WeatherApplet.cxx:195
 #, kde-format
-msgid "°K"
-msgstr "°K"
+msgid "K"
+msgstr ""
 
 #: WeatherApplet.cxx:196
 #, kde-format
@@ -963,6 +963,9 @@ msgstr "&imperialne"
 #, kde-format
 msgid "City"
 msgstr "Miasto"
+
+#~ msgid "°K"
+#~ msgstr "°K"
 
 #~ msgid "Enable Networking"
 #~ msgstr "Włącz sieć"

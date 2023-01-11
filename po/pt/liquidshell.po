@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-11 01:01+0000\n"
 "PO-Revision-Date: 2022-07-27 12:37+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -851,8 +851,8 @@ msgstr "Não configurado"
 
 #: WeatherApplet.cxx:195
 #, kde-format
-msgid "°K"
-msgstr "°K"
+msgid "K"
+msgstr ""
 
 #: WeatherApplet.cxx:196
 #, kde-format
@@ -948,3 +948,6 @@ msgstr "&imperiais"
 #, kde-format
 msgid "City"
 msgstr "Cidade"
+
+#~ msgid "°K"
+#~ msgstr "°K"
