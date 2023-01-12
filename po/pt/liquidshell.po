@@ -852,7 +852,7 @@ msgstr "Não configurado"
 #: WeatherApplet.cxx:195
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:196
 #, kde-format
