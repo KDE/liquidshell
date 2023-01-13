@@ -3,13 +3,13 @@
 #
 # Alexander Potashev <aspotashev@gmail.com>, 2017.
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-11 01:01+0000\n"
-"PO-Revision-Date: 2022-10-02 14:44+0300\n"
+"PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -882,7 +882,7 @@ msgstr "Не настроено"
 #: WeatherApplet.cxx:195
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:196
 #, kde-format
