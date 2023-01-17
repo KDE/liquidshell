@@ -145,7 +145,7 @@ msgstr "Baixa més fons de pantalla"
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr "Configuració del fons de pantalla"
+msgstr "Configureu el fons de pantalla"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
@@ -277,7 +277,7 @@ msgstr "Ajuda"
 #: DesktopWidget.cxx:265
 #, kde-format
 msgid "Configure Display"
-msgstr "Configuració de la visualització"
+msgstr "Configureu la visualització"
 
 #: DeviceList.cxx:249
 #, kde-format
@@ -505,7 +505,7 @@ msgstr "Configura els escriptoris virtuals..."
 #: Pager.cxx:83
 #, kde-format
 msgid "Configure Virtual Desktops"
-msgstr "Configuració dels escriptoris virtuals"
+msgstr "Configureu els escriptoris virtuals"
 
 #: PictureFrameApplet.cxx:107
 #, kde-format
