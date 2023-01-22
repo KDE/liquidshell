@@ -289,7 +289,7 @@
       <li xml:lang="ru">На основе QtWidgets, поэтому стиль виджетов определяется параметрами системы</li>
       <li xml:lang="sl">Temelji na QtWidgets in zato sledi sistemskim nastavitvam slogov gradnikov</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
-      <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla sistem ayarlarındaki araç takımı biçemini kullanır</li>
+      <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı biçemini kullanır</li>
       <li xml:lang="uk">Засновано на QtWidgets, тому стиль віджетів повністю визначається «Системними параметрами»</li>
       <li xml:lang="x-test">xxQtWidgets based, therefore follows widget style from systemsettingsxx</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
@@ -316,7 +316,7 @@
       <li xml:lang="ru">Использование значков из темы значков, установленной глобально в параметрах системы</li>
       <li xml:lang="sl">Uporabljajo se ikone iz splošno določene teme ikon v sistemskih nastavitvah</li>
       <li xml:lang="sv">Ikoner kommer från det globalt definierade ikontemat i systeminställningarna</li>
-      <li xml:lang="tr">Simgeler, sistem ayarlarındaki global simge temanızdan kullanılır</li>
+      <li xml:lang="tr">Simgeler, Sistem Ayarları'ndaki global simge temanızdan kullanılır</li>
       <li xml:lang="uk">Використання піктограм із загальної визначеної теми із «Системних параметрів»</li>
       <li xml:lang="x-test">xxIcons are used from your globally defined icon theme from systemsettingsxx</li>
       <li>Colors are used from your globally defined color theme from systemsettings</li>
