@@ -917,21 +917,21 @@ msgstr "S'ha produït un error en baixar la llista de ciutats: %1"
 #: WeatherAppletConfigureDialog.ui:20
 #, kde-format
 msgid "API Key"
-msgstr "Clau de la API"
+msgstr "Clau de l'API"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
 #: WeatherAppletConfigureDialog.ui:27
 #, kde-format
 msgid "The API key is needed to be allowed to get data from openweathermap.org"
 msgstr ""
-"La clau de la API és necessària per a poder obtindre les dades des "
+"La clau de l'API és necessària per a poder obtindre les dades des "
 "d'openweathermap.org"
 
 #. i18n: ectx: property (text), widget (QPushButton, getApiKey)
 #: WeatherAppletConfigureDialog.ui:34
 #, kde-format
 msgid "Get your personal API key"
-msgstr "Obtín la clau de la API personal"
+msgstr "Obtín la clau de l'API personal"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: WeatherAppletConfigureDialog.ui:41
