@@ -62,6 +62,9 @@ class PkUpdateList : public QWidget
     void countChecked();
     void filterChanged(const QString &text);
 
+    void askEULA(const QString &eulaID, const QString &packageID,
+                 const QString &vendor, const QString &licenseAgreement);
+
   private:
     QVBoxLayout *vbox;
     QScrollArea *scrollArea;

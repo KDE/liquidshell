@@ -35,6 +35,9 @@
 #include <QApplication>
 #include <QScreen>
 #include <QMessageBox>
+#include <QTextEdit>
+#include <QDialog>
+#include <QDialogButtonBox>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -659,20 +662,7 @@ void PkUpdateList::installOne()
               restart = type;
           });
 
-  connect(transaction.data(), &PackageKit::Transaction::eulaRequired, this,
-          [this](const QString &eulaID, const QString &packageID, const QString &vendor, const QString &licenseAgreement)
-          {
-            if ( QMessageBox::question(this, i18n("Accept EULA"),
-                                       QString("%1\n%2\n%3")
-                                               .arg(packageID)
-                                               .arg(vendor)
-                                               .arg(licenseAgreement)) == QMessageBox::Yes )
-              PackageKit::Daemon::acceptEula(eulaID);
-            else
-              installQ.dequeue();
-
-            installOne();
-          });
+  connect(transaction.data(), &PackageKit::Transaction::eulaRequired, this, &PkUpdateList::askEULA);
 
   connect(transaction.data(), &PackageKit::Transaction::repoSignatureRequired, this,
           [this](const QString &packageID,
@@ -744,6 +734,51 @@ void PkUpdateList::installOne()
 
             installOne();
           });
+}
+
+//--------------------------------------------------------------------------------
+
+void PkUpdateList::askEULA(const QString &eulaID, const QString &packageID,
+                           const QString &vendor, const QString &licenseAgreement)
+{
+  QDialog *dialog = new QDialog(this);
+  dialog->setModal(false);
+  dialog->setWindowTitle(i18n("Accept EULA"));
+
+  QVBoxLayout *vbox = new QVBoxLayout(dialog);
+
+  QLabel *label = new QLabel(i18n("<html>You need to accept or reject "
+                                  "the following license agreement for package<br>%1<br>%2</html>").arg(packageID, vendor));
+  vbox->addWidget(label);
+
+  QTextEdit *textEdit = new QTextEdit;
+  textEdit->setPlainText(licenseAgreement);
+  textEdit->setReadOnly(true);
+  vbox->addWidget(textEdit);
+
+  QDialogButtonBox *buttonBox = new QDialogButtonBox();
+  buttonBox->setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
+  buttonBox->button(QDialogButtonBox::Yes)->setDefault(true);
+
+  connect(buttonBox, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
+  connect(buttonBox, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
+  vbox->addWidget(buttonBox);
+
+  connect(dialog, &QDialog::finished, this,
+          [this, dialog, eulaID](int result)
+          {
+            if ( result == QDialog::Accepted )
+              PackageKit::Daemon::acceptEula(eulaID);
+
+            dialog->deleteLater();
+          });
+
+  // The dialog will be shown non modal and used asynchronously to the installation.
+  // PackageKit Daemon will already finish this package with an error of
+  // something like "you need to agree/decline the license"
+  // So when the user decides what to do, he must afterwards start the installation
+  // for this package again
+  dialog->show();
 }
 
 //--------------------------------------------------------------------------------
