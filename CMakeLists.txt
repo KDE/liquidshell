@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 project(liquidshell)
 
-find_package(ECM 1.6.0 REQUIRED NO_MODULE)
+set(KF_MIN_VERSION 5.62)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR})
 
 include(KDEInstallDirs)
@@ -19,7 +20,7 @@ find_package(Qt5 5.6 REQUIRED COMPONENTS
 
 find_package(Qt5ThemeSupport REQUIRED)
 
-find_package(KF5 REQUIRED COMPONENTS
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews Archive
              Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
              NewStuff
@@ -136,7 +137,7 @@ target_link_libraries(${TARGET}
                       KF5::DBusAddons
                       KF5::ItemViews
                       KF5::Archive
-                      KF5::NewStuff
+                      KF5::NewStuffWidgets
 )
 
 if ( packagekitqt5_FOUND )
