@@ -21,7 +21,7 @@
 #include <TaskBar.hxx>
 #include <TaskBarButton.hxx>
 
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 
 #include <QVariant>
 #include <QSpacerItem>
@@ -42,11 +42,11 @@ TaskBar::TaskBar(DesktopPanel *parent)
 
   connect(parent, &DesktopPanel::rowsChanged, this, &TaskBar::fill);
 
-  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &TaskBar::fill);
-  connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &TaskBar::fill);
-  connect(KWindowSystem::self(), &KWindowSystem::windowRemoved, this, &TaskBar::fill);
+  connect(KWinCompat::self(), &KWinCompat::currentDesktopChanged, this, &TaskBar::fill);
+  connect(KWinCompat::self(), &KWinCompat::windowAdded, this, &TaskBar::fill);
+  connect(KWinCompat::self(), &KWinCompat::windowRemoved, this, &TaskBar::fill);
 
-  connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
+  connect(KWinCompat::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
 }
 
@@ -64,7 +64,7 @@ void TaskBar::fill()
   QList<WId> windowsToShow;
   const int MAX_ROWS = qobject_cast<DesktopPanel *>(parentWidget())->getRows();
 
-  for (WId wid : KWindowSystem::windows())
+  for (WId wid : KWinCompat::windows())
   {
     KWindowInfo win(wid, NET::WMDesktop | NET::WMWindowType | NET::WMState);
     if ( win.valid(true) && win.isOnCurrentDesktop() &&

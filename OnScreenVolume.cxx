@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -25,11 +25,12 @@
 #include <QDBusMessage>
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
+#include <QRegularExpression>
 #include <QApplication>
 #include <QScreen>
 #include <QDebug>
 
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 #include <KConfig>
 #include <KConfigGroup>
 
@@ -45,7 +46,7 @@ OnScreenVolume::OnScreenVolume(QWidget *parent)
 
   KWindowSystem::setState(winId(), NET::KeepAbove);
   KWindowSystem::setType(winId(), NET::Dock);
-  KWindowSystem::setOnAllDesktops(winId(), true);
+  KWinCompat::setOnAllDesktops(winId(), true);
 
   hideTimer.setInterval(1000);
   hideTimer.setSingleShot(true);
@@ -117,11 +118,10 @@ void OnScreenVolume::gotMasterMixer(QDBusMessage msg)
   }
 
   masterMixer = reply.value()["currentMasterMixer"].toString();
-  masterMixer.replace(':', '_');
+  masterMixer.replace(QRegularExpression("[^a-zA-Z0-9_]"), "_");
 
   masterControl = reply.value()["currentMasterControl"].toString();
-  masterControl.replace('.', '_');
-  masterControl.replace('-', '_');
+  masterControl.replace(QRegularExpression("[^a-zA-Z0-9_]"), "_");
 
   //qDebug() << masterMixer << masterControl;
 

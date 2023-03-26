@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -29,8 +29,8 @@
 #include <SysTray.hxx>
 #include <ClockWidget.hxx>
 #include <WindowList.hxx>
+#include <KWinCompat.hxx>
 
-#include <kwindowsystem.h>
 #include <netwm.h>
 
 #include <QHBoxLayout>
@@ -49,7 +49,7 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   setWindowIcon(QIcon::fromTheme("liquidshell"));
 
   KWindowSystem::setState(winId(), NET::KeepAbove);
-  KWindowSystem::setOnAllDesktops(winId(), true);
+  KWinCompat::setOnAllDesktops(winId(), true);
   KWindowSystem::setType(winId(), NET::Dock);
 
   setFrameShape(QFrame::StyledPanel);
@@ -73,7 +73,7 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   updateRowCount();
   QDBusConnection dbus = QDBusConnection::sessionBus();
   dbus.connect(QString(), "/KWin", "org.kde.KWin", "reloadConfig", this, SLOT(updateRowCount()));
-  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopPanel::updateRowCount);
+  connect(KWinCompat::self(), &KWinCompat::numberOfDesktopsChanged, this, &DesktopPanel::updateRowCount);
 }
 
 //--------------------------------------------------------------------------------

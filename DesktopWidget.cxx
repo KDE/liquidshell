@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -26,6 +26,7 @@
 #include <ConfigureDesktopDialog.hxx>
 #include <OnScreenVolume.hxx>
 #include <OnScreenBrightness.hxx>
+#include <KWinCompat.hxx>
 
 #include <QApplication>
 #include <QScreen>
@@ -37,7 +38,6 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 
-#include <KWindowSystem>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -71,8 +71,8 @@ DesktopWidget::DesktopWidget()
   connect(panel, &DesktopPanel::resized, this, &DesktopWidget::placePanel);
   placePanel();
 
-  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &DesktopWidget::desktopChanged);
-  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &DesktopWidget::loadSettings);
+  connect(KWinCompat::self(), &KWinCompat::currentDesktopChanged, this, &DesktopWidget::desktopChanged);
+  connect(KWinCompat::self(), &KWinCompat::numberOfDesktopsChanged, this, &DesktopWidget::loadSettings);
 
   setContextMenuPolicy(Qt::ActionsContextMenu);
   QAction *action = new QAction(QIcon::fromTheme("configure"), i18n("Configure Wallpaper..."), this);
@@ -181,7 +181,7 @@ void DesktopWidget::loadSettings()
   }
 
   KConfig config;
-  for (int i = wallpapers.count() + 1; i <= KWindowSystem::numberOfDesktops(); i++)
+  for (int i = wallpapers.count() + 1; i <= KWinCompat::numberOfDesktops(); i++)
   {
     KConfigGroup group = config.group(QString("Desktop_%1").arg(i));
 
@@ -196,7 +196,7 @@ void DesktopWidget::loadSettings()
     wallpapers.append(wallpaper);
   }
 
-  wallpapers.resize(KWindowSystem::numberOfDesktops());  // if we had more before, reduce size
+  wallpapers.resize(KWinCompat::numberOfDesktops());  // if we had more before, reduce size
   wallpapers.squeeze();
 
   desktopChanged();
@@ -253,13 +253,13 @@ void DesktopWidget::configureDisplay()
   dialog->setAttribute(Qt::WA_DeleteOnClose);
 
   // different KDE versions need different ways ...
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
   KPluginMetaData module("plasma/kcms/systemsettings/kcm_kscreen");
   if ( !module.name().isEmpty() )
     dialog->addModule(module);
-  else
-#endif
+#else
     dialog->addModule("kcm_kscreen");
+#endif
 
   dialog->adjustSize();
   dialog->setWindowTitle(i18n("Configure Display"));
@@ -276,7 +276,7 @@ void DesktopWidget::placePanel()
   panel->setGeometry(r.x(), r.y() + r.height() - panelHeight, r.width(), panelHeight);
 
   // struts are to the combined screen geoms, not the single screen
-  KWindowSystem::setStrut(panel->winId(), 0, 0, 0, panelHeight + vs.height() - r.bottom());
+  KWinCompat::setStrut(panel->winId(), 0, 0, 0, panelHeight + vs.height() - r.bottom());
 }
 
 //--------------------------------------------------------------------------------
@@ -303,7 +303,7 @@ void DesktopWidget::desktopChanged()
   if ( (currentDesktop >= 0) && (currentDesktop < wallpapers.count()) )
     wallpapers[currentDesktop].pixmaps.clear();
 
-  currentDesktop = KWindowSystem::currentDesktop() - 1;  // num to index
+  currentDesktop = KWinCompat::currentDesktop() - 1;  // num to index
 
   if ( currentDesktop >= wallpapers.count() )
     return;

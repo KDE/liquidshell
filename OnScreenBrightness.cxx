@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2020-2021 Martin Koller, kollix@aon.at
+  Copyright 2020 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <OnScreenBrightness.hxx>
+#include <KWinCompat.hxx>
 
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -26,8 +27,6 @@
 #include <QApplication>
 #include <QScreen>
 #include <QDebug>
-
-#include <KWindowSystem>
 
 //--------------------------------------------------------------------------------
 
@@ -41,7 +40,7 @@ OnScreenBrightness::OnScreenBrightness(QWidget *parent)
 
   KWindowSystem::setState(winId(), NET::KeepAbove);
   KWindowSystem::setType(winId(), NET::Dock);
-  KWindowSystem::setOnAllDesktops(winId(), true);
+  KWinCompat::setOnAllDesktops(winId(), true);
 
   hideTimer.setInterval(1000);
   hideTimer.setSingleShot(true);

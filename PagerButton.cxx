@@ -31,7 +31,7 @@
 #include <QMenu>
 #include <QDebug>
 
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 #include <KIconLoader>
 #include <KIconEffect>
 
@@ -40,8 +40,8 @@
 PagerButton::PagerButton(int num, DesktopPanel *p, bool doShowIcon)
   : desktop(num), panel(p), showIcon(doShowIcon)
 {
-  setText(KWindowSystem::desktopName(desktop).isEmpty() ?
-          QString::number(desktop) : KWindowSystem::desktopName(desktop));
+  setText(KWinCompat::desktopName(desktop).isEmpty() ?
+          QString::number(desktop) : KWinCompat::desktopName(desktop));
 
   setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
   setAcceptDrops(true);
@@ -53,16 +53,16 @@ PagerButton::PagerButton(int num, DesktopPanel *p, bool doShowIcon)
   {
     createPixmap();
 
-    connect(KWindowSystem::self(), &KWindowSystem::windowAdded,
+    connect(KWinCompat::self(), &KWinCompat::windowAdded,
             this, &PagerButton::createPixmap);
 
-    connect(KWindowSystem::self(), &KWindowSystem::windowRemoved,
+    connect(KWinCompat::self(), &KWinCompat::windowRemoved,
             this, &PagerButton::createPixmap);
 
-    connect(KWindowSystem::self(), &KWindowSystem::stackingOrderChanged,
+    connect(KWinCompat::self(), &KWinCompat::stackingOrderChanged,
             this, &PagerButton::createPixmap);
 
-    connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
+    connect(KWinCompat::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
             this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
 
     // when an application changes its icon very often very fast (windowChanged called)
@@ -75,11 +75,11 @@ PagerButton::PagerButton(int num, DesktopPanel *p, bool doShowIcon)
     connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, [this]() { updateGeometry(); });
   }
 
-  connect(KWindowSystem::self(), &KWindowSystem::desktopNamesChanged, this,
+  connect(KWinCompat::self(), &KWinCompat::desktopNamesChanged, this,
           [this]()
           {
-            setText(KWindowSystem::desktopName(desktop).isEmpty() ?
-                    QString::number(desktop) : KWindowSystem::desktopName(desktop));
+            setText(KWinCompat::desktopName(desktop).isEmpty() ?
+                    QString::number(desktop) : KWinCompat::desktopName(desktop));
           });
 }
 
@@ -121,7 +121,7 @@ void PagerButton::paintEvent(QPaintEvent *event)
 void PagerButton::createPixmap()
 {
   firstPixmap = QPixmap();
-  QList<WId> windows = KWindowSystem::stackingOrder();
+  QList<WId> windows = KWinCompat::stackingOrder();
 
   // from top to bottom
   for (int i = windows.count() - 1; i >= 0; i--)
@@ -134,7 +134,7 @@ void PagerButton::createPixmap()
         (win.windowType(NET::DockMask) != NET::Dock) &&
          !(win.state() & NET::SkipTaskbar) )
     {
-      firstPixmap = KWindowSystem::icon(wid, 22, 22, true);
+      firstPixmap = KWinCompat::icon(wid, 22, 22, true);
 
       KIconEffect effect;
       firstPixmap = effect.apply(firstPixmap, KIconEffect::DeSaturate, 0, QColor(), true);
@@ -188,7 +188,7 @@ void PagerButton::dropEvent(QDropEvent *event)
   event->acceptProposedAction();
   WId wid = static_cast<WId>(event->mimeData()->data("application/x-winId").toInt());
 
-  KWindowSystem::setOnDesktop(wid, desktop);
+  KWinCompat::setOnDesktop(wid, desktop);
 }
 
 //--------------------------------------------------------------------------------

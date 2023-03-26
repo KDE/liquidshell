@@ -30,7 +30,7 @@
 #include <QContextMenuEvent>
 #include <QPainter>
 
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 
 //--------------------------------------------------------------------------------
 // See https://www.freedesktop.org/wiki/Specifications/StatusNotifierItem/StatusNotifierItem
@@ -278,7 +278,7 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
     {
       WId wid = dbus->windowId();
       KWindowSystem::raiseWindow(wid);
-      KWindowSystem::forceActiveWindow(wid);
+      KWinCompat::forceActiveWindow(wid);
     }
   }
   else if ( event->button() == Qt::RightButton )

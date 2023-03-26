@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -27,7 +27,12 @@
 #include <QScreen>
 #include <QDebug>
 
-#include <KNS3/DownloadDialog>
+#include <knewstuff_version.h>
+#if 0 && KNEWSTUFF_VERSION >= QT_VERSION_CHECK(5, 80, 0)
+#  include <KNS3/QtQuickDialogWrapper>
+#else
+#  include <KNS3/DownloadDialog>
+#endif
 
 //--------------------------------------------------------------------------------
 
@@ -51,11 +56,24 @@ ConfigureDesktopDialog::ConfigureDesktopDialog(QWidget *parent, const DesktopWid
   connect(newstuff, &QPushButton::clicked,
           [this]()
           {
+#if 0 && KNEWSTUFF_VERSION >= QT_VERSION_CHECK(5, 80, 0)
+            KNS3::QtQuickDialogWrapper *dialog = new KNS3::QtQuickDialogWrapper("wallpaper.knsrc", this);
+            dialog->open();
+            connect(dialog, &KNS3::QtQuickDialogWrapper::closed, dialog,
+                    [this, dialog]()
+                    {
+                      if ( dialog->changedEntries().count() )
+                        showImages();
+
+                      dialog->deleteLater();
+                    });
+#else
             KNS3::DownloadDialog dialog("wallpaper.knsrc", this);
             dialog.setTitle(i18n("Download Wallpapers"));
             dialog.exec();
             if ( dialog.changedEntries().count() )
               showImages();
+#endif
           });
 
   ui.kcolorcombo->setColor(wallpaper.color);

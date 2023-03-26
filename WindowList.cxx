@@ -26,7 +26,7 @@
 #include <QStyleOptionButton>
 #include <QPainter>
 
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 
 //--------------------------------------------------------------------------------
 
@@ -47,12 +47,12 @@ void WindowList::fillMenu()
 {
   menu()->clear();
 
-  QList<WId> windows = KWindowSystem::windows();
+  QList<WId> windows = KWinCompat::windows();
 
-  for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
+  for (int i = 1; i <= KWinCompat::numberOfDesktops(); i++)
   {
-    menu()->addSection(KWindowSystem::desktopName(i).isEmpty() ?
-                       QString::number(i) : KWindowSystem::desktopName(i));
+    menu()->addSection(KWinCompat::desktopName(i).isEmpty() ?
+                       QString::number(i) : KWinCompat::desktopName(i));
 
     for (WId wid : windows)
     {
@@ -63,8 +63,8 @@ void WindowList::fillMenu()
            !(win.state() & NET::SkipTaskbar) )
       {
         QAction *action =
-            menu()->addAction(KWindowSystem::icon(wid, 22, 22, true), win.name(),
-                              [wid]() { KWindowSystem::forceActiveWindow(wid); });
+            menu()->addAction(KWinCompat::icon(wid, 22, 22, true), win.name(),
+                              [wid]() { KWinCompat::forceActiveWindow(wid); });
 
         action->setData(static_cast<int>(wid));
       }

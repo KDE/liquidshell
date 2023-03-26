@@ -26,7 +26,15 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 
-#include <KRun>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+#  include <KIO/ApplicationLauncherJob>
+#  include <KIO/CommandLauncherJob>
+#  include <KIO/JobUiDelegateFactory>
+#else
+#  include <KRun>
+#endif
+
 #include <KSycoca>
 #include <KService>
 #include <KLocalizedString>
@@ -99,7 +107,17 @@ void StartMenu::fill()
   if ( sysSettings )
   {
     action = popup->addAction(QIcon::fromTheme(sysSettings->icon()), sysSettings->name());
-    connect(action, &QAction::triggered, [this, sysSettings]() { KRun::runApplication(*sysSettings, QList<QUrl>(), this); });
+    connect(action, &QAction::triggered,
+            [this, sysSettings]()
+            {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+              auto *job = new KIO::ApplicationLauncherJob(sysSettings);
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+#else
+              KRun::runApplication(*sysSettings, QList<QUrl>(), this);
+#endif
+            });
   }
 
   action = popup->addAction(QIcon::fromTheme("system-run"), i18n("Run Command..."));
@@ -154,7 +172,17 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
 
     action->setToolTip(static_cast<const KService *>(serviceEntry.data())->comment());
 
-    connect(action, &QAction::triggered, [serviceEntry]() { KRun::runApplication(*serviceEntry, QList<QUrl>(), nullptr); });
+    connect(action, &QAction::triggered,
+            [this, serviceEntry]()
+            {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+              auto *job = new KIO::ApplicationLauncherJob(serviceEntry);
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+#else
+              KRun::runApplication(*serviceEntry, QList<QUrl>(), nullptr);
+#endif
+            });
   }
 }
 
@@ -165,7 +193,17 @@ void StartMenu::contextMenuEvent(QContextMenuEvent *event)
   QMenu menu;
 
   QAction *action = menu.addAction(QIcon::fromTheme("configure"), i18n("Configure Menu..."));
-  connect(action, &QAction::triggered, []() { KRun::runCommand(QString("kmenuedit"), nullptr); });
+  connect(action, &QAction::triggered,
+          [this]()
+          {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+            auto *job = new KIO::CommandLauncherJob("kmenuedit");
+            job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+            job->start();
+#else
+            KRun::runCommand("kmenuedit", nullptr);
+#endif
+          });
 
   menu.exec(event->globalPos());
 }

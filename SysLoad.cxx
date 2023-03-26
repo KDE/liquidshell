@@ -26,7 +26,14 @@
 #include <QMouseEvent>
 #include <QDebug>
 
-#include <KRun>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+#  include <KIO/CommandLauncherJob>
+#  include <KIO/JobUiDelegateFactory>
+#else
+#  include <KRun>
+#endif
+
 #include <KLocalizedString>
 
 #include <NetworkManagerQt/Manager>
@@ -61,7 +68,11 @@ SysLoad::SysLoad(QWidget *parent)
   netLoadTimer.start();
   connect(&netLoadTimer, &QTimer::timeout, this, [this]() { maxBytes = 0; if ( maxScale > NET_INIT_SCALE ) maxScale /= 2; });
 
-  setFixedWidth(60);
+  fetch();
+
+  const int cpuBars = cpuSummaryBar ? 1 : cpus.count();
+  int w = (cpuBars <= 4) ? 8 : 5;
+  setFixedWidth((cpuBars + 2 + 1) * w + contentsMargins().left() + contentsMargins().right());  // 2 memory bars, 1 net
 }
 
 //--------------------------------------------------------------------------------
@@ -310,7 +321,13 @@ void SysLoad::mousePressEvent(QMouseEvent *event)
 {
   if ( event->button() == Qt::LeftButton )
   {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+    auto *job = new KIO::CommandLauncherJob("ksysguard");
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->start();
+#else
     KRun::runCommand("ksysguard", this);
+#endif
   }
 }
 

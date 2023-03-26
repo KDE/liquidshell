@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -201,19 +201,19 @@ QWidget *Battery::getDetailsList()
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     // different KDE versions need different ways ...
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
     KPluginMetaData module("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilglobalconfig");
     if ( !module.name().isEmpty() )
     {
       dialog->addModule(module);
       dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilprofilesconfig"));
     }
-    else
-#endif
+#else
     {
       dialog->addModule("powerdevilglobalconfig");
       dialog->addModule("powerdevilprofilesconfig");
     }
+#endif
 
     dialog->adjustSize();
     dialog->setWindowTitle(i18n("Power Management"));

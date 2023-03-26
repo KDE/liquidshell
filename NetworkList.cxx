@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -28,9 +28,9 @@
 #include <QDebug>
 
 #include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
 #  include <KIO/ApplicationLauncherJob>
-#  include <KIO/JobUiDelegate>
+#  include <KIO/JobUiDelegateFactory>
 #else
 #  include <KRun>
 #endif
@@ -159,7 +159,7 @@ void NetworkButton::toggleNetworkStatus(bool on)
     {
       case NetworkManager::ConnectionSettings::Wired:
       {
-        NetworkManager::activateConnection(connection->path(), connection->settings()->interfaceName(), QString());
+        NetworkManager::activateConnection(connection->path(), QString(), QString());
         break;
       }
 
@@ -264,9 +264,9 @@ void NetworkList::openConfigureDialog()
   if ( !service )
     service = new KService("", "kde5-nm-connection-editor", "");
 
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
     auto *job = new KIO::ApplicationLauncherJob(service);
-    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
     job->start();
 #else
     KRun::runApplication(*service, QList<QUrl>(), this);

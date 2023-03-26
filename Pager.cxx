@@ -21,6 +21,7 @@
 #include <Pager.hxx>
 #include <PagerButton.hxx>
 #include <DesktopPanel.hxx>
+#include <KWinCompat.hxx>
 
 #include <QGridLayout>
 #include <QButtonGroup>
@@ -32,7 +33,6 @@
 
 #include <KLocalizedString>
 #include <KCMultiDialog>
-#include <KWindowSystem>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KPluginMetaData>
@@ -50,13 +50,13 @@ Pager::Pager(DesktopPanel *parent)
   grid->setSpacing(2);
   grid->setContentsMargins(QMargins());
 
-  connect(KWindowSystem::self(), &KWindowSystem::numberOfDesktopsChanged, this, &Pager::fill);
+  connect(KWinCompat::self(), &KWinCompat::numberOfDesktopsChanged, this, &Pager::fill);
 
-  connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged,
+  connect(KWinCompat::self(), &KWinCompat::currentDesktopChanged,
           [this]()
           {
-            if ( KWindowSystem::currentDesktop() <= buttons.count() )
-              buttons[KWindowSystem::currentDesktop() - 1]->setChecked(true);
+            if ( KWinCompat::currentDesktop() <= buttons.count() )
+              buttons[KWinCompat::currentDesktop() - 1]->setChecked(true);
           }
          );
 
@@ -82,12 +82,11 @@ Pager::Pager(DesktopPanel *parent)
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
 
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
             KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops"));
             if ( data.isValid() )
               dialog->addModule(data);
-            else
-#endif
+#else
             {
               KCModuleInfo module("kcm_kwin_virtualdesktops");
               if ( module.service() )
@@ -95,6 +94,7 @@ Pager::Pager(DesktopPanel *parent)
               else
                 dialog->addModule("desktop");  // in older KDE versions
             }
+#endif
 
             dialog->adjustSize();
             dialog->show();
@@ -119,7 +119,7 @@ void Pager::fill()
   int row = 0, col = 0;
   const int MAX_COLUMNS = std::max(1, ri.desktopLayoutColumnsRows().width());
 
-  for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
+  for (int i = 1; i <= KWinCompat::numberOfDesktops(); i++)
   {
     PagerButton *b = new PagerButton(i, qobject_cast<DesktopPanel *>(parentWidget()), showIcons);
 
@@ -128,7 +128,7 @@ void Pager::fill()
     group->addButton(b);
     buttons.append(b);
 
-    if ( i == KWindowSystem::currentDesktop() )
+    if ( i == KWinCompat::currentDesktop() )
       b->setChecked(true);
 
     connect(b, &PagerButton::clicked, this, &Pager::changeDesktop);
@@ -148,24 +148,24 @@ void Pager::changeDesktop(bool checked)
 
   int desktopNum = qobject_cast<PagerButton *>(sender())->getDesktop();
 
-  if ( KWindowSystem::currentDesktop() == desktopNum )
+  if ( KWinCompat::currentDesktop() == desktopNum )
     KWindowSystem::setShowingDesktop(!KWindowSystem::showingDesktop());
   else
-    KWindowSystem::setCurrentDesktop(desktopNum);
+    KWinCompat::setCurrentDesktop(desktopNum);
 }
 
 //--------------------------------------------------------------------------------
 
 void Pager::wheelEvent(QWheelEvent *event)
 {
-  int desktopNum = KWindowSystem::currentDesktop() - 1 + KWindowSystem::numberOfDesktops();
+  int desktopNum = KWinCompat::currentDesktop() - 1 + KWinCompat::numberOfDesktops();
 
   if ( event->angleDelta().y() > 0 )
     desktopNum++;
   else
     desktopNum--;
 
-  KWindowSystem::setCurrentDesktop((desktopNum % KWindowSystem::numberOfDesktops()) + 1);
+  KWinCompat::setCurrentDesktop((desktopNum % KWinCompat::numberOfDesktops()) + 1);
 }
 
 //--------------------------------------------------------------------------------

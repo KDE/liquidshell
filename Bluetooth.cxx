@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -93,12 +93,11 @@ QWidget *Bluetooth::getDetailsList()
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     // different KDE versions need different ways ...
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
     KPluginMetaData module("plasma/kcms/systemsettings/kcm_bluetooth");
     if ( !module.name().isEmpty() )
       dialog->addModule(module);
-    else
-#endif
+#else
     if ( KCModuleInfo("bluetooth").service() )
       dialog->addModule("bluetooth");
     else  // older KDE versions
@@ -107,6 +106,7 @@ QWidget *Bluetooth::getDetailsList()
       dialog->addModule("bluedeviladapters");
       dialog->addModule("bluedevildevices");
     }
+#endif
 
     dialog->adjustSize();
     dialog->setWindowTitle(i18n("Bluetooth"));

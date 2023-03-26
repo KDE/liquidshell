@@ -19,6 +19,7 @@
 */
 
 #include <TaskBarButton.hxx>
+#include <KWinCompat.hxx>
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -54,7 +55,7 @@ TaskBarButton::TaskBarButton(WId theWid)
   dragDropTimer.setSingleShot(true);
   dragDropTimer.setInterval(1000);
   connect(&dragDropTimer, &QTimer::timeout,
-          [this]() { KWindowSystem::raiseWindow(wid); KWindowSystem::forceActiveWindow(wid); });
+          [this]() { KWindowSystem::raiseWindow(wid); KWinCompat::forceActiveWindow(wid); });
 
   QHBoxLayout *hbox = new QHBoxLayout(this);
   hbox->setContentsMargins(QMargins(4, 2, 4, 2));
@@ -76,7 +77,7 @@ TaskBarButton::TaskBarButton(WId theWid)
   connect(KWindowSystem::self(), SIGNAL(windowChanged(WId, NET::Properties, NET::Properties2)),
           this, SLOT(windowChanged(WId, NET::Properties, NET::Properties2)));
 
-  connect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged,
+  connect(KWinCompat::self(), &KWinCompat::activeWindowChanged,
           this, &TaskBarButton::setBackground);
 }
 
@@ -92,7 +93,7 @@ void TaskBarButton::setIconSize(int size)
 void TaskBarButton::fill()
 {
   KWindowInfo win(wid, NET::WMName | NET::WMIcon);
-  iconLabel->setPixmap(KWindowSystem::icon(wid, 32, 32, true));
+  iconLabel->setPixmap(KWinCompat::icon(wid, 32, 32, true));
   textLabel->setText(win.name());
   setToolTip(win.name());
 }
@@ -105,10 +106,10 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
   {
     KWindowSystem::setShowingDesktop(false);
 
-    if ( wid == KWindowSystem::activeWindow() )
-      KWindowSystem::minimizeWindow(wid);
+    if ( wid == KWinCompat::activeWindow() )
+      KWinCompat::minimizeWindow(wid);
     else
-      KWindowSystem::forceActiveWindow(wid);
+      KWinCompat::forceActiveWindow(wid);
 
     dragStartPos = event->pos();
     event->accept();
@@ -118,14 +119,14 @@ void TaskBarButton::mousePressEvent(QMouseEvent *event)
     // context menu to close window etc.
     QPointer<QMenu> menu(new QMenu(this));
 
-    if ( KWindowSystem::numberOfDesktops() > 1 )
+    if ( KWinCompat::numberOfDesktops() > 1 )
     {
       QMenu *desktops = menu->addMenu(i18n("Move To Desktop"));
-      desktops->addAction(i18n("All Desktops"), [this]() { KWindowSystem::setOnAllDesktops(wid, true); });
+      desktops->addAction(i18n("All Desktops"), [this]() { KWinCompat::setOnAllDesktops(wid, true); });
       desktops->addSeparator();
 
-      for (int i = 1; i <= KWindowSystem::numberOfDesktops(); i++)
-        desktops->addAction(KWindowSystem::desktopName(i), [this, i]() { KWindowSystem::setOnDesktop(wid, i); });
+      for (int i = 1; i <= KWinCompat::numberOfDesktops(); i++)
+        desktops->addAction(KWinCompat::desktopName(i), [this, i]() { KWinCompat::setOnDesktop(wid, i); });
     }
 
     menu->addAction(QIcon::fromTheme("window-close"), i18n("Close"),
@@ -215,7 +216,7 @@ void TaskBarButton::setBackground()
 
   if ( win.state() & NET::DemandsAttention )
     brush = scheme.background(KColorScheme::ActiveBackground);
-  else if ( wid == KWindowSystem::activeWindow() )
+  else if ( wid == KWinCompat::activeWindow() )
     brush = scheme.shade(KColorScheme::MidShade);
   else
     brush = scheme.background();

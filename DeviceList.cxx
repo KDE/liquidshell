@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -43,8 +43,16 @@
 #include <KDesktopFileActions>
 #include <KConfigGroup>
 #include <KService>
+
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+#  include <KIO/CommandLauncherJob>
+#  include <KIO/JobUiDelegateFactory>
+#endif
 #include <KRun>
+
 #include <kio/global.h>
+#include <kcmutils_version.h>
 
 //--------------------------------------------------------------------------------
 
@@ -183,7 +191,13 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
                 command.replace("%f", storage->filePath());
               }
 
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+              auto *job = new KIO::CommandLauncherJob(command);
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+#else
               KRun::runCommand(command, this);
+#endif
               window()->hide();
             }
            );
@@ -245,7 +259,13 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
             {
               dialog = new KCMultiDialog(nullptr);
               dialog->setAttribute(Qt::WA_DeleteOnClose);
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
+              KPluginMetaData data("kcm_kdeconnect");
+              if ( data.isValid() )
+                dialog->addModule(data);
+#else
               dialog->addModule("kcm_kdeconnect");
+#endif
               dialog->setWindowTitle(i18n("KDE Connect"));
               dialog->adjustSize();
             }
@@ -414,7 +434,13 @@ void DeviceItem::setupDone(Solid::ErrorType error, QVariant errorData, const QSt
       if ( storage )  // should always be true. paranoid check
       {
         pendingCommand.replace("%f", storage->filePath());
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+        auto *job = new KIO::CommandLauncherJob(pendingCommand);
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->start();
+#else
         KRun::runCommand(pendingCommand, this);
+#endif
         window()->hide();
       }
     }
@@ -497,7 +523,11 @@ void DeviceList::loadActions()
       KDesktopFile cfg(path);
       const QString predicateString = cfg.desktopGroup().readEntry("X-KDE-Solid-Predicate");
 
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+      QList<KServiceAction> actionList = KDesktopFileActions::userDefinedServices(KService(path), true);
+#else
       QList<KServiceAction> actionList = KDesktopFileActions::userDefinedServices(path, true);
+#endif
 
       if ( !actionList.isEmpty() && !predicateString.isEmpty() )
         actions.append(DeviceAction(path, Solid::Predicate::fromString(predicateString), actionList[0]));

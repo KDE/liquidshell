@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -151,12 +151,11 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Date & Time"));
 
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
             KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_clock"));
             if ( data.isValid() )
               dialog->addModule(data);
-            else
-#endif
+#else
             {
               KCModuleInfo module("kcm_clock");
               if ( module.service() )
@@ -164,6 +163,7 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
               else
                 dialog->addModule("clock");  // in older KDE versions
             }
+#endif
             dialog->adjustSize();
             dialog->show();
           }

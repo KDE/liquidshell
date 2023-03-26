@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -19,6 +19,7 @@
 */
 
 #include <DesktopApplet.hxx>
+#include <KWinCompat.hxx>
 
 #include <QAction>
 #include <QIcon>
@@ -106,7 +107,7 @@ void DesktopApplet::startGeometryChange()
   setWindowTitle(i18n("%1: Change Size & Position", id));
 
   if ( onDesktop == NET::OnAllDesktops )
-    KWindowSystem::setOnAllDesktops(winId(), true);
+    KWinCompat::setOnAllDesktops(winId(), true);
 
   show();
   setGeometry(oldRect);
