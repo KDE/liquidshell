@@ -61,9 +61,10 @@ PkUpdates::PkUpdates(QWidget *parent)
   updateTimer.start();
   connect(&updateTimer, &QTimer::timeout, this, &PkUpdates::checkForUpdatesReached);
 
-  setToolTip(i18n("Next check: %1 ")
-                 .arg(QDateTime::currentDateTime().addMSecs(updateTimer.interval())
-                     .toString(Qt::SystemLocaleShortDate)));
+  QString nextCheck = QDateTime::currentDateTime()
+                          .addMSecs(updateTimer.interval())
+                          .toString(Qt::SystemLocaleShortDate);
+  setToolTip(i18n("Next check: %1", nextCheck));
 
   //QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
 }
