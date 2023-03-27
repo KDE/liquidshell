@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 01:01+0000\n"
+"POT-Creation-Date: 2023-03-27 00:51+0000\n"
 "PO-Revision-Date: 2023-01-12 07:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -112,7 +112,7 @@ msgstr "თარიღისა და დროის მორგება...
 msgid "Date & Time"
 msgstr "თარიღი & დრო"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:211
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
 #, kde-format
 msgid "Filter"
 msgstr "ფილტრი"
@@ -128,12 +128,12 @@ msgstr "დროის ზონა"
 msgid "Country"
 msgstr "ქვეყანა"
 
-#: ConfigureDesktopDialog.cxx:49
+#: ConfigureDesktopDialog.cxx:54
 #, kde-format
 msgid "Get New Wallpapers..."
 msgstr "ფონის ახალი სურათების მიღება…"
 
-#: ConfigureDesktopDialog.cxx:55
+#: ConfigureDesktopDialog.cxx:72
 #, kde-format
 msgid "Download Wallpapers"
 msgstr "ფონის სურათების გადმოწერა"
@@ -201,32 +201,32 @@ msgstr "QtWidgets-ზე დაწერილი უბრალო სამ�
 msgid "Copyright 2017 - 2022 Martin Koller"
 msgstr "2017 - 2022, მარტინ კოლერი, ყველა უფლება დაცულია"
 
-#: DesktopApplet.cxx:44 Launcher.cxx:79
+#: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
 msgid "Configure..."
 msgstr "მორგება..."
 
-#: DesktopApplet.cxx:52
+#: DesktopApplet.cxx:53
 #, kde-format
 msgid "Change Size && Position"
 msgstr "ზომისა და მდებარეობის შეცვლა"
 
-#: DesktopApplet.cxx:58
+#: DesktopApplet.cxx:59
 #, kde-format
 msgid "Remove this Applet"
 msgstr "ამ აპლეტის წაშლა"
 
-#: DesktopApplet.cxx:106
+#: DesktopApplet.cxx:107
 #, kde-format
 msgid "%1: Change Size & Position"
 msgstr "%1: ზომისა და მდებარეობის შეცვლა"
 
-#: DesktopApplet.cxx:146
+#: DesktopApplet.cxx:147
 #, kde-format
 msgid "Remove Applet"
 msgstr "აპლეტის წაშლა"
 
-#: DesktopApplet.cxx:147
+#: DesktopApplet.cxx:148
 #, kde-format
 msgid "Really remove this applet?"
 msgstr "მართლა წავშალო ეს აპლეტი?"
@@ -261,7 +261,7 @@ msgstr "სურათის ჩარჩო"
 msgid "Configure Display..."
 msgstr "ეკრანის მორგება…"
 
-#: DesktopWidget.cxx:99 StartMenu.cxx:105
+#: DesktopWidget.cxx:99 StartMenu.cxx:123
 #, kde-format
 msgid "Run Command..."
 msgstr "ბრძანების გაშვება..."
@@ -276,17 +276,17 @@ msgstr "დახმარება"
 msgid "Configure Display"
 msgstr "ეკრანის მორგება"
 
-#: DeviceList.cxx:249
+#: DeviceList.cxx:269
 #, kde-format
 msgid "KDE Connect"
 msgstr "KDE Connect"
 
-#: DeviceList.cxx:266
+#: DeviceList.cxx:286
 #, kde-format
 msgid "Open with File Manager"
 msgstr "ფაილთა მმართველში გახსნა"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:363
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -295,7 +295,7 @@ msgstr ""
 "მოწყობილობა მიმაგრებულია.\n"
 "დააწკაპუნეთ გამოსაღებად/მოსახსნელად"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:364
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -304,47 +304,47 @@ msgstr ""
 "მოწყობილობა მიმაგრებული არაა.\n"
 "მისამაგრებლად დააწკაპუნეთ"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:375
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "ოპერაცია არაავტორიზებულია"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:376
 #, kde-format
 msgid "Device Busy"
 msgstr "მოწყობილობა დაკავებულია"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:377
 #, kde-format
 msgid "Operation Failed"
 msgstr "ოპერაციის შეცდომა"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:378
 #, kde-format
 msgid "User Canceled"
 msgstr "მომხმარებელმა გააუქმა"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:379
 #, kde-format
 msgid "Invalid Option"
 msgstr "არასწორი პარამეტრი"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:380
 #, kde-format
 msgid "Missing Driver"
 msgstr "დრაივერი ნაპოვნი არაა"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:402
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "ახლა შესაძლებელია მოწყობილობის უსაფრთხოდ გამოერთება"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:409
 #, kde-format
 msgid "Mount failed:"
 msgstr "მიმაგრების შეცდომა:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:409
 #, kde-format
 msgid "Unmount failed:"
 msgstr "მოხსნის შეცდომა:"
@@ -519,134 +519,141 @@ msgstr "კადრი"
 msgid "Path"
 msgstr "ბილიკი"
 
-#: PkUpdateList.cxx:135
+#: PkUpdateList.cxx:138
 #, kde-format
 msgid "Getting details ..."
 msgstr "დეტალების მიღება..."
 
-#: PkUpdateList.cxx:177
+#: PkUpdateList.cxx:180
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>საჭიროა სესიის გადატვირთვა</b><br>"
 
-#: PkUpdateList.cxx:179
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>საჭიროა გადატვირთვა</b><br>"
 
-#: PkUpdateList.cxx:195
+#: PkUpdateList.cxx:198
 #, kde-format
 msgid "Software Updates"
 msgstr "პროგრამული განახლებები"
 
-#: PkUpdateList.cxx:207
+#: PkUpdateList.cxx:210
 #, kde-format
 msgid "All"
 msgstr "&ყველა"
 
-#: PkUpdateList.cxx:218 PkUpdateList.cxx:434
+#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
 msgstr "დაყენება"
 
-#: PkUpdateList.cxx:222
+#: PkUpdateList.cxx:225
 #, kde-format
 msgid "Refresh"
 msgstr "განახლება"
 
-#: PkUpdateList.cxx:429
+#: PkUpdateList.cxx:432
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "%1 პაკეტის დაყენებაა"
 msgstr[1] "%1 შეტყობინება"
 
-#: PkUpdateList.cxx:532
+#: PkUpdateList.cxx:535
 #, kde-format
 msgid "System Reboot Required"
 msgstr "საჭიროა სისტემის გადატვირთვა"
 
-#: PkUpdateList.cxx:533
+#: PkUpdateList.cxx:536
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "დაყენებული პაკეტებიდან ერთ-ერთს სისტემის გადატვირთვა ესაჭიროება"
 
-#: PkUpdateList.cxx:534
+#: PkUpdateList.cxx:537
 #, kde-format
 msgid "Reboot System"
 msgstr "სისტემის გადატვირთვა"
 
-#: PkUpdateList.cxx:554
+#: PkUpdateList.cxx:557
 #, kde-format
 msgid "Session Restart Required"
 msgstr "საჭიროა სესიის გადატვირთვა"
 
-#: PkUpdateList.cxx:555
+#: PkUpdateList.cxx:558
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr ""
 "დაყენებული პაკეტებიდან ერთ-ერთს ესაჭიროება, რომ გახვიდეთ და თავიდან "
 "შემოხვიდეთ"
 
-#: PkUpdateList.cxx:556
+#: PkUpdateList.cxx:559
 #, kde-format
 msgid "Logout"
 msgstr "გასვლა"
 
-#: PkUpdateList.cxx:581
+#: PkUpdateList.cxx:584
 #, kde-format
 msgid "Cancel Installation"
 msgstr "დაყენების გაუქმება"
 
-#: PkUpdateList.cxx:613
+#: PkUpdateList.cxx:616
 #, kde-format
 msgid "Waiting"
 msgstr "მოლოდინი"
 
-#: PkUpdateList.cxx:614
+#: PkUpdateList.cxx:617
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "ავთენტიკაციის მოლოდინი"
 
-#: PkUpdateList.cxx:615
+#: PkUpdateList.cxx:618
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "ურთიერთდამოკიდებულებების ამოხსნა"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:619
 #, kde-format
 msgid "Updating"
 msgstr "განახლება"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:620
 #, kde-format
 msgid "Installing"
 msgstr "დაყენება"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:621
 #, kde-format
 msgid "Downloading"
 msgstr "გადმოწერა"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:622
 #, kde-format
 msgid "Canceling"
 msgstr "გაუქმება"
 
-#: PkUpdateList.cxx:665
-#, kde-format
-msgid "Accept EULA"
-msgstr "EULA-ის დათანხმება"
-
-#: PkUpdateList.cxx:687
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Validate Signature"
 msgstr "ხელმოწერის გადამოწმება"
 
-#: PkUpdateList.cxx:738
+#: PkUpdateList.cxx:728
 #, kde-format
 msgid "Update failed"
 msgstr "განახლება ვერ მოხერხდა"
+
+#: PkUpdateList.cxx:746
+#, kde-format
+msgid "Accept EULA"
+msgstr "EULA-ის დათანხმება"
+
+#: PkUpdateList.cxx:750
+#, kde-format
+msgid ""
+"<html>You need to accept or reject the following license agreement for "
+"package<br>%1<br>%2</html>"
+msgstr ""
 
 #: PkUpdates.cxx:64
 #, kde-format
@@ -753,72 +760,72 @@ msgstr "<li>კიდევ%1...</li>"
 msgid "Web Browser"
 msgstr "ვებ-ბრაუზერი"
 
-#: StartMenu.cxx:89
+#: StartMenu.cxx:97
 #, kde-format
 msgid "Switch User"
 msgstr "მომხმარებლის გადართვა"
 
-#: StartMenu.cxx:167
+#: StartMenu.cxx:195
 #, kde-format
 msgid "Configure Menu..."
 msgstr "მენიუს მორგება..."
 
-#: SysLoad.cxx:203
+#: SysLoad.cxx:214
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2% (%3 მჰც)"
 
-#: SysLoad.cxx:213
+#: SysLoad.cxx:224
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "მეხსიერება სულ: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:215
+#: SysLoad.cxx:226
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "გამოყენებული მეხსიერება: %1 მბ (%2 გბ) %3%"
 
-#: SysLoad.cxx:217
+#: SysLoad.cxx:228
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "თავისუფალი მეხსიერება: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:219
+#: SysLoad.cxx:230
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "სვოპი სულ %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:221
+#: SysLoad.cxx:232
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "გამოყენებული სვოპი: %1 მბ (%2 გბ) %3%"
 
-#: SysLoad.cxx:223
+#: SysLoad.cxx:234
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "თავისუფალი სვოპი: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "ქსელის გაგზავნა/მიღება %1/%2 კბ/წმ"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:241
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "ქსელი მაქს (ბოლო %2წამში) %1 კბ/წმ"
 
-#: TaskBarButton.cxx:123
+#: TaskBarButton.cxx:124
 #, kde-format
 msgid "Move To Desktop"
 msgstr "სამუშაო მაგიდაზე გადატანა"
 
-#: TaskBarButton.cxx:124
+#: TaskBarButton.cxx:125
 #, kde-format
 msgid "All Desktops"
 msgstr "ყველა სამუშაო მაგიდა"
 
-#: TaskBarButton.cxx:131
+#: TaskBarButton.cxx:132
 #, kde-format
 msgid "Close"
 msgstr "დაკეტვა"

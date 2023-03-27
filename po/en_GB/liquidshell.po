@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 01:01+0000\n"
+"POT-Creation-Date: 2023-03-27 00:51+0000\n"
 "PO-Revision-Date: 2023-02-26 19:52+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -111,7 +111,7 @@ msgstr "Configure Date & Time..."
 msgid "Date & Time"
 msgstr "Date & Time"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:211
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
 #, kde-format
 msgid "Filter"
 msgstr "Filter"
@@ -127,12 +127,12 @@ msgstr "Timezone"
 msgid "Country"
 msgstr "Country"
 
-#: ConfigureDesktopDialog.cxx:49
+#: ConfigureDesktopDialog.cxx:54
 #, kde-format
 msgid "Get New Wallpapers..."
 msgstr "Get New Wallpapers..."
 
-#: ConfigureDesktopDialog.cxx:55
+#: ConfigureDesktopDialog.cxx:72
 #, kde-format
 msgid "Download Wallpapers"
 msgstr "Download Wallpapers"
@@ -200,32 +200,32 @@ msgstr "A QtWidgets based basic desktop shell"
 msgid "Copyright 2017 - 2022 Martin Koller"
 msgstr "Copyright 2017 - 2022 Martin Koller"
 
-#: DesktopApplet.cxx:44 Launcher.cxx:79
+#: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
 msgid "Configure..."
 msgstr "Configure..."
 
-#: DesktopApplet.cxx:52
+#: DesktopApplet.cxx:53
 #, kde-format
 msgid "Change Size && Position"
 msgstr "Change Size && Position"
 
-#: DesktopApplet.cxx:58
+#: DesktopApplet.cxx:59
 #, kde-format
 msgid "Remove this Applet"
 msgstr "Remove this Applet"
 
-#: DesktopApplet.cxx:106
+#: DesktopApplet.cxx:107
 #, kde-format
 msgid "%1: Change Size & Position"
 msgstr "%1: Change Size & Position"
 
-#: DesktopApplet.cxx:146
+#: DesktopApplet.cxx:147
 #, kde-format
 msgid "Remove Applet"
 msgstr "Remove Applet"
 
-#: DesktopApplet.cxx:147
+#: DesktopApplet.cxx:148
 #, kde-format
 msgid "Really remove this applet?"
 msgstr "Really remove this applet?"
@@ -260,7 +260,7 @@ msgstr "Picture Frame"
 msgid "Configure Display..."
 msgstr "Configure Display..."
 
-#: DesktopWidget.cxx:99 StartMenu.cxx:105
+#: DesktopWidget.cxx:99 StartMenu.cxx:123
 #, kde-format
 msgid "Run Command..."
 msgstr "Run Command..."
@@ -275,17 +275,17 @@ msgstr "Help"
 msgid "Configure Display"
 msgstr "Configure Display"
 
-#: DeviceList.cxx:249
+#: DeviceList.cxx:269
 #, kde-format
 msgid "KDE Connect"
 msgstr "KDE Connect"
 
-#: DeviceList.cxx:266
+#: DeviceList.cxx:286
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Open with File Manager"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:363
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -294,7 +294,7 @@ msgstr ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:364
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -303,47 +303,47 @@ msgstr ""
 "Device is unmounted.\n"
 "Click to mount"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:375
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Unauthorised Operation"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:376
 #, kde-format
 msgid "Device Busy"
 msgstr "Device Busy"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:377
 #, kde-format
 msgid "Operation Failed"
 msgstr "Operation Failed"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:378
 #, kde-format
 msgid "User Canceled"
 msgstr "User Cancelled"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:379
 #, kde-format
 msgid "Invalid Option"
 msgstr "Invalid Option"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:380
 #, kde-format
 msgid "Missing Driver"
 msgstr "Missing Driver"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:402
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "The device can now be safely removed"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:409
 #, kde-format
 msgid "Mount failed:"
 msgstr "Mount failed:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:409
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Unmount failed:"
@@ -520,132 +520,139 @@ msgstr "Frame"
 msgid "Path"
 msgstr "Path"
 
-#: PkUpdateList.cxx:135
+#: PkUpdateList.cxx:138
 #, kde-format
 msgid "Getting details ..."
 msgstr "Getting details ..."
 
-#: PkUpdateList.cxx:177
+#: PkUpdateList.cxx:180
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Session restart required</b><br>"
 
-#: PkUpdateList.cxx:179
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Reboot required</b><br>"
 
-#: PkUpdateList.cxx:195
+#: PkUpdateList.cxx:198
 #, kde-format
 msgid "Software Updates"
 msgstr "Software Updates"
 
-#: PkUpdateList.cxx:207
+#: PkUpdateList.cxx:210
 #, kde-format
 msgid "All"
 msgstr "All"
 
-#: PkUpdateList.cxx:218 PkUpdateList.cxx:434
+#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
 msgstr "Install"
 
-#: PkUpdateList.cxx:222
+#: PkUpdateList.cxx:225
 #, kde-format
 msgid "Refresh"
 msgstr "Refresh"
 
-#: PkUpdateList.cxx:429
+#: PkUpdateList.cxx:432
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "Install %1 package"
 msgstr[1] "Install %1 packages"
 
-#: PkUpdateList.cxx:532
+#: PkUpdateList.cxx:535
 #, kde-format
 msgid "System Reboot Required"
 msgstr "System Reboot Required"
 
-#: PkUpdateList.cxx:533
+#: PkUpdateList.cxx:536
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "One of the installed packages requires a system reboot"
 
-#: PkUpdateList.cxx:534
+#: PkUpdateList.cxx:537
 #, kde-format
 msgid "Reboot System"
 msgstr "Reboot System"
 
-#: PkUpdateList.cxx:554
+#: PkUpdateList.cxx:557
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Session Restart Required"
 
-#: PkUpdateList.cxx:555
+#: PkUpdateList.cxx:558
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "One of the installed packages requires you to logout"
 
-#: PkUpdateList.cxx:556
+#: PkUpdateList.cxx:559
 #, kde-format
 msgid "Logout"
 msgstr "Logout"
 
-#: PkUpdateList.cxx:581
+#: PkUpdateList.cxx:584
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Cancel Installation"
 
-#: PkUpdateList.cxx:613
+#: PkUpdateList.cxx:616
 #, kde-format
 msgid "Waiting"
 msgstr "Waiting"
 
-#: PkUpdateList.cxx:614
+#: PkUpdateList.cxx:617
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Waiting for authentication"
 
-#: PkUpdateList.cxx:615
+#: PkUpdateList.cxx:618
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Resolving dependencies"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:619
 #, kde-format
 msgid "Updating"
 msgstr "Updating"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:620
 #, kde-format
 msgid "Installing"
 msgstr "Installing"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:621
 #, kde-format
 msgid "Downloading"
 msgstr "Downloading"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:622
 #, kde-format
 msgid "Canceling"
 msgstr "Canceling"
 
-#: PkUpdateList.cxx:665
-#, kde-format
-msgid "Accept EULA"
-msgstr "Accept EULA"
-
-#: PkUpdateList.cxx:687
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Validate Signature"
 msgstr "Validate Signature"
 
-#: PkUpdateList.cxx:738
+#: PkUpdateList.cxx:728
 #, kde-format
 msgid "Update failed"
 msgstr "Update failed"
+
+#: PkUpdateList.cxx:746
+#, kde-format
+msgid "Accept EULA"
+msgstr "Accept EULA"
+
+#: PkUpdateList.cxx:750
+#, kde-format
+msgid ""
+"<html>You need to accept or reject the following license agreement for "
+"package<br>%1<br>%2</html>"
+msgstr ""
 
 #: PkUpdates.cxx:64
 #, kde-format
@@ -752,72 +759,72 @@ msgstr "<li>%1 more ...</li>"
 msgid "Web Browser"
 msgstr "Web Browser"
 
-#: StartMenu.cxx:89
+#: StartMenu.cxx:97
 #, kde-format
 msgid "Switch User"
 msgstr "Switch User"
 
-#: StartMenu.cxx:167
+#: StartMenu.cxx:195
 #, kde-format
 msgid "Configure Menu..."
 msgstr "Configure Menu..."
 
-#: SysLoad.cxx:203
+#: SysLoad.cxx:214
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:213
+#: SysLoad.cxx:224
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Memory Total: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:215
+#: SysLoad.cxx:226
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Memory Used: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:217
+#: SysLoad.cxx:228
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Memory Free: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:219
+#: SysLoad.cxx:230
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Swap Total: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:221
+#: SysLoad.cxx:232
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Swap Used: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:223
+#: SysLoad.cxx:234
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Swap Free: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Net send/receive: %1/%2 KB/sec"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:241
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Net max (last %2 secs): %1 KB/sec"
 
-#: TaskBarButton.cxx:123
+#: TaskBarButton.cxx:124
 #, kde-format
 msgid "Move To Desktop"
 msgstr "Move To Desktop"
 
-#: TaskBarButton.cxx:124
+#: TaskBarButton.cxx:125
 #, kde-format
 msgid "All Desktops"
 msgstr "All Desktops"
 
-#: TaskBarButton.cxx:131
+#: TaskBarButton.cxx:132
 #, kde-format
 msgid "Close"
 msgstr "Close"
