@@ -152,14 +152,14 @@ ClockWidget::ClockWidget(DesktopPanel *parent)
             dialog->setWindowTitle(i18n("Date & Time"));
 
 #if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
-            KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings_qwidgets/kcm_clock"));
+            KPluginMetaData data("plasma/kcms/systemsettings_qwidgets/kcm_clock");
             if ( data.isValid() )
               dialog->addModule(data);
 #else
             {
               KCModuleInfo module("kcm_clock");
               if ( module.service() )
-                dialog->addModule("kcm_clock");
+                dialog->addModule(module);
               else
                 dialog->addModule("clock");  // in older KDE versions
             }

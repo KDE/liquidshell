@@ -253,13 +253,11 @@ void DesktopWidget::configureDisplay()
   dialog->setAttribute(Qt::WA_DeleteOnClose);
 
   // different KDE versions need different ways ...
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
   KPluginMetaData module("plasma/kcms/systemsettings/kcm_kscreen");
-  if ( !module.name().isEmpty() )
+  if ( module.isValid() )
     dialog->addModule(module);
-#else
+  else
     dialog->addModule("kcm_kscreen");
-#endif
 
   dialog->adjustSize();
   dialog->setWindowTitle(i18n("Configure Display"));

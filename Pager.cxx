@@ -83,7 +83,11 @@ Pager::Pager(DesktopPanel *parent)
             dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
 
 #if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
-            KPluginMetaData data(QStringLiteral("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops"));
+            KPluginMetaData data("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops");
+
+            if ( !data.isValid() )
+              data = KPluginMetaData::findPluginById("kcms", "kcm_kwin_virtualdesktops");
+
             if ( data.isValid() )
               dialog->addModule(data);
 #else

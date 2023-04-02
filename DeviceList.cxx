@@ -52,7 +52,6 @@
 #include <KRun>
 
 #include <kio/global.h>
-#include <kcmutils_version.h>
 
 //--------------------------------------------------------------------------------
 
@@ -259,13 +258,14 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
             {
               dialog = new KCMultiDialog(nullptr);
               dialog->setAttribute(Qt::WA_DeleteOnClose);
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
+
               KPluginMetaData data("kcm_kdeconnect");
+
               if ( data.isValid() )
                 dialog->addModule(data);
-#else
-              dialog->addModule("kcm_kdeconnect");
-#endif
+              else
+                dialog->addModule("kcm_kdeconnect");
+
               dialog->setWindowTitle(i18n("KDE Connect"));
               dialog->adjustSize();
             }

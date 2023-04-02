@@ -201,19 +201,18 @@ QWidget *Battery::getDetailsList()
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     // different KDE versions need different ways ...
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
-    KPluginMetaData module("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilglobalconfig");
-    if ( !module.name().isEmpty() )
+    KPluginMetaData data("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilglobalconfig");
+
+    if ( data.isValid() )
     {
-      dialog->addModule(module);
+      dialog->addModule(data);
       dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings_qwidgets/kcm_powerdevilprofilesconfig"));
     }
-#else
+    else
     {
       dialog->addModule("powerdevilglobalconfig");
       dialog->addModule("powerdevilprofilesconfig");
     }
-#endif
 
     dialog->adjustSize();
     dialog->setWindowTitle(i18n("Power Management"));
