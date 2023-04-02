@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:51+0000\n"
-"PO-Revision-Date: 2023-01-12 07:32+0100\n"
+"PO-Revision-Date: 2023-04-01 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -654,6 +654,8 @@ msgid ""
 "<html>You need to accept or reject the following license agreement for "
 "package<br>%1<br>%2</html>"
 msgstr ""
+"<html>თქვენ უნდა დაეთანხმოთ ან უარყოთ შემდეგი სალიცენზიო ხელშეკრულება "
+"პაკეტისთვის<br>%1<br>%2</html>"
 
 #: PkUpdates.cxx:64
 #, kde-format
