@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -48,7 +48,13 @@ QuickLaunch::QuickLaunch(DesktopPanel *parent)
   grid->setSpacing(2);
 
   layout()->addWidget(frame);
-  loadConfig();
+
+  // create default folder
+  QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/QuickLaunch");
+  if ( !dir.exists() )
+    dir.mkpath(dir.path());
+
+  loadConfig(dir.path());
 
   connect(parent, &DesktopPanel::rowsChanged, this, &QuickLaunch::fill);
   connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this, &QuickLaunch::fill);
