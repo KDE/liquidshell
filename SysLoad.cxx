@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2018 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -42,6 +42,8 @@
 
 const int INTERVAL_MS = 800;
 const int NET_INTERVAL_S = 60;
+const int BAR_WIDTH = 8;
+const int SMALL_BAR_WIDTH = 4;
 
 // to avoid that a constant small network traffic always shows a full bar,
 // we set some arbitrary higher maximum value for the scale
@@ -71,8 +73,9 @@ SysLoad::SysLoad(QWidget *parent)
   fetch();
 
   const int cpuBars = cpuSummaryBar ? 1 : cpus.count();
-  int w = (cpuBars <= 4) ? 8 : 5;
-  setFixedWidth((cpuBars + 2 + 1) * w + contentsMargins().left() + contentsMargins().right());  // 2 memory bars, 1 net
+  const int cpuBarWidth = (cpuBars <= 4) ? BAR_WIDTH : SMALL_BAR_WIDTH;
+  setFixedWidth((cpuBars * cpuBarWidth) + ((2 + 1) * BAR_WIDTH) +  // 2 memory bars, 1 net - they shall be more prominent
+                contentsMargins().left() + contentsMargins().right());
 }
 
 //--------------------------------------------------------------------------------
@@ -251,7 +254,7 @@ void SysLoad::paintEvent(QPaintEvent *event)
   QFrame::paintEvent(event);
 
   const int cpuBars = cpuSummaryBar ? 1 : cpus.count();
-  int const barWidth = contentsRect().width() / (cpuBars + 2 + 1);  // mem usage 2 bars + netSum
+  const int cpuBarWidth = (cpuBars <= 4) ? BAR_WIDTH : SMALL_BAR_WIDTH;
   int x = contentsRect().x(), y = contentsRect().y() + contentsRect().height();
 
   QPainter painter(this);
@@ -280,39 +283,39 @@ void SysLoad::paintEvent(QPaintEvent *event)
   for (const CpuData &data : drawCpus)
   {
     int h = contentsRect().height() * (data.userPercent / 100.0);
-    painter.fillRect(x, y - h, barWidth, h, cpuUserColor);
+    painter.fillRect(x, y - h, cpuBarWidth, h, cpuUserColor);
     y -= h;
     h = contentsRect().height() * (data.systemPercent / 100.0);
-    painter.fillRect(x, y - h, barWidth, h, cpuSystemColor);
+    painter.fillRect(x, y - h, cpuBarWidth, h, cpuSystemColor);
     y -= h;
     h = contentsRect().height() * (data.nicePercent / 100.0);
-    painter.fillRect(x, y - h, barWidth, h, cpuNiceColor);
+    painter.fillRect(x, y - h, cpuBarWidth, h, cpuNiceColor);
 
-    x += barWidth;
+    x += cpuBarWidth;
     y = contentsRect().y() + contentsRect().height();
   }
 
   // memory
   int h = contentsRect().height() * (memData.memPercent / 100.0);
-  painter.fillRect(x, y - h, barWidth, h, memUsedColor);
+  painter.fillRect(x, y - h, BAR_WIDTH, h, memUsedColor);
   y -= h;
   h = contentsRect().height() * (memData.memCachedPercent / 100.0);
-  painter.fillRect(x, y, barWidth, h, memCachedColor);
+  painter.fillRect(x, y, BAR_WIDTH, h, memCachedColor);
 
-  x += barWidth;
+  x += BAR_WIDTH;
   y = contentsRect().y() + contentsRect().height();
   h = contentsRect().height() * (memData.swapPercent / 100.0);
-  painter.fillRect(x, y - h, barWidth, h, memSwapColor);
+  painter.fillRect(x, y - h, BAR_WIDTH, h, memSwapColor);
 
 
   // net
-  x += barWidth;
+  x += BAR_WIDTH;
   y = contentsRect().y() + contentsRect().height();
   h = contentsRect().height() * (double(sumReceived) / maxScale);
-  painter.fillRect(x, y - h, barWidth, h, netReceivedColor);
+  painter.fillRect(x, y - h, BAR_WIDTH, h, netReceivedColor);
   y -= h;
   h = contentsRect().height() * (double(sumSent) / maxScale);
-  painter.fillRect(x, y - h, barWidth, h, netSentColor);
+  painter.fillRect(x, y - h, BAR_WIDTH, h, netSentColor);
 }
 
 //--------------------------------------------------------------------------------
