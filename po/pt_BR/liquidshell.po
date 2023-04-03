@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-01-16 22:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -73,7 +73,7 @@ msgstr "Descarregando em %1%"
 msgid "Remaining Time: "
 msgstr "Tempo restante: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Gerenciamento de energia"
@@ -198,8 +198,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Um shell básico baseado no QtWidgets"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Copyright 2017 - 2022 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -272,7 +273,7 @@ msgstr "Executar comando..."
 msgid "Help"
 msgstr "Ajuda"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Configurar tela"
@@ -756,7 +757,7 @@ msgstr "Atualizações de softwares disponíveis"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 mais...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Navegador Web"
@@ -771,47 +772,47 @@ msgstr "Trocar usuário"
 msgid "Configure Menu..."
 msgstr "Configurar menu..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Memória total: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Memória usada: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Memória livre: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Swap total: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Swap usado: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Swap livre: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Rede enviar/receber: %1/%2 KB/sec"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Net máximo (últimos %2 s): %1 KB/sec"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-03-27 08:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "Розряджено до %1%"
 msgid "Remaining Time: "
 msgstr "Час, що залишився: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Керування живленням"
@@ -203,8 +203,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Заснована на QtWidgets базова оболонка стільниці"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "© Martin Koller, 2017–2022"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -277,7 +278,7 @@ msgstr "Виконати команду…"
 msgid "Help"
 msgstr "Довідка"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Налаштування показу"
@@ -784,7 +785,7 @@ msgstr "Доступні оновлення програмного забезп�
 msgid "<li>%1 more ...</li>"
 msgstr "<li>і ще %1…</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Переглядач інтернету"
@@ -799,47 +800,47 @@ msgstr "Перемкнути користувача"
 msgid "Configure Menu..."
 msgstr "Налаштувати меню…"
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "Процесор %1: %2% (%3 МГц)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Загалом пам'яті: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Вжито пам'яті: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Вільно пам'яті: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Загалом резерву: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Вжито резерву: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Вільно резерву: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Надсилання/Отримання мережею: %1/%2 кБ/с"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. вик. мережі (протягом останніх %2 с): %1 кБ/с"

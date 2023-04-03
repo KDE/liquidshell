@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-03-29 08:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -76,7 +76,7 @@ msgstr "Praznjenje na %1%"
 msgid "Remaining Time: "
 msgstr "Preostali čas: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Upravljanje z energijo"
@@ -201,8 +201,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Osnovna lupina na podlagi QtWidgets"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Copyright 2017 - 2022 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -275,7 +276,7 @@ msgstr "Poženi ukaz..."
 msgid "Help"
 msgstr "Pomoč"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Nastavi zaslon"
@@ -781,7 +782,7 @@ msgstr "Na voljo so posodobitve programske opreme"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 več ...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Spletni brskalnik"
@@ -796,47 +797,47 @@ msgstr "Preklopi uporabnika"
 msgid "Configure Menu..."
 msgstr "Nastavi meni..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPE %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Skupni pomnilnik: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Porabljeni pomnilnik: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Prosti pomnilnik: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Skupno izmenjevalno področje: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Porabljeno izmenjevalno področje: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Prosto izmenjevalno področje: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Omrežje poslano/prejeto: %1/%2 KB/s"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Omežje maks (zadnji %2 s): %1 KB/s"

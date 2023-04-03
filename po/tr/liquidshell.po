@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-03-27 13:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "%​%1 şarj boşalıyor"
 msgid "Remaining Time: "
 msgstr "Kalan Süre: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Güç Yönetimi"
@@ -196,8 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets tabanlı yalın masaüstü kabuğu"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Telif hakkı 2017 - 2022 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -270,7 +271,7 @@ msgstr "Komut Çalıştır..."
 msgid "Help"
 msgstr "Yardım"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Ekranı Yapılandır"
@@ -757,7 +758,7 @@ msgstr "Yazılım Güncellemeleri Kullanılabilir"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 daha fazla...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Web Tarayıcı"
@@ -772,47 +773,47 @@ msgstr "Kullanıcı Değiştir"
 msgid "Configure Menu..."
 msgstr "Menüyü Yapılandır..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %​%2 (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Toplam Bellek: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Kullanılan Bellek: %1 MB (%2 GB) %​%3"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Boş Bellek: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Toplam Takas: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Kullanılan Takas: %1 MB (%2 GB) %​%3"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Boş Takas: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Ağ gönderilen/alınan: %1/%2 KB/san"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Ağ en çok (son %2 saniye): %1 KB/san"

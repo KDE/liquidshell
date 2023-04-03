@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2020-10-08 14:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -72,7 +72,7 @@ msgstr "tühjenemine, tase %1"
 msgid "Remaining Time: "
 msgstr "Jäänud aega:"
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Energiahaldus"
@@ -199,7 +199,7 @@ msgstr "QtWidgetsi-põhine töölauakesta alternatiiv"
 #: desktop.cxx:49
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2020 Martin Koller"
-msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Autoriõigus 2017 - 2020: Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -272,7 +272,7 @@ msgstr "Käivita käsk ..."
 msgid "Help"
 msgstr "Abi"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Ekraani seadistamine"
@@ -759,7 +759,7 @@ msgstr "Saada on tarkvarauuendusi"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>Veel %1 ...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Veebilehitseja"
@@ -774,47 +774,47 @@ msgstr "Vaheta kasutajat"
 msgid "Configure Menu..."
 msgstr "Seadista menüüd ..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "Protsessor %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Mälu kokku: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Mälu kasutusel: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Mälu vaba: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Saaleala kokku: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Saaleala kasutusel: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Saaleala vaba: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Võrgu saatmine ja vastuvõtmine: %1/%2 KB/sec"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Võrgu maks. (viimased %2 sek): %1 KB/sec"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "Αποφόρτιση σε %1%"
 msgid "Remaining Time: "
 msgstr "Απομένων χρόνος: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Διαχείριση ενέργειας"
@@ -198,7 +198,7 @@ msgstr "Ένα βασικό κέλυφος επιφάνειας εργασίας
 #: desktop.cxx:49
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2021 Martin Koller"
-msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Copyright 2017 - 2021 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -271,7 +271,7 @@ msgstr "Εκτέλεση εντολής..."
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Διαμόρφωση οθόνης"
@@ -755,7 +755,7 @@ msgstr "Διαθέσιμες ενημερώσεις λογισμικού"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 περισσότερες ...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Περιηγητής ιστού"
@@ -770,47 +770,47 @@ msgstr "Εναλλαγή χρήστη"
 msgid "Configure Menu..."
 msgstr "Διαμόρφωση μενού..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Συνολική μνήμη: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Μνήμη σε χρήση: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Ελεύθερη μνήμη: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Συνολικό swap: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Swap se xr;hsh: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Swap ελεύθερο: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Καθαρή αποστολή/λήψη: %1/%2 KB/sec"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Καθαρό μέγιστο (τελευταία %2 secs): %1 KB/sec"

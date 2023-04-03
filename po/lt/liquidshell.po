@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2021-12-13 13:05+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -77,7 +77,7 @@ msgstr "Išsikrauna ties %1%"
 msgid "Remaining Time: "
 msgstr "Liko laiko: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Energijos valdymas"
@@ -204,7 +204,7 @@ msgstr "QtWidgets pagrįstas pagrindinio darbalaukio apvalkalas"
 #: desktop.cxx:49
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2021 Martin Koller"
-msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Autorių teisės 2017 - 2021 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -277,7 +277,7 @@ msgstr "Vykdyti komandą..."
 msgid "Help"
 msgstr "Pagalba"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Konfigūruoti ekraną"
@@ -781,7 +781,7 @@ msgstr "Yra prieinami programinės įrangos atnaujinimai"
 msgid "<li>%1 more ...</li>"
 msgstr "<li> ir dar %1 ...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Saityno naršyklė"
@@ -796,47 +796,47 @@ msgstr "Perjungti naudotoją"
 msgid "Configure Menu..."
 msgstr "Konfigūruoti meniu..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "Procesorius %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Iš viso atminties: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Naudojama atminties: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Laisvos atminties: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Iš viso swap: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Naudojama swap: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Laisvos swap: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Tinklo siuntimas/gavimas: %1/%2 KB/sek."
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Tinklo maksimalus (paskutinių %2 sek.): %1 KB/sek."

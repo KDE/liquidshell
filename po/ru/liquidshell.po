@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -78,7 +78,7 @@ msgstr "Разряжается: %1%"
 msgid "Remaining Time: "
 msgstr "Осталось времени: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "Управление питанием"
@@ -203,8 +203,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Основанная на QtWidgets базовая оболочка рабочего стола"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "Авторское право © Martin Koller, 2017–2022"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -277,7 +278,7 @@ msgstr "Выполнить команду..."
 msgid "Help"
 msgstr "Справка"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "Настройка отображения"
@@ -781,7 +782,7 @@ msgstr "Доступны обновления программ"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>и ещё %1...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "Веб-браузер"
@@ -796,47 +797,47 @@ msgstr "Переключить пользователя"
 msgid "Configure Menu..."
 msgstr "Настроить меню…"
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "ЦП %1: %2% (%3 МГц)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Всего памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Используется памяти: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Свободно памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Всего виртуальной памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Используется виртуальной памяти: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Свободно виртуальной памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Отправка/приём сетью: %1/%2 кБ/с"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. исп. сети (в течение последних %2 с): %1 кБ/с"

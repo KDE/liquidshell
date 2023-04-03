@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:51+0000\n"
+"POT-Creation-Date: 2023-04-03 00:48+0000\n"
 "PO-Revision-Date: 2023-04-01 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -72,7 +72,7 @@ msgstr "იცლება: %1%"
 msgid "Remaining Time: "
 msgstr "დარჩენილი დრო: "
 
-#: Battery.cxx:219
+#: Battery.cxx:218
 #, kde-format
 msgid "Power Management"
 msgstr "ენერგიის მართვა"
@@ -197,8 +197,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets-ზე დაწერილი უბრალო სამუშაო მაგიდის გარემო"
 
 #: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2022 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2022 Martin Koller"
+msgid "Copyright 2017 - 2023 Martin Koller"
 msgstr "2017 - 2022, მარტინ კოლერი, ყველა უფლება დაცულია"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
@@ -271,7 +272,7 @@ msgstr "ბრძანების გაშვება..."
 msgid "Help"
 msgstr "დახმარება"
 
-#: DesktopWidget.cxx:265
+#: DesktopWidget.cxx:263
 #, kde-format
 msgid "Configure Display"
 msgstr "ეკრანის მორგება"
@@ -757,7 +758,7 @@ msgstr "ხელმისაწვდომია პროგრამებ�
 msgid "<li>%1 more ...</li>"
 msgstr "<li>კიდევ%1...</li>"
 
-#: QuickLaunch.cxx:151
+#: QuickLaunch.cxx:157
 #, kde-format
 msgid "Web Browser"
 msgstr "ვებ-ბრაუზერი"
@@ -772,47 +773,47 @@ msgstr "მომხმარებლის გადართვა"
 msgid "Configure Menu..."
 msgstr "მენიუს მორგება..."
 
-#: SysLoad.cxx:214
+#: SysLoad.cxx:217
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2% (%3 მჰც)"
 
-#: SysLoad.cxx:224
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "მეხსიერება სულ: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:226
+#: SysLoad.cxx:229
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "გამოყენებული მეხსიერება: %1 მბ (%2 გბ) %3%"
 
-#: SysLoad.cxx:228
+#: SysLoad.cxx:231
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "თავისუფალი მეხსიერება: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:230
+#: SysLoad.cxx:233
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "სვოპი სულ %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:232
+#: SysLoad.cxx:235
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "გამოყენებული სვოპი: %1 მბ (%2 გბ) %3%"
 
-#: SysLoad.cxx:234
+#: SysLoad.cxx:237
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "თავისუფალი სვოპი: %1 მბ (%2 გბ)"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:240
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "ქსელის გაგზავნა/მიღება %1/%2 კბ/წმ"
 
-#: SysLoad.cxx:241
+#: SysLoad.cxx:244
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "ქსელი მაქს (ბოლო %2წამში) %1 კბ/წმ"
