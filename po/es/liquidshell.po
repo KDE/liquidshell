@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-03 00:48+0000\n"
-"PO-Revision-Date: 2023-03-27 19:47+0200\n"
+"PO-Revision-Date: 2023-04-04 03:36+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -198,10 +198,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Un intérprete de órdenes de escritorio básico basado en QtWidgets"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2022 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2023 Martin Koller"
-msgstr "Copyright 2017-2022 Martin Koller"
+msgstr "Copyright 2017-2023 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
