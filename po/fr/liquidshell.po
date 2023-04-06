@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-03 00:48+0000\n"
-"PO-Revision-Date: 2023-03-28 15:15+0200\n"
+"PO-Revision-Date: 2023-04-04 16:39+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -199,10 +199,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Un programme de bureau simple réalisé à partir de « QtWidgets »"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2022 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2023 Martin Koller"
-msgstr "Copyright 2017 - 2022 Martin Koller"
+msgstr "Copyright 2017 - 2023 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
