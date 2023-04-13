@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #ifndef _KWINCOMPAT_H_
 #define _KWINCOMPAT_H_
 
