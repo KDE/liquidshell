@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-03 00:48+0000\n"
-"PO-Revision-Date: 2023-03-14 22:06+0200\n"
+"PO-Revision-Date: 2023-04-04 23:00+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -196,10 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgetsiin perustuva yksinkertainen työpöytäkäyttöliittymä"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2022 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2023 Martin Koller"
-msgstr "Tekijänoikeudet 2017–2022 Martin Koller"
+msgstr "Tekijänoikeudet 2017–2023 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
@@ -656,6 +655,8 @@ msgid ""
 "<html>You need to accept or reject the following license agreement for "
 "package<br>%1<br>%2</html>"
 msgstr ""
+"<html>Seuraavan paketin käyttöoikeussopimus on hyväksyttävä tai hylättävä:"
+"<br>%1<br>%2</html>"
 
 #: PkUpdates.cxx:64
 #, kde-format
