@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:48+0000\n"
+"POT-Creation-Date: 2023-04-25 00:54+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -655,22 +655,23 @@ msgid ""
 "package<br>%1<br>%2</html>"
 msgstr ""
 
-#: PkUpdates.cxx:64
-#, kde-format
-msgid "Next check: %1 "
+#: PkUpdates.cxx:67
+#, fuzzy, kde-format
+#| msgid "Next check: %1 "
+msgid "Next check: %1"
 msgstr "Επόμενος έλεγχος: %1 "
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:93
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Έλεγχος για ενημερώσεις ..."
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:109 PkUpdates.cxx:163
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Έλεγχος για ενημερώσεις ... %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:185
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -679,33 +680,33 @@ msgstr ""
 "Τελευταίος έλεγχος: %1\n"
 "Σφάλμα στον έλεγχο για ενημερώσεις: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:188
 #, kde-format
 msgid "Software Update Error"
 msgstr "Σφάλμα ενημέρωσης λογισμικού"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:209
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "%1 ενημέρωση <b>ασφαλείας</b> διαθέσιμη"
 msgstr[1] "%1 ενημερώσεις <b>ασφαλείας</b> διαθέσιμες"
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:221
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "%1 <i>σημαντική</i> ενημέρωση διαθέσιμη"
 msgstr[1] "%1 <i>σημαντικές</i> ενημερώσεις διαθέσιμες"
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:233
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "%1 ενημέρωση διόρθωσης διαθέσιμη"
 msgstr[1] "%1 ενημερώσεις διόρθωσης διαθέσιμες"
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:243
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -724,7 +725,7 @@ msgstr[1] ""
 "Δεν υπάρχουν σημαντικές ενημερώσεις\n"
 "%2 άλλες"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:254
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -733,24 +734,24 @@ msgstr ""
 "Τελευταίος έλεγχος: %1\n"
 "Δεν υπάρχουν ενημερώσεις"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:263
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>%1 άλλη"
 msgstr[1] "<br>%1 άλλες"
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:265
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Τελευταίος έλεγχος: %1<br>%2</html>"
 
-#: PkUpdates.cxx:300
+#: PkUpdates.cxx:301
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Διαθέσιμες ενημερώσεις λογισμικού"
 
-#: PkUpdates.cxx:320
+#: PkUpdates.cxx:321
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 περισσότερες ...</li>"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:48+0000\n"
+"POT-Creation-Date: 2023-04-25 00:54+0000\n"
 "PO-Revision-Date: 2021-09-05 11:47-0700\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik Language Support\n"
@@ -650,22 +650,22 @@ msgid ""
 "package<br>%1<br>%2</html>"
 msgstr ""
 
-#: PkUpdates.cxx:64
+#: PkUpdates.cxx:67
 #, kde-format
-msgid "Next check: %1 "
+msgid "Next check: %1"
 msgstr ""
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:93
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Дар ҳоли санҷиши навсозиҳо ..."
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:109 PkUpdates.cxx:163
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Дар ҳоли санҷиши навсозиҳо ... %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:185
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -674,33 +674,33 @@ msgstr ""
 "Санҷиши охирин: %1\n"
 "Ҳангоми санҷиши навсозиҳо хато ба миён омад: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:188
 #, kde-format
 msgid "Software Update Error"
 msgstr "Хатои навсозии нармафзор"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:209
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:221
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:233
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:243
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -716,7 +716,7 @@ msgstr[1] ""
 "Ягон навсозии муҳим дастрас нест\n"
 "%2 навсозии дигар"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:254
 #, fuzzy, kde-format
 #| msgid ""
 #| "Last check: %1\n"
@@ -728,24 +728,24 @@ msgstr ""
 "Санҷиши охирин: %1\n"
 "Ягон навсозии муҳим дастрас нест"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:263
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] ""
 msgstr[1] ""
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:265
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr ""
 
-#: PkUpdates.cxx:300
+#: PkUpdates.cxx:301
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Навсозиҳои нармафзор дастрасанд"
 
-#: PkUpdates.cxx:320
+#: PkUpdates.cxx:321
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:48+0000\n"
+"POT-Creation-Date: 2023-04-25 00:54+0000\n"
 "PO-Revision-Date: 2023-04-03 09:16+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -665,22 +665,23 @@ msgstr ""
 "<html>Morate sprejeti ali zavrniti naslednji licenčni sporazum za paket <br>"
 "%1<br>%2</html>"
 
-#: PkUpdates.cxx:64
-#, kde-format
-msgid "Next check: %1 "
+#: PkUpdates.cxx:67
+#, fuzzy, kde-format
+#| msgid "Next check: %1 "
+msgid "Next check: %1"
 msgstr "Naslednje preverjanje: %1 "
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:93
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Preverjam za posodobitvami ..."
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:109 PkUpdates.cxx:163
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Preverjam za posodobitvami ... %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:185
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -689,12 +690,12 @@ msgstr ""
 "Zadnje preverjanje: %1\n"
 "Napaka pri preverjanju posodobitev: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:188
 #, kde-format
 msgid "Software Update Error"
 msgstr "Napaka posodabljanja programske opreme"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:209
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
@@ -703,7 +704,7 @@ msgstr[1] "Na voljo %1 <b>varnostni</b> posodobitvi"
 msgstr[2] "Na voljo %1 <b>varnostne</b> posodobitve"
 msgstr[3] "Na voljo %1 <b>varnostnih</b> posodobitev"
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:221
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
@@ -712,7 +713,7 @@ msgstr[1] "Na voljo %1 <b>pomembni</b> posodobitvi"
 msgstr[2] "Na voljo %1 <b>pomembne</b> posodobitve"
 msgstr[3] "Na voljo %1 <b>pomembnih</b> posodobitev"
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:233
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
@@ -721,7 +722,7 @@ msgstr[1] "Na voljo %1 popravka napak programske opreme"
 msgstr[2] "Na voljo %1 popravki napak programske opreme"
 msgstr[3] "Na voljo %1 popravkov napak programske opreme"
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:243
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -748,7 +749,7 @@ msgstr[3] ""
 "Na voljo ni pomembnih posodobitev\n"
 "%2 ostalih"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:254
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -757,7 +758,7 @@ msgstr ""
 "Zadnje preverjanje: %1\n"
 "Na voljo ni nobene posodobitve"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:263
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
@@ -766,17 +767,17 @@ msgstr[1] "<br>%1 ostala"
 msgstr[2] "<br>%1 ostali"
 msgstr[3] "<br>%1 ostalih"
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:265
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Zadnje preverjanje: %1<br>%2</html>"
 
-#: PkUpdates.cxx:300
+#: PkUpdates.cxx:301
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Na voljo so posodobitve programske opreme"
 
-#: PkUpdates.cxx:320
+#: PkUpdates.cxx:321
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 več ...</li>"
