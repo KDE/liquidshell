@@ -35,11 +35,21 @@ class CalendarPopup : public QFrame
   public:
     CalendarPopup(QWidget *parent);
 
+  protected:
+    void showEvent(QShowEvent *event) override;
+    void hideEvent(QHideEvent *event) override;
+
   public Q_SLOTS:
     void goToday();
 
+  private Q_SLOTS:
+    void tick();
+
   private:
     QCalendarWidget *cal;
+    QTimer timer;
+    QLabel *timeLabel;
+    QLabel *dateLabel;
 };
 
 //--------------------------------------------------------------------------------
@@ -66,7 +76,7 @@ class ClockWidget : public QFrame
     QLabel *timeLabel, *dayLabel, *dateLabel;
     CalendarPopup *calendar;
 
-    QString timeFormat = QStringLiteral("HH:mm");
+    QString timeFormat;
     QString dayFormat  = QStringLiteral("ddd");
     QString dateFormat = QStringLiteral("d.MMM yyyy");
 

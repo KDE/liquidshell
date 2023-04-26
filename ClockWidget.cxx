@@ -50,12 +50,65 @@ CalendarPopup::CalendarPopup(QWidget *parent)
 
   QVBoxLayout *vbox = new QVBoxLayout(this);
   vbox->setContentsMargins(QMargins());
+
+  timeLabel = new QLabel;
+  timeLabel->setObjectName("calendar_time");
+  QFont f = font();
+  f.setPointSizeF(fontInfo().pointSizeF() * 1.5);
+  timeLabel->setFont(f);
+  timeLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+  dateLabel = new QLabel;
+  dateLabel->setObjectName("calendar_date");
+  dateLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+  dateLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+  timer.setInterval(1000);
+  timer.start();
+
+  connect(&timer, &QTimer::timeout, this, &CalendarPopup::tick);
+
+  QHBoxLayout *hbox = new QHBoxLayout;
+  hbox->setSpacing(20);
+  hbox->addWidget(timeLabel);
+  hbox->addWidget(dateLabel);
+  vbox->addLayout(hbox);
+
   cal = new QCalendarWidget;
   vbox->addWidget(cal);
 
   QPushButton *today = new QPushButton(QIcon::fromTheme("go-jump-today"), QString());
   vbox->addWidget(today);
   connect(today, &QPushButton::clicked, this, &CalendarPopup::goToday);
+}
+
+//--------------------------------------------------------------------------------
+
+void CalendarPopup::showEvent(QShowEvent *event)
+{
+  Q_UNUSED(event);
+
+  timer.start();
+  tick();
+}
+
+//--------------------------------------------------------------------------------
+
+void CalendarPopup::hideEvent(QHideEvent *event)
+{
+  Q_UNUSED(event);
+
+  timer.stop();  // avoid timer events we don't need
+}
+
+//--------------------------------------------------------------------------------
+
+void CalendarPopup::tick()
+{
+  // show time and date in localized long form
+  QDateTime dateTime = QDateTime::currentDateTime();
+  timeLabel->setText(locale().toString(dateTime.time()));
+  dateLabel->setText(locale().toString(dateTime.date()));
 }
 
 //--------------------------------------------------------------------------------
@@ -73,6 +126,8 @@ void CalendarPopup::goToday()
 ClockWidget::ClockWidget(DesktopPanel *parent)
   : QFrame(parent), calendar(nullptr)
 {
+  timeFormat = locale().timeFormat(QLocale::ShortFormat);
+
   ensurePolished();  // make sure we already have the css applied
 
   timer = new QTimer(this);
