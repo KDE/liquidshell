@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -36,8 +36,10 @@
 #include <QScreen>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QMenu>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QCryptographicHash>
 #include <QDebug>
 
 #include <KLocalizedString>
@@ -218,12 +220,21 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   // create "busy" indicator
   progressBar = new QProgressBar;
 
-  installButton = new QPushButton(i18n("Install"));
+  installButton = new QToolButton;
+  installButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+  installButton->setText(i18n("Install"));
   installButton->setEnabled(false);
-  connect(installButton, &QPushButton::clicked, this, &PkUpdateList::install);
+  connect(installButton, &QToolButton::clicked, [this]() { afterInstall = AfterInstall::Nothing; install(); });
 
-  refreshButton = new QPushButton(i18n("Refresh"));
-  connect(refreshButton, &QPushButton::clicked, this, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
+  // more install options
+  QMenu *menu = new QMenu;
+  menu->addAction(i18n("Install, then Sleep"), this, [this]() { afterInstall = AfterInstall::Sleep; install(); });
+  menu->addAction(i18n("Install, then Shutdown"), this, [this]() { afterInstall = AfterInstall::Shutdown; install(); });
+  installButton->setMenu(menu);
+
+  refreshButton = new QToolButton;
+  refreshButton->setText(i18n("Refresh"));
+  connect(refreshButton, &QToolButton::clicked, this, [this]() { setPackages(PkUpdates::PackageList()); emit refreshRequested(); });
 
   hbox->addWidget(checkAllBox);
   hbox->addWidget(filterEdit);
@@ -516,6 +527,30 @@ void PkUpdateList::install()
 
 //--------------------------------------------------------------------------------
 
+void PkUpdateList::enqueue(const QString &packageID)
+{
+  // find and add item with packageID
+  for (int i = 0; i < itemsLayout->count(); i++)
+  {
+    QPointer<PkUpdateListItem> item = qobject_cast<PkUpdateListItem *>(itemsLayout->itemAt(i)->widget());
+
+    if ( item && (item->package.id == packageID) )
+    {
+      item->showProgress(true);
+      item->errorLabel->hide();
+      item->detailsLabel->hide();
+
+      installQ.enqueue(item);
+      break;
+    }
+  }
+
+  if ( !installQ.isEmpty() )
+    installOne();
+}
+
+//--------------------------------------------------------------------------------
+
 void PkUpdateList::installOne()
 {
   emit packageCountToInstall(installQ.count());
@@ -526,8 +561,9 @@ void PkUpdateList::installOne()
     {
       QString text;
 
-      if ( (restart == PackageKit::Transaction::RestartSystem) ||
-           (restart == PackageKit::Transaction::RestartSecuritySystem) )
+      if ( ((restart == PackageKit::Transaction::RestartSystem) ||
+            (restart == PackageKit::Transaction::RestartSecuritySystem)) &&
+           (afterInstall != AfterInstall::Shutdown) )  // when we shutdown, no need to tell the user to restart
       {
         KNotification *notif = new KNotification("restart needed", KNotification::Persistent);
         notif->setWidget(parentWidget());
@@ -573,6 +609,27 @@ void PkUpdateList::installOne()
     }
 
     countChecked();
+
+    if ( eulaDialogs.isEmpty() )
+    {
+      if ( afterInstall == AfterInstall::Sleep )
+      {
+        QDBusMessage msg = QDBusMessage::createMethodCall("org.freedesktop.PowerManagement",
+                                                          "/org/freedesktop/PowerManagement",
+                                                          "org.freedesktop.PowerManagement", "Suspend");
+
+        QDBusConnection::sessionBus().send(msg);
+      }
+      else if ( afterInstall == AfterInstall::Shutdown )
+      {
+        QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
+                                                          "org.kde.KSMServerInterface", "logout");
+        msg << 0/*no confirm*/ << 2/*halt*/ << 0; // plasma-workspace/libkworkspace/kworkspace.h
+
+        QDBusConnection::sessionBus().send(msg);
+      }
+    }
+
     return;
   }
 
@@ -741,15 +798,66 @@ void PkUpdateList::installOne()
 void PkUpdateList::askEULA(const QString &eulaID, const QString &packageID,
                            const QString &vendor, const QString &licenseAgreement)
 {
-  QDialog *dialog = new QDialog(this);
+  // I get several different eulaIDs but each having the same licenseAgreement text. Don't bother the user
+  // showing multiple times the same licenseAgreement
+  QByteArray hash = QCryptographicHash::hash(licenseAgreement.trimmed().toUtf8(), QCryptographicHash::Sha1);
+
+  //qDebug() << "askEULA" << eulaID << packageID << hash.toBase64();
+
+  // we can get multiple signals for the same eulaID
+  // when installing multiple packages using the same EULA
+  // or we get different eulaIDs with the same text
+  if ( eulaDialogs.contains(hash) )
+  {
+    bool found = false;
+    for (const EulaPackage &ep : eulaDialogs.values(hash))
+    {
+      if ( ep.eulaID == eulaID )
+      {
+        found = true;
+        break;
+      }
+    }
+
+    if ( !found )
+      eulaDialogs.insert(hash, EulaPackage(eulaID, packageID));
+
+    return;
+  }
+
+  if ( acceptedEula.contains(hash) )
+  {
+    //qDebug() << "already accepted - enqueue again";
+    PackageKit::Daemon::acceptEula(eulaID);
+    enqueue(packageID);
+    return;
+  }
+
+  eulaDialogs.insert(hash, EulaPackage(eulaID, packageID));
+
+  QDialog *dialog = new QDialog;
   dialog->setModal(false);
   dialog->setWindowTitle(i18n("Accept EULA"));
 
   QVBoxLayout *vbox = new QVBoxLayout(dialog);
+  QHBoxLayout *hbox = new QHBoxLayout;
 
-  QLabel *label = new QLabel(i18n("<html>You need to accept or reject "
-                                  "the following license agreement for package<br>%1<br>%2</html>").arg(packageID, vendor));
-  vbox->addWidget(label);
+  QLabel *iconLabel = new QLabel;
+  iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+  iconLabel->setAlignment(Qt::AlignTop);
+  QIcon icon = style()->standardIcon(QStyle::SP_MessageBoxQuestion, nullptr, this);
+  int iconSize = style()->pixelMetric(QStyle::PM_MessageBoxIconSize, nullptr, this);
+  iconLabel->setPixmap(icon.pixmap(windowHandle(), QSize(iconSize, iconSize)));
+
+  QLabel *label = new QLabel(i18n("<html>Do you accept the following license agreement "
+                                  "for package<br>%1<br>from vendor<br>%2 ?</html>").arg(packageID, vendor));
+  label->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+  label->setTextInteractionFlags(Qt::TextBrowserInteraction);
+
+  hbox->addWidget(iconLabel);
+  hbox->addWidget(label);
+
+  vbox->addLayout(hbox);
 
   QTextEdit *textEdit = new QTextEdit;
   textEdit->setPlainText(licenseAgreement);
@@ -757,6 +865,7 @@ void PkUpdateList::askEULA(const QString &eulaID, const QString &packageID,
   vbox->addWidget(textEdit);
 
   QDialogButtonBox *buttonBox = new QDialogButtonBox();
+  buttonBox->setCenterButtons(style()->styleHint(QStyle::SH_MessageBox_CenterButtons, nullptr, this));
   buttonBox->setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
   buttonBox->button(QDialogButtonBox::Yes)->setDefault(true);
 
@@ -765,11 +874,20 @@ void PkUpdateList::askEULA(const QString &eulaID, const QString &packageID,
   vbox->addWidget(buttonBox);
 
   connect(dialog, &QDialog::finished, this,
-          [this, dialog, eulaID](int result)
+          [this, dialog, hash](int result)
           {
             if ( result == QDialog::Accepted )
-              PackageKit::Daemon::acceptEula(eulaID);
+            {
+              for (const EulaPackage &ep : eulaDialogs.values(hash))
+              {
+                PackageKit::Daemon::acceptEula(ep.eulaID);
+                enqueue(ep.packageID);
+              }
 
+              acceptedEula.insert(hash);
+            }
+
+            eulaDialogs.remove(hash);
             dialog->deleteLater();
           });
 

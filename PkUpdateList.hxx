@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -25,6 +25,8 @@
 #include <QScrollArea>
 #include <QQueue>
 #include <QPointer>
+#include <QSet>
+#include <QMultiHash>
 class QCheckBox;
 class QProgressBar;
 class QVBoxLayout;
@@ -65,20 +67,35 @@ class PkUpdateList : public QWidget
     void askEULA(const QString &eulaID, const QString &packageID,
                  const QString &vendor, const QString &licenseAgreement);
 
-  private:
+  private:  // methods
+    void enqueue(const QString &packageID);
+
+  private:  // members
     QVBoxLayout *vbox;
     QScrollArea *scrollArea;
     QVBoxLayout *itemsLayout;
     QLineEdit *filterEdit;
     QProgressBar *progressBar;
-    QPushButton *installButton;
-    QPushButton *refreshButton;
+    QToolButton *installButton;
+    QToolButton *refreshButton;
     QCheckBox *checkAllBox;
     QSize savedSize;
+
+    enum class AfterInstall { Nothing, Sleep, Shutdown } afterInstall = AfterInstall::Nothing;
 
     QQueue<QPointer<class PkUpdateListItem>> installQ;
     QPointer<PackageKit::Transaction> transaction;
     bool packageNoLongerAvailable;
+
+    struct EulaPackage
+    {
+      EulaPackage(const QString &e, const QString &p) : eulaID(e), packageID(p) { }
+      QString eulaID;
+      QString packageID;
+    };
+
+    QMultiHash<QString, EulaPackage> eulaDialogs;  // key = license text hash
+    QSet<QByteArray> acceptedEula;
 
     PackageKit::Transaction::Restart restart;
 };
