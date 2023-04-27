@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:54+0000\n"
+"POT-Creation-Date: 2023-04-27 00:51+0000\n"
 "PO-Revision-Date: 2023-04-11 01:01+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -94,27 +94,27 @@ msgstr "Bluetooth ez dabil"
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:121
+#: ClockWidget.cxx:176
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Hautatu ordu-eremuak..."
 
-#: ClockWidget.cxx:127
+#: ClockWidget.cxx:182
 #, kde-format
 msgid "Select Timezones"
 msgstr "Hautatu ordu-eremuak"
 
-#: ClockWidget.cxx:145
+#: ClockWidget.cxx:200
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Konriguratu data eta ordua..."
 
-#: ClockWidget.cxx:152
+#: ClockWidget.cxx:207
 #, kde-format
 msgid "Date & Time"
 msgstr "Data eta Ordua"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
 #, kde-format
 msgid "Filter"
 msgstr "Iragazkia"
@@ -190,8 +190,8 @@ msgstr "Eskalatua, eutsi itxu&ra proportzioei eta moztu"
 
 #: desktop.cxx:46
 #, kde-format
-msgid "Liquid Desktop Workspace"
-msgstr "Liquid mahaigaineko langunea"
+msgid "Liquidshell"
+msgstr ""
 
 #: desktop.cxx:47
 #, kde-format
@@ -523,138 +523,151 @@ msgstr "Markoa"
 msgid "Path"
 msgstr "Bide-izena"
 
-#: PkUpdateList.cxx:138
+#: PkUpdateList.cxx:140
 #, kde-format
 msgid "Getting details ..."
 msgstr "Zehaztasunak lortzen ..."
 
-#: PkUpdateList.cxx:180
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Saioa berrabiatzea beharrezkoa da</b><br>"
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:184
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Berrabiarazi beharra dago</b><br>"
 
-#: PkUpdateList.cxx:198
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "Software Updates"
 msgstr "Software eguneratzeak"
 
-#: PkUpdateList.cxx:210
+#: PkUpdateList.cxx:212
 #, kde-format
 msgid "All"
 msgstr "Dena"
 
-#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
 #, kde-format
 msgid "Install"
 msgstr "Instalatu"
 
-#: PkUpdateList.cxx:225
+#: PkUpdateList.cxx:231
+#, kde-format
+msgid "Install, then Sleep"
+msgstr ""
+
+#: PkUpdateList.cxx:232
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr ""
+
+#: PkUpdateList.cxx:236
 #, kde-format
 msgid "Refresh"
 msgstr "Freskatu"
 
-#: PkUpdateList.cxx:432
+#: PkUpdateList.cxx:443
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "Instalatu pakete %1"
 msgstr[1] "Instalatu %1 pakete"
 
-#: PkUpdateList.cxx:535
+#: PkUpdateList.cxx:571
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Sistema berrabiarazi beharra dago"
 
-#: PkUpdateList.cxx:536
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Instalatutako paketeetako batek sistema berrabiatzea behar du"
 
-#: PkUpdateList.cxx:537
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "Reboot System"
 msgstr "Berrabiarazi sistema"
 
-#: PkUpdateList.cxx:557
+#: PkUpdateList.cxx:593
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Saioa berrabiatzea beharrezkoa da"
 
-#: PkUpdateList.cxx:558
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Instalatutako paketeetako batek saioa itxi dezazun behar du"
 
-#: PkUpdateList.cxx:559
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "Logout"
 msgstr "Saio-itxi"
 
-#: PkUpdateList.cxx:584
+#: PkUpdateList.cxx:641
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Utzi instalatzea"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:673
 #, kde-format
 msgid "Waiting"
 msgstr "Zain"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:674
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Autentifikatzeko zain"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Mendekotasunak ebazten"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Updating"
 msgstr "Eguneratzen"
 
-#: PkUpdateList.cxx:620
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Installing"
 msgstr "Instalatzen"
 
-#: PkUpdateList.cxx:621
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Downloading"
 msgstr "Zama-jaisten"
 
-#: PkUpdateList.cxx:622
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Canceling"
 msgstr "Bertan behera uzten"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:734
 #, kde-format
 msgid "Validate Signature"
 msgstr "Sinadura balioztatu"
 
-#: PkUpdateList.cxx:728
+#: PkUpdateList.cxx:785
 #, kde-format
 msgid "Update failed"
 msgstr "Eguneratzea huts egin du"
 
-#: PkUpdateList.cxx:746
+#: PkUpdateList.cxx:840
 #, kde-format
 msgid "Accept EULA"
 msgstr "Onartu AELK (Azken Erabiltzailearen Lizentzia-Kontratua)"
 
-#: PkUpdateList.cxx:750
-#, kde-format
+#: PkUpdateList.cxx:852
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>You need to accept or reject the following license agreement for "
+#| "package<br>%1<br>%2</html>"
 msgid ""
-"<html>You need to accept or reject the following license agreement for "
-"package<br>%1<br>%2</html>"
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 "<html>Paketearen ondoko lizentzia akordioa onartu edo errefusatu behar "
 "duzu<br>%1<br>%2</html>"
@@ -964,6 +977,9 @@ msgstr "&inperiala"
 #, kde-format
 msgid "City"
 msgstr "Hiria"
+
+#~ msgid "Liquid Desktop Workspace"
+#~ msgstr "Liquid mahaigaineko langunea"
 
 #~ msgid "°K"
 #~ msgstr "°K"

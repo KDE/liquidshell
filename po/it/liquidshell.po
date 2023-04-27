@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:54+0000\n"
+"POT-Creation-Date: 2023-04-27 00:51+0000\n"
 "PO-Revision-Date: 2023-04-09 18:23+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -91,27 +91,27 @@ msgstr "Il bluetooth non è operativo"
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:121
+#: ClockWidget.cxx:176
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Seleziona fuso orario..."
 
-#: ClockWidget.cxx:127
+#: ClockWidget.cxx:182
 #, kde-format
 msgid "Select Timezones"
 msgstr "Seleziona fuso orario"
 
-#: ClockWidget.cxx:145
+#: ClockWidget.cxx:200
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Configura data e ora..."
 
-#: ClockWidget.cxx:152
+#: ClockWidget.cxx:207
 #, kde-format
 msgid "Date & Time"
 msgstr "Data e ora"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
 #, kde-format
 msgid "Filter"
 msgstr "Filtro"
@@ -187,8 +187,8 @@ msgstr "Ridimensiona&ta mantenendo le proporzioni e ritagliata"
 
 #: desktop.cxx:46
 #, kde-format
-msgid "Liquid Desktop Workspace"
-msgstr "Spazio di lavoro Liquid Desktop"
+msgid "Liquidshell"
+msgstr ""
 
 #: desktop.cxx:47
 #, kde-format
@@ -520,138 +520,151 @@ msgstr "Riquadro"
 msgid "Path"
 msgstr "Percorso"
 
-#: PkUpdateList.cxx:138
+#: PkUpdateList.cxx:140
 #, kde-format
 msgid "Getting details ..."
 msgstr "Recupero dei dettagli ..."
 
-#: PkUpdateList.cxx:180
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>È richiesto il riavvio della sessione</b><br>"
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:184
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>È richiesto il riavvio</b><br>"
 
-#: PkUpdateList.cxx:198
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "Software Updates"
 msgstr "Aggiornamenti software"
 
-#: PkUpdateList.cxx:210
+#: PkUpdateList.cxx:212
 #, kde-format
 msgid "All"
 msgstr "Tutti"
 
-#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
 #, kde-format
 msgid "Install"
 msgstr "Installa"
 
-#: PkUpdateList.cxx:225
+#: PkUpdateList.cxx:231
+#, kde-format
+msgid "Install, then Sleep"
+msgstr ""
+
+#: PkUpdateList.cxx:232
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr ""
+
+#: PkUpdateList.cxx:236
 #, kde-format
 msgid "Refresh"
 msgstr "Aggiorna"
 
-#: PkUpdateList.cxx:432
+#: PkUpdateList.cxx:443
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "Installa %1 pacchetto"
 msgstr[1] "Installa %1 pacchetti"
 
-#: PkUpdateList.cxx:535
+#: PkUpdateList.cxx:571
 #, kde-format
 msgid "System Reboot Required"
 msgstr "È richiesto il riavvio del sistema"
 
-#: PkUpdateList.cxx:536
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Uno dei pacchetti installati richiede il riavvio del sistema"
 
-#: PkUpdateList.cxx:537
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "Reboot System"
 msgstr "Riavvia il sistema"
 
-#: PkUpdateList.cxx:557
+#: PkUpdateList.cxx:593
 #, kde-format
 msgid "Session Restart Required"
 msgstr "È necessario il riavvio della sessione"
 
-#: PkUpdateList.cxx:558
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Uno dei pacchetti installati richiede la disconnessione"
 
-#: PkUpdateList.cxx:559
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "Logout"
 msgstr "Chiudi sessione"
 
-#: PkUpdateList.cxx:584
+#: PkUpdateList.cxx:641
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Installazione annullata"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:673
 #, kde-format
 msgid "Waiting"
 msgstr "In attesa"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:674
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "In attesa dell'autenticazione"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Risoluzione delle dipendenze"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Updating"
 msgstr "Aggiornamento"
 
-#: PkUpdateList.cxx:620
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Installing"
 msgstr "Installazione"
 
-#: PkUpdateList.cxx:621
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Downloading"
 msgstr "Scaricamento"
 
-#: PkUpdateList.cxx:622
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Canceling"
 msgstr "Annullamento"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:734
 #, kde-format
 msgid "Validate Signature"
 msgstr "Convalida firma"
 
-#: PkUpdateList.cxx:728
+#: PkUpdateList.cxx:785
 #, kde-format
 msgid "Update failed"
 msgstr "Aggiornamento non riuscito"
 
-#: PkUpdateList.cxx:746
+#: PkUpdateList.cxx:840
 #, kde-format
 msgid "Accept EULA"
 msgstr "Accetta EULA"
 
-#: PkUpdateList.cxx:750
-#, kde-format
+#: PkUpdateList.cxx:852
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>You need to accept or reject the following license agreement for "
+#| "package<br>%1<br>%2</html>"
 msgid ""
-"<html>You need to accept or reject the following license agreement for "
-"package<br>%1<br>%2</html>"
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 "<html>Devi accettare o rifiutare il seguente accordo di licenza per il "
 "pacchetto <br>%1<br>%2</html>"
@@ -961,6 +974,9 @@ msgstr "&imperiali"
 #, kde-format
 msgid "City"
 msgstr "Città"
+
+#~ msgid "Liquid Desktop Workspace"
+#~ msgstr "Spazio di lavoro Liquid Desktop"
 
 #~ msgid "°K"
 #~ msgstr "°K"

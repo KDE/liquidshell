@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:54+0000\n"
+"POT-Creation-Date: 2023-04-27 00:51+0000\n"
 "PO-Revision-Date: 2023-04-04 23:00+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -91,27 +91,27 @@ msgstr "Bluetooth ei ole käytössä"
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:121
+#: ClockWidget.cxx:176
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Valitse aikavyöhykkeet…"
 
-#: ClockWidget.cxx:127
+#: ClockWidget.cxx:182
 #, kde-format
 msgid "Select Timezones"
 msgstr "Valitse aikavyöhykkeet"
 
-#: ClockWidget.cxx:145
+#: ClockWidget.cxx:200
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Aseta päivämäärä ja aika…"
 
-#: ClockWidget.cxx:152
+#: ClockWidget.cxx:207
 #, kde-format
 msgid "Date & Time"
 msgstr "Päivämäärä ja aika"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
 #, kde-format
 msgid "Filter"
 msgstr "Suodatin"
@@ -187,8 +187,8 @@ msgstr "Skaalattu kuvasuhteen mukaan ja &rajattu"
 
 #: desktop.cxx:46
 #, kde-format
-msgid "Liquid Desktop Workspace"
-msgstr "Liquid Desktop -työtila"
+msgid "Liquidshell"
+msgstr ""
 
 #: desktop.cxx:47
 #, kde-format
@@ -521,139 +521,152 @@ msgstr "Kehys"
 msgid "Path"
 msgstr "Sijainti"
 
-#: PkUpdateList.cxx:138
+#: PkUpdateList.cxx:140
 #, kde-format
 msgid "Getting details ..."
 msgstr "Noudetaan tietoja…"
 
-#: PkUpdateList.cxx:180
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Istunto on käynnistettävä uudelleen</b><br>"
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:184
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Uudelleenkäynnistys vaaditaan</b><br>"
 
-#: PkUpdateList.cxx:198
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "Software Updates"
 msgstr "Ohjelmapäivitykset"
 
-#: PkUpdateList.cxx:210
+#: PkUpdateList.cxx:212
 #, kde-format
 msgid "All"
 msgstr "Kaikki"
 
-#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
 #, kde-format
 msgid "Install"
 msgstr "Asenna"
 
-#: PkUpdateList.cxx:225
+#: PkUpdateList.cxx:231
+#, kde-format
+msgid "Install, then Sleep"
+msgstr ""
+
+#: PkUpdateList.cxx:232
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr ""
+
+#: PkUpdateList.cxx:236
 #, kde-format
 msgid "Refresh"
 msgstr "Päivitä"
 
-#: PkUpdateList.cxx:432
+#: PkUpdateList.cxx:443
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "Asenna %1 paketti"
 msgstr[1] "Asenna %1 pakettia"
 
-#: PkUpdateList.cxx:535
+#: PkUpdateList.cxx:571
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Järjestelmän uudelleenkäynnistys vaaditaan"
 
-#: PkUpdateList.cxx:536
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr ""
 "Yksi asennetuista paketeista vaatii käynnistämään järjestelmän uudelleen"
 
-#: PkUpdateList.cxx:537
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "Reboot System"
 msgstr "Käynnistä järjestelmä uudelleen"
 
-#: PkUpdateList.cxx:557
+#: PkUpdateList.cxx:593
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Istunto on käynnistettävä uudelleen"
 
-#: PkUpdateList.cxx:558
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Yksi asennetuista paketeista vaatii sinua kirjautumaan ulos"
 
-#: PkUpdateList.cxx:559
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: PkUpdateList.cxx:584
+#: PkUpdateList.cxx:641
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Peru asennus"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:673
 #, kde-format
 msgid "Waiting"
 msgstr "Odotetaan"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:674
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Odotetaan tunnistautumista"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Ratkaistaan riippuvuuksia"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Updating"
 msgstr "Päivitetään"
 
-#: PkUpdateList.cxx:620
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Installing"
 msgstr "Asennetaan"
 
-#: PkUpdateList.cxx:621
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Downloading"
 msgstr "Ladataan"
 
-#: PkUpdateList.cxx:622
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Canceling"
 msgstr "Perutaan"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:734
 #, kde-format
 msgid "Validate Signature"
 msgstr "Varmenna allekirjoitus"
 
-#: PkUpdateList.cxx:728
+#: PkUpdateList.cxx:785
 #, kde-format
 msgid "Update failed"
 msgstr "Päivitys epäonnistui"
 
-#: PkUpdateList.cxx:746
+#: PkUpdateList.cxx:840
 #, kde-format
 msgid "Accept EULA"
 msgstr "Hyväksy käyttöoikeussopimus"
 
-#: PkUpdateList.cxx:750
-#, kde-format
+#: PkUpdateList.cxx:852
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>You need to accept or reject the following license agreement for "
+#| "package<br>%1<br>%2</html>"
 msgid ""
-"<html>You need to accept or reject the following license agreement for "
-"package<br>%1<br>%2</html>"
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 "<html>Seuraavan paketin käyttöoikeussopimus on hyväksyttävä tai hylättävä:"
 "<br>%1<br>%2</html>"
@@ -963,6 +976,9 @@ msgstr "&anglosaksiset"
 #, kde-format
 msgid "City"
 msgstr "Kaupunki"
+
+#~ msgid "Liquid Desktop Workspace"
+#~ msgstr "Liquid Desktop -työtila"
 
 #~ msgid "°K"
 #~ msgstr " K"

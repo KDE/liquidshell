@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:54+0000\n"
+"POT-Creation-Date: 2023-04-27 00:51+0000\n"
 "PO-Revision-Date: 2023-04-25 10:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -95,27 +95,27 @@ msgstr "Bluetooth no està operatiu"
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:121
+#: ClockWidget.cxx:176
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Seleccioneu les zones horàries..."
 
-#: ClockWidget.cxx:127
+#: ClockWidget.cxx:182
 #, kde-format
 msgid "Select Timezones"
 msgstr "Seleccioneu les zones horàries"
 
-#: ClockWidget.cxx:145
+#: ClockWidget.cxx:200
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Configura la data i l'hora..."
 
-#: ClockWidget.cxx:152
+#: ClockWidget.cxx:207
 #, kde-format
 msgid "Date & Time"
 msgstr "Data i hora"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:214
+#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
 #, kde-format
 msgid "Filter"
 msgstr "Filtre"
@@ -191,8 +191,8 @@ msgstr "Escala i retalla mantenint la relació d'aspec&te"
 
 #: desktop.cxx:46
 #, kde-format
-msgid "Liquid Desktop Workspace"
-msgstr "Espai de treball de l'escriptori Liquid"
+msgid "Liquidshell"
+msgstr ""
 
 #: desktop.cxx:47
 #, kde-format
@@ -524,138 +524,151 @@ msgstr "Marc"
 msgid "Path"
 msgstr "Camí"
 
-#: PkUpdateList.cxx:138
+#: PkUpdateList.cxx:140
 #, kde-format
 msgid "Getting details ..."
 msgstr "S'estan obtenint els detalls..."
 
-#: PkUpdateList.cxx:180
+#: PkUpdateList.cxx:182
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Es requerix reiniciar la sessió</b><br>"
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:184
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Cal reiniciar</b><br>"
 
-#: PkUpdateList.cxx:198
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "Software Updates"
 msgstr "Actualitzacions de programari"
 
-#: PkUpdateList.cxx:210
+#: PkUpdateList.cxx:212
 #, kde-format
 msgid "All"
 msgstr "Tot"
 
-#: PkUpdateList.cxx:221 PkUpdateList.cxx:437
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
 #, kde-format
 msgid "Install"
 msgstr "Instal·la"
 
-#: PkUpdateList.cxx:225
+#: PkUpdateList.cxx:231
+#, kde-format
+msgid "Install, then Sleep"
+msgstr ""
+
+#: PkUpdateList.cxx:232
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr ""
+
+#: PkUpdateList.cxx:236
 #, kde-format
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: PkUpdateList.cxx:432
+#: PkUpdateList.cxx:443
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "Instal·la %1 paquet"
 msgstr[1] "Instal·la %1 paquets"
 
-#: PkUpdateList.cxx:535
+#: PkUpdateList.cxx:571
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Cal reiniciar el sistema"
 
-#: PkUpdateList.cxx:536
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Un dels paquets instal·lats requerix un reinici del sistema"
 
-#: PkUpdateList.cxx:537
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "Reboot System"
 msgstr "Reinicia el sistema"
 
-#: PkUpdateList.cxx:557
+#: PkUpdateList.cxx:593
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Es requerix reiniciar la sessió"
 
-#: PkUpdateList.cxx:558
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Un dels paquets instal·lats requerix eixir de la sessió"
 
-#: PkUpdateList.cxx:559
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "Logout"
 msgstr "Ix"
 
-#: PkUpdateList.cxx:584
+#: PkUpdateList.cxx:641
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Cancel·la la instal·lació"
 
-#: PkUpdateList.cxx:616
+#: PkUpdateList.cxx:673
 #, kde-format
 msgid "Waiting"
 msgstr "En espera"
 
-#: PkUpdateList.cxx:617
+#: PkUpdateList.cxx:674
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "S'està esperant l'autenticació"
 
-#: PkUpdateList.cxx:618
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "S'estan resolent les dependències"
 
-#: PkUpdateList.cxx:619
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Updating"
 msgstr "S'està actualitzant"
 
-#: PkUpdateList.cxx:620
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Installing"
 msgstr "S'està instal·lant"
 
-#: PkUpdateList.cxx:621
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Downloading"
 msgstr "S'està baixant"
 
-#: PkUpdateList.cxx:622
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Canceling"
 msgstr "S'està cancel·lant"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:734
 #, kde-format
 msgid "Validate Signature"
 msgstr "Valida la signatura"
 
-#: PkUpdateList.cxx:728
+#: PkUpdateList.cxx:785
 #, kde-format
 msgid "Update failed"
 msgstr "No s'ha pogut fer l'actualització"
 
-#: PkUpdateList.cxx:746
+#: PkUpdateList.cxx:840
 #, kde-format
 msgid "Accept EULA"
 msgstr "Acceptació de l'EULA"
 
-#: PkUpdateList.cxx:750
-#, kde-format
+#: PkUpdateList.cxx:852
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html>You need to accept or reject the following license agreement for "
+#| "package<br>%1<br>%2</html>"
 msgid ""
-"<html>You need to accept or reject the following license agreement for "
-"package<br>%1<br>%2</html>"
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 "<html>Cal que accepteu o rebutgeu l'acord de llicència següent del paquet "
 "<br>%1<br>%2</html>"
@@ -966,3 +979,6 @@ msgstr "&Imperial"
 #, kde-format
 msgid "City"
 msgstr "Ciutat"
+
+#~ msgid "Liquid Desktop Workspace"
+#~ msgstr "Espai de treball de l'escriptori Liquid"
