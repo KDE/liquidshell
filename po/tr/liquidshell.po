@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-25 11:12+0300\n"
+"PO-Revision-Date: 2023-04-27 12:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -188,7 +188,7 @@ msgstr "En-Boy Oranını &Koruyup Kırparak Ölçekli"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -553,12 +553,12 @@ msgstr "Kur"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Kur ve Uyut"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Kur ve Kapat"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -659,16 +659,13 @@ msgid "Accept EULA"
 msgstr "Son Kullanıcı Lisans Antlaşmasını Kabul Et"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Aşağıdaki paket için bu lisans antlaşmasını kabul etmelisiniz:<br>"
-"%1<br>%2</html>"
+"<html>%2 satıcısından<br>%1 paketi için<br>aşağıdaki lisans "
+"sözleşmesini<br>kabul ediyor musunuz?</html>"
 
 #: PkUpdates.cxx:67
 #, kde-format

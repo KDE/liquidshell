@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-25 19:35+0300\n"
+"PO-Revision-Date: 2023-04-27 08:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -195,7 +195,7 @@ msgstr "Масштабування із вра&хуванням співвідн
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -562,12 +562,12 @@ msgstr "Встановити"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Встановити, потім приспати"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Встановити, потім вимкнути"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -670,16 +670,13 @@ msgid "Accept EULA"
 msgstr "Погодитися з EULA"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Вам слід прийняти або відкинути наведену нижче ліцензійну угоду щодо "
-"пакунка<br>%1<br>%2</html>"
+"<html>Ви погоджуєтеся із наведеними нижче умовами ліцензування для "
+"пакунка<br>%1<br>від постачальника<br>%2 ?</html>"
 
 #: PkUpdates.cxx:67
 #, kde-format
