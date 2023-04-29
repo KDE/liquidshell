@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-26 06:36+0200\n"
+"PO-Revision-Date: 2023-04-28 07:01+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -189,7 +189,7 @@ msgstr "გადიდება მასშტაბის &შენარჩ
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -552,12 +552,12 @@ msgstr "დაყენება"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "დაყენება, შემდეგ ძილი"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "დაყენება, შემდეგ გამორთვა"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -659,16 +659,13 @@ msgid "Accept EULA"
 msgstr "EULA-ის დათანხმება"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>თქვენ უნდა დაეთანხმოთ ან უარყოთ შემდეგი სალიცენზიო ხელშეკრულება "
-"პაკეტისთვის<br>%1<br>%2</html>"
+"<html>ეთანხმებით ლიცენზიის შეთანხმებას პაკეტისთვის<br>"
+"%1<br>მომწოდებლისგან<br>%2 ?</html>"
 
 #: PkUpdates.cxx:67
 #, kde-format

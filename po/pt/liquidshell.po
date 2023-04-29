@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-25 21:15+0100\n"
+"PO-Revision-Date: 2023-04-28 12:13+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: SSID Liquid Koller Plasmashell QtWidgets IPv GB hPa\n"
-"X-POFile-SpellExtra: VPN openweathermap org Connect EULA\n"
+"X-POFile-SpellExtra: VPN openweathermap org Connect EULA Liquidshell\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -185,7 +185,7 @@ msgstr "Escalado e Recor&tado Mantendo as Proporções"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -550,12 +550,12 @@ msgstr "Instalar"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Instalar e Depois Suspender"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Instalar e Depois Desligar"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -655,16 +655,13 @@ msgid "Accept EULA"
 msgstr "Aceitar a EULA"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Precisa de aceitar ou rejeitar o seguinte acordo de licença para o "
-"pacote<br>%1<br>%2</html>"
+"<html>Deseja aceitar o seguinte acordo de licença para o pacote<br>%1<br>do "
+"fabricante<br>%2 ?</html>"
 
 #: PkUpdates.cxx:67
 #, kde-format
@@ -970,6 +967,3 @@ msgstr "&imperiais"
 #, kde-format
 msgid "City"
 msgstr "Cidade"
-
-#~ msgid "Liquid Desktop Workspace"
-#~ msgstr "Área de Trabalho Liquid"
