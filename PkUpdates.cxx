@@ -299,7 +299,7 @@ void PkUpdates::createToolTip(bool notify)
     if ( notify )
     {
       KNotification::event("updates available", i18n("Software Updates Available"), tooltip,
-                           QIcon::fromTheme(icon).pixmap(32), this, KNotification::Persistent);
+                           QIcon::fromTheme(icon).pixmap(32), this);
     }
   }
 }
