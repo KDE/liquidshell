@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-09 18:23+0200\n"
+"PO-Revision-Date: 2023-04-28 10:36+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -188,7 +188,7 @@ msgstr "Ridimensiona&ta mantenendo le proporzioni e ritagliata"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -553,12 +553,12 @@ msgstr "Installa"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Installa, poi sospendi"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Installa, poi spegni"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -658,22 +658,18 @@ msgid "Accept EULA"
 msgstr "Accetta EULA"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Devi accettare o rifiutare il seguente accordo di licenza per il "
-"pacchetto <br>%1<br>%2</html>"
+"<html>Accetti il seguente accordo di licenza per il pacchetto<br>%1<br>del "
+"fornitore<br>%2 ?</html>"
 
 #: PkUpdates.cxx:67
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Prossimo controllo: %1 "
+msgstr "Prossimo controllo: %1"
 
 #: PkUpdates.cxx:93
 #, kde-format

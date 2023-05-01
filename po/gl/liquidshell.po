@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Adrian Chaves <adrian@chaves.io>, 2018, 2019, 2020.
+# Adrian Chaves <adrian@chaves.io>, 2018, 2019, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2020-03-07 18:12+0100\n"
+"PO-Revision-Date: 2023-04-30 15:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -188,19 +188,17 @@ msgstr "Axustado mantendo as proporcións e recor&tando"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
-#, fuzzy, kde-format
-#| msgid "A QtWidgets based alternative to plasmashell"
+#, kde-format
 msgid "A QtWidgets based basic desktop shell"
-msgstr "Unha alternativa a plasmashell baseada en QtWidgets"
+msgstr "Unha interface de escritorio básica baseada en QtWidgets"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2020 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2023 Martin Koller"
-msgstr "© 2017-2020 Martin Koller"
+msgstr "© 2017-2023 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
@@ -255,7 +253,7 @@ msgstr "Uso do disco"
 #: DesktopWidget.cxx:92
 #, kde-format
 msgid "Picture Frame"
-msgstr "Portarretratos"
+msgstr "Marco de foto"
 
 #: DesktopWidget.cxx:95
 #, kde-format
@@ -387,10 +385,9 @@ msgstr "Texto"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: DiskUsageAppletConfigureDialog.ui:44
-#, fuzzy, kde-format
-#| msgid "Text"
+#, kde-format
 msgid "Bar Text"
-msgstr "Texto"
+msgstr "Texto de barra"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
@@ -401,10 +398,9 @@ msgstr "Fondo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: DiskUsageAppletConfigureDialog.ui:72
-#, fuzzy, kde-format
-#| msgid "Background"
+#, kde-format
 msgid "Bar Background"
-msgstr "Fondo"
+msgstr "Fondo de barra"
 
 #: KdeConnect.cxx:181
 #, kde-format
@@ -468,22 +464,22 @@ msgstr "Configurar as conexións de rede"
 #: NetworkList.cxx:286
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr ""
+msgstr "A rede está activada. Prema para desactivar."
 
 #: NetworkList.cxx:288
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr ""
+msgstr "A rede está desactivada. Prema para activar."
 
 #: NetworkList.cxx:291
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
-msgstr ""
+msgstr "A rede sen fíos está activada. Prema para desactivar."
 
 #: NetworkList.cxx:293
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
-msgstr ""
+msgstr "A rede sen fíos está desactivada. Prema para activar."
 
 #: NotificationList.cxx:176
 #, kde-format
@@ -510,7 +506,7 @@ msgstr "Configurar os escritorios virtuais"
 #: PictureFrameApplet.cxx:107
 #, kde-format
 msgid "Configure PictureFrame Applet"
-msgstr "Configurar o miniaplicativo de portarretratos"
+msgstr "Configurar o miniaplicativo de marco de foto"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: PictureFrameAppletConfigureDialog.ui:37
@@ -557,12 +553,12 @@ msgstr "Instalar"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Instalar, despois suspender"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Instalar, despois apagar"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -649,7 +645,7 @@ msgstr "Cancelando"
 #: PkUpdateList.cxx:734
 #, kde-format
 msgid "Validate Signature"
-msgstr ""
+msgstr "Validar a sinatura"
 
 #: PkUpdateList.cxx:785
 #, kde-format
@@ -659,7 +655,7 @@ msgstr "A actualización fallou."
 #: PkUpdateList.cxx:840
 #, kde-format
 msgid "Accept EULA"
-msgstr ""
+msgstr "Aceptar os termos de uso"
 
 #: PkUpdateList.cxx:852
 #, kde-format
@@ -667,11 +663,13 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Acepta o seguinte acordo de licenza do paquete<br>%1<br>fornecido "
+"por<br>%2 ?</html>"
 
 #: PkUpdates.cxx:67
 #, kde-format
 msgid "Next check: %1"
-msgstr ""
+msgstr "Seguinte comprobación: %1"
 
 #: PkUpdates.cxx:93
 #, kde-format
@@ -738,16 +736,13 @@ msgstr[1] ""
 "Outras %2"
 
 #: PkUpdates.cxx:254
-#, fuzzy, kde-format
-#| msgid ""
-#| "Last check: %1\n"
-#| "No important updates available"
+#, kde-format
 msgid ""
 "Last check: %1\n"
 "No updates available"
 msgstr ""
 "Última comprobación: %1\n"
-"Non hai actualizacións importantes dispoñíbeis"
+"Non hai actualizacións dispoñíbeis"
 
 #: PkUpdates.cxx:263
 #, kde-format
@@ -879,7 +874,7 @@ msgstr "Non configurado"
 #: WeatherApplet.cxx:195
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:196
 #, kde-format
