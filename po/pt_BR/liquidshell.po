@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 00:51+0000\n"
-"PO-Revision-Date: 2023-04-05 09:51-0300\n"
+"PO-Revision-Date: 2023-05-31 14:30-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -190,7 +190,7 @@ msgstr "Escalonado mantendo a &taxa de proporção e recortado"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -555,12 +555,12 @@ msgstr "Instalar"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Instalar e suspender"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Instalar e desligar"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -660,22 +660,18 @@ msgid "Accept EULA"
 msgstr "Aceitar a EULA"
 
 #: PkUpdateList.cxx:852
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Você precisa aceitar ou rejeita o seguinte contrato de licença para o "
-"pacote<br>%1<br>%2</html>"
+"<html>Você aceita o seguinte contrato de licença para o pacote<br>%1<br>do "
+"fornecedor<br>%2</html>"
 
 #: PkUpdates.cxx:67
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Próxima verificação: %1 "
+msgstr "Próxima verificação: %1"
 
 #: PkUpdates.cxx:93
 #, kde-format
