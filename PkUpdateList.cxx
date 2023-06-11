@@ -227,10 +227,10 @@ PkUpdateList::PkUpdateList(QWidget *parent)
   connect(installButton, &QToolButton::clicked, [this]() { afterInstall = AfterInstall::Nothing; install(); });
 
   // more install options
-  QMenu *menu = new QMenu;
-  menu->addAction(i18n("Install, then Sleep"), this, [this]() { afterInstall = AfterInstall::Sleep; install(); });
-  menu->addAction(i18n("Install, then Shutdown"), this, [this]() { afterInstall = AfterInstall::Shutdown; install(); });
-  installButton->setMenu(menu);
+  installMenu = new QMenu;
+  installMenu->addAction(i18n("Install, then Sleep"), this, [this]() { afterInstall = AfterInstall::Sleep; install(); });
+  installMenu->addAction(i18n("Install, then Shutdown"), this, [this]() { afterInstall = AfterInstall::Shutdown; install(); });
+  installButton->setMenu(installMenu);
 
   refreshButton = new QToolButton;
   refreshButton->setText(i18n("Refresh"));
@@ -442,6 +442,7 @@ void PkUpdateList::countChecked()
   {
     installButton->setText(i18np("Install %1 package", "Install %1 packages", count));
     installButton->setEnabled(true);
+    installButton->setMenu(installMenu);
   }
   else
   {
@@ -639,6 +640,7 @@ void PkUpdateList::installOne()
     return;
 
   installButton->setText(i18n("Cancel Installation"));
+  installButton->setMenu(nullptr);
   installButton->setIcon(QIcon::fromTheme("process-stop"));
   refreshButton->setEnabled(false);
 

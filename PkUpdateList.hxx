@@ -34,6 +34,7 @@ class QToolButton;
 class QPushButton;
 class QLabel;
 class QLineEdit;
+class QMenu;
 
 class PkUpdateList : public QWidget
 {
@@ -77,6 +78,7 @@ class PkUpdateList : public QWidget
     QLineEdit *filterEdit;
     QProgressBar *progressBar;
     QToolButton *installButton;
+    QMenu *installMenu;
     QToolButton *refreshButton;
     QCheckBox *checkAllBox;
     QSize savedSize;
