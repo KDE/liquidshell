@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:51+0000\n"
+"POT-Creation-Date: 2023-06-12 00:58+0000\n"
 "PO-Revision-Date: 2022-08-03 10:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -546,7 +546,7 @@ msgstr "Uppdateringar av programvara"
 msgid "All"
 msgstr "Alla"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
 #, kde-format
 msgid "Install"
 msgstr "Installera"
@@ -573,92 +573,92 @@ msgid_plural "Install %1 packages"
 msgstr[0] "Installera %1 paket"
 msgstr[1] "Installera %1 paket"
 
-#: PkUpdateList.cxx:571
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Omstart av dator krävs"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Ett av de installerade paketen kräver att du startar om datorn"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:574
 #, kde-format
 msgid "Reboot System"
 msgstr "Starta om dator"
 
-#: PkUpdateList.cxx:593
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Omstart av session krävs"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Ett av de installerade paketen kräver att du loggar ut"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:596
 #, kde-format
 msgid "Logout"
 msgstr "Logga ut"
 
-#: PkUpdateList.cxx:641
+#: PkUpdateList.cxx:642
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Avbryt installation"
 
-#: PkUpdateList.cxx:673
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Waiting"
 msgstr "Väntar"
 
-#: PkUpdateList.cxx:674
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Väntar på behörighetskontroll"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Löser upp beroenden"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Updating"
 msgstr "Uppdaterar"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Installing"
 msgstr "Installerar"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:680
 #, kde-format
 msgid "Downloading"
 msgstr "Laddar ner"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:681
 #, kde-format
 msgid "Canceling"
 msgstr "Avbryter"
 
-#: PkUpdateList.cxx:734
+#: PkUpdateList.cxx:736
 #, kde-format
 msgid "Validate Signature"
 msgstr "Validera signatur"
 
-#: PkUpdateList.cxx:785
+#: PkUpdateList.cxx:787
 #, kde-format
 msgid "Update failed"
 msgstr "Uppdatering misslyckades"
 
-#: PkUpdateList.cxx:840
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid "Accept EULA"
 msgstr "Acceptera slutanvändarlicensavtal"
 
-#: PkUpdateList.cxx:852
+#: PkUpdateList.cxx:854
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:51+0000\n"
+"POT-Creation-Date: 2023-06-12 00:58+0000\n"
 "PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -555,7 +555,7 @@ msgstr "Обновления программ"
 msgid "All"
 msgstr "Все"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
 #, kde-format
 msgid "Install"
 msgstr "Установить"
@@ -584,92 +584,92 @@ msgstr[1] "Установить %1 пакета"
 msgstr[2] "Установить %1 пакетов"
 msgstr[3] "Установить один пакет"
 
-#: PkUpdateList.cxx:571
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Требуется перезагрузка системы"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Для одного из установленных пакетов требуется перезагрузка системы"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:574
 #, kde-format
 msgid "Reboot System"
 msgstr "Перезагрузить систему"
 
-#: PkUpdateList.cxx:593
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Требуется перезапуск сеанса"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Для одного из установленных пакетов требуется завершение сеанса"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:596
 #, kde-format
 msgid "Logout"
 msgstr "Завершить сеанс"
 
-#: PkUpdateList.cxx:641
+#: PkUpdateList.cxx:642
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Отменить установку"
 
-#: PkUpdateList.cxx:673
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Waiting"
 msgstr "Ожидание"
 
-#: PkUpdateList.cxx:674
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Ожидание аутентификации"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Разрешение зависимостей"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Updating"
 msgstr "Обновление"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Installing"
 msgstr "Установка"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:680
 #, kde-format
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:681
 #, kde-format
 msgid "Canceling"
 msgstr "Отмена"
 
-#: PkUpdateList.cxx:734
+#: PkUpdateList.cxx:736
 #, kde-format
 msgid "Validate Signature"
 msgstr "Проверить подпись"
 
-#: PkUpdateList.cxx:785
+#: PkUpdateList.cxx:787
 #, kde-format
 msgid "Update failed"
 msgstr "Ошибка обновления"
 
-#: PkUpdateList.cxx:840
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid "Accept EULA"
 msgstr "Принять лицензионное соглашение"
 
-#: PkUpdateList.cxx:852
+#: PkUpdateList.cxx:854
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:51+0000\n"
+"POT-Creation-Date: 2023-06-12 00:58+0000\n"
 "PO-Revision-Date: 2023-04-28 20:06+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -554,7 +554,7 @@ msgstr "Mises à jour des logiciels"
 msgid "All"
 msgstr "Toutes"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
 #, kde-format
 msgid "Install"
 msgstr "Installer"
@@ -581,92 +581,92 @@ msgid_plural "Install %1 packages"
 msgstr[0] "Installer le paquet %1"
 msgstr[1] "Installer les %1 paquets"
 
-#: PkUpdateList.cxx:571
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Un redémarrage du système est nécessaire"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Un des paquets installés demande un redémarrage du système"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:574
 #, kde-format
 msgid "Reboot System"
 msgstr "Redémarrer le système"
 
-#: PkUpdateList.cxx:593
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Un redémarrage de session est nécessaire"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Un des paquets installés demande une déconnexion"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:596
 #, kde-format
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: PkUpdateList.cxx:641
+#: PkUpdateList.cxx:642
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Annuler l'installation"
 
-#: PkUpdateList.cxx:673
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Waiting"
 msgstr "En attente"
 
-#: PkUpdateList.cxx:674
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "En attente d'authentification"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Résolution des dépendances en cours"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Updating"
 msgstr "Mise à jour en cours"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Installing"
 msgstr "Installation en cours"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:680
 #, kde-format
 msgid "Downloading"
 msgstr "Téléchargement en cours"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:681
 #, kde-format
 msgid "Canceling"
 msgstr "Annulation en cours"
 
-#: PkUpdateList.cxx:734
+#: PkUpdateList.cxx:736
 #, kde-format
 msgid "Validate Signature"
 msgstr "Valider une signature"
 
-#: PkUpdateList.cxx:785
+#: PkUpdateList.cxx:787
 #, kde-format
 msgid "Update failed"
 msgstr "Échec de la mise à jour"
 
-#: PkUpdateList.cxx:840
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid "Accept EULA"
 msgstr "Accepter l'accord de licence (EULA)"
 
-#: PkUpdateList.cxx:852
+#: PkUpdateList.cxx:854
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"

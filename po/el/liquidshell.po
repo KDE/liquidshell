@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:51+0000\n"
+"POT-Creation-Date: 2023-06-12 00:58+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -546,7 +546,7 @@ msgstr "Ενημερώσεις λογισμικού"
 msgid "All"
 msgstr "Όλα"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:448
+#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
 #, kde-format
 msgid "Install"
 msgstr "Εγκατάσταση"
@@ -573,92 +573,92 @@ msgid_plural "Install %1 packages"
 msgstr[0] "Εγκατάσταση %1 πακέτου"
 msgstr[1] "Εγκατάσταση %1 πακέτων"
 
-#: PkUpdateList.cxx:571
+#: PkUpdateList.cxx:572
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Απαιτείται επανεκκίνηση συστήματος"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:573
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Ένα από τα εγκατεστημένα πακέτα απαιτεί επανεκκίνηση συστήματος"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:574
 #, kde-format
 msgid "Reboot System"
 msgstr "Επανεκκίνηση συστήματος"
 
-#: PkUpdateList.cxx:593
+#: PkUpdateList.cxx:594
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Απαιτείται επανεκκίνηση συνεδρίας"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:595
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Ένα από τα εγκατεστημένα πακέτα απαιτεί από εσάς να αποσυνδεθείτε"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:596
 #, kde-format
 msgid "Logout"
 msgstr "Αποσύνδεση"
 
-#: PkUpdateList.cxx:641
+#: PkUpdateList.cxx:642
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Ακύρωση εγκατάστασης"
 
-#: PkUpdateList.cxx:673
+#: PkUpdateList.cxx:675
 #, kde-format
 msgid "Waiting"
 msgstr "Αναμονή"
 
-#: PkUpdateList.cxx:674
+#: PkUpdateList.cxx:676
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "αναμονή για ταυτοποίηση"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:677
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Επίλυση εξαρτήσεων"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:678
 #, kde-format
 msgid "Updating"
 msgstr "Γίνεται ενημέρωση"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:679
 #, kde-format
 msgid "Installing"
 msgstr "Γίνεται εγκατάσταση"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:680
 #, kde-format
 msgid "Downloading"
 msgstr "Γίνεται λήψη"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:681
 #, kde-format
 msgid "Canceling"
 msgstr "Γίνεται ακύρωση"
 
-#: PkUpdateList.cxx:734
+#: PkUpdateList.cxx:736
 #, kde-format
 msgid "Validate Signature"
 msgstr "Επιβεβαίωση υπογραφής"
 
-#: PkUpdateList.cxx:785
+#: PkUpdateList.cxx:787
 #, kde-format
 msgid "Update failed"
 msgstr "Αποτυχία ενημέρωσης"
 
-#: PkUpdateList.cxx:840
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid "Accept EULA"
 msgstr "Αποδοχή EULA"
 
-#: PkUpdateList.cxx:852
+#: PkUpdateList.cxx:854
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
