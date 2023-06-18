@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-12 00:58+0000\n"
-"PO-Revision-Date: 2023-05-22 14:01\n"
+"PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -732,7 +732,7 @@ msgstr ""
 #: PkUpdates.cxx:301
 #, kde-format
 msgid "Software Updates Available"
-msgstr "有软件更新可用"
+msgstr "系统有可以安装的软件更新"
 
 #: PkUpdates.cxx:321
 #, kde-format
