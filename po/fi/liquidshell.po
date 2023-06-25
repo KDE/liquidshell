@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-12 00:58+0000\n"
-"PO-Revision-Date: 2023-04-04 23:00+0300\n"
+"PO-Revision-Date: 2023-05-29 21:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -188,7 +188,7 @@ msgstr "Skaalattu kuvasuhteen mukaan ja &rajattu"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:47
 #, kde-format
@@ -554,12 +554,12 @@ msgstr "Asenna"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Asenna ja siirry valmiustilaan"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Asenna ja sammuta"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -660,20 +660,16 @@ msgid "Accept EULA"
 msgstr "Hyväksy käyttöoikeussopimus"
 
 #: PkUpdateList.cxx:854
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html>You need to accept or reject the following license agreement for "
-#| "package<br>%1<br>%2</html>"
+#, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Seuraavan paketin käyttöoikeussopimus on hyväksyttävä tai hylättävä:"
-"<br>%1<br>%2</html>"
+"<html>Hyvätkö seuraavan käyttöoikeussopimuksen paketille<br>"
+"%1<br>valmistajalta<br>%2?</html>"
 
 #: PkUpdates.cxx:67
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
 msgstr "Seuraava tarkistus: %1 "
 
