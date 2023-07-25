@@ -1,4 +1,14 @@
 ---
+Version: 1.9
+Date: 2023-07-25
+Description:
+- Added install options (sleep/shutdown after install)
+- Improved EULA handling on package installation
+- Added long format of time and date display to calendar popup
+- Create default folder for storing quicklaunch apps
+- SysLoad widget width depends on CPU count
+- Bugfixes and adjustments to newer KDE components
+---
 Version: 1.8.1
 Date: 2022-07-26
 Description:
