@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -26,10 +26,12 @@
 #include <SysTrayItem.hxx>
 
 #include <PackageKit/Daemon>
+#include <KNotification>
 
 #include <QMultiMap>
 #include <QTimer>
 #include <QDateTime>
+#include <QPointer>
 class PkUpdateList;
 
 class PkUpdates : public SysTrayItem
@@ -70,6 +72,7 @@ class PkUpdates : public SysTrayItem
     PkUpdateList *updateList = nullptr;
     int refreshProgress = 100;
     QPixmap currentPixmap;
+    QPointer<KNotification> notification;
 };
 
 #endif

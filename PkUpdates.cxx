@@ -27,7 +27,6 @@
 #include <QDebug>
 
 #include <KLocalizedString>
-#include <KNotification>
 #include <KIconLoader>
 #include <KConfig>
 #include <KConfigGroup>
@@ -298,8 +297,11 @@ void PkUpdates::createToolTip(bool notify)
 
     if ( notify )
     {
-      KNotification::event("updates available", i18n("Software Updates Available"), tooltip,
-                           QIcon::fromTheme(icon).pixmap(32), this);
+      if ( notification )
+        notification->close();  // close previous notification if it's still here
+
+      notification = KNotification::event("updates available", i18n("Software Updates Available"), tooltip,
+                                          QIcon::fromTheme(icon).pixmap(32), this);
     }
   }
 }
