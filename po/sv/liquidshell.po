@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:58+0000\n"
+"POT-Creation-Date: 2023-07-26 00:49+0000\n"
 "PO-Revision-Date: 2022-08-03 10:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -665,23 +665,23 @@ msgid ""
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 
-#: PkUpdates.cxx:67
+#: PkUpdates.cxx:66
 #, fuzzy, kde-format
 #| msgid "Next check: %1 "
 msgid "Next check: %1"
 msgstr "Nästa kontroll: %1 "
 
-#: PkUpdates.cxx:93
+#: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Söker efter uppdateringar ..."
 
-#: PkUpdates.cxx:109 PkUpdates.cxx:163
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Söker efter uppdateringar ... %1 %"
 
-#: PkUpdates.cxx:185
+#: PkUpdates.cxx:184
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -690,33 +690,33 @@ msgstr ""
 "Senaste kontroll: %1\n"
 "Fel vid sökning efter uppdateringar: %2"
 
-#: PkUpdates.cxx:188
+#: PkUpdates.cxx:187
 #, kde-format
 msgid "Software Update Error"
 msgstr "Fel vid uppdateringar av programvara"
 
-#: PkUpdates.cxx:209
+#: PkUpdates.cxx:208
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "%1 <b>säkerhetsuppdatering</b> tillgänglig"
 msgstr[1] "%1 <b>säkerhetsuppdateringar</b> tillgängliga"
 
-#: PkUpdates.cxx:221
+#: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "%1 <i>viktig</i> uppdatering tillgänglig"
 msgstr[1] "%1 <i>viktiga</i> uppdateringar tillgängliga"
 
-#: PkUpdates.cxx:233
+#: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "%1 felrättningsuppdatering tillgänglig"
 msgstr[1] "%1 felrättningsuppdateringar tillgängliga"
 
-#: PkUpdates.cxx:243
+#: PkUpdates.cxx:242
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -735,7 +735,7 @@ msgstr[1] ""
 "Inga viktiga uppdateringar tillgängliga\n"
 "%2 andra"
 
-#: PkUpdates.cxx:254
+#: PkUpdates.cxx:253
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -744,24 +744,24 @@ msgstr ""
 "Senaste kontroll: %1\n"
 "Inga uppdateringar tillgängliga"
 
-#: PkUpdates.cxx:263
+#: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>%1 annan"
 msgstr[1] "<br>%1 andra"
 
-#: PkUpdates.cxx:265
+#: PkUpdates.cxx:264
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Senaste kontroll: %1<br>%2</html>"
 
-#: PkUpdates.cxx:301
+#: PkUpdates.cxx:303
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Uppdateringar av programvara tillgängliga"
 
-#: PkUpdates.cxx:321
+#: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 fler ...</li>"

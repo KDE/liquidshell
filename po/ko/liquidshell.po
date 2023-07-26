@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:58+0000\n"
+"POT-Creation-Date: 2023-07-26 00:49+0000\n"
 "PO-Revision-Date: 2023-07-25 01:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -662,22 +662,22 @@ msgstr ""
 "<html>제조사<br>%2의<br>패키지<br>%1<br>의 라이선스 조항에 동의하십니까?</"
 "html>"
 
-#: PkUpdates.cxx:67
+#: PkUpdates.cxx:66
 #, kde-format
 msgid "Next check: %1"
 msgstr "다음 확인: %1"
 
-#: PkUpdates.cxx:93
+#: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "업데이트 검색 중..."
 
-#: PkUpdates.cxx:109 PkUpdates.cxx:163
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "업데이트 검색 중... %1%"
 
-#: PkUpdates.cxx:185
+#: PkUpdates.cxx:184
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -686,30 +686,30 @@ msgstr ""
 "마지막 확인: %1\n"
 "업데이트 확인 오류: %2"
 
-#: PkUpdates.cxx:188
+#: PkUpdates.cxx:187
 #, kde-format
 msgid "Software Update Error"
 msgstr "소프트웨어 업데이트 오류"
 
-#: PkUpdates.cxx:209
+#: PkUpdates.cxx:208
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "<b>보안</b> 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:221
+#: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "<i>중요</i> 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:233
+#: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "버그 수정 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:243
+#: PkUpdates.cxx:242
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -724,7 +724,7 @@ msgstr[0] ""
 "중요한 업데이트가 없습니다\n"
 "기타 업데이트 %2개"
 
-#: PkUpdates.cxx:254
+#: PkUpdates.cxx:253
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -733,23 +733,23 @@ msgstr ""
 "마지막 확인: %1\n"
 "업데이트가 없습니다"
 
-#: PkUpdates.cxx:263
+#: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>기타 업데이트 %1개"
 
-#: PkUpdates.cxx:265
+#: PkUpdates.cxx:264
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>마지막 확인: %1<br>%2</html>"
 
-#: PkUpdates.cxx:301
+#: PkUpdates.cxx:303
 #, kde-format
 msgid "Software Updates Available"
 msgstr "소프트웨어 업데이트 사용 가능"
 
-#: PkUpdates.cxx:321
+#: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1개 더 보기...</li>"

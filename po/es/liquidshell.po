@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:58+0000\n"
+"POT-Creation-Date: 2023-07-26 00:49+0000\n"
 "PO-Revision-Date: 2023-04-27 11:25+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -668,22 +668,22 @@ msgstr ""
 "<html>¿Acepta el siguiente acuerdo de licencia para el paquete<br>%1<br>del "
 "vendedor<br>%2</html>"
 
-#: PkUpdates.cxx:67
+#: PkUpdates.cxx:66
 #, kde-format
 msgid "Next check: %1"
 msgstr "Próxima comprobación: %1"
 
-#: PkUpdates.cxx:93
+#: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Comprobando actualizaciones..."
 
-#: PkUpdates.cxx:109 PkUpdates.cxx:163
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Comprobando actualizaciones... %1%"
 
-#: PkUpdates.cxx:185
+#: PkUpdates.cxx:184
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -692,33 +692,33 @@ msgstr ""
 "Última comprobación: %1\n"
 "Error al comprobar las actualizaciones: %2"
 
-#: PkUpdates.cxx:188
+#: PkUpdates.cxx:187
 #, kde-format
 msgid "Software Update Error"
 msgstr "Error en actualización de software"
 
-#: PkUpdates.cxx:209
+#: PkUpdates.cxx:208
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "%1 actualización de <b>seguridad</b> disponible"
 msgstr[1] "%1 actualizaciones de <b>seguridad</b> disponibles"
 
-#: PkUpdates.cxx:221
+#: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "%1 actualización <b>importante</b> disponible"
 msgstr[1] "%1 actualizaciones <b>importantes</b> disponibles"
 
-#: PkUpdates.cxx:233
+#: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "%1 actualización de corrección de errores disponible"
 msgstr[1] "%1 actualizaciones de corrección de errores disponibles"
 
-#: PkUpdates.cxx:243
+#: PkUpdates.cxx:242
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -737,7 +737,7 @@ msgstr[1] ""
 "No hay actualizaciones importantes\n"
 "%2 de otros tipos"
 
-#: PkUpdates.cxx:254
+#: PkUpdates.cxx:253
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -746,24 +746,24 @@ msgstr ""
 "Última comprobación: %1\n"
 "No hay actualizaciones"
 
-#: PkUpdates.cxx:263
+#: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>%1 de otro tipo"
 msgstr[1] "<br>%1 de otros tipos"
 
-#: PkUpdates.cxx:265
+#: PkUpdates.cxx:264
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Última comprobación: %1<br>%2</html>"
 
-#: PkUpdates.cxx:301
+#: PkUpdates.cxx:303
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Actualizaciones de software disponibles"
 
-#: PkUpdates.cxx:321
+#: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 más...</li>"

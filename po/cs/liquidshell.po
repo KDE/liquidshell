@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:58+0000\n"
+"POT-Creation-Date: 2023-07-26 00:49+0000\n"
 "PO-Revision-Date: 2023-06-22 14:57+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -669,34 +669,34 @@ msgid ""
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 
-#: PkUpdates.cxx:67
+#: PkUpdates.cxx:66
 #, kde-format
 msgid "Next check: %1"
 msgstr "Další kontrola: %1"
 
-#: PkUpdates.cxx:93
+#: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Kontroluje se dostupnost aktualizací ..."
 
-#: PkUpdates.cxx:109 PkUpdates.cxx:163
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Kontroluje se dostupnost aktualizací ... %1%"
 
-#: PkUpdates.cxx:185
+#: PkUpdates.cxx:184
 #, kde-format
 msgid ""
 "Last check: %1\n"
 "Error on checking for updates: %2"
 msgstr ""
 
-#: PkUpdates.cxx:188
+#: PkUpdates.cxx:187
 #, kde-format
 msgid "Software Update Error"
 msgstr "Chyba aktualizace softwaru"
 
-#: PkUpdates.cxx:209
+#: PkUpdates.cxx:208
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
@@ -704,7 +704,7 @@ msgstr[0] "Je dostupná %1 <b>bezpečnostní</b> aktualizace"
 msgstr[1] "Jsou dostupné %1 <b>bezpečnostní</b> aktualizace"
 msgstr[2] "Je dostupných %1 <b>bezpečnostních</b> aktualizací"
 
-#: PkUpdates.cxx:221
+#: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
@@ -712,7 +712,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: PkUpdates.cxx:233
+#: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
@@ -720,7 +720,7 @@ msgstr[0] "Je dostupná %1 opravná aktualizace"
 msgstr[1] "Jsou dostupné %1 opravné aktualizace"
 msgstr[2] "Je dostupných %1 opravných aktualizací"
 
-#: PkUpdates.cxx:243
+#: PkUpdates.cxx:242
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -743,7 +743,7 @@ msgstr[2] ""
 "Nejsou dostupné žádné důležité aktualizace\n"
 "%2 dalších"
 
-#: PkUpdates.cxx:254
+#: PkUpdates.cxx:253
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -752,7 +752,7 @@ msgstr ""
 "Poslední kontrola: %1\n"
 "Nejsou dostupné žádné aktualizace"
 
-#: PkUpdates.cxx:263
+#: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
@@ -760,17 +760,17 @@ msgstr[0] "<br>%1 další"
 msgstr[1] "<br>%1 další"
 msgstr[2] "<br>%1 dalších"
 
-#: PkUpdates.cxx:265
+#: PkUpdates.cxx:264
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr ""
 
-#: PkUpdates.cxx:301
+#: PkUpdates.cxx:303
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Jsou dostupné aktualizace"
 
-#: PkUpdates.cxx:321
+#: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 další ...</li>"

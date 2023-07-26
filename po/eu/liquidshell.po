@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:58+0000\n"
+"POT-Creation-Date: 2023-07-26 00:49+0000\n"
 "PO-Revision-Date: 2023-07-21 11:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -669,22 +669,22 @@ msgstr ""
 "<html>Onartzen duzu<br> %2 hornitzailea duen<br>%1<br> paketearen ondoko "
 "lizentzia-akordioa?</html>"
 
-#: PkUpdates.cxx:67
+#: PkUpdates.cxx:66
 #, kde-format
 msgid "Next check: %1"
 msgstr "Hurrengo egiaztapena: %1"
 
-#: PkUpdates.cxx:93
+#: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Eguneratzeak egiaztatzen ..."
 
-#: PkUpdates.cxx:109 PkUpdates.cxx:163
+#: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Eguneratzeak egiaztatzen ... % %1"
 
-#: PkUpdates.cxx:185
+#: PkUpdates.cxx:184
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -693,33 +693,33 @@ msgstr ""
 "Azken egiaztapena: %1\n"
 "Errorea eguneratzeak egiaztatzean: %2"
 
-#: PkUpdates.cxx:188
+#: PkUpdates.cxx:187
 #, kde-format
 msgid "Software Update Error"
 msgstr "Software eguneratze errorea"
 
-#: PkUpdates.cxx:209
+#: PkUpdates.cxx:208
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "<b>segurtasun</b> eguneratze %1 erabilgarri"
 msgstr[1] "%1 <b>segurtasun</b> eguneratze erabilgarri"
 
-#: PkUpdates.cxx:221
+#: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "eguneratze <i>garrantzitsu</i> %1 erabilgarri"
 msgstr[1] "%1 eguneratze <i>garrantzitsu</i> erabilgarri"
 
-#: PkUpdates.cxx:233
+#: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "akatsak konpontzeko eguneratze %1 erabilgarri"
 msgstr[1] "akatsak konpontzeko %1 eguneratze erabilgarri"
 
-#: PkUpdates.cxx:243
+#: PkUpdates.cxx:242
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -738,7 +738,7 @@ msgstr[1] ""
 "Ez dago erabilgarri eguneratze garrantzitsurik\n"
 "bestelako %2"
 
-#: PkUpdates.cxx:254
+#: PkUpdates.cxx:253
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -747,24 +747,24 @@ msgstr ""
 "Azken egiaztapena: %1\n"
 "Ez eguneratze erabilgarririk"
 
-#: PkUpdates.cxx:263
+#: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>bestelako %1"
 msgstr[1] "<br>bestelako %1"
 
-#: PkUpdates.cxx:265
+#: PkUpdates.cxx:264
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Azken egiaztatzea: %1<br>%2</html>"
 
-#: PkUpdates.cxx:301
+#: PkUpdates.cxx:303
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Software eguneratzeak eskuragarri"
 
-#: PkUpdates.cxx:321
+#: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 gehiago ...</li>"
