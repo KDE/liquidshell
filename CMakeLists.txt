@@ -162,3 +162,5 @@ ecm_install_icons(ICONS
                   THEME hicolor)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES)
+
+ki18n_install(po)
