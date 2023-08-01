@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2017, 2018, 2019, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-26 00:49+0000\n"
-"PO-Revision-Date: 2022-08-03 10:15+0200\n"
+"PO-Revision-Date: 2023-07-31 10:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -188,7 +188,7 @@ msgstr "Skalad med behållen propor&tion och beskärd"
 #: desktop.cxx:46
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquid skal"
 
 #: desktop.cxx:47
 #, kde-format
@@ -196,10 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Ett QtWidgets-baserat grundläggande skrivbordsskal"
 
 #: desktop.cxx:49
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2022 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2023 Martin Koller"
-msgstr "Copyright 2017 - 2022 Martin Koller"
+msgstr "Copyright 2017 - 2023 Martin Koller"
 
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
@@ -554,12 +553,12 @@ msgstr "Installera"
 #: PkUpdateList.cxx:231
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Installera, sedan viloläge"
 
 #: PkUpdateList.cxx:232
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Installera, sedan avstängning"
 
 #: PkUpdateList.cxx:236
 #, kde-format
@@ -664,12 +663,13 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Accepterar du följande licensavtal för paketet<br>%1<br>från "
+"leverantören<br>%2?</html>"
 
 #: PkUpdates.cxx:66
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Nästa kontroll: %1 "
+msgstr "Nästa kontroll: %1"
 
 #: PkUpdates.cxx:92
 #, kde-format
@@ -874,7 +874,7 @@ msgstr "Inte inställd"
 #: WeatherApplet.cxx:195
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:196
 #, kde-format
