@@ -389,7 +389,7 @@
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
-      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
+      <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex., Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="de">Verwendet vorhandene KDE-Dialog für die meisten Einstellungen wie zum Beispiel für Anwendungsmenü, Virtuelle Arbeitsflächen, Bluetooth und Netzwerk</li>
       <li xml:lang="el">χρησιμοποιεί τους υφιστάμενους διαλόγους του KDE για τις περισσότερες διαμορφώσεις, π.χ. Μενού εκκίνησης, εικονικές επιφάνειες εργασίας, Bluetooth δίκτυο</li>
       <li xml:lang="en-GB">uses existing KDE dialogues for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
