@@ -40,7 +40,7 @@ Action=Popup
 [Event/update error]
 Name=Update error
 Name[ca]=Error en actualitzar
-Name[ca@valencia]=S'ha produït un error en actualitzar
+Name[ca@valencia]=S'ha produït un error durant l'actualització
 Name[cs]=Chyba aktualizace
 Name[de]=Fehler beim Aktualisieren
 Name[el]=Σφάλμα ενημέρωσης
