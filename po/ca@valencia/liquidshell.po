@@ -834,7 +834,7 @@ msgstr "Ús màx. de la xarxa (últims %2 seg.): %1 kB/seg"
 #: TaskBarButton.cxx:124
 #, kde-format
 msgid "Move To Desktop"
-msgstr "Mou a l'escriptori"
+msgstr "Mou cap a l'escriptori"
 
 #: TaskBarButton.cxx:125
 #, kde-format
