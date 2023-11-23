@@ -58,7 +58,7 @@ msgstr "Totalment carregada"
 #: Battery.cxx:172
 #, kde-format
 msgid "Charging at %1%"
-msgstr "Està carregant a %1%"
+msgstr "Està carregant al %1%"
 
 #: Battery.cxx:174
 #, kde-format
@@ -68,7 +68,7 @@ msgstr "Temps fins a omplir: "
 #: Battery.cxx:178
 #, kde-format
 msgid "Discharging at %1%"
-msgstr "Està descarregant a %1%"
+msgstr "Està descarregant al %1%"
 
 #: Battery.cxx:180
 #, kde-format
