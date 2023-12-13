@@ -35,10 +35,10 @@ class SysTrayItem : public QLabel
     void showDetailsList();
 
   protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
     virtual QWidget *getDetailsList() { return nullptr; }
 
-  private:
+  protected:
     QString iconName;
 };
 

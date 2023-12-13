@@ -68,6 +68,9 @@ class NotificationList : public QWidget
     int itemCount() const { return items.count(); }
     QVector<NotifyItem *> getItems() const { return items; }
 
+    void setAvoidPopup(bool on);
+    bool getAvoidPopup() const { return avoidPopup; }
+
   Q_SIGNALS:
     void itemsCountChanged();
     void listNowEmpty();
@@ -84,6 +87,7 @@ class NotificationList : public QWidget
     QMap<QString, int> appTimeouts;  // appName, timeout (minutes)
     QVector<NotifyItem *> items;
     NotificationServer *server;
+    bool avoidPopup = false;
 };
 
 #endif

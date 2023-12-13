@@ -37,6 +37,8 @@
 #include <KRun>
 #include <KLocalizedString>
 #include <KWindowSystem>
+#include <KConfig>
+#include <KConfigGroup>
 
 static const Qt::WindowFlags POPUP_FLAGS = Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint;
 
@@ -202,6 +204,10 @@ NotificationList::NotificationList(NotificationServer *parent)
   vbox->addWidget(clearButton);
 
   resize(500, 300);
+
+  KConfig config;
+  KConfigGroup group = config.group("Notifications");
+  avoidPopup = group.readEntry<bool>("avoidPopup", avoidPopup);
 }
 
 //--------------------------------------------------------------------------------
@@ -276,6 +282,9 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
       timeout = 0;
     }
   }
+
+  if ( avoidPopup )
+    timeout = 0;
 
   emit itemsCountChanged();
   connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);
@@ -381,6 +390,17 @@ void NotificationList::placeItems()
       item->show();
     }
   }
+}
+
+//--------------------------------------------------------------------------------
+
+void NotificationList::setAvoidPopup(bool on)
+{
+  avoidPopup = on;
+
+  KConfig config;
+  KConfigGroup group = config.group("Notifications");
+  group.writeEntry("avoidPopup", avoidPopup);
 }
 
 //--------------------------------------------------------------------------------

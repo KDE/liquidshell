@@ -30,6 +30,7 @@
 
 #include <DesktopPanel.hxx>
 #include <SysTrayNotifyItem.hxx>
+class NotificationServer;
 
 class SysTray : public QFrame
 {
@@ -47,12 +48,14 @@ class SysTray : public QFrame
   private:
     void registerWatcher();
     void arrangeNotifyItems();
+    void contextMenuEvent(QContextMenuEvent *event) override;
 
   private:
     QVBoxLayout *vbox, *appsVbox;
     QVector<QHBoxLayout *> appsRows;
     QString serviceName;
     QMap<QString, QPointer<SysTrayNotifyItem>> items;
+    NotificationServer *notificationServer = nullptr;
 };
 
 #endif

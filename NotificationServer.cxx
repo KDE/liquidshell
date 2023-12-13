@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2022 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
 
   This file is part of liquidshell.
 
@@ -29,6 +29,7 @@
 
 #include <KLocalizedString>
 #include <KService>
+#include <KIconLoader>
 
 //--------------------------------------------------------------------------------
 
@@ -55,6 +56,11 @@ NotificationServer::NotificationServer(QWidget *parent)
          );
 
   hide();
+
+  setAvoidPopup(getAvoidPopup());  // adjust icon for current state
+
+  connect(KIconLoader::global(), &KIconLoader::iconLoaderSettingsChanged, this,
+          [this]() { setAvoidPopup(getAvoidPopup()); });
 }
 
 //--------------------------------------------------------------------------------
@@ -157,6 +163,25 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
 QWidget *NotificationServer::getDetailsList()
 {
   return notificationList;
+}
+
+//--------------------------------------------------------------------------------
+
+void NotificationServer::setAvoidPopup(bool avoid)
+{
+  notificationList->setAvoidPopup(avoid);
+
+  if ( avoid )
+    setPixmap(QIcon::fromTheme(iconName).pixmap(size(), QIcon::Disabled));
+  else
+    setPixmap(QIcon::fromTheme(iconName).pixmap(size()));
+}
+
+//--------------------------------------------------------------------------------
+
+bool NotificationServer::getAvoidPopup() const
+{
+  return notificationList->getAvoidPopup();
 }
 
 //--------------------------------------------------------------------------------

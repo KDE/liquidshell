@@ -38,6 +38,8 @@
 SysTrayNotifyItem::SysTrayNotifyItem(QWidget *parent, const QString &service, const QString &path)
   : QLabel("?", parent)
 {
+  setContextMenuPolicy(Qt::PreventContextMenu);
+
   // make sure several "New*" signals from dbus just trigger one fetchData() call
   fetchTimer.setSingleShot(true);
   fetchTimer.setInterval(500);

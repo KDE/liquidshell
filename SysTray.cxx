@@ -37,6 +37,8 @@
 #include <QDBusMetaType>
 #include <QDebug>
 
+#include <KLocalizedString>
+
 #include <cmath>
 
 //--------------------------------------------------------------------------------
@@ -120,7 +122,7 @@ void SysTray::fill()
 
   QVector<QWidget *> internalWidgets =
   {
-    new NotificationServer(this),
+    notificationServer = new NotificationServer(this),
     new Network(this),
     new DeviceNotifier(this),
     new Battery(this),
@@ -285,6 +287,31 @@ void SysTray::arrangeNotifyItems()
 
   foreach (QHBoxLayout *row, appsRows)
     row->addStretch();
+}
+
+//--------------------------------------------------------------------------------
+
+void SysTray::contextMenuEvent(QContextMenuEvent *event)
+{
+  Q_UNUSED(event)
+
+  // allow to disable notification popups (e.g. during a presentation)
+  if ( notificationServer )
+  {
+    QMenu menu;
+
+    QAction *action = menu.addAction(i18n("Show New Notifications"));
+    action->setCheckable(true);
+    action->setChecked(!notificationServer->getAvoidPopup());
+
+    connect(action, &QAction::triggered,
+            [this](bool checked)
+            {
+              notificationServer->setAvoidPopup(!checked);
+            });
+
+    menu.exec(QCursor::pos());
+  }
 }
 
 //--------------------------------------------------------------------------------

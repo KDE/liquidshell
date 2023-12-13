@@ -52,6 +52,9 @@ class NotificationServer : public SysTrayItem
       Undefined = 4
     };
 
+    void setAvoidPopup(bool avoid);
+    bool getAvoidPopup() const;
+
   protected:
     QWidget *getDetailsList() override;
 
