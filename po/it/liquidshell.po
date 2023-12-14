@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-04-28 10:36+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -481,12 +481,12 @@ msgstr "La rete wireless è abilitata. Fai clic per disabilitarla"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "La rete wireless è disabilitata. Fai clic per abilitarla"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -825,6 +825,12 @@ msgstr "Inviati/ricevuti dalla rete: %1/%2 KB/sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Utilizzo massimo della rete (ultimi %2 sec.): %1 KB/sec"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Notifiche"
 
 #: TaskBarButton.cxx:124
 #, kde-format

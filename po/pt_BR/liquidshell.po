@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-05-31 14:30-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -483,12 +483,12 @@ msgstr "A rede sem fio está habilitada. Clique para desabilitar"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "A rede sem fio está desabilitada. Clique para habilitar"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -827,6 +827,12 @@ msgstr "Rede enviar/receber: %1/%2 KB/sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Net máximo (últimos %2 s): %1 KB/sec"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Notificações"
 
 #: TaskBarButton.cxx:124
 #, kde-format

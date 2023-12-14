@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-06-11 21:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -481,12 +481,12 @@ msgstr "Kablosuz Ağ etkin. Devre dışı bırakmak için tıklayın"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Kablosuz Ağ devre dışı. Etkinleştirmek için tıklayın"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -826,6 +826,12 @@ msgstr "Ağ gönderilen/alınan: %1/%2 KB/san"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Ağ en çok (son %2 saniye): %1 KB/san"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Bildirimler"
 
 #: TaskBarButton.cxx:124
 #, kde-format

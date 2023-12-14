@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-07-25 01:09+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -479,12 +479,12 @@ msgstr "무선 네트워크가 활성화되어 있습니다. 비활성화하려�
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "무선 네트워크가 비활성화되어 있습니다. 활성화하려면 클릭"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -813,6 +813,12 @@ msgstr "네트워크 수신/발신: %1/%2 KB/초"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "네트워크 최대(최근 %2초): %1 KB/초"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "알림"
 
 #: TaskBarButton.cxx:124
 #, kde-format

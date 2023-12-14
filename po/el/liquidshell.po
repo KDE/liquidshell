@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -482,12 +482,12 @@ msgstr "Η ασύρματη δικτύωση είναι ενεργή. Με κλ�
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Η ασύρματη δικτύωση είναι ανενεργή. Με κλικ ενεγοποιείται"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Ειδοποιήσεις"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -825,6 +825,12 @@ msgstr "Καθαρή αποστολή/λήψη: %1/%2 KB/sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Καθαρό μέγιστο (τελευταία %2 secs): %1 KB/sec"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Ειδοποιήσεις"
 
 #: TaskBarButton.cxx:124
 #, kde-format

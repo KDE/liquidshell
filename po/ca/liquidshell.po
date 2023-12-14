@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-04-27 11:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -485,12 +485,12 @@ msgstr "La xarxa sense fil està activada. Feu clic per a desactivar"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "La xarxa sense fil està desactivada. Feu clic per a activar"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -830,6 +830,12 @@ msgstr "Enviat/rebut per la xarxa: %1/%2 kB/sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Ús màx. de la xarxa (últims %2 seg.): %1 kB/seg"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Notificacions"
 
 #: TaskBarButton.cxx:124
 #, kde-format

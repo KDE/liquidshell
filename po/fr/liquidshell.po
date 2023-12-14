@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-10-26 19:01+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -490,12 +490,12 @@ msgstr ""
 "Le fonctionnement en réseau sans fil est désactivé. Veuillez cliquer pour "
 "l'activer."
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Notifications"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -834,6 +834,12 @@ msgstr "Réseau envois / reçus : %1 / %2 Ko / sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Réseau max (Dernières %2 secs) : %1 Ko / sec"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Notifications"
 
 #: TaskBarButton.cxx:124
 #, kde-format

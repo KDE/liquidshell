@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-04-28 07:01+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -480,12 +480,12 @@ msgstr "უსადენო ქსელი ჩართულია. გა�
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "უსადენო ქსელი გამორთულია. ჩასართავად დააწკაპუნეთ"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "გაფრთხილებები"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -826,6 +826,12 @@ msgstr "ქსელის გაგზავნა/მიღება %1/%2 კ
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "ქსელი მაქს (ბოლო %2წამში) %1 კბ/წმ"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "გაფრთხილებები"
 
 #: TaskBarButton.cxx:124
 #, kde-format

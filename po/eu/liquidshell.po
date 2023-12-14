@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-07-21 11:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -484,12 +484,12 @@ msgstr "Haririk gabeko sarea gaituta dago. Egin klik ezgaitzeko"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Haririk gabeko sarea ezgaituta dago. Egin klik gaitzeko"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Jakinarazpenak"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -828,6 +828,12 @@ msgstr "Sarea jaso/bidali: %1/%2 KB/seg"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Sare max (azken %2 seg): %1 KB/seg"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Jakinarazpenak"
 
 #: TaskBarButton.cxx:124
 #, kde-format

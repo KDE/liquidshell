@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-04-27 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -486,12 +486,12 @@ msgstr "Brezžična mreža je omogočena. Kliknite za onemogočenje"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Brezžična mreža ni omogočena. Kliknite za omogočenje"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Obvestila"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -850,6 +850,12 @@ msgstr "Omrežje poslano/prejeto: %1/%2 KB/s"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Omežje maks (zadnji %2 s): %1 KB/s"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Obvestila"
 
 #: TaskBarButton.cxx:124
 #, kde-format

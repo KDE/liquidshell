@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-04-27 14:57+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -481,12 +481,12 @@ msgstr "Draadloos netwerk gebruiken is ingeschakeld. Klik om uit te schakelen"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Draadloos netwerk gebruiken is uitgeschakeld. Klik om in te schakelen"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Meldingen"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -825,6 +825,12 @@ msgstr "Netwerk verzonden/ontvangen: %1/%2 KB/sec"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Netwerk max (laatste %2 sec.): %1 KB/sec"
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Meldingen"
 
 #: TaskBarButton.cxx:124
 #, kde-format

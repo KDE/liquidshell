@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-12-14 00:43+0000\n"
 "PO-Revision-Date: 2023-06-22 14:57+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -483,12 +483,12 @@ msgstr "Bezdrátová síť je zapnuta. Kliknutím ji vypnete"
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Bezdrátová síť je vypnuta. Kliknutím ji zapnete"
 
-#: NotificationList.cxx:176
+#: NotificationList.cxx:178
 #, kde-format
 msgid "Notifications"
 msgstr "Upozornění"
 
-#: NotificationServer.cxx:65
+#: NotificationServer.cxx:71
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -834,6 +834,12 @@ msgstr "Síť odesílání/příjem: %1/%2 KB/s"
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr ""
+
+#: SysTray.cxx:303
+#, fuzzy, kde-format
+#| msgid "Notifications"
+msgid "Show New Notifications"
+msgstr "Upozornění"
 
 #: TaskBarButton.cxx:124
 #, kde-format
