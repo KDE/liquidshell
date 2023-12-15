@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-14 00:43+0000\n"
-"PO-Revision-Date: 2023-04-27 08:48+0300\n"
+"PO-Revision-Date: 2023-12-14 08:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -855,10 +855,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. вик. мережі (протягом останніх %2 с): %1 кБ/с"
 
 #: SysTray.cxx:303
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "Сповіщення"
+msgstr "Показати нові сповіщення"
 
 #: TaskBarButton.cxx:124
 #, kde-format
