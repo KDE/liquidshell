@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-14 00:43+0000\n"
-"PO-Revision-Date: 2023-10-26 19:01+0200\n"
+"PO-Revision-Date: 2023-12-15 09:59+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -836,10 +836,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Réseau max (Dernières %2 secs) : %1 Ko / sec"
 
 #: SysTray.cxx:303
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "Notifications"
+msgstr "Afficher les nouvelles notifications"
 
 #: TaskBarButton.cxx:124
 #, kde-format

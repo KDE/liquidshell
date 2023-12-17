@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-14 00:43+0000\n"
-"PO-Revision-Date: 2023-04-28 07:01+0200\n"
+"PO-Revision-Date: 2023-12-16 06:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -828,10 +828,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "ქსელი მაქს (ბოლო %2წამში) %1 კბ/წმ"
 
 #: SysTray.cxx:303
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "გაფრთხილებები"
+msgstr "ახალი შეტყობინებების ჩვენება"
 
 #: TaskBarButton.cxx:124
 #, kde-format
