@@ -120,10 +120,7 @@ void OnScreenVolume::gotMasterMixer(QDBusMessage msg)
   masterMixer = reply.value()["currentMasterMixer"].toString();
   masterMixer.replace(QRegularExpression("[^a-zA-Z0-9_]"), "_");
 
-  masterControl = reply.value()["currentMasterControl"].toString();
-  masterControl.replace(QRegularExpression("[^a-zA-Z0-9_]"), "_");
-
-  //qDebug() << masterMixer << masterControl;
+  //qDebug() << __FUNCTION__ << masterMixer;
 
   QDBusConnection::sessionBus()
       .connect("org.kde.kmix", "/Mixers/" + masterMixer,
@@ -132,9 +129,33 @@ void OnScreenVolume::gotMasterMixer(QDBusMessage msg)
 }
 
 //--------------------------------------------------------------------------------
+// called when e.g. volume changes but also if currentMasterControl changes
+// e.g. bluetooth headset connect/disconnect
 
 void OnScreenVolume::controlChanged()
 {
+  QDBusMessage msg =
+      QDBusMessage::createMethodCall("org.kde.kmix", "/Mixers",
+                                     "org.freedesktop.DBus.Properties",
+                                     "Get");
+
+  msg << "org.kde.KMix.MixSet" << "currentMasterControl";
+
+  QDBusConnection::sessionBus().callWithCallback(msg, this, SLOT(gotCurrentControl(QDBusMessage)));
+}
+
+//--------------------------------------------------------------------------------
+
+void OnScreenVolume::gotCurrentControl(QDBusMessage reply)
+{
+  if ( reply.type() == QDBusMessage::ErrorMessage )
+    return;
+
+  QString masterControl = reply.arguments()[0].value<QDBusVariant>().variant().toString();
+  masterControl.replace(QRegularExpression("[^a-zA-Z0-9_]"), "_");
+
+  //qDebug() << __FUNCTION__ << masterMixer << masterControl;
+
   QDBusMessage msg =
       QDBusMessage::createMethodCall("org.kde.kmix", "/Mixers/" + masterMixer + '/' + masterControl,
                                      "org.freedesktop.DBus.Properties",

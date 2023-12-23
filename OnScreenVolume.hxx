@@ -39,13 +39,12 @@ class OnScreenVolume : public QProgressBar
     void getMasterMixer();
     void gotMasterMixer(QDBusMessage msg);
     void controlChanged();
+    void gotCurrentControl(QDBusMessage reply);
     void volumeChanged(QDBusMessage reply);
 
   private:
     QTimer hideTimer, retryTimer;
     QString masterMixer;
-    QString masterControl;
-    bool requestPending = false;
 };
 
 #endif
