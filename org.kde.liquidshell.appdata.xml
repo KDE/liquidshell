@@ -125,6 +125,7 @@
     <p xml:lang="tr">QtQuick yerine QtWidgets kullanır, dolayısıyla herhangi bir donanım ivmelendirmesine gerek duymaz.</p>
     <p xml:lang="uk">Не використовує QtQuick, а лише QtWidgets, тому не потрібне апаратне прискорення виведення графіки</p>
     <p xml:lang="x-test">xxIt does not use QtQuick but instead relies on QtWidgets, therefore no hardware graphics acceleration is needed.xx</p>
+    <p xml:lang="zh-TW">它不使用 QtQuick，而是依賴 QtWidgets，所以不需要硬體支援圖形加速。</p>
     <p>Main Features:</p>
     <p xml:lang="ca">Característiques principals:</p>
     <p xml:lang="ca-valencia">Característiques principals:</p>
@@ -245,7 +246,7 @@
       <li xml:lang="tr">Anında başlar</li>
       <li xml:lang="uk">Миттєвий запуск</li>
       <li xml:lang="x-test">xxInstant startupxx</li>
-      <li xml:lang="zh-TW">即時啟動</li>
+      <li xml:lang="zh-TW">立即啟動</li>
       <li>No use of activities</li>
       <li xml:lang="ca">No empra les activitats</li>
       <li xml:lang="ca-valencia">No utilitza les activitats</li>
@@ -275,6 +276,7 @@
       <li xml:lang="tr">Etkinlikleri kullanmaz</li>
       <li xml:lang="uk">Не використовуються простори дій</li>
       <li xml:lang="x-test">xxNo use of activitiesxx</li>
+      <li xml:lang="zh-TW">不使用活動</li>
       <li>QtWidgets based, therefore follows widget style from systemsettings</li>
       <li xml:lang="ca">Està basat en els «QtWidgets», per tant, segueix l'estil dels ginys indicat per l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Està basat en els «QtWidgets», per tant, seguix l'estil dels ginys indicat per Configuració del sistema</li>
@@ -303,6 +305,7 @@
       <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı biçemini kullanır</li>
       <li xml:lang="uk">Засновано на QtWidgets, тому стиль віджетів повністю визначається «Системними параметрами»</li>
       <li xml:lang="x-test">xxQtWidgets based, therefore follows widget style from systemsettingsxx</li>
+      <li xml:lang="zh-TW">基於 QtWidget，因此跟隨系統設定中的元件風格</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
       <li xml:lang="ca">Les icones s'usen des del tema d'icones definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Les icones s'utilitzen des del tema d'icones definit globalment des de Configuració del sistema</li>
@@ -331,6 +334,7 @@
       <li xml:lang="tr">Simgeler, Sistem Ayarları'ndaki global simge temanızdan kullanılır</li>
       <li xml:lang="uk">Використання піктограм із загальної визначеної теми із «Системних параметрів»</li>
       <li xml:lang="x-test">xxIcons are used from your globally defined icon theme from systemsettingsxx</li>
+      <li xml:lang="zh-TW">圖示使用您在系統設定中全域定義的圖示主題</li>
       <li>Colors are used from your globally defined color theme from systemsettings</li>
       <li xml:lang="ca">Els colors s'usen des del tema de color definit globalment des de l'arranjament del sistema</li>
       <li xml:lang="ca-valencia">Els colors s'utilitzen des del tema de color definit globalment des de Configuració del sistema</li>
@@ -359,6 +363,7 @@
       <li xml:lang="tr">Renkler, sistem ayarlarındaki global renk temanızdan kullanılır</li>
       <li xml:lang="uk">Використання заданих на загальному рівні кольорів із «Системних параметрів»</li>
       <li xml:lang="x-test">xxColors are used from your globally defined color theme from systemsettingsxx</li>
+      <li xml:lang="zh-TW">顏色使用您在系統設定中全域定義的顏色主題</li>
       <li>Can additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)</li>
       <li xml:lang="ca">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
       <li xml:lang="ca-valencia">També es pot dissenyar amb css passant l'opció de línia d'ordres «-stylesheet nom_fitxer.css» (vegeu l'exemple inclòs a stylesheet.css)</li>
@@ -387,6 +392,7 @@
       <li xml:lang="tr">-stylesheet dosyaadı.css komut satırı seçeneğini kullanarak ek olarak temalanabilir (stylesheet.css örnek dosyasına bakın)</li>
       <li xml:lang="uk">Додаткова зміна стилю за допомогою css, достатньо лише передати параметр командного рядка -stylesheet назва_файла.css (див. включений приклад stylesheet.css)</li>
       <li xml:lang="x-test">xxCan additionally be styled with css by passing the commandline option -stylesheet filename.css (see included example stylesheet.css)xx</li>
+      <li xml:lang="zh-TW">可以額外套用 CSS 樣式表，方式是傳遞命令列選項 -stylesheet 檔名.css（參見內含的範例 stylesheet.css）</li>
       <li>uses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="ca">Usa els diàlegs existents del KDE per a la majoria de les configuracions, p. ex. Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
       <li xml:lang="ca-valencia">Utilitza els diàlegs existents de KDE per a la majoria de les configuracions, p. ex., Menú d'inici, Escriptoris virtuals, Bluetooth, Xarxa</li>
@@ -415,6 +421,7 @@
       <li xml:lang="tr">Çoğu yapılandırma için KDE iletişim kutularını kullanır; örneğin Başlangıç  Menüsü, Sanal Masaüstleri, Bluetooth, Ağ</li>
       <li xml:lang="uk">Використання наявних вікон KDE для більшості налаштувань, зокрема меню запуску, віртуальних стільниць, Bluetooth, мережі</li>
       <li xml:lang="x-test">xxuses existing KDE dialogs for most configurations, e.g. StartMenu, Virtual Desktops, Bluetooth, Networkxx</li>
+      <li xml:lang="zh-TW">大部分設定使用現有的 KDE 對話框，例如開始選單、虛擬桌面、藍牙、網路</li>
       <li>One bottom DesktopPanel</li>
       <li xml:lang="ca">Un plafó d'escriptori a la part inferior</li>
       <li xml:lang="ca-valencia">Un quadro d'escriptori en la part inferior</li>
@@ -443,6 +450,7 @@
       <li xml:lang="tr">Bir adet altta Masaüstü Paneli</li>
       <li xml:lang="uk">Одна панель у нижній частині екрана</li>
       <li xml:lang="x-test">xxOne bottom DesktopPanelxx</li>
+      <li xml:lang="zh-TW">一個底部的桌面面板</li>
       <li>Desktop Applets</li>
       <li xml:lang="ca">Miniaplicacions de l'escriptori</li>
       <li xml:lang="ca-valencia">Miniaplicacions de l'escriptori</li>
@@ -472,6 +480,7 @@
       <li xml:lang="tr">Masaüstü Uygulamacıkları</li>
       <li xml:lang="uk">Аплети на стільниці</li>
       <li xml:lang="x-test">xxDesktop Appletsxx</li>
+      <li xml:lang="zh-TW">桌面小程式</li>
     </ul>
   </description>
   <url type="homepage">https://www.kde.org</url>
