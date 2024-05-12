@@ -98,7 +98,7 @@ msgstr "Bluetooth"
 #: ClockWidget.cxx:176
 #, kde-format
 msgid "Select Timezones..."
-msgstr "Seleccioneu les zones horàries..."
+msgstr "Seleccioneu les zones horàries…"
 
 #: ClockWidget.cxx:182
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "Seleccioneu les zones horàries"
 #: ClockWidget.cxx:200
 #, kde-format
 msgid "Configure Date & Time..."
-msgstr "Configura la data i l'hora..."
+msgstr "Configura la data i l'hora…"
 
 #: ClockWidget.cxx:207
 #, kde-format
@@ -134,7 +134,7 @@ msgstr "País"
 #: ConfigureDesktopDialog.cxx:54
 #, kde-format
 msgid "Get New Wallpapers..."
-msgstr "Obtín fons de pantalla nous..."
+msgstr "Obtín fons de pantalla nous…"
 
 #: ConfigureDesktopDialog.cxx:72
 #, kde-format
@@ -207,7 +207,7 @@ msgstr "Copyright 2017 - 2023 Martin Koller"
 #: DesktopApplet.cxx:45 Launcher.cxx:79
 #, kde-format
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: DesktopApplet.cxx:53
 #, kde-format
@@ -237,7 +237,7 @@ msgstr "Voleu eliminar realment esta miniaplicació?"
 #: DesktopWidget.cxx:78
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr "Configura el fons de pantalla..."
+msgstr "Configura el fons de pantalla…"
 
 #: DesktopWidget.cxx:82
 #, kde-format
@@ -262,12 +262,12 @@ msgstr "Marc de fotografies"
 #: DesktopWidget.cxx:95
 #, kde-format
 msgid "Configure Display..."
-msgstr "Configura la visualització..."
+msgstr "Configura la visualització…"
 
 #: DesktopWidget.cxx:99 StartMenu.cxx:123
 #, kde-format
 msgid "Run Command..."
-msgstr "Executa una ordre..."
+msgstr "Executa una ordre…"
 
 #: DesktopWidget.cxx:109
 #, kde-format
@@ -500,7 +500,7 @@ msgstr[1] "%1 notificacions"
 #: Pager.cxx:76
 #, kde-format
 msgid "Configure Virtual Desktops..."
-msgstr "Configura els escriptoris virtuals..."
+msgstr "Configura els escriptoris virtuals…"
 
 #: Pager.cxx:83
 #, kde-format
@@ -527,7 +527,7 @@ msgstr "Camí"
 #: PkUpdateList.cxx:140
 #, kde-format
 msgid "Getting details ..."
-msgstr "S'estan obtenint els detalls..."
+msgstr "S'estan obtenint els detalls…"
 
 #: PkUpdateList.cxx:182
 #, kde-format
@@ -678,12 +678,12 @@ msgstr "Comprovació següent: %1"
 #: PkUpdates.cxx:92
 #, kde-format
 msgid "Checking for updates ..."
-msgstr "S'estan comprovant les actualitzacions..."
+msgstr "S'estan comprovant les actualitzacions…"
 
 #: PkUpdates.cxx:108 PkUpdates.cxx:162
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "S'estan comprovant les actualitzacions... %1%"
+msgstr "S'estan comprovant les actualitzacions… %1%"
 
 #: PkUpdates.cxx:184
 #, kde-format
@@ -768,7 +768,7 @@ msgstr "Actualitzacions disponibles de programari"
 #: PkUpdates.cxx:323
 #, kde-format
 msgid "<li>%1 more ...</li>"
-msgstr "<li>%1 més...</li>"
+msgstr "<li>%1 més…</li>"
 
 #: QuickLaunch.cxx:157
 #, kde-format
@@ -783,7 +783,7 @@ msgstr "Canvia d'usuari"
 #: StartMenu.cxx:195
 #, kde-format
 msgid "Configure Menu..."
-msgstr "Configura el menú..."
+msgstr "Configura el menú…"
 
 #: SysLoad.cxx:217
 #, kde-format
@@ -925,7 +925,7 @@ msgstr "Configura la miniaplicació meteorològica"
 #: WeatherAppletConfigureDialog.cxx:80
 #, kde-format
 msgid "Downloading city list..."
-msgstr "S'està baixant la llista de ciutats..."
+msgstr "S'està baixant la llista de ciutats…"
 
 #: WeatherAppletConfigureDialog.cxx:94
 #, kde-format
