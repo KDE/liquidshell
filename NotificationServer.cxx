@@ -127,7 +127,7 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
                                 const QVariantMap &hints, int timeout)
 {
   //qDebug() << "app" << app_name << "summary" << summary << "body" << theBody << "timeout" << timeout
-           //<< "replaceId" << replaces_id << "hints" << hints << "actions" << actions;
+           //<< "replaceId" << replaces_id << "hints" << hints << "actions" << actions << "app_icon" << app_icon;
 
   uint newId;
 
@@ -139,11 +139,19 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
   QString body(theBody);
   body.replace("\n", "<br>");
 
+  // icon preference order: https://specifications.freedesktop.org/notification-spec/latest/ar01s05.html
   QIcon icon;
-  if ( !app_icon.isEmpty() )
-    icon = QIcon::fromTheme(app_icon);
-  else if ( hints.contains("image-path") )
+  if ( hints.contains("image-data") )
+    icon = hints["image-data"].value<QIcon>();
+
+  if ( icon.isNull() && hints.contains("image-path") )
     icon = QIcon(hints["image-path"].toString());
+
+  if ( icon.isNull() && !app_icon.isEmpty() )
+    icon = QIcon::fromTheme(app_icon);
+
+  if ( icon.isNull() && hints.contains("icon_data") )
+    icon = hints["icon_data"].value<QIcon>();
 
   QString appName = app_name;
   if ( appName.isEmpty() && hints.contains("desktop-entry") )

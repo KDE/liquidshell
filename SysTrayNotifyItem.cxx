@@ -53,6 +53,7 @@ SysTrayNotifyItem::SysTrayNotifyItem(QWidget *parent, const QString &service, co
   connect(dbus, &OrgKdeStatusNotifierItem::NewStatus,        this, &SysTrayNotifyItem::startTimer);
   connect(dbus, &OrgKdeStatusNotifierItem::NewTitle,         this, &SysTrayNotifyItem::startTimer);
   connect(dbus, &OrgKdeStatusNotifierItem::NewToolTip,       this, &SysTrayNotifyItem::startTimer);
+  connect(dbus, &OrgKdeStatusNotifierItem::NewMenu,          this, &SysTrayNotifyItem::startTimer);
 
   fetchData();
 }
@@ -179,14 +180,16 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 
   QString tip(dbus->title());
 
-  if ( //!toolTip.icon.isEmpty() ||
-       //!toolTip.image.isNull() ||
-       !toolTip.title.isEmpty() ||
-       !toolTip.subTitle.isEmpty() )
+  if ( !toolTip.title.isEmpty() )
   {
-    tip = QString("<html><center><b>%1</b><br>%2</center></html>")
-                  .arg(toolTip.title)
-                  .arg(toolTip.subTitle);
+    if ( toolTip.subTitle.isEmpty() )
+      tip = QString("<html>%1</html>").arg(toolTip.title);
+    else
+    {
+      tip = QString("<html><center><b>%1</b><br>%2</center></html>")
+                    .arg(toolTip.title)
+                    .arg(toolTip.subTitle);
+    }
   }
 
   setToolTip(tip);
@@ -283,13 +286,13 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
       KWinCompat::forceActiveWindow(wid);
     }
   }
+  else if ( event->button() == Qt::MiddleButton )
+  {
+    dbus->SecondaryActivate(event->globalPos().x(), event->globalPos().y());
+  }
   else if ( event->button() == Qt::RightButton )
   {
-    QDBusPendingReply<> reply = dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
-    reply.waitForFinished();
-
-    if ( reply.isError() && (reply.error().type() == QDBusError::UnknownMethod) &&
-         !menuPath.isEmpty() )
+    if ( !menuPath.isEmpty() && (menuPath != "/NO_DBUSMENU") )
     {
       QDBusMessage msg =
           QDBusMessage::createMethodCall(dbus->service(), menuPath,
@@ -303,6 +306,10 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
       QDBusPendingCall call = QDBusConnection::sessionBus().asyncCall(msg);
       QDBusPendingCallWatcher *pendingCallWatcher = new QDBusPendingCallWatcher(call, this);
       connect(pendingCallWatcher, &QDBusPendingCallWatcher::finished, this, &SysTrayNotifyItem::menuLayoutReply);
+    }
+    else
+    {
+      dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
     }
   }
 }
