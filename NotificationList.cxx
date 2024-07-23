@@ -46,8 +46,9 @@ static const Qt::WindowFlags POPUP_FLAGS = Qt::WindowStaysOnTopHint | Qt::Framel
 
 NotifyItem::NotifyItem(QWidget *parent, NotificationServer *server, uint theId, const QString &app,
                        const QString &theSummary, const QString &theBody, const QIcon &icon,
-                       const QStringList &theActions)
-  : QFrame(parent, POPUP_FLAGS), id(theId), appName(app), summary(theSummary), body(theBody), actions(theActions)
+                       const QStringList &theActions, bool isResident)
+  : QFrame(parent, POPUP_FLAGS), id(theId), appName(app), summary(theSummary), body(theBody), actions(theActions),
+    resident(isResident)
 {
   setAttribute(Qt::WA_ShowWithoutActivating);  // avoid focus stealing
 
@@ -115,6 +116,12 @@ NotifyItem::NotifyItem(QWidget *parent, NotificationServer *server, uint theId, 
                 [this, server, key]()
                 {
                   emit server->ActionInvoked(id, key);
+
+                  if ( !resident )
+                  {
+                    emit server->NotificationClosed(id, NotificationServer::CloseReason::Dismissed);
+                    deleteLater();
+                  }
                 });
       }
     }
@@ -223,7 +230,9 @@ NotificationList::~NotificationList()
 void NotificationList::addItem(uint id, const QString &appName, const QString &summary, const QString &body,
                                const QIcon &icon, const QStringList &actions, const QVariantMap &hints, int timeout)
 {
-  QPointer<NotifyItem> item = new NotifyItem(nullptr, server, id, appName, summary, body, icon, actions);
+  bool resident = hints.contains("resident") && hints["resident"].toBool();
+
+  QPointer<NotifyItem> item = new NotifyItem(nullptr, server, id, appName, summary, body, icon, actions, resident);
   item->resize(500, item->sizeHint().height());
   KWindowSystem::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
 
@@ -301,7 +310,7 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                          // e.g. no longer showing anything in the list, appearing at wrong position when shown...
                          item->hide();
                          item->deleteLater();
-                         item = new NotifyItem(this, server, id, appName, summary, body, icon, actions);
+                         item = new NotifyItem(this, server, id, appName, summary, body, icon, actions, resident);
                          items.append(item.data());
                          emit itemsCountChanged();
                          connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);

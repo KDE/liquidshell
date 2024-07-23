@@ -37,7 +37,7 @@ class NotifyItem : public QFrame
   public:
     NotifyItem(QWidget *parent, NotificationServer *server, uint theid, const QString &app,
                const QString &summary, const QString &body, const QIcon &icon,
-               const QStringList &actions);
+               const QStringList &actions, bool isResident);
 
     void destroySysResources();
 
@@ -48,6 +48,7 @@ class NotifyItem : public QFrame
     QStringList actions;
     QLabel *timeLabel, *iconLabel, *textLabel;
     QProgressBar *timeoutBar;
+    bool resident = false;  // keep after clicking an action
 };
 
 //--------------------------------------------------------------------------------
