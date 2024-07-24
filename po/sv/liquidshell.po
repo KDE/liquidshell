@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-14 00:43+0000\n"
+"POT-Creation-Date: 2024-07-24 01:46+0000\n"
 "PO-Revision-Date: 2023-12-28 10:36+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -481,7 +481,7 @@ msgstr "Trådlöst nätverk är aktiverat. Klicka för att inaktivera."
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Trådlöst nätverk är inaktiverat. Klicka för att aktivera."
 
-#: NotificationList.cxx:178
+#: NotificationList.cxx:185
 #, kde-format
 msgid "Notifications"
 msgstr "Underrättelser"

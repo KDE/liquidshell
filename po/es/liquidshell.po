@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-14 00:43+0000\n"
+"POT-Creation-Date: 2024-07-24 01:46+0000\n"
 "PO-Revision-Date: 2023-12-14 03:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -483,7 +483,7 @@ msgstr "La red inalámbrica está activada. Pulse para desactivarla."
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "La red inalámbrica está desactivada. Pulse para activarla."
 
-#: NotificationList.cxx:178
+#: NotificationList.cxx:185
 #, kde-format
 msgid "Notifications"
 msgstr "Notificaciones"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-14 00:43+0000\n"
+"POT-Creation-Date: 2024-07-24 01:46+0000\n"
 "PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -489,7 +489,7 @@ msgstr "Работа с беспроводной сетью включена. Н
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Работа с беспроводной сетью отключена. Нажмите для включения"
 
-#: NotificationList.cxx:178
+#: NotificationList.cxx:185
 #, kde-format
 msgid "Notifications"
 msgstr "Уведомления"

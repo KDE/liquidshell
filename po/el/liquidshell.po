@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-14 00:43+0000\n"
+"POT-Creation-Date: 2024-07-24 01:46+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -482,7 +482,7 @@ msgstr "Η ασύρματη δικτύωση είναι ενεργή. Με κλ�
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Η ασύρματη δικτύωση είναι ανενεργή. Με κλικ ενεγοποιείται"
 
-#: NotificationList.cxx:178
+#: NotificationList.cxx:185
 #, kde-format
 msgid "Notifications"
 msgstr "Ειδοποιήσεις"
