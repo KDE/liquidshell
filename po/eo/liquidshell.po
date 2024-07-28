@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 01:46+0000\n"
-"PO-Revision-Date: 2024-03-24 10:34+0100\n"
+"PO-Revision-Date: 2024-07-27 16:22+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -21,26 +21,26 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "olivermkellogg@gmail.com"
 
 #: Battery.cxx:91
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 horo"
+msgstr[1] "%1 horoj"
 
 #: Battery.cxx:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 minuto"
+msgstr[1] "%1 minutoj"
 
 #: Battery.cxx:164
 #, kde-format
@@ -292,6 +292,8 @@ msgid ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 msgstr ""
+"Aparato estas muntita.\n"
+"Klaku por malmunti/elĵeti"
 
 #: DeviceList.cxx:364
 #, kde-format
@@ -299,6 +301,8 @@ msgid ""
 "Device is unmounted.\n"
 "Click to mount"
 msgstr ""
+"Aparato estas malmuntita.\n"
+"Klaku por munti"
 
 #: DeviceList.cxx:375
 #, kde-format
@@ -410,6 +414,8 @@ msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
 msgstr ""
+"Aparata ŝarĝo de '%1' estas je %2%.\n"
+"Vi devus ŝarĝi ĝin."
 
 #: Launcher.cxx:96
 #, kde-format
@@ -485,8 +491,8 @@ msgstr "Sciigoj"
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 sciigo"
+msgstr[1] "%1 sciigoj"
 
 #: Pager.cxx:76
 #, kde-format
@@ -564,8 +570,8 @@ msgstr "Refreŝigi"
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Instali %1 pakon"
+msgstr[1] "Instali %1 pakojn"
 
 #: PkUpdateList.cxx:572
 #, kde-format
@@ -658,6 +664,8 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Ĉu vi akceptas la jenan licencinterkonsenton por pako<br>%1<br>de "
+"vendisto<br>%2 ?</html>"
 
 #: PkUpdates.cxx:66
 #, kde-format
@@ -680,6 +688,8 @@ msgid ""
 "Last check: %1\n"
 "Error on checking for updates: %2"
 msgstr ""
+"Lasta kontrolo: %1\n"
+"Eraro kontrolante pri ĝisdatigoj: %2"
 
 #: PkUpdates.cxx:187
 #, kde-format
@@ -690,22 +700,22 @@ msgstr "Eraro pri Ĝisdatigo de Programaro"
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 <b>sekureca</b> ĝisdatigo disponebla"
+msgstr[1] "%1 <b>sekurecaj</b> ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:220
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 <i>grava</b> ĝisdatigo disponebla"
+msgstr[1] "%1 <i>gravaj</b> ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:232
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 cimkoerakta</b> ĝisdatigo disponebla"
+msgstr[1] "%1 cimkoeraktaj</b> ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:242
 #, kde-format
@@ -718,7 +728,13 @@ msgid_plural ""
 "No important updates available\n"
 "%2 others"
 msgstr[0] ""
+"Lasta kontrolo: %1\n"
+"Neniuj gravaj ĝisdatigoj disponeblaj\n"
+"%2 alia"
 msgstr[1] ""
+"Lasta kontrolo: %1\n"
+"Neniuj gravaj ĝisdatigoj disponeblaj\n"
+"%2 aliaj"
 
 #: PkUpdates.cxx:253
 #, kde-format
@@ -726,13 +742,15 @@ msgid ""
 "Last check: %1\n"
 "No updates available"
 msgstr ""
+"Lasta kontrolo: %1\n"
+"Neniuj ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:262
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<br>%1 alia"
+msgstr[1] "<br>%1 aliaj"
 
 #: PkUpdates.cxx:264
 #, kde-format
