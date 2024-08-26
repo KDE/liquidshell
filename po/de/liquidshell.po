@@ -3,21 +3,22 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2017, 2018, 2019, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2018, 2022, 2023.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
+# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-24 01:46+0000\n"
-"PO-Revision-Date: 2023-06-13 22:29+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2024-08-22 22:42+0200\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -666,6 +667,8 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Akzeptieren Sie die folgende Lizenzvereinbarung für das Paket<br> "
+"%1<br>vom Hersteller<br> %2?</html>"
 
 #: PkUpdates.cxx:66
 #, kde-format
@@ -828,10 +831,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Netz-Max. (letzte %2 s): %1 kB/s"
 
 #: SysTray.cxx:303
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "Benachrichtigungen"
+msgstr "Neue Benachrichtigungen anzeigen"
 
 #: TaskBarButton.cxx:124
 #, kde-format
