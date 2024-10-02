@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <DesktopWidget.hxx>
@@ -64,7 +52,8 @@ DesktopWidget::DesktopWidget()
   setFixedSize(QApplication::primaryScreen()->virtualSize());
   setWindowIcon(QIcon::fromTheme("liquidshell"));
 
-  KWindowSystem::setType(winId(), NET::Desktop);
+  if ( KWindowSystem::isPlatformX11() )
+    KX11Extras::setType(winId(), NET::Desktop);
 
   panel = new DesktopPanel(nullptr);
   panel->show();
@@ -252,12 +241,7 @@ void DesktopWidget::configureDisplay()
   KCMultiDialog *dialog = new KCMultiDialog(this);
   dialog->setAttribute(Qt::WA_DeleteOnClose);
 
-  // different KDE versions need different ways ...
-  KPluginMetaData module("plasma/kcms/systemsettings/kcm_kscreen");
-  if ( module.isValid() )
-    dialog->addModule(module);
-  else
-    dialog->addModule("kcm_kscreen");
+  dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings/kcm_kscreen"));
 
   dialog->adjustSize();
   dialog->setWindowTitle(i18n("Configure Display"));

@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <QApplication>
@@ -33,20 +21,16 @@
 
 int main(int argc, char **argv)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,7,0)
   QCoreApplication::setAttribute(Qt::AA_UseStyleSheetPropagationInWidgetStyles);
-#endif
-
-  QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
   QApplication app(argc, argv);
 
   KLocalizedString::setApplicationDomain("liquidshell");
 
-  KAboutData aboutData("liquidshell", i18n("Liquidshell"), "1.9",
+  KAboutData aboutData("liquidshell", i18n("Liquidshell"), "1.10",
                        i18n("A QtWidgets based basic desktop shell"),
                        KAboutLicense::GPL_V3,
-                       i18n("Copyright 2017 - 2023 Martin Koller"), QString(),
+                       i18n("Copyright 2017 - 2024 Martin Koller"), QString(),
                        "https://apps.kde.org/de/liquidshell"); // homepage
                        //"https://www.linux-apps.com/p/1205621"); // homepage
 

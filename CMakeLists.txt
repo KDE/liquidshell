@@ -2,28 +2,27 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 project(liquidshell)
 
-set(KF_MIN_VERSION 5.62)
+set(KF_MIN_VERSION 6)
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR})
 
-include(KDEInstallDirs)
+set(KDE_COMPILERSETTINGS_LEVEL 5.84)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+
+include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(ECMInstallIcons)
 
-find_package(Qt5 5.6 REQUIRED COMPONENTS
+find_package(Qt6 REQUIRED COMPONENTS
     Core
     Widgets
     DBus
-    X11Extras
 )
 
-find_package(Qt5ThemeSupport REQUIRED)
-
-find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
              WindowSystem WidgetsAddons ConfigWidgets Config KIO IconThemes ItemViews Archive
              Notifications I18n NetworkManagerQt Service Solid BluezQt KCMUtils Crash DBusAddons
-             NewStuff
+             NewStuff XmlGui
 )
 
 set(SOURCES
@@ -74,9 +73,9 @@ set(SOURCES
     liquidshell.qrc
 )
 
-find_package(packagekitqt5 QUIET)
+find_package(packagekitqt6 QUIET)
 
-if ( packagekitqt5_FOUND )
+if ( packagekitqt6_FOUND )
   set(SOURCES ${SOURCES}
       PkUpdates.cxx
       PkUpdateList.cxx
@@ -84,7 +83,7 @@ if ( packagekitqt5_FOUND )
 
   add_definitions(-DWITH_PACKAGEKIT)
 else()
-  message(WARNING "PackageKit integration not available. packagekitqt5 development files not found")
+  message(WARNING "PackageKit integration not available. packagekitqt6 development files not found")
 endif()
 
 # e.g. on openSuse Leap 42.3 compile fails as a GLib header included uses signals as var
@@ -97,51 +96,51 @@ ki18n_wrap_ui(UI_FILES
               PictureFrameAppletConfigureDialog.ui
 )
 
-set(statusnotifieritem_xml ${KNOTIFICATIONS_DBUS_INTERFACES_DIR}/kf5_org.kde.StatusNotifierItem.xml)
+set(statusnotifieritem_xml ${KDE_INSTALL_FULL_DBUSINTERFACEDIR}/kf6_org.kde.StatusNotifierItem.xml)
 set_source_files_properties(${statusnotifieritem_xml} PROPERTIES
    INCLUDE "DBusTypes.hxx"
    CLASSNAME OrgKdeStatusNotifierItem
 )
-qt5_add_dbus_interface(SOURCES ${statusnotifieritem_xml} statusnotifieritem_interface)
+qt_add_dbus_interface(SOURCES ${statusnotifieritem_xml} statusnotifieritem_interface)
 
-qt5_add_dbus_adaptor(SOURCES org.freedesktop.Notifications.xml NotificationServer.hxx NotificationServer)
+qt_add_dbus_adaptor(SOURCES org.freedesktop.Notifications.xml NotificationServer.hxx NotificationServer)
 
 set(TARGET liquidshell)
 
 add_executable(${TARGET} ${SOURCES} ${UI_FILES})
 
-set_property(TARGET ${TARGET} PROPERTY CXX_STANDARD 11)
 set_property(TARGET ${TARGET} PROPERTY AUTORCC ON)
 
 target_link_libraries(${TARGET}
-                      Qt5::Core
-                      Qt5::Widgets
-                      Qt5::DBus
-                      Qt5::X11Extras
-                      Qt5ThemeSupport::Qt5ThemeSupport
-                      KF5::WindowSystem
-                      KF5::WidgetsAddons
-                      KF5::ConfigWidgets
-                      KF5::ConfigCore
-                      KF5::KIOCore
-                      KF5::KIOWidgets
-                      KF5::IconThemes
-                      KF5::Notifications
-                      KF5::I18n
-                      KF5::NetworkManagerQt
-                      KF5::Service
-                      KF5::Solid
-                      KF5::BluezQt
-                      KF5::KCMUtils
-                      KF5::Crash
-                      KF5::DBusAddons
-                      KF5::ItemViews
-                      KF5::Archive
-                      KF5::NewStuffWidgets
+                      Qt::Core
+                      Qt::Gui
+                      Qt::GuiPrivate
+                      Qt::Widgets
+                      Qt::DBus
+                      KF6::WindowSystem
+                      KF6::WidgetsAddons
+                      KF6::ConfigWidgets
+                      KF6::ConfigCore
+                      KF6::KIOCore
+                      KF6::KIOWidgets
+                      KF6::IconThemes
+                      KF6::Notifications
+                      KF6::I18n
+                      KF6::NetworkManagerQt
+                      KF6::Service
+                      KF6::Solid
+                      KF6::BluezQt
+                      KF6::KCMUtils
+                      KF6::Crash
+                      KF6::DBusAddons
+                      KF6::ItemViews
+                      KF6::Archive
+                      KF6::NewStuffWidgets
+                      KF6::XmlGui
 )
 
-if ( packagekitqt5_FOUND )
-  target_link_libraries(${TARGET} PK::packagekitqt5)
+if ( packagekitqt6_FOUND )
+  target_link_libraries(${TARGET} PK::packagekitqt6)
 endif()
 
 install(TARGETS ${TARGET} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
@@ -153,7 +152,7 @@ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/start_liquidshell DESTINATION ${KDE
 configure_file(liquidshell-session.desktop liquidshell-session.desktop @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/liquidshell-session.desktop DESTINATION ${KDE_INSTALL_DATADIR}/xsessions)
 
-install(FILES liquidshell.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
+install(FILES liquidshell.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 install(FILES org.kde.liquidshell.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 ecm_install_icons(ICONS

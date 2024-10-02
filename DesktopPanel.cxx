@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <DesktopPanel.hxx>
@@ -31,11 +19,8 @@
 #include <WindowList.hxx>
 #include <KWinCompat.hxx>
 
-#include <netwm.h>
-
 #include <QHBoxLayout>
 #include <QResizeEvent>
-#include <QX11Info>
 #include <QDBusConnection>
 #include <QDebug>
 
@@ -48,9 +33,9 @@ DesktopPanel::DesktopPanel(QWidget *parent)
   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
   setWindowIcon(QIcon::fromTheme("liquidshell"));
 
-  KWindowSystem::setState(winId(), NET::KeepAbove);
+  KWinCompat::setState(winId(), NET::KeepAbove);
   KWinCompat::setOnAllDesktops(winId(), true);
-  KWindowSystem::setType(winId(), NET::Dock);
+  KWinCompat::setType(winId(), NET::Dock);
 
   setFrameShape(QFrame::StyledPanel);
 
@@ -80,11 +65,7 @@ DesktopPanel::DesktopPanel(QWidget *parent)
 
 void DesktopPanel::updateRowCount()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-  NETRootInfo ri(QX11Info::connection(), NET::Property(), NET::WM2DesktopLayout);
-#else
-  NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
-#endif
+  NETRootInfo ri(qApp->nativeInterface<QNativeInterface::QX11Application>()->connection(), NET::Property(), NET::WM2DesktopLayout);
 
   int newRows = std::max(1, ri.desktopLayoutColumnsRows().height());
 

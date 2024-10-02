@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017, 2018 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <Pager.hxx>
@@ -26,7 +14,6 @@
 #include <QGridLayout>
 #include <QButtonGroup>
 #include <QPushButton>
-#include <QX11Info>
 #include <QAction>
 #include <QWheelEvent>
 #include <QDebug>
@@ -36,8 +23,6 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KPluginMetaData>
-#include <kcmutils_version.h>
-#include <netwm.h>
 
 //--------------------------------------------------------------------------------
 
@@ -82,24 +67,9 @@ Pager::Pager(DesktopPanel *parent)
             dialog->setAttribute(Qt::WA_DeleteOnClose);
             dialog->setWindowTitle(i18n("Configure Virtual Desktops"));
 
-#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 85, 0)
             KPluginMetaData data("plasma/kcms/systemsettings/kcm_kwin_virtualdesktops");
 
-            if ( !data.isValid() )
-              data = KPluginMetaData::findPluginById("kcms", "kcm_kwin_virtualdesktops");
-
-            if ( data.isValid() )
-              dialog->addModule(data);
-#else
-            {
-              KCModuleInfo module("kcm_kwin_virtualdesktops");
-              if ( module.service() )
-                dialog->addModule("kcm_kwin_virtualdesktops");
-              else
-                dialog->addModule("desktop");  // in older KDE versions
-            }
-#endif
-
+            dialog->addModule(data);
             dialog->adjustSize();
             dialog->show();
           }
@@ -114,11 +84,7 @@ void Pager::fill()
   qDeleteAll(buttons);
   buttons.clear();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-  NETRootInfo ri(QX11Info::connection(), NET::Property(), NET::WM2DesktopLayout);
-#else
-  NETRootInfo ri(QX11Info::connection(), 0, NET::WM2DesktopLayout);
-#endif
+  NETRootInfo ri(qApp->nativeInterface<QNativeInterface::QX11Application>()->connection(), NET::Property(), NET::WM2DesktopLayout);
 
   int row = 0, col = 0;
   const int MAX_COLUMNS = std::max(1, ri.desktopLayoutColumnsRows().width());

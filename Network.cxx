@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2019 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <Network.hxx>
@@ -169,8 +157,26 @@ QWidget *Network::getDetailsList()
     networkList = new NetworkList(this);
     networkList->setAttribute(Qt::WA_DeleteOnClose);
     connect(networkList.data(), &NetworkList::changed, this, &Network::showDetailsList);  // reposition
+    connect(networkList.data(), &NetworkList::configureDialogClicked, this, &Network::openConfigureDialog);
   }
   return networkList.data();
+}
+
+//--------------------------------------------------------------------------------
+
+void Network::openConfigureDialog()
+{
+  if ( !dialog )
+  {
+    dialog = new KCMultiDialog(nullptr);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings_qwidgets/kcm_networkmanagement"));
+  }
+
+  dialog->show();
+
+  if ( networkList )  // should always exist
+    networkList->close();
 }
 
 //--------------------------------------------------------------------------------

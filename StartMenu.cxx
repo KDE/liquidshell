@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <StartMenu.hxx>
@@ -26,14 +14,9 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-#  include <KIO/ApplicationLauncherJob>
-#  include <KIO/CommandLauncherJob>
-#  include <KIO/JobUiDelegateFactory>
-#else
-#  include <KRun>
-#endif
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/CommandLauncherJob>
+#include <KIO/JobUiDelegateFactory>
 
 #include <KSycoca>
 #include <KService>
@@ -110,13 +93,9 @@ void StartMenu::fill()
     connect(action, &QAction::triggered,
             [this, sysSettings]()
             {
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-              auto *job = new KIO::ApplicationLauncherJob(sysSettings);
+              KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(sysSettings);
               job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
               job->start();
-#else
-              KRun::runApplication(*sysSettings, QList<QUrl>(), this);
-#endif
             });
   }
 
@@ -175,13 +154,9 @@ void StartMenu::fillFromGroup(QMenu *menu, KServiceGroup::Ptr group)
     connect(action, &QAction::triggered,
             [this, serviceEntry]()
             {
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-              auto *job = new KIO::ApplicationLauncherJob(serviceEntry);
+              KIO::ApplicationLauncherJob *job = new KIO::ApplicationLauncherJob(serviceEntry);
               job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
               job->start();
-#else
-              KRun::runApplication(*serviceEntry, QList<QUrl>(), nullptr);
-#endif
             });
   }
 }
@@ -196,13 +171,9 @@ void StartMenu::contextMenuEvent(QContextMenuEvent *event)
   connect(action, &QAction::triggered,
           [this]()
           {
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-            auto *job = new KIO::CommandLauncherJob("kmenuedit");
+            KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob("kmenuedit");
             job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
             job->start();
-#else
-            KRun::runCommand("kmenuedit", nullptr);
-#endif
           });
 
   menu.exec(event->globalPos());

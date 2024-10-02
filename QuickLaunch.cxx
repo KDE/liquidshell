@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <QuickLaunch.hxx>
@@ -29,11 +17,13 @@
 #include <QDebug>
 
 #include <KDesktopFile>
-#include <KRun>
 #include <KFileItem>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KIconLoader>
+
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegateFactory>
 
 //--------------------------------------------------------------------------------
 
@@ -121,7 +111,12 @@ void QuickLaunch::fill()
 
       button->setFixedHeight(button->sizeHint().height() - 2);
 
-      connect(button, &QToolButton::clicked, [url]() { new KRun(url, nullptr); });
+      connect(button, &QToolButton::clicked, [this, url]()
+              {
+                KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+                job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+                job->start();
+              });
 
       grid->addWidget(button, row, col, Qt::AlignCenter);
 
@@ -145,7 +140,12 @@ void QuickLaunch::fill()
     button->setFixedHeight(button->sizeHint().height() - 2);
     button->setToolTip(QStandardPaths::displayName(QStandardPaths::HomeLocation));
     QUrl url = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
-    connect(button, &QToolButton::clicked, [url]() { new KRun(url, nullptr); });
+    connect(button, &QToolButton::clicked, [this, url]()
+            {
+              KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+            });
 
     grid->addWidget(button, 0, 0, Qt::AlignCenter);
 
@@ -155,7 +155,12 @@ void QuickLaunch::fill()
     button->setIconSize(QSize(22, 22));
     button->setFixedHeight(button->sizeHint().height() - 2);
     button->setToolTip(i18n("Web Browser"));
-    connect(button, &QToolButton::clicked, []() { new KRun(QUrl("http://www.kde.org"), nullptr); });
+    connect(button, &QToolButton::clicked, [this]()
+            {
+              KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl("http://www.kde.org"));
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+            });
 
     if ( MAX_ROWS == 1 )
       grid->addWidget(button, 0, 1, Qt::AlignCenter);

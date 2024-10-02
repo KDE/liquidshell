@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2022 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <NotificationList.hxx>
@@ -34,9 +22,8 @@
 #include <QVariant>
 #include <QVariantMap>
 
-#include <KRun>
 #include <KLocalizedString>
-#include <KWindowSystem>
+#include <KWinCompat.hxx>
 #include <KConfig>
 #include <KConfigGroup>
 
@@ -139,7 +126,7 @@ NotifyItem::NotifyItem(QWidget *parent, NotificationServer *server, uint theId, 
                      .arg(title)
                      .arg(body));
 
-  timeLabel->setText(QTime::currentTime().toString(Qt::SystemLocaleShortDate));
+  timeLabel->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
 }
 
 //--------------------------------------------------------------------------------
@@ -234,17 +221,13 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
 
   QPointer<NotifyItem> item = new NotifyItem(nullptr, server, id, appName, summary, body, icon, actions, resident);
   item->resize(500, item->sizeHint().height());
-  KWindowSystem::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
+  KWinCompat::setState(item->winId(), NET::SkipTaskbar | NET::SkipPager);
 
   items.append(item.data());
 
   placeItems();
 
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-  int wordCount = body.splitRef(' ', Qt::SkipEmptyParts).count();
-#else
-  int wordCount = body.splitRef(' ', QString::SkipEmptyParts).count();
-#endif
+  int wordCount = body.split(' ', Qt::SkipEmptyParts).count();
 
   bool neverExpires = timeout == 0;  // according to spec
 
@@ -311,6 +294,7 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
                          item->hide();
                          item->deleteLater();
                          item = new NotifyItem(this, server, id, appName, summary, body, icon, actions, resident);
+                         item->setFrameShape(QFrame::Box);  // be able to see items separately (some styles show no frame)
                          items.append(item.data());
                          emit itemsCountChanged();
                          connect(item.data(), &NotifyItem::destroyed, this, &NotificationList::itemDestroyed);

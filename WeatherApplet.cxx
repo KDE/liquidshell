@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2021 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <WeatherApplet.hxx>
@@ -233,7 +221,7 @@ void WeatherApplet::gotData(KJob *job)
   if ( data.contains("weather") && data["weather"].isArray() )
   {
     QDateTime dt = QDateTime::fromMSecsSinceEpoch(qint64(data["dt"].toInt()) * 1000);
-    shortForecast[0]->day->setText(dt.time().toString(Qt::SystemLocaleShortDate));
+    shortForecast[0]->day->setText(locale().toString(dt.time(), QLocale::ShortFormat));
     setIcon(shortForecast[0]->icon, data["weather"].toArray()[0].toObject()["icon"].toString());
   }
 
@@ -250,7 +238,7 @@ void WeatherApplet::gotData(KJob *job)
     {
       setIcon(shortForecast[1 + i]->icon, array[i].toObject()["weather"].toArray()[0].toObject()["icon"].toString());
       QDateTime dt = QDateTime::fromMSecsSinceEpoch(qint64(array[i].toObject()["dt"].toInt()) * 1000);
-      shortForecast[1 + i]->day->setText(dt.time().toString(Qt::SystemLocaleShortDate));
+      shortForecast[1 + i]->day->setText(locale().toString(dt.time(), QLocale::ShortFormat));
       shortForecast[1 + i]->show();
     }
 

@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017,2019 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <PkUpdates.hxx>
@@ -60,9 +48,8 @@ PkUpdates::PkUpdates(QWidget *parent)
   updateTimer.start();
   connect(&updateTimer, &QTimer::timeout, this, &PkUpdates::checkForUpdatesReached);
 
-  QString nextCheck = QDateTime::currentDateTime()
-                          .addMSecs(updateTimer.interval())
-                          .toString(Qt::SystemLocaleShortDate);
+  QString nextCheck = locale().toString(QDateTime::currentDateTime().addMSecs(updateTimer.interval()),
+                                        QLocale::ShortFormat);
   setToolTip(i18n("Next check: %1", nextCheck));
 
   //QTimer::singleShot(0, this, &PkUpdates::checkForUpdatesReached);
@@ -182,10 +169,10 @@ void PkUpdates::transactionError(PackageKit::Transaction::Error error, const QSt
   Q_UNUSED(error)
 
   setToolTip(i18n("Last check: %1\nError on checking for updates: %2",
-                  QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), details));
+                  locale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat), details));
 
   KNotification::event("update error", i18n("Software Update Error"), details,
-                       QIcon::fromTheme("dialog-error").pixmap(32), this);
+                       QIcon::fromTheme("dialog-error").pixmap(32));
 
   setRefreshProgress(100);
 }
@@ -241,7 +228,7 @@ void PkUpdates::createToolTip(bool notify)
     {
       setToolTip(i18np("Last check: %1\nNo important updates available\n%2 other",
                        "Last check: %1\nNo important updates available\n%2 others",
-                       QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), others));
+                       locale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat), others));
 
       if ( QIcon::hasThemeIcon("software-update-available") )
         setPixmap(currentPixmap = QIcon::fromTheme("software-update-available").pixmap(size()));
@@ -251,7 +238,7 @@ void PkUpdates::createToolTip(bool notify)
     else
     {
       setToolTip(i18n("Last check: %1\nNo updates available",
-                      QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate)));
+                      locale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat)));
 
       setPixmap(currentPixmap = QIcon::fromTheme("update-none").pixmap(size()));
     }
@@ -262,7 +249,7 @@ void PkUpdates::createToolTip(bool notify)
       tooltip += i18np("<br>%1 other", "<br>%1 others", others);
 
     tooltip = i18n("<html>Last check: %1<br>%2</html>",
-                   QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate), tooltip);
+                   locale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat), tooltip);
     setToolTip(tooltip);
 
     QString icon;
@@ -301,7 +288,7 @@ void PkUpdates::createToolTip(bool notify)
         notification->close();  // close previous notification if it's still here
 
       notification = KNotification::event("updates available", i18n("Software Updates Available"), tooltip,
-                                          QIcon::fromTheme(icon).pixmap(32), this);
+                                          QIcon::fromTheme(icon).pixmap(32));
     }
   }
 }
@@ -312,7 +299,7 @@ void PkUpdates::addItems(QString &tooltip, const QList<PackageData> &list) const
 {
   tooltip += "<ul>";
 
-  int count = std::min(3, list.count());
+  int count = std::min(3, int(list.count()));
   if ( list.count() == 4 )  // if there's just one more, show it directly instead of "1 more"
     count++;
 

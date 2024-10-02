@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2021 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <SysTrayNotifyItem.hxx>
@@ -30,6 +18,7 @@
 #include <QContextMenuEvent>
 #include <QPainter>
 
+#include <DBusTypes.hxx>
 #include <KWinCompat.hxx>
 
 //--------------------------------------------------------------------------------
@@ -276,22 +265,22 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
 
   if ( event->button() == Qt::LeftButton )
   {
-    QDBusPendingReply<> reply = dbus->Activate(event->globalPos().x(), event->globalPos().y());
+    QDBusPendingReply<> reply = dbus->Activate(event->globalPosition().x(), event->globalPosition().y());
     reply.waitForFinished();
 
     if ( !reply.isError() && dbus->windowId() )
     {
       WId wid = dbus->windowId();
-      KWindowSystem::raiseWindow(wid);
       KWinCompat::forceActiveWindow(wid);
     }
   }
   else if ( event->button() == Qt::MiddleButton )
   {
-    dbus->SecondaryActivate(event->globalPos().x(), event->globalPos().y());
+    dbus->SecondaryActivate(event->globalPosition().x(), event->globalPosition().y());
   }
   else if ( event->button() == Qt::RightButton )
   {
+    //qDebug() << dbus->service() << menuPath;
     if ( !menuPath.isEmpty() && (menuPath != "/NO_DBUSMENU") )
     {
       QDBusMessage msg =
@@ -309,7 +298,7 @@ void SysTrayNotifyItem::mouseReleaseEvent(QMouseEvent *event)
     }
     else
     {
-      dbus->ContextMenu(event->globalPos().x(), event->globalPos().y());
+      dbus->ContextMenu(event->globalPosition().x(), event->globalPosition().y());
     }
   }
 }
@@ -320,16 +309,15 @@ void SysTrayNotifyItem::menuLayoutReply(QDBusPendingCallWatcher *w)
 {
   w->deleteLater();
 
-  QDBusMenuItem::registerDBusTypes();
-  QDBusPendingReply<unsigned int, QDBusMenuLayoutItem> reply = *w;
+  qDBusRegisterMetaType<DBusMenuLayoutItem>();
+  QDBusPendingReply<unsigned int, DBusMenuLayoutItem> reply = *w;
 
   if ( reply.isError() )
   {
     //qDebug() << dbus->service() << reply.error();
     return;
   }
-
-  QDBusMenuLayoutItem item = reply.argumentAt<1>();
+  DBusMenuLayoutItem item = reply.argumentAt<1>();
 
   QMenu menu;
   fillMenu(menu, item);
@@ -355,7 +343,7 @@ void SysTrayNotifyItem::menuLayoutReply(QDBusPendingCallWatcher *w)
 //--------------------------------------------------------------------------------
 // https://github.com/gnustep/libs-dbuskit/blob/master/Bundles/DBusMenu/com.canonical.dbusmenu.xml
 
-void SysTrayNotifyItem::fillMenu(QMenu &menu, const QDBusMenuLayoutItem &item)
+void SysTrayNotifyItem::fillMenu(QMenu &menu, const DBusMenuLayoutItem &item)
 {
   QString type = item.m_properties.value("type", "standard").toString();
 
@@ -418,7 +406,7 @@ void SysTrayNotifyItem::fillMenu(QMenu &menu, const QDBusMenuLayoutItem &item)
       {
         QMenu *submenu = title.isEmpty() ? &menu : menu.addMenu(icon, title);
 
-        for (const QDBusMenuLayoutItem &subItem : item.m_children)
+        for (const DBusMenuLayoutItem &subItem : item.m_children)
         {
           fillMenu(*submenu, subItem);
 

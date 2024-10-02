@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <PkUpdateList.hxx>
@@ -272,7 +260,7 @@ QSize PkUpdateList::sizeHint() const
     s = scrollArea->widget()->sizeHint() + QSize(2 * scrollArea->frameWidth(), 2 * scrollArea->frameWidth());
     s.setWidth(s.width() + scrollArea->verticalScrollBar()->sizeHint().width());
     s.setHeight(layout()->contentsMargins().top() + installButton->sizeHint().height() +
-                ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
+                ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing) : layout()->spacing()) +
                 s.height() + layout()->contentsMargins().bottom());
 
     s = s.expandedTo(QSize(500, 300));
@@ -567,13 +555,13 @@ void PkUpdateList::installOne()
            (afterInstall != AfterInstall::Shutdown) )  // when we shutdown, no need to tell the user to restart
       {
         KNotification *notif = new KNotification("restart needed", KNotification::Persistent);
-        notif->setWidget(parentWidget());
+        notif->setWindow(parentWidget()->windowHandle());
 
         notif->setTitle(i18n("System Reboot Required"));
         notif->setText(i18n("One of the installed packages requires a system reboot"));
-        notif->setActions(QStringList() << i18n("Reboot System"));
+        KNotificationAction *action = notif->addAction(i18n("Reboot System"));
 
-        connect(notif, &KNotification::action1Activated, this,
+        connect(action, &KNotificationAction::activated, this,
                 []()
                 {
                   QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
@@ -589,13 +577,13 @@ void PkUpdateList::installOne()
                 (restart == PackageKit::Transaction::RestartSecuritySession) )
       {
         KNotification *notif = new KNotification("restart needed", KNotification::Persistent);
-        notif->setWidget(parentWidget());
+        notif->setWindow(parentWidget()->windowHandle());
 
         notif->setTitle(i18n("Session Restart Required"));
         notif->setText(i18n("One of the installed packages requires you to logout"));
-        notif->setActions(QStringList() << i18n("Logout"));
+        KNotificationAction *action = notif->addAction(i18n("Logout"));
 
-        connect(notif, &KNotification::action1Activated, this,
+        connect(action, &KNotificationAction::activated, this,
                 []()
                 {
                   QDBusMessage msg = QDBusMessage::createMethodCall("org.kde.ksmserver", "/KSMServer",
@@ -849,7 +837,7 @@ void PkUpdateList::askEULA(const QString &eulaID, const QString &packageID,
   iconLabel->setAlignment(Qt::AlignTop);
   QIcon icon = style()->standardIcon(QStyle::SP_MessageBoxQuestion, nullptr, this);
   int iconSize = style()->pixelMetric(QStyle::PM_MessageBoxIconSize, nullptr, this);
-  iconLabel->setPixmap(icon.pixmap(windowHandle(), QSize(iconSize, iconSize)));
+  iconLabel->setPixmap(icon.pixmap(QSize(iconSize, iconSize)));
 
   QLabel *label = new QLabel(i18n("<html>Do you accept the following license agreement "
                                   "for package<br>%1<br>from vendor<br>%2 ?</html>").arg(packageID, vendor));

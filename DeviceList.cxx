@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <DeviceList.hxx>
@@ -40,25 +28,20 @@
 
 #include <KLocalizedString>
 #include <KDesktopFile>
-#include <KDesktopFileActions>
 #include <KConfigGroup>
 #include <KService>
 
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-#  include <KIO/CommandLauncherJob>
-#  include <KIO/JobUiDelegateFactory>
-#endif
-#include <KRun>
-
-#include <kio/global.h>
+#include <KIO/CommandLauncherJob>
+#include <KIO/JobUiDelegateFactory>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegateFactory>
 
 //--------------------------------------------------------------------------------
 
 DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceActions)
   : device(dev)
 {
-  setFrameShape(QFrame::StyledPanel);
+  setFrameShape(QFrame::Box);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);
   QHBoxLayout *hbox = new QHBoxLayout;
@@ -190,13 +173,9 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
                 command.replace("%f", storage->filePath());
               }
 
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-              auto *job = new KIO::CommandLauncherJob(command);
+              KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(command);
               job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
               job->start();
-#else
-              KRun::runCommand(command, this);
-#endif
               window()->hide();
             }
            );
@@ -211,7 +190,7 @@ DeviceItem::DeviceItem(Solid::Device dev, const QVector<DeviceAction> &deviceAct
 
 DeviceItem::DeviceItem(const KdeConnect::Device &dev)
 {
-  setFrameShape(QFrame::StyledPanel);
+  setFrameShape(QFrame::Box);
 
   QVBoxLayout *vbox = new QVBoxLayout(this);
   QHBoxLayout *hbox = new QHBoxLayout;
@@ -259,13 +238,8 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
               dialog = new KCMultiDialog(nullptr);
               dialog->setAttribute(Qt::WA_DeleteOnClose);
 
-              KPluginMetaData data("kcm_kdeconnect");
-
-              if ( data.isValid() )
-                dialog->addModule(data);
-              else
-                dialog->addModule("kcm_kdeconnect");
-
+              KPluginMetaData data("plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect");
+              dialog->addModule(data);
               dialog->setWindowTitle(i18n("KDE Connect"));
               dialog->adjustSize();
             }
@@ -286,7 +260,13 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
     button->setText(i18n("Open with File Manager"));
 
     connect(button, &IconButton::clicked,
-            [dev]() { new KRun(QUrl(QLatin1String("kdeconnect://") + dev->id), nullptr); });
+            [this, dev]()
+            {
+              KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl(QLatin1String("kdeconnect://") + dev->id));
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+            });
+
 
     hbox->addWidget(button);
 
@@ -434,13 +414,9 @@ void DeviceItem::setupDone(Solid::ErrorType error, QVariant errorData, const QSt
       if ( storage )  // should always be true. paranoid check
       {
         pendingCommand.replace("%f", storage->filePath());
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-        auto *job = new KIO::CommandLauncherJob(pendingCommand);
+        KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(pendingCommand);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
         job->start();
-#else
-        KRun::runCommand(pendingCommand, this);
-#endif
         window()->hide();
       }
     }
@@ -512,7 +488,8 @@ void DeviceList::loadActions()
 {
   actions.clear();
 
-  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "solid/actions", QStandardPaths::LocateDirectory);
+  const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "solid/actions",
+                                                     QStandardPaths::LocateDirectory);
   for (const QString &dirPath : dirs)
   {
     QDir dir(dirPath);
@@ -523,11 +500,7 @@ void DeviceList::loadActions()
       KDesktopFile cfg(path);
       const QString predicateString = cfg.desktopGroup().readEntry("X-KDE-Solid-Predicate");
 
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-      QList<KServiceAction> actionList = KDesktopFileActions::userDefinedServices(KService(path), true);
-#else
-      QList<KServiceAction> actionList = KDesktopFileActions::userDefinedServices(path, true);
-#endif
+      QList<KServiceAction> actionList = KService(path).actions();
 
       if ( !actionList.isEmpty() && !predicateString.isEmpty() )
         actions.append(DeviceAction(path, Solid::Predicate::fromString(predicateString), actionList[0]));

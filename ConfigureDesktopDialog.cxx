@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <ConfigureDesktopDialog.hxx>
@@ -27,12 +15,7 @@
 #include <QScreen>
 #include <QDebug>
 
-#include <knewstuff_version.h>
-#if 0 && KNEWSTUFF_VERSION >= QT_VERSION_CHECK(5, 80, 0)
-#  include <KNS3/QtQuickDialogWrapper>
-#else
-#  include <KNS3/DownloadDialog>
-#endif
+#include <KNSWidgets/Dialog>
 
 //--------------------------------------------------------------------------------
 
@@ -56,24 +39,11 @@ ConfigureDesktopDialog::ConfigureDesktopDialog(QWidget *parent, const DesktopWid
   connect(newstuff, &QPushButton::clicked,
           [this]()
           {
-#if 0 && KNEWSTUFF_VERSION >= QT_VERSION_CHECK(5, 80, 0)
-            KNS3::QtQuickDialogWrapper *dialog = new KNS3::QtQuickDialogWrapper("wallpaper.knsrc", this);
-            dialog->open();
-            connect(dialog, &KNS3::QtQuickDialogWrapper::closed, dialog,
-                    [this, dialog]()
-                    {
-                      if ( dialog->changedEntries().count() )
-                        showImages();
-
-                      dialog->deleteLater();
-                    });
-#else
-            KNS3::DownloadDialog dialog("wallpaper.knsrc", this);
-            dialog.setTitle(i18n("Download Wallpapers"));
+            KNSWidgets::Dialog dialog("wallpaper.knsrc", this);
+            dialog.setWindowTitle(i18n("Download Wallpapers"));
             dialog.exec();
             if ( dialog.changedEntries().count() )
               showImages();
-#endif
           });
 
   ui.kcolorcombo->setColor(wallpaper.color);
@@ -85,10 +55,8 @@ ConfigureDesktopDialog::ConfigureDesktopDialog(QWidget *parent, const DesktopWid
   connect(ui.kurlrequester, &KUrlRequester::urlSelected,
           [this](const QUrl &url) { wallpaper.fileName = url.toLocalFile(); emit changed(); });
 
-  // older compiler can't use this
-  //connect(ui.kurlrequester, QOverload<const QString &>::of(&KUrlRequester::returnPressed),
-  //        [this](const QString &text) { wallpaper.fileName = text; emit changed(); });
-  connect(ui.kurlrequester, SIGNAL(returnPressed(QString)), this, SLOT(returnPressed(QString)));
+  connect(ui.kurlrequester, &KUrlRequester::returnPressed,
+          [this](const QString &text) { wallpaper.fileName = text; emit changed(); });
 
   if ( wallpaper.mode == "Scaled" )
     ui.scaledIgnoreRatioButton->setChecked(true);

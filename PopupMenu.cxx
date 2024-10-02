@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <PopupMenu.hxx>
@@ -54,12 +42,12 @@ void PopupMenu::mouseMoveEvent(QMouseEvent *event)
       QMimeData *mimeData = new QMimeData;
       Qt::DropActions dropAction;
 
-      if ( static_cast<QMetaType::Type>(action->data().type()) == QMetaType::QUrl )
+      if ( action->data().typeId() == QMetaType::QUrl )
       {
         mimeData->setUrls(QList<QUrl>() << action->data().toUrl());
         dropAction = Qt::CopyAction;
       }
-      else if ( static_cast<QMetaType::Type>(action->data().type()) == QMetaType::Int )
+      else if ( action->data().typeId() == QMetaType::Int )
       {
         mimeData->setData("application/x-winId", QByteArray::number(action->data().toInt()));
         dropAction = Qt::MoveAction;

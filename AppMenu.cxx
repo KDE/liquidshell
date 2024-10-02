@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2020 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <AppMenu.hxx>
@@ -32,8 +20,10 @@
 
 #include <KFileItem>
 #include <KDesktopFile>
-#include <KIOWidgets/KRun>
 #include <KIconLoader>
+
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegateFactory>
 
 //--------------------------------------------------------------------------------
 
@@ -136,7 +126,13 @@ void AppMenu::showMenu()
       name = info.fileName();
 
     IconButton *entryButton = new IconButton(this, icon, 32, name);
-    connect(entryButton, &IconButton::clicked, [this, url, popup]() { popup->close(); new KRun(url, nullptr); });
+    connect(entryButton, &IconButton::clicked, [this, url, popup]()
+            {
+              popup->close();
+              KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+              job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+              job->start();
+            });
 
     h += entryButton->sizeHint().height();
 

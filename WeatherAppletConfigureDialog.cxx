@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <WeatherAppletConfigureDialog.hxx>
@@ -33,8 +21,9 @@
 #include <QTimer>
 #include <QDir>
 
-#include <KRun>
-#include <KFilterDev>
+#include <KCompressionDevice>
+#include <KIO/OpenUrlJob>
+#include <KIO/JobUiDelegateFactory>
 
 //--------------------------------------------------------------------------------
 
@@ -55,7 +44,13 @@ WeatherAppletConfigureDialog::WeatherAppletConfigureDialog(WeatherApplet *parent
   else
     ui.imperial->setChecked(true);
 
-  connect(ui.getApiKey, &QPushButton::clicked, []() { new KRun(QUrl("http://openweathermap.org/appid"), nullptr); });
+  connect(ui.getApiKey, &QPushButton::clicked,
+          [this]()
+          {
+            KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl("http://openweathermap.org/appid"));
+            job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+            job->start();
+          });
 
   ui.textColor->setColor(applet->palette().color(applet->foregroundRole()));
   ui.backgroundColor->setColor(applet->palette().color(applet->backgroundRole()));
@@ -104,7 +99,7 @@ void WeatherAppletConfigureDialog::readJsonFile(const QString &filePath)
 {
   ui.city->setFocus();
 
-  KFilterDev jsonFile(filePath);
+  KCompressionDevice jsonFile(filePath);
   if ( !jsonFile.open(QIODevice::ReadOnly) )
     return;
 

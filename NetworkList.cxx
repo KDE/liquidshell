@@ -1,21 +1,9 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
-
   This file is part of liquidshell.
 
-  liquidshell is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
 
-  liquidshell is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with liquidshell.  If not, see <http://www.gnu.org/licenses/>.
+  SPDX-License-Identifier: GPL-3.0-or-later
 */
 
 #include <NetworkList.hxx>
@@ -27,13 +15,8 @@
 #include <QTimer>
 #include <QDebug>
 
-#include <kio_version.h>
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-#  include <KIO/ApplicationLauncherJob>
-#  include <KIO/JobUiDelegateFactory>
-#else
-#  include <KRun>
-#endif
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/JobUiDelegateFactory>
 
 #include <KLocalizedString>
 #include <KService>
@@ -42,7 +25,6 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/Utils>
-#include <networkmanagerqt_version.h>
 
 #include <sys/types.h>
 #include <pwd.h>
@@ -120,10 +102,8 @@ void NetworkButton::toggleNetworkStatus(bool on)
         QVariantMap security;
         if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtPsk )
           security.insert("key-mgmt", QString("wpa-psk"));
-#if (NETWORKMANAGERQT_VERSION >= QT_VERSION_CHECK(5, 63, 0))
         else if ( wpaFlags & NetworkManager::AccessPoint::KeyMgmtSAE )
           security.insert("key-mgmt", QString("sae"));
-#endif
         else
         {
           // TODO: other types - find value names
@@ -231,7 +211,7 @@ NetworkList::NetworkList(QWidget *parent)
   configure->setIcon(QIcon::fromTheme("configure"));
   configure->setIconSize(QSize(22, 22));
   configure->setToolTip(i18n("Configure Network Connections"));
-  connect(configure, &QToolButton::clicked, this, &NetworkList::openConfigureDialog);
+  connect(configure, &QToolButton::clicked, this, &NetworkList::configureDialogClicked);
   hbox->addWidget(configure);
 
   // show connections
@@ -252,27 +232,6 @@ NetworkList::NetworkList(QWidget *parent)
   checkConnectionsTimer->setInterval(1000);
   connect(checkConnectionsTimer, &QTimer::timeout, this, &NetworkList::fillConnections);
   checkConnectionsTimer->start();
-}
-
-//--------------------------------------------------------------------------------
-
-void NetworkList::openConfigureDialog()
-{
-  // newer plasma has already a KCM
-  KService::Ptr service = KService::serviceByDesktopName("kcm_networkmanagement");
-
-  if ( !service )
-    service = new KService("", "kde5-nm-connection-editor", "");
-
-#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
-    auto *job = new KIO::ApplicationLauncherJob(service);
-    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
-    job->start();
-#else
-    KRun::runApplication(*service, QList<QUrl>(), this);
-#endif
-
-  close();
 }
 
 //--------------------------------------------------------------------------------
@@ -448,7 +407,7 @@ QSize NetworkList::sizeHint() const
               contentsMargins().top() +
               layout()->contentsMargins().top() +
               hbox->sizeHint().height() +
-              ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing) : layout()->spacing()) +
+              ((layout()->spacing() == -1) ? style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing) : layout()->spacing()) +
               scroll->frameWidth() +
               scroll->contentsMargins().top() +
               w->sizeHint().height() +
