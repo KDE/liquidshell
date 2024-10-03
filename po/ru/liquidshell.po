@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-03 01:49+0000\n"
 "PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
-#: Battery.cxx:91
+#: Battery.cxx:78
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -39,7 +39,7 @@ msgstr[1] "%1 часа"
 msgstr[2] "%1 часов"
 msgstr[3] "%1 час"
 
-#: Battery.cxx:92
+#: Battery.cxx:79
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -48,98 +48,97 @@ msgstr[1] "%1 минуты"
 msgstr[2] "%1 минут"
 msgstr[3] "%1 минута"
 
-#: Battery.cxx:164
+#: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
 msgstr "Не заряжается"
 
-#: Battery.cxx:165
+#: Battery.cxx:152
 #, kde-format
 msgid "Fully Charged"
 msgstr "Полностью заряжено"
 
-#: Battery.cxx:172
+#: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
 msgstr "Заряжается: %1%"
 
-#: Battery.cxx:174
+#: Battery.cxx:161
 #, kde-format
 msgid "Time until full: "
 msgstr "До полного заряда: "
 
-#: Battery.cxx:178
+#: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
 msgstr "Разряжается: %1%"
 
-#: Battery.cxx:180
+#: Battery.cxx:167
 #, kde-format
 msgid "Remaining Time: "
 msgstr "Осталось времени: "
 
-#: Battery.cxx:218
+#: Battery.cxx:193
 #, kde-format
 msgid "Power Management"
 msgstr "Управление питанием"
 
-#: Bluetooth.cxx:77
+#: Bluetooth.cxx:64
 #, kde-format
 msgid "Bluetooth is operational"
 msgstr "Bluetooth работает"
 
-#: Bluetooth.cxx:82
+#: Bluetooth.cxx:69
 #, kde-format
 msgid "Bluetooth is not operational"
 msgstr "Bluetooth не работает"
 
-#: Bluetooth.cxx:112
+#: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:176
+#: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Выбрать часовые пояса..."
 
-#: ClockWidget.cxx:182
+#: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
 msgstr "Выбор часовых поясов"
 
-#: ClockWidget.cxx:200
+#: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Настроить дату и время..."
 
-#: ClockWidget.cxx:207
+#: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
 msgstr "Дата и время"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
+#: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
 msgid "Filter"
 msgstr "Фильтр"
 
-#: ClockWidgetConfigureDialog.cxx:53
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Timezone"
 msgstr "Часовой пояс"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
-#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
-msgid "Country"
-msgstr "Страна"
+msgid "Territory"
+msgstr ""
 
-#: ConfigureDesktopDialog.cxx:54
+#: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
 msgstr "Загрузить новые обои..."
 
-#: ConfigureDesktopDialog.cxx:72
+#: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
 msgstr "Загрузка обоев"
@@ -192,108 +191,108 @@ msgstr "Масштабирование &с сохранением пропорц
 msgid "Scaled Keep Aspec&t Ratio and Clip"
 msgstr "Масштабирование с сохранением пропорций и обрезкой"
 
-#: desktop.cxx:46
+#: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
 msgstr ""
 
-#: desktop.cxx:47
+#: desktop.cxx:31
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
 msgstr "Основанная на QtWidgets базовая оболочка рабочего стола"
 
-#: desktop.cxx:49
+#: desktop.cxx:33
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2022 Martin Koller"
-msgid "Copyright 2017 - 2023 Martin Koller"
+msgid "Copyright 2017 - 2024 Martin Koller"
 msgstr "Авторское право © Martin Koller, 2017–2022"
 
-#: DesktopApplet.cxx:45 Launcher.cxx:79
+#: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
 msgid "Configure..."
 msgstr "Настроить..."
 
-#: DesktopApplet.cxx:53
+#: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
 msgstr "Изменить размер и положение"
 
-#: DesktopApplet.cxx:59
+#: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
 msgstr "Удалить этот виджет"
 
-#: DesktopApplet.cxx:107
+#: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
 msgstr "%1: изменить размер и положение"
 
-#: DesktopApplet.cxx:147
+#: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
 msgstr "Удаление виджета"
 
-#: DesktopApplet.cxx:148
+#: DesktopApplet.cxx:137
 #, kde-format
 msgid "Really remove this applet?"
 msgstr "Удалить этот виджет?"
 
-#: DesktopWidget.cxx:78
+#: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
 msgstr "Настроить обои рабочего стола..."
 
-#: DesktopWidget.cxx:82
+#: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
 msgstr "Добавить виджет"
 
-#: DesktopWidget.cxx:86
+#: DesktopWidget.cxx:75
 #, kde-format
 msgid "Weather"
 msgstr "Погода"
 
-#: DesktopWidget.cxx:89
+#: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
 msgstr "Использование диска"
 
-#: DesktopWidget.cxx:92
+#: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
 msgstr "Фоторамка"
 
-#: DesktopWidget.cxx:95
+#: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
 msgstr "Настроить отображение…"
 
-#: DesktopWidget.cxx:99 StartMenu.cxx:123
+#: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
 msgstr "Выполнить команду..."
 
-#: DesktopWidget.cxx:109
+#: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
 msgstr "Справка"
 
-#: DesktopWidget.cxx:263
+#: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
 msgstr "Настройка отображения"
 
-#: DeviceList.cxx:269
+#: DeviceList.cxx:243
 #, kde-format
 msgid "KDE Connect"
 msgstr "KDE Connect"
 
-#: DeviceList.cxx:286
+#: DeviceList.cxx:260
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Открыть в диспетчере файлов"
 
-#: DeviceList.cxx:363
+#: DeviceList.cxx:343
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -302,7 +301,7 @@ msgstr ""
 "Устройство подключено.\n"
 "Нажмите для отключения/извлечения"
 
-#: DeviceList.cxx:364
+#: DeviceList.cxx:344
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -311,67 +310,67 @@ msgstr ""
 "Устройство отключено.\n"
 "Нажмите для подключения"
 
-#: DeviceList.cxx:375
+#: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Неразрешённая операция"
 
-#: DeviceList.cxx:376
+#: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
 msgstr "Устройство занято"
 
-#: DeviceList.cxx:377
+#: DeviceList.cxx:357
 #, kde-format
 msgid "Operation Failed"
 msgstr "Ошибка выполнения операции"
 
-#: DeviceList.cxx:378
+#: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
 msgstr "Операция отменена пользователем"
 
-#: DeviceList.cxx:379
+#: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
 msgstr "Недопустимый параметр"
 
-#: DeviceList.cxx:380
+#: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
 msgstr "Отсутствует драйвер"
 
-#: DeviceList.cxx:402
+#: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "Теперь устройство может быть отсоединено без риска потери данных"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
 msgstr "Не удалось подключить:"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Не удалось отключить:"
 
-#: DeviceNotifier.cxx:35
+#: DeviceNotifier.cxx:23
 #, kde-format
 msgid "Device Notifier"
 msgstr "Подключаемые устройства"
 
-#: DeviceNotifier.cxx:38
+#: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
 msgstr "Список устройств"
 
-#: DiskUsageApplet.cxx:143
+#: DiskUsageApplet.cxx:131
 #, kde-format
 msgid "%1 free / %2"
 msgstr "%1 свободно / %2"
 
-#: DiskUsageApplet.cxx:176
+#: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
 msgstr "Настройка виджета использования диска"
@@ -410,12 +409,12 @@ msgstr "Фон"
 msgid "Bar Background"
 msgstr "Фон панели"
 
-#: KdeConnect.cxx:181
+#: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
 msgstr "Требуется зарядка устройства"
 
-#: KdeConnect.cxx:182
+#: KdeConnect.cxx:170
 #, kde-format
 msgid ""
 "Device charge of '%1' is at %2%.\n"
@@ -424,77 +423,77 @@ msgstr ""
 "Заряд устройства «%1»: %2%.\n"
 "Следует зарядить устройство."
 
-#: Launcher.cxx:96
+#: Launcher.cxx:86
 #, kde-format
 msgid "Open Folder"
 msgstr "Открыть папку"
 
-#: Network.cxx:84
+#: Network.cxx:72
 #, kde-format
 msgid "No Network Connection"
 msgstr "Нет сетевого соединения"
 
-#: Network.cxx:94
+#: Network.cxx:82
 #, kde-format
 msgid "Full Network Connectivity (%1)"
 msgstr "Полное сетевое подключение (%1)"
 
-#: Network.cxx:96
+#: Network.cxx:84
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
 msgstr "Ограниченное сетевое подключение (%1)"
 
-#: Network.cxx:105
+#: Network.cxx:93
 #, kde-format
 msgid "IPv4 Address: %1"
 msgstr "Адрес IPv4: %1"
 
-#: Network.cxx:122
+#: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
 msgstr "SSID: %1"
 
-#: Network.cxx:124
+#: Network.cxx:112
 #, kde-format
 msgid "Signal Strength: %1"
 msgstr "Уровень сигнала: %1"
 
-#: Network.cxx:156
+#: Network.cxx:144
 #, kde-format
 msgid "VPN active"
 msgstr "VPN работает"
 
-#: NetworkList.cxx:233
+#: NetworkList.cxx:213
 #, kde-format
 msgid "Configure Network Connections"
 msgstr "Настройка сетевых соединений"
 
-#: NetworkList.cxx:286
+#: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
 msgstr "Работа с сетью включена. Нажмите для отключения"
 
-#: NetworkList.cxx:288
+#: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
 msgstr "Работа с сетью отключена. Нажмите для включения"
 
-#: NetworkList.cxx:291
+#: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
 msgstr "Работа с беспроводной сетью включена. Нажмите для отключения"
 
-#: NetworkList.cxx:293
+#: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Работа с беспроводной сетью отключена. Нажмите для включения"
 
-#: NotificationList.cxx:185
+#: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
 msgstr "Уведомления"
 
-#: NotificationServer.cxx:71
+#: NotificationServer.cxx:59
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -503,17 +502,17 @@ msgstr[1] "%1 уведомления"
 msgstr[2] "%1 уведомлений"
 msgstr[3] "%1 уведомление"
 
-#: Pager.cxx:76
+#: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
 msgstr "Настроить рабочие столы..."
 
-#: Pager.cxx:83
+#: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
 msgstr "Настройка рабочих столов"
 
-#: PictureFrameApplet.cxx:107
+#: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
 msgstr "Настройка виджета фоторамки"
@@ -530,52 +529,52 @@ msgstr "Рамка"
 msgid "Path"
 msgstr "Путь"
 
-#: PkUpdateList.cxx:140
+#: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
 msgstr "Получение сведений…"
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:170
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Требуется перезапуск сеанса</b><br>"
 
-#: PkUpdateList.cxx:184
+#: PkUpdateList.cxx:172
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Требуется перезагрузка</b><br>"
 
-#: PkUpdateList.cxx:200
+#: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
 msgstr "Обновления программ"
 
-#: PkUpdateList.cxx:212
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
 msgstr "Все"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
+#: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
 msgstr "Установить"
 
-#: PkUpdateList.cxx:231
+#: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
 msgstr ""
 
-#: PkUpdateList.cxx:232
+#: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
 msgstr ""
 
-#: PkUpdateList.cxx:236
+#: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
 msgstr "Обновить"
 
-#: PkUpdateList.cxx:443
+#: PkUpdateList.cxx:431
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
@@ -584,115 +583,115 @@ msgstr[1] "Установить %1 пакета"
 msgstr[2] "Установить %1 пакетов"
 msgstr[3] "Установить один пакет"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Требуется перезагрузка системы"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:561
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "Для одного из установленных пакетов требуется перезагрузка системы"
 
-#: PkUpdateList.cxx:574
+#: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
 msgstr "Перезагрузить систему"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Требуется перезапуск сеанса"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:583
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "Для одного из установленных пакетов требуется завершение сеанса"
 
-#: PkUpdateList.cxx:596
+#: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
 msgstr "Завершить сеанс"
 
-#: PkUpdateList.cxx:642
+#: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Отменить установку"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:663
 #, kde-format
 msgid "Waiting"
 msgstr "Ожидание"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Ожидание аутентификации"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Разрешение зависимостей"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
 msgstr "Обновление"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
 msgstr "Установка"
 
-#: PkUpdateList.cxx:680
+#: PkUpdateList.cxx:668
 #, kde-format
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: PkUpdateList.cxx:681
+#: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
 msgstr "Отмена"
 
-#: PkUpdateList.cxx:736
+#: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
 msgstr "Проверить подпись"
 
-#: PkUpdateList.cxx:787
+#: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
 msgstr "Ошибка обновления"
 
-#: PkUpdateList.cxx:842
+#: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
 msgstr "Принять лицензионное соглашение"
 
-#: PkUpdateList.cxx:854
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
 
-#: PkUpdates.cxx:66
+#: PkUpdates.cxx:53
 #, fuzzy, kde-format
 #| msgid "Next check: %1 "
 msgid "Next check: %1"
 msgstr "Следующая проверка: %1 "
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Проверка наличия обновлений…"
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Проверка наличия обновлений… %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:171
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -701,12 +700,12 @@ msgstr ""
 "Последняя проверка: %1\n"
 "Ошибка при проверке обновлений: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
 msgstr "Ошибка обновления программ"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:195
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
@@ -715,7 +714,7 @@ msgstr[1] "Доступно %1 обновления для обеспечени�
 msgstr[2] "Доступно %1 обновлений для обеспечения <b>безопасности</b>"
 msgstr[3] "Доступно одно обновление для обеспечения <b>безопасности</b>"
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
@@ -724,7 +723,7 @@ msgstr[1] "Доступно %1 <i>важных</i> обновления"
 msgstr[2] "Доступно %1 <i>важных</i> обновлений"
 msgstr[3] "Доступно одно <i>важное</i> обновление"
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
@@ -733,7 +732,7 @@ msgstr[1] "Доступно %1 обновления с исправлением 
 msgstr[2] "Доступно %1 обновлений с исправлением ошибок"
 msgstr[3] "Доступно одно обновление с исправлением ошибок"
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:229
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -760,7 +759,7 @@ msgstr[3] ""
 "Доступных важных обновлений нет\n"
 "Имеется одно другое"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:240
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -769,7 +768,7 @@ msgstr ""
 "Последняя проверка: %1\n"
 "Доступных обновлений нет"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:249
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
@@ -778,17 +777,17 @@ msgstr[1] "<br>%1 других"
 msgstr[2] "<br>%1 других"
 msgstr[3] "<br>одно другое"
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:251
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Последняя проверка: %1<br>%2</html>"
 
-#: PkUpdates.cxx:303
+#: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Доступны обновления программ"
 
-#: PkUpdates.cxx:323
+#: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>и ещё %1...</li>"
@@ -798,164 +797,164 @@ msgstr "<li>и ещё %1...</li>"
 msgid "Web Browser"
 msgstr "Веб-браузер"
 
-#: StartMenu.cxx:97
+#: StartMenu.cxx:80
 #, kde-format
 msgid "Switch User"
 msgstr "Переключить пользователя"
 
-#: StartMenu.cxx:195
+#: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
 msgstr "Настроить меню…"
 
-#: SysLoad.cxx:217
+#: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "ЦП %1: %2% (%3 МГц)"
 
-#: SysLoad.cxx:227
+#: SysLoad.cxx:210
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Всего памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:229
+#: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Используется памяти: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:231
+#: SysLoad.cxx:214
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Свободно памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:233
+#: SysLoad.cxx:216
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Всего виртуальной памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:235
+#: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Используется виртуальной памяти: %1 МБ (%2 ГБ) %3%"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:220
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Свободно виртуальной памяти: %1 МБ (%2 ГБ)"
 
-#: SysLoad.cxx:240
+#: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Отправка/приём сетью: %1/%2 кБ/с"
 
-#: SysLoad.cxx:244
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. исп. сети (в течение последних %2 с): %1 кБ/с"
 
-#: SysTray.cxx:303
+#: SysTray.cxx:291
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "Show New Notifications"
 msgstr "Уведомления"
 
-#: TaskBarButton.cxx:124
+#: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
 msgstr "Переместить на рабочий стол"
 
-#: TaskBarButton.cxx:125
+#: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
 msgstr "Все рабочие столы"
 
-#: TaskBarButton.cxx:132
+#: TaskBarButton.cxx:117
 #, kde-format
 msgid "Close"
 msgstr "Закрыть"
 
-#: WeatherApplet.cxx:78
+#: WeatherApplet.cxx:66
 #, kde-format
 msgid "Temperature:"
 msgstr "Температура:"
 
-#: WeatherApplet.cxx:81
+#: WeatherApplet.cxx:69
 #, kde-format
 msgid "Pressure:"
 msgstr "Давление:"
 
-#: WeatherApplet.cxx:84
+#: WeatherApplet.cxx:72
 #, kde-format
 msgid "Humidity:"
 msgstr "Влажность:"
 
-#: WeatherApplet.cxx:87
+#: WeatherApplet.cxx:75
 #, kde-format
 msgid "Wind Speed:"
 msgstr "Скорость ветра:"
 
-#: WeatherApplet.cxx:90
+#: WeatherApplet.cxx:78
 #, kde-format
 msgid "Wind Direction:"
 msgstr "Направление ветра:"
 
-#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#: WeatherApplet.cxx:128 WeatherApplet.cxx:399
 #, kde-format
 msgid "Not configured"
 msgstr "Не настроено"
 
-#: WeatherApplet.cxx:195
+#: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
 msgstr "K"
 
-#: WeatherApplet.cxx:196
+#: WeatherApplet.cxx:184
 #, kde-format
 msgid "°C"
 msgstr "°C"
 
-#: WeatherApplet.cxx:197
+#: WeatherApplet.cxx:185
 #, kde-format
 msgid "°F"
 msgstr "°F"
 
-#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
-#: WeatherApplet.cxx:291
+#: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
+#: WeatherApplet.cxx:279
 #, kde-format
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: WeatherApplet.cxx:213
+#: WeatherApplet.cxx:201
 #, kde-format
 msgid "%1 hPa"
 msgstr "%1 гПа"
 
-#: WeatherApplet.cxx:216
+#: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
 msgstr "%1 %"
 
-#: WeatherApplet.cxx:230
+#: WeatherApplet.cxx:218
 #, kde-format
 msgid "%1 °"
 msgstr "%1 °"
 
-#: WeatherApplet.cxx:387
+#: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
 msgstr "Настройка виджета погоды"
 
-#: WeatherAppletConfigureDialog.cxx:80
+#: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
 msgstr "Загрузка списка городов…"
 
-#: WeatherAppletConfigureDialog.cxx:94
+#: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
 msgid "Download Error"
 msgstr "Ошибка загрузки"
 
-#: WeatherAppletConfigureDialog.cxx:95
+#: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
 msgstr "Ошибка при загрузке списка городов: %1"
@@ -1002,6 +1001,12 @@ msgstr "&имперская система"
 #, kde-format
 msgid "City"
 msgstr "Город"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Страна"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Рабочая среда Liquid"

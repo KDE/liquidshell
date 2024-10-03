@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-03 01:49+0000\n"
 "PO-Revision-Date: 2023-12-14 06:40+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: Battery.cxx:91
+#: Battery.cxx:78
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -37,7 +37,7 @@ msgstr[1] "%1 uri"
 msgstr[2] "%1 ure"
 msgstr[3] "%1 ur"
 
-#: Battery.cxx:92
+#: Battery.cxx:79
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -46,98 +46,97 @@ msgstr[1] "%1 minuti"
 msgstr[2] "%1 minute"
 msgstr[3] "%1 minut"
 
-#: Battery.cxx:164
+#: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
 msgstr "Se ne polni"
 
-#: Battery.cxx:165
+#: Battery.cxx:152
 #, kde-format
 msgid "Fully Charged"
 msgstr "Do konca napolnjen"
 
-#: Battery.cxx:172
+#: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
 msgstr "Polnjenje na %1%"
 
-#: Battery.cxx:174
+#: Battery.cxx:161
 #, kde-format
 msgid "Time until full: "
 msgstr "Čas do polne napolnjenosti: "
 
-#: Battery.cxx:178
+#: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
 msgstr "Praznjenje na %1%"
 
-#: Battery.cxx:180
+#: Battery.cxx:167
 #, kde-format
 msgid "Remaining Time: "
 msgstr "Preostali čas: "
 
-#: Battery.cxx:218
+#: Battery.cxx:193
 #, kde-format
 msgid "Power Management"
 msgstr "Upravljanje z energijo"
 
-#: Bluetooth.cxx:77
+#: Bluetooth.cxx:64
 #, kde-format
 msgid "Bluetooth is operational"
 msgstr "Bluetooth je operativen"
 
-#: Bluetooth.cxx:82
+#: Bluetooth.cxx:69
 #, kde-format
 msgid "Bluetooth is not operational"
 msgstr "Bluetooth ni operativen"
 
-#: Bluetooth.cxx:112
+#: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ClockWidget.cxx:176
+#: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
 msgstr "Izberi časovne pasove..."
 
-#: ClockWidget.cxx:182
+#: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
 msgstr "Izberi časovne pasove"
 
-#: ClockWidget.cxx:200
+#: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "Nastavi datum in čas..."
 
-#: ClockWidget.cxx:207
+#: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
 msgstr "Datum in čas"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
+#: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
 msgid "Filter"
 msgstr "Filter"
 
-#: ClockWidgetConfigureDialog.cxx:53
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Timezone"
 msgstr "Časovni pas"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
-#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
-msgid "Country"
-msgstr "Država"
+msgid "Territory"
+msgstr ""
 
-#: ConfigureDesktopDialog.cxx:54
+#: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
 msgstr "Dobi nova ozadja..."
 
-#: ConfigureDesktopDialog.cxx:72
+#: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
 msgstr "Prenesi ozadja"
@@ -190,107 +189,108 @@ msgstr "Spremenjeno merilo z ohranjanjem razmerja stranic"
 msgid "Scaled Keep Aspec&t Ratio and Clip"
 msgstr "Spremenjeno merilo z ohranjanjem razmerja stranic in priponko"
 
-#: desktop.cxx:46
+#: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
 msgstr "Liquidshell"
 
-#: desktop.cxx:47
+#: desktop.cxx:31
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
 msgstr "Osnovna lupina na podlagi QtWidgets"
 
-#: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2023 Martin Koller"
+#: desktop.cxx:33
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2023 Martin Koller"
+msgid "Copyright 2017 - 2024 Martin Koller"
 msgstr "Copyright 2017 - 2023 Martin Koller"
 
-#: DesktopApplet.cxx:45 Launcher.cxx:79
+#: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
 msgid "Configure..."
 msgstr "Nastavi..."
 
-#: DesktopApplet.cxx:53
+#: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
 msgstr "Spremeni velikost in položaj"
 
-#: DesktopApplet.cxx:59
+#: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
 msgstr "Odstrani ta aplet"
 
-#: DesktopApplet.cxx:107
+#: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
 msgstr "%1: Spremeni velikost in položaj"
 
-#: DesktopApplet.cxx:147
+#: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
 msgstr "Odstrani aplet"
 
-#: DesktopApplet.cxx:148
+#: DesktopApplet.cxx:137
 #, kde-format
 msgid "Really remove this applet?"
 msgstr "Naj res odstranim ta aplet?"
 
-#: DesktopWidget.cxx:78
+#: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
 msgstr "Nastavi ozadje..."
 
-#: DesktopWidget.cxx:82
+#: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
 msgstr "Dodaj aplet"
 
-#: DesktopWidget.cxx:86
+#: DesktopWidget.cxx:75
 #, kde-format
 msgid "Weather"
 msgstr "Vreme"
 
-#: DesktopWidget.cxx:89
+#: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
 msgstr "Poraba diska"
 
-#: DesktopWidget.cxx:92
+#: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
 msgstr "Okvir slike"
 
-#: DesktopWidget.cxx:95
+#: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
 msgstr "Nastavi zaslon..."
 
-#: DesktopWidget.cxx:99 StartMenu.cxx:123
+#: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
 msgstr "Poženi ukaz..."
 
-#: DesktopWidget.cxx:109
+#: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
 
-#: DesktopWidget.cxx:263
+#: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
 msgstr "Nastavi zaslon"
 
-#: DeviceList.cxx:269
+#: DeviceList.cxx:243
 #, kde-format
 msgid "KDE Connect"
 msgstr "KDE Connect"
 
-#: DeviceList.cxx:286
+#: DeviceList.cxx:260
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Odpri z upravljalnikom datotek"
 
-#: DeviceList.cxx:363
+#: DeviceList.cxx:343
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -299,7 +299,7 @@ msgstr ""
 "Naprava je priklopljena.\n"
 "Kliknite za odklop/izmet"
 
-#: DeviceList.cxx:364
+#: DeviceList.cxx:344
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -308,67 +308,67 @@ msgstr ""
 "Naprava ni priklopljena.\n"
 "Kliknite za priklop"
 
-#: DeviceList.cxx:375
+#: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Nepooblaščena operacija"
 
-#: DeviceList.cxx:376
+#: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
 msgstr "Naprava je zasedena"
 
-#: DeviceList.cxx:377
+#: DeviceList.cxx:357
 #, kde-format
 msgid "Operation Failed"
 msgstr "Operacija ni uspela"
 
-#: DeviceList.cxx:378
+#: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
 msgstr "Uporabnik je preklical"
 
-#: DeviceList.cxx:379
+#: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
 msgstr "Neveljavna možnost"
 
-#: DeviceList.cxx:380
+#: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
 msgstr "Manjkajoči gonilnik"
 
-#: DeviceList.cxx:402
+#: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "To napravo lahko zdaj varno odstranite"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
 msgstr "Priklop ni uspel:"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Odklop ni uspel:"
 
-#: DeviceNotifier.cxx:35
+#: DeviceNotifier.cxx:23
 #, kde-format
 msgid "Device Notifier"
 msgstr "Opomnik naprave"
 
-#: DeviceNotifier.cxx:38
+#: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
 msgstr "Seznam naprav"
 
-#: DiskUsageApplet.cxx:143
+#: DiskUsageApplet.cxx:131
 #, kde-format
 msgid "%1 free / %2"
 msgstr "%1 prosto / %2"
 
-#: DiskUsageApplet.cxx:176
+#: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
 msgstr "Nastavi aplet porabe diska"
@@ -407,12 +407,12 @@ msgstr "Ozadje"
 msgid "Bar Background"
 msgstr "Ozadje stolpca"
 
-#: KdeConnect.cxx:181
+#: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
 msgstr "Naprava potrebuje polnjenje"
 
-#: KdeConnect.cxx:182
+#: KdeConnect.cxx:170
 #, kde-format
 msgid ""
 "Device charge of '%1' is at %2%.\n"
@@ -421,77 +421,77 @@ msgstr ""
 "Napolnjenost naprave '%1' znaša %2%.\n"
 "Morali bi jo napolniti."
 
-#: Launcher.cxx:96
+#: Launcher.cxx:86
 #, kde-format
 msgid "Open Folder"
 msgstr "Odpri mapo"
 
-#: Network.cxx:84
+#: Network.cxx:72
 #, kde-format
 msgid "No Network Connection"
 msgstr "Ni mrežne povezave"
 
-#: Network.cxx:94
+#: Network.cxx:82
 #, kde-format
 msgid "Full Network Connectivity (%1)"
 msgstr "Polna mrežna povezava (%1)"
 
-#: Network.cxx:96
+#: Network.cxx:84
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
 msgstr "Omejena mrežna povezava (%1)"
 
-#: Network.cxx:105
+#: Network.cxx:93
 #, kde-format
 msgid "IPv4 Address: %1"
 msgstr "Naslov IPv4: %1"
 
-#: Network.cxx:122
+#: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
 msgstr "SSID: %1"
 
-#: Network.cxx:124
+#: Network.cxx:112
 #, kde-format
 msgid "Signal Strength: %1"
 msgstr "Moč signala: %1"
 
-#: Network.cxx:156
+#: Network.cxx:144
 #, kde-format
 msgid "VPN active"
 msgstr "Aktivni VPN"
 
-#: NetworkList.cxx:233
+#: NetworkList.cxx:213
 #, kde-format
 msgid "Configure Network Connections"
 msgstr "Nastavi omrežne povezave"
 
-#: NetworkList.cxx:286
+#: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
 msgstr "Mreža je omogočena. Kliknite za onemogočenje"
 
-#: NetworkList.cxx:288
+#: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
 msgstr "Mreža ni omogočena. Kliknite za omogočenje"
 
-#: NetworkList.cxx:291
+#: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
 msgstr "Brezžična mreža je omogočena. Kliknite za onemogočenje"
 
-#: NetworkList.cxx:293
+#: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "Brezžična mreža ni omogočena. Kliknite za omogočenje"
 
-#: NotificationList.cxx:185
+#: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
 msgstr "Obvestila"
 
-#: NotificationServer.cxx:71
+#: NotificationServer.cxx:59
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
@@ -500,17 +500,17 @@ msgstr[1] "%1 obvestili"
 msgstr[2] "%1 obvestila"
 msgstr[3] "%1 obvestil"
 
-#: Pager.cxx:76
+#: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
 msgstr "Nastavi navidezna namizja..."
 
-#: Pager.cxx:83
+#: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
 msgstr "Nastavi navidezna namizja"
 
-#: PictureFrameApplet.cxx:107
+#: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
 msgstr "Nastavi aplet slike v okvirju"
@@ -527,52 +527,52 @@ msgstr "Okvir"
 msgid "Path"
 msgstr "Pot"
 
-#: PkUpdateList.cxx:140
+#: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
 msgstr "Pridobivanje podrobnosti..."
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:170
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>Zahtevan ponoven zagon seje</b><br>"
 
-#: PkUpdateList.cxx:184
+#: PkUpdateList.cxx:172
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>Zahtevan ponovni zagon računalnika</b><br>"
 
-#: PkUpdateList.cxx:200
+#: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
 msgstr "Posodobitev programja"
 
-#: PkUpdateList.cxx:212
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
 msgstr "Vse"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
+#: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
 msgstr "Namesti"
 
-#: PkUpdateList.cxx:231
+#: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
 msgstr "Namesti nato zaspi"
 
-#: PkUpdateList.cxx:232
+#: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
 msgstr "Namesti nato ustavi"
 
-#: PkUpdateList.cxx:236
+#: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
 msgstr "Osveži"
 
-#: PkUpdateList.cxx:443
+#: PkUpdateList.cxx:431
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
@@ -581,92 +581,92 @@ msgstr[1] "Namesti %1 paketa"
 msgstr[2] "Namesti %1 pakete"
 msgstr[3] "Namesti %1 paketov"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
 msgstr "Zahtevan sistemski zagon"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:561
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "En od nameščenih paketov zahteva sistemski zagon"
 
-#: PkUpdateList.cxx:574
+#: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
 msgstr "Zagon sistema"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
 msgstr "Zahtevana ponovna seja"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:583
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "En od nameščenih programov zahteva odjavo seje"
 
-#: PkUpdateList.cxx:596
+#: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
 msgstr "Odjava"
 
-#: PkUpdateList.cxx:642
+#: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
 msgstr "Prekliči namestitev"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:663
 #, kde-format
 msgid "Waiting"
 msgstr "Čakam"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "Čakam na overitev"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "Razreševanje odvisnosti"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
 msgstr "Posodabljam"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
 msgstr "Nameščam"
 
-#: PkUpdateList.cxx:680
+#: PkUpdateList.cxx:668
 #, kde-format
 msgid "Downloading"
 msgstr "Prenašam"
 
-#: PkUpdateList.cxx:681
+#: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
 msgstr "Prekinjam"
 
-#: PkUpdateList.cxx:736
+#: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
 msgstr "Preveri podpis"
 
-#: PkUpdateList.cxx:787
+#: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
 msgstr "Posodobitev ni uspela"
 
-#: PkUpdateList.cxx:842
+#: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
 msgstr "Sprejmi EULA"
 
-#: PkUpdateList.cxx:854
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
@@ -675,22 +675,22 @@ msgstr ""
 "<html>Ali sprejemate naslednji licenčni sporazum za paket <br>%1<br>od "
 "dobavitelja <br>%2 ?</html>"
 
-#: PkUpdates.cxx:66
+#: PkUpdates.cxx:53
 #, kde-format
 msgid "Next check: %1"
 msgstr "Naslednje preverjanje: %1"
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "Preverjam za posodobitvami ..."
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "Preverjam za posodobitvami ... %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:171
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -699,12 +699,12 @@ msgstr ""
 "Zadnje preverjanje: %1\n"
 "Napaka pri preverjanju posodobitev: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
 msgstr "Napaka posodabljanja programske opreme"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:195
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
@@ -713,7 +713,7 @@ msgstr[1] "Na voljo %1 <b>varnostni</b> posodobitvi"
 msgstr[2] "Na voljo %1 <b>varnostne</b> posodobitve"
 msgstr[3] "Na voljo %1 <b>varnostnih</b> posodobitev"
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
@@ -722,7 +722,7 @@ msgstr[1] "Na voljo %1 <b>pomembni</b> posodobitvi"
 msgstr[2] "Na voljo %1 <b>pomembne</b> posodobitve"
 msgstr[3] "Na voljo %1 <b>pomembnih</b> posodobitev"
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
@@ -731,7 +731,7 @@ msgstr[1] "Na voljo %1 popravka napak programske opreme"
 msgstr[2] "Na voljo %1 popravki napak programske opreme"
 msgstr[3] "Na voljo %1 popravkov napak programske opreme"
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:229
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -758,7 +758,7 @@ msgstr[3] ""
 "Na voljo ni pomembnih posodobitev\n"
 "%2 ostalih"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:240
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -767,7 +767,7 @@ msgstr ""
 "Zadnje preverjanje: %1\n"
 "Na voljo ni nobene posodobitve"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:249
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
@@ -776,17 +776,17 @@ msgstr[1] "<br>%1 ostala"
 msgstr[2] "<br>%1 ostali"
 msgstr[3] "<br>%1 ostalih"
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:251
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>Zadnje preverjanje: %1<br>%2</html>"
 
-#: PkUpdates.cxx:303
+#: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
 msgstr "Na voljo so posodobitve programske opreme"
 
-#: PkUpdates.cxx:323
+#: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 več ...</li>"
@@ -796,163 +796,163 @@ msgstr "<li>%1 več ...</li>"
 msgid "Web Browser"
 msgstr "Spletni brskalnik"
 
-#: StartMenu.cxx:97
+#: StartMenu.cxx:80
 #, kde-format
 msgid "Switch User"
 msgstr "Preklopi uporabnika"
 
-#: StartMenu.cxx:195
+#: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
 msgstr "Nastavi meni..."
 
-#: SysLoad.cxx:217
+#: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPE %1: %2% (%3 MHz)"
 
-#: SysLoad.cxx:227
+#: SysLoad.cxx:210
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "Skupni pomnilnik: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:229
+#: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "Porabljeni pomnilnik: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:231
+#: SysLoad.cxx:214
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "Prosti pomnilnik: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:233
+#: SysLoad.cxx:216
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "Skupno izmenjevalno področje: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:235
+#: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "Porabljeno izmenjevalno področje: %1 MB (%2 GB) %3%"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:220
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "Prosto izmenjevalno področje: %1 MB (%2 GB)"
 
-#: SysLoad.cxx:240
+#: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "Omrežje poslano/prejeto: %1/%2 KB/s"
 
-#: SysLoad.cxx:244
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Omežje maks (zadnji %2 s): %1 KB/s"
 
-#: SysTray.cxx:303
+#: SysTray.cxx:291
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Prikaži nova obvestila"
 
-#: TaskBarButton.cxx:124
+#: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
 msgstr "Prenesi na namizje"
 
-#: TaskBarButton.cxx:125
+#: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
 msgstr "Vsa namizja"
 
-#: TaskBarButton.cxx:132
+#: TaskBarButton.cxx:117
 #, kde-format
 msgid "Close"
 msgstr "Zapri"
 
-#: WeatherApplet.cxx:78
+#: WeatherApplet.cxx:66
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: WeatherApplet.cxx:81
+#: WeatherApplet.cxx:69
 #, kde-format
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: WeatherApplet.cxx:84
+#: WeatherApplet.cxx:72
 #, kde-format
 msgid "Humidity:"
 msgstr "Vlažnost:"
 
-#: WeatherApplet.cxx:87
+#: WeatherApplet.cxx:75
 #, kde-format
 msgid "Wind Speed:"
 msgstr "Hitrost vetra:"
 
-#: WeatherApplet.cxx:90
+#: WeatherApplet.cxx:78
 #, kde-format
 msgid "Wind Direction:"
 msgstr "Smer vetra:"
 
-#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#: WeatherApplet.cxx:128 WeatherApplet.cxx:399
 #, kde-format
 msgid "Not configured"
 msgstr "Ni nastavljeno"
 
-#: WeatherApplet.cxx:195
+#: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
 msgstr "K"
 
-#: WeatherApplet.cxx:196
+#: WeatherApplet.cxx:184
 #, kde-format
 msgid "°C"
 msgstr "°C"
 
-#: WeatherApplet.cxx:197
+#: WeatherApplet.cxx:185
 #, kde-format
 msgid "°F"
 msgstr "°F"
 
-#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
-#: WeatherApplet.cxx:291
+#: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
+#: WeatherApplet.cxx:279
 #, kde-format
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: WeatherApplet.cxx:213
+#: WeatherApplet.cxx:201
 #, kde-format
 msgid "%1 hPa"
 msgstr "%1 hPa"
 
-#: WeatherApplet.cxx:216
+#: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
 msgstr "%1 %"
 
-#: WeatherApplet.cxx:230
+#: WeatherApplet.cxx:218
 #, kde-format
 msgid "%1 °"
 msgstr "%1 °"
 
-#: WeatherApplet.cxx:387
+#: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
 msgstr "Nastavi vremenski aplet"
 
-#: WeatherAppletConfigureDialog.cxx:80
+#: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
 msgstr "Prenašam seznam mest..."
 
-#: WeatherAppletConfigureDialog.cxx:94
+#: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: WeatherAppletConfigureDialog.cxx:95
+#: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
 msgstr "Napaka pri prenosu seznama mest: %1"
@@ -999,6 +999,12 @@ msgstr "&imperialne"
 #, kde-format
 msgid "City"
 msgstr "Mesto"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Država"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Delovni prostor Liquid Desktop"

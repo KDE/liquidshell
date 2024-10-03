@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-24 01:46+0000\n"
+"POT-Creation-Date: 2024-10-03 01:49+0000\n"
 "PO-Revision-Date: 2024-02-10 00:17+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,110 +27,109 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: Battery.cxx:91
+#: Battery.cxx:78
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1시간"
 
-#: Battery.cxx:92
+#: Battery.cxx:79
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1분"
 
-#: Battery.cxx:164
+#: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
 msgstr "충전하지 않음"
 
-#: Battery.cxx:165
+#: Battery.cxx:152
 #, kde-format
 msgid "Fully Charged"
 msgstr "완전히 충전됨"
 
-#: Battery.cxx:172
+#: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
 msgstr "%1% 충전 중"
 
-#: Battery.cxx:174
+#: Battery.cxx:161
 #, kde-format
 msgid "Time until full: "
 msgstr "완충까지 남은 시간: "
 
-#: Battery.cxx:178
+#: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
 msgstr "%1% 방전 중"
 
-#: Battery.cxx:180
+#: Battery.cxx:167
 #, kde-format
 msgid "Remaining Time: "
 msgstr "남은 시간: "
 
-#: Battery.cxx:218
+#: Battery.cxx:193
 #, kde-format
 msgid "Power Management"
 msgstr "전원 관리"
 
-#: Bluetooth.cxx:77
+#: Bluetooth.cxx:64
 #, kde-format
 msgid "Bluetooth is operational"
 msgstr "블루투스 사용 가능"
 
-#: Bluetooth.cxx:82
+#: Bluetooth.cxx:69
 #, kde-format
 msgid "Bluetooth is not operational"
 msgstr "블루투스 사용 불가"
 
-#: Bluetooth.cxx:112
+#: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
 msgstr "블루투스"
 
-#: ClockWidget.cxx:176
+#: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
 msgstr "시간대 선택..."
 
-#: ClockWidget.cxx:182
+#: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
 msgstr "시간대 선택"
 
-#: ClockWidget.cxx:200
+#: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
 msgstr "날짜 및 시간 설정..."
 
-#: ClockWidget.cxx:207
+#: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
 msgstr "날짜와 시간"
 
-#: ClockWidgetConfigureDialog.cxx:42 PkUpdateList.cxx:216
+#: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
 msgid "Filter"
 msgstr "필터"
 
-#: ClockWidgetConfigureDialog.cxx:53
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Timezone"
 msgstr "시간대"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
-#: ClockWidgetConfigureDialog.cxx:53 WeatherAppletConfigureDialog.ui:97
+#: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
-msgid "Country"
-msgstr "국가"
+msgid "Territory"
+msgstr ""
 
-#: ConfigureDesktopDialog.cxx:54
+#: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
 msgstr "새 배경 그림 가져오기..."
 
-#: ConfigureDesktopDialog.cxx:72
+#: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
 msgstr "새 배경 그림 다운로드"
@@ -183,107 +182,108 @@ msgstr "종횡비 유지 크기 조정(&D)"
 msgid "Scaled Keep Aspec&t Ratio and Clip"
 msgstr "종횡비 유지 크기 조정 및 자르기(&T)"
 
-#: desktop.cxx:46
+#: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
 msgstr "Liquidshell"
 
-#: desktop.cxx:47
+#: desktop.cxx:31
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets 기반 간단한 데스크톱 셸"
 
-#: desktop.cxx:49
-#, kde-format
-msgid "Copyright 2017 - 2023 Martin Koller"
+#: desktop.cxx:33
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2023 Martin Koller"
+msgid "Copyright 2017 - 2024 Martin Koller"
 msgstr "Copyright 2017 - 2023 Martin Koller"
 
-#: DesktopApplet.cxx:45 Launcher.cxx:79
+#: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
 msgid "Configure..."
 msgstr "설정..."
 
-#: DesktopApplet.cxx:53
+#: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
 msgstr "위치와 크기 변경"
 
-#: DesktopApplet.cxx:59
+#: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
 msgstr "이 애플릿 삭제"
 
-#: DesktopApplet.cxx:107
+#: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
 msgstr "%1: 위치와 크기 변경"
 
-#: DesktopApplet.cxx:147
+#: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
 msgstr "애플릿 삭제"
 
-#: DesktopApplet.cxx:148
+#: DesktopApplet.cxx:137
 #, kde-format
 msgid "Really remove this applet?"
 msgstr "이 애플릿을 삭제하시겠습니까?"
 
-#: DesktopWidget.cxx:78
+#: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
 msgstr "배경 그림 설정..."
 
-#: DesktopWidget.cxx:82
+#: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
 msgstr "애플릿 추가"
 
-#: DesktopWidget.cxx:86
+#: DesktopWidget.cxx:75
 #, kde-format
 msgid "Weather"
 msgstr "날씨"
 
-#: DesktopWidget.cxx:89
+#: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
 msgstr "디스크 사용량"
 
-#: DesktopWidget.cxx:92
+#: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
 msgstr "그림 액자"
 
-#: DesktopWidget.cxx:95
+#: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
 msgstr "화면 설정..."
 
-#: DesktopWidget.cxx:99 StartMenu.cxx:123
+#: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
 msgstr "명령 실행..."
 
-#: DesktopWidget.cxx:109
+#: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: DesktopWidget.cxx:263
+#: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
 msgstr "디스플레이 설정"
 
-#: DeviceList.cxx:269
+#: DeviceList.cxx:243
 #, kde-format
 msgid "KDE Connect"
 msgstr "KDE Connect"
 
-#: DeviceList.cxx:286
+#: DeviceList.cxx:260
 #, kde-format
 msgid "Open with File Manager"
 msgstr "파일 관리자로 열기"
 
-#: DeviceList.cxx:363
+#: DeviceList.cxx:343
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -292,7 +292,7 @@ msgstr ""
 "장치가 마운트되어 있습니다.\n"
 "마운트 해제/꺼내려면 클릭하십시오"
 
-#: DeviceList.cxx:364
+#: DeviceList.cxx:344
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -301,67 +301,67 @@ msgstr ""
 "장치가 마운트 해제되어 있습니다.\n"
 "마운트하려면 클릭하십시오"
 
-#: DeviceList.cxx:375
+#: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "인증되지 않은 작업"
 
-#: DeviceList.cxx:376
+#: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
 msgstr "장치가 사용 중"
 
-#: DeviceList.cxx:377
+#: DeviceList.cxx:357
 #, kde-format
 msgid "Operation Failed"
 msgstr "작동 실패"
 
-#: DeviceList.cxx:378
+#: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
 msgstr "사용자가 취소함"
 
-#: DeviceList.cxx:379
+#: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
 msgstr "잘못된 옵션"
 
-#: DeviceList.cxx:380
+#: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
 msgstr "드라이버 없음"
 
-#: DeviceList.cxx:402
+#: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "장치를 안전하게 제거할 수 있습니다"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
 msgstr "마운트 실패:"
 
-#: DeviceList.cxx:409
+#: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
 msgstr "마운트 해제 실패:"
 
-#: DeviceNotifier.cxx:35
+#: DeviceNotifier.cxx:23
 #, kde-format
 msgid "Device Notifier"
 msgstr "장치 알림이"
 
-#: DeviceNotifier.cxx:38
+#: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
 msgstr "장치 목록"
 
-#: DiskUsageApplet.cxx:143
+#: DiskUsageApplet.cxx:131
 #, kde-format
 msgid "%1 free / %2"
 msgstr "%1 남음/%2"
 
-#: DiskUsageApplet.cxx:176
+#: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
 msgstr "디스크 사용량 애플릿 설정"
@@ -400,12 +400,12 @@ msgstr "배경"
 msgid "Bar Background"
 msgstr "막대 배경"
 
-#: KdeConnect.cxx:181
+#: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
 msgstr "충전이 필요함"
 
-#: KdeConnect.cxx:182
+#: KdeConnect.cxx:170
 #, kde-format
 msgid ""
 "Device charge of '%1' is at %2%.\n"
@@ -414,93 +414,93 @@ msgstr ""
 "'%1' 장치의 배터리가 %2% 남았습니다.\n"
 "충전해야 합니다."
 
-#: Launcher.cxx:96
+#: Launcher.cxx:86
 #, kde-format
 msgid "Open Folder"
 msgstr "폴더 열기"
 
-#: Network.cxx:84
+#: Network.cxx:72
 #, kde-format
 msgid "No Network Connection"
 msgstr "네트워크 연결 없음"
 
-#: Network.cxx:94
+#: Network.cxx:82
 #, kde-format
 msgid "Full Network Connectivity (%1)"
 msgstr "네트워크에 연결됨(%1)"
 
-#: Network.cxx:96
+#: Network.cxx:84
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
 msgstr "네트워크 연결 제한됨(%1)"
 
-#: Network.cxx:105
+#: Network.cxx:93
 #, kde-format
 msgid "IPv4 Address: %1"
 msgstr "IPv4 주소: %1"
 
-#: Network.cxx:122
+#: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
 msgstr "SSID: %1"
 
-#: Network.cxx:124
+#: Network.cxx:112
 #, kde-format
 msgid "Signal Strength: %1"
 msgstr "신호 강도: %1"
 
-#: Network.cxx:156
+#: Network.cxx:144
 #, kde-format
 msgid "VPN active"
 msgstr "VPN 사용 중"
 
-#: NetworkList.cxx:233
+#: NetworkList.cxx:213
 #, kde-format
 msgid "Configure Network Connections"
 msgstr "네트워크 연결 설정"
 
-#: NetworkList.cxx:286
+#: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
 msgstr "네트워크가 활성화되어 있습니다. 비활성화하려면 클릭"
 
-#: NetworkList.cxx:288
+#: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
 msgstr "네트워크가 비활성화되어 있습니다. 활성화하려면 클릭"
 
-#: NetworkList.cxx:291
+#: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
 msgstr "무선 네트워크가 활성화되어 있습니다. 비활성화하려면 클릭"
 
-#: NetworkList.cxx:293
+#: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr "무선 네트워크가 비활성화되어 있습니다. 활성화하려면 클릭"
 
-#: NotificationList.cxx:185
+#: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
 msgstr "알림"
 
-#: NotificationServer.cxx:71
+#: NotificationServer.cxx:59
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
 msgstr[0] "알림 %1개"
 
-#: Pager.cxx:76
+#: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
 msgstr "가상 바탕 화면 설정..."
 
-#: Pager.cxx:83
+#: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
 msgstr "가상 바탕 화면 설정"
 
-#: PictureFrameApplet.cxx:107
+#: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
 msgstr "그림 액자 애플릿 설정"
@@ -517,143 +517,143 @@ msgstr "프레임"
 msgid "Path"
 msgstr "경로"
 
-#: PkUpdateList.cxx:140
+#: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
 msgstr "자세한 정보 가져오는 중..."
 
-#: PkUpdateList.cxx:182
+#: PkUpdateList.cxx:170
 #, kde-format
 msgid "<b>Session restart required</b><br>"
 msgstr "<b>세션을 다시 시작해야 함</b><br>"
 
-#: PkUpdateList.cxx:184
+#: PkUpdateList.cxx:172
 #, kde-format
 msgid "<b>Reboot required</b><br>"
 msgstr "<b>다시 시작해야 함</b><br>"
 
-#: PkUpdateList.cxx:200
+#: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
 msgstr "소프트웨어 업데이트"
 
-#: PkUpdateList.cxx:212
+#: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
 msgstr "모두"
 
-#: PkUpdateList.cxx:225 PkUpdateList.cxx:449
+#: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
 msgstr "설치"
 
-#: PkUpdateList.cxx:231
+#: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
 msgstr "설치한 후 대기 모드"
 
-#: PkUpdateList.cxx:232
+#: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
 msgstr "설치한 후 컴퓨터 끄기"
 
-#: PkUpdateList.cxx:236
+#: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: PkUpdateList.cxx:443
+#: PkUpdateList.cxx:431
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
 msgstr[0] "패키지 %1개 설치"
 
-#: PkUpdateList.cxx:572
+#: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
 msgstr "시스템을 다시 시작해야 함"
 
-#: PkUpdateList.cxx:573
+#: PkUpdateList.cxx:561
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
 msgstr "설치된 패키지에서 시스템 다시 시작을 요청했습니다"
 
-#: PkUpdateList.cxx:574
+#: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
 msgstr "시스템 다시 시작"
 
-#: PkUpdateList.cxx:594
+#: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
 msgstr "세션을 다시 시작해야 함"
 
-#: PkUpdateList.cxx:595
+#: PkUpdateList.cxx:583
 #, kde-format
 msgid "One of the installed packages requires you to logout"
 msgstr "설치된 패키지에서 로그아웃을 요청했습니다"
 
-#: PkUpdateList.cxx:596
+#: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
 msgstr "로그아웃"
 
-#: PkUpdateList.cxx:642
+#: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
 msgstr "설치 취소"
 
-#: PkUpdateList.cxx:675
+#: PkUpdateList.cxx:663
 #, kde-format
 msgid "Waiting"
 msgstr "대기 중"
 
-#: PkUpdateList.cxx:676
+#: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
 msgstr "인증 대기 중"
 
-#: PkUpdateList.cxx:677
+#: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
 msgstr "의존성 확인 중"
 
-#: PkUpdateList.cxx:678
+#: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
 msgstr "업데이트 중"
 
-#: PkUpdateList.cxx:679
+#: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
 msgstr "설치 중"
 
-#: PkUpdateList.cxx:680
+#: PkUpdateList.cxx:668
 #, kde-format
 msgid "Downloading"
 msgstr "다운로드 중"
 
-#: PkUpdateList.cxx:681
+#: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
 msgstr "취소 중"
 
-#: PkUpdateList.cxx:736
+#: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
 msgstr "서명 검증"
 
-#: PkUpdateList.cxx:787
+#: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
 msgstr "업데이트 실패"
 
-#: PkUpdateList.cxx:842
+#: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
 msgstr "EULA 수락"
 
-#: PkUpdateList.cxx:854
+#: PkUpdateList.cxx:842
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
@@ -662,22 +662,22 @@ msgstr ""
 "<html>제조사<br>%2의<br>패키지<br>%1<br>의 라이선스 조항에 동의하십니까?</"
 "html>"
 
-#: PkUpdates.cxx:66
+#: PkUpdates.cxx:53
 #, kde-format
 msgid "Next check: %1"
 msgstr "다음 확인: %1"
 
-#: PkUpdates.cxx:92
+#: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
 msgstr "업데이트 검색 중..."
 
-#: PkUpdates.cxx:108 PkUpdates.cxx:162
+#: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
 msgstr "업데이트 검색 중... %1%"
 
-#: PkUpdates.cxx:184
+#: PkUpdates.cxx:171
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -686,30 +686,30 @@ msgstr ""
 "마지막 확인: %1\n"
 "업데이트 확인 오류: %2"
 
-#: PkUpdates.cxx:187
+#: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
 msgstr "소프트웨어 업데이트 오류"
 
-#: PkUpdates.cxx:208
+#: PkUpdates.cxx:195
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
 msgstr[0] "<b>보안</b> 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:220
+#: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
 msgstr[0] "<i>중요</i> 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:232
+#: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
 msgstr[0] "버그 수정 업데이트 %1개 사용 가능"
 
-#: PkUpdates.cxx:242
+#: PkUpdates.cxx:229
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -724,7 +724,7 @@ msgstr[0] ""
 "중요한 업데이트가 없습니다\n"
 "기타 업데이트 %2개"
 
-#: PkUpdates.cxx:253
+#: PkUpdates.cxx:240
 #, kde-format
 msgid ""
 "Last check: %1\n"
@@ -733,23 +733,23 @@ msgstr ""
 "마지막 확인: %1\n"
 "업데이트가 없습니다"
 
-#: PkUpdates.cxx:262
+#: PkUpdates.cxx:249
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
 msgstr[0] "<br>기타 업데이트 %1개"
 
-#: PkUpdates.cxx:264
+#: PkUpdates.cxx:251
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
 msgstr "<html>마지막 확인: %1<br>%2</html>"
 
-#: PkUpdates.cxx:303
+#: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
 msgstr "소프트웨어 업데이트 사용 가능"
 
-#: PkUpdates.cxx:323
+#: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1개 더 보기...</li>"
@@ -759,163 +759,163 @@ msgstr "<li>%1개 더 보기...</li>"
 msgid "Web Browser"
 msgstr "웹 브라우저"
 
-#: StartMenu.cxx:97
+#: StartMenu.cxx:80
 #, kde-format
 msgid "Switch User"
 msgstr "사용자 전환"
 
-#: StartMenu.cxx:195
+#: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
 msgstr "메뉴 설정..."
 
-#: SysLoad.cxx:217
+#: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
 msgstr "CPU %1: %2%(%3 MHz)"
 
-#: SysLoad.cxx:227
+#: SysLoad.cxx:210
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
 msgstr "총 메모리: %1 MB(%2 GB)"
 
-#: SysLoad.cxx:229
+#: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
 msgstr "사용 중인 메모리: %1 MB(%2 GB) %3%"
 
-#: SysLoad.cxx:231
+#: SysLoad.cxx:214
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
 msgstr "여유 메모리: %1 MB(%2 GB)"
 
-#: SysLoad.cxx:233
+#: SysLoad.cxx:216
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
 msgstr "총 스왑: %1 MB(%2 GB)"
 
-#: SysLoad.cxx:235
+#: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
 msgstr "사용 중인 스왑: %1 MB(%2 GB) %3%"
 
-#: SysLoad.cxx:237
+#: SysLoad.cxx:220
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
 msgstr "여유 스왑: %1 MB(%2 GB)"
 
-#: SysLoad.cxx:240
+#: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
 msgstr "네트워크 수신/발신: %1/%2 KB/초"
 
-#: SysLoad.cxx:244
+#: SysLoad.cxx:227
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "네트워크 최대(최근 %2초): %1 KB/초"
 
-#: SysTray.cxx:303
+#: SysTray.cxx:291
 #, kde-format
 msgid "Show New Notifications"
 msgstr "새 알림 표시"
 
-#: TaskBarButton.cxx:124
+#: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
 msgstr "바탕 화면으로 이동"
 
-#: TaskBarButton.cxx:125
+#: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
 msgstr "모든 바탕 화면"
 
-#: TaskBarButton.cxx:132
+#: TaskBarButton.cxx:117
 #, kde-format
 msgid "Close"
 msgstr "닫기"
 
-#: WeatherApplet.cxx:78
+#: WeatherApplet.cxx:66
 #, kde-format
 msgid "Temperature:"
 msgstr "온도:"
 
-#: WeatherApplet.cxx:81
+#: WeatherApplet.cxx:69
 #, kde-format
 msgid "Pressure:"
 msgstr "기압:"
 
-#: WeatherApplet.cxx:84
+#: WeatherApplet.cxx:72
 #, kde-format
 msgid "Humidity:"
 msgstr "습도:"
 
-#: WeatherApplet.cxx:87
+#: WeatherApplet.cxx:75
 #, kde-format
 msgid "Wind Speed:"
 msgstr "풍속:"
 
-#: WeatherApplet.cxx:90
+#: WeatherApplet.cxx:78
 #, kde-format
 msgid "Wind Direction:"
 msgstr "풍향:"
 
-#: WeatherApplet.cxx:140 WeatherApplet.cxx:411
+#: WeatherApplet.cxx:128 WeatherApplet.cxx:399
 #, kde-format
 msgid "Not configured"
 msgstr "설정되지 않음"
 
-#: WeatherApplet.cxx:195
+#: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
 msgstr "K"
 
-#: WeatherApplet.cxx:196
+#: WeatherApplet.cxx:184
 #, kde-format
 msgid "°C"
 msgstr "°C"
 
-#: WeatherApplet.cxx:197
+#: WeatherApplet.cxx:185
 #, kde-format
 msgid "°F"
 msgstr "°F"
 
-#: WeatherApplet.cxx:210 WeatherApplet.cxx:227 WeatherApplet.cxx:290
-#: WeatherApplet.cxx:291
+#: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
+#: WeatherApplet.cxx:279
 #, kde-format
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: WeatherApplet.cxx:213
+#: WeatherApplet.cxx:201
 #, kde-format
 msgid "%1 hPa"
 msgstr "%1 hPa"
 
-#: WeatherApplet.cxx:216
+#: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
 msgstr "%1 %"
 
-#: WeatherApplet.cxx:230
+#: WeatherApplet.cxx:218
 #, kde-format
 msgid "%1 °"
 msgstr "%1 °"
 
-#: WeatherApplet.cxx:387
+#: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
 msgstr "날씨 애플릿 설정"
 
-#: WeatherAppletConfigureDialog.cxx:80
+#: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
 msgstr "도시 목록 다운로드 중..."
 
-#: WeatherAppletConfigureDialog.cxx:94
+#: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
 msgid "Download Error"
 msgstr "다운로드 오류"
 
-#: WeatherAppletConfigureDialog.cxx:95
+#: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
 msgstr "도시 목록 다운로드 오류: %1"
@@ -962,6 +962,12 @@ msgstr "영국법(&I)"
 #, kde-format
 msgid "City"
 msgstr "도시"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "국가"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Liquid 데스크톱 작업 공간"
