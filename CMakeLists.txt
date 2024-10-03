@@ -114,7 +114,6 @@ set_property(TARGET ${TARGET} PROPERTY AUTORCC ON)
 target_link_libraries(${TARGET}
                       Qt::Core
                       Qt::Gui
-                      Qt::GuiPrivate
                       Qt::Widgets
                       Qt::DBus
                       KF6::WindowSystem
