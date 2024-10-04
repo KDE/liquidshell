@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-03 01:49+0000\n"
-"PO-Revision-Date: 2023-12-14 06:40+0100\n"
+"PO-Revision-Date: 2024-10-03 06:16+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -129,7 +129,7 @@ msgstr "Časovni pas"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Ozemlje"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -200,10 +200,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Osnovna lupina na podlagi QtWidgets"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Copyright 2017 - 2023 Martin Koller"
+msgstr "Copyright 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
