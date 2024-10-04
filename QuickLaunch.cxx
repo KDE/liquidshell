@@ -114,6 +114,7 @@ void QuickLaunch::fill()
       connect(button, &QToolButton::clicked, [this, url]()
               {
                 KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+                job->setRunExecutables(true);
                 job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
                 job->start();
               });

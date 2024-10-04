@@ -130,6 +130,7 @@ void AppMenu::showMenu()
             {
               popup->close();
               KIO::OpenUrlJob *job = new KIO::OpenUrlJob(url);
+              job->setRunExecutables(true);
               job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
               job->start();
             });
