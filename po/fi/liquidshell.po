@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:49+0000\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
 "PO-Revision-Date: 2024-02-14 18:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -768,7 +768,7 @@ msgstr "Ohjelmapäivityksiä saatavilla"
 msgid "<li>%1 more ...</li>"
 msgstr "<li>%1 muuta…</li>"
 
-#: QuickLaunch.cxx:157
+#: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
 msgstr "Verkkoselain"

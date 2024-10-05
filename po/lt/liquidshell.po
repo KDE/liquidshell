@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:49+0000\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
 "PO-Revision-Date: 2021-12-13 13:05+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -791,7 +791,7 @@ msgstr "Yra prieinami programinės įrangos atnaujinimai"
 msgid "<li>%1 more ...</li>"
 msgstr "<li> ir dar %1 ...</li>"
 
-#: QuickLaunch.cxx:157
+#: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
 msgstr "Saityno naršyklė"

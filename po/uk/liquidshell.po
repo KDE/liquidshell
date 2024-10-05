@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:49+0000\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
 "PO-Revision-Date: 2024-10-03 13:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -793,7 +793,7 @@ msgstr "Доступні оновлення програмного забезп�
 msgid "<li>%1 more ...</li>"
 msgstr "<li>і ще %1…</li>"
 
-#: QuickLaunch.cxx:157
+#: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
 msgstr "Переглядач інтернету"

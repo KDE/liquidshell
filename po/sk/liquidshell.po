@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:49+0000\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
 "PO-Revision-Date: 2017-11-05 21:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -763,7 +763,7 @@ msgstr ""
 msgid "<li>%1 more ...</li>"
 msgstr ""
 
-#: QuickLaunch.cxx:157
+#: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
 msgstr "Webový prehliadač"

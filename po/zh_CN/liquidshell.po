@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-03 01:49+0000\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
 "PO-Revision-Date: 2024-04-22 16:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -738,7 +738,7 @@ msgstr "系统有可以安装的软件更新"
 msgid "<li>%1 more ...</li>"
 msgstr ""
 
-#: QuickLaunch.cxx:157
+#: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
 msgstr "网页浏览器"
