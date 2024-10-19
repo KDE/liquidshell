@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-05-24 17:32+0100\n"
+"PO-Revision-Date: 2024-10-18 18:53+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -124,7 +124,7 @@ msgstr "Timezone"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Territory"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -195,10 +195,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "A QtWidgets based basic desktop shell"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Copyright 2017 - 2023 Martin Koller"
+msgstr "Copyright 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format

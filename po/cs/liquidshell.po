@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-01-19 15:47+0100\n"
+"PO-Revision-Date: 2024-10-08 15:19+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -126,7 +126,7 @@ msgstr "Časové pásmo"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Teritorium"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -197,10 +197,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr ""
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Autorská práva 2017 - 2023 Martin Koller"
+msgstr "Autorská práva 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
