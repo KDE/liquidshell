@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2023-12-16 06:42+0100\n"
+"PO-Revision-Date: 2024-12-16 04:29+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -125,7 +125,7 @@ msgstr "დროის ზონა"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "ტერიტორია"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -196,10 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets-ზე დაწერილი უბრალო სამუშაო მაგიდის გარემო"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "2017 - 2023, მარტინ კოლერი, ყველა უფლება დაცულია"
+msgstr "2017 - 2024, მარტინ კოლერი, ყველა უფლება დაცულია"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
