@@ -15,6 +15,7 @@
   <name xml:lang="fi">liquidshell</name>
   <name xml:lang="fr">liquidshell</name>
   <name xml:lang="gl">liquidshell</name>
+  <name xml:lang="he">liquidshell</name>
   <name xml:lang="id">liquidshell</name>
   <name xml:lang="it">liquidshell</name>
   <name xml:lang="ka">liquidshell</name>
@@ -45,6 +46,7 @@
   <summary xml:lang="fi">liquidshell on plasmashellin vaihtoehto</summary>
   <summary xml:lang="fr">Le composant « liquidshell » est une alternative à « plasmashell »</summary>
   <summary xml:lang="gl">liquidshell é unha alternativa a plasmashell.</summary>
+  <summary xml:lang="he">liquidshell מהווה חלופה ל־plasmashell (מעטפת פלזמה)</summary>
   <summary xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</summary>
   <summary xml:lang="it">liquidshell è un'alternativa a plasmashell</summary>
   <summary xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</summary>
@@ -79,6 +81,7 @@
     <p xml:lang="fi">liquidshell on plasmashellin vaihtoehto</p>
     <p xml:lang="fr">Le composant « liquidshell » est une alternative à « plasmashell »</p>
     <p xml:lang="gl">liquidshell é unha alternativa a plasmashell.</p>
+    <p xml:lang="he">liquidshell מהווה חלופה ל־plasmashell (מעטפת פלזמה)</p>
     <p xml:lang="id">liquidshell adalah sebuah alternatif untuk plasmashell</p>
     <p xml:lang="it">liquidshell è un'alternativa a plasmashell</p>
     <p xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</p>
@@ -110,6 +113,7 @@
     <p xml:lang="fi">Se ei käytä QtQuickiä vaan luottaa QtWidgetsiin, joten se ei vaadi laitteistokiihdytystä.</p>
     <p xml:lang="fr">Il n'utilise par « QtQuick » mais à la place « QtWidgets ». Par conséquent, aucune accélération graphique matérielle n'est requise.</p>
     <p xml:lang="gl">Non usa QtQuick senón QtWidgets, polo que non require aceleración gráfica por soporte físico.</p>
+    <p xml:lang="he">לא משתמש ב־QtQuick ובמקום נסמך על QtWidgets, לכן אין צורך בהאצת חומרה גרפית.</p>
     <p xml:lang="id">Ini tidaklah menggunakan QtQuick tapi alih-alih bergantung pada QtWidgets, yang mana tidak diperlukannya akselerasi grafik hardware.</p>
     <p xml:lang="it">Non usa QtQuick ma si affida invece a QtWidgets; non è quindi necessaria nessuna accelerazione grafica hardware.</p>
     <p xml:lang="ka">QtQuick -ის მაგიერ ის QtWidgets-ზეა დაწერილი, ამიტომ გრაფიკის აპარატურული აჩქარება საჭირო არაა.</p>
@@ -140,6 +144,7 @@
     <p xml:lang="fi">Keskeiset ominaisuudet:</p>
     <p xml:lang="fr">Fonctions principales :</p>
     <p xml:lang="gl">Funcionalidades principais:</p>
+    <p xml:lang="he">יכולות עיקריות:</p>
     <p xml:lang="id">Fitur Utama:</p>
     <p xml:lang="it">Funzionalità principali:</p>
     <p xml:lang="ka">მთავარი ფუნქციები:</p>
@@ -171,6 +176,7 @@
       <li xml:lang="fi">Virtuaalityöpöydittäiset taustakuvat</li>
       <li xml:lang="fr">Fonds d'écran pour chaque bureau virtuel</li>
       <li xml:lang="gl">Fondo de escritorio por escritorio virtual.</li>
+      <li xml:lang="he">רקע נפרד לכל שולחן עבודה וירטואלי</li>
       <li xml:lang="id">Wallpaper tiap desktop virtual</li>
       <li xml:lang="it">Sfondo per i desktop virtuali</li>
       <li xml:lang="ka">ფონის სურათი თითოეული ვირტუალური სამუშაო მაგიდისთვის</li>
@@ -200,6 +206,7 @@
       <li xml:lang="fi">Ei animointeja tai suorittimen rohmuamista; vähäinen muistinkulutus</li>
       <li xml:lang="fr">Aucune animation. Aucune surcharge du processeur. Empreinte mémoire faible</li>
       <li xml:lang="gl">Sen animacións, cun uso baixo de CPU e memoria.</li>
+      <li xml:lang="he">אין הנפשות, עומס על המעבד, טביעת הרגל בזיכרון קטנה</li>
       <li xml:lang="id">Tidak ada animasi, tidak ada kelokan CPU, lemahnya jejak Memori</li>
       <li xml:lang="it">Nessuna animazione, nessun uso intensivo della CPU, utilizzo della memoria limitato</li>
       <li xml:lang="ka">ანიმაციის გარეშე, არ ჭამს CPU-ს, სჭირდება ცოტა მეხსიერება</li>
@@ -230,6 +237,7 @@
       <li xml:lang="fi">Välitön käynnistys</li>
       <li xml:lang="fr">Démarrage rapide</li>
       <li xml:lang="gl">Inicio instantáneo.</li>
+      <li xml:lang="he">עלייה מיידית</li>
       <li xml:lang="id">Pemulaian sekejap</li>
       <li xml:lang="it">Avvio istantaneo</li>
       <li xml:lang="ka">მყისიერი გაშვება</li>
@@ -260,6 +268,7 @@
       <li xml:lang="fi">Ei käytä aktiviteetteja</li>
       <li xml:lang="fr">Aucune utilisation d'activités</li>
       <li xml:lang="gl">Sen actividades.</li>
+      <li xml:lang="he">אין שימוש בפעילויות</li>
       <li xml:lang="id">Tidak ada penggunaan aktivitas</li>
       <li xml:lang="it">Nessun utilizzo delle attività</li>
       <li xml:lang="ka">არ იყენებს აქტივობებს</li>
@@ -290,6 +299,7 @@
       <li xml:lang="fi">Perustuu QtWidgetsiin, joten noudattaa järjestelmäasetusten käyttöliittymäalkiotyyliä</li>
       <li xml:lang="fr">Utilisant « QtWidgets ». Par conséquent, il utilise les styles des composants graphiques définis dans les réglages du système.</li>
       <li xml:lang="gl">Baseado en QtWidgets, polo que usa o estilo de trebello definido na configuración do sistema.</li>
+      <li xml:lang="he">מבוסס על QtWidgets, לכן נצמד לסגנון הווידג׳טים מהגדרות המערכת</li>
       <li xml:lang="id">Berdasarkan QtWidgets, yang mana mengikuti gaya widget dari systemsettings</li>
       <li xml:lang="it">È basato su QtWidgets, quindi segue lo stile degli oggetti dalle Impostazioni di sistema</li>
       <li xml:lang="ka">დაფუძნებულია QtWidgets-ზე, ამიტომ სტილი სისტემის მორგებიდან ეთითება</li>
@@ -319,6 +329,7 @@
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritetyn yleisen kuvaketeeman kuvakkeita</li>
       <li xml:lang="fr">Les icônes sont utilisées à partir du thème que vous avez défini pour l'ensemble de votre bureau, à partir des réglages du système.</li>
       <li xml:lang="gl">Usa as iconas do tema de iconas definido globalmente desde a configuración do sistema.</li>
+      <li xml:lang="he">נעשה שימוש בסמלים מערכת הסמלים שהוגדרה לכלל המערכת בהגדרות המערכת</li>
       <li xml:lang="id">Ikon-ikon telah digunakan dari tema ikon yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">Le icone utilizzate sono quelle del tema di icone definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="ka">ხატულები სისტემაში გლობალურად დაყენებული ხატულების თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
@@ -348,6 +359,7 @@
       <li xml:lang="fi">Käyttää järjestelmäasetuksissa määritettyjä yleisiä väriasetuksia</li>
       <li xml:lang="fr">Les couleurs sont utilisées à partir du thème de couleurs que vous avez défini dans les réglages du système.</li>
       <li xml:lang="gl">Usa as cores do tema de cores definido globalmente desde a configuración do sistema.</li>
+      <li xml:lang="he">נעשה שימוש בצבעים בערכת הצבעים שהוגדרה לכלל המערכת בהגדרות המערכת</li>
       <li xml:lang="id">Warna-warna telah digunakan dari tema warna yang ditentukan secara globalmu dari systemsettings</li>
       <li xml:lang="it">I colori utilizzati sono quelli del tema di colori definito globalmente nelle Impostazioni di sistema</li>
       <li xml:lang="ka">ფერები სისტემაში გლობალურად დაყენებული ფერებს თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
@@ -377,6 +389,7 @@
       <li xml:lang="fi">Tyyliä voi vielä CSS:llä muokata komentorivivalitsinta ”-stylesheet tiedosto.css” käyttäen (ks. esimerkkitiedostoa stylesheet.css)</li>
       <li xml:lang="fr">Peut être optionnellement décoré avec les styles « css » avec l'option de ligne de commandes « -stylesheet nom-de-fichier.css » (Veuillez consulter les exemples fournis avec « stylesheet.css »)</li>
       <li xml:lang="gl">Ademais pode aplicárselle un estilo con CSS mediante a opción -stylesheet ficheiro.css da liña de ordes (consulte o exemplo de stylesheet.css incluído).</li>
+      <li xml:lang="he">אפשר לשנות את העיצוב עם css על ידי העברת האפשרות ‎-stylesheet filename.css דרך שורת הפקודה (מצורף stylesheet.css לדוגמה)</li>
       <li xml:lang="id">Bisa ditambah-tambah gaya dengan css lewat commandline opsi -stylesheet filename.css (lihatlah contoh yang disertakan stylesheet.css)</li>
       <li xml:lang="it">Lo stile può inoltre essere reso mediante css, passando l'opzione di riga di comando -stylesheet nomefile.css (vedi l'esempio stylesheet.css incluso)</li>
       <li xml:lang="ka">ასევე შეგიძლიათ სტილი CSS-თაც შეცვალოთ ბრძანების სტრიქონის პარამეტრის -stylesheet filename.css -ით შეცვალოთ (იხილეთ მაგალითისთვის მოყოლებული stylesheet.css)</li>
@@ -406,6 +419,7 @@
       <li xml:lang="fi">Käyttää useimmiten olemassa olevia KDE-valintaikkunoita, esim. käynnistysvalikko, virtuaalityöpöydät, Bluetooth, verkko</li>
       <li xml:lang="fr">utilise les boîtes de dialogue existantes de KDE pour la plupart des configurations comme le menu de démarrage, les bureaux virtuels, le Bluetooth, le réseau</li>
       <li xml:lang="gl">Usa diálogos de KDE existente para a meirande parte da configuración, como o menú de inicio, os escritorios virtuais, Bluetooth ou a rede.</li>
+      <li xml:lang="he">משתמש בחלוניות קיימות של KDE לרוב ההגדרות, למשל:  תפריט התחלה, שולחנות עבודה וירטואליים, בלוטות׳, רשת</li>
       <li xml:lang="id">menggunakan dialog KDE yang ada untuk beberapa konfigurasi, misal StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="it">Utilizza le finestre esistenti di KDE per la maggior parte delle configurazioni, ad esempio il Menu Avvio, i desktop virtuali, il Bluetooth e la rete</li>
       <li xml:lang="ka">კონფიგურაციისთვის (როგორიცაა მთავარი მენიუ, ვირტუალური სამუშაო მაგიდა, ქსელი) ძირითადად, KDE-ის უკვე არსებულ ფანჯრებს იყენებს</li>
@@ -435,6 +449,7 @@
       <li xml:lang="fi">Yksi alhaalla oleva työpöytäpaneeli</li>
       <li xml:lang="fr">Un panneau de bureau en bas</li>
       <li xml:lang="gl">Un panel de escritorio na parte inferior.</li>
+      <li xml:lang="he">לוח שולחן עבודה תחתון יחיד</li>
       <li xml:lang="id">Salahsatu bagian bawah DesktopPanel</li>
       <li xml:lang="it">Un pannello desktop in basso</li>
       <li xml:lang="ka">ერთი ქვედა DesktopPanel</li>
@@ -464,6 +479,7 @@
       <li xml:lang="fi">Työpöytäsovelmat</li>
       <li xml:lang="fr">Applets de bureau</li>
       <li xml:lang="gl">Trebellos de escritorio.</li>
+      <li xml:lang="he">יישומוני שולחן עבודה</li>
       <li xml:lang="id">Applet Desktop</li>
       <li xml:lang="it">Applet desktop</li>
       <li xml:lang="ka">სამუშაო მაგიდის აპლეტები</li>
