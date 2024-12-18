@@ -1,188 +1,193 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2023, 2024 Adrian Chaves <adrian@chaves.io>
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the liquidshell package.
 #
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-12-17 22:53+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
-"Language: gl\n"
+"PO-Revision-Date: 2024-12-17 22:51+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Adrian Chaves (Gallaecio)"
+msgstr "צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "adrian@chaves.io"
+msgstr "kde-l10n-he@kde.org"
 
 #: Battery.cxx:78
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] "%1 hora"
-msgstr[1] "%1 horas"
+msgstr[0] "שעה"
+msgstr[1] "שעתיים"
+msgstr[2] "%1 שעות"
+msgstr[3] "%1 שעות"
 
 #: Battery.cxx:79
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minuto"
-msgstr[1] "%1 minutos"
+msgstr[0] "דקה"
+msgstr[1] "שתי דקות"
+msgstr[2] "%1 דקות"
+msgstr[3] "%1 דקות"
 
 #: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
-msgstr "Sen cargar"
+msgstr "לא בטעינה"
 
 #: Battery.cxx:152
 #, kde-format
 msgid "Fully Charged"
-msgstr "Carga completa"
+msgstr "טעינה מלאה"
 
 #: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
-msgstr "Carga ao %1%"
+msgstr "טעינה ב־%1%"
 
 #: Battery.cxx:161
 #, kde-format
 msgid "Time until full: "
-msgstr "Tempo para completar: "
+msgstr "זמן עד להשלמה: "
 
 #: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
-msgstr "Descargando ao %1%"
+msgstr "פריקה ב־%1%"
 
 #: Battery.cxx:167
 #, kde-format
 msgid "Remaining Time: "
-msgstr "Tempo restante: "
+msgstr "זמן שנותר: "
 
 #: Battery.cxx:193
 #, kde-format
 msgid "Power Management"
-msgstr "Xestión da enerxía"
+msgstr "ניהול צריכת חשמל"
 
 #: Bluetooth.cxx:64
 #, kde-format
 msgid "Bluetooth is operational"
-msgstr "Bluetooth activado"
+msgstr "הבלוטות׳ פעיל"
 
 #: Bluetooth.cxx:69
 #, kde-format
 msgid "Bluetooth is not operational"
-msgstr "O Bluetooth non funciona."
+msgstr "הבלוטות׳ לא פעיל"
 
 #: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
-msgstr "Bluetooth"
+msgstr "בלוטות׳"
 
 #: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
-msgstr "Seleccionar fusos horarios…"
+msgstr "בחירת אזורי זמן…"
 
 #: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
-msgstr "Seleccionar fusos horarios"
+msgstr "בחירת אזורי זמן"
 
 #: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
-msgstr "Configurar a data e a hora…"
+msgstr "הגדרת תאריך ושעה…"
 
 #: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
-msgstr "Data e hora"
+msgstr "תאריך ושעה"
 
 #: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
 msgid "Filter"
-msgstr "Filtrar"
+msgstr "מסנן"
 
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Timezone"
-msgstr "Fuso horario"
+msgstr "אזור זמן"
 
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr "Territorio"
+msgstr "אזור"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
-msgstr "Obter novos fondos de escritorio…"
+msgstr "הורדת תמונות רקע חדשות…"
 
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
-msgstr "Descargar fondos de escritorio"
+msgstr "הורדת תמונות רקע"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr "Configurar o fondo de escritorio"
+msgstr "הגדרת תמונת רקע"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
 #, kde-format
 msgid "Background Color"
-msgstr "Cor de fondo"
+msgstr "צבע רקע"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ConfigureDesktopDialog.ui:33
 #, kde-format
 msgid "Wallpaper File"
-msgstr "Ficheiro de fondo de escritorio"
+msgstr "קובץ תמונת רקע"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ConfigureDesktopDialog.ui:67
 #, kde-format
 msgid "Scale Mode"
-msgstr "Modo de cambio de dimensións"
+msgstr "מצב קנה־מידה"
 
 #. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
 #: ConfigureDesktopDialog.ui:73
 #, kde-format
 msgid "Or&iginal Size"
-msgstr "Tamaño orixinal"
+msgstr "גודל מ&קורי"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
 #: ConfigureDesktopDialog.ui:80
 #, kde-format
 msgid "Sca&led Ignoring Aspect Ratio"
-msgstr "A&xustado ignorando as proporcións"
+msgstr "פרוסה על המסך &בלי לשמר יחס גובה־רוחב"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
 #: ConfigureDesktopDialog.ui:87
 #, kde-format
 msgid "Scale&d Keep Aspect Ratio"
-msgstr "Axustando manten&do as proporcións"
+msgstr "פרוסה על המסך תוך &שמירה על יחס גובה־רוחב"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
 #: ConfigureDesktopDialog.ui:94
 #, kde-format
 msgid "Scaled Keep Aspec&t Ratio and Clip"
-msgstr "Axustado mantendo as proporcións e recor&tando"
+msgstr "פרוסה על המסך תוך שמירה על יחס גובה־רוחב ו&חיתוך"
 
 #: desktop.cxx:30
 #, kde-format
@@ -192,87 +197,87 @@ msgstr "Liquidshell"
 #: desktop.cxx:31
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
-msgstr "Unha interface de escritorio básica baseada en QtWidgets"
+msgstr "מעטפת שולחן עבודה בסיסית מבוססת QtWidgets"
 
 #: desktop.cxx:33
 #, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "© 2017-2024 Martin Koller"
+msgstr "כל הזכויות שמורות 2017 - 2024 מרטין קולר"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
 msgid "Configure..."
-msgstr "Configurar…"
+msgstr "הגדרה…"
 
 #: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
-msgstr "Cambiar o tamaño e a posición"
+msgstr "שינוי גודל ומקום"
 
 #: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
-msgstr "Retirar o miniaplicativo"
+msgstr "הסרת היישומון הזה"
 
 #: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
-msgstr "%1: Cambiar o tamaño e a posición"
+msgstr "%1: שינוי גודל ומקום"
 
 #: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
-msgstr "Retirar o miniaplicativo"
+msgstr "הסרת יישומון"
 
 #: DesktopApplet.cxx:137
 #, kde-format
 msgid "Really remove this applet?"
-msgstr "Seguro que quere retirar o miniaplicativo?"
+msgstr "להסיר את היישומון הזה?"
 
 #: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr "Configurar o fondo de escritorio…"
+msgstr "הגדרת תמונת רקע…"
 
 #: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
-msgstr "Engadir un miniaplicativo"
+msgstr "הוספת יישומון"
 
 #: DesktopWidget.cxx:75
 #, kde-format
 msgid "Weather"
-msgstr "Tempo atmosférico"
+msgstr "מזג אוויר"
 
 #: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
-msgstr "Uso do disco"
+msgstr "ניצולת כונן"
 
 #: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
-msgstr "Marco de foto"
+msgstr "מסגרת לתמונה"
 
 #: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
-msgstr "Configurar a pantalla…"
+msgstr "הגדרת תצוגה…"
 
 #: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
-msgstr "Executar unha orde…"
+msgstr "הרצת פקודה…"
 
 #: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
-msgstr "Axuda"
+msgstr "עזרה"
 
 #: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
-msgstr "Configurar a pantalla"
+msgstr "הגדרת תצוגה"
 
 #: DeviceList.cxx:243
 #, kde-format
@@ -282,7 +287,7 @@ msgstr "KDE Connect"
 #: DeviceList.cxx:260
 #, kde-format
 msgid "Open with File Manager"
-msgstr "Abrir co xestor de ficheiros"
+msgstr "פתיחה עם מנהל קבצים"
 
 #: DeviceList.cxx:343
 #, kde-format
@@ -290,8 +295,8 @@ msgid ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 msgstr ""
-"O dispositivo está montado.\n"
-"Prema para desmontar ou expulsar"
+"ההתקן מעוגן.\n"
+"לחיצה תנתק/תשלוף אותו"
 
 #: DeviceList.cxx:344
 #, kde-format
@@ -299,73 +304,73 @@ msgid ""
 "Device is unmounted.\n"
 "Click to mount"
 msgstr ""
-"O dispositivo está desmontado.\n"
-"Prema para montar"
+"ההתקן מנותק.\n"
+"לחיצה תעגן אותו"
 
 #: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
-msgstr "Operación non permitida"
+msgstr "פעולה לא מורשית"
 
 #: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
-msgstr "Dispositivo ocupado"
+msgstr "ההתקן עסוק"
 
 #: DeviceList.cxx:357
 #, kde-format
 msgid "Operation Failed"
-msgstr "A operación fallou"
+msgstr "הפעולה נכשלה"
 
 #: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
-msgstr "Cancelado polo usuario"
+msgstr "משתמש ביטל"
 
 #: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
-msgstr "Opción incorrecta"
+msgstr "אפשרות שגויה"
 
 #: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
-msgstr "Falta o controlador"
+msgstr "חסר מנהל התקן"
 
 #: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
-msgstr "O dispositivo pode retirarse con seguridade"
+msgstr "כעת אפשר להסיר את ההתקן בבטחה"
 
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
-msgstr "Fallou a montaxe:"
+msgstr "העיגון נכשל:"
 
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
-msgstr "Fallou a desmontaxe:"
+msgstr "הניתוק נכשל:"
 
 #: DeviceNotifier.cxx:23
 #, kde-format
 msgid "Device Notifier"
-msgstr "Notificador de dispositivos"
+msgstr "מודיע התקנים"
 
 #: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
-msgstr "Lista de dispositivos"
+msgstr "רשימת התקנים"
 
 #: DiskUsageApplet.cxx:131
 #, kde-format
 msgid "%1 free / %2"
-msgstr "%1 libre / %2"
+msgstr "%1 פנויים / %2"
 
 #: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
-msgstr "Configurar o miniaplicativo de uso de disco"
+msgstr "הגדרת יישומון ניצולת כונן"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
 #. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
@@ -374,37 +379,37 @@ msgstr "Configurar o miniaplicativo de uso de disco"
 #: WeatherAppletConfigureDialog.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr "Diálogo"
+msgstr "חלונית"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
 #, kde-format
 msgid "Text"
-msgstr "Texto"
+msgstr "טקסט"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: DiskUsageAppletConfigureDialog.ui:44
 #, kde-format
 msgid "Bar Text"
-msgstr "Texto de barra"
+msgstr "טקסט עמודה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
 #: WeatherAppletConfigureDialog.ui:119
 #, kde-format
 msgid "Background"
-msgstr "Fondo"
+msgstr "רקע"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: DiskUsageAppletConfigureDialog.ui:72
 #, kde-format
 msgid "Bar Background"
-msgstr "Fondo de barra"
+msgstr "רקע עמודה"
 
 #: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
-msgstr "Un dispositivo necesita cargarse"
+msgstr "ההתקן צריך להיטען"
 
 #: KdeConnect.cxx:170
 #, kde-format
@@ -412,274 +417,276 @@ msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
 msgstr ""
-"A carga do dispositivo «%1» está ao %2%.\n"
-"Debería cargalo."
+"רמת טעינת ההתקן ‚%1’ עומדת על %2%.\n"
+"כדאי להטעין אותו."
 
 #: Launcher.cxx:86
 #, kde-format
 msgid "Open Folder"
-msgstr "Abrir un cartafol"
+msgstr "פתיחת תיקייה"
 
 #: Network.cxx:72
 #, kde-format
 msgid "No Network Connection"
-msgstr "Non se dispón de conexión á rede"
+msgstr "אין חיבור לרשת"
 
 #: Network.cxx:82
 #, kde-format
 msgid "Full Network Connectivity (%1)"
-msgstr "Conectividade de rede completa (%1)"
+msgstr "פעילות רשת מלאה (%1)"
 
 #: Network.cxx:84
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
-msgstr "Conectividade de rede limitada (%1)"
+msgstr "פעילות רשת מוגבלת (%1)"
 
 #: Network.cxx:93
 #, kde-format
 msgid "IPv4 Address: %1"
-msgstr "Enderezo IPv4: %1"
+msgstr "כתובת IPv4:‏ %1"
 
 #: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
-msgstr "SSID: %1"
+msgstr "שם רשת אלחוטית (SSID): %1"
 
 #: Network.cxx:112
 #, kde-format
 msgid "Signal Strength: %1"
-msgstr "Potencia do sinal: %1"
+msgstr "עוצמת אות: %1"
 
 #: Network.cxx:144
 #, kde-format
 msgid "VPN active"
-msgstr "VPN activa"
+msgstr "VPN פעיל"
 
 #: NetworkList.cxx:213
 #, kde-format
 msgid "Configure Network Connections"
-msgstr "Configurar as conexións de rede"
+msgstr "הגדרת חיבורי רשת"
 
 #: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr "A rede está activada. Prema para desactivar."
+msgstr "תקשורת רשת פעילה. לחיצה תשבית אותה"
 
 #: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr "A rede está desactivada. Prema para activar."
+msgstr "תקשורת רשת כבויה. לחיצה תפעיל אותה"
 
 #: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
-msgstr "A rede sen fíos está activada. Prema para desactivar."
+msgstr "תקשורת אלחוטית פעילה. לחיצה תשבית אותה"
 
 #: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
-msgstr "A rede sen fíos está desactivada. Prema para activar."
+msgstr "תקשורת אלחוטית כבויה. לחיצה תפעיל אותה"
 
 #: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
-msgstr "Notificacións"
+msgstr "התראות"
 
 #: NotificationServer.cxx:59
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
-msgstr[0] "%1 notificación"
-msgstr[1] "%1 notificacións"
+msgstr[0] "התראה"
+msgstr[1] "שתי התראות"
+msgstr[2] "%1 התראות"
+msgstr[3] "%1 התראות"
 
 #: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
-msgstr "Configurar os escritorios virtuais…"
+msgstr "הגדרת שולחנות עבודה וירטואליים…"
 
 #: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
-msgstr "Configurar os escritorios virtuais"
+msgstr "הגדרת שולחנות עבודה וירטואליים"
 
 #: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
-msgstr "Configurar o miniaplicativo de marco de foto"
+msgstr "הגדרת יישומון מסגרת תמונה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: PictureFrameAppletConfigureDialog.ui:37
 #, kde-format
 msgid "Frame"
-msgstr "Marco"
+msgstr "מסגרת"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: PictureFrameAppletConfigureDialog.ui:61
 #, kde-format
 msgid "Path"
-msgstr "Ruta"
+msgstr "נתיב"
 
 #: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
-msgstr "Obtendo os detalles…"
+msgstr "הפרטים מתקבלים…"
 
 #: PkUpdateList.cxx:170
 #, kde-format
 msgid "<b>Session restart required</b><br>"
-msgstr "<b>Requírese reiniciar a sesión</b><br>"
+msgstr "<b>יש להפעיל את הפעלת המשתמש מחדש</b><br>"
 
 #: PkUpdateList.cxx:172
 #, kde-format
 msgid "<b>Reboot required</b><br>"
-msgstr "<b>Requírese reiniciar</b><br>"
+msgstr "<b>יש להפעיל מחדש</b><br>"
 
 #: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
-msgstr "Actualizacións de programas"
+msgstr "עדכוני תוכנה"
 
 #: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
-msgstr "Todas"
+msgstr "הכול"
 
 #: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
-msgstr "Instalar"
+msgstr "התקנה"
 
 #: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
-msgstr "Instalar, despois suspender"
+msgstr "התקנה, ואז לישון"
 
 #: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr "Instalar, despois apagar"
+msgstr "התקנה, ואז לכבות"
 
 #: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
-msgstr "Actualizar"
+msgstr "רענון"
 
 #: PkUpdateList.cxx:431
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
-msgstr[0] "Instalar %1 paquete"
-msgstr[1] "Instalar %1 paquetes"
+msgstr[0] "התקנת חבילה"
+msgstr[1] "התקנת שתי חבילות"
+msgstr[2] "התקנת %1 חבילות"
+msgstr[3] "התקנת %1 חבילות"
 
 #: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
-msgstr "Requírese reiniciar o sistema"
+msgstr "יש להפעיל את המערכת מחדש"
 
 #: PkUpdateList.cxx:561
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
-msgstr "Un dos paquetes instalados require reiniciar o sistema"
+msgstr "אחת מהחבילות המותקנות דורשת את הפעלת המחשב מחדש"
 
 #: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
-msgstr "Reiniciar o sistema"
+msgstr "הפעלת המערכת מחדש"
 
 #: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
-msgstr "Requírese reiniciar o sistema"
+msgstr "יש להפעיל את הפעלת המשתמש מחדש"
 
 #: PkUpdateList.cxx:583
 #, kde-format
 msgid "One of the installed packages requires you to logout"
-msgstr "Un dos paquetes instalador require saír"
+msgstr "אחת מהחבילות המותקנות דורשת את הוצאת המשתמש מההפעלה"
 
 #: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
-msgstr "Saír"
+msgstr "יציאה"
 
 #: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
-msgstr "Cancelar a instalación"
+msgstr "ביטול התקנה"
 
 #: PkUpdateList.cxx:663
 #, kde-format
 msgid "Waiting"
-msgstr "Agardando"
+msgstr "בהמתנה"
 
 #: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
-msgstr "Agardando pola autenticación"
+msgstr "בהמתנה לאימות"
 
 #: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
-msgstr "Resolvendo as dependencias"
+msgstr "התלויות נפתרות"
 
 #: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
-msgstr "Actualizando"
+msgstr "מתעדכן"
 
 #: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
-msgstr "Instalando"
+msgstr "מתבצעת התקנה"
 
 #: PkUpdateList.cxx:668
 #, kde-format
 msgid "Downloading"
-msgstr "Descargando"
+msgstr "מתבצעת הורדה"
 
 #: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
-msgstr "Cancelando"
+msgstr "מבוטל"
 
 #: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
-msgstr "Validar a sinatura"
+msgstr "אימות חתימה"
 
 #: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
-msgstr "A actualización fallou."
+msgstr "העדכון נכשל"
 
 #: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
-msgstr "Aceptar os termos de uso"
+msgstr "אישור הסכם משתמש קצה"
 
-# skip-rule: trasno-provide_reverse
 #: PkUpdateList.cxx:842
 #, kde-format
 msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
-"<html>Acepta o seguinte acordo de licenza do paquete<br>%1<br>fornecido "
-"por<br>%2 ?</html>"
+"<html>האם הסכם הרישוי של החבילה <br>%1<br>מהספק<br>%2 מקובל עליך?</html>"
 
 #: PkUpdates.cxx:53
 #, kde-format
 msgid "Next check: %1"
-msgstr "Seguinte comprobación: %1"
+msgstr "הבדיקה הבאה: %1"
 
 #: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
-msgstr "Comprobando se hai actualizacións…"
+msgstr "מתבצע איתור עדכונים…"
 
 #: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "Comprobando se hai actualizacións… %1%"
+msgstr "מתבצע איתור עדכונים… %1%"
 
 #: PkUpdates.cxx:171
 #, kde-format
@@ -687,34 +694,40 @@ msgid ""
 "Last check: %1\n"
 "Error on checking for updates: %2"
 msgstr ""
-"Última comprobación: %1\n"
-"Erro ao comprobar se hai actualizacións: %2"
+"בדיקה אחרונה: %1\n"
+"שגיאה באיתור עדכונים: %2"
 
 #: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
-msgstr "Erro de actualización de programas"
+msgstr "שגיאת עדכון תוכנה"
 
 #: PkUpdates.cxx:195
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
-msgstr[0] "%1 actualización de <b>seguridade</b> dispoñíbel"
-msgstr[1] "%1 actualizacións de <b>seguridade</b> dispoñíbeis"
+msgstr[0] "יש עדכון <b>אבטחה</b>"
+msgstr[1] "יש שני עדכוני <b>אבטחה</b>"
+msgstr[2] "יש %1 עדכוני <b>אבטחה</b>"
+msgstr[3] "יש %1 עדכוני <b>אבטחה</b>"
 
 #: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] "%1 actualización <i>importante</i> dispoñíbel"
-msgstr[1] "%1 actualizacións <i>importantes</i> dispoñíbeis"
+msgstr[0] "יש עדכון <i>חשוב</i>"
+msgstr[1] "יש שני עדכונים <i>חשובים</i>"
+msgstr[2] "יש %1 עדכונים <i>חשובים</i>"
+msgstr[3] "יש %1 עדכונים <i>חשובים</i>"
 
 #: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] "%1 actualización de corrección de erros dispoñíbel"
-msgstr[1] "%1 actualizacións de corrección de erros dispoñíbeis"
+msgstr[0] "יש עדכון שמתקן תקלות"
+msgstr[1] "יש שני עדכונים שמתקנים תקלות"
+msgstr[2] "יש %1 עדכונים שמתקנים תקלות"
+msgstr[3] "יש %1 עדכונים שמתקנים תקלות"
 
 #: PkUpdates.cxx:229
 #, kde-format
@@ -727,13 +740,21 @@ msgid_plural ""
 "No important updates available\n"
 "%2 others"
 msgstr[0] ""
-"Última comprobación: %1\n"
-"Non hai actualizacións importantes dispoñíbeis\n"
-"Outra"
+"בדיקה אחרונה: %1\n"
+"אין עדכונים חשובים זמינים\n"
+"אחד נוסף"
 msgstr[1] ""
-"Última comprobación: %1\n"
-"Non hai actualizacións importantes dispoñíbeis\n"
-"Outras %2"
+"בדיקה אחרונה: %1\n"
+"אין עדכונים חשובים זמינים\n"
+"שניים נוספים"
+msgstr[2] ""
+"בדיקה אחרונה: %1\n"
+"אין עדכונים חשובים זמינים\n"
+"%2 נוספים"
+msgstr[3] ""
+"בדיקה אחרונה: %1\n"
+"אין עדכונים חשובים זמינים\n"
+"%2 נוספים"
 
 #: PkUpdates.cxx:240
 #, kde-format
@@ -741,140 +762,142 @@ msgid ""
 "Last check: %1\n"
 "No updates available"
 msgstr ""
-"Última comprobación: %1\n"
-"Non hai actualizacións dispoñíbeis"
+"בדיקה אחרונה: %1\n"
+"אין עדכונים זמינים"
 
 #: PkUpdates.cxx:249
 #, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
-msgstr[0] "<br>Outra"
-msgstr[1] "<br>Outras %1"
+msgstr[0] "<br>עוד אחד"
+msgstr[1] "<br>עוד שניים"
+msgstr[2] "<br>עוד %1"
+msgstr[3] "<br>עוד %1"
 
 #: PkUpdates.cxx:251
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
-msgstr "<html>Última comprobación: %1<br>%2</html>"
+msgstr "<html>בדיקה אחרונה: %1<br>%2</html>"
 
 #: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
-msgstr "Hai actualizacións de programas dispoñíbeis"
+msgstr "עדכוני תוכנה זמינים"
 
 #: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
-msgstr "<li>%1 máis…</li>"
+msgstr "<li>עוד %1…</li>"
 
 #: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
-msgstr "Navegador web"
+msgstr "דפדפן"
 
 #: StartMenu.cxx:80
 #, kde-format
 msgid "Switch User"
-msgstr "Cambiar de usuario"
+msgstr "החלפת משתמש"
 
 #: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
-msgstr "Configurar o menú…"
+msgstr "הגדרת תפריט…"
 
 #: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
-msgstr "CPU %1: %2% (%3 MHz)"
+msgstr "מעבד %1:‏ %2% (%3 מה״צ)"
 
 #: SysLoad.cxx:210
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
-msgstr "Memoria total: %1 MB (%2 GB)"
+msgstr "זיכרון כולל: %1 מ״ב (%2 ג״ב)"
 
 #: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
-msgstr "Memoria usada: %1 MB (%2 GB) %3%"
+msgstr "זיכרון בשימוש: %1 מ״ב (%2 ג״ב) %3%"
 
 #: SysLoad.cxx:214
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
-msgstr "Memoria libre: %1 MB (%2 GB)"
+msgstr "זיכרון פנוי: %1 מ״ב (%2 ג״ב)"
 
 #: SysLoad.cxx:216
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
-msgstr "Memoria de intercambio total: %1 MB (%2 GB)"
+msgstr "זיכרון החלפה כולל: %1 מ״ב (%2 ג״ב)"
 
 #: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
-msgstr "Memoria de intercambio usada: %1 MB (%2 GB) %3%"
+msgstr "זיכרון החלפה בשימוש: %1 מ״ב (%2 ג״ב) %3%"
 
 #: SysLoad.cxx:220
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
-msgstr "Memoria de intercambio libre: %1 MB (%2 GB)"
+msgstr "זיכרון החלפה פנוי: %1 מ״ב (%2 ג״ב)"
 
 #: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
-msgstr "Entrada e saída de rede: %1/%2 KB/sec"
+msgstr "קבלה/שליחה דרך הרשת: %1/%2 ק״ב לשנייה"
 
 #: SysLoad.cxx:227
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
-msgstr "Rede máxima (últimos %2 s): %1 KB/sec"
+msgstr "תקורת רשת (%2 השניות האחרונות): %1 ק״ב לשנייה"
 
 #: SysTray.cxx:291
 #, kde-format
 msgid "Show New Notifications"
-msgstr "Amosar as notificacións novas"
+msgstr "הצגת התראות חדשות"
 
 #: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
-msgstr "Mover ao escritorio"
+msgstr "העברה לשולחן עבודה"
 
 #: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
-msgstr "Todos os escritorios"
+msgstr "כל שולחנות העבודה"
 
 #: TaskBarButton.cxx:117
 #, kde-format
 msgid "Close"
-msgstr "Pechar"
+msgstr "סגירה"
 
 #: WeatherApplet.cxx:66
 #, kde-format
 msgid "Temperature:"
-msgstr "Temperatura:"
+msgstr "טמפרטורה:"
 
 #: WeatherApplet.cxx:69
 #, kde-format
 msgid "Pressure:"
-msgstr "Presión:"
+msgstr "לחץ:"
 
 #: WeatherApplet.cxx:72
 #, kde-format
 msgid "Humidity:"
-msgstr "Humidade: "
+msgstr "לחות:"
 
 #: WeatherApplet.cxx:75
 #, kde-format
 msgid "Wind Speed:"
-msgstr "Velocidade do vento:"
+msgstr "מהירות הרוח:"
 
 #: WeatherApplet.cxx:78
 #, kde-format
 msgid "Wind Direction:"
-msgstr "Dirección do vento:"
+msgstr "כיוון הרוח:"
 
 #: WeatherApplet.cxx:128 WeatherApplet.cxx:399
 #, kde-format
 msgid "Not configured"
-msgstr "Non configurado"
+msgstr "לא מוגדר"
 
 #: WeatherApplet.cxx:183
 #, kde-format
@@ -905,90 +928,78 @@ msgstr "%1 hPa"
 #: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: WeatherApplet.cxx:218
 #, kde-format
 msgid "%1 °"
-msgstr "%1°"
+msgstr "%1 °"
 
 #: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
-msgstr "Configurar o miniaplicativo de tempo atmosférico"
+msgstr "הגדרת יישומון מזג אוויר"
 
 #: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
-msgstr "Descargando a lista de cidades…"
+msgstr "רשימת הערים מתקבלת…"
 
 #: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
 msgid "Download Error"
-msgstr "Produciuse un erro na descarga"
+msgstr "שגיאת הורדה"
 
 #: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
-msgstr "Erro ao descargar a lista de cidades: %1"
+msgstr "שגיאה בהורדת רשימת הערים: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: WeatherAppletConfigureDialog.ui:20
 #, kde-format
 msgid "API Key"
-msgstr "Chave da API"
+msgstr "מפתח API"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
 #: WeatherAppletConfigureDialog.ui:27
 #, kde-format
 msgid "The API key is needed to be allowed to get data from openweathermap.org"
-msgstr "Necesítase unha chave de API para obter datos de openweathermap.org."
+msgstr "מפתח ה־API נחוץ כדי לאפשר קבלת נתונים מ־openweathermap.org"
 
 #. i18n: ectx: property (text), widget (QPushButton, getApiKey)
 #: WeatherAppletConfigureDialog.ui:34
 #, kde-format
 msgid "Get your personal API key"
-msgstr "Obteña a súa chave de API persoal"
+msgstr "קבלת מפתח API אישי משלך"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: WeatherAppletConfigureDialog.ui:41
 #, kde-format
 msgid "Units"
-msgstr "Unidades"
+msgstr "יחידות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, metric)
 #: WeatherAppletConfigureDialog.ui:48
 #, kde-format
 msgid "&metric"
-msgstr "&métricas"
+msgstr "מ&טריות"
 
 #. i18n: ectx: property (text), widget (QRadioButton, imperial)
 #: WeatherAppletConfigureDialog.ui:58
 #, kde-format
 msgid "&imperial"
-msgstr "&imperiais"
+msgstr "&אימפריאליות"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QTreeWidget, cityList)
 #: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
 #, kde-format
 msgid "City"
-msgstr "Cidade"
+msgstr "עיר"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cityList)
 #: WeatherAppletConfigureDialog.ui:97
 #, kde-format
 msgid "Country"
-msgstr "País"
-
-#~ msgid "Liquid Desktop Workspace"
-#~ msgstr "Espazo de traballo de escritorio Liquid"
-
-#~ msgid "°K"
-#~ msgstr "K"
-
-#~ msgid "Enable Networking"
-#~ msgstr "Activar as redes"
-
-#~ msgid "Enable Wireless Networking"
-#~ msgstr "Activar as redes sen fíos"
+msgstr "מדינה"
