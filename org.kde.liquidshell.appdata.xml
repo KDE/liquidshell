@@ -26,6 +26,7 @@
   <name xml:lang="pt">liquidshell</name>
   <name xml:lang="pt-BR">liquidshell</name>
   <name xml:lang="ru">liquidshell</name>
+  <name xml:lang="sa">द्रवशैलम्</name>
   <name xml:lang="sk">liquidshell</name>
   <name xml:lang="sl">liquidshell</name>
   <name xml:lang="sv">Liquid-skal</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</summary>
   <summary xml:lang="pt-BR">O liquidshell é um alternativa ao plasmashell</summary>
   <summary xml:lang="ru">Оболочка Liquid — альтернатива оболочке Plasma</summary>
+  <summary xml:lang="sa">द्रवकवचः प्लाज्माशैलस्य विकल्पः अस्ति</summary>
   <summary xml:lang="sk">liquidshell je alternatíva pre plasmashell</summary>
   <summary xml:lang="sl">liquidshell je alternativa plasmashellu</summary>
   <summary xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</p>
     <p xml:lang="pt-BR">O liquidshell é um alternativa ao plasmashell</p>
     <p xml:lang="ru">Оболочка Liquid — альтернатива оболочке Plasma</p>
+    <p xml:lang="sa">द्रवकवचः प्लाज्माशैलस्य विकल्पः अस्ति</p>
     <p xml:lang="sk">liquidshell je alternatíva pre plasmashell</p>
     <p xml:lang="sl">liquidshell je alternativa plasmashellu</p>
     <p xml:lang="sv">Liquid-skal är ett alternativ till Plasma-skal</p>
@@ -124,6 +127,7 @@
     <p xml:lang="pt">Não usa o QtQuick mas baseia-se sim no QtWidgets, pelo que não é necessária nenhuma aceleração gráfica por 'hardware'.</p>
     <p xml:lang="pt-BR">Ele não usa o QtQuick ao invés usa o QtWidgets, portando nenhuma aceleração gráfica por hardware é necessária.</p>
     <p xml:lang="ru">Она использует не QtQuick, а QtWidgets. Следовательно, аппаратное ускорение графики не требуется.</p>
+    <p xml:lang="sa">एतत् QtQuick इत्यस्य उपयोगं न करोति अपितु QtWidgets इत्यस्य उपरि निर्भरं भवति, अतः हार्डवेयर ग्राफिक्स् त्वरणस्य आवश्यकता नास्ति ।</p>
     <p xml:lang="sl">Ne uporablja QtQuick, ampak se naslanja na QtWidgets, zato ni potrebno pospeševanje grafične strojne opreme.</p>
     <p xml:lang="sv">Det använder inte QtQuick, utan förlitar sig istället på QtWidgets. Därför behövs ingen grafikacceleration i hårdvara.</p>
     <p xml:lang="tr">QtQuick yerine QtWidgets kullanır, dolayısıyla herhangi bir donanım ivmelendirmesine gerek duymaz.</p>
@@ -155,6 +159,7 @@
     <p xml:lang="pt">Funcionalidades Principais:</p>
     <p xml:lang="pt-BR">Principais recursos:</p>
     <p xml:lang="ru">Основные возможности:</p>
+    <p xml:lang="sa">मुख्यविशेषताः : १.</p>
     <p xml:lang="sk">Hlavné funkcie:</p>
     <p xml:lang="sl">Glavne značilnosti:</p>
     <p xml:lang="sv">Huvudfunktionalitet:</p>
@@ -187,6 +192,7 @@
       <li xml:lang="pt">Papel de parede por ecrã virtual</li>
       <li xml:lang="pt-BR">Papel de parede por área de trabalho virtual</li>
       <li xml:lang="ru">Обои для каждого виртуального рабочего стола</li>
+      <li xml:lang="sa">प्रति आभासी डेस्कटॉप वॉलपेपर</li>
       <li xml:lang="sl">Ozadje na virtualno namizje</li>
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
       <li xml:lang="tr">Her sanal masaüstüne ayrı duvar kağıdı</li>
@@ -217,6 +223,7 @@
       <li xml:lang="pt">Sem animações, sem bloqueios do CPU, pouco consumo de memória</li>
       <li xml:lang="pt-BR">Sem animações, sem sobrecarga na CPU, baixo consumo de memória</li>
       <li xml:lang="ru">Нет анимации, нет излишней нагрузки на процессор, низкое потребление памяти</li>
+      <li xml:lang="sa">एनिमेशनं नास्ति, CPU hogging नास्ति, Memory footprint न्यूनम्</li>
       <li xml:lang="sl">Brez animacij, brez naprezanja procesorja, malo potrebe po pomnilniku</li>
       <li xml:lang="sv">Inga animeringar, ingen beslagtagning av processorn, liten minnesanvändning</li>
       <li xml:lang="tr">Canlandırma içermez, CPU’yu sıkboğaz etmez, düşük oranda bellek kullanır</li>
@@ -248,6 +255,7 @@
       <li xml:lang="pt">Arranque instantâneo</li>
       <li xml:lang="pt-BR">Inicialização instantânea</li>
       <li xml:lang="ru">Мгновенный запуск</li>
+      <li xml:lang="sa">तत्क्षणं प्रारम्भः</li>
       <li xml:lang="sk">Rýchle spustenie</li>
       <li xml:lang="sl">Takojšnji zagon</li>
       <li xml:lang="sv">Omedelbar start</li>
@@ -279,6 +287,7 @@
       <li xml:lang="pt">Não usa as actividades</li>
       <li xml:lang="pt-BR">Sem uso de atividades</li>
       <li xml:lang="ru">Отсутствие использования комнат</li>
+      <li xml:lang="sa">क्रियाकलापानाम् उपयोगः नास्ति</li>
       <li xml:lang="sk">Žiadne použitie aktívít</li>
       <li xml:lang="sl">Ni uporabe dejavnosti</li>
       <li xml:lang="sv">Ingen användning av aktiviteter</li>
@@ -310,6 +319,7 @@
       <li xml:lang="pt">Baseado no QtWidgets, pelo que segue o estilo gráfico da Configuração do Sistema</li>
       <li xml:lang="pt-BR">Baseado no QtWidgets, portanto segue o estilo dos widgets das configurações do sistema</li>
       <li xml:lang="ru">На основе QtWidgets, поэтому стиль виджетов определяется параметрами системы</li>
+      <li xml:lang="sa">QtWidgets आधारितं, अतः सिस्टम् सेटिङ्ग्स् तः विजेट् शैल्याः अनुसरणं करोति</li>
       <li xml:lang="sl">Temelji na QtWidgets in zato sledi sistemskim nastavitvam slogov gradnikov</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
       <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı biçemini kullanır</li>
@@ -340,6 +350,7 @@
       <li xml:lang="pt">São usados os ícones do seu tema de ícones definido a nível global na Configuração do Sistema</li>
       <li xml:lang="pt-BR">Os ícones são usados a partir de um tema de ícones definido globalmente nas configurações do sistema</li>
       <li xml:lang="ru">Использование значков из темы значков, установленной глобально в параметрах системы</li>
+      <li xml:lang="sa">चिह्नानि भवतः वैश्विकरूपेण परिभाषितचिह्नविषयात् systemsettings तः उपयुज्यन्ते</li>
       <li xml:lang="sl">Uporabljajo se ikone iz splošno določene teme ikon v sistemskih nastavitvah</li>
       <li xml:lang="sv">Ikoner kommer från det globalt definierade ikontemat i systeminställningarna</li>
       <li xml:lang="tr">Simgeler, Sistem Ayarları’ndaki global simge temanızdan kullanılır</li>
@@ -370,6 +381,7 @@
       <li xml:lang="pt">São usadas as cores do seu tema de cores definido a nível global na Configuração do Sistema</li>
       <li xml:lang="pt-BR">As cores são usadas a partir de um tema de cores definido globalmente nas configurações do sistema</li>
       <li xml:lang="ru">Использование цветов из цветовой темы, установленной глобально в параметрах системы</li>
+      <li xml:lang="sa">भवतः वैश्विकरूपेण परिभाषितवर्णविषयात् systemsettings तः वर्णाः उपयुज्यन्ते</li>
       <li xml:lang="sl">Uporabljajo se barve iz vaše splošno določene barvne teme iz sistemskih nastavitev</li>
       <li xml:lang="sv">Färger kommer från det globalt definierade färgtemat i systeminställningarna</li>
       <li xml:lang="tr">Renkler, sistem ayarlarındaki global renk temanızdan kullanılır</li>
@@ -400,6 +412,7 @@
       <li xml:lang="pt">Pode ser modificado o seu estilo gráfico com CSS se passar a opção da linha de comandos '-stylesheet ficheiro.css' (veja o 'stylesheet.css' incluída no exemplo)</li>
       <li xml:lang="pt-BR">Pode ser estilizado adicionalmente com CSS usando a opção da linha de comando -stylesheet arquivo.css (veja o exemplo incluído stylesheet.css)</li>
       <li xml:lang="ru">Дополнительная смена стиля с помощью css: достаточно передать параметр командной строки -stylesheet имя_файла.css (см. включённый пример stylesheet.css)</li>
+      <li xml:lang="sa">अतिरिक्तरूपेण आदेशपङ्क्तिविकल्पं -stylesheet filename.css (समाविष्टं उदाहरणं stylesheet.css पश्यन्तु) पारयित्वा css इत्यनेन सह शैलीं कर्तुं शक्यते ।</li>
       <li xml:lang="sl">Mogoče je dodatno opisati slog z datoteko css prek ukazne vrstice - styleheet filename.css (glejte vključeni primer stylesheet.css)</li>
       <li xml:lang="sv">Kan dessutom formateras med CSS genom att ange kommandoradsväljaren -stylesheet filnamn.css (se det inkluderade exemplet stylesheet.css)</li>
       <li xml:lang="tr">-stylesheet dosyaadı.css komut satırı seçeneğini kullanarak ek olarak temalanabilir (stylesheet.css örnek dosyasına bakın)</li>
@@ -430,6 +443,7 @@
       <li xml:lang="pt">usa as janelas existentes no KDE para a maioria das configurações, p.ex., Menu Iniciar, Ecrãs Virtuais, Bluetooth, Rede</li>
       <li xml:lang="pt-BR">usa as janelas existentes do KDE para a maioria das configurações, ex.: menu iniciar, áreas de trabalho virtuais, Bluetooth, rede</li>
       <li xml:lang="ru">Использование существующих диалогов KDE для большей части функционала настройки (например, меню запуска приложений, виртуальные рабочие столы, Bluetooth, сеть)</li>
+      <li xml:lang="sa">अधिकांशविन्यासानां कृते विद्यमानं KDE संवादं उपयुज्यते, यथा StartMenu, Virtual Desktops, Bluetooth, Network</li>
       <li xml:lang="sl">uporablja obstoječa pogovorna okna KDE za večino nastavitev, npr. začetni meni, navidezna namizja, Bluetooth, omrežje</li>
       <li xml:lang="sv">Använder befintliga dialogrutor i KDE för de flesta inställningar, t.ex. startmeny, virtuella skrivbord, Blåtand, nätverk</li>
       <li xml:lang="tr">Çoğu yapılandırma için KDE iletişim kutularını kullanır; örneğin Başlangıç  Menüsü, Sanal Masaüstleri, Bluetooth, Ağ</li>
@@ -460,6 +474,7 @@
       <li xml:lang="pt">Um único painel inferior</li>
       <li xml:lang="pt-BR">Um painel da área de trabalho abaixo</li>
       <li xml:lang="ru">Одна панель в нижней части экрана</li>
+      <li xml:lang="sa">एकं अधः DesktopPanel</li>
       <li xml:lang="sl">Ena namizna plošča na dnu</li>
       <li xml:lang="sv">En skrivbordspanel längst ner</li>
       <li xml:lang="tr">Bir adet altta masaüstü paneli</li>
@@ -490,6 +505,7 @@
       <li xml:lang="pt">Elementos Gráficos do Ecrã</li>
       <li xml:lang="pt-BR">Miniaplicativos da área de trabalho</li>
       <li xml:lang="ru">Виджеты рабочего стола</li>
+      <li xml:lang="sa">डेस्कटॉप एप्लेट्स्</li>
       <li xml:lang="sk">Applety plochy</li>
       <li xml:lang="sl">Namizni appleti</li>
       <li xml:lang="sv">Skrivbordsminiprogram</li>
