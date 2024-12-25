@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-02-10 00:17+0100\n"
+"PO-Revision-Date: 2024-12-24 17:51+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -122,7 +122,7 @@ msgstr "시간대"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "지역"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -193,10 +193,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets 기반 간단한 데스크톱 셸"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Copyright 2017 - 2023 Martin Koller"
+msgstr "Copyright 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
