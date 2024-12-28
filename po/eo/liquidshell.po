@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-07-27 16:22+0200\n"
+"PO-Revision-Date: 2024-12-27 11:56+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -196,10 +196,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Baza labortabla ŝelo bazita en QtWidgets"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2023 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Kopirajto 2017 - 2023 Martin Koller"
+msgstr "Kopirajto 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -707,15 +706,15 @@ msgstr[1] "%1 <b>sekurecaj</b> ĝisdatigoj disponeblaj"
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] "%1 <i>grava</b> ĝisdatigo disponebla"
-msgstr[1] "%1 <i>gravaj</b> ĝisdatigoj disponeblaj"
+msgstr[0] "%1 <i>grava</i> ĝisdatigo disponebla"
+msgstr[1] "%1 <i>gravaj</i> ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] "%1 cimkoerakta</b> ĝisdatigo disponebla"
-msgstr[1] "%1 cimkoeraktaj</b> ĝisdatigoj disponeblaj"
+msgstr[0] "%1 cimkoerakta ĝisdatigo disponebla"
+msgstr[1] "%1 cimkoeraktaj ĝisdatigoj disponeblaj"
 
 #: PkUpdates.cxx:229
 #, kde-format
