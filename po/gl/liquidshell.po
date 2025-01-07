@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2023, 2024 Adrian Chaves <adrian@chaves.io>
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2023, 2024, 2025 Adrian Chaves <adrian@chaves.io>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-12-17 22:53+0100\n"
+"PO-Revision-Date: 2025-01-06 13:06+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -819,7 +819,7 @@ msgstr "Memoria de intercambio libre: %1 MB (%2 GB)"
 #: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
-msgstr "Entrada e saída de rede: %1/%2 KB/sec"
+msgstr "Envío e descarga de rede: %1/%2 KB/sec"
 
 #: SysLoad.cxx:227
 #, kde-format

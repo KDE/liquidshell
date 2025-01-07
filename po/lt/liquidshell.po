@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2021-12-13 13:05+0200\n"
+"PO-Revision-Date: 2025-01-06 23:08+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -130,7 +130,7 @@ msgstr "Laiko juosta"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Teritorija"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -193,7 +193,7 @@ msgstr "Pakeisto mastelio išlaikant prop&orcijas ir apkerpant"
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:31
 #, kde-format
@@ -201,10 +201,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets pagrįstas pagrindinio darbalaukio apvalkalas"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2021 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr "Autorių teisės 2017 - 2021 Martin Koller"
+msgstr "Autorių teisės 2017–2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -561,12 +560,12 @@ msgstr "Įdiegti"
 #: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Įdiegti, o tuomet pristabdyti"
 
 #: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Įdiegti, o tuomet išjungti"
 
 #: PkUpdateList.cxx:224
 #, kde-format
@@ -673,12 +672,13 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Ar priimate šią licencijos sutartį, skirtą paketui<br>%1<br>iš "
+"tiekėjo<br>%2 ?</html>"
 
 #: PkUpdates.cxx:53
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Kitas tikrinimas: %1 "
+msgstr "Kitas tikrinimas: %1"
 
 #: PkUpdates.cxx:79
 #, kde-format
@@ -852,10 +852,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Tinklo maksimalus (paskutinių %2 sek.): %1 KB/sek."
 
 #: SysTray.cxx:291
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "Pranešimai"
+msgstr "Rodyti naujus pranešimus"
 
 #: TaskBarButton.cxx:109
 #, kde-format
@@ -905,7 +904,7 @@ msgstr "Nesukonfigūruota"
 #: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:184
 #, kde-format
