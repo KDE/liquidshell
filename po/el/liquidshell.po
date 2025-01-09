@@ -665,10 +665,9 @@ msgid ""
 msgstr ""
 
 #: PkUpdates.cxx:53
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Επόμενος έλεγχος: %1 "
+msgstr "Επόμενος έλεγχος: %1"
 
 #: PkUpdates.cxx:79
 #, kde-format
