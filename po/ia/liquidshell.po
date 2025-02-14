@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the liquidshell package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2024.
+# SPDX-FileCopyrightText: 2020, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-01-03 14:56+0100\n"
+"PO-Revision-Date: 2025-02-13 12:36+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -54,7 +54,7 @@ msgstr "Completemente cargate"
 #: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
-msgstr ""
+msgstr "Cargante a %1%"
 
 #: Battery.cxx:161
 #, kde-format
@@ -64,7 +64,7 @@ msgstr ""
 #: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
-msgstr ""
+msgstr "Discargante a %1%"
 
 #: Battery.cxx:167
 #, kde-format
@@ -94,12 +94,12 @@ msgstr "Bluetooth"
 #: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
-msgstr ""
+msgstr "Selige Fusos horari..."
 
 #: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
-msgstr ""
+msgstr "Selige Fusos horari"
 
 #: ClockWidget.cxx:187
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "Zona de tempore"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Territorio"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -152,7 +152,7 @@ msgstr "Color de fundo"
 #: ConfigureDesktopDialog.ui:33
 #, kde-format
 msgid "Wallpaper File"
-msgstr ""
+msgstr "File de Tapete de Papiro"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ConfigureDesktopDialog.ui:67
@@ -164,7 +164,7 @@ msgstr "Modo de scalar:"
 #: ConfigureDesktopDialog.ui:73
 #, kde-format
 msgid "Or&iginal Size"
-msgstr ""
+msgstr "Grandor or&iginal"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
 #: ConfigureDesktopDialog.ui:80
@@ -187,7 +187,7 @@ msgstr ""
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:31
 #, kde-format
@@ -197,7 +197,7 @@ msgstr ""
 #: desktop.cxx:33
 #, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr ""
+msgstr "Copyright 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -207,22 +207,22 @@ msgstr "Configura..."
 #: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
-msgstr ""
+msgstr "Cambia Grandor && Position"
 
 #: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
-msgstr ""
+msgstr "Remove iste Applet"
 
 #: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
-msgstr ""
+msgstr "%1: Cambia Grandor & Position"
 
 #: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
-msgstr ""
+msgstr "Remove Applet"
 
 #: DesktopApplet.cxx:137
 #, kde-format
@@ -237,7 +237,7 @@ msgstr "Configura  tapete de papiro..."
 #: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
-msgstr ""
+msgstr "Adde applet"
 
 #: DesktopWidget.cxx:75
 #, kde-format
@@ -252,7 +252,7 @@ msgstr "Uso de disco"
 #: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
-msgstr ""
+msgstr "Picture Frame (Photogramma)"
 
 #: DesktopWidget.cxx:84
 #, kde-format
@@ -306,7 +306,7 @@ msgstr ""
 #: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
-msgstr ""
+msgstr "Dispositivo occupate"
 
 #: DeviceList.cxx:357
 #, kde-format
@@ -316,32 +316,32 @@ msgstr "Operation Fallite"
 #: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
-msgstr ""
+msgstr "Usator cancellate"
 
 #: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
-msgstr ""
+msgstr "Option Invalide"
 
 #: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
-msgstr ""
+msgstr "Driver mancante"
 
 #: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
-msgstr ""
+msgstr "Le dispositivo pote hora esser removite con securitate"
 
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
-msgstr ""
+msgstr "Falleva montar:"
 
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
-msgstr ""
+msgstr "Falleva dismontar:"
 
 #: DeviceNotifier.cxx:23
 #, kde-format
@@ -351,7 +351,7 @@ msgstr "Notificator de dispositivo"
 #: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
-msgstr ""
+msgstr "Lista de dispositivo"
 
 #: DiskUsageApplet.cxx:131
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "%1 libere / %2"
 #: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
-msgstr ""
+msgstr "Configura Applet DiskUsage (uso de disco)"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
 #. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
@@ -400,7 +400,7 @@ msgstr "Fundo de barra"
 #: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
-msgstr ""
+msgstr "Dispositivo necessita cargar"
 
 #: KdeConnect.cxx:170
 #, kde-format
@@ -447,7 +447,7 @@ msgstr "Fortia de signal: %1"
 #: Network.cxx:144
 #, kde-format
 msgid "VPN active"
-msgstr ""
+msgstr "VPN active"
 
 #: NetworkList.cxx:213
 #, kde-format
@@ -457,22 +457,24 @@ msgstr "Configura Connexiones de Rete"
 #: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr ""
+msgstr "Rete (networking) es habilitate. Clicca per dishabilitar"
 
 #: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr ""
+msgstr "Rete (networking) es disactivate; pressa  per activar lo"
 
 #: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
 msgstr ""
+"Rete sin filos ( wireless networking) es habilitate. Clicca per dishabilitar"
 
 #: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
 msgstr ""
+"Rete sin filos (Wireless networking) es dishabilitate.Clicca per habilitar"
 
 #: NotificationList.cxx:172
 #, kde-format
@@ -499,7 +501,7 @@ msgstr "Configura Scriptorios virtual "
 #: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
-msgstr ""
+msgstr "Configura Applet PictureFrame"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: PictureFrameAppletConfigureDialog.ui:37
@@ -516,7 +518,7 @@ msgstr "Percurso"
 #: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
-msgstr ""
+msgstr "Obtene detalios ..."
 
 #: PkUpdateList.cxx:170
 #, kde-format
@@ -531,7 +533,7 @@ msgstr ""
 #: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
-msgstr ""
+msgstr "Actualisationes de Software"
 
 #: PkUpdateList.cxx:200
 #, kde-format
@@ -613,7 +615,7 @@ msgstr ""
 #: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Resolvente dependentias"
 
 #: PkUpdateList.cxx:666
 #, kde-format
@@ -648,7 +650,7 @@ msgstr "Il falleva actualisation"
 #: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
-msgstr ""
+msgstr "Accepta EULA"
 
 #: PkUpdateList.cxx:842
 #, kde-format
@@ -860,7 +862,7 @@ msgstr "Non configurate"
 #: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:184
 #, kde-format
