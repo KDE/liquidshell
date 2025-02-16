@@ -76,7 +76,7 @@ QWidget *Bluetooth::getDetailsList()
 {
   if ( !dialog )
   {
-    dialog = new KCMultiDialog(this);
+    dialog = new KCMultiDialog(nullptr);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     dialog->addModule(KPluginMetaData("plasma/kcms/systemsettings/kcm_bluetooth"));
