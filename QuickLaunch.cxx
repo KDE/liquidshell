@@ -76,7 +76,7 @@ void QuickLaunch::fill()
   if ( !dirPath.isEmpty() )
   {
     QDir dir(dirPath);
-    QFileInfoList entries = dir.entryInfoList(QDir::Files);
+    QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot);
     int row = 0, col = 0;
 
     for (const QFileInfo &info : entries)
