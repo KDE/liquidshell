@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the liquidshell package.
+# SPDX-FileCopyrightText: 2023, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2023-05-11 10:42+0400\n"
+"PO-Revision-Date: 2025-05-18 22:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,12 +53,12 @@ msgstr[5] "%1 دقيقة"
 #: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
-msgstr ""
+msgstr "لا تُشحن"
 
 #: Battery.cxx:152
 #, kde-format
 msgid "Fully Charged"
-msgstr ""
+msgstr "مشحونة بالكامل"
 
 #: Battery.cxx:159
 #, kde-format
@@ -97,7 +98,7 @@ msgstr ""
 #: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
-msgstr ""
+msgstr "بلوتوث"
 
 #: ClockWidget.cxx:163
 #, kde-format
@@ -112,12 +113,12 @@ msgstr ""
 #: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
-msgstr ""
+msgstr "اضبط التاريخ والوقت…"
 
 #: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
-msgstr ""
+msgstr "التّاريخ والوقت"
 
 #: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
@@ -132,12 +133,12 @@ msgstr "المنطقة الزمنية"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "إقليم"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
-msgstr ""
+msgstr "اجلب خلفيّات جديدة..."
 
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
@@ -148,7 +149,7 @@ msgstr ""
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr ""
+msgstr "اضبط خلفية الشاشة"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
@@ -230,7 +231,7 @@ msgstr ""
 #: DesktopApplet.cxx:136
 #, kde-format
 msgid "Remove Applet"
-msgstr ""
+msgstr "أزل البريمج"
 
 #: DesktopApplet.cxx:137
 #, kde-format
@@ -240,7 +241,7 @@ msgstr ""
 #: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr ""
+msgstr "اضبط والخلفية…"
 
 #: DesktopWidget.cxx:71
 #, kde-format
@@ -255,12 +256,12 @@ msgstr "الطقس"
 #: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
-msgstr ""
+msgstr "استخدام القرص"
 
 #: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
-msgstr ""
+msgstr "إطار الصورة"
 
 #: DesktopWidget.cxx:84
 #, kde-format
@@ -290,7 +291,7 @@ msgstr "كِيدِي المتّصل"
 #: DeviceList.cxx:260
 #, kde-format
 msgid "Open with File Manager"
-msgstr ""
+msgstr "افتح بمدير الملفات"
 
 #: DeviceList.cxx:343
 #, kde-format
@@ -324,7 +325,7 @@ msgstr ""
 #: DeviceList.cxx:358
 #, kde-format
 msgid "User Canceled"
-msgstr ""
+msgstr "أُلغِي المستخدم"
 
 #: DeviceList.cxx:359
 #, kde-format
@@ -344,17 +345,17 @@ msgstr ""
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Mount failed:"
-msgstr ""
+msgstr "فشل الضّمّ:"
 
 #: DeviceList.cxx:389
 #, kde-format
 msgid "Unmount failed:"
-msgstr ""
+msgstr "فشل إزالة الضّمّ:"
 
 #: DeviceNotifier.cxx:23
 #, kde-format
 msgid "Device Notifier"
-msgstr ""
+msgstr "مُخطِر الأجهزة"
 
 #: DeviceNotifier.cxx:26
 #, kde-format
@@ -382,7 +383,7 @@ msgstr "حواريّ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
-#, fuzzy, kde-format
+#, kde-format
 msgid "Text"
 msgstr "النص"
 
@@ -425,7 +426,7 @@ msgstr "افتح المجلد"
 #: Network.cxx:72
 #, kde-format
 msgid "No Network Connection"
-msgstr ""
+msgstr "لا اتّصال بالشّبكة"
 
 #: Network.cxx:82
 #, kde-format
@@ -440,17 +441,17 @@ msgstr ""
 #: Network.cxx:93
 #, kde-format
 msgid "IPv4 Address: %1"
-msgstr ""
+msgstr "عنوان IPv4: %1"
 
 #: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
-msgstr ""
+msgstr "معرف نقطة الاتصال SSID: %1"
 
 #: Network.cxx:112
 #, kde-format
 msgid "Signal Strength: %1"
-msgstr ""
+msgstr "قوّة الإشارة: %1"
 
 #: Network.cxx:144
 #, kde-format
@@ -460,7 +461,7 @@ msgstr ""
 #: NetworkList.cxx:213
 #, kde-format
 msgid "Configure Network Connections"
-msgstr ""
+msgstr "اضبط اتّصالات الشّبكة"
 
 #: NetworkList.cxx:245
 #, kde-format
@@ -501,12 +502,12 @@ msgstr[5] "التنبيهات"
 #: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
-msgstr ""
+msgstr "اضبط أسطح المكتب الافتراضية..."
 
 #: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
-msgstr ""
+msgstr "اضبط أسطح المكتب الافتراضية"
 
 #: PictureFrameApplet.cxx:95
 #, kde-format
@@ -517,7 +518,7 @@ msgstr ""
 #: PictureFrameAppletConfigureDialog.ui:37
 #, kde-format
 msgid "Frame"
-msgstr ""
+msgstr "إطار"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: PictureFrameAppletConfigureDialog.ui:61
@@ -624,17 +625,17 @@ msgstr "ينتظر"
 #: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "ينتظر الاستيثاق"
 
 #: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "يحلّ الاعتماديّات"
 
 #: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
-msgstr ""
+msgstr "يحدّث"
 
 #: PkUpdateList.cxx:667
 #, kde-format
@@ -649,7 +650,7 @@ msgstr "يُنزّل"
 #: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
-msgstr ""
+msgstr "يلغي"
 
 #: PkUpdateList.cxx:724
 #, kde-format
@@ -659,12 +660,12 @@ msgstr ""
 #: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
-msgstr ""
+msgstr "فشل التّحديث"
 
 #: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
-msgstr ""
+msgstr "اقبل اتّفاقيّة المستخدم النّهائي"
 
 #: PkUpdateList.cxx:842
 #, kde-format
@@ -786,7 +787,7 @@ msgstr "<li>%1 أخرى ...</li>"
 #: QuickLaunch.cxx:158
 #, kde-format
 msgid "Web Browser"
-msgstr ""
+msgstr "متصفّح وبّ"
 
 #: StartMenu.cxx:80
 #, kde-format
@@ -796,7 +797,7 @@ msgstr "بدّل المستخدم"
 #: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
-msgstr ""
+msgstr "قائمة الضبط..."
 
 #: SysLoad.cxx:200
 #, kde-format
@@ -844,20 +845,19 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr ""
 
 #: SysTray.cxx:291
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "التنبيهات:"
+msgstr "أظهر الإخطارات الجديدة"
 
 #: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
-msgstr ""
+msgstr "انقل إلى سطح المكتب"
 
 #: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
-msgstr ""
+msgstr "كلّ أسطح المكتب"
 
 #: TaskBarButton.cxx:117
 #, kde-format
@@ -918,7 +918,7 @@ msgstr "%1 %2"
 #: WeatherApplet.cxx:201
 #, kde-format
 msgid "%1 hPa"
-msgstr ""
+msgstr "%1 هكتوباسكال"
 
 #: WeatherApplet.cxx:204
 #, kde-format
@@ -954,7 +954,7 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:20
 #, kde-format
 msgid "API Key"
-msgstr ""
+msgstr "مفتاح و‌ب‌ت API"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
 #: WeatherAppletConfigureDialog.ui:27
@@ -978,7 +978,7 @@ msgstr "الوحدات"
 #: WeatherAppletConfigureDialog.ui:48
 #, kde-format
 msgid "&metric"
-msgstr ""
+msgstr "&متري"
 
 #. i18n: ectx: property (text), widget (QRadioButton, imperial)
 #: WeatherAppletConfigureDialog.ui:58
