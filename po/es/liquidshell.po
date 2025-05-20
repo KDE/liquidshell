@@ -1,15 +1,15 @@
 # Spanish translations for liquidshell.po package.
-# Copyright (C) 2017 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2017-2025 This file is copyright:
+# This file is distributed under the same license as the liquidshell package.
 # Automatically generated, 2017.
-# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2024-10-06 01:10+0200\n"
+"PO-Revision-Date: 2025-05-20 01:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -96,7 +96,7 @@ msgstr "Bluetooth"
 #: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
-msgstr "Seleccionar zonas horarias..."
+msgstr "Seleccionar zonas horarias…"
 
 #: ClockWidget.cxx:169
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "Seleccionar zonas horarias"
 #: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
-msgstr "Configurar fecha y hora..."
+msgstr "Configurar fecha y hora…"
 
 #: ClockWidget.cxx:194
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "Territorio"
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
-msgstr "Obtener nuevos fondos de escritorio..."
+msgstr "Obtener nuevos fondos de escritorio…"
 
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
@@ -204,7 +204,7 @@ msgstr "Copyright 2017-2024 Martin Koller"
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
 msgid "Configure..."
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: DesktopApplet.cxx:42
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "¿Realmente desea eliminar esta miniaplicación?"
 #: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr "Configurar el fondo del escritorio..."
+msgstr "Configurar el fondo del escritorio…"
 
 #: DesktopWidget.cxx:71
 #, kde-format
@@ -259,12 +259,12 @@ msgstr "Marco de la imagen"
 #: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
-msgstr "Configurar pantalla..."
+msgstr "Configurar pantalla…"
 
 #: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
-msgstr "Ejecutar orden..."
+msgstr "Ejecutar orden…"
 
 #: DesktopWidget.cxx:98
 #, kde-format
@@ -497,7 +497,7 @@ msgstr[1] "%1 notificaciones"
 #: Pager.cxx:61
 #, kde-format
 msgid "Configure Virtual Desktops..."
-msgstr "Configurar los escritorios virtuales..."
+msgstr "Configurar los escritorios virtuales…"
 
 #: Pager.cxx:68
 #, kde-format
@@ -524,7 +524,7 @@ msgstr "Ruta"
 #: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
-msgstr "Obteniendo detalles..."
+msgstr "Obteniendo detalles…"
 
 #: PkUpdateList.cxx:170
 #, kde-format
@@ -675,12 +675,12 @@ msgstr "Próxima comprobación: %1"
 #: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
-msgstr "Comprobando actualizaciones..."
+msgstr "Comprobando actualizaciones…"
 
 #: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "Comprobando actualizaciones... %1%"
+msgstr "Comprobando actualizaciones… %1%"
 
 #: PkUpdates.cxx:171
 #, kde-format
@@ -765,7 +765,7 @@ msgstr "Actualizaciones de software disponibles"
 #: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
-msgstr "<li>%1 más...</li>"
+msgstr "<li>%1 más…</li>"
 
 #: QuickLaunch.cxx:158
 #, kde-format
@@ -780,7 +780,7 @@ msgstr "Cambiar de usuario"
 #: StartMenu.cxx:170
 #, kde-format
 msgid "Configure Menu..."
-msgstr "Configurar menú..."
+msgstr "Configurar menú…"
 
 #: SysLoad.cxx:200
 #, kde-format
@@ -921,7 +921,7 @@ msgstr "Configurar la miniaplicación de meteorología"
 #: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
-msgstr "Descargando lista de ciudades..."
+msgstr "Descargando lista de ciudades…"
 
 #: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
@@ -982,15 +982,3 @@ msgstr "Ciudad"
 #, kde-format
 msgid "Country"
 msgstr "País"
-
-#~ msgid "Liquid Desktop Workspace"
-#~ msgstr "Espacio de trabajo de escritorio Liquid"
-
-#~ msgid "°K"
-#~ msgstr "°K"
-
-#~ msgid "Enable Networking"
-#~ msgstr "Activar redes"
-
-#~ msgid "Enable Wireless Networking"
-#~ msgstr "Activar redes inalámbricas"
