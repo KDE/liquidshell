@@ -252,6 +252,10 @@ void DesktopWidget::configureDisplay()
 
 void DesktopWidget::placePanel()
 {
+  // hack workaround: for an unknown reason, opening KCMultiDialog the first time
+  // changes the panel window type
+  KWinCompat::setType(panel->winId(), NET::Dock);
+
   int panelHeight = qMin(panel->sizeHint().height(), panel->height());
   QRect r = QApplication::primaryScreen()->geometry();
   QSize vs = QApplication::primaryScreen()->virtualSize();
