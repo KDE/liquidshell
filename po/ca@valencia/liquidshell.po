@@ -467,22 +467,22 @@ msgstr "Configura les connexions de xarxa"
 #: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr "La xarxa està activada. Feu clic per a desactivar"
+msgstr "La xarxa està activada. Cliqueu per a desactivar"
 
 #: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr "La xarxa està desactivada. Feu clic per a activar"
+msgstr "La xarxa està desactivada. Cliqueu per a activar"
 
 #: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
-msgstr "La xarxa sense fil està activada. Feu clic per a desactivar"
+msgstr "La xarxa sense fil està activada. Cliqueu per a desactivar"
 
 #: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
-msgstr "La xarxa sense fil està desactivada. Feu clic per a activar"
+msgstr "La xarxa sense fil està desactivada. Cliqueu per a activar"
 
 #: NotificationList.cxx:172
 #, kde-format
