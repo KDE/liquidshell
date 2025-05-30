@@ -1,0 +1,994 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the liquidshell package.
+#
+# SPDX-FileCopyrightText: 2025 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: liquidshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-10-05 01:49+0000\n"
+"PO-Revision-Date: 2025-05-26 17:27+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 25.04.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: Battery.cxx:78
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 stunda"
+msgstr[1] "%1 stundas"
+msgstr[2] "%1 stundu"
+
+#: Battery.cxx:79
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minūte"
+msgstr[1] "%1 minūtes"
+msgstr[2] "%1 minūšu"
+
+#: Battery.cxx:151
+#, kde-format
+msgid "Not Charging"
+msgstr "Nelādējas"
+
+#: Battery.cxx:152
+#, kde-format
+msgid "Fully Charged"
+msgstr "Pilnībā uzlādēta"
+
+#: Battery.cxx:159
+#, kde-format
+msgid "Charging at %1%"
+msgstr "Uzlāde %1 %"
+
+#: Battery.cxx:161
+#, kde-format
+msgid "Time until full: "
+msgstr "Laiks līdz pilnai: "
+
+#: Battery.cxx:165
+#, kde-format
+msgid "Discharging at %1%"
+msgstr "Izlādējas %1 %"
+
+#: Battery.cxx:167
+#, kde-format
+msgid "Remaining Time: "
+msgstr "Atlikušais laiks: "
+
+#: Battery.cxx:193
+#, kde-format
+msgid "Power Management"
+msgstr "Energokontrole"
+
+#: Bluetooth.cxx:64
+#, kde-format
+msgid "Bluetooth is operational"
+msgstr "„Bluetooth“ darbojas"
+
+#: Bluetooth.cxx:69
+#, kde-format
+msgid "Bluetooth is not operational"
+msgstr "„Bluetooth“ nedarbojas"
+
+#: Bluetooth.cxx:85
+#, kde-format
+msgid "Bluetooth"
+msgstr "„Bluetooth“"
+
+#: ClockWidget.cxx:163
+#, kde-format
+msgid "Select Timezones..."
+msgstr "Atlasiet laika joslas..."
+
+#: ClockWidget.cxx:169
+#, kde-format
+msgid "Select Timezones"
+msgstr "Atlasiet laika joslas"
+
+#: ClockWidget.cxx:187
+#, kde-format
+msgid "Configure Date & Time..."
+msgstr "Konfigurēt datumu un laiku..."
+
+#: ClockWidget.cxx:194
+#, kde-format
+msgid "Date & Time"
+msgstr "Datums un laiks"
+
+#: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
+#, kde-format
+msgid "Filter"
+msgstr "Filtrēt"
+
+#: ClockWidgetConfigureDialog.cxx:41
+#, kde-format
+msgid "Timezone"
+msgstr "Laika josla"
+
+#: ClockWidgetConfigureDialog.cxx:41
+#, kde-format
+msgid "Territory"
+msgstr "Teritorija"
+
+#: ConfigureDesktopDialog.cxx:37
+#, kde-format
+msgid "Get New Wallpapers..."
+msgstr "Iegūt jaunas tapetes..."
+
+#: ConfigureDesktopDialog.cxx:43
+#, kde-format
+msgid "Download Wallpapers"
+msgstr "Lejupielādēt tapetes"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
+#: ConfigureDesktopDialog.ui:15
+#, kde-format
+msgid "Configure Wallpaper"
+msgstr "Konfigurēt tapeti"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ConfigureDesktopDialog.ui:23
+#, kde-format
+msgid "Background Color"
+msgstr "Fona krāsa"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ConfigureDesktopDialog.ui:33
+#, kde-format
+msgid "Wallpaper File"
+msgstr "Tapetes datne"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ConfigureDesktopDialog.ui:67
+#, kde-format
+msgid "Scale Mode"
+msgstr "Mērogošanas režīms"
+
+#. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
+#: ConfigureDesktopDialog.ui:73
+#, kde-format
+msgid "Or&iginal Size"
+msgstr "&Sākotnējais izmērs"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
+#: ConfigureDesktopDialog.ui:80
+#, kde-format
+msgid "Sca&led Ignoring Aspect Ratio"
+msgstr "&Mērogota, ignorējot malu attiecību"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
+#: ConfigureDesktopDialog.ui:87
+#, kde-format
+msgid "Scale&d Keep Aspect Ratio"
+msgstr "Mēr&ogota, paturot malu attiecību"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
+#: ConfigureDesktopDialog.ui:94
+#, kde-format
+msgid "Scaled Keep Aspec&t Ratio and Clip"
+msgstr "Mēro&gota, paturot malu attiecību un kadrējot"
+
+#: desktop.cxx:30
+#, kde-format
+msgid "Liquidshell"
+msgstr "Liquidshell"
+
+#: desktop.cxx:31
+#, kde-format
+msgid "A QtWidgets based basic desktop shell"
+msgstr "Vienkārša uz „QtWidgets“ balstīta darbvirsmas čaula"
+
+#: desktop.cxx:33
+#, kde-format
+msgid "Copyright 2017 - 2024 Martin Koller"
+msgstr "Autortiesības 2017—2024 Martin Koller"
+
+#: DesktopApplet.cxx:34 Launcher.cxx:69
+#, kde-format
+msgid "Configure..."
+msgstr "Konfigurēt..."
+
+#: DesktopApplet.cxx:42
+#, kde-format
+msgid "Change Size && Position"
+msgstr "Mainīt izmēru un novietojumu"
+
+#: DesktopApplet.cxx:48
+#, kde-format
+msgid "Remove this Applet"
+msgstr "Noņemt šo sīklietotni"
+
+#: DesktopApplet.cxx:96
+#, kde-format
+msgid "%1: Change Size & Position"
+msgstr "%1: mainīt izmēru un novietojumu"
+
+#: DesktopApplet.cxx:136
+#, kde-format
+msgid "Remove Applet"
+msgstr "Noņemt sīklietotni"
+
+#: DesktopApplet.cxx:137
+#, kde-format
+msgid "Really remove this applet?"
+msgstr "Vai tiešām noņemt šo sīklietotni?"
+
+#: DesktopWidget.cxx:67
+#, kde-format
+msgid "Configure Wallpaper..."
+msgstr "Konfigurēt tapeti..."
+
+#: DesktopWidget.cxx:71
+#, kde-format
+msgid "Add Applet"
+msgstr "Pievienot sīklietotni"
+
+#: DesktopWidget.cxx:75
+#, kde-format
+msgid "Weather"
+msgstr "Laikapstākļi"
+
+#: DesktopWidget.cxx:78
+#, kde-format
+msgid "Disk Usage"
+msgstr "Diska lietojums"
+
+#: DesktopWidget.cxx:81
+#, kde-format
+msgid "Picture Frame"
+msgstr "Attēlu rāmis"
+
+#: DesktopWidget.cxx:84
+#, kde-format
+msgid "Configure Display..."
+msgstr "Konfigurēt displeju..."
+
+#: DesktopWidget.cxx:88 StartMenu.cxx:102
+#, kde-format
+msgid "Run Command..."
+msgstr "Palaist komandu..."
+
+#: DesktopWidget.cxx:98
+#, kde-format
+msgid "Help"
+msgstr "Palīdzība"
+
+#: DesktopWidget.cxx:247
+#, kde-format
+msgid "Configure Display"
+msgstr "Konfigurēt displeju"
+
+#: DeviceList.cxx:243
+#, kde-format
+msgid "KDE Connect"
+msgstr "KDE Connect"
+
+#: DeviceList.cxx:260
+#, kde-format
+msgid "Open with File Manager"
+msgstr "Atvērt datņu pārvaldniekā"
+
+#: DeviceList.cxx:343
+#, kde-format
+msgid ""
+"Device is mounted.\n"
+"Click to unmount/eject"
+msgstr ""
+"Ierīce ir piemontēta.\n"
+"Klikšķiniet, lai atmontētu/izgrūstu"
+
+#: DeviceList.cxx:344
+#, kde-format
+msgid ""
+"Device is unmounted.\n"
+"Click to mount"
+msgstr ""
+"Ierīce ir atmontēta.\n"
+"Klikšķiniet, lai piemontētu"
+
+#: DeviceList.cxx:355
+#, kde-format
+msgid "Unauthorized Operation"
+msgstr "Darbībai nav pilnvarojuma"
+
+#: DeviceList.cxx:356
+#, kde-format
+msgid "Device Busy"
+msgstr "Ierīce ir aizņemta"
+
+#: DeviceList.cxx:357
+#, kde-format
+msgid "Operation Failed"
+msgstr "Darbība neizdevās"
+
+#: DeviceList.cxx:358
+#, kde-format
+msgid "User Canceled"
+msgstr "Atcēla lietotājs"
+
+#: DeviceList.cxx:359
+#, kde-format
+msgid "Invalid Option"
+msgstr "Nederīga opcija"
+
+#: DeviceList.cxx:360
+#, kde-format
+msgid "Missing Driver"
+msgstr "Trūkst draivera"
+
+#: DeviceList.cxx:382
+#, kde-format
+msgid "The device can now be safely removed"
+msgstr "Ierīci varat droši izņemt"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Mount failed:"
+msgstr "Piemontēšana neizdevās:"
+
+#: DeviceList.cxx:389
+#, kde-format
+msgid "Unmount failed:"
+msgstr "Atmontēšana neizdevās:"
+
+#: DeviceNotifier.cxx:23
+#, kde-format
+msgid "Device Notifier"
+msgstr "Ierīces paziņotājs"
+
+#: DeviceNotifier.cxx:26
+#, kde-format
+msgid "Device List"
+msgstr "Ierīču saraksts"
+
+#: DiskUsageApplet.cxx:131
+#, kde-format
+msgid "%1 free / %2"
+msgstr "%1 brīvi / %2"
+
+#: DiskUsageApplet.cxx:164
+#, kde-format
+msgid "Configure DiskUsage Applet"
+msgstr "Konfigurēt Disku lietojuma sīklietotni"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, DiskUsageAppletConfigureDialog)
+#: DiskUsageAppletConfigureDialog.ui:14 PictureFrameAppletConfigureDialog.ui:14
+#: WeatherAppletConfigureDialog.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Lodziņš"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
+#, kde-format
+msgid "Text"
+msgstr "Teksts"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: DiskUsageAppletConfigureDialog.ui:44
+#, kde-format
+msgid "Bar Text"
+msgstr "Joslas teksts"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
+#: WeatherAppletConfigureDialog.ui:119
+#, kde-format
+msgid "Background"
+msgstr "Fons"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: DiskUsageAppletConfigureDialog.ui:72
+#, kde-format
+msgid "Bar Background"
+msgstr "Joslas fons"
+
+#: KdeConnect.cxx:169
+#, kde-format
+msgid "Device needs charging"
+msgstr "Ierīce ir jāuzlādē"
+
+#: KdeConnect.cxx:170
+#, kde-format
+msgid ""
+"Device charge of '%1' is at %2%.\n"
+"You should charge it."
+msgstr ""
+"„%1“ ierīces uzlādes līmenis ir %2 %.\n"
+"Tā ir jāuzlādē."
+
+#: Launcher.cxx:86
+#, kde-format
+msgid "Open Folder"
+msgstr "Atvērt mapi"
+
+#: Network.cxx:72
+#, kde-format
+msgid "No Network Connection"
+msgstr "Nav tīkla savienojuma"
+
+#: Network.cxx:82
+#, kde-format
+msgid "Full Network Connectivity (%1)"
+msgstr "Pilns savienojums (%1)"
+
+#: Network.cxx:84
+#, kde-format
+msgid "Limited Network Connectivity (%1)"
+msgstr "Ierobežots savienojums (%1)"
+
+#: Network.cxx:93
+#, kde-format
+msgid "IPv4 Address: %1"
+msgstr "IPv4 adrese: %1"
+
+#: Network.cxx:110
+#, kde-format
+msgid "SSID: %1"
+msgstr "SSID: %1"
+
+#: Network.cxx:112
+#, kde-format
+msgid "Signal Strength: %1"
+msgstr "Signāla stiprums: %1"
+
+#: Network.cxx:144
+#, kde-format
+msgid "VPN active"
+msgstr "VPN ir aktīvs"
+
+#: NetworkList.cxx:213
+#, kde-format
+msgid "Configure Network Connections"
+msgstr "Konfigurēt tīkla savienojumus"
+
+#: NetworkList.cxx:245
+#, kde-format
+msgid "Networking is enabled. Click to disable"
+msgstr "Savienojums ir ieslēgta. Spiediet, lai izslēgtu"
+
+#: NetworkList.cxx:247
+#, kde-format
+msgid "Networking is disabled. Click to enable"
+msgstr "Savienojums ir izslēgts. Spiediet, lai ieslēgtu"
+
+#: NetworkList.cxx:250
+#, kde-format
+msgid "Wireless Networking is enabled. Click to disable"
+msgstr "Bezvadu savienojums ir ieslēgts. Spiediet, lai izslēgtu"
+
+#: NetworkList.cxx:252
+#, kde-format
+msgid "Wireless Networking is disabled. Click to enable"
+msgstr "Bezvadu savienojums ir izslēgts. Spiediet, lai ieslēgtu"
+
+#: NotificationList.cxx:172
+#, kde-format
+msgid "Notifications"
+msgstr "Paziņojumi"
+
+#: NotificationServer.cxx:59
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 paziņojums"
+msgstr[1] "%1 paziņojumi"
+msgstr[2] "%1 paziņojumu"
+
+#: Pager.cxx:61
+#, kde-format
+msgid "Configure Virtual Desktops..."
+msgstr "Konfigurēt virtuālās darbvirsmas..."
+
+#: Pager.cxx:68
+#, kde-format
+msgid "Configure Virtual Desktops"
+msgstr "Konfigurēt virtuālās darbvirsmas"
+
+#: PictureFrameApplet.cxx:95
+#, kde-format
+msgid "Configure PictureFrame Applet"
+msgstr "Konfigurēt Attēlu rāmja sīklietotni"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: PictureFrameAppletConfigureDialog.ui:37
+#, kde-format
+msgid "Frame"
+msgstr "Rāmis"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: PictureFrameAppletConfigureDialog.ui:61
+#, kde-format
+msgid "Path"
+msgstr "Ceļš"
+
+#: PkUpdateList.cxx:128
+#, kde-format
+msgid "Getting details ..."
+msgstr "Iegūst informāciju..."
+
+#: PkUpdateList.cxx:170
+#, kde-format
+msgid "<b>Session restart required</b><br>"
+msgstr "<b>Sesija ir jāpārstartē</b><br>"
+
+#: PkUpdateList.cxx:172
+#, kde-format
+msgid "<b>Reboot required</b><br>"
+msgstr "<b>Nepieciešams pārstartēt</b><br>"
+
+#: PkUpdateList.cxx:188
+#, kde-format
+msgid "Software Updates"
+msgstr "Programmatūras atjauninājumi"
+
+#: PkUpdateList.cxx:200
+#, kde-format
+msgid "All"
+msgstr "Visi"
+
+#: PkUpdateList.cxx:213 PkUpdateList.cxx:437
+#, kde-format
+msgid "Install"
+msgstr "Instalēt"
+
+#: PkUpdateList.cxx:219
+#, kde-format
+msgid "Install, then Sleep"
+msgstr "Instalēt, tad iesnaudināt"
+
+#: PkUpdateList.cxx:220
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr "Instalēt, tad izslēgt"
+
+#: PkUpdateList.cxx:224
+#, kde-format
+msgid "Refresh"
+msgstr "Pārlādēt"
+
+#: PkUpdateList.cxx:431
+#, kde-format
+msgid "Install %1 package"
+msgid_plural "Install %1 packages"
+msgstr[0] "Instalēt %1 pakotni"
+msgstr[1] "Instalēt %1 pakotnes"
+msgstr[2] "Instalēt %1 pakotņu"
+
+#: PkUpdateList.cxx:560
+#, kde-format
+msgid "System Reboot Required"
+msgstr "Sistēma ir jāpārstartē"
+
+#: PkUpdateList.cxx:561
+#, kde-format
+msgid "One of the installed packages requires a system reboot"
+msgstr "Kāda no instalētajām pakotnēm pieprasa sistēmas pārstartēšanu"
+
+#: PkUpdateList.cxx:562
+#, kde-format
+msgid "Reboot System"
+msgstr "Pārstartēt sistēmu"
+
+#: PkUpdateList.cxx:582
+#, kde-format
+msgid "Session Restart Required"
+msgstr "Nepieciešamas sistēmas pārstartēšana"
+
+#: PkUpdateList.cxx:583
+#, kde-format
+msgid "One of the installed packages requires you to logout"
+msgstr "Kāda no instalētajām pakotnēm pieprasa izrakstīšanos no sesijas"
+
+#: PkUpdateList.cxx:584
+#, kde-format
+msgid "Logout"
+msgstr "Izrakstīties"
+
+#: PkUpdateList.cxx:630
+#, kde-format
+msgid "Cancel Installation"
+msgstr "Atcelt instalēšanu"
+
+#: PkUpdateList.cxx:663
+#, kde-format
+msgid "Waiting"
+msgstr "Gaida"
+
+#: PkUpdateList.cxx:664
+#, kde-format
+msgid "Waiting for authentication"
+msgstr "Gaida autentifikāciju"
+
+#: PkUpdateList.cxx:665
+#, kde-format
+msgid "Resolving dependencies"
+msgstr "Atrisina atkarības"
+
+#: PkUpdateList.cxx:666
+#, kde-format
+msgid "Updating"
+msgstr "Atjaunina"
+
+#: PkUpdateList.cxx:667
+#, kde-format
+msgid "Installing"
+msgstr "Instalē"
+
+#: PkUpdateList.cxx:668
+#, kde-format
+msgid "Downloading"
+msgstr "Lejupielādē"
+
+#: PkUpdateList.cxx:669
+#, kde-format
+msgid "Canceling"
+msgstr "Atceļ"
+
+#: PkUpdateList.cxx:724
+#, kde-format
+msgid "Validate Signature"
+msgstr "Pārbaudīt parakstu"
+
+#: PkUpdateList.cxx:775
+#, kde-format
+msgid "Update failed"
+msgstr "Atjaunināšana neizdevās"
+
+#: PkUpdateList.cxx:830
+#, kde-format
+msgid "Accept EULA"
+msgstr "Piekrist EULA"
+
+#: PkUpdateList.cxx:842
+#, kde-format
+msgid ""
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
+msgstr ""
+"<html>Vai piekrītat <br>%1“<br> pakotnes licencei no izplatītāja <br>%2?</"
+"html>"
+
+#: PkUpdates.cxx:53
+#, kde-format
+msgid "Next check: %1"
+msgstr "Nākamā pārbaude: %1"
+
+#: PkUpdates.cxx:79
+#, kde-format
+msgid "Checking for updates ..."
+msgstr "Pārbauda atjauninājumus..."
+
+#: PkUpdates.cxx:95 PkUpdates.cxx:149
+#, kde-format
+msgid "Checking for updates ... %1%"
+msgstr "Pārbauda atjauninājumus... %1 %"
+
+#: PkUpdates.cxx:171
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"Error on checking for updates: %2"
+msgstr ""
+"Pēdējā pārbaude: %1\n"
+"Kļūda, pārbaudot atjauninājumus: %2"
+
+#: PkUpdates.cxx:174
+#, kde-format
+msgid "Software Update Error"
+msgstr "Programmatūras atjaunināšanas kļūda"
+
+#: PkUpdates.cxx:195
+#, kde-format
+msgid "%1 <b>security</b> update available"
+msgid_plural "%1 <b>security</b> updates available"
+msgstr[0] "Pieejams %1 <b>drošības</b> atjauninājums"
+msgstr[1] "Pieejami %1 <b>drošības</b> atjauninājumi"
+msgstr[2] "Pieejams %1 <b>drošības</b> atjauninājumu"
+
+#: PkUpdates.cxx:207
+#, kde-format
+msgid "%1 <i>important</i> update available"
+msgid_plural "%1 <i>important</i> updates available"
+msgstr[0] "Pieejams %1 <b>svarīgs</b> atjauninājums"
+msgstr[1] "Pieejami %1 <b>svarīgi</b> atjauninājumi"
+msgstr[2] "Pieejams %1 <b>svarīgu</b> atjauninājumu"
+
+#: PkUpdates.cxx:219
+#, kde-format
+msgid "%1 bugfix update available"
+msgid_plural "%1 bugfix updates available"
+msgstr[0] "Pieejams %1 kļūdas labojuma atjauninājums"
+msgstr[1] "Pieejami %1 kļūdas labojumu atjauninājumi"
+msgstr[2] "Pieejams %1 kļūdas labojumu atjauninājumu"
+
+#: PkUpdates.cxx:229
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 other"
+msgid_plural ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 others"
+msgstr[0] ""
+"Pēdējā pārbaude: %1\n"
+"Svarīgi atjauninājumi nav pieejami\n"
+"%2 cits"
+msgstr[1] ""
+"Pēdējā pārbaude: %1\n"
+"Svarīgi atjauninājumi nav pieejami\n"
+"%2 citi"
+msgstr[2] ""
+"Pēdējā pārbaude: %1\n"
+"Svarīgi atjauninājumi nav pieejami\n"
+"%2 citu"
+
+#: PkUpdates.cxx:240
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No updates available"
+msgstr ""
+"Pēdējā pārbaude: %1\n"
+"Atjauninājumi nav pieejami"
+
+#: PkUpdates.cxx:249
+#, kde-format
+msgid "<br>%1 other"
+msgid_plural "<br>%1 others"
+msgstr[0] "<br>%1 cits"
+msgstr[1] "<br>%1 citi"
+msgstr[2] "<br>%1 citu"
+
+#: PkUpdates.cxx:251
+#, kde-format
+msgid "<html>Last check: %1<br>%2</html>"
+msgstr "<html>Pēdējā pārbaude: %1<br>%2</html>"
+
+#: PkUpdates.cxx:290
+#, kde-format
+msgid "Software Updates Available"
+msgstr "Pieejami programmatūras atjauninājumi"
+
+#: PkUpdates.cxx:310
+#, kde-format
+msgid "<li>%1 more ...</li>"
+msgstr "<li>vēl %1...</li>"
+
+#: QuickLaunch.cxx:158
+#, kde-format
+msgid "Web Browser"
+msgstr "Tīmekļa pārlūks"
+
+#: StartMenu.cxx:80
+#, kde-format
+msgid "Switch User"
+msgstr "Pārslēgt lietotāju"
+
+#: StartMenu.cxx:170
+#, kde-format
+msgid "Configure Menu..."
+msgstr "Konfigurēt izvēlni..."
+
+#: SysLoad.cxx:200
+#, kde-format
+msgid "CPU %1: %2% (%3 MHz)"
+msgstr "CPU %1: %2% (%3 MHz)"
+
+#: SysLoad.cxx:210
+#, kde-format
+msgid "Memory Total: %1 MB (%2 GB)"
+msgstr "Atmiņa kopā: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:212
+#, kde-format
+msgid "Memory Used: %1 MB (%2 GB) %3%"
+msgstr "Izmantotā atmiņa: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:214
+#, kde-format
+msgid "Memory Free: %1 MB (%2 GB)"
+msgstr "Brīvā atmiņa: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:216
+#, kde-format
+msgid "Swap Total: %1 MB (%2 GB)"
+msgstr "Maiņvieta kopā: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:218
+#, kde-format
+msgid "Swap Used: %1 MB (%2 GB) %3%"
+msgstr "Izmantotā maiņvieta: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:220
+#, kde-format
+msgid "Swap Free: %1 MB (%2 GB)"
+msgstr "Brīvā maiņvieta: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:223
+#, kde-format
+msgid "Net send/receive: %1/%2 KB/sec"
+msgstr "Tīklā nosūtīts/saņemts: %1/%2 KB/sek."
+
+#: SysLoad.cxx:227
+#, kde-format
+msgid "Net max (last %2 secs): %1 KB/sec"
+msgstr "Tīkla maks. (pēdējās %2 sek.): %1 KB/sek."
+
+#: SysTray.cxx:291
+#, kde-format
+msgid "Show New Notifications"
+msgstr "Rādīt jaunos paziņojumus"
+
+#: TaskBarButton.cxx:109
+#, kde-format
+msgid "Move To Desktop"
+msgstr "Pārvietot uz darbvirsmu"
+
+#: TaskBarButton.cxx:110
+#, kde-format
+msgid "All Desktops"
+msgstr "Visas darbvirsmas"
+
+#: TaskBarButton.cxx:117
+#, kde-format
+msgid "Close"
+msgstr "Aizvērt"
+
+#: WeatherApplet.cxx:66
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatūra:"
+
+#: WeatherApplet.cxx:69
+#, kde-format
+msgid "Pressure:"
+msgstr "Spiediens:"
+
+#: WeatherApplet.cxx:72
+#, kde-format
+msgid "Humidity:"
+msgstr "Mitrums:"
+
+#: WeatherApplet.cxx:75
+#, kde-format
+msgid "Wind Speed:"
+msgstr "Vēja ātrums:"
+
+#: WeatherApplet.cxx:78
+#, kde-format
+msgid "Wind Direction:"
+msgstr "Vēja virziens:"
+
+#: WeatherApplet.cxx:128 WeatherApplet.cxx:399
+#, kde-format
+msgid "Not configured"
+msgstr "Nav konfigurēts"
+
+#: WeatherApplet.cxx:183
+#, kde-format
+msgid "K"
+msgstr "K"
+
+#: WeatherApplet.cxx:184
+#, kde-format
+msgid "°C"
+msgstr "°C"
+
+#: WeatherApplet.cxx:185
+#, kde-format
+msgid "°F"
+msgstr "°F"
+
+#: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
+#: WeatherApplet.cxx:279
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: WeatherApplet.cxx:201
+#, kde-format
+msgid "%1 hPa"
+msgstr "%1 hPa"
+
+#: WeatherApplet.cxx:204
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: WeatherApplet.cxx:218
+#, kde-format
+msgid "%1 °"
+msgstr "%1 °"
+
+#: WeatherApplet.cxx:375
+#, kde-format
+msgid "Configure Weather Applet"
+msgstr "Konfigurēt laikapstākļu sīklietotni"
+
+#: WeatherAppletConfigureDialog.cxx:75
+#, kde-format
+msgid "Downloading city list..."
+msgstr "Lejupielādēt pilsētu sarakstu..."
+
+#: WeatherAppletConfigureDialog.cxx:89
+#, kde-format
+msgid "Download Error"
+msgstr "Lejupielādes kļūda"
+
+#: WeatherAppletConfigureDialog.cxx:90
+#, kde-format
+msgid "Error on downloading city list: %1"
+msgstr "Kļūda, lejupielādējot pilsētu sarakstu: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: WeatherAppletConfigureDialog.ui:20
+#, kde-format
+msgid "API Key"
+msgstr "API atslēga"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
+#: WeatherAppletConfigureDialog.ui:27
+#, kde-format
+msgid "The API key is needed to be allowed to get data from openweathermap.org"
+msgstr "Lai iegūtu datus no „openweathermap.org“, nepieciešama API atslēga"
+
+#. i18n: ectx: property (text), widget (QPushButton, getApiKey)
+#: WeatherAppletConfigureDialog.ui:34
+#, kde-format
+msgid "Get your personal API key"
+msgstr "Iegūt savu API atslēgu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: WeatherAppletConfigureDialog.ui:41
+#, kde-format
+msgid "Units"
+msgstr "Vienības"
+
+#. i18n: ectx: property (text), widget (QRadioButton, metric)
+#: WeatherAppletConfigureDialog.ui:48
+#, kde-format
+msgid "&metric"
+msgstr "&metriskās"
+
+#. i18n: ectx: property (text), widget (QRadioButton, imperial)
+#: WeatherAppletConfigureDialog.ui:58
+#, kde-format
+msgid "&imperial"
+msgstr "&imperiālās"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
+#, kde-format
+msgid "City"
+msgstr "Pilsēta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Valsts"
