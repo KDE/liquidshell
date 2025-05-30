@@ -22,6 +22,7 @@
   <name xml:lang="ka">liquidshell</name>
   <name xml:lang="ko">liquidshell</name>
   <name xml:lang="lt">liquidshell</name>
+  <name xml:lang="lv">liquidshell</name>
   <name xml:lang="nl">liquidshell</name>
   <name xml:lang="pl">liquidshell</name>
   <name xml:lang="pt">liquidshell</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</summary>
   <summary xml:lang="ko">liquidshell은 plasmashell의 대안입니다</summary>
   <summary xml:lang="lt">liquidshell yra plasmashell alternatyva</summary>
+  <summary xml:lang="lv">„liquidshell“ ir „plasmashell“ darbvirsmas čaulas alternatīva</summary>
   <summary xml:lang="nl">liquidshell is een alternatief voor plasmashell</summary>
   <summary xml:lang="pl">liquidshell jest alternatywą dla plasmashell</summary>
   <summary xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="ka">liquidshell-ი plasmashell-ის ალტერნატივაა</p>
     <p xml:lang="ko">liquidshell은 plasmashell의 대안입니다</p>
     <p xml:lang="lt">liquidshell yra plasmashell alternatyva</p>
+    <p xml:lang="lv">„liquidshell“ ir „plasmashell“ darbvirsmas čaulas alternatīva</p>
     <p xml:lang="nl">liquidshell is een alternatief voor plasmashell</p>
     <p xml:lang="pl">liquidshell jest alternatywą dla plasmashell</p>
     <p xml:lang="pt">O 'liquidshell' é uma alternativa ao 'plasmashell'</p>
@@ -126,6 +129,7 @@
     <p xml:lang="ka">QtQuick -ის მაგიერ ის QtWidgets-ზეა დაწერილი, ამიტომ გრაფიკის აპარატურული აჩქარება საჭირო არაა.</p>
     <p xml:lang="ko">QtQuick 대신 QtWidgets을 사용하여 하드웨어 그래픽 가속이 필요하지 않습니다.</p>
     <p xml:lang="lt">Jis nenaudoja QtQuick, tačiau vietoj to, remiasi QtWidgets ir todėl, nereikalauja aparatinės įrangos grafikos spartinimo.</p>
+    <p xml:lang="lv">Tā neizmanto „QtQuick“, bet gan „QtWidgets“, tāpēc ierīcei nav nepieciešama aparatūras paātrināšana.</p>
     <p xml:lang="nl">Het gebruikt geen QtQuick maar hangt in plaats daarvan af van QtWidgets, er is daarom geen hardware grafische versnelling nodig.</p>
     <p xml:lang="pl">Zamiast używać QtQuick używa QtWidgets, więc nie jest wymagane żande sprzętowe przyspieszenie grafiki.</p>
     <p xml:lang="pt">Não usa o QtQuick mas baseia-se sim no QtWidgets, pelo que não é necessária nenhuma aceleração gráfica por 'hardware'.</p>
@@ -159,6 +163,7 @@
     <p xml:lang="ka">მთავარი ფუნქციები:</p>
     <p xml:lang="ko">주 기능:</p>
     <p xml:lang="lt">Pagrindinės ypatybės:</p>
+    <p xml:lang="lv">Galvenās iezīmes:</p>
     <p xml:lang="nl">Hoofdkenmerken:</p>
     <p xml:lang="pl">Główne możliwości:</p>
     <p xml:lang="pt">Funcionalidades Principais:</p>
@@ -193,6 +198,7 @@
       <li xml:lang="ka">ფონის სურათი თითოეული ვირტუალური სამუშაო მაგიდისთვის</li>
       <li xml:lang="ko">가상 바탕 화면별 배경 그림 지정</li>
       <li xml:lang="lt">Atskiras darbalaukio fonas kiekvienam virtualiam darbalaukiui</li>
+      <li xml:lang="lv">Tapete katra darbvirsmai atsevišķi</li>
       <li xml:lang="nl">Achtergrondafbeelding per virtueel bureaublad</li>
       <li xml:lang="pl">Tapeta na wirtualny pulpit</li>
       <li xml:lang="pt">Papel de parede por ecrã virtual</li>
@@ -225,6 +231,7 @@
       <li xml:lang="ka">ანიმაციის გარეშე, არ ჭამს CPU-ს, სჭირდება ცოტა მეხსიერება</li>
       <li xml:lang="ko">애니메이션 없음, 적은 CPU 및 메모리 자원 사용</li>
       <li xml:lang="lt">Jokių animacijų, jokio perteklinio procesoriaus naudojimo, naudoja mažai atminties</li>
+      <li xml:lang="lv">Nav animāciju, nenoslogo centrālo procesoru un patērē maz atmiņas</li>
       <li xml:lang="nl">Geen animaties, geen CPU belasting, lage voetafdruk op geheugen</li>
       <li xml:lang="pl">Brak animacji, brak zapychania CPU, małe wykorzystanie pamięci</li>
       <li xml:lang="pt">Sem animações, sem bloqueios do CPU, pouco consumo de memória</li>
@@ -258,6 +265,7 @@
       <li xml:lang="ka">მყისიერი გაშვება</li>
       <li xml:lang="ko">빠른 시작</li>
       <li xml:lang="lt">Greita paleistis</li>
+      <li xml:lang="lv">Tūlītēja ieslēgšanās</li>
       <li xml:lang="nl">Onmiddellijk opgestart</li>
       <li xml:lang="pl">Natychmiastowe uruchamianie</li>
       <li xml:lang="pt">Arranque instantâneo</li>
@@ -291,6 +299,7 @@
       <li xml:lang="ka">არ იყენებს აქტივობებს</li>
       <li xml:lang="ko">활동 없음</li>
       <li xml:lang="lt">Nenaudoja veiklų</li>
+      <li xml:lang="lv">Neizmanto aktivitātes</li>
       <li xml:lang="nl">Geen gebruik van activiteiten</li>
       <li xml:lang="pl">Nie używa aktywności</li>
       <li xml:lang="pt">Não usa as actividades</li>
@@ -324,6 +333,7 @@
       <li xml:lang="ka">დაფუძნებულია QtWidgets-ზე, ამიტომ სტილი სისტემის მორგებიდან ეთითება</li>
       <li xml:lang="ko">QtWidgets 기반, 시스템 설정의 위젯 스타일 사용</li>
       <li xml:lang="lt">Pagrįstas QtWidgets, todėl naudoja valdiklių stilių iš sistemos nuostatų</li>
+      <li xml:lang="lv">Balstīta uz „QtWidgets“, tāpēc ievēro sistēmas iestatījumu logdaļu stilu</li>
       <li xml:lang="nl">Gebaseerd op QtWidgets, volgt daarom widgetstijl uit systeeminstellingen</li>
       <li xml:lang="pl">Oparte na QtWidgets, więc podąża za wyglądem z ustawień systemowych</li>
       <li xml:lang="pt">Baseado no QtWidgets, pelo que segue o estilo gráfico da Configuração do Sistema</li>
@@ -356,6 +366,7 @@
       <li xml:lang="ka">ხატულები სისტემაში გლობალურად დაყენებული ხატულების თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
       <li xml:lang="ko">시스템 설정의 전역 아이콘 테마에서 사이콘 사용</li>
       <li xml:lang="lt">Piktogramos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto piktogramų apipavidalinimo</li>
+      <li xml:lang="lv">Izmanto sistēmas iestatījumos norādīto globālo ikonu motīvu</li>
       <li xml:lang="nl">Pictogrammen worden gebruikt uit uw globaal gedefinieerd pictogramthema uit systeeminstellingen</li>
       <li xml:lang="pl">Ikony są brane z globalnie określonego zestawu ikon w ustawieniach systemowych</li>
       <li xml:lang="pt">São usados os ícones do seu tema de ícones definido a nível global na Configuração do Sistema</li>
@@ -388,6 +399,7 @@
       <li xml:lang="ka">ფერები სისტემაში გლობალურად დაყენებული ფერებს თემიდან გამოიყენება (ეთითება სისტემის მორგებიდან)</li>
       <li xml:lang="ko">시스템 설정의 전역 색 구성표에서 색상 사용</li>
       <li xml:lang="lt">Spalvos yra naudojamos iš jūsų visuotinai sistemos nuostatose apibrėžto spalvų apipavidalinimo</li>
+      <li xml:lang="lv">Izmanto sistēmas iestatījumos norādīto globālo krāsu motīvu</li>
       <li xml:lang="nl">Kleuren worden gebruikt uit uw globaal gedefinieerd kleurenthema uit systeeminstellingen</li>
       <li xml:lang="pl">Kolory są brane z globalnie określonego zestawu kolorów w ustawieniach systemowych</li>
       <li xml:lang="pt">São usadas as cores do seu tema de cores definido a nível global na Configuração do Sistema</li>
@@ -420,6 +432,7 @@
       <li xml:lang="ka">ასევე შეგიძლიათ სტილი CSS-თაც შეცვალოთ ბრძანების სტრიქონის პარამეტრის -stylesheet filename.css -ით შეცვალოთ (იხილეთ მაგალითისთვის მოყოლებული stylesheet.css)</li>
       <li xml:lang="ko">-stylesheet filename.css 명령행 옵션을 지정하여 CSS 스타일 지정 가능(포함된 예제 stylesheet.css 참조)</li>
       <li xml:lang="lt">Gali būti papildomai stilizuojamas naudojant css, perduodant komandų eilutės parinktį -stylesheet failo_pavadinimas.css (žiūrėkite pridėtą pavyzdį stylesheet.css)</li>
+      <li xml:lang="lv">Iespēja papildus stilizēt ar CSS, padodot komandrindas parametru -stylesheet datnes_nosaukums.css (skatīt iekļauto stylesheet.css)</li>
       <li xml:lang="nl">Kan extra worden gestijld met css door de optie op de opdrachtregel -stylesheet bestandsnaam.css (zie bijgevoegd voorbeeld stylesheet.css)</li>
       <li xml:lang="pl">Możliwość uszczegółowienia wyglądu poprzez podanie opcji wiersza poleceń css -stylesheet filename.css (zobacz załączony przykład stylesheet.css)</li>
       <li xml:lang="pt">Pode ser modificado o seu estilo gráfico com CSS se passar a opção da linha de comandos '-stylesheet ficheiro.css' (veja o 'stylesheet.css' incluída no exemplo)</li>
@@ -452,6 +465,7 @@
       <li xml:lang="ka">კონფიგურაციისთვის (როგორიცაა მთავარი მენიუ, ვირტუალური სამუშაო მაგიდა, ქსელი) ძირითადად, KDE-ის უკვე არსებულ ფანჯრებს იყენებს</li>
       <li xml:lang="ko">KDE 대화 상자로 설정 진행. 예: 시작 메뉴, 가상 바탕 화면, 블루투스, 네트워크</li>
       <li xml:lang="lt">Daugumai konfigūracijų naudoja esamus KDE dialogus, pvz., Paleidimo meniu, Virtualūs darbalaukiai, Bluetooth, Tinklas</li>
+      <li xml:lang="lv">lielākai konfigurāciju daļai izmanto pastāvošos KDE lodziņus, piemēram, galvenajai izvēlnei, virtuālajām darbvirsmām, „Bluetooth“, tīklu darbībām</li>
       <li xml:lang="nl">gebruikt bestaande KDE dialogen voor de meeste configuraties, bijv. StartMenu, Virtuele bureaubladen, Bluetooth, Netwerk</li>
       <li xml:lang="pl">używa istniejących okien dialogowych KDE w większości przypadków, np. menu start, pulpity wirtualne, Bluetooth, sieć</li>
       <li xml:lang="pt">usa as janelas existentes no KDE para a maioria das configurações, p.ex., Menu Iniciar, Ecrãs Virtuais, Bluetooth, Rede</li>
@@ -484,6 +498,7 @@
       <li xml:lang="ka">ერთი ქვედა DesktopPanel</li>
       <li xml:lang="ko">아래쪽의 바탕 화면 패널</li>
       <li xml:lang="lt">Vienas apatinis darbalaukio skydelis</li>
+      <li xml:lang="lv">Viens apakšējais darbvirsmas panelis</li>
       <li xml:lang="nl">Eén bureaubladpaneel onderaan</li>
       <li xml:lang="pl">Jeden panel pulpitu na dole</li>
       <li xml:lang="pt">Um único painel inferior</li>
@@ -516,6 +531,7 @@
       <li xml:lang="ka">სამუშაო მაგიდის აპლეტები</li>
       <li xml:lang="ko">바탕 화면 애플릿</li>
       <li xml:lang="lt">Darbalaukio programėlės</li>
+      <li xml:lang="lv">Darbvirsmas sīklietotnes</li>
       <li xml:lang="nl">Applets op het bureaublad</li>
       <li xml:lang="pl">Aplety pulpitu</li>
       <li xml:lang="pt">Elementos Gráficos do Ecrã</li>
