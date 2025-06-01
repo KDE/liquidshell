@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2025-05-18 22:25+0400\n"
+"PO-Revision-Date: 2025-05-31 17:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -286,7 +286,7 @@ msgstr ""
 #: DeviceList.cxx:243
 #, kde-format
 msgid "KDE Connect"
-msgstr "كِيدِي المتّصل"
+msgstr "جسر كِيدِي"
 
 #: DeviceList.cxx:260
 #, kde-format
