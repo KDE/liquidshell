@@ -281,14 +281,19 @@ void NotificationList::addItem(uint id, const QString &appName, const QString &s
   // but I don't want to fill up the screen with useless duplicate information. Therefore
   // whenever the same notification is received while another instance of it is still visible,
   // only put it in the list-view (it has a different id, therefore still store it), but don't show it as popup
+  QMap<QString, int> appCount;
   for (NotifyItem *it : items)
   {
     if ( (it != item) &&         // not the new item already in items
-         !it->parentWidget() &&  // temporary item not in the list-view yet
-         (appName == it->appName) && (summary == it->summary) &&
-         (body == it->body) && (actions == it->actions) )
+         !it->parentWidget() )   // temporary item not in the list-view yet
     {
-      timeout = 0;
+      if ( (appName == it->appName) && (summary == it->summary) &&
+           (body == it->body) && (actions == it->actions) )
+      {
+        timeout = 0;
+      }
+      if ( ++appCount[it->appName] >= 5 )  // if app creates too many notifications, don't pop them up
+        timeout = 0;
     }
   }
 
@@ -393,10 +398,12 @@ void NotificationList::placeItems()
       y -= item->sizeHint().height();
       y -= 5; // a small space
 
+      if ( y < 0 ) break;  // avoid too many items being shown
+
       point.setX(std::min(x, screen.x() + screen.width() - item->sizeHint().width()));
       point.setY(y);
       item->move(point);
-      item->show();
+      item->setVisible(!avoidPopup);
     }
   }
 }
