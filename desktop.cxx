@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2017 - 2023 Martin Koller, kollix@aon.at
+  Copyright 2017 - 2023 Martin Koller, martin@kollix.at
 
   This file is part of liquidshell.
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
                        "https://apps.kde.org/de/liquidshell"); // homepage
                        //"https://www.linux-apps.com/p/1205621"); // homepage
 
-  aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
+  aboutData.addAuthor("Martin Koller", "", "martin@kollix.at");
 
   KAboutData::setApplicationData(aboutData);
 

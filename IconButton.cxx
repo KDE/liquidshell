@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /*
-  Copyright 2018 - 2020 Martin Koller, kollix@aon.at
+  Copyright 2018 - 2020 Martin Koller, martin@kollix.at
 
   This file is part of liquidshell.
 
