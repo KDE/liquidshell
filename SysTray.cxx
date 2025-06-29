@@ -1,7 +1,7 @@
 /*
   This file is part of liquidshell.
 
-  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <martin@kollix.at>
 
   SPDX-License-Identifier: GPL-3.0-or-later
 */

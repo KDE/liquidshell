@@ -1,7 +1,7 @@
 /*
   This file is part of liquidshell.
 
-  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <kollix@aon.at>
+  SPDX-FileCopyrightText: 2017 - 2024 Martin Koller <martin@kollix.at>
 
   SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
                        "https://apps.kde.org/de/liquidshell"); // homepage
                        //"https://www.linux-apps.com/p/1205621"); // homepage
 
-  aboutData.addAuthor("Martin Koller", "", "kollix@aon.at");
+  aboutData.addAuthor("Martin Koller", "", "martin@kollix.at");
 
   KAboutData::setApplicationData(aboutData);
 
