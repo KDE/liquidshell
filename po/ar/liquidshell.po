@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2025-05-31 17:56+0400\n"
+"PO-Revision-Date: 2025-06-28 17:23+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -569,7 +569,7 @@ msgstr ""
 #: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
-msgstr "أنعش"
+msgstr "حدّث"
 
 #: PkUpdateList.cxx:431
 #, kde-format
