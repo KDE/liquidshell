@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2025-01-11 17:15+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2025-06-29 09:04+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -140,7 +140,7 @@ msgstr "Duvar Kâğıtları İndir"
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr "Duvar Kağıdını Yapılandır"
+msgstr "Duvar Kâğıdını Yapılandır"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
@@ -152,7 +152,7 @@ msgstr "Arka Plan Rengi"
 #: ConfigureDesktopDialog.ui:33
 #, kde-format
 msgid "Wallpaper File"
-msgstr "Duvar Kağıdı Dosyası"
+msgstr "Duvar Kâğıdı Dosyası"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ConfigureDesktopDialog.ui:67
@@ -232,7 +232,7 @@ msgstr "Bu uygulamacık gerçekten kaldırılsın mı?"
 #: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr "Duvar Kağıdını Yapılandır…"
+msgstr "Duvar Kâğıdını Yapılandır…"
 
 #: DesktopWidget.cxx:71
 #, kde-format
