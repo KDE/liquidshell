@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2025-06-28 17:23+0400\n"
+"PO-Revision-Date: 2025-08-04 20:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -486,7 +486,7 @@ msgstr ""
 #: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
-msgstr "التنبيهات:"
+msgstr "الإشعارات"
 
 #: NotificationServer.cxx:59
 #, fuzzy, kde-format
@@ -847,7 +847,7 @@ msgstr ""
 #: SysTray.cxx:291
 #, kde-format
 msgid "Show New Notifications"
-msgstr "أظهر الإخطارات الجديدة"
+msgstr "أظهر الإشعارات الجديدة"
 
 #: TaskBarButton.cxx:109
 #, kde-format
