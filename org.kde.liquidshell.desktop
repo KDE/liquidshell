@@ -2,6 +2,7 @@
 Exec=liquidshell
 X-DBUS-StartupType=Unique
 Name=Liquid Desktop Workspace
+Name[ar]=مساحة عمل سطح مكتب الانسياب
 Name[ca]=Espai de treball de l'escriptori Liquid
 Name[ca@valencia]=Espai de treball de l'escriptori Liquid
 Name[cs]=Pracovní plocha Liquid

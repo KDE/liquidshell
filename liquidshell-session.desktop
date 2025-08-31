@@ -4,6 +4,7 @@ Exec=@CMAKE_INSTALL_FULL_BINDIR@/start_liquidshell
 TryExec=@CMAKE_INSTALL_FULL_BINDIR@/start_liquidshell
 DesktopNames=KDE
 Name=Liquidshell
+Name[ar]=صدفة الانسياب
 Name[ca]=Liquidshell
 Name[ca@valencia]=Liquidshell
 Name[cs]=Liquidshell
