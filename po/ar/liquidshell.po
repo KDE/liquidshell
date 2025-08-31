@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-05 01:49+0000\n"
-"PO-Revision-Date: 2025-08-04 20:20+0400\n"
+"PO-Revision-Date: 2025-08-30 13:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -63,17 +63,17 @@ msgstr "مشحونة بالكامل"
 #: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
-msgstr ""
+msgstr "يشحن %1%"
 
 #: Battery.cxx:161
 #, kde-format
 msgid "Time until full: "
-msgstr ""
+msgstr "الوقت المتبقي للامتلاء:"
 
 #: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
-msgstr ""
+msgstr "يفرّغ  %1٪"
 
 #: Battery.cxx:167
 #, kde-format
@@ -88,12 +88,12 @@ msgstr "إدارة الطاقة"
 #: Bluetooth.cxx:64
 #, kde-format
 msgid "Bluetooth is operational"
-msgstr ""
+msgstr "بلوتوث عامل"
 
 #: Bluetooth.cxx:69
 #, kde-format
 msgid "Bluetooth is not operational"
-msgstr ""
+msgstr "بلوتوث غير عامل"
 
 #: Bluetooth.cxx:85
 #, kde-format
@@ -103,12 +103,12 @@ msgstr "بلوتوث"
 #: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
-msgstr ""
+msgstr "اختر مناطق زمنية..."
 
 #: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
-msgstr ""
+msgstr "اختر مناطق زمنية"
 
 #: ClockWidget.cxx:187
 #, kde-format
@@ -143,7 +143,7 @@ msgstr "اجلب خلفيّات جديدة..."
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
-msgstr ""
+msgstr "نزّل خلفيات"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
 #: ConfigureDesktopDialog.ui:15
@@ -161,7 +161,7 @@ msgstr "لون الخلفيّة"
 #: ConfigureDesktopDialog.ui:33
 #, kde-format
 msgid "Wallpaper File"
-msgstr ""
+msgstr "ملف الخلفية"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ConfigureDesktopDialog.ui:67
@@ -179,34 +179,34 @@ msgstr "الحجم الأ&صليّ"
 #: ConfigureDesktopDialog.ui:80
 #, kde-format
 msgid "Sca&led Ignoring Aspect Ratio"
-msgstr ""
+msgstr "غيّر حجمه مع &تجاهل نسبة العرض إلى الارتفاع"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
 #: ConfigureDesktopDialog.ui:87
 #, kde-format
 msgid "Scale&d Keep Aspect Ratio"
-msgstr ""
+msgstr "غيّر حجمه &مع الحفاظ على نسبة العرض إلى الارتفاع"
 
 #. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
 #: ConfigureDesktopDialog.ui:94
 #, kde-format
 msgid "Scaled Keep Aspec&t Ratio and Clip"
-msgstr ""
+msgstr "غيّر حجمه مع الحفاظ على &نسبة العرض إلى الارتفاع والقص"
 
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "صدفة الانسياب"
 
 #: desktop.cxx:31
 #, kde-format
 msgid "A QtWidgets based basic desktop shell"
-msgstr ""
+msgstr "صدفة سطح مكتب بسيطة مبنية على Qwidgets"
 
 #: desktop.cxx:33
 #, kde-format
 msgid "Copyright 2017 - 2024 Martin Koller"
-msgstr ""
+msgstr "حقوق النشر 2017 - 2024 مارتن كولر"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -216,17 +216,17 @@ msgstr "اضبط..."
 #: DesktopApplet.cxx:42
 #, kde-format
 msgid "Change Size && Position"
-msgstr ""
+msgstr "غيّر الحجم والموضع"
 
 #: DesktopApplet.cxx:48
 #, kde-format
 msgid "Remove this Applet"
-msgstr ""
+msgstr "أزل هذه البريمجة"
 
 #: DesktopApplet.cxx:96
 #, kde-format
 msgid "%1: Change Size & Position"
-msgstr ""
+msgstr "%1: غيّر الحجم والموضع"
 
 #: DesktopApplet.cxx:136
 #, kde-format
@@ -236,7 +236,7 @@ msgstr "أزل البريمج"
 #: DesktopApplet.cxx:137
 #, kde-format
 msgid "Really remove this applet?"
-msgstr ""
+msgstr "هل أنت متأكّد من إزالة هذه البريمجة؟"
 
 #: DesktopWidget.cxx:67
 #, kde-format
@@ -246,7 +246,7 @@ msgstr "اضبط والخلفية…"
 #: DesktopWidget.cxx:71
 #, kde-format
 msgid "Add Applet"
-msgstr ""
+msgstr "أضف بريمجة"
 
 #: DesktopWidget.cxx:75
 #, kde-format
@@ -266,7 +266,7 @@ msgstr "إطار الصورة"
 #: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
-msgstr ""
+msgstr "اضبط العرض..."
 
 #: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "مساعدة"
 #: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
-msgstr ""
+msgstr "اضبط العرض"
 
 #: DeviceList.cxx:243
 #, kde-format
@@ -299,6 +299,8 @@ msgid ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 msgstr ""
+"الجهاز مضموم.\n"
+"انقر لإلغاء الفك/إخراج"
 
 #: DeviceList.cxx:344
 #, kde-format
@@ -306,21 +308,23 @@ msgid ""
 "Device is unmounted.\n"
 "Click to mount"
 msgstr ""
+"الجهاز غير مضموم.\n"
+"انقر للضم"
 
 #: DeviceList.cxx:355
 #, kde-format
 msgid "Unauthorized Operation"
-msgstr ""
+msgstr "عملية غير مصرّح بها"
 
 #: DeviceList.cxx:356
 #, kde-format
 msgid "Device Busy"
-msgstr ""
+msgstr "الجهاز مشغول"
 
 #: DeviceList.cxx:357
 #, kde-format
 msgid "Operation Failed"
-msgstr ""
+msgstr "العملية فشلت"
 
 #: DeviceList.cxx:358
 #, kde-format
@@ -330,17 +334,17 @@ msgstr "أُلغِي المستخدم"
 #: DeviceList.cxx:359
 #, kde-format
 msgid "Invalid Option"
-msgstr ""
+msgstr "خيار غير صالح"
 
 #: DeviceList.cxx:360
 #, kde-format
 msgid "Missing Driver"
-msgstr ""
+msgstr "البرنامج المشغّل مفقود"
 
 #: DeviceList.cxx:382
 #, kde-format
 msgid "The device can now be safely removed"
-msgstr ""
+msgstr "يمكن إزالة الجهاز بأمان الآن"
 
 #: DeviceList.cxx:389
 #, kde-format
@@ -360,7 +364,7 @@ msgstr "مُخطِر الأجهزة"
 #: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
-msgstr ""
+msgstr "قائمة الأجهزة"
 
 #: DiskUsageApplet.cxx:131
 #, kde-format
@@ -370,7 +374,7 @@ msgstr "المتبقي ‏%1 / %2"
 #: DiskUsageApplet.cxx:164
 #, kde-format
 msgid "Configure DiskUsage Applet"
-msgstr ""
+msgstr "اضبط بريمجة استخدام القرص"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
 #. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
@@ -391,7 +395,7 @@ msgstr "النص"
 #: DiskUsageAppletConfigureDialog.ui:44
 #, kde-format
 msgid "Bar Text"
-msgstr ""
+msgstr "نص الشريط"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
@@ -404,12 +408,12 @@ msgstr "الخلفيّة"
 #: DiskUsageAppletConfigureDialog.ui:72
 #, kde-format
 msgid "Bar Background"
-msgstr ""
+msgstr "خلفية الشريط"
 
 #: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
-msgstr ""
+msgstr "الجهاز يحتاج إلى شحن"
 
 #: KdeConnect.cxx:170
 #, kde-format
@@ -417,6 +421,8 @@ msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
 msgstr ""
+"شحن الجهاز '%1' هو %2%.\n"
+"عليك شحنه."
 
 #: Launcher.cxx:86
 #, kde-format
@@ -431,12 +437,12 @@ msgstr "لا اتّصال بالشّبكة"
 #: Network.cxx:82
 #, kde-format
 msgid "Full Network Connectivity (%1)"
-msgstr ""
+msgstr "اتصال شبكة كامل (%1)"
 
 #: Network.cxx:84
 #, kde-format
 msgid "Limited Network Connectivity (%1)"
-msgstr ""
+msgstr "اتصال شبكة محدود (%1)"
 
 #: Network.cxx:93
 #, kde-format
@@ -456,7 +462,7 @@ msgstr "قوّة الإشارة: %1"
 #: Network.cxx:144
 #, kde-format
 msgid "VPN active"
-msgstr ""
+msgstr "الشبكة الافتراضية الخاصة (VPN) عاملة"
 
 #: NetworkList.cxx:213
 #, kde-format
@@ -466,22 +472,22 @@ msgstr "اضبط اتّصالات الشّبكة"
 #: NetworkList.cxx:245
 #, kde-format
 msgid "Networking is enabled. Click to disable"
-msgstr ""
+msgstr "الشبكة مفعّلة. انقر لتعطيلها"
 
 #: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr ""
+msgstr "الشبكة معطّلة. انقر لتفعيلها"
 
 #: NetworkList.cxx:250
 #, kde-format
 msgid "Wireless Networking is enabled. Click to disable"
-msgstr ""
+msgstr "الشبكة اللاسلكية مفعّلة. انقر لتعطيلها"
 
 #: NetworkList.cxx:252
 #, kde-format
 msgid "Wireless Networking is disabled. Click to enable"
-msgstr ""
+msgstr "الشبكة اللاسلكية معطّلة. انقر لتفعيلها"
 
 #: NotificationList.cxx:172
 #, kde-format
@@ -489,15 +495,15 @@ msgid "Notifications"
 msgstr "الإشعارات"
 
 #: NotificationServer.cxx:59
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
-msgstr[0] "إخطار"
-msgstr[1] "التنبيهات"
-msgstr[2] "التنبيهات"
-msgstr[3] "التنبيهات"
-msgstr[4] "التنبيهات"
-msgstr[5] "التنبيهات"
+msgstr[0] "لا يوجد إشعارات"
+msgstr[1] "إشعار واحد"
+msgstr[2] "إشعارين"
+msgstr[3] "%1 إشعارات"
+msgstr[4] "%1 إشعار"
+msgstr[5] "%1 إشعار"
 
 #: Pager.cxx:61
 #, kde-format
@@ -512,7 +518,7 @@ msgstr "اضبط أسطح المكتب الافتراضية"
 #: PictureFrameApplet.cxx:95
 #, kde-format
 msgid "Configure PictureFrame Applet"
-msgstr ""
+msgstr "اضبط بريمجة إطار الصورة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: PictureFrameAppletConfigureDialog.ui:37
@@ -529,22 +535,22 @@ msgstr "المسار"
 #: PkUpdateList.cxx:128
 #, kde-format
 msgid "Getting details ..."
-msgstr ""
+msgstr "يجلب التّفاصيل ..."
 
 #: PkUpdateList.cxx:170
 #, kde-format
 msgid "<b>Session restart required</b><br>"
-msgstr ""
+msgstr "<b>إعادة تشغيل الجلسة مطلوبة</b><br>"
 
 #: PkUpdateList.cxx:172
 #, kde-format
 msgid "<b>Reboot required</b><br>"
-msgstr ""
+msgstr "<b>إعادة إقلاع مطلوبة</b><br>"
 
 #: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
-msgstr ""
+msgstr "تحديثات البرامج"
 
 #: PkUpdateList.cxx:200
 #, kde-format
@@ -559,12 +565,12 @@ msgstr "ثبّت"
 #: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "ثبّت، ثم علّق"
 
 #: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "ثبّت، ثم إطفاء"
 
 #: PkUpdateList.cxx:224
 #, kde-format
@@ -575,37 +581,37 @@ msgstr "حدّث"
 #, kde-format
 msgid "Install %1 package"
 msgid_plural "Install %1 packages"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "ثبّت %1 حزمة"
+msgstr[1] "ثبّت حزمة واحدة"
+msgstr[2] "ثبّت حزميتين"
+msgstr[3] "ثبّت %1 حزم"
+msgstr[4] "ثبّت %1 حزمة"
+msgstr[5] "ثبّت %1 حزمة"
 
 #: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
-msgstr ""
+msgstr "إعادة إقلاع النظام مطلوبة"
 
 #: PkUpdateList.cxx:561
 #, kde-format
 msgid "One of the installed packages requires a system reboot"
-msgstr ""
+msgstr "إحدى الحزم المثبّتة تتطلب إعادة إقلاع النظام"
 
 #: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
-msgstr ""
+msgstr "أعد إقلاع النظام"
 
 #: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
-msgstr ""
+msgstr "إعادة تشغيل الجلسة مطلوبة"
 
 #: PkUpdateList.cxx:583
 #, kde-format
 msgid "One of the installed packages requires you to logout"
-msgstr ""
+msgstr "إحدى الحزم المثبّتة تتطلب تسجيل خروجك"
 
 #: PkUpdateList.cxx:584
 #, kde-format
@@ -615,7 +621,7 @@ msgstr "اخرج"
 #: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
-msgstr ""
+msgstr "ألغ التثبيت"
 
 #: PkUpdateList.cxx:663
 #, kde-format
@@ -655,7 +661,7 @@ msgstr "يلغي"
 #: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
-msgstr ""
+msgstr "تحقّق من التوقيع"
 
 #: PkUpdateList.cxx:775
 #, kde-format
@@ -673,21 +679,22 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>هل تقبل اتفاقية الترخيص التالية للحزمة<br>%1<br>من المورد<br>%2؟</html>"
 
 #: PkUpdates.cxx:53
 #, kde-format
 msgid "Next check: %1"
-msgstr ""
+msgstr "الفحص التالي: %1"
 
 #: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
-msgstr ""
+msgstr "يفحص عن تحديثات..."
 
 #: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr ""
+msgstr "يفحص عن تحديثات... %1٪"
 
 #: PkUpdates.cxx:171
 #, kde-format
@@ -695,44 +702,46 @@ msgid ""
 "Last check: %1\n"
 "Error on checking for updates: %2"
 msgstr ""
+"آخر فحص: %1\n"
+"خطأ أثناء الفحص عن تحديثات: %2"
 
 #: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
-msgstr ""
+msgstr "خطأ في تحديث البرامج"
 
 #: PkUpdates.cxx:195
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يتوفر أي تحديث <b>أمني</b>"
+msgstr[1] "يتوفر تحديث <b>أمني</b> واحد"
+msgstr[2] "يتوفر تحديثين <b>أمنيين</b>"
+msgstr[3] "يتوفر %1 تحديثات <b>أمنيّة</b>"
+msgstr[4] "يتوفر %1 تحديثًا <b>أمنيًّا</b>"
+msgstr[5] "يتوفر %1 تحديث <b>أمني</b>"
 
 #: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يتوفر أي تحديث <i>مهم</i>"
+msgstr[1] "يتوفر تحديث واحد <i>مهم</i>"
+msgstr[2] "يتوفر تحديثين <i>مهمين</i>"
+msgstr[3] "يتوفر %1 تحديثات <i>مهمة</i>"
+msgstr[4] "يتوفر %1 تحديثًا <i>مهمًا</i>"
+msgstr[5] "يتوفر %1 تحديث <i>مهم</i>"
 
 #: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "يتوفر تحديث إصلاحي واحد"
+msgstr[1] "يتوفر تحديث إصلاحي واحد"
+msgstr[2] "يتوفر تحديثين إصلاحيين"
+msgstr[3] "يتوفر %1 تحديثات إصلاحية"
+msgstr[4] "يتوفر %1 تحديثًا إصلاحيًا"
+msgstr[5] "يتوفر %1 تحديث إصلاحي"
 
 #: PkUpdates.cxx:229
 #, kde-format
@@ -745,11 +754,29 @@ msgid_plural ""
 "No important updates available\n"
 "%2 others"
 msgstr[0] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 msgstr[1] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 msgstr[2] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 msgstr[3] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 msgstr[4] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 msgstr[5] ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات مهمة متاحة\n"
+"%2 أخرى"
 
 #: PkUpdates.cxx:240
 #, kde-format
@@ -757,22 +784,24 @@ msgid ""
 "Last check: %1\n"
 "No updates available"
 msgstr ""
+"آخر فحص: %1\n"
+"لا توجد تحديثات متاحة"
 
 #: PkUpdates.cxx:249
-#, fuzzy, kde-format
+#, kde-format
 msgid "<br>%1 other"
 msgid_plural "<br>%1 others"
-msgstr[0] "أخرى"
-msgstr[1] "الغير"
-msgstr[2] "الغير"
-msgstr[3] "الغير"
-msgstr[4] "الغير"
-msgstr[5] "الغير"
+msgstr[0] "<br> %1 أخرى"
+msgstr[1] "<br> %1 أخرى"
+msgstr[2] "<br> %1 أخرى"
+msgstr[3] "<br> %1 أخرى"
+msgstr[4] "<br> %1 أخرى"
+msgstr[5] "<br> %1 أخرى"
 
 #: PkUpdates.cxx:251
 #, kde-format
 msgid "<html>Last check: %1<br>%2</html>"
-msgstr ""
+msgstr "<html>آخر فحص: %1<br>%2</html>"
 
 #: PkUpdates.cxx:290
 #, kde-format
@@ -802,47 +831,47 @@ msgstr "قائمة الضبط..."
 #: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
-msgstr ""
+msgstr "المعالج %1: %2% (%3 MHz)"
 
 #: SysLoad.cxx:210
 #, kde-format
 msgid "Memory Total: %1 MB (%2 GB)"
-msgstr ""
+msgstr "إجمالي الذاكرة: %1 م.بايت (%2 غ.بايت)"
 
 #: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
-msgstr ""
+msgstr "الذاكرة المستخدمة: %1 م.بايت (%2 غ.بايت) %3%"
 
 #: SysLoad.cxx:214
 #, kde-format
 msgid "Memory Free: %1 MB (%2 GB)"
-msgstr ""
+msgstr "الذاكرة الحرة: %1 م.بايت (%2 غ.بايت)"
 
 #: SysLoad.cxx:216
 #, kde-format
 msgid "Swap Total: %1 MB (%2 GB)"
-msgstr ""
+msgstr "إجمالي التبادل: %1 م.بايت (%2 غ.بايت)"
 
 #: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
-msgstr ""
+msgstr "التبادل المستخدم: %1 م.بايت (%2 غ.بايت) %3%"
 
 #: SysLoad.cxx:220
 #, kde-format
 msgid "Swap Free: %1 MB (%2 GB)"
-msgstr ""
+msgstr "التبادل الحر: %1 م.بايت (%2 غ.بايت)"
 
 #: SysLoad.cxx:223
 #, kde-format
 msgid "Net send/receive: %1/%2 KB/sec"
-msgstr ""
+msgstr "إرسال/استقبال الشبكة: %1/%2 ك.بايت/ث"
 
 #: SysLoad.cxx:227
 #, kde-format
 msgid "Net max (last %2 secs): %1 KB/sec"
-msgstr ""
+msgstr "أقصى شبكة (آخر %2 ثانية): %1 KB/ث"
 
 #: SysTray.cxx:291
 #, kde-format
@@ -923,7 +952,7 @@ msgstr "%1 هكتوباسكال"
 #: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
-msgstr "%1 %"
+msgstr "%1 ٪"
 
 #: WeatherApplet.cxx:218
 #, kde-format
@@ -933,12 +962,12 @@ msgstr "%1 °"
 #: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
-msgstr ""
+msgstr "اضبط بريمجة الطقس"
 
 #: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
-msgstr ""
+msgstr "ينزّل قائمة المدن..."
 
 #: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
@@ -948,7 +977,7 @@ msgstr "خطأ في التنزيل"
 #: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
-msgstr ""
+msgstr "خطأ أثناء تنزيل قائمة المدن: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: WeatherAppletConfigureDialog.ui:20
@@ -960,13 +989,13 @@ msgstr "مفتاح و‌ب‌ت API"
 #: WeatherAppletConfigureDialog.ui:27
 #, kde-format
 msgid "The API key is needed to be allowed to get data from openweathermap.org"
-msgstr ""
+msgstr "مفتاح API مطلوب للسماح باسترجاع البيانات من openweathermap.org"
 
 #. i18n: ectx: property (text), widget (QPushButton, getApiKey)
 #: WeatherAppletConfigureDialog.ui:34
 #, kde-format
 msgid "Get your personal API key"
-msgstr ""
+msgstr "احصل على مفتاح API الشخصي الخاص بك"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: WeatherAppletConfigureDialog.ui:41
@@ -984,7 +1013,7 @@ msgstr "&متري"
 #: WeatherAppletConfigureDialog.ui:58
 #, kde-format
 msgid "&imperial"
-msgstr ""
+msgstr "إمب&راطوري"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QTreeWidget, cityList)
