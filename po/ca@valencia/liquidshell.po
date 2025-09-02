@@ -98,12 +98,12 @@ msgstr "Bluetooth"
 #: ClockWidget.cxx:163
 #, kde-format
 msgid "Select Timezones..."
-msgstr "Seleccioneu les zones horàries…"
+msgstr "Tria les zones horàries…"
 
 #: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
-msgstr "Seleccioneu les zones horàries"
+msgstr "Trieu les zones horàries"
 
 #: ClockWidget.cxx:187
 #, kde-format
