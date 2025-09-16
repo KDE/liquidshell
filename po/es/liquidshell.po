@@ -56,7 +56,7 @@ msgstr "Completamente cargada"
 #: Battery.cxx:159
 #, kde-format
 msgid "Charging at %1%"
-msgstr "Cargando al %1%"
+msgstr "Cargando al %1 %"
 
 #: Battery.cxx:161
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "Tiempo hasta completar:"
 #: Battery.cxx:165
 #, kde-format
 msgid "Discharging at %1%"
-msgstr "Descargando al %1%"
+msgstr "Descargando al %1 %"
 
 #: Battery.cxx:167
 #, kde-format
@@ -414,7 +414,7 @@ msgid ""
 "Device charge of '%1' is at %2%.\n"
 "You should charge it."
 msgstr ""
-"La carga del dispositivo «%1» está al %2%.\n"
+"La carga del dispositivo «%1» está al %2 %.\n"
 "Debería cargarlo."
 
 #: Launcher.cxx:86
@@ -680,7 +680,7 @@ msgstr "Comprobando actualizaciones…"
 #: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "Comprobando actualizaciones… %1%"
+msgstr "Comprobando actualizaciones… %1 %"
 
 #: PkUpdates.cxx:171
 #, kde-format
@@ -785,7 +785,7 @@ msgstr "Configurar menú…"
 #: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
-msgstr "CPU %1: %2% (%3 MHz)"
+msgstr "CPU %1: %2 % (%3 MHz)"
 
 #: SysLoad.cxx:210
 #, kde-format
@@ -795,7 +795,7 @@ msgstr "Memoria total: %1 MB (%2 GB)"
 #: SysLoad.cxx:212
 #, kde-format
 msgid "Memory Used: %1 MB (%2 GB) %3%"
-msgstr "Memoria usada: %1 MB (%2 GB) %3%"
+msgstr "Memoria usada: %1 MB (%2 GB) %3 %"
 
 #: SysLoad.cxx:214
 #, kde-format
@@ -810,7 +810,7 @@ msgstr "Memoria de intercambio total: %1 MB (%2 GB)"
 #: SysLoad.cxx:218
 #, kde-format
 msgid "Swap Used: %1 MB (%2 GB) %3%"
-msgstr "Memoria de intercambio usada: %1 MB (%2 GB) %3%"
+msgstr "Memoria de intercambio usada: %1 MB (%2 GB) %3 %"
 
 #: SysLoad.cxx:220
 #, kde-format
