@@ -259,7 +259,7 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
               dialog = new KCMultiDialog(nullptr);
               dialog->setAttribute(Qt::WA_DeleteOnClose);
 
-              KPluginMetaData data("kcm_kdeconnect");
+              KPluginMetaData data("plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect");
 
               if ( data.isValid() )
                 dialog->addModule(data);
