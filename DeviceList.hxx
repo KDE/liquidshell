@@ -21,7 +21,6 @@
 #include <QToolButton>
 #include <QPointer>
 
-#include <KCMultiDialog>
 #include <KServiceAction>
 
 #include <KdeConnect.hxx>
@@ -70,7 +69,6 @@ class DeviceItem : public QFrame
     QLabel *chargeIcon = nullptr;
     QToolButton *ringButton = nullptr;
     QTimer statusTimer, mountBusyTimer;
-    QPointer<KCMultiDialog> dialog;
     QString pendingCommand;  // used when click -> mount -> action
 };
 

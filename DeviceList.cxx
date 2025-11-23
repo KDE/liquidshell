@@ -233,17 +233,9 @@ DeviceItem::DeviceItem(const KdeConnect::Device &dev)
   connect(configure, &QToolButton::clicked, configure,
           [this]()
           {
-            if ( !dialog )
-            {
-              dialog = new KCMultiDialog(nullptr);
-              dialog->setAttribute(Qt::WA_DeleteOnClose);
-
-              KPluginMetaData data("plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect");
-              dialog->addModule(data);
-              dialog->setWindowTitle(i18n("KDE Connect"));
-              dialog->adjustSize();
-            }
-            dialog->show();
+            KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob("kdeconnect-app");
+            job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+            job->start();
           });
 
   hbox->addWidget(configure, 0, Qt::AlignVCenter);
