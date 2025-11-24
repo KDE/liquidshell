@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2024-10-18 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -274,17 +274,12 @@ msgstr "Ohje"
 msgid "Configure Display"
 msgstr "Näytön asetukset"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Connect"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Avaa tiedostonhallintaan"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -293,7 +288,7 @@ msgstr ""
 "Laite on liitetty.\n"
 "Irrota napsauttamalla."
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -302,47 +297,47 @@ msgstr ""
 "Laitetta ei ole liitetty.\n"
 "Liitä napsauttamalla"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Luvaton toimenpide"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "Laite käytössä"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "Toimenpide epäonnistui"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "Käyttäjä perui"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "Virheellinen asetus"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "Puuttuva ajuri"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "Laitteen voi nyt poistaa turvallisesti"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "Liittäminen epäonnistui:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Irrottaminen epäonnistui:"
@@ -982,6 +977,9 @@ msgstr "Kaupunki"
 #, kde-format
 msgid "Country"
 msgstr "Maa"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Connect"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Liquid Desktop -työtila"

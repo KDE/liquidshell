@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2024-11-28 15:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -272,17 +272,12 @@ msgstr "說明"
 msgid "Configure Display"
 msgstr "設定顯示器"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Connect"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "使用檔案管理員開啟"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -291,7 +286,7 @@ msgstr ""
 "裝置已掛載。\n"
 "點擊以卸載或退出"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -300,47 +295,47 @@ msgstr ""
 "裝置未掛載。\n"
 "點擊以掛載"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "沒有權限的操作"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "裝置忙碌中"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "操作失敗"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "使用者已取消"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "無效選項"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "缺乏驅動程式"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "裝置現可安全移除"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "掛載失敗："
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "卸載失敗："
@@ -965,3 +960,6 @@ msgstr "城市"
 #, kde-format
 msgid "Country"
 msgstr "國家"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Connect"

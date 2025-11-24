@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -275,17 +275,12 @@ msgstr "Βοήθεια"
 msgid "Configure Display"
 msgstr "Διαμόρφωση οθόνης"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Connect"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Άνοιγμα με διαχειριστή αρχείων"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -294,7 +289,7 @@ msgstr ""
 "Η συσκευή προσαρτήθηκε.\n"
 "Κλικ για αποπροσάρτηση/εξαγωγή"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -303,47 +298,47 @@ msgstr ""
 "Η συσκευή αποπροσαρτήθηκε.\n"
 "Κλικ για προσάρτηση"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Λειτουργία χωρίς εξουσιοδότηση"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "Συσκευή απασχολημένη"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "αποτυχία λειτουργίας"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "Ακυρώθηκε από το χρήστη"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "Μη έγκυρη επιλογή"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "Λείπει ο οδηγός"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "Η συσκευή μπορεί τώρα να αφαιρεθεί με ασφάλεια"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "Αποτυχία προσάρτησης:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Αποτυχία αποπροσάρτησης:"
@@ -981,6 +976,9 @@ msgstr "Πόλη"
 #, kde-format
 msgid "Country"
 msgstr "Χώρα"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Connect"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Χώρος εργασίας επιφάνειας Liquid"

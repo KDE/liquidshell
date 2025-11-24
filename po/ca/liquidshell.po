@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2024-10-03 12:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -278,17 +278,12 @@ msgstr "Ajuda"
 msgid "Configure Display"
 msgstr "Configuració de la visualització"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Connect"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Obre amb el gestor de fitxers"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -297,7 +292,7 @@ msgstr ""
 "El dispositiu està muntat.\n"
 "Cliqueu per a desmuntar-lo/extreure'l"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -306,47 +301,47 @@ msgstr ""
 "El dispositiu està desmuntat.\n"
 "Cliqueu per a muntar-lo"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "Operació no autoritzada"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "Dispositiu ocupat"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "Ha fallat l'operació"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "Cancel·lació d'usuari"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "Opció no vàlida"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "Manca un controlador"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "El dispositiu ara ja es pot extreure amb seguretat"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "Ha fallat en muntar:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Ha fallat en desmuntar:"
@@ -986,3 +981,6 @@ msgstr "Ciutat"
 #, kde-format
 msgid "Country"
 msgstr "País"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Connect"

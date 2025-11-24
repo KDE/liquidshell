@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -276,71 +276,66 @@ msgstr "साहाय्यम्‌"
 msgid "Configure Display"
 msgstr "प्रदर्शनं विन्यस्तं कुर्वन्तु"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Connect इति"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "सञ्चिकाप्रबन्धकेन सह उद्घाटयन्तु"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
 "Click to unmount/eject"
 msgstr "यन्त्रं माउण्ट् भवति। अनमाउण्ट्/एजेक्ट् कर्तुं क्लिक् कुर्वन्तु"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
 "Click to mount"
 msgstr "यन्त्रं अनमाउण्ट् अस्ति। माउण्ट् कर्तुं क्लिक् कुर्वन्तु"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "अनधिकृत संचालन"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "यन्त्र व्यस्त"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "संचालनं विफलम्"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "उपयोक्ता रद्दः"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "अमान्यः विकल्पः"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "लापता चालकः"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "इदानीं यन्त्रं सुरक्षिततया निष्कासयितुं शक्यते"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "माउण्ट् विफलः अभवत् :"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "अनमाउण्ट् विफलम् अभवत् :"
@@ -974,3 +969,6 @@ msgstr "नगरी"
 #, kde-format
 msgid "Country"
 msgstr "देशः"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Connect इति"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2025-06-29 09:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -274,17 +274,12 @@ msgstr "Yardım"
 msgid "Configure Display"
 msgstr "Ekranı Yapılandır"
 
-#: DeviceList.cxx:243
-#, kde-format
-msgid "KDE Connect"
-msgstr "KDE Bağlan"
-
-#: DeviceList.cxx:260
+#: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
 msgstr "Dosya Yöneticisi ile Aç"
 
-#: DeviceList.cxx:343
+#: DeviceList.cxx:335
 #, kde-format
 msgid ""
 "Device is mounted.\n"
@@ -293,7 +288,7 @@ msgstr ""
 "Aygıt bağlandı.\n"
 "Bağlantıyı kesmek/çıkarmak için tıklayın"
 
-#: DeviceList.cxx:344
+#: DeviceList.cxx:336
 #, kde-format
 msgid ""
 "Device is unmounted.\n"
@@ -302,47 +297,47 @@ msgstr ""
 "Aygıt bağlantısı kesildi.\n"
 "Bağlamak için tıklayın"
 
-#: DeviceList.cxx:355
+#: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
 msgstr "İzin Verilmeyen İşlem"
 
-#: DeviceList.cxx:356
+#: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
 msgstr "Aygıt Meşgul"
 
-#: DeviceList.cxx:357
+#: DeviceList.cxx:349
 #, kde-format
 msgid "Operation Failed"
 msgstr "İşlem Başarısız"
 
-#: DeviceList.cxx:358
+#: DeviceList.cxx:350
 #, kde-format
 msgid "User Canceled"
 msgstr "Kullanıcı İptal Etti"
 
-#: DeviceList.cxx:359
+#: DeviceList.cxx:351
 #, kde-format
 msgid "Invalid Option"
 msgstr "Geçersiz Seçenek"
 
-#: DeviceList.cxx:360
+#: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
 msgstr "Eksik Sürücü"
 
-#: DeviceList.cxx:382
+#: DeviceList.cxx:374
 #, kde-format
 msgid "The device can now be safely removed"
 msgstr "Aygıt şimdi güvenlice çıkarılabilir"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
 msgstr "Bağlama başarısız:"
 
-#: DeviceList.cxx:389
+#: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
 msgstr "Bağlantıyı kesme başarısız:"
@@ -980,6 +975,9 @@ msgstr "Kent"
 #, kde-format
 msgid "Country"
 msgstr "Ülke"
+
+#~ msgid "KDE Connect"
+#~ msgstr "KDE Bağlan"
 
 #~ msgid "Liquid Desktop Workspace"
 #~ msgstr "Liquid Masaüstü Çalışma Alanı"
