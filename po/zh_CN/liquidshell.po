@@ -947,6 +947,3 @@ msgstr "城市"
 #, kde-format
 msgid "Country"
 msgstr "国家"
-
-#~ msgid "KDE Connect"
-#~ msgstr "KDE Connect"
