@@ -983,6 +983,3 @@ msgstr "Město"
 #, kde-format
 msgid "Country"
 msgstr "Země"
-
-#~ msgid "KDE Connect"
-#~ msgstr "KDE Connect"
