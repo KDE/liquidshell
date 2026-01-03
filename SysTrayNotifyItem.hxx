@@ -24,8 +24,10 @@ class SysTrayNotifyItem : public QLabel
   public:
     SysTrayNotifyItem(QWidget *parent, const QString &service, const QString &path);
 
+    enum class Result { Ok, Failed };
+
   Q_SIGNALS:
-    void initialized(SysTrayNotifyItem *);
+    void initialized(SysTrayNotifyItem *item, Result r = Result::Ok);
 
   protected:
     void wheelEvent(QWheelEvent *event) override;

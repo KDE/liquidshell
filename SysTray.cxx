@@ -193,7 +193,7 @@ void SysTray::registerWatcher()
 
 void SysTray::itemRegistered(QString item)
 {
-  //qDebug() << "itemRegistered" << item;
+  //qDebug() << __FUNCTION__ << item;
 
   if ( items.contains(item) )  // we have this already (e.g. try kded5 --replace)
     return;
@@ -213,15 +213,26 @@ void SysTray::itemRegistered(QString item)
   sysItem->setFixedSize(QSize(22, 22));
   sysItem->hide();  // until initialized
 
+  // still insert a nullptr to know we got it already since e.g. ibus_ui_gtk3 registers itself twice
+  // before even the first itemInitialized() arrived
+  items.insert(item, nullptr);
+
   connect(sysItem, &SysTrayNotifyItem::initialized, this, &SysTray::itemInitialized);
 }
 
 //--------------------------------------------------------------------------------
 
-void SysTray::itemInitialized(SysTrayNotifyItem *item)
+void SysTray::itemInitialized(SysTrayNotifyItem *item, SysTrayNotifyItem::Result res)
 {
-  if ( !items.contains(item->objectName()) )
-    items.insert(item->objectName(), item);
+  //qDebug() << __FUNCTION__ << item->objectName() << ((res == SysTrayNotifyItem::Result::Failed) ? "Failed" : "Ok");
+
+  if ( res == SysTrayNotifyItem::Result::Failed )
+  {
+    items.remove(item->objectName());
+    return;
+  }
+
+  items.insert(item->objectName(), item);
 
   arrangeNotifyItems();  // show/hide icons
 }
@@ -230,7 +241,7 @@ void SysTray::itemInitialized(SysTrayNotifyItem *item)
 
 void SysTray::itemUnregistered(QString item)
 {
-  //qDebug() << "itemUnregistered" << item;
+  //qDebug() << __FUNCTION__ << item;
 
   if ( items.contains(item) )
   {

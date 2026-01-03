@@ -31,7 +31,7 @@ class SysTray : public QFrame
     void fill();
     void itemRegistered(QString service);
     void itemUnregistered(QString service);
-    void itemInitialized(SysTrayNotifyItem *item);
+    void itemInitialized(SysTrayNotifyItem *item, SysTrayNotifyItem::Result res);
 
   private:
     void registerWatcher();
