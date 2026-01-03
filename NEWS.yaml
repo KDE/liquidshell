@@ -1,4 +1,14 @@
 ---
+Version: 1.9.1
+Date: 2026-01-03
+Description:
+- Fix stray Notification Item showing up
+- Adjust to newer kdeconnet DBUS and KDE API
+- if app creates too many notifications, don't pop them up
+- Also allow symlinks in QuickLaunch
+- Obey "resident" notification hint
+- Fix/improve SysTray handlingded install options (sleep/shutdown after install)
+---
 Version: 1.9
 Date: 2023-07-25
 Description:
