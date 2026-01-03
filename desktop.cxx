@@ -27,10 +27,10 @@ int main(int argc, char **argv)
 
   KLocalizedString::setApplicationDomain("liquidshell");
 
-  KAboutData aboutData("liquidshell", i18n("Liquidshell"), "1.10",
+  KAboutData aboutData("liquidshell", i18n("Liquidshell"), "1.10.1",
                        i18n("A QtWidgets based basic desktop shell"),
                        KAboutLicense::GPL_V3,
-                       i18n("Copyright 2017 - 2024 Martin Koller"), QString(),
+                       i18n("Copyright 2017 - 2026 Martin Koller"), QString(),
                        "https://apps.kde.org/de/liquidshell"); // homepage
                        //"https://www.linux-apps.com/p/1205621"); // homepage
 
