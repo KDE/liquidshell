@@ -69,6 +69,8 @@ void SysTrayNotifyItem::startTimer()
 
 void SysTrayNotifyItem::fetchData()
 {
+  //qDebug() << __FUNCTION__ << dbus->service() << dbus->path() << dbus->interface();
+
   QDBusMessage msg =
       QDBusMessage::createMethodCall(dbus->service(), dbus->path(),
                                      "org.freedesktop.DBus.Properties",
@@ -85,12 +87,16 @@ void SysTrayNotifyItem::fetchData()
 
 void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
 {
+  //qDebug() << "--------------------";
+  //qDebug() << __FUNCTION__ << dbus->title() << dbus->service() << dbus->path() << dbus->interface();
+
   w->deleteLater();
   QDBusPendingReply<QVariantMap> reply = *w;
 
   if ( reply.isError() )
   {
-    //qDebug() << dbus->service() << reply.error();
+    //qDebug() << "ERROR" << dbus->service() << reply.error();
+    emit initialized(this, Result::Failed);
     deleteLater();
     return;
   }
@@ -202,7 +208,7 @@ void SysTrayNotifyItem::fetchDataReply(QDBusPendingCallWatcher *w)
       hide();
   }
 
-  emit initialized(this);
+  emit initialized(this, Result::Ok);
 }
 
 //--------------------------------------------------------------------------------
