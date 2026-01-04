@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2021-10-04 10:54+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -197,7 +197,7 @@ msgstr "Ένα βασικό κέλυφος επιφάνειας εργασίας
 #: desktop.cxx:33
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2021 Martin Koller"
-msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Copyright 2017 - 2021 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -819,7 +819,7 @@ msgstr "Καθαρή αποστολή/λήψη: %1/%2 KB/sec"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Καθαρό μέγιστο (τελευταία %2 secs): %1 KB/sec"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "Show New Notifications"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2017-11-05 21:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -199,7 +199,7 @@ msgstr ""
 
 #: desktop.cxx:33
 #, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr ""
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -818,7 +818,7 @@ msgstr ""
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr ""
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "Show New Notifications"

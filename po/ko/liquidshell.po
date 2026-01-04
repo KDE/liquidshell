@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2024-12-24 17:51+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -193,8 +193,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets 기반 간단한 데스크톱 셸"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Copyright 2017 - 2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -808,7 +809,7 @@ msgstr "네트워크 수신/발신: %1/%2 KB/초"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "네트워크 최대(최근 %2초): %1 KB/초"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "새 알림 표시"

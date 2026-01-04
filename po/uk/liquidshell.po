@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2024-10-03 13:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -202,8 +202,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Заснована на QtWidgets базова оболонка стільниці"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "© Martin Koller, 2017–2024"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -848,7 +849,7 @@ msgstr "Надсилання/Отримання мережею: %1/%2 кБ/с"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. вик. мережі (протягом останніх %2 с): %1 кБ/с"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Показати нові сповіщення"

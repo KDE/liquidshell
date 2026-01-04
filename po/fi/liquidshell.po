@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2024-10-18 13:47+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -195,8 +195,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgetsiin perustuva yksinkertainen työpöytäkäyttöliittymä"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Tekijänoikeudet 2017–2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -822,7 +823,7 @@ msgstr "Verkon lähetys/vastaanotto: %1/%2 kt/s"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Verkon enimmäiskäyttö (%2 viime sekuntia): %1 kt/s"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Näytä uudet ilmoitukset"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2025-01-26 21:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -195,8 +195,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Unha interface de escritorio básica baseada en QtWidgets"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "© 2017-2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -822,7 +823,7 @@ msgstr "Envío e descarga de rede: %1/%2 KB/sec"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Rede máxima (últimos %2 s): %1 KB/sec"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Amosar as notificacións novas"

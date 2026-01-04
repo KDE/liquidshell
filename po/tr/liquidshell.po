@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2025-06-29 09:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -195,8 +195,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets tabanlı yalın masaüstü kabuğu"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "© 2017–2025 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -821,7 +822,7 @@ msgstr "Ağ gönderilen/alınan: %1/%2 KB/san"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Ağ en çok (son %2 saniye): %1 KB/san"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Yeni Bildirimleri Göster"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2023-01-12 11:20+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -204,7 +204,7 @@ msgstr "Основанная на QtWidgets базовая оболочка ра
 #: desktop.cxx:33
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2022 Martin Koller"
-msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Авторское право © Martin Koller, 2017–2022"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -847,7 +847,7 @@ msgstr "Отправка/приём сетью: %1/%2 кБ/с"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. исп. сети (в течение последних %2 с): %1 кБ/с"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "Show New Notifications"

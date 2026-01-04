@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2025-01-06 23:08+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -201,8 +201,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "QtWidgets pagrįstas pagrindinio darbalaukio apvalkalas"
 
 #: desktop.cxx:33
-#, kde-format
-msgid "Copyright 2017 - 2024 Martin Koller"
+#, fuzzy, kde-format
+#| msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Autorių teisės 2017–2024 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -846,7 +847,7 @@ msgstr "Tinklo siuntimas/gavimas: %1/%2 KB/sek."
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Tinklo maksimalus (paskutinių %2 sek.): %1 KB/sek."
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, kde-format
 msgid "Show New Notifications"
 msgstr "Rodyti naujus pranešimus"

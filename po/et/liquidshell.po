@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
 "PO-Revision-Date: 2020-10-08 14:57+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -198,7 +198,7 @@ msgstr "QtWidgetsi-põhine töölauakesta alternatiiv"
 #: desktop.cxx:33
 #, fuzzy, kde-format
 #| msgid "Copyright 2017 - 2020 Martin Koller"
-msgid "Copyright 2017 - 2024 Martin Koller"
+msgid "Copyright 2017 - 2026 Martin Koller"
 msgstr "Autoriõigus 2017 - 2020: Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
@@ -823,7 +823,7 @@ msgstr "Võrgu saatmine ja vastuvõtmine: %1/%2 KB/sec"
 msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Võrgu maks. (viimased %2 sek): %1 KB/sec"
 
-#: SysTray.cxx:291
+#: SysTray.cxx:302
 #, fuzzy, kde-format
 #| msgid "Notifications"
 msgid "Show New Notifications"
