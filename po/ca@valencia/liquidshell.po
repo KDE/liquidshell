@@ -1,16 +1,16 @@
 # Translation of liquidshell.po to Catalan (Valencian)
-# Copyright (C) 2017-2024 This_file_is_part_of_KDE
+# Copyright (C) 2017-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2017, 2018, 2019, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:47+0000\n"
-"PO-Revision-Date: 2024-10-03 12:20+0200\n"
+"PO-Revision-Date: 2026-01-04 08:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -199,10 +199,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Una àrea de treball bàsica basada en QtWidgets"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2024 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2026 Martin Koller"
-msgstr "Copyright 2017 - 2024 Martin Koller"
+msgstr "Copyright 2017 - 2026 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -340,12 +339,12 @@ msgstr "El dispositiu ara ja es pot extraure amb seguretat"
 #: DeviceList.cxx:381
 #, kde-format
 msgid "Mount failed:"
-msgstr "No s'ha pogut muntar:"
+msgstr "Ha fallat mentre es muntava:"
 
 #: DeviceList.cxx:381
 #, kde-format
 msgid "Unmount failed:"
-msgstr "No s'ha pogut desmuntar:"
+msgstr "Ha fallat mentre es desmuntava:"
 
 #: DeviceNotifier.cxx:23
 #, kde-format
@@ -687,12 +686,12 @@ msgid ""
 "Error on checking for updates: %2"
 msgstr ""
 "Última comprovació: %1\n"
-"S'ha produït un error en comprovar les actualitzacions: %2"
+"S'ha produït un error mentre es comprovaven les actualitzacions: %2"
 
 #: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
-msgstr "S'ha produït un error durant l'actualització del programari"
+msgstr "S'ha produït un error mentre s'actualitzava el programari"
 
 #: PkUpdates.cxx:195
 #, kde-format
@@ -930,7 +929,7 @@ msgstr "S'ha produït un error de baixada"
 #: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
-msgstr "S'ha produït un error en baixar la llista de ciutats: %1"
+msgstr "S'ha produït un error mentre es baixava la llista de ciutats: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: WeatherAppletConfigureDialog.ui:20
@@ -982,6 +981,3 @@ msgstr "Ciutat"
 #, kde-format
 msgid "Country"
 msgstr "País"
-
-#~ msgid "KDE Connect"
-#~ msgstr "KDE Connect"
