@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the liquidshell package.
-# SPDX-FileCopyrightText: 2023, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:47+0000\n"
-"PO-Revision-Date: 2025-08-30 13:40+0400\n"
+"PO-Revision-Date: 2026-01-07 19:04+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -204,10 +204,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "صدفة سطح مكتب بسيطة مبنية على Qwidgets"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2024 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2026 Martin Koller"
-msgstr "حقوق النشر 2017 - 2024 مارتن كولر"
+msgstr "حقوق النشر 2017 - 2026 مارتن كولر"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
