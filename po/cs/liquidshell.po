@@ -197,10 +197,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr ""
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2024 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2026 Martin Koller"
-msgstr "Autorská práva 2017 - 2024 Martin Koller"
+msgstr ""
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
