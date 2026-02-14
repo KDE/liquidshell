@@ -3,14 +3,14 @@
 #
 # Alexander Potashev <aspotashev@gmail.com>, 2017.
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2021.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:47+0000\n"
-"PO-Revision-Date: 2023-01-12 11:20+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-02-13 21:33+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -131,7 +131,7 @@ msgstr "Часовой пояс"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Территория"
 
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "Масштабирование с сохранением пропорц�
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:31
 #, kde-format
@@ -202,10 +202,9 @@ msgid "A QtWidgets based basic desktop shell"
 msgstr "Основанная на QtWidgets базовая оболочка рабочего стола"
 
 #: desktop.cxx:33
-#, fuzzy, kde-format
-#| msgid "Copyright 2017 - 2022 Martin Koller"
+#, kde-format
 msgid "Copyright 2017 - 2026 Martin Koller"
-msgstr "Авторское право © Martin Koller, 2017–2022"
+msgstr "© Martin Koller, 2017-2026"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -557,12 +556,12 @@ msgstr "Установить"
 #: PkUpdateList.cxx:219
 #, kde-format
 msgid "Install, then Sleep"
-msgstr ""
+msgstr "Установить, затем перейти в спящий режим"
 
 #: PkUpdateList.cxx:220
 #, kde-format
 msgid "Install, then Shutdown"
-msgstr ""
+msgstr "Установить и выключить"
 
 #: PkUpdateList.cxx:224
 #, kde-format
@@ -669,12 +668,13 @@ msgid ""
 "<html>Do you accept the following license agreement for package<br>"
 "%1<br>from vendor<br>%2 ?</html>"
 msgstr ""
+"<html>Принимаете лицензионное соглашение пакета<br>%1<br>от поставщика<br>%2?"
+"</html>"
 
 #: PkUpdates.cxx:53
-#, fuzzy, kde-format
-#| msgid "Next check: %1 "
+#, kde-format
 msgid "Next check: %1"
-msgstr "Следующая проверка: %1 "
+msgstr "Следующая проверка: %1"
 
 #: PkUpdates.cxx:79
 #, kde-format
@@ -848,10 +848,9 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr "Макс. исп. сети (в течение последних %2 с): %1 кБ/с"
 
 #: SysTray.cxx:302
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
-msgstr "Уведомления"
+msgstr "Показать новые уведомления"
 
 #: TaskBarButton.cxx:109
 #, kde-format
