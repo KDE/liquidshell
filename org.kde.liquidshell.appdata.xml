@@ -569,6 +569,7 @@
           <li xml:lang="pt-BR">Adicionadas opções de instalação (suspender/desligar após a instalação)</li>
           <li xml:lang="ru">Добавлены параметры установки (переход в спящий режим/выключение после установки);</li>
           <li xml:lang="sl">Dodane možnosti namestitve (spanje/izklop po namestitvi)</li>
+          <li xml:lang="uk">Додано параметри встановлення (присипляння/вимикання після встановлення)</li>
           <li>Improved EULA handling on package installation</li>
           <li xml:lang="ar">حُسّن التعامل مع اتفاقية ترخيص المستخدم النهائي عند تثبيت الحزم</li>
           <li xml:lang="he">הטיפול בהסכם משתמש קצה בהתקנת חבילות השתפר</li>
@@ -576,6 +577,7 @@
           <li xml:lang="pt-BR">Melhoria no tratamento do EULA durante a instalação do pacote</li>
           <li xml:lang="ru">Улучшена обработка лицензионного соглашения при установке пакетов;</li>
           <li xml:lang="sl">Izboljšana obravnava licenčne pogodbe za končnega uporabnika (EULA) pri namestitvi paketa</li>
+          <li xml:lang="uk">Удосконалено обробку EULA при встановленні пакунків</li>
           <li>Added long format of time and date display to calendar popup</li>
           <li xml:lang="ar">أُضيف التنسيق الطويل لعرض الوقت والتاريخ إلى منبثقة التقويم</li>
           <li xml:lang="he">נוספה תבנית ארוכה לתצוגת שעה ותאריך לחלוניות לוח שנה צצות</li>
@@ -583,6 +585,7 @@
           <li xml:lang="pt-BR">Adicionada a exibição de data e hora em formato longo no calendário pop-up</li>
           <li xml:lang="ru">Добавлен длинный формат отображения времени и даты во всплывающем календаре;</li>
           <li xml:lang="sl">V pojavno okno koledarja je bil dodan dolgi format prikaza časa in datuma</li>
+          <li xml:lang="uk">Додано показ часу і дати у повному форматі на контекстній панелі календаря</li>
           <li>Create default folder for storing quicklaunch apps</li>
           <li xml:lang="ar">إنشاء مجلد مبدئي لتخزين تطبيقات التشغيل السريع</li>
           <li xml:lang="he">יצירת תיקיית ברירת מחדל לאחסון יישומי טעינה מהירה</li>
@@ -590,6 +593,7 @@
           <li xml:lang="pt-BR">Cria uma pasta padrão para armazenar aplicativos de inicialização rápida</li>
           <li xml:lang="ru">Создание папки по умолчанию для хранения приложений быстрого запуска;</li>
           <li xml:lang="sl">Ustvari privzeto mapo za shranjevanje aplikacij za hitri zagon</li>
+          <li xml:lang="uk">Створено типову теку для зберігання програм швидкого запуску</li>
           <li>SysLoad widget width depends on CPU count</li>
           <li xml:lang="ar">يعتمد عرض قطعة SysLoad على عدد وحدات المعالجة المركزية</li>
           <li xml:lang="he">רוחב וידג׳ט עומס המערכת תלוי בכמות המעבדים</li>
@@ -597,6 +601,7 @@
           <li xml:lang="pt-BR">A largura do widget SysLoad depende da quantidade de CPUs</li>
           <li xml:lang="ru">Ширина виджета SysLoad зависит от числа процессоров;</li>
           <li xml:lang="sl">Širina gradnika SysLoad je odvisna od števila procesorjev</li>
+          <li xml:lang="uk">Ширину віджета SysLoad прив'язано до кількості процесорів</li>
           <li>Bugfixes and adjustments to newer KDE components</li>
           <li xml:lang="ar">إصلاحات علل وتعديلات لمكونات كيدي الأحدث</li>
           <li xml:lang="he">תיקוני תקלות וכוונונים לרכיבי KDE חדשים</li>
@@ -604,6 +609,7 @@
           <li xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</li>
           <li xml:lang="ru">Исправления ошибок и адаптация к новым компонентам KDE;</li>
           <li xml:lang="sl">Popravki hroščev in prilagoditve novejših komponent KDE</li>
+          <li xml:lang="uk">Виправлення вад та узгодження з новішими компонентами KDE</li>
         </ul>
       </description>
     </release>
@@ -616,6 +622,7 @@
         <p xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</p>
         <p xml:lang="ru">Исправления ошибок и адаптация к новым компонентам KDE;</p>
         <p xml:lang="sl">Popravki hroščev in prilagoditve novejših komponent KDE</p>
+        <p xml:lang="uk">Виправлення вад та узгодження з новішими компонентами KDE</p>
       </description>
     </release>
     <release type="stable" version="1.8" date="2021-12-01T00:00:00Z">
@@ -628,6 +635,7 @@
           <li xml:lang="pt-BR">As notificações mostram por quanto tempo elas permanecem abertas (pequena animação)</li>
           <li xml:lang="ru">Отображается время, в течение которого уведомление остаётся открытым (небольшая анимация);</li>
           <li xml:lang="sl">Obvestila prikazujejo, kako dolgo ostanejo odprta (majhna animacija)</li>
+          <li xml:lang="uk">Показ тривалості утримання відкритими сповіщень (невеличка анімація)</li>
           <li>Weather Applet shows moon phase</li>
           <li xml:lang="ar">يظهر بريمج الطقس أطوار القمر</li>
           <li xml:lang="he">יישומון מזג האוויר מציג את מופע הירח</li>
@@ -635,6 +643,7 @@
           <li xml:lang="pt-BR">O aplicativo de previsão do tempo mostra a fase da lua</li>
           <li xml:lang="ru">Виджет «Погода» показывает фазу Луны;</li>
           <li xml:lang="sl">Vremenski programček prikazuje lunino fazo</li>
+          <li xml:lang="uk">Показ фаз Місяця в аплеті прогнозу погоди</li>
           <li>Disk Usage Applet watches for mount/unmount to react quicker for update</li>
           <li xml:lang="ar">يراقب بريمج استخدام القرص عمليات الوصل/الفصل للاستجابة بشكل أسرع للتحديث</li>
           <li xml:lang="he">יישומון ניצולת הכונן עוקב אחר עיגונים/ניתוקים כדי להגיב מהר יותר לעדכונים</li>
@@ -642,6 +651,7 @@
           <li xml:lang="pt-BR">O aplicativo de uso de disco monitora a montagem/desmontagem para reagir mais rapidamente às atualizações</li>
           <li xml:lang="ru">Виджет «Дисковые накопители» отслеживает подключение и отключение устройств для более быстрого обновления данных;</li>
           <li xml:lang="sl">Programček za uporabo diska spremlja priklop/odklop, da se hitreje odzove na posodobitve</li>
+          <li xml:lang="uk">Спостереження за монтуванням/демонтуванням в аплеті використання диска для пришвидшення реакції на оновлення</li>
           <li>Display improvements in software updates component</li>
           <li xml:lang="ar">تحسينات في العرض في مكون تحديثات البرمجيات</li>
           <li xml:lang="he">שיפורי תצוגה ברכיב עדכוני התוכנה</li>
@@ -649,6 +659,7 @@
           <li xml:lang="pt-BR">Melhorias na exibição do componente de atualizações de software</li>
           <li xml:lang="ru">Улучшения отображения в компоненте обновления программного обеспечения;</li>
           <li xml:lang="sl">Izboljšave prikaza v komponenti za posodobitve programske opreme</li>
+          <li xml:lang="uk">Показ удосконалень програмного забезпечення у компоненті оновлень пакунків</li>
           <li>Added DBUS-Menu support (some apps don't provide own menu but only via DBUS, e.g. MS teams)</li>
           <li xml:lang="ar">أُضيف دعم قائمة DBUS (بعض التطبيقات لا توفر قائمة خاصة بها ولكن عبر DBUS فقط، مثل MS teams)</li>
           <li xml:lang="he">נוספה תמיכה בתפריט D-Bus (חלק מהיישומים לא מספקים תפריט משלהם אלא רק דרך D-Bus, כמו למשל MS Teams)</li>
@@ -656,6 +667,7 @@
           <li xml:lang="pt-BR">Adicionado suporte a menus DBUS (alguns aplicativos não fornecem menu próprio, mas apenas via DBUS, como o Microsoft Teams)</li>
           <li xml:lang="ru">Добавлена поддержка меню D-Bus (некоторые приложения не предоставляют собственное меню, а только через D-Bus, например MS Teams);</li>
           <li xml:lang="sl">Dodana podpora za DBUS-Menu (nekatere aplikacije ne ponujajo lastnega menija, ampak samo prek DBUS-a, npr. MS Teams)</li>
+          <li xml:lang="uk">Додано підтримку меню DBUS (деякі програми, наприклад MS Teams, не мають власного меню, а надають дані лише за допомогою DBUS)</li>
         </ul>
       </description>
     </release>
