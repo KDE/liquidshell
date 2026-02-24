@@ -567,7 +567,9 @@
           <li xml:lang="ca">S'han afegit opcions d'instal·lació (adorm/aturada després d'instal·lar)</li>
           <li xml:lang="ca-valencia">S'han afegit opcions d'instal·lació (adorm/parada després d'instal·lar)</li>
           <li xml:lang="es">Se han añadido opciones de instalación (suspender/apagar después de la instalación).</li>
+          <li xml:lang="fr">Ajout d'options d'installation (Veille / extinction après l'installation)</li>
           <li xml:lang="he">נוספו אפשרויות התקנה (שינה/כיבוי לאחר התקנה)</li>
+          <li xml:lang="it">Aggiunta delle opzioni d'installazione (sospendi/spegni dopo l'installazione)</li>
           <li xml:lang="ka">დაემატა დაყენების პარამეტრები (ძილი/გამორთვა დაყენების შემდეგ)</li>
           <li xml:lang="nl">Installatie-opties (slapen/afsluiten na installatie)</li>
           <li xml:lang="pt-BR">Adicionadas opções de instalação (suspender/desligar após a instalação)</li>
@@ -580,7 +582,9 @@
           <li xml:lang="ca">S'ha millorat la gestió de l'EULA a la instal·lació del paquet</li>
           <li xml:lang="ca-valencia">S'ha millorat la gestió de l'EULA a la instal·lació del paquet</li>
           <li xml:lang="es">Manejo mejorado del EULA en la instalación de paquetes.</li>
+          <li xml:lang="fr">Gestion améliorée des conditions EULA lors de l'installation de paquet</li>
           <li xml:lang="he">הטיפול בהסכם משתמש קצה בהתקנת חבילות השתפר</li>
+          <li xml:lang="it">Miglioramento della gestione dell'EULA all'installazione del pacchetto</li>
           <li xml:lang="ka">გასწორდა EULA-ის მართვა პაკეტის დაყენებისას</li>
           <li xml:lang="nl">Verbeterde behandeling van EULA bij pakketinstallatie</li>
           <li xml:lang="pt-BR">Melhoria no tratamento do EULA durante a instalação do pacote</li>
@@ -593,7 +597,9 @@
           <li xml:lang="ca">S'ha afegit un format llarg de visualització de data i hora a la finestra emergent de calendari</li>
           <li xml:lang="ca-valencia">S'ha afegit un format llarg de visualització de data i hora a la finestra emergent de calendari</li>
           <li xml:lang="es">Se ha añadido un formato largo de visualización de fecha y hora a la ventana emergente del calendario.</li>
+          <li xml:lang="fr">Ajout du format long pour l'affichage de l'heure et de la date à la fenêtre contextuelle d'agenda</li>
           <li xml:lang="he">נוספה תבנית ארוכה לתצוגת שעה ותאריך לחלוניות לוח שנה צצות</li>
+          <li xml:lang="it">È stato aggiunto il formato lungo di visualizzazione di data e orario alla finestrella a comparsa del calendario</li>
           <li xml:lang="ka">დაემატა დროისა და თარიღის გრძელი ფორმატის ჩვენება კალენდრის მხტუნარაში</li>
           <li xml:lang="nl">Lang formaat van weergave van de tijd en datum bij pop-up van agenda</li>
           <li xml:lang="pt-BR">Adicionada a exibição de data e hora em formato longo no calendário pop-up</li>
@@ -606,7 +612,9 @@
           <li xml:lang="ca">Crea una carpeta predeterminada per a emmagatzemar aplicacions de llançament ràpid</li>
           <li xml:lang="ca-valencia">Crea una carpeta predeterminada per a emmagatzemar aplicacions de llançament ràpid</li>
           <li xml:lang="es">Crear una carpeta predeterminada para almacenar aplicaciones de inicio rápido.</li>
+          <li xml:lang="fr">Créer un dossier par défaut pour enregistrer les applications avec lancement rapide</li>
           <li xml:lang="he">יצירת תיקיית ברירת מחדל לאחסון יישומי טעינה מהירה</li>
+          <li xml:lang="it">È stata creata la cartella predefinita per il salvataggio dei programmi quicklaunch</li>
           <li xml:lang="ka">ნაგულისხმევი საქაღალდის შექმნა სწრაფი გაშვების აპების შესანახად</li>
           <li xml:lang="nl">Standaard map aanmaken voor opslaan van toepassingen voor snel opstarten</li>
           <li xml:lang="pt-BR">Cria uma pasta padrão para armazenar aplicativos de inicialização rápida</li>
@@ -619,7 +627,9 @@
           <li xml:lang="ca">L'amplada del giny SysLoad depèn del nombre de CPU</li>
           <li xml:lang="ca-valencia">L'amplària del giny SysLoad depén del nombre de CPU</li>
           <li xml:lang="es">La anchura del widget de la carga del sistema depende del número de CPU.</li>
+          <li xml:lang="fr">La largeur du composant graphique de charge du système dépend du nombre de processeurs.</li>
           <li xml:lang="he">רוחב וידג׳ט עומס המערכת תלוי בכמות המעבדים</li>
+          <li xml:lang="it">L'ampiezza dell'oggetto Carico del sistema dipende dal numero di CPU</li>
           <li xml:lang="ka">ვიჯეტი SysLoad, რომელიც დამოკიდებულია CPU-ების რაოდენობაზე</li>
           <li xml:lang="nl">Breedte van widget met systeemload hangt af van aantal CPU's</li>
           <li xml:lang="pt-BR">A largura do widget SysLoad depende da quantidade de CPUs</li>
@@ -632,7 +642,9 @@
           <li xml:lang="ca">Correccions d'errors i ajustos als components KDE més nous</li>
           <li xml:lang="ca-valencia">Esmenes d'errors i ajustos als components KDE més nous</li>
           <li xml:lang="es">Corrección de errores y ajustes para los componentes de KDE más recientes.</li>
+          <li xml:lang="fr">Corrections de bogues et ajustements pour les composants les plus récents de KDE</li>
           <li xml:lang="he">תיקוני תקלות וכוונונים לרכיבי KDE חדשים</li>
+          <li xml:lang="it">Sono stati corretti bug, e sono stati sistemati gli ultimi componenti di KDE</li>
           <li xml:lang="ka">შეცდომების გასწორება და კორექტირება ახალი KDE-ის კომპონენტებისთვის</li>
           <li xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</li>
           <li xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</li>
@@ -650,7 +662,9 @@
         <p xml:lang="ca">Correccions d'errors i ajustos als components KDE més nous</p>
         <p xml:lang="ca-valencia">Esmenes d'errors i ajustos als components KDE més nous</p>
         <p xml:lang="es">Corrección de errores y ajustes para los componentes de KDE más recientes.</p>
+        <p xml:lang="fr">Corrections de bogues et ajustements pour les composants les plus récents de KDE</p>
         <p xml:lang="he">תיקוני תקלות וכוונונים לרכיבי KDE חדשים</p>
+        <p xml:lang="it">Sono stati corretti bug, e sono stati sistemati gli ultimi componenti di KDE</p>
         <p xml:lang="ka">შეცდომების გასწორება და კორექტირება ახალი KDE-ის კომპონენტებისთვის</p>
         <p xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</p>
         <p xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</p>
@@ -668,7 +682,9 @@
           <li xml:lang="ca">Les notificacions mostren quant de temps romanen obertes (animació petita)</li>
           <li xml:lang="ca-valencia">Les notificacions mostren quant de temps romanen obertes (animació xicoteta)</li>
           <li xml:lang="es">Las notificaciones muestran el tiempo que permanecerán abiertas (con una pequeña animación).</li>
+          <li xml:lang="fr">Les notifications indiquent combien de temps elles restent ouvertes (Petite animation)</li>
           <li xml:lang="he">התראות מציגות למשך כמה זמן הן נשארות פתוחות (הנפשה קטנה)</li>
+          <li xml:lang="it">Le notifiche mostrano per quanto tempo rimangono aperte (piccola animazione)</li>
           <li xml:lang="ka">გაფრთხილებები აჩვენებენ, რამდენ ხანს რჩებიან ღია (პატარა ანიმაცია)</li>
           <li xml:lang="nl">Meldingen tonen hoe lang ze open blijven (kleine animatie)</li>
           <li xml:lang="pt-BR">As notificações mostram por quanto tempo elas permanecem abertas (pequena animação)</li>
@@ -681,7 +697,9 @@
           <li xml:lang="ca">La miniaplicació meteorològica mostra la fase de lluna</li>
           <li xml:lang="ca-valencia">La miniaplicació meteorològica mostra la fase de lluna</li>
           <li xml:lang="es">La miniaplicación meteorológica muestra la fase lunar.</li>
+          <li xml:lang="fr">Le composant graphique de météo affiche la phase de la lune.</li>
           <li xml:lang="he">יישומון מזג האוויר מציג את מופע הירח</li>
+          <li xml:lang="it">L'applet per il tempo meteorologico mostra le fasi lunari</li>
           <li xml:lang="ka">ამინდის აპლეტი აჩვენებს მთვარის ფაზას</li>
           <li xml:lang="nl">Weerapplet toont maanfase</li>
           <li xml:lang="pt-BR">O aplicativo de previsão do tempo mostra a fase da lua</li>
@@ -694,7 +712,9 @@
           <li xml:lang="ca">La miniaplicació d'ús de disc controla el muntatge/desmuntatge per a reaccionar més ràpid a l'actualització</li>
           <li xml:lang="ca-valencia">La miniaplicació d'ús de disc controla el muntatge/desmuntatge per a reaccionar més ràpid a l'actualització</li>
           <li xml:lang="es">La miniaplicación de uso del disco vigila los montajes y los desmontajes para reaccionar rápidamente cuando se produzcan.</li>
+          <li xml:lang="fr">L'applet d'utilisation du disque surveille les montages / démontages pour une réaction plus rapide aux mises à jour</li>
           <li xml:lang="he">יישומון ניצולת הכונן עוקב אחר עיגונים/ניתוקים כדי להגיב מהר יותר לעדכונים</li>
+          <li xml:lang="it">L'applet per l'utilizzo del disco controlla i montaggi e gli smontaggi, per reagire più velocemente agli aggiornamenti</li>
           <li xml:lang="ka">დისკის გამოყენების აპლეტი ყურადღებას აქცევს მიმაგრება/მოხსნას, რომ განახლებაზე უფრო სწრაფი რეაქცია ჰქონდეს</li>
           <li xml:lang="nl">Applet met schijfgebruik bewaakt aankoppelen/afkoppelen om sneller te reageren voor bijwerken</li>
           <li xml:lang="pt-BR">O aplicativo de uso de disco monitora a montagem/desmontagem para reagir mais rapidamente às atualizações</li>
@@ -707,7 +727,9 @@
           <li xml:lang="ca">Mostra les millores en el component d'actualitzacions de programari</li>
           <li xml:lang="ca-valencia">Mostra les millores en el component d'actualitzacions de programari</li>
           <li xml:lang="es">Mejoras de visualización en el componente de actualizaciones de software.</li>
+          <li xml:lang="fr">Afficher les améliorations dans le composant des mises à jour de logiciels</li>
           <li xml:lang="he">שיפורי תצוגה ברכיב עדכוני התוכנה</li>
+          <li xml:lang="it">Miglioramenti alla visualizzazione dei componenti software aggiornati</li>
           <li xml:lang="ka">გაუმჯობესებების ჩვენება პროგრამის განახლებების კომპონენტში</li>
           <li xml:lang="nl">Verbeteringen in het tonen van de bijwerkcomponent van software</li>
           <li xml:lang="pt-BR">Melhorias na exibição do componente de atualizações de software</li>
@@ -720,7 +742,9 @@
           <li xml:lang="ca">S'ha afegit la implementació de DBUS-Menu (algunes aplicacions no proporcionen un menú propi, sinó només a través de DBUS, per exemple, el Teams de MS)</li>
           <li xml:lang="ca-valencia">S'ha afegit la implementació de D-Bus-Menu (algunes aplicacions no proporcionen un menú propi, sinó només a través de D-Bus, per exemple, el Teams de MS)</li>
           <li xml:lang="es">Se ha añadido compatibilidad con DBUS-Menu (algunas aplicaciones no proporcionan un menú propio, aunque sí mediante DBUS, como MS Teams).</li>
+          <li xml:lang="fr">Ajout de la prise en charge du menu « DBUS » (Certaines applications ne fournissent pas leur propre menu mais uniquement par l'intermédiaire de « DBUS », par exemple MS Teams)</li>
           <li xml:lang="he">נוספה תמיכה בתפריט D-Bus (חלק מהיישומים לא מספקים תפריט משלהם אלא רק דרך D-Bus, כמו למשל MS Teams)</li>
+          <li xml:lang="it">È stato aggiunto il supporto al menu DBUS (alcuni programmi non ne hanno uno proprio ma solo attraverso DBUS, ad esempio Teams di MS)</li>
           <li xml:lang="ka">დაემატა DBUS-Menu-ის მხარდაჭერა (ზოგიერთ აპს საკუთარი მენიუ არ აქვს და, მხოლოდ, DBUS-ს იყენებს. მაგ: MS teams)</li>
           <li xml:lang="nl">Toegevoegd ondersteuning van DBUS-menu (sommige toepassingen leveren geen eigen menu maar alleen via DBUS, bijv. MS teams)</li>
           <li xml:lang="pt-BR">Adicionado suporte a menus DBUS (alguns aplicativos não fornecem menu próprio, mas apenas via DBUS, como o Microsoft Teams)</li>
