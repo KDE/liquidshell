@@ -369,7 +369,7 @@ msgstr "对话"
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
 #, kde-format
 msgid "Text"
-msgstr "文字"
+msgstr "文本"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: DiskUsageAppletConfigureDialog.ui:44
