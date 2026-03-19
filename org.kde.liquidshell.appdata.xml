@@ -656,6 +656,7 @@
           <li xml:lang="ar">إصلاحات علل وتعديلات لمكونات كيدي الأحدث</li>
           <li xml:lang="ca">Correccions d'errors i ajustos als components KDE més nous</li>
           <li xml:lang="ca-valencia">Esmenes d'errors i ajustos als components KDE més nous</li>
+          <li xml:lang="cs">Opravy chyb a přizpůsobení novějším komponentám KDE</li>
           <li xml:lang="es">Corrección de errores y ajustes para los componentes de KDE más recientes.</li>
           <li xml:lang="eu">Akatsen konponketak eta KDE osagai berrietarako egokitzapenak</li>
           <li xml:lang="fr">Corrections de bogues et ajustements pour les composants les plus récents de KDE</li>
@@ -679,6 +680,7 @@
         <p xml:lang="ar">إصلاحات علل وتعديلات لمكونات كيدي الأحدث</p>
         <p xml:lang="ca">Correccions d'errors i ajustos als components KDE més nous</p>
         <p xml:lang="ca-valencia">Esmenes d'errors i ajustos als components KDE més nous</p>
+        <p xml:lang="cs">Opravy chyb a přizpůsobení novějším komponentám KDE</p>
         <p xml:lang="es">Corrección de errores y ajustes para los componentes de KDE más recientes.</p>
         <p xml:lang="eu">Akatsen konponketak eta KDE osagai berrietarako egokitzapenak</p>
         <p xml:lang="fr">Corrections de bogues et ajustements pour les composants les plus récents de KDE</p>
