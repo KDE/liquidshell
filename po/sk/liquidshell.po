@@ -12,18 +12,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 2.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Your names"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Your emails"
 
 #: Battery.cxx:78
 #, kde-format
@@ -99,7 +99,7 @@ msgstr ""
 #: ClockWidget.cxx:169
 #, kde-format
 msgid "Select Timezones"
-msgstr ""
+msgstr "Select Timezones"
 
 #: ClockWidget.cxx:187
 #, kde-format
@@ -124,24 +124,21 @@ msgstr "Časové pásmo"
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Territory"
-msgstr ""
+msgstr "Territory"
 
 #: ConfigureDesktopDialog.cxx:37
-#, fuzzy, kde-format
-#| msgid "Configure Wallpaper..."
+#, kde-format
 msgid "Get New Wallpapers..."
 msgstr "Nastaviť tapetu..."
 
 #: ConfigureDesktopDialog.cxx:43
-#, fuzzy, kde-format
-#| msgid "Download Error"
+#, kde-format
 msgid "Download Wallpapers"
 msgstr "Chyba pri sťahovaní"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
 #: ConfigureDesktopDialog.ui:15
-#, fuzzy, kde-format
-#| msgid "Configure Wallpaper..."
+#, kde-format
 msgid "Configure Wallpaper"
 msgstr "Nastaviť tapetu..."
 
@@ -149,19 +146,19 @@ msgstr "Nastaviť tapetu..."
 #: ConfigureDesktopDialog.ui:23
 #, kde-format
 msgid "Background Color"
-msgstr ""
+msgstr "Farba pozadia"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: ConfigureDesktopDialog.ui:33
 #, kde-format
 msgid "Wallpaper File"
-msgstr ""
+msgstr "Wallpaper File"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: ConfigureDesktopDialog.ui:67
 #, kde-format
 msgid "Scale Mode"
-msgstr ""
+msgstr "Scale Mode"
 
 #. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
 #: ConfigureDesktopDialog.ui:73
@@ -190,7 +187,7 @@ msgstr ""
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:31
 #, kde-format
@@ -200,7 +197,7 @@ msgstr ""
 #: desktop.cxx:33
 #, kde-format
 msgid "Copyright 2017 - 2026 Martin Koller"
-msgstr ""
+msgstr "Copyright 2017 - 2026 Martin Koller"
 
 #: DesktopApplet.cxx:34 Launcher.cxx:69
 #, kde-format
@@ -250,17 +247,17 @@ msgstr "Počasie"
 #: DesktopWidget.cxx:78
 #, kde-format
 msgid "Disk Usage"
-msgstr ""
+msgstr "Zaplnenie disku"
 
 #: DesktopWidget.cxx:81
 #, kde-format
 msgid "Picture Frame"
-msgstr ""
+msgstr "Picture Frame"
 
 #: DesktopWidget.cxx:84
 #, kde-format
 msgid "Configure Display..."
-msgstr ""
+msgstr "Nastaviť Displej..."
 
 #: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
@@ -270,17 +267,17 @@ msgstr "Spustiť príkaz..."
 #: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
-msgstr ""
+msgstr "Pomocník"
 
 #: DesktopWidget.cxx:247
 #, kde-format
 msgid "Configure Display"
-msgstr ""
+msgstr "Configure Display"
 
 #: DeviceList.cxx:252
 #, kde-format
 msgid "Open with File Manager"
-msgstr ""
+msgstr "Otvoriť v správcovi súborov"
 
 #: DeviceList.cxx:335
 #, kde-format
@@ -299,12 +296,12 @@ msgstr ""
 #: DeviceList.cxx:347
 #, kde-format
 msgid "Unauthorized Operation"
-msgstr ""
+msgstr "Unauthorized Operation"
 
 #: DeviceList.cxx:348
 #, kde-format
 msgid "Device Busy"
-msgstr ""
+msgstr "Device Busy"
 
 #: DeviceList.cxx:349
 #, kde-format
@@ -324,7 +321,7 @@ msgstr "Neplatná voľba"
 #: DeviceList.cxx:352
 #, kde-format
 msgid "Missing Driver"
-msgstr ""
+msgstr "Missing Driver"
 
 #: DeviceList.cxx:374
 #, kde-format
@@ -349,7 +346,7 @@ msgstr "Monitor zariadení"
 #: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
-msgstr ""
+msgstr "Device List"
 
 #: DiskUsageApplet.cxx:131
 #, kde-format
@@ -357,8 +354,7 @@ msgid "%1 free / %2"
 msgstr ""
 
 #: DiskUsageApplet.cxx:164
-#, fuzzy, kde-format
-#| msgid "Configure Date & Time..."
+#, kde-format
 msgid "Configure DiskUsage Applet"
 msgstr "Nastaviť &dátum a čas..."
 
@@ -369,37 +365,37 @@ msgstr "Nastaviť &dátum a čas..."
 #: WeatherAppletConfigureDialog.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Dialógové okno"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
 #, kde-format
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: DiskUsageAppletConfigureDialog.ui:44
 #, kde-format
 msgid "Bar Text"
-msgstr ""
+msgstr "Bar Text"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
 #: WeatherAppletConfigureDialog.ui:119
 #, kde-format
 msgid "Background"
-msgstr ""
+msgstr "Po&zadie"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: DiskUsageAppletConfigureDialog.ui:72
 #, kde-format
 msgid "Bar Background"
-msgstr ""
+msgstr "Bar Background"
 
 #: KdeConnect.cxx:169
 #, kde-format
 msgid "Device needs charging"
-msgstr ""
+msgstr "Zariadenie potrebuje nabiť"
 
 #: KdeConnect.cxx:170
 #, kde-format
@@ -424,10 +420,9 @@ msgid "Full Network Connectivity (%1)"
 msgstr ""
 
 #: Network.cxx:84
-#, fuzzy, kde-format
-#| msgid "No Network Connection"
+#, kde-format
 msgid "Limited Network Connectivity (%1)"
-msgstr "Bez sieťového pripojenia"
+msgstr ""
 
 #: Network.cxx:93
 #, kde-format
@@ -450,8 +445,7 @@ msgid "VPN active"
 msgstr ""
 
 #: NetworkList.cxx:213
-#, fuzzy, kde-format
-#| msgid "No Network Connection"
+#, kde-format
 msgid "Configure Network Connections"
 msgstr "Bez sieťového pripojenia"
 
@@ -496,11 +490,10 @@ msgstr ""
 #: Pager.cxx:68
 #, kde-format
 msgid "Configure Virtual Desktops"
-msgstr ""
+msgstr "Configure Virtual Desktops"
 
 #: PictureFrameApplet.cxx:95
-#, fuzzy, kde-format
-#| msgid "Configure Date & Time..."
+#, kde-format
 msgid "Configure PictureFrame Applet"
 msgstr "Nastaviť &dátum a čas..."
 
@@ -508,13 +501,13 @@ msgstr "Nastaviť &dátum a čas..."
 #: PictureFrameAppletConfigureDialog.ui:37
 #, kde-format
 msgid "Frame"
-msgstr ""
+msgstr "Snímka"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: PictureFrameAppletConfigureDialog.ui:61
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #: PkUpdateList.cxx:128
 #, kde-format
@@ -534,17 +527,17 @@ msgstr ""
 #: PkUpdateList.cxx:188
 #, kde-format
 msgid "Software Updates"
-msgstr ""
+msgstr "Software Updates"
 
 #: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
-msgstr ""
+msgstr "Všetky"
 
 #: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Inštalovať"
 
 #: PkUpdateList.cxx:219
 #, kde-format
@@ -559,7 +552,7 @@ msgstr ""
 #: PkUpdateList.cxx:224
 #, kde-format
 msgid "Refresh"
-msgstr ""
+msgstr "Obnoviť"
 
 #: PkUpdateList.cxx:431
 #, kde-format
@@ -572,7 +565,7 @@ msgstr[2] ""
 #: PkUpdateList.cxx:560
 #, kde-format
 msgid "System Reboot Required"
-msgstr ""
+msgstr "System Reboot Required"
 
 #: PkUpdateList.cxx:561
 #, kde-format
@@ -582,12 +575,12 @@ msgstr ""
 #: PkUpdateList.cxx:562
 #, kde-format
 msgid "Reboot System"
-msgstr ""
+msgstr "Reboot System"
 
 #: PkUpdateList.cxx:582
 #, kde-format
 msgid "Session Restart Required"
-msgstr ""
+msgstr "Session Restart Required"
 
 #: PkUpdateList.cxx:583
 #, kde-format
@@ -597,64 +590,62 @@ msgstr ""
 #: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Odhlásiť sa"
 
 #: PkUpdateList.cxx:630
 #, kde-format
 msgid "Cancel Installation"
-msgstr ""
+msgstr "Cancel Installation"
 
 #: PkUpdateList.cxx:663
 #, kde-format
 msgid "Waiting"
-msgstr ""
+msgstr "Čakanie"
 
 #: PkUpdateList.cxx:664
 #, kde-format
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Čaká sa na overenie"
 
 #: PkUpdateList.cxx:665
 #, kde-format
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Riešia sa závislosti"
 
 #: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
-msgstr ""
+msgstr "Aktualizovanie"
 
 #: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
-msgstr ""
+msgstr "Inštalovanie"
 
 #: PkUpdateList.cxx:668
-#, fuzzy, kde-format
-#| msgid "Download Error"
+#, kde-format
 msgid "Downloading"
-msgstr "Chyba pri sťahovaní"
+msgstr "Sťahujem"
 
 #: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
-msgstr ""
+msgstr "Canceling"
 
 #: PkUpdateList.cxx:724
 #, kde-format
 msgid "Validate Signature"
-msgstr ""
+msgstr "Validate Signature"
 
 #: PkUpdateList.cxx:775
-#, fuzzy, kde-format
-#| msgid "Unmount failed:"
+#, kde-format
 msgid "Update failed"
 msgstr "Odpojenie zlyhalo:"
 
 #: PkUpdateList.cxx:830
 #, kde-format
 msgid "Accept EULA"
-msgstr ""
+msgstr "Prijať EULA"
 
 #: PkUpdateList.cxx:842
 #, kde-format
@@ -688,7 +679,7 @@ msgstr ""
 #: PkUpdates.cxx:174
 #, kde-format
 msgid "Software Update Error"
-msgstr ""
+msgstr "Software Update Error"
 
 #: PkUpdates.cxx:195
 #, kde-format
@@ -751,7 +742,7 @@ msgstr ""
 #: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
-msgstr ""
+msgstr "Software Updates Available"
 
 #: PkUpdates.cxx:310
 #, kde-format
@@ -819,8 +810,7 @@ msgid "Net max (last %2 secs): %1 KB/sec"
 msgstr ""
 
 #: SysTray.cxx:302
-#, fuzzy, kde-format
-#| msgid "Notifications"
+#, kde-format
 msgid "Show New Notifications"
 msgstr "Upozornenia"
 
@@ -872,17 +862,17 @@ msgstr "Nenastavené"
 #: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:184
 #, kde-format
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: WeatherApplet.cxx:185
 #, kde-format
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
 #: WeatherApplet.cxx:279
@@ -908,7 +898,7 @@ msgstr "%1 °"
 #: WeatherApplet.cxx:375
 #, kde-format
 msgid "Configure Weather Applet"
-msgstr ""
+msgstr "Configure Weather Applet"
 
 #: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
@@ -923,7 +913,7 @@ msgstr "Chyba pri sťahovaní"
 #: WeatherAppletConfigureDialog.cxx:90
 #, kde-format
 msgid "Error on downloading city list: %1"
-msgstr ""
+msgstr "Chyba: on downloading city list: %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: WeatherAppletConfigureDialog.ui:20
@@ -947,7 +937,7 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:41
 #, kde-format
 msgid "Units"
-msgstr ""
+msgstr "Jednotky"
 
 #. i18n: ectx: property (text), widget (QRadioButton, metric)
 #: WeatherAppletConfigureDialog.ui:48
@@ -966,7 +956,7 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
 #, kde-format
 msgid "City"
-msgstr ""
+msgstr "Mesto:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cityList)
 #: WeatherAppletConfigureDialog.ui:97
