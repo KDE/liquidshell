@@ -137,6 +137,7 @@
     <p xml:lang="pt-BR">Ele não usa o QtQuick ao invés usa o QtWidgets, portando nenhuma aceleração gráfica por hardware é necessária.</p>
     <p xml:lang="ru">Она использует не QtQuick, а QtWidgets. Следовательно, аппаратное ускорение графики не требуется.</p>
     <p xml:lang="sa">एतत् QtQuick इत्यस्य उपयोगं न करोति अपितु QtWidgets इत्यस्य उपरि निर्भरं भवति, अतः हार्डवेयर ग्राफिक्स् त्वरणस्य आवश्यकता नास्ति ।</p>
+    <p xml:lang="sk">Nepoužíva QtQuick, ale namiesto toho sa spolieha na QtWidgets, preto nie je potrebná hardvérová grafická akcelerácia a text sa vykreslí oveľa krajšie, najmä na displejoch s vysokým DPI.</p>
     <p xml:lang="sl">Ne uporablja QtQuick, ampak se naslanja na QtWidgets, zato ni potrebno pospeševanje grafične strojne opreme.</p>
     <p xml:lang="sv">Det använder inte QtQuick, utan förlitar sig istället på QtWidgets. Därför behövs ingen grafikacceleration i hårdvara.</p>
     <p xml:lang="tr">QtQuick yerine QtWidgets kullanır, dolayısıyla herhangi bir donanım ivmelendirmesine gerek duymaz.</p>
@@ -206,6 +207,7 @@
       <li xml:lang="pt-BR">Papel de parede por área de trabalho virtual</li>
       <li xml:lang="ru">Обои для каждого виртуального рабочего стола</li>
       <li xml:lang="sa">प्रति आभासी डेस्कटॉप वॉलपेपर</li>
+      <li xml:lang="sk">Tapeta pre každú virtuálnu plochu</li>
       <li xml:lang="sl">Ozadje na virtualno namizje</li>
       <li xml:lang="sv">Skrivbordsunderlägg per virtuellt skrivbord</li>
       <li xml:lang="tr">Her sanal masaüstüne ayrı duvar kâğıdı</li>
@@ -239,6 +241,7 @@
       <li xml:lang="pt-BR">Sem animações, sem sobrecarga na CPU, baixo consumo de memória</li>
       <li xml:lang="ru">Нет анимации, нет излишней нагрузки на процессор, низкое потребление памяти</li>
       <li xml:lang="sa">एनिमेशनं नास्ति, CPU hogging नास्ति, Memory footprint न्यूनम्</li>
+      <li xml:lang="sk">Žiadne animácie, nezaťažuje CPU, nízka spotreba pamäte</li>
       <li xml:lang="sl">Brez animacij, brez naprezanja procesorja, malo potrebe po pomnilniku</li>
       <li xml:lang="sv">Inga animeringar, ingen beslagtagning av processorn, liten minnesanvändning</li>
       <li xml:lang="tr">Canlandırma içermez, CPU’yu sıkboğaz etmez, düşük oranda bellek kullanır</li>
@@ -341,6 +344,7 @@
       <li xml:lang="pt-BR">Baseado no QtWidgets, portanto segue o estilo dos widgets das configurações do sistema</li>
       <li xml:lang="ru">На основе QtWidgets, поэтому стиль виджетов определяется параметрами системы</li>
       <li xml:lang="sa">QtWidgets आधारितं, अतः सिस्टम् सेटिङ्ग्स् तः विजेट् शैल्याः अनुसरणं करोति</li>
+      <li xml:lang="sk">Založené na QtWidgets, preto nasleduje štýl widgetov zo systémových nastavení</li>
       <li xml:lang="sl">Temelji na QtWidgets in zato sledi sistemskim nastavitvam slogov gradnikov</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
       <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı biçemini kullanır</li>
@@ -374,6 +378,7 @@
       <li xml:lang="pt-BR">Os ícones são usados a partir de um tema de ícones definido globalmente nas configurações do sistema</li>
       <li xml:lang="ru">Использование значков из темы значков, установленной глобально в параметрах системы</li>
       <li xml:lang="sa">चिह्नानि भवतः वैश्विकरूपेण परिभाषितचिह्नविषयात् systemsettings तः उपयुज्यन्ते</li>
+      <li xml:lang="sk">Ikony sa používajú z globálne definovanej témy ikon zo systémových nastavení</li>
       <li xml:lang="sl">Uporabljajo se ikone iz splošno določene teme ikon v sistemskih nastavitvah</li>
       <li xml:lang="sv">Ikoner kommer från det globalt definierade ikontemat i systeminställningarna</li>
       <li xml:lang="tr">Simgeler, Sistem Ayarları’ndaki global simge temanızdan kullanılır</li>
@@ -407,6 +412,7 @@
       <li xml:lang="pt-BR">As cores são usadas a partir de um tema de cores definido globalmente nas configurações do sistema</li>
       <li xml:lang="ru">Использование цветов из цветовой темы, установленной глобально в параметрах системы</li>
       <li xml:lang="sa">भवतः वैश्विकरूपेण परिभाषितवर्णविषयात् systemsettings तः वर्णाः उपयुज्यन्ते</li>
+      <li xml:lang="sk">Farby sa používajú z globálne definovanej farebnej témy zo systémových nastavení</li>
       <li xml:lang="sl">Uporabljajo se barve iz vaše splošno določene barvne teme iz sistemskih nastavitev</li>
       <li xml:lang="sv">Färger kommer från det globalt definierade färgtemat i systeminställningarna</li>
       <li xml:lang="tr">Renkler, sistem ayarlarındaki global renk temanızdan kullanılır</li>
@@ -440,6 +446,7 @@
       <li xml:lang="pt-BR">Pode ser estilizado adicionalmente com CSS usando a opção da linha de comando -stylesheet arquivo.css (veja o exemplo incluído stylesheet.css)</li>
       <li xml:lang="ru">Дополнительная смена стиля с помощью css: достаточно передать параметр командной строки -stylesheet имя_файла.css (см. включённый пример stylesheet.css)</li>
       <li xml:lang="sa">अतिरिक्तरूपेण आदेशपङ्क्तिविकल्पं -stylesheet filename.css (समाविष्टं उदाहरणं stylesheet.css पश्यन्तु) पारयित्वा css इत्यनेन सह शैलीं कर्तुं शक्यते ।</li>
+      <li xml:lang="sk">Dodatočne je možné štylizovať pomocou CSS zadaním voľby príkazového riadku -stylesheet súbor.css.</li>
       <li xml:lang="sl">Mogoče je dodatno opisati slog z datoteko css prek ukazne vrstice - styleheet filename.css (glejte vključeni primer stylesheet.css)</li>
       <li xml:lang="sv">Kan dessutom formateras med CSS genom att ange kommandoradsväljaren -stylesheet filnamn.css (se det inkluderade exemplet stylesheet.css)</li>
       <li xml:lang="tr">-stylesheet dosyaadı.css komut satırı seçeneğini kullanarak ek olarak temalanabilir (stylesheet.css örnek dosyasına bakın)</li>
@@ -473,6 +480,7 @@
       <li xml:lang="pt-BR">usa as janelas existentes do KDE para a maioria das configurações, ex.: menu iniciar, áreas de trabalho virtuais, Bluetooth, rede</li>
       <li xml:lang="ru">Использование существующих диалогов KDE для большей части функционала настройки (например, меню запуска приложений, виртуальные рабочие столы, Bluetooth, сеть)</li>
       <li xml:lang="sa">अधिकांशविन्यासानां कृते विद्यमानं KDE संवादं उपयुज्यते, यथा StartMenu, Virtual Desktops, Bluetooth, Network</li>
+      <li xml:lang="sk">používa existujúce dialógy KDE pre väčšinu konfigurácií, napr. ponuku Štart, virtuálne plochy, Bluetooth, sieť</li>
       <li xml:lang="sl">uporablja obstoječa pogovorna okna KDE za večino nastavitev, npr. začetni meni, navidezna namizja, Bluetooth, omrežje</li>
       <li xml:lang="sv">Använder befintliga dialogrutor i KDE för de flesta inställningar, t.ex. startmeny, virtuella skrivbord, Blåtand, nätverk</li>
       <li xml:lang="tr">Çoğu yapılandırma için KDE iletişim kutularını kullanır; örneğin Başlangıç  Menüsü, Sanal Masaüstleri, Bluetooth, Ağ</li>
@@ -506,6 +514,7 @@
       <li xml:lang="pt-BR">Um painel da área de trabalho abaixo</li>
       <li xml:lang="ru">Одна панель в нижней части экрана</li>
       <li xml:lang="sa">एकं अधः DesktopPanel</li>
+      <li xml:lang="sk">Jeden spodný panel pracovnej plochy</li>
       <li xml:lang="sl">Ena namizna plošča na dnu</li>
       <li xml:lang="sv">En skrivbordspanel längst ner</li>
       <li xml:lang="tr">Bir adet altta masaüstü paneli</li>
@@ -576,6 +585,7 @@
           <li xml:lang="nl">Installatie-opties (slapen/afsluiten na installatie)</li>
           <li xml:lang="pt-BR">Adicionadas opções de instalação (suspender/desligar após a instalação)</li>
           <li xml:lang="ru">Добавлены параметры установки (переход в спящий режим/выключение после установки);</li>
+          <li xml:lang="sk">Pridané možnosti inštalácie (uspanie/vypnutie po inštalácii)</li>
           <li xml:lang="sl">Dodane možnosti namestitve (spanje/izklop po namestitvi)</li>
           <li xml:lang="tr">Added install options (sleep/shutdown after install)</li>
           <li xml:lang="uk">Додано параметри встановлення (присипляння/вимикання після встановлення)</li>
@@ -594,6 +604,7 @@
           <li xml:lang="nl">Verbeterde behandeling van EULA bij pakketinstallatie</li>
           <li xml:lang="pt-BR">Melhoria no tratamento do EULA durante a instalação do pacote</li>
           <li xml:lang="ru">Улучшена обработка лицензионного соглашения при установке пакетов;</li>
+          <li xml:lang="sk">Vylepšené spracovanie EULA pri inštalácii balíkov</li>
           <li xml:lang="sl">Izboljšana obravnava licenčne pogodbe za končnega uporabnika (EULA) pri namestitvi paketa</li>
           <li xml:lang="tr">Improved EULA handling on package installation</li>
           <li xml:lang="uk">Удосконалено обробку EULA при встановленні пакунків</li>
@@ -612,6 +623,7 @@
           <li xml:lang="nl">Lang formaat van weergave van de tijd en datum bij pop-up van agenda</li>
           <li xml:lang="pt-BR">Adicionada a exibição de data e hora em formato longo no calendário pop-up</li>
           <li xml:lang="ru">Добавлен длинный формат отображения времени и даты во всплывающем календаре;</li>
+          <li xml:lang="sk">Pridaný dlhý formát zobrazenia času a dátumu do vyskakovacieho kalendára</li>
           <li xml:lang="sl">V pojavno okno koledarja je bil dodan dolgi format prikaza časa in datuma</li>
           <li xml:lang="tr">Added long format of time and date display to calendar popup</li>
           <li xml:lang="uk">Додано показ часу і дати у повному форматі на контекстній панелі календаря</li>
@@ -630,6 +642,7 @@
           <li xml:lang="nl">Standaard map aanmaken voor opslaan van toepassingen voor snel opstarten</li>
           <li xml:lang="pt-BR">Cria uma pasta padrão para armazenar aplicativos de inicialização rápida</li>
           <li xml:lang="ru">Создание папки по умолчанию для хранения приложений быстрого запуска;</li>
+          <li xml:lang="sk">Vytvoriť predvolený priečinok na ukladanie aplikácií rýchleho spustenia</li>
           <li xml:lang="sl">Ustvari privzeto mapo za shranjevanje aplikacij za hitri zagon</li>
           <li xml:lang="tr">Create default folder for storing quicklaunch apps</li>
           <li xml:lang="uk">Створено типову теку для зберігання програм швидкого запуску</li>
@@ -648,6 +661,7 @@
           <li xml:lang="nl">Breedte van widget met systeemload hangt af van aantal CPU's</li>
           <li xml:lang="pt-BR">A largura do widget SysLoad depende da quantidade de CPUs</li>
           <li xml:lang="ru">Ширина виджета SysLoad зависит от числа процессоров;</li>
+          <li xml:lang="sk">Šírka widgetu SysLoad závisí od počtu CPU</li>
           <li xml:lang="sl">Širina gradnika SysLoad je odvisna od števila procesorjev</li>
           <li xml:lang="tr">SysLoad widget width depends on CPU count</li>
           <li xml:lang="uk">Ширину віджета SysLoad прив'язано до кількості процесорів</li>
@@ -667,6 +681,7 @@
           <li xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</li>
           <li xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</li>
           <li xml:lang="ru">Исправления ошибок и адаптация к новым компонентам KDE;</li>
+          <li xml:lang="sk">Opravy chýb a prispôsobenia novším komponentom KDE</li>
           <li xml:lang="sl">Popravki hroščev in prilagoditve novejših komponent KDE</li>
           <li xml:lang="tr">Bugfixes and adjustments to newer KDE components</li>
           <li xml:lang="uk">Виправлення вад та узгодження з новішими компонентами KDE</li>
@@ -691,6 +706,7 @@
         <p xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</p>
         <p xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</p>
         <p xml:lang="ru">Исправления ошибок и адаптация к новым компонентам KDE;</p>
+        <p xml:lang="sk">Opravy chýb a prispôsobenia novším komponentom KDE</p>
         <p xml:lang="sl">Popravki hroščev in prilagoditve novejših komponent KDE</p>
         <p xml:lang="tr">Bugfixes and adjustments to newer KDE components</p>
         <p xml:lang="uk">Виправлення вад та узгодження з новішими компонентами KDE</p>
@@ -714,6 +730,7 @@
           <li xml:lang="nl">Meldingen tonen hoe lang ze open blijven (kleine animatie)</li>
           <li xml:lang="pt-BR">As notificações mostram por quanto tempo elas permanecem abertas (pequena animação)</li>
           <li xml:lang="ru">Отображается время, в течение которого уведомление остаётся открытым (небольшая анимация);</li>
+          <li xml:lang="sk">Oznámenia zobrazujú, ako dlho zostanú otvorené (malá animácia)</li>
           <li xml:lang="sl">Obvestila prikazujejo, kako dolgo ostanejo odprta (majhna animacija)</li>
           <li xml:lang="tr">Notifications show how long they remain open (small animation)</li>
           <li xml:lang="uk">Показ тривалості утримання відкритими сповіщень (невеличка анімація)</li>
@@ -732,6 +749,7 @@
           <li xml:lang="nl">Weerapplet toont maanfase</li>
           <li xml:lang="pt-BR">O aplicativo de previsão do tempo mostra a fase da lua</li>
           <li xml:lang="ru">Виджет «Погода» показывает фазу Луны;</li>
+          <li xml:lang="sk">Applet počasia zobrazuje fázu mesiaca</li>
           <li xml:lang="sl">Vremenski programček prikazuje lunino fazo</li>
           <li xml:lang="tr">Weather Applet shows moon phase</li>
           <li xml:lang="uk">Показ фаз Місяця в аплеті прогнозу погоди</li>
@@ -750,6 +768,7 @@
           <li xml:lang="nl">Applet met schijfgebruik bewaakt aankoppelen/afkoppelen om sneller te reageren voor bijwerken</li>
           <li xml:lang="pt-BR">O aplicativo de uso de disco monitora a montagem/desmontagem para reagir mais rapidamente às atualizações</li>
           <li xml:lang="ru">Виджет «Дисковые накопители» отслеживает подключение и отключение устройств для более быстрого обновления данных;</li>
+          <li xml:lang="sk">Applet využitia disku sleduje pripojenie/odpojenie pre rýchlejšiu aktualizáciu</li>
           <li xml:lang="sl">Programček za uporabo diska spremlja priklop/odklop, da se hitreje odzove na posodobitve</li>
           <li xml:lang="tr">Disk Usage Applet watches for mount/unmount to react quicker for update</li>
           <li xml:lang="uk">Спостереження за монтуванням/демонтуванням в аплеті використання диска для пришвидшення реакції на оновлення</li>
@@ -768,6 +787,7 @@
           <li xml:lang="nl">Verbeteringen in het tonen van de bijwerkcomponent van software</li>
           <li xml:lang="pt-BR">Melhorias na exibição do componente de atualizações de software</li>
           <li xml:lang="ru">Улучшения отображения в компоненте обновления программного обеспечения;</li>
+          <li xml:lang="sk">Vylepšenia zobrazenia v komponente aktualizácií softvéru</li>
           <li xml:lang="sl">Izboljšave prikaza v komponenti za posodobitve programske opreme</li>
           <li xml:lang="tr">Display improvements in software updates component</li>
           <li xml:lang="uk">Показ удосконалень програмного забезпечення у компоненті оновлень пакунків</li>
@@ -786,6 +806,7 @@
           <li xml:lang="nl">Toegevoegd ondersteuning van DBUS-menu (sommige toepassingen leveren geen eigen menu maar alleen via DBUS, bijv. MS teams)</li>
           <li xml:lang="pt-BR">Adicionado suporte a menus DBUS (alguns aplicativos não fornecem menu próprio, mas apenas via DBUS, como o Microsoft Teams)</li>
           <li xml:lang="ru">Добавлена поддержка меню D-Bus (некоторые приложения не предоставляют собственное меню, а только через D-Bus, например MS Teams);</li>
+          <li xml:lang="sk">Pridaná podpora DBUS-Menu (niektoré aplikácie neposkytujú vlastnú ponuku, ale iba cez DBUS, napr. MS teams)</li>
           <li xml:lang="sl">Dodana podpora za DBUS-Menu (nekatere aplikacije ne ponujajo lastnega menija, ampak samo prek DBUS-a, npr. MS Teams)</li>
           <li xml:lang="tr">Added DBUS-Menu support (some apps don't provide own menu but only via DBUS, e.g. MS teams)</li>
           <li xml:lang="uk">Додано підтримку меню DBUS (деякі програми, наприклад MS Teams, не мають власного меню, а надають дані лише за допомогою DBUS)</li>
