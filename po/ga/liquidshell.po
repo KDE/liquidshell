@@ -1,27 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the liquidshell package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 charlotte <altronic25@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: liquidshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:47+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-04-11 15:35+0100\n"
+"Last-Translator: charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Charlotte"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -45,7 +45,7 @@ msgstr[1] ""
 #: Battery.cxx:151
 #, kde-format
 msgid "Not Charging"
-msgstr ""
+msgstr "Níl Á Luchtú"
 
 #: Battery.cxx:152
 #, kde-format
@@ -75,7 +75,7 @@ msgstr ""
 #: Battery.cxx:193
 #, kde-format
 msgid "Power Management"
-msgstr ""
+msgstr "Bainisteoireacht Chumhachta"
 
 #: Bluetooth.cxx:64
 #, kde-format
@@ -90,7 +90,7 @@ msgstr ""
 #: Bluetooth.cxx:85
 #, kde-format
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ClockWidget.cxx:163
 #, kde-format
@@ -105,12 +105,12 @@ msgstr ""
 #: ClockWidget.cxx:187
 #, kde-format
 msgid "Configure Date & Time..."
-msgstr ""
+msgstr "Cumraigh Dáta ⁊ Am..."
 
 #: ClockWidget.cxx:194
 #, kde-format
 msgid "Date & Time"
-msgstr ""
+msgstr "Dáta ⁊ Am"
 
 #: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
 #, kde-format
@@ -120,7 +120,7 @@ msgstr ""
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
 msgid "Timezone"
-msgstr ""
+msgstr "Crios Ama"
 
 #: ClockWidgetConfigureDialog.cxx:41
 #, kde-format
@@ -188,7 +188,7 @@ msgstr ""
 #: desktop.cxx:30
 #, kde-format
 msgid "Liquidshell"
-msgstr ""
+msgstr "Liquidshell"
 
 #: desktop.cxx:31
 #, kde-format
@@ -263,12 +263,12 @@ msgstr ""
 #: DesktopWidget.cxx:88 StartMenu.cxx:102
 #, kde-format
 msgid "Run Command..."
-msgstr ""
+msgstr "Rith Ordú..."
 
 #: DesktopWidget.cxx:98
 #, kde-format
 msgid "Help"
-msgstr ""
+msgstr "Cabhair"
 
 #: DesktopWidget.cxx:247
 #, kde-format
@@ -347,12 +347,12 @@ msgstr ""
 #: DeviceNotifier.cxx:26
 #, kde-format
 msgid "Device List"
-msgstr ""
+msgstr "Liosta Gléasanna"
 
 #: DiskUsageApplet.cxx:131
 #, kde-format
 msgid "%1 free / %2"
-msgstr ""
+msgstr "%1 saor / %2"
 
 #: DiskUsageApplet.cxx:164
 #, kde-format
@@ -366,13 +366,13 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr ""
+msgstr "Dialóg"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
 #, kde-format
 msgid "Text"
-msgstr ""
+msgstr "Téacs"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: DiskUsageAppletConfigureDialog.ui:44
@@ -408,7 +408,7 @@ msgstr ""
 #: Launcher.cxx:86
 #, kde-format
 msgid "Open Folder"
-msgstr ""
+msgstr "Oscail Fillteán"
 
 #: Network.cxx:72
 #, kde-format
@@ -433,7 +433,7 @@ msgstr ""
 #: Network.cxx:110
 #, kde-format
 msgid "SSID: %1"
-msgstr ""
+msgstr "SSID: %1"
 
 #: Network.cxx:112
 #, kde-format
@@ -458,7 +458,7 @@ msgstr ""
 #: NetworkList.cxx:247
 #, kde-format
 msgid "Networking is disabled. Click to enable"
-msgstr ""
+msgstr "Tá an líonrú díchumasaithe. Cliceáil chun a chumasú"
 
 #: NetworkList.cxx:250
 #, kde-format
@@ -473,14 +473,17 @@ msgstr ""
 #: NotificationList.cxx:172
 #, kde-format
 msgid "Notifications"
-msgstr ""
+msgstr "Fógraí"
 
 #: NotificationServer.cxx:59
 #, kde-format
 msgid "%1 notification"
 msgid_plural "%1 notifications"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 fhógra"
+msgstr[1] "%1 fhógra"
+msgstr[2] "%1 fhógraí"
+msgstr[3] "%1 bhfógraí"
+msgstr[4] "%1 fógraí"
 
 #: Pager.cxx:61
 #, kde-format
@@ -501,13 +504,13 @@ msgstr ""
 #: PictureFrameAppletConfigureDialog.ui:37
 #, kde-format
 msgid "Frame"
-msgstr ""
+msgstr "Fráma"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: PictureFrameAppletConfigureDialog.ui:61
 #, kde-format
 msgid "Path"
-msgstr ""
+msgstr "Conair"
 
 #: PkUpdateList.cxx:128
 #, kde-format
@@ -532,12 +535,12 @@ msgstr ""
 #: PkUpdateList.cxx:200
 #, kde-format
 msgid "All"
-msgstr ""
+msgstr "Uile"
 
 #: PkUpdateList.cxx:213 PkUpdateList.cxx:437
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Suiteáil"
 
 #: PkUpdateList.cxx:219
 #, kde-format
@@ -589,7 +592,7 @@ msgstr ""
 #: PkUpdateList.cxx:584
 #, kde-format
 msgid "Logout"
-msgstr ""
+msgstr "Logáil Amach"
 
 #: PkUpdateList.cxx:630
 #, kde-format
@@ -614,22 +617,22 @@ msgstr ""
 #: PkUpdateList.cxx:666
 #, kde-format
 msgid "Updating"
-msgstr ""
+msgstr "Á Nuashonrú"
 
 #: PkUpdateList.cxx:667
 #, kde-format
 msgid "Installing"
-msgstr ""
+msgstr "Á Shuiteáil"
 
 #: PkUpdateList.cxx:668
 #, kde-format
 msgid "Downloading"
-msgstr ""
+msgstr "Á Íosluchtú"
 
 #: PkUpdateList.cxx:669
 #, kde-format
 msgid "Canceling"
-msgstr ""
+msgstr "Á Chealú"
 
 #: PkUpdateList.cxx:724
 #, kde-format
@@ -639,7 +642,7 @@ msgstr ""
 #: PkUpdateList.cxx:775
 #, kde-format
 msgid "Update failed"
-msgstr ""
+msgstr "Theip ar nuashonrú"
 
 #: PkUpdateList.cxx:830
 #, kde-format
@@ -741,7 +744,7 @@ msgstr ""
 #: PkUpdates.cxx:310
 #, kde-format
 msgid "<li>%1 more ...</li>"
-msgstr ""
+msgstr "<li>%1 níos mó ...</li>"
 
 #: QuickLaunch.cxx:158
 #, kde-format
@@ -751,7 +754,7 @@ msgstr ""
 #: StartMenu.cxx:80
 #, kde-format
 msgid "Switch User"
-msgstr ""
+msgstr "Athraigh Úsáideoir"
 
 #: StartMenu.cxx:170
 #, kde-format
@@ -761,7 +764,7 @@ msgstr ""
 #: SysLoad.cxx:200
 #, kde-format
 msgid "CPU %1: %2% (%3 MHz)"
-msgstr ""
+msgstr "LAP %1: %2% (%3 MHz)"
 
 #: SysLoad.cxx:210
 #, kde-format
@@ -811,17 +814,17 @@ msgstr ""
 #: TaskBarButton.cxx:109
 #, kde-format
 msgid "Move To Desktop"
-msgstr ""
+msgstr "Bog Go Deasc"
 
 #: TaskBarButton.cxx:110
 #, kde-format
 msgid "All Desktops"
-msgstr ""
+msgstr "Gach Deasc"
 
 #: TaskBarButton.cxx:117
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Dún"
 
 #: WeatherApplet.cxx:66
 #, kde-format
@@ -856,38 +859,38 @@ msgstr ""
 #: WeatherApplet.cxx:183
 #, kde-format
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: WeatherApplet.cxx:184
 #, kde-format
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: WeatherApplet.cxx:185
 #, kde-format
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
 #: WeatherApplet.cxx:279
 #, kde-format
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: WeatherApplet.cxx:201
 #, kde-format
 msgid "%1 hPa"
-msgstr ""
+msgstr "%1 hPa"
 
 #: WeatherApplet.cxx:204
 #, kde-format
 msgid "%1 %"
-msgstr ""
+msgstr "%1 %"
 
 #: WeatherApplet.cxx:218
 #, kde-format
 msgid "%1 °"
-msgstr ""
+msgstr "%1 °"
 
 #: WeatherApplet.cxx:375
 #, kde-format
@@ -897,7 +900,7 @@ msgstr ""
 #: WeatherAppletConfigureDialog.cxx:75
 #, kde-format
 msgid "Downloading city list..."
-msgstr ""
+msgstr "Á íosluchtú liosta cathracha..."
 
 #: WeatherAppletConfigureDialog.cxx:89
 #, kde-format
@@ -913,7 +916,7 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:20
 #, kde-format
 msgid "API Key"
-msgstr ""
+msgstr "Eochair API"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
 #: WeatherAppletConfigureDialog.ui:27
@@ -950,10 +953,10 @@ msgstr ""
 #: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
 #, kde-format
 msgid "City"
-msgstr ""
+msgstr "Cathair"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, cityList)
 #: WeatherAppletConfigureDialog.ui:97
 #, kde-format
 msgid "Country"
-msgstr ""
+msgstr "Tír"
