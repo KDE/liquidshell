@@ -2,20 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # SPDX-FileCopyrightText: 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2026 Luc Castermans <luc.castermans@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:47+0000\n"
-"PO-Revision-Date: 2026-01-04 14:19+0100\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-05-18 18:37+0200\n"
+"Last-Translator: Luc Castermans <luc.castermans@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -668,12 +669,12 @@ msgstr "Volgende controle: %1"
 #: PkUpdates.cxx:79
 #, kde-format
 msgid "Checking for updates ..."
-msgstr "Controleren op elementen voor bijwerken..."
+msgstr "Controleren op updates..."
 
 #: PkUpdates.cxx:95 PkUpdates.cxx:149
 #, kde-format
 msgid "Checking for updates ... %1%"
-msgstr "Controleren op elementen voor bijwerken... %1%"
+msgstr "Controleren op updates ... %1%"
 
 #: PkUpdates.cxx:171
 #, kde-format
@@ -682,7 +683,7 @@ msgid ""
 "Error on checking for updates: %2"
 msgstr ""
 "Laatste controle: %1\n"
-"Fout bij controleren op elementen voor bijwerken: %2"
+"Fout bij controleren op updates: %2"
 
 #: PkUpdates.cxx:174
 #, kde-format
@@ -693,21 +694,21 @@ msgstr "Fout bij bijwerken van software"
 #, kde-format
 msgid "%1 <b>security</b> update available"
 msgid_plural "%1 <b>security</b> updates available"
-msgstr[0] "%1 element voor <b>beveiliging</b> bijwerken beschikbaar"
+msgstr[0] "%1 <b>beveiligings</b> update beschikbaar"
 msgstr[1] "%1 elementen voor <b>beveiliging</b> bijwerken beschikbaar"
 
 #: PkUpdates.cxx:207
 #, kde-format
 msgid "%1 <i>important</i> update available"
 msgid_plural "%1 <i>important</i> updates available"
-msgstr[0] "%1 <i>belangrijk</i> element voor bijwerken beschikbaar"
+msgstr[0] "%1 <i>belangrijk</i> update beschikbaar"
 msgstr[1] "%1 <i>belangrijke</i> elementen voor bijwerken beschikbaar"
 
 #: PkUpdates.cxx:219
 #, kde-format
 msgid "%1 bugfix update available"
 msgid_plural "%1 bugfix updates available"
-msgstr[0] "%1 element voor repareren van bug beschikbaar"
+msgstr[0] "%1 bugfix update beschikbaar"
 msgstr[1] "%1 elementen voor repareren van bug beschikbaar"
 
 #: PkUpdates.cxx:229
@@ -722,7 +723,7 @@ msgid_plural ""
 "%2 others"
 msgstr[0] ""
 "Laatste controle: %1\n"
-"Geen belangrijke elementen voor bijwerken beschikbaar\n"
+"Geen belangrijke update beschikbaar\n"
 "%2 andere"
 msgstr[1] ""
 "Laatste controle: %1\n"
@@ -736,7 +737,7 @@ msgid ""
 "No updates available"
 msgstr ""
 "Laatste controle: %1\n"
-"Geen elementen voor bijwerken beschikbaar"
+"Geen update beschikbaar"
 
 #: PkUpdates.cxx:249
 #, kde-format
@@ -753,7 +754,7 @@ msgstr "<html>Laatste controle: %1<br>%2</html>"
 #: PkUpdates.cxx:290
 #, kde-format
 msgid "Software Updates Available"
-msgstr "Elementen voor bijwerken van software zijn beschikbaar"
+msgstr "Software updates  zijn beschikbaar"
 
 #: PkUpdates.cxx:310
 #, kde-format
