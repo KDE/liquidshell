@@ -129,18 +129,18 @@ msgstr "Territorio"
 #: ConfigureDesktopDialog.cxx:37
 #, kde-format
 msgid "Get New Wallpapers..."
-msgstr "Obtene nove tapetes de papiro..."
+msgstr "Obtene nove fundos de schermo..."
 
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
-msgstr "Discarga tapetes de papiro"
+msgstr "Discarga fundos de schermo"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr "Configura  tapete de papiro..."
+msgstr "Configura  fundo de schermo..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
@@ -232,7 +232,7 @@ msgstr ""
 #: DesktopWidget.cxx:67
 #, kde-format
 msgid "Configure Wallpaper..."
-msgstr "Configura  tapete de papiro..."
+msgstr "Configura  fundo de schermo..."
 
 #: DesktopWidget.cxx:71
 #, kde-format
