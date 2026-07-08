@@ -131,13 +131,13 @@ msgstr "Obter Novos Papéis de Parede..."
 #: ConfigureDesktopDialog.cxx:43
 #, kde-format
 msgid "Download Wallpapers"
-msgstr "Obter Papéis de Parede"
+msgstr "Obter imagens de fundo"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
 #: ConfigureDesktopDialog.ui:15
 #, kde-format
 msgid "Configure Wallpaper"
-msgstr "Configurar o Papel de Parede"
+msgstr "Configurar a imagem de fundo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: ConfigureDesktopDialog.ui:23
