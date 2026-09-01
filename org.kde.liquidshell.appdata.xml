@@ -846,7 +846,7 @@
           <li xml:lang="es">Se ha añadido compatibilidad con DBUS-Menu (algunas aplicaciones no proporcionan un menú propio, aunque sí mediante DBUS, como MS Teams).</li>
           <li xml:lang="eu">DBUS-Menu euskarria gehitu da (aplikazio batzuek ez dute beren menurik ematen eta DBUS bidez bakarrik eskaintzen dute; adib. MS Teams)</li>
           <li xml:lang="fi">lisätty DBus-valikkotuki (jotkin sovellukset eivät tarjoa omaansa vaan vain DBusin kautta, esim. MS Teams)</li>
-          <li xml:lang="fr">Ajout de la prise en charge du menu « DBUS » (Certaines applications ne fournissent pas leur propre menu mais uniquement par l'intermédiaire de « DBUS », par exemple MS Teams)</li>
+          <li xml:lang="fr">Ajout de la prise en charge du menu « D-BUS » (Certaines applications ne fournissent pas leur propre menu mais uniquement par l'intermédiaire de « D-BUS », par exemple MS Teams)</li>
           <li xml:lang="he">נוספה תמיכה בתפריט D-Bus (חלק מהיישומים לא מספקים תפריט משלהם אלא רק דרך D-Bus, כמו למשל MS Teams)</li>
           <li xml:lang="it">È stato aggiunto il supporto al menu DBUS (alcuni programmi non ne hanno uno proprio ma solo attraverso DBUS, ad esempio Teams di MS)</li>
           <li xml:lang="ka">დაემატა DBUS-Menu-ის მხარდაჭერა (ზოგიერთ აპს საკუთარი მენიუ არ აქვს და, მხოლოდ, DBUS-ს იყენებს. მაგ: MS teams)</li>
