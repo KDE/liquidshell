@@ -372,7 +372,7 @@ msgstr "Configurer le composant graphique « DiskUsage »"
 #: WeatherAppletConfigureDialog.ui:14
 #, kde-format
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
