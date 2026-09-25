@@ -161,24 +161,23 @@ void Battery::changed()
 
   switch ( battery->chargeState() )
   {
-    case Solid::Battery::NoCharge: tip = i18n("Not Charging"); break;
+    case Solid::Battery::NoCharge: tip = i18n("Not Charging at %1%", battery->chargePercent()); break;
     case Solid::Battery::FullyCharged: tip = i18n("Fully Charged"); break;
 
     case Solid::Battery::Charging:
+    {
+      tip = i18n("Charging at %1%", battery->chargePercent());
+      if ( battery->timeToFull() )  // it can be 0, so we don't know
+        tip += '\n' + i18n("Time until full: ") + secsToHM(battery->timeToFull());
+
+      break;
+    }
+
     case Solid::Battery::Discharging:
     {
-      if ( battery->chargeState() == Solid::Battery::Charging )
-      {
-        tip = i18n("Charging at %1%", battery->chargePercent());
-        if ( battery->timeToFull() )  // it can be 0, so we don't know
-          tip += '\n' + i18n("Time until full: ") + secsToHM(battery->timeToFull());
-      }
-      else
-      {
-        tip = i18n("Discharging at %1%", battery->chargePercent());
-        if ( battery->timeToEmpty() )  // it can be 0, so we don't know
-          tip += '\n' + i18n("Remaining Time: ") + secsToHM(battery->timeToEmpty());
-      }
+      tip = i18n("Discharging at %1%", battery->chargePercent());
+      if ( battery->timeToEmpty() )  // it can be 0, so we don't know
+        tip += '\n' + i18n("Remaining Time: ") + secsToHM(battery->timeToEmpty());
 
       break;
     }
