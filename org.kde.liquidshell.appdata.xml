@@ -598,6 +598,7 @@
           <li xml:lang="he">נוספו אפשרויות התקנה (שינה/כיבוי לאחר התקנה)</li>
           <li xml:lang="it">Aggiunta delle opzioni d'installazione (sospendi/spegni dopo l'installazione)</li>
           <li xml:lang="ka">დაემატა დაყენების პარამეტრები (ძილი/გამორთვა დაყენების შემდეგ)</li>
+          <li xml:lang="ko">설치 옵션 추가(설치 후 대기 모드/끄기)</li>
           <li xml:lang="lt">Pridėtos įdiegimo parinktys (pristabdyti/išjungti po įdiegimo)</li>
           <li xml:lang="nl">Installatie-opties (slapen/afsluiten na installatie)</li>
           <li xml:lang="pt-BR">Adicionadas opções de instalação (suspender/desligar após a instalação)</li>
@@ -620,6 +621,7 @@
           <li xml:lang="he">הטיפול בהסכם משתמש קצה בהתקנת חבילות השתפר</li>
           <li xml:lang="it">Miglioramento della gestione dell'EULA all'installazione del pacchetto</li>
           <li xml:lang="ka">გასწორდა EULA-ის მართვა პაკეტის დაყენებისას</li>
+          <li xml:lang="ko">패키지 설치 시 EULA 처리 개선</li>
           <li xml:lang="lt">Patobulintas galutinio naudotojo licencijos sutarties apdorojimas įdiegiant paketą</li>
           <li xml:lang="nl">Verbeterde behandeling van EULA bij pakketinstallatie</li>
           <li xml:lang="pt-BR">Melhoria no tratamento do EULA durante a instalação do pacote</li>
@@ -642,6 +644,7 @@
           <li xml:lang="he">נוספה תבנית ארוכה לתצוגת שעה ותאריך לחלוניות לוח שנה צצות</li>
           <li xml:lang="it">È stato aggiunto il formato lungo di visualizzazione di data e orario alla finestrella a comparsa del calendario</li>
           <li xml:lang="ka">დაემატა დროისა და თარიღის გრძელი ფორმატის ჩვენება კალენდრის მხტუნარაში</li>
+          <li xml:lang="ko">캘린더 팝업에 날짜와 시간의 긴 형식 표시 추가</li>
           <li xml:lang="lt">Į kalendoriaus iškylantįjį langą pridėtas ilgas laiko ir datos atvaizdavimo formatas</li>
           <li xml:lang="nl">Lang formaat van weergave van de tijd en datum bij pop-up van agenda</li>
           <li xml:lang="pt-BR">Adicionada a exibição de data e hora em formato longo no calendário pop-up</li>
@@ -664,6 +667,7 @@
           <li xml:lang="he">יצירת תיקיית ברירת מחדל לאחסון יישומי טעינה מהירה</li>
           <li xml:lang="it">È stata creata la cartella predefinita per il salvataggio dei programmi quicklaunch</li>
           <li xml:lang="ka">ნაგულისხმევი საქაღალდის შექმნა სწრაფი გაშვების აპების შესანახად</li>
+          <li xml:lang="ko">빠른 실행 앱을 저장하는 기본 폴더 생성</li>
           <li xml:lang="lt">Sukurtas numatytasis aplankas, skirtas saugoti greitojo paleidimo programas</li>
           <li xml:lang="nl">Standaard map aanmaken voor opslaan van toepassingen voor snel opstarten</li>
           <li xml:lang="pt-BR">Cria uma pasta padrão para armazenar aplicativos de inicialização rápida</li>
@@ -686,6 +690,7 @@
           <li xml:lang="he">רוחב וידג׳ט עומס המערכת תלוי בכמות המעבדים</li>
           <li xml:lang="it">L'ampiezza dell'oggetto Carico del sistema dipende dal numero di CPU</li>
           <li xml:lang="ka">ვიჯეტი SysLoad, რომელიც დამოკიდებულია CPU-ების რაოდენობაზე</li>
+          <li xml:lang="ko">CPU 개수에 따른 시스템 부하 위젯</li>
           <li xml:lang="lt">Sistemos apkrovos valdiklio plotis priklauso nuo procesorių skaičiaus</li>
           <li xml:lang="nl">Breedte van widget met systeemload hangt af van aantal CPU's</li>
           <li xml:lang="pt-BR">A largura do widget SysLoad depende da quantidade de CPUs</li>
@@ -708,6 +713,7 @@
           <li xml:lang="he">תיקוני תקלות וכוונונים לרכיבי KDE חדשים</li>
           <li xml:lang="it">Sono stati corretti bug, e sono stati sistemati gli ultimi componenti di KDE</li>
           <li xml:lang="ka">შეცდომების გასწორება და კორექტირება ახალი KDE-ის კომპონენტებისთვის</li>
+          <li xml:lang="ko">새로운 KDE 구성 요소에 대응하는 버그 수정과 조정</li>
           <li xml:lang="lt">Naujesniems KDE komponentams atlikti klaidų ištaisymai ir derinimai</li>
           <li xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</li>
           <li xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</li>
@@ -735,6 +741,7 @@
         <p xml:lang="he">תיקוני תקלות וכוונונים לרכיבי KDE חדשים</p>
         <p xml:lang="it">Sono stati corretti bug, e sono stati sistemati gli ultimi componenti di KDE</p>
         <p xml:lang="ka">შეცდომების გასწორება და კორექტირება ახალი KDE-ის კომპონენტებისთვის</p>
+        <p xml:lang="ko">새로운 KDE 구성 요소에 대응하는 버그 수정과 조정</p>
         <p xml:lang="lt">Naujesniems KDE komponentams atlikti klaidų ištaisymai ir derinimai</p>
         <p xml:lang="nl">Reparatie van bugs en aanpassingen aan nieuwere KDE componenten</p>
         <p xml:lang="pt-BR">Correções de bugs e ajustes em componentes mais recentes do KDE</p>
@@ -762,6 +769,7 @@
           <li xml:lang="he">התראות מציגות למשך כמה זמן הן נשארות פתוחות (הנפשה קטנה)</li>
           <li xml:lang="it">Le notifiche mostrano per quanto tempo rimangono aperte (piccola animazione)</li>
           <li xml:lang="ka">გაფრთხილებები აჩვენებენ, რამდენ ხანს რჩებიან ღია (პატარა ანიმაცია)</li>
+          <li xml:lang="ko">알림에 남은 표시 시간이 표시됨(작은 애니메이션)</li>
           <li xml:lang="lt">Pranešimai rodo, kiek ilgai jie išliks atverti (maža animacija)</li>
           <li xml:lang="nl">Meldingen tonen hoe lang ze open blijven (kleine animatie)</li>
           <li xml:lang="pt-BR">As notificações mostram por quanto tempo elas permanecem abertas (pequena animação)</li>
@@ -784,6 +792,7 @@
           <li xml:lang="he">יישומון מזג האוויר מציג את מופע הירח</li>
           <li xml:lang="it">L'applet per il tempo meteorologico mostra le fasi lunari</li>
           <li xml:lang="ka">ამინდის აპლეტი აჩვენებს მთვარის ფაზას</li>
+          <li xml:lang="ko">날씨 애플릿에 달 모양이 표시됨</li>
           <li xml:lang="lt">Orų programėlė rodo mėnulio fazę</li>
           <li xml:lang="nl">Weerapplet toont maanfase</li>
           <li xml:lang="pt-BR">O aplicativo de previsão do tempo mostra a fase da lua</li>
@@ -806,6 +815,7 @@
           <li xml:lang="he">יישומון ניצולת הכונן עוקב אחר עיגונים/ניתוקים כדי להגיב מהר יותר לעדכונים</li>
           <li xml:lang="it">L'applet per l'utilizzo del disco controlla i montaggi e gli smontaggi, per reagire più velocemente agli aggiornamenti</li>
           <li xml:lang="ka">დისკის გამოყენების აპლეტი ყურადღებას აქცევს მიმაგრება/მოხსნას, რომ განახლებაზე უფრო სწრაფი რეაქცია ჰქონდეს</li>
+          <li xml:lang="ko">디스크 사용량 애플릿의 빠른 업데이트를 위한 마운트/마운트 해제 감시</li>
           <li xml:lang="lt">Disko naudojimo programėlė stebi prijungimus/atjungimus, kad greičiau reaguotų atnaujinimui</li>
           <li xml:lang="nl">Applet met schijfgebruik bewaakt aankoppelen/afkoppelen om sneller te reageren voor bijwerken</li>
           <li xml:lang="pt-BR">O aplicativo de uso de disco monitora a montagem/desmontagem para reagir mais rapidamente às atualizações</li>
@@ -828,6 +838,7 @@
           <li xml:lang="he">שיפורי תצוגה ברכיב עדכוני התוכנה</li>
           <li xml:lang="it">Miglioramenti alla visualizzazione dei componenti software aggiornati</li>
           <li xml:lang="ka">გაუმჯობესებების ჩვენება პროგრამის განახლებების კომპონენტში</li>
+          <li xml:lang="ko">소프트웨어 업데이트 구성 요소의 표시 개선</li>
           <li xml:lang="lt">Rodomi patobulinimai programinės įrangos atnaujinimų komponente</li>
           <li xml:lang="nl">Verbeteringen in het tonen van de bijwerkcomponent van software</li>
           <li xml:lang="pt-BR">Melhorias na exibição do componente de atualizações de software</li>
@@ -850,6 +861,7 @@
           <li xml:lang="he">נוספה תמיכה בתפריט D-Bus (חלק מהיישומים לא מספקים תפריט משלהם אלא רק דרך D-Bus, כמו למשל MS Teams)</li>
           <li xml:lang="it">È stato aggiunto il supporto al menu DBUS (alcuni programmi non ne hanno uno proprio ma solo attraverso DBUS, ad esempio Teams di MS)</li>
           <li xml:lang="ka">დაემატა DBUS-Menu-ის მხარდაჭერა (ზოგიერთ აპს საკუთარი მენიუ არ აქვს და, მხოლოდ, DBUS-ს იყენებს. მაგ: MS teams)</li>
+          <li xml:lang="ko">DBus 메뉴 지원(MS Teams와 같은 일부 앱은 자체 메뉴를 제공하지 않고 DBus 메뉴만 지원함)</li>
           <li xml:lang="lt">Pridėtas DBUS meniu palaikymas (kai kurios programos nepateikia nuosavo meniu, bet tik per DBUS, pvz., MS teams)</li>
           <li xml:lang="nl">Toegevoegd ondersteuning van DBUS-menu (sommige toepassingen leveren geen eigen menu maar alleen via DBUS, bijv. MS teams)</li>
           <li xml:lang="pt-BR">Adicionado suporte a menus DBUS (alguns aplicativos não fornecem menu próprio, mas apenas via DBUS, como o Microsoft Teams)</li>
