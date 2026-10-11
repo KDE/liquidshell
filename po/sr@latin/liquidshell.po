@@ -1,0 +1,1000 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: liquidshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-01-04 00:47+0000\n"
+"PO-Revision-Date: 2026-10-10 13:47+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nemanja Hiršl"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: Battery.cxx:78
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 sat"
+msgstr[1] "%1 sata"
+msgstr[2] "%1 sati"
+msgstr[3] "%1 sat"
+
+#: Battery.cxx:79
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minut"
+msgstr[1] "%1 minuta"
+msgstr[2] "%1 minuta"
+msgstr[3] "%1 minut"
+
+#: Battery.cxx:151
+#, kde-format
+msgid "Not Charging"
+msgstr "Ne puni se"
+
+#: Battery.cxx:152
+#, kde-format
+msgid "Fully Charged"
+msgstr "Skroz puna"
+
+#: Battery.cxx:159
+#, kde-format
+msgid "Charging at %1%"
+msgstr "Puni se, %1%"
+
+#: Battery.cxx:161
+#, kde-format
+msgid "Time until full: "
+msgstr "Puna za: "
+
+#: Battery.cxx:165
+#, kde-format
+msgid "Discharging at %1%"
+msgstr "Prazni se, %1%"
+
+#: Battery.cxx:167
+#, kde-format
+msgid "Remaining Time: "
+msgstr "Preostalo vreme: "
+
+#: Battery.cxx:193
+#, kde-format
+msgid "Power Management"
+msgstr "Upravljanje napajanjem"
+
+#: Bluetooth.cxx:64
+#, kde-format
+msgid "Bluetooth is operational"
+msgstr "Bluetooth radi"
+
+#: Bluetooth.cxx:69
+#, kde-format
+msgid "Bluetooth is not operational"
+msgstr "Bluetooth ne radi"
+
+#: Bluetooth.cxx:85
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: ClockWidget.cxx:163
+#, kde-format
+msgid "Select Timezones..."
+msgstr "Izaberi vremenske zone..."
+
+#: ClockWidget.cxx:169
+#, kde-format
+msgid "Select Timezones"
+msgstr "Izbor vremenskih zona"
+
+#: ClockWidget.cxx:187
+#, kde-format
+msgid "Configure Date & Time..."
+msgstr "Podesi datum i vreme..."
+
+#: ClockWidget.cxx:194
+#, kde-format
+msgid "Date & Time"
+msgstr "Datum i vreme"
+
+#: ClockWidgetConfigureDialog.cxx:30 PkUpdateList.cxx:204
+#, kde-format
+msgid "Filter"
+msgstr "Filter"
+
+#: ClockWidgetConfigureDialog.cxx:41
+#, kde-format
+msgid "Timezone"
+msgstr "vremenska zona"
+
+#: ClockWidgetConfigureDialog.cxx:41
+#, kde-format
+msgid "Territory"
+msgstr "teritorija"
+
+#: ConfigureDesktopDialog.cxx:37
+#, kde-format
+msgid "Get New Wallpapers..."
+msgstr "Dobavi nove tapete..."
+
+#: ConfigureDesktopDialog.cxx:43
+#, kde-format
+msgid "Download Wallpapers"
+msgstr "Preuzimanje tapeta"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, ConfigureDesktopDialog)
+#: ConfigureDesktopDialog.ui:15
+#, kde-format
+msgid "Configure Wallpaper"
+msgstr "Podešavanje tapeta"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: ConfigureDesktopDialog.ui:23
+#, kde-format
+msgid "Background Color"
+msgstr "Boja pozadine"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: ConfigureDesktopDialog.ui:33
+#, kde-format
+msgid "Wallpaper File"
+msgstr "Fajl tapeta"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: ConfigureDesktopDialog.ui:67
+#, kde-format
+msgid "Scale Mode"
+msgstr "Režim skaliranja"
+
+#. i18n: ectx: property (text), widget (QRadioButton, origSizeButton)
+#: ConfigureDesktopDialog.ui:73
+#, kde-format
+msgid "Or&iginal Size"
+msgstr "&Izvorna veličina"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledIgnoreRatioButton)
+#: ConfigureDesktopDialog.ui:80
+#, kde-format
+msgid "Sca&led Ignoring Aspect Ratio"
+msgstr "&Skalirano, bez obzira na proporciju"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioButton)
+#: ConfigureDesktopDialog.ui:87
+#, kde-format
+msgid "Scale&d Keep Aspect Ratio"
+msgstr "S&kalirano, očuvana proporcija"
+
+#. i18n: ectx: property (text), widget (QRadioButton, scaledKeepRatioClipButton)
+#: ConfigureDesktopDialog.ui:94
+#, kde-format
+msgid "Scaled Keep Aspec&t Ratio and Clip"
+msgstr "Skalirano, očuvana proporcija, o&psečeno"
+
+#: desktop.cxx:30
+#, kde-format
+msgid "Liquidshell"
+msgstr "Liquidshell"
+
+#: desktop.cxx:31
+#, kde-format
+msgid "A QtWidgets based basic desktop shell"
+msgstr "Osnovna školjka površi zasnovana na QtWidgets"
+
+#: desktop.cxx:33
+#, kde-format
+msgid "Copyright 2017 - 2026 Martin Koller"
+msgstr "© 2017–2026, Martin Koler"
+
+#: DesktopApplet.cxx:34 Launcher.cxx:69
+#, kde-format
+msgid "Configure..."
+msgstr "Podesi..."
+
+#: DesktopApplet.cxx:42
+#, kde-format
+msgid "Change Size && Position"
+msgstr "Promeni veličinu i položaj"
+
+#: DesktopApplet.cxx:48
+#, kde-format
+msgid "Remove this Applet"
+msgstr "Ukloni ovaj aplet"
+
+#: DesktopApplet.cxx:96
+#, kde-format
+msgid "%1: Change Size & Position"
+msgstr "%1: promena veličine i položaja"
+
+#: DesktopApplet.cxx:136
+#, kde-format
+msgid "Remove Applet"
+msgstr "Uklanjanje apleta"
+
+#: DesktopApplet.cxx:137
+#, kde-format
+msgid "Really remove this applet?"
+msgstr "Zaista ukloniti ovaj aplet?"
+
+#: DesktopWidget.cxx:67
+#, kde-format
+msgid "Configure Wallpaper..."
+msgstr "Podesi tapet..."
+
+#: DesktopWidget.cxx:71
+#, kde-format
+msgid "Add Applet"
+msgstr "Dodaj aplet"
+
+#: DesktopWidget.cxx:75
+#, kde-format
+msgid "Weather"
+msgstr "Vreme"
+
+#: DesktopWidget.cxx:78
+#, kde-format
+msgid "Disk Usage"
+msgstr "Popunjenost diska"
+
+#: DesktopWidget.cxx:81
+#, kde-format
+msgid "Picture Frame"
+msgstr "Uramljena slika"
+
+#: DesktopWidget.cxx:84
+#, kde-format
+msgid "Configure Display..."
+msgstr "Podesi ekran..."
+
+#: DesktopWidget.cxx:88 StartMenu.cxx:102
+#, kde-format
+msgid "Run Command..."
+msgstr "Izvrši naredbu..."
+
+#: DesktopWidget.cxx:98
+#, kde-format
+msgid "Help"
+msgstr "Pomoć"
+
+#: DesktopWidget.cxx:247
+#, kde-format
+msgid "Configure Display"
+msgstr "Podešavanje ekrana"
+
+#: DeviceList.cxx:252
+#, kde-format
+msgid "Open with File Manager"
+msgstr "Otvori menadžerom fajlova"
+
+#: DeviceList.cxx:335
+#, kde-format
+msgid ""
+"Device is mounted.\n"
+"Click to unmount/eject"
+msgstr ""
+"Uređaj je montiran.\n"
+"Kliknite da ga demontirate/izbacite"
+
+#: DeviceList.cxx:336
+#, kde-format
+msgid ""
+"Device is unmounted.\n"
+"Click to mount"
+msgstr ""
+"Uređaj nije montiran.\n"
+"Kliknite da ga montirate"
+
+#: DeviceList.cxx:347
+#, kde-format
+msgid "Unauthorized Operation"
+msgstr "Neovlašćen postupak"
+
+#: DeviceList.cxx:348
+#, kde-format
+msgid "Device Busy"
+msgstr "Uređaj je zauzet"
+
+#: DeviceList.cxx:349
+#, kde-format
+msgid "Operation Failed"
+msgstr "Postupak nije uspeo"
+
+#: DeviceList.cxx:350
+#, kde-format
+msgid "User Canceled"
+msgstr "Korisnik je odustao"
+
+#: DeviceList.cxx:351
+#, kde-format
+msgid "Invalid Option"
+msgstr "Loša opcija"
+
+#: DeviceList.cxx:352
+#, kde-format
+msgid "Missing Driver"
+msgstr "Nedostaje drajver"
+
+#: DeviceList.cxx:374
+#, kde-format
+msgid "The device can now be safely removed"
+msgstr "Uređaj sada možete bezbedno ukloniti"
+
+#: DeviceList.cxx:381
+#, kde-format
+msgid "Mount failed:"
+msgstr "Montiranje nije uspelo:"
+
+#: DeviceList.cxx:381
+#, kde-format
+msgid "Unmount failed:"
+msgstr "Demontiranje nije uspelo:"
+
+#: DeviceNotifier.cxx:23
+#, kde-format
+msgid "Device Notifier"
+msgstr "Izveštavač o uređajima"
+
+#: DeviceNotifier.cxx:26
+#, kde-format
+msgid "Device List"
+msgstr "Spisak uređaja"
+
+#: DiskUsageApplet.cxx:131
+#, kde-format
+msgid "%1 free / %2"
+msgstr "%1 slobodno / %2"
+
+#: DiskUsageApplet.cxx:164
+#, kde-format
+msgid "Configure DiskUsage Applet"
+msgstr "Podešavanje apleta popunjenosti diska"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, PictureFrameAppletConfigureDialog)
+#. i18n: ectx: property (windowTitle), widget (QDialog, DiskUsageAppletConfigureDialog)
+#: DiskUsageAppletConfigureDialog.ui:14 PictureFrameAppletConfigureDialog.ui:14
+#: WeatherAppletConfigureDialog.ui:14
+#, kde-format
+msgid "Dialog"
+msgstr "Dijalog"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: DiskUsageAppletConfigureDialog.ui:20 WeatherAppletConfigureDialog.ui:112
+#, kde-format
+msgid "Text"
+msgstr "Tekst"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: DiskUsageAppletConfigureDialog.ui:44
+#, kde-format
+msgid "Bar Text"
+msgstr "Tekst trake"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: DiskUsageAppletConfigureDialog.ui:58 PictureFrameAppletConfigureDialog.ui:44
+#: WeatherAppletConfigureDialog.ui:119
+#, kde-format
+msgid "Background"
+msgstr "Pozadina"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: DiskUsageAppletConfigureDialog.ui:72
+#, kde-format
+msgid "Bar Background"
+msgstr "Pozadina trake"
+
+#: KdeConnect.cxx:169
+#, kde-format
+msgid "Device needs charging"
+msgstr "Uređaj treba napuniti"
+
+#: KdeConnect.cxx:170
+#, kde-format
+msgid ""
+"Device charge of '%1' is at %2%.\n"
+"You should charge it."
+msgstr ""
+"Napunjenost uređaja „%1“ je %2%.\n"
+"Treba da ga napunite."
+
+#: Launcher.cxx:86
+#, kde-format
+msgid "Open Folder"
+msgstr "Otvori fasciklu"
+
+#: Network.cxx:72
+#, kde-format
+msgid "No Network Connection"
+msgstr "Nema mrežne veze"
+
+#: Network.cxx:82
+#, kde-format
+msgid "Full Network Connectivity (%1)"
+msgstr "Puna mrežna povezivost (%1)"
+
+#: Network.cxx:84
+#, kde-format
+msgid "Limited Network Connectivity (%1)"
+msgstr "Ograničena mrežna povezivost (%1)"
+
+#: Network.cxx:93
+#, kde-format
+msgid "IPv4 Address: %1"
+msgstr "IPv4 adresa: %1"
+
+#: Network.cxx:110
+#, kde-format
+msgid "SSID: %1"
+msgstr "SSID: %1"
+
+#: Network.cxx:112
+#, kde-format
+msgid "Signal Strength: %1"
+msgstr "Jačina signala: %1"
+
+#: Network.cxx:144
+#, kde-format
+msgid "VPN active"
+msgstr "VPN je aktivan"
+
+#: NetworkList.cxx:213
+#, kde-format
+msgid "Configure Network Connections"
+msgstr "Podesi mrežne veze"
+
+#: NetworkList.cxx:245
+#, kde-format
+msgid "Networking is enabled. Click to disable"
+msgstr "Mreža je uključena. Kliknite da je isključite"
+
+#: NetworkList.cxx:247
+#, kde-format
+msgid "Networking is disabled. Click to enable"
+msgstr "Mreža je isključena. Kliknite da je uključite"
+
+#: NetworkList.cxx:250
+#, kde-format
+msgid "Wireless Networking is enabled. Click to disable"
+msgstr "Bežična mreža je uključena. Kliknite da je isključite"
+
+#: NetworkList.cxx:252
+#, kde-format
+msgid "Wireless Networking is disabled. Click to enable"
+msgstr "Bežična mreža je isključena. Kliknite da je uključite"
+
+#: NotificationList.cxx:172
+#, kde-format
+msgid "Notifications"
+msgstr "Obaveštenja"
+
+#: NotificationServer.cxx:59
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 obaveštenje"
+msgstr[1] "%1 obaveštenja"
+msgstr[2] "%1 obaveštenja"
+msgstr[3] "%1 obaveštenje"
+
+#: Pager.cxx:61
+#, kde-format
+msgid "Configure Virtual Desktops..."
+msgstr "Podesi virtuelne površi..."
+
+#: Pager.cxx:68
+#, kde-format
+msgid "Configure Virtual Desktops"
+msgstr "Podešavanje virtuelnih površi"
+
+#: PictureFrameApplet.cxx:95
+#, kde-format
+msgid "Configure PictureFrame Applet"
+msgstr "Podešavanje apleta uramljene slike"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: PictureFrameAppletConfigureDialog.ui:37
+#, kde-format
+msgid "Frame"
+msgstr "Okvir"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: PictureFrameAppletConfigureDialog.ui:61
+#, kde-format
+msgid "Path"
+msgstr "Putanja"
+
+#: PkUpdateList.cxx:128
+#, kde-format
+msgid "Getting details ..."
+msgstr "Dobavljam detalje..."
+
+#: PkUpdateList.cxx:170
+#, kde-format
+msgid "<b>Session restart required</b><br>"
+msgstr "<b>Potrebno je ponovo pokrenuti sesiju</b><br/>"
+
+#: PkUpdateList.cxx:172
+#, kde-format
+msgid "<b>Reboot required</b><br>"
+msgstr "<b>Potrebno je ponovo podići sistem</b><br/>"
+
+#: PkUpdateList.cxx:188
+#, kde-format
+msgid "Software Updates"
+msgstr "Dopune softvera"
+
+#: PkUpdateList.cxx:200
+#, kde-format
+msgid "All"
+msgstr "Sve"
+
+#: PkUpdateList.cxx:213 PkUpdateList.cxx:437
+#, kde-format
+msgid "Install"
+msgstr "Instaliraj"
+
+#: PkUpdateList.cxx:219
+#, kde-format
+msgid "Install, then Sleep"
+msgstr "Instaliraj, pa na spavanje"
+
+#: PkUpdateList.cxx:220
+#, kde-format
+msgid "Install, then Shutdown"
+msgstr "Instaliraj, pa ugasi"
+
+#: PkUpdateList.cxx:224
+#, kde-format
+msgid "Refresh"
+msgstr "Osveži"
+
+#: PkUpdateList.cxx:431
+#, kde-format
+msgid "Install %1 package"
+msgid_plural "Install %1 packages"
+msgstr[0] "Instaliraj %1 paket"
+msgstr[1] "Instaliraj %1 paketa"
+msgstr[2] "Instaliraj %1 paketa"
+msgstr[3] "Instaliraj %1 paket"
+
+#: PkUpdateList.cxx:560
+#, kde-format
+msgid "System Reboot Required"
+msgstr "Potrebno je ponovo podići sistem"
+
+#: PkUpdateList.cxx:561
+#, kde-format
+msgid "One of the installed packages requires a system reboot"
+msgstr "Jedan od instaliranih paketa zahteva ponovno podizanje sistema"
+
+#: PkUpdateList.cxx:562
+#, kde-format
+msgid "Reboot System"
+msgstr "Ponovo podigni sistem"
+
+#: PkUpdateList.cxx:582
+#, kde-format
+msgid "Session Restart Required"
+msgstr "Potrebno je ponovo pokrenuti sesiju"
+
+#: PkUpdateList.cxx:583
+#, kde-format
+msgid "One of the installed packages requires you to logout"
+msgstr "Jedan od instaliranih paketa zahteva da se odjavite"
+
+#: PkUpdateList.cxx:584
+#, kde-format
+msgid "Logout"
+msgstr "Odjavi me"
+
+#: PkUpdateList.cxx:630
+#, kde-format
+msgid "Cancel Installation"
+msgstr "Otkaži instaliranje"
+
+#: PkUpdateList.cxx:663
+#, kde-format
+msgid "Waiting"
+msgstr "Čekam"
+
+#: PkUpdateList.cxx:664
+#, kde-format
+msgid "Waiting for authentication"
+msgstr "Čekam autentifikaciju"
+
+#: PkUpdateList.cxx:665
+#, kde-format
+msgid "Resolving dependencies"
+msgstr "Razrešavam zavisnosti"
+
+#: PkUpdateList.cxx:666
+#, kde-format
+msgid "Updating"
+msgstr "Ažuriram"
+
+#: PkUpdateList.cxx:667
+#, kde-format
+msgid "Installing"
+msgstr "Instaliram"
+
+#: PkUpdateList.cxx:668
+#, kde-format
+msgid "Downloading"
+msgstr "Preuzimam"
+
+#: PkUpdateList.cxx:669
+#, kde-format
+msgid "Canceling"
+msgstr "Otkazujem"
+
+#: PkUpdateList.cxx:724
+#, kde-format
+msgid "Validate Signature"
+msgstr "Overa potpisa"
+
+#: PkUpdateList.cxx:775
+#, kde-format
+msgid "Update failed"
+msgstr "Ažuriranje nije uspelo"
+
+#: PkUpdateList.cxx:830
+#, kde-format
+msgid "Accept EULA"
+msgstr "Prihvatanje EULe"
+
+#: PkUpdateList.cxx:842
+#, kde-format
+msgid ""
+"<html>Do you accept the following license agreement for package<br>"
+"%1<br>from vendor<br>%2 ?</html>"
+msgstr ""
+"<html>Prihvatate li sledeći ugovor o licenci za paket<br/>%1<br/>od "
+"izdavača<br/>%2?</html>"
+
+#: PkUpdates.cxx:53
+#, kde-format
+msgid "Next check: %1"
+msgstr "Sledeća provera: %1"
+
+#: PkUpdates.cxx:79
+#, kde-format
+msgid "Checking for updates ..."
+msgstr "Proveravam dopune..."
+
+#: PkUpdates.cxx:95 PkUpdates.cxx:149
+#, kde-format
+msgid "Checking for updates ... %1%"
+msgstr "Proveravam dopune... %1%"
+
+#: PkUpdates.cxx:171
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"Error on checking for updates: %2"
+msgstr ""
+"Poslednja provera: %1\n"
+"Greška pri proveri dopuna: %2"
+
+#: PkUpdates.cxx:174
+#, kde-format
+msgid "Software Update Error"
+msgstr "Greška pri ažuriranju softvera"
+
+#: PkUpdates.cxx:195
+#, kde-format
+msgid "%1 <b>security</b> update available"
+msgid_plural "%1 <b>security</b> updates available"
+msgstr[0] "Dostupna je %1 <b>bezbednosna</b> dopuna"
+msgstr[1] "Dostupne su %1 <b>bezbednosne</b> dopune"
+msgstr[2] "Dostupno je %1 <b>bezbednosnih</b> dopuna"
+msgstr[3] "Dostupna je %1 <b>bezbednosna</b> dopuna"
+
+#: PkUpdates.cxx:207
+#, kde-format
+msgid "%1 <i>important</i> update available"
+msgid_plural "%1 <i>important</i> updates available"
+msgstr[0] "Dostupna je %1 <i>važna</i> dopuna"
+msgstr[1] "Dostupne su %1 <i>važne</i> dopune"
+msgstr[2] "Dostupno je %1 <i>važnih</i> dopuna"
+msgstr[3] "Dostupna je %1 <i>važna</i> dopuna"
+
+#: PkUpdates.cxx:219
+#, kde-format
+msgid "%1 bugfix update available"
+msgid_plural "%1 bugfix updates available"
+msgstr[0] "Dostupna je %1 dopuna sa ispravkama grešaka"
+msgstr[1] "Dostupne su %1 dopune sa ispravkama grešaka"
+msgstr[2] "Dostupno je %1 dopuna sa ispravkama grešaka"
+msgstr[3] "Dostupna je %1 dopuna sa ispravkama grešaka"
+
+#: PkUpdates.cxx:229
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 other"
+msgid_plural ""
+"Last check: %1\n"
+"No important updates available\n"
+"%2 others"
+msgstr[0] ""
+"Poslednja provera: %1\n"
+"Nema važnih dopuna\n"
+"drugih: %2"
+msgstr[1] ""
+"Poslednja provera: %1\n"
+"Nema važnih dopuna\n"
+"drugih: %2"
+msgstr[2] ""
+"Poslednja provera: %1\n"
+"Nema važnih dopuna\n"
+"drugih: %2"
+msgstr[3] ""
+"Poslednja provera: %1\n"
+"Nema važnih dopuna\n"
+"drugih: %2"
+
+#: PkUpdates.cxx:240
+#, kde-format
+msgid ""
+"Last check: %1\n"
+"No updates available"
+msgstr ""
+"Poslednja provera: %1\n"
+"Nema dopuna"
+
+#: PkUpdates.cxx:249
+#, kde-format
+msgid "<br>%1 other"
+msgid_plural "<br>%1 others"
+msgstr[0] "<html><br/>drugih: %1</html>"
+msgstr[1] "<html><br/>drugih: %1</html>"
+msgstr[2] "<html><br/>drugih: %1</html>"
+msgstr[3] "<html><br/>drugih: %1</html>"
+
+#: PkUpdates.cxx:251
+#, kde-format
+msgid "<html>Last check: %1<br>%2</html>"
+msgstr "<html>Poslednja provera: %1<br/>%2</html>"
+
+#: PkUpdates.cxx:290
+#, kde-format
+msgid "Software Updates Available"
+msgstr "Dostupne su dopune softvera"
+
+#: PkUpdates.cxx:310
+#, kde-format
+msgid "<li>%1 more ...</li>"
+msgstr "<li>još %1...</li>"
+
+#: QuickLaunch.cxx:158
+#, kde-format
+msgid "Web Browser"
+msgstr "Veb pregledač"
+
+#: StartMenu.cxx:80
+#, kde-format
+msgid "Switch User"
+msgstr "Prebaci korisnika"
+
+#: StartMenu.cxx:170
+#, kde-format
+msgid "Configure Menu..."
+msgstr "Podesi meni..."
+
+#: SysLoad.cxx:200
+#, kde-format
+msgid "CPU %1: %2% (%3 MHz)"
+msgstr "CPU %1: %2% (%3 MHz)"
+
+#: SysLoad.cxx:210
+#, kde-format
+msgid "Memory Total: %1 MB (%2 GB)"
+msgstr "Ukupna memorija: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:212
+#, kde-format
+msgid "Memory Used: %1 MB (%2 GB) %3%"
+msgstr "Zauzeta memorija: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:214
+#, kde-format
+msgid "Memory Free: %1 MB (%2 GB)"
+msgstr "Slobodna memorija: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:216
+#, kde-format
+msgid "Swap Total: %1 MB (%2 GB)"
+msgstr "Ukupna razmenska memorija: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:218
+#, kde-format
+msgid "Swap Used: %1 MB (%2 GB) %3%"
+msgstr "Zauzeta razmenska memorija: %1 MB (%2 GB) %3%"
+
+#: SysLoad.cxx:220
+#, kde-format
+msgid "Swap Free: %1 MB (%2 GB)"
+msgstr "Slobodna razmenska memorija: %1 MB (%2 GB)"
+
+#: SysLoad.cxx:223
+#, kde-format
+msgid "Net send/receive: %1/%2 KB/sec"
+msgstr "Mreža, slanje/prijem: %1/%2 KB/sec"
+
+#: SysLoad.cxx:227
+#, kde-format
+msgid "Net max (last %2 secs): %1 KB/sec"
+msgstr "Mreža, najviše (poslednjih %2 s): %1 KB/sec"
+
+#: SysTray.cxx:302
+#, kde-format
+msgid "Show New Notifications"
+msgstr "Prikaži nova obaveštenja"
+
+#: TaskBarButton.cxx:109
+#, kde-format
+msgid "Move To Desktop"
+msgstr "Premesti na površ"
+
+#: TaskBarButton.cxx:110
+#, kde-format
+msgid "All Desktops"
+msgstr "Sve površi"
+
+#: TaskBarButton.cxx:117
+#, kde-format
+msgid "Close"
+msgstr "Zatvori"
+
+#: WeatherApplet.cxx:66
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatura:"
+
+#: WeatherApplet.cxx:69
+#, kde-format
+msgid "Pressure:"
+msgstr "Pritisak:"
+
+#: WeatherApplet.cxx:72
+#, kde-format
+msgid "Humidity:"
+msgstr "Vlažnost:"
+
+#: WeatherApplet.cxx:75
+#, kde-format
+msgid "Wind Speed:"
+msgstr "Brzina vetra:"
+
+#: WeatherApplet.cxx:78
+#, kde-format
+msgid "Wind Direction:"
+msgstr "Smer vetra:"
+
+#: WeatherApplet.cxx:128 WeatherApplet.cxx:399
+#, kde-format
+msgid "Not configured"
+msgstr "Nije podešeno"
+
+#: WeatherApplet.cxx:183
+#, kde-format
+msgid "K"
+msgstr "K"
+
+#: WeatherApplet.cxx:184
+#, kde-format
+msgid "°C"
+msgstr "°C"
+
+#: WeatherApplet.cxx:185
+#, kde-format
+msgid "°F"
+msgstr "°F"
+
+#: WeatherApplet.cxx:198 WeatherApplet.cxx:215 WeatherApplet.cxx:278
+#: WeatherApplet.cxx:279
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: WeatherApplet.cxx:201
+#, kde-format
+msgid "%1 hPa"
+msgstr "%1 hPa"
+
+#: WeatherApplet.cxx:204
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: WeatherApplet.cxx:218
+#, kde-format
+msgid "%1 °"
+msgstr "%1 °"
+
+#: WeatherApplet.cxx:375
+#, kde-format
+msgid "Configure Weather Applet"
+msgstr "Podešavanje apleta vremena"
+
+#: WeatherAppletConfigureDialog.cxx:75
+#, kde-format
+msgid "Downloading city list..."
+msgstr "Preuzimam spisak gradova..."
+
+#: WeatherAppletConfigureDialog.cxx:89
+#, kde-format
+msgid "Download Error"
+msgstr "Greška pri preuzimanju"
+
+#: WeatherAppletConfigureDialog.cxx:90
+#, kde-format
+msgid "Error on downloading city list: %1"
+msgstr "Greška pri preuzimanju spiska gradova: %1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: WeatherAppletConfigureDialog.ui:20
+#, kde-format
+msgid "API Key"
+msgstr "API ključ"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, apiKey)
+#: WeatherAppletConfigureDialog.ui:27
+#, kde-format
+msgid "The API key is needed to be allowed to get data from openweathermap.org"
+msgstr "API ključ je potreban za dobavljanje podataka sa openweathermap.org"
+
+#. i18n: ectx: property (text), widget (QPushButton, getApiKey)
+#: WeatherAppletConfigureDialog.ui:34
+#, kde-format
+msgid "Get your personal API key"
+msgstr "Nabavi lični API ključ"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: WeatherAppletConfigureDialog.ui:41
+#, kde-format
+msgid "Units"
+msgstr "Jedinice"
+
+#. i18n: ectx: property (text), widget (QRadioButton, metric)
+#: WeatherAppletConfigureDialog.ui:48
+#, kde-format
+msgid "&metric"
+msgstr "&metričke"
+
+#. i18n: ectx: property (text), widget (QRadioButton, imperial)
+#: WeatherAppletConfigureDialog.ui:58
+#, kde-format
+msgid "&imperial"
+msgstr "&imperijalne"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:65 WeatherAppletConfigureDialog.ui:92
+#, kde-format
+msgid "City"
+msgstr "Grad"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, cityList)
+#: WeatherAppletConfigureDialog.ui:97
+#, kde-format
+msgid "Country"
+msgstr "Država"
