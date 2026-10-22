@@ -24,12 +24,70 @@
 #include <notificationsadaptor.h>
 
 #include <QIcon>
+#include <QDBusArgument>
 #include <QDBusConnection>
 #include <QDebug>
+#include <QImage>
+#include <QPixmap>
 
 #include <KLocalizedString>
 #include <KService>
 #include <KIconLoader>
+
+//--------------------------------------------------------------------------------
+// https://specifications.freedesktop.org/notification-spec/latest/icons-and-images.html
+// image-data / icon_data: (iiibiiay) raw RGB(A), not a QIcon
+
+static QIcon iconFromImageHint(const QVariant &hint)
+{
+  if ( !hint.canConvert<QDBusArgument>() )
+    return QIcon();
+
+  const QDBusArgument arg = hint.value<QDBusArgument>();
+  if ( arg.currentType() != QDBusArgument::StructureType )
+    return QIcon();
+
+  int width = 0, height = 0, rowStride = 0, bitsPerSample = 0, channels = 0;
+  bool hasAlpha = false;
+  QByteArray pixels;
+
+  arg.beginStructure();
+  arg >> width >> height >> rowStride >> hasAlpha >> bitsPerSample >> channels >> pixels;
+  arg.endStructure();
+
+  if ( (width <= 0) || (height <= 0) || (width >= 2048) || (height >= 2048) || (rowStride <= 0) )
+    return QIcon();
+  if ( (bitsPerSample != 8) || ((channels != 3) && (channels != 4)) )
+    return QIcon();
+  if ( hasAlpha != (channels == 4) )
+    return QIcon();
+  if ( rowStride < width * channels )
+    return QIcon();
+
+  QImage image(width, height, hasAlpha ? QImage::Format_ARGB32 : QImage::Format_RGB32);
+  const char *ptr = pixels.constData();
+  const char *end = ptr + pixels.size();
+
+  for (int y = 0; y < height; ++y, ptr += rowStride)
+  {
+    if ( ptr + channels * width > end )
+      break;
+
+    QRgb *dst = reinterpret_cast<QRgb *>(image.scanLine(y));
+    if ( hasAlpha )
+    {
+      for (int x = 0; x < width; ++x)
+        dst[x] = qRgba(ptr[x * 4], ptr[x * 4 + 1], ptr[x * 4 + 2], ptr[x * 4 + 3]);
+    }
+    else
+    {
+      for (int x = 0; x < width; ++x)
+        dst[x] = qRgb(ptr[x * 3], ptr[x * 3 + 1], ptr[x * 3 + 2]);
+    }
+  }
+
+  return QIcon(QPixmap::fromImage(image));
+}
 
 //--------------------------------------------------------------------------------
 
@@ -142,16 +200,20 @@ uint NotificationServer::Notify(const QString &app_name, uint replaces_id, const
   // icon preference order: https://specifications.freedesktop.org/notification-spec/latest/ar01s05.html
   QIcon icon;
   if ( hints.contains("image-data") )
-    icon = hints["image-data"].value<QIcon>();
+    icon = iconFromImageHint(hints["image-data"]);
+  else if ( hints.contains("image_data") )  // spec 1.1
+    icon = iconFromImageHint(hints["image_data"]);
 
   if ( icon.isNull() && hints.contains("image-path") )
     icon = QIcon(hints["image-path"].toString());
+  else if ( icon.isNull() && hints.contains("image_path") )
+    icon = QIcon(hints["image_path"].toString());
 
   if ( icon.isNull() && !app_icon.isEmpty() )
     icon = QIcon::fromTheme(app_icon);
 
   if ( icon.isNull() && hints.contains("icon_data") )
-    icon = hints["icon_data"].value<QIcon>();
+    icon = iconFromImageHint(hints["icon_data"]);
 
   QString appName = app_name;
   if ( appName.isEmpty() && hints.contains("desktop-entry") )
