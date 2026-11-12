@@ -395,7 +395,7 @@
       <li xml:lang="sr-ijekavian">Заснован на QtWidgets, па прати стил виџета из Системских поставки</li>
       <li xml:lang="sr-ijekavianlatin">Zasnovan na QtWidgets, pa prati stil vidžeta iz Sistemskih postavki</li>
       <li xml:lang="sv">Baserad på QtWidgets, och följer därför komponentstilen från systeminställningarna</li>
-      <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı biçemini kullanır</li>
+      <li xml:lang="tr">QtWidgets tabanlıdır, dolayısıyla Sistem Ayarları araç takımı stilini kullanır</li>
       <li xml:lang="uk">Засновано на QtWidgets, тому стиль віджетів повністю визначається «Системними параметрами»</li>
       <li xml:lang="zh-TW">基於 QtWidget，因此跟隨系統設定中的元件風格</li>
       <li>Icons are used from your globally defined icon theme from systemsettings</li>
