@@ -905,7 +905,7 @@
           <li xml:lang="zh-TW">天氣小程式現在會顯示月相</li>
           <li>Disk Usage Applet watches for mount/unmount to react quicker for update</li>
           <li xml:lang="ar">يراقب بريمج استخدام القرص عمليات الوصل/الفصل للاستجابة بشكل أسرع للتحديث</li>
-          <li xml:lang="ca">La miniaplicació d'ús de disc controla el muntatge/desmuntatge per a reaccionar més ràpid a l'actualització</li>
+          <li xml:lang="ca">La miniaplicació d'ús de disc controla el muntatge/desmuntatge per a reaccionar més de pressa a l'actualització</li>
           <li xml:lang="ca-valencia">La miniaplicació d'ús de disc controla el muntatge/desmuntatge per a reaccionar més ràpid a l'actualització</li>
           <li xml:lang="cs">Applet využití disku sleduje připojení a odpojení, aby mohl na aktualizace reagovat rychleji</li>
           <li xml:lang="es">La miniaplicación de uso del disco vigila los montajes y los desmontajes para reaccionar rápidamente cuando se produzcan.</li>
